@@ -89,9 +89,9 @@ public final class EndpointHealthDataInner {
      * messages as expected and IoT Hub is retrying to send data to this endpoint. The status of an unhealthy endpoint
      * will be updated to healthy when IoT Hub has established an eventually consistent state of health. The 'dead'
      * status shows that the endpoint is not accepting messages, after IoT Hub retried sending messages for the retrial
-     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows
-     * that the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or
-     * rejected from this endpoint.
+     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows that
+     * the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or rejected
+     * from this endpoint.
      * 
      * @return the healthStatus value.
      */
@@ -105,9 +105,9 @@ public final class EndpointHealthDataInner {
      * messages as expected and IoT Hub is retrying to send data to this endpoint. The status of an unhealthy endpoint
      * will be updated to healthy when IoT Hub has established an eventually consistent state of health. The 'dead'
      * status shows that the endpoint is not accepting messages, after IoT Hub retried sending messages for the retrial
-     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows
-     * that the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or
-     * rejected from this endpoint.
+     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows that
+     * the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or rejected
+     * from this endpoint.
      * 
      * @param healthStatus the healthStatus value to set.
      * @return the EndpointHealthDataInner object itself.

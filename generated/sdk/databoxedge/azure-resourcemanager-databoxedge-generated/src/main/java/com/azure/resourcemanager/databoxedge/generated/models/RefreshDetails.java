@@ -14,15 +14,15 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class RefreshDetails {
     /*
-     * If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID
-     * of that job. The field is empty if no job is in progress.
+     * If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID of
+     * that job. The field is empty if no job is in progress.
      */
     @JsonProperty(value = "inProgressRefreshJobId")
     private String inProgressRefreshJobId;
 
     /*
-     * Indicates the completed time for the last refresh job on this particular share or container, if any.This could
-     * be a failed job or a successful job.
+     * Indicates the completed time for the last refresh job on this particular share or container, if any.This could be
+     * a failed job or a successful job.
      */
     @JsonProperty(value = "lastCompletedRefreshJobTimeInUTC")
     private OffsetDateTime lastCompletedRefreshJobTimeInUtc;
@@ -35,8 +35,8 @@ public final class RefreshDetails {
     private String errorManifestFile;
 
     /*
-     * Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed
-     * job or a successful job.
+     * Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed job
+     * or a successful job.
      */
     @JsonProperty(value = "lastJob")
     private String lastJob;
@@ -92,8 +92,8 @@ public final class RefreshDetails {
     }
 
     /**
-     * Get the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on
-     * this particular share or container, if any. This could be a failed job or a successful job.
+     * Get the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this
+     * particular share or container, if any. This could be a failed job or a successful job.
      * 
      * @return the errorManifestFile value.
      */
@@ -102,8 +102,8 @@ public final class RefreshDetails {
     }
 
     /**
-     * Set the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on
-     * this particular share or container, if any. This could be a failed job or a successful job.
+     * Set the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this
+     * particular share or container, if any. This could be a failed job or a successful job.
      * 
      * @param errorManifestFile the errorManifestFile value to set.
      * @return the RefreshDetails object itself.

@@ -81,8 +81,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future.
-     * If present, the end date must be greater than start date.
+     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
+     * present, the end date must be greater than start date.
      * 
      * @return the recurrencePeriod value.
      */
@@ -91,8 +91,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future.
-     * If present, the end date must be greater than start date.
+     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
+     * present, the end date must be greater than start date.
      * 
      * @param recurrencePeriod the recurrencePeriod value to set.
      * @return the ExportSchedule object itself.

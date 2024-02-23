@@ -31,8 +31,8 @@ public final class ViewInner extends ProxyResource {
     private ViewProperties innerProperties;
 
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the
-     * user is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
+     * is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -98,13 +98,12 @@ public final class ViewInner extends ProxyResource {
     }
 
     /**
-     * Get the scope property: Cost Management scope to save the view on. This includes
-     * 'subscriptions/{subscriptionId}' for subscription scope,
-     * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
-     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-     * for EnrollmentAccount scope,
+     * Get the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
+     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     * EnrollmentAccount scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      * BillingProfile scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
@@ -121,13 +120,12 @@ public final class ViewInner extends ProxyResource {
     }
 
     /**
-     * Set the scope property: Cost Management scope to save the view on. This includes
-     * 'subscriptions/{subscriptionId}' for subscription scope,
-     * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
-     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-     * for EnrollmentAccount scope,
+     * Set the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
+     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     * EnrollmentAccount scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      * BillingProfile scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
@@ -300,8 +298,8 @@ public final class ViewInner extends ProxyResource {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
-     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
      * 
      * @return the type value.
@@ -311,8 +309,8 @@ public final class ViewInner extends ProxyResource {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
-     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
      * 
      * @param type the type value to set.

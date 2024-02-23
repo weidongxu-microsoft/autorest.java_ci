@@ -79,10 +79,10 @@ public class Overlay {
     }
 
     /**
-     * Get the inputLabel property: The label of the job input which is to be used as an overlay. The Input must
-     * specify exactly one file. You can specify an image file in JPG, PNG, GIF or BMP format, or an audio file (such
-     * as a WAV, MP3, WMA or M4A file), or a video file. See https://aka.ms/mesformats for the complete list of
-     * supported audio and video file formats.
+     * Get the inputLabel property: The label of the job input which is to be used as an overlay. The Input must specify
+     * exactly one file. You can specify an image file in JPG, PNG, GIF or BMP format, or an audio file (such as a WAV,
+     * MP3, WMA or M4A file), or a video file. See https://aka.ms/mesformats for the complete list of supported audio
+     * and video file formats.
      * 
      * @return the inputLabel value.
      */
@@ -91,10 +91,10 @@ public class Overlay {
     }
 
     /**
-     * Set the inputLabel property: The label of the job input which is to be used as an overlay. The Input must
-     * specify exactly one file. You can specify an image file in JPG, PNG, GIF or BMP format, or an audio file (such
-     * as a WAV, MP3, WMA or M4A file), or a video file. See https://aka.ms/mesformats for the complete list of
-     * supported audio and video file formats.
+     * Set the inputLabel property: The label of the job input which is to be used as an overlay. The Input must specify
+     * exactly one file. You can specify an image file in JPG, PNG, GIF or BMP format, or an audio file (such as a WAV,
+     * MP3, WMA or M4A file), or a video file. See https://aka.ms/mesformats for the complete list of supported audio
+     * and video file formats.
      * 
      * @param inputLabel the inputLabel value to set.
      * @return the Overlay object itself.
@@ -106,8 +106,8 @@ public class Overlay {
 
     /**
      * Get the start property: The start position, with reference to the input video, at which the overlay starts. The
-     * value should be in ISO 8601 format. For example, PT05S to start the overlay at 5 seconds into the input video.
-     * If not specified the overlay starts from the beginning of the input video.
+     * value should be in ISO 8601 format. For example, PT05S to start the overlay at 5 seconds into the input video. If
+     * not specified the overlay starts from the beginning of the input video.
      * 
      * @return the start value.
      */
@@ -117,8 +117,8 @@ public class Overlay {
 
     /**
      * Set the start property: The start position, with reference to the input video, at which the overlay starts. The
-     * value should be in ISO 8601 format. For example, PT05S to start the overlay at 5 seconds into the input video.
-     * If not specified the overlay starts from the beginning of the input video.
+     * value should be in ISO 8601 format. For example, PT05S to start the overlay at 5 seconds into the input video. If
+     * not specified the overlay starts from the beginning of the input video.
      * 
      * @param start the start value to set.
      * @return the Overlay object itself.
@@ -131,9 +131,9 @@ public class Overlay {
     /**
      * Get the end property: The end position, with reference to the input video, at which the overlay ends. The value
      * should be in ISO 8601 format. For example, PT30S to end the overlay at 30 seconds into the input video. If not
-     * specified or the value is greater than the input video duration, the overlay will be applied until the end of
-     * the input video if the overlay media duration is greater than the input video duration, else the overlay will
-     * last as long as the overlay media duration.
+     * specified or the value is greater than the input video duration, the overlay will be applied until the end of the
+     * input video if the overlay media duration is greater than the input video duration, else the overlay will last as
+     * long as the overlay media duration.
      * 
      * @return the end value.
      */
@@ -144,9 +144,9 @@ public class Overlay {
     /**
      * Set the end property: The end position, with reference to the input video, at which the overlay ends. The value
      * should be in ISO 8601 format. For example, PT30S to end the overlay at 30 seconds into the input video. If not
-     * specified or the value is greater than the input video duration, the overlay will be applied until the end of
-     * the input video if the overlay media duration is greater than the input video duration, else the overlay will
-     * last as long as the overlay media duration.
+     * specified or the value is greater than the input video duration, the overlay will be applied until the end of the
+     * input video if the overlay media duration is greater than the input video duration, else the overlay will last as
+     * long as the overlay media duration.
      * 
      * @param end the end value to set.
      * @return the Overlay object itself.

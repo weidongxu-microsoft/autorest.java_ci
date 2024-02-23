@@ -15,10 +15,10 @@ import java.util.List;
 @Fluent
 public final class LiveEventTranscription {
     /*
-     * Specifies the language (locale) to be used for speech-to-text transcription – it should match the spoken
-     * language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
-     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and
-     * the list of supported languages.
+     * Specifies the language (locale) to be used for speech-to-text transcription – it should match the spoken language
+     * in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
+     * list of supported languages.
      */
     @JsonProperty(value = "language")
     private String language;
@@ -31,8 +31,8 @@ public final class LiveEventTranscription {
     private List<LiveEventInputTrackSelection> inputTrackSelection;
 
     /*
-     * Describes a transcription track in the output of a live event, generated using speech-to-text transcription.
-     * This property is reserved for future use, any value set on this property will be ignored.
+     * Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This
+     * property is reserved for future use, any value set on this property will be ignored.
      */
     @JsonProperty(value = "outputTranscriptionTrack")
     private LiveEventOutputTranscriptionTrack outputTranscriptionTrack;
@@ -46,8 +46,8 @@ public final class LiveEventTranscription {
     /**
      * Get the language property: Specifies the language (locale) to be used for speech-to-text transcription – it
      * should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
-     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and
-     * the list of supported languages.
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
+     * list of supported languages.
      * 
      * @return the language value.
      */
@@ -58,8 +58,8 @@ public final class LiveEventTranscription {
     /**
      * Set the language property: Specifies the language (locale) to be used for speech-to-text transcription – it
      * should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
-     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and
-     * the list of supported languages.
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
+     * list of supported languages.
      * 
      * @param language the language value to set.
      * @return the LiveEventTranscription object itself.

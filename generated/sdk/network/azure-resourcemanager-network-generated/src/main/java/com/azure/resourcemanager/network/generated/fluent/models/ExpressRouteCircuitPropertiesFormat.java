@@ -283,8 +283,8 @@ public final class ExpressRouteCircuitPropertiesFormat {
     }
 
     /**
-     * Get the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is
-     * provisioned on an ExpressRoutePort resource.
+     * Get the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned
+     * on an ExpressRoutePort resource.
      * 
      * @return the expressRoutePort value.
      */
@@ -293,8 +293,8 @@ public final class ExpressRouteCircuitPropertiesFormat {
     }
 
     /**
-     * Set the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is
-     * provisioned on an ExpressRoutePort resource.
+     * Set the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned
+     * on an ExpressRoutePort resource.
      * 
      * @param expressRoutePort the expressRoutePort value to set.
      * @return the ExpressRouteCircuitPropertiesFormat object itself.

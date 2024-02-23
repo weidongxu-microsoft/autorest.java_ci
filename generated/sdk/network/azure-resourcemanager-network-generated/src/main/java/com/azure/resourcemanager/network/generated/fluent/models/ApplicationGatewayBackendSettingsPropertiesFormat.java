@@ -113,8 +113,8 @@ public final class ApplicationGatewayBackendSettingsPropertiesFormat {
     }
 
     /**
-     * Get the timeout property: Connection timeout in seconds. Application Gateway will fail the request if response
-     * is not received within ConnectionTimeout. Acceptable values are from 1 second to 86400 seconds.
+     * Get the timeout property: Connection timeout in seconds. Application Gateway will fail the request if response is
+     * not received within ConnectionTimeout. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @return the timeout value.
      */
@@ -123,8 +123,8 @@ public final class ApplicationGatewayBackendSettingsPropertiesFormat {
     }
 
     /**
-     * Set the timeout property: Connection timeout in seconds. Application Gateway will fail the request if response
-     * is not received within ConnectionTimeout. Acceptable values are from 1 second to 86400 seconds.
+     * Set the timeout property: Connection timeout in seconds. Application Gateway will fail the request if response is
+     * not received within ConnectionTimeout. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @param timeout the timeout value to set.
      * @return the ApplicationGatewayBackendSettingsPropertiesFormat object itself.
@@ -196,8 +196,8 @@ public final class ApplicationGatewayBackendSettingsPropertiesFormat {
     }
 
     /**
-     * Get the pickHostnameFromBackendAddress property: Whether to pick server name indication from the host name of
-     * the backend server for Tls protocol. Default value is false.
+     * Get the pickHostnameFromBackendAddress property: Whether to pick server name indication from the host name of the
+     * backend server for Tls protocol. Default value is false.
      * 
      * @return the pickHostnameFromBackendAddress value.
      */
@@ -206,8 +206,8 @@ public final class ApplicationGatewayBackendSettingsPropertiesFormat {
     }
 
     /**
-     * Set the pickHostnameFromBackendAddress property: Whether to pick server name indication from the host name of
-     * the backend server for Tls protocol. Default value is false.
+     * Set the pickHostnameFromBackendAddress property: Whether to pick server name indication from the host name of the
+     * backend server for Tls protocol. Default value is false.
      * 
      * @param pickHostnameFromBackendAddress the pickHostnameFromBackendAddress value to set.
      * @return the ApplicationGatewayBackendSettingsPropertiesFormat object itself.

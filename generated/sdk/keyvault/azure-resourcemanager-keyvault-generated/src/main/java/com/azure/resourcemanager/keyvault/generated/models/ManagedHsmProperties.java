@@ -190,9 +190,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key,
-     * it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts
-     * values between 7 and 90.
+     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
+     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
+     * between 7 and 90.
      * 
      * @return the softDeleteRetentionInDays value.
      */
@@ -201,9 +201,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key,
-     * it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts
-     * values between 7 and 90.
+     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
+     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
+     * between 7 and 90.
      * 
      * @param softDeleteRetentionInDays the softDeleteRetentionInDays value to set.
      * @return the ManagedHsmProperties object itself.
@@ -280,8 +280,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the networkAcls property: Rules governing the accessibility of the key vault from specific network
-     * locations.
+     * Get the networkAcls property: Rules governing the accessibility of the key vault from specific network locations.
      * 
      * @return the networkAcls value.
      */
@@ -290,8 +289,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the networkAcls property: Rules governing the accessibility of the key vault from specific network
-     * locations.
+     * Set the networkAcls property: Rules governing the accessibility of the key vault from specific network locations.
      * 
      * @param networkAcls the networkAcls value to set.
      * @return the ManagedHsmProperties object itself.
@@ -322,8 +320,8 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed
-     * hsm pool.
+     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed hsm
+     * pool.
      * 
      * @return the privateEndpointConnections value.
      */

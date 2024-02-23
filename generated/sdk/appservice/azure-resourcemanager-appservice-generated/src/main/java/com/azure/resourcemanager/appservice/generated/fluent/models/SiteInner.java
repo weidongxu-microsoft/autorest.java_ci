@@ -354,8 +354,8 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @return the vnetRouteAllEnabled value.
      */
@@ -364,8 +364,8 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @param vnetRouteAllEnabled the vnetRouteAllEnabled value to set.
      * @return the SiteInner object itself.
@@ -784,8 +784,7 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @return the dailyMemoryTimeQuota value.
      */
@@ -794,8 +793,7 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @param dailyMemoryTimeQuota the dailyMemoryTimeQuota value to set.
      * @return the SiteInner object itself.
@@ -1016,8 +1014,8 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
@@ -1028,8 +1026,8 @@ public final class SiteInner extends Resource {
     }
 
     /**
-     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 

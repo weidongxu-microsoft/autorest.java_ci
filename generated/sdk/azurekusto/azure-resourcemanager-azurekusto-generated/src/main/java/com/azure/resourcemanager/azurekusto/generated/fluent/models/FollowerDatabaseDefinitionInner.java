@@ -95,8 +95,8 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following
-     * all databases.
+     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following all
+     * databases.
      * 
      * @return the databaseName value.
      */

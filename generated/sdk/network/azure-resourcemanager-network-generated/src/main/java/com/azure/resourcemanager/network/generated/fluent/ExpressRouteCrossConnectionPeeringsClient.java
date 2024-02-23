@@ -14,8 +14,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * ExpressRouteCrossConnectionPeeringsClient.
+ * An instance of this class provides access to all the operations defined in ExpressRouteCrossConnectionPeeringsClient.
  */
 public interface ExpressRouteCrossConnectionPeeringsClient {
     /**

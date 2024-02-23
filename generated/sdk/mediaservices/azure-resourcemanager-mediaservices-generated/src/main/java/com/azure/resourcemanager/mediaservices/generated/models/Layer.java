@@ -21,8 +21,8 @@ public class Layer {
     private String width;
 
     /*
-     * The height of the output video for this layer. The value can be absolute (in pixels) or relative (in
-     * percentage). For example 50% means the output video has half as many pixels in height as the input.
+     * The height of the output video for this layer. The value can be absolute (in pixels) or relative (in percentage).
+     * For example 50% means the output video has half as many pixels in height as the input.
      */
     @JsonProperty(value = "height")
     private String height;

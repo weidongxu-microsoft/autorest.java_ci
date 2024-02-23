@@ -138,8 +138,8 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
      * security perimeter and profile's access rules.
      * 
      * @return the publicNetworkAccess value.
@@ -149,8 +149,8 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
      * security perimeter and profile's access rules.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.

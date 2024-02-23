@@ -77,9 +77,9 @@ public final class H265Layer extends H265VideoLayer {
     }
 
     /**
-     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches
-     * the H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is
-     * appropriate for this layer.
+     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
+     * H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
+     * for this layer.
      * 
      * @return the level value.
      */
@@ -88,9 +88,9 @@ public final class H265Layer extends H265VideoLayer {
     }
 
     /**
-     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches
-     * the H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is
-     * appropriate for this layer.
+     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
+     * H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
+     * for this layer.
      * 
      * @param level the level value to set.
      * @return the H265Layer object itself.
@@ -124,9 +124,9 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Get the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
-     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower
-     * values would result in better quality, at the expense of higher file sizes. Higher values mean more compression,
-     * but at some point quality degradation will be noticed. Default value is 28.
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
+     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
+     * some point quality degradation will be noticed. Default value is 28.
      * 
      * @return the crf value.
      */
@@ -136,9 +136,9 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Set the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
-     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower
-     * values would result in better quality, at the expense of higher file sizes. Higher values mean more compression,
-     * but at some point quality degradation will be noticed. Default value is 28.
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
+     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
+     * some point quality degradation will be noticed. Default value is 28.
      * 
      * @param crf the crf value to set.
      * @return the H265Layer object itself.

@@ -120,8 +120,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Get the policies property: List of group policies that define the behavior of application group. The policies
-     * can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Get the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @return the policies value.
      */
@@ -130,8 +130,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Set the policies property: List of group policies that define the behavior of application group. The policies
-     * can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Set the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @param policies the policies value to set.
      * @return the ApplicationGroupInner object itself.

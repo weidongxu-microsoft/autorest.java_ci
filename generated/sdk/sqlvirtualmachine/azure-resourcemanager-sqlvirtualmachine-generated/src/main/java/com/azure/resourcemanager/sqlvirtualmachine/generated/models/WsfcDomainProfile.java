@@ -120,8 +120,8 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Get the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions
-     * to 'Create Computer Objects' in domain).
+     * Get the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to
+     * 'Create Computer Objects' in domain).
      * 
      * @return the clusterBootstrapAccount value.
      */
@@ -130,8 +130,8 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Set the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions
-     * to 'Create Computer Objects' in domain).
+     * Set the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to
+     * 'Create Computer Objects' in domain).
      * 
      * @param clusterBootstrapAccount the clusterBootstrapAccount value to set.
      * @return the WsfcDomainProfile object itself.

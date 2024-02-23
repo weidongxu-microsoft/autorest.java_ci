@@ -27,17 +27,17 @@ public class VideoLayer extends Layer {
     private Integer maxBitrate;
 
     /*
-     * The number of B-frames to be used when encoding this layer. If not specified, the encoder chooses an
-     * appropriate number based on the video profile and level.
+     * The number of B-frames to be used when encoding this layer. If not specified, the encoder chooses an appropriate
+     * number based on the video profile and level.
      */
     @JsonProperty(value = "bFrames")
     private Integer bFrames;
 
     /*
      * The frame rate (in frames per second) at which to encode this layer. The value can be in the form of M/N where M
-     * and N are integers (For example, 30000/1001), or in the form of a number (For example, 30, or 29.97). The
-     * encoder enforces constraints on allowed frame rates based on the profile and level. If it is not specified, the
-     * encoder will use the same frame rate as the input video.
+     * and N are integers (For example, 30000/1001), or in the form of a number (For example, 30, or 29.97). The encoder
+     * enforces constraints on allowed frame rates based on the profile and level. If it is not specified, the encoder
+     * will use the same frame rate as the input video.
      */
     @JsonProperty(value = "frameRate")
     private String frameRate;
@@ -50,8 +50,8 @@ public class VideoLayer extends Layer {
     private Integer slices;
 
     /*
-     * Whether or not adaptive B-frames are to be used when encoding this layer. If not specified, the encoder will
-     * turn it on whenever the video profile permits its use.
+     * Whether or not adaptive B-frames are to be used when encoding this layer. If not specified, the encoder will turn
+     * it on whenever the video profile permits its use.
      */
     @JsonProperty(value = "adaptiveBFrame")
     private Boolean adaptiveBFrame;
@@ -129,10 +129,10 @@ public class VideoLayer extends Layer {
     }
 
     /**
-     * Get the frameRate property: The frame rate (in frames per second) at which to encode this layer. The value can
-     * be in the form of M/N where M and N are integers (For example, 30000/1001), or in the form of a number (For
-     * example, 30, or 29.97). The encoder enforces constraints on allowed frame rates based on the profile and level.
-     * If it is not specified, the encoder will use the same frame rate as the input video.
+     * Get the frameRate property: The frame rate (in frames per second) at which to encode this layer. The value can be
+     * in the form of M/N where M and N are integers (For example, 30000/1001), or in the form of a number (For example,
+     * 30, or 29.97). The encoder enforces constraints on allowed frame rates based on the profile and level. If it is
+     * not specified, the encoder will use the same frame rate as the input video.
      * 
      * @return the frameRate value.
      */
@@ -141,10 +141,10 @@ public class VideoLayer extends Layer {
     }
 
     /**
-     * Set the frameRate property: The frame rate (in frames per second) at which to encode this layer. The value can
-     * be in the form of M/N where M and N are integers (For example, 30000/1001), or in the form of a number (For
-     * example, 30, or 29.97). The encoder enforces constraints on allowed frame rates based on the profile and level.
-     * If it is not specified, the encoder will use the same frame rate as the input video.
+     * Set the frameRate property: The frame rate (in frames per second) at which to encode this layer. The value can be
+     * in the form of M/N where M and N are integers (For example, 30000/1001), or in the form of a number (For example,
+     * 30, or 29.97). The encoder enforces constraints on allowed frame rates based on the profile and level. If it is
+     * not specified, the encoder will use the same frame rate as the input video.
      * 
      * @param frameRate the frameRate value to set.
      * @return the VideoLayer object itself.
@@ -177,8 +177,8 @@ public class VideoLayer extends Layer {
     }
 
     /**
-     * Get the adaptiveBFrame property: Whether or not adaptive B-frames are to be used when encoding this layer. If
-     * not specified, the encoder will turn it on whenever the video profile permits its use.
+     * Get the adaptiveBFrame property: Whether or not adaptive B-frames are to be used when encoding this layer. If not
+     * specified, the encoder will turn it on whenever the video profile permits its use.
      * 
      * @return the adaptiveBFrame value.
      */
@@ -187,8 +187,8 @@ public class VideoLayer extends Layer {
     }
 
     /**
-     * Set the adaptiveBFrame property: Whether or not adaptive B-frames are to be used when encoding this layer. If
-     * not specified, the encoder will turn it on whenever the video profile permits its use.
+     * Set the adaptiveBFrame property: Whether or not adaptive B-frames are to be used when encoding this layer. If not
+     * specified, the encoder will turn it on whenever the video profile permits its use.
      * 
      * @param adaptiveBFrame the adaptiveBFrame value to set.
      * @return the VideoLayer object itself.

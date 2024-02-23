@@ -106,9 +106,9 @@ public final class LiveEventTrackEventData {
     private String ingestDriftValue;
 
     /*
-     * This value is "On" for audio track heartbeats if live transcription is turned on, otherwise you will see an
-     * empty string. This state is only applicable to track type of "audio" for Live transcription. All other tracks
-     * will have an empty value.
+     * This value is "On" for audio track heartbeats if live transcription is turned on, otherwise you will see an empty
+     * string. This state is only applicable to track type of "audio" for Live transcription. All other tracks will have
+     * an empty value.
      */
     @JsonProperty(value = "transcriptionState")
     private String transcriptionState;
@@ -287,8 +287,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in
-     * last 20 seconds.
+     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
+     * 20 seconds.
      * 
      * @return the nonincreasingCount value.
      */
@@ -297,8 +297,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in
-     * last 20 seconds.
+     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
+     * 20 seconds.
      * 
      * @param nonincreasingCount the nonincreasingCount value to set.
      * @return the LiveEventTrackEventData object itself.

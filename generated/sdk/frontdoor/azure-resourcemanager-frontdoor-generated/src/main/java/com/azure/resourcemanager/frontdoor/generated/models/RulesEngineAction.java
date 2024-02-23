@@ -38,8 +38,7 @@ public final class RulesEngineAction {
     }
 
     /**
-     * Get the requestHeaderActions property: A list of header actions to apply from the request from AFD to the
-     * origin.
+     * Get the requestHeaderActions property: A list of header actions to apply from the request from AFD to the origin.
      * 
      * @return the requestHeaderActions value.
      */
@@ -48,8 +47,7 @@ public final class RulesEngineAction {
     }
 
     /**
-     * Set the requestHeaderActions property: A list of header actions to apply from the request from AFD to the
-     * origin.
+     * Set the requestHeaderActions property: A list of header actions to apply from the request from AFD to the origin.
      * 
      * @param requestHeaderActions the requestHeaderActions value to set.
      * @return the RulesEngineAction object itself.

@@ -64,8 +64,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Get the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled,
-     * Disabled.
+     * Get the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
      * 
      * @return the state value.
      */
@@ -74,8 +73,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Set the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled,
-     * Disabled.
+     * Set the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
      * 
      * @param state the state value to set.
      * @return the EncryptionScopeInner object itself.

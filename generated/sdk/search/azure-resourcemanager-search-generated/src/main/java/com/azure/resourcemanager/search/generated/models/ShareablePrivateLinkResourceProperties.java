@@ -51,8 +51,8 @@ public final class ShareablePrivateLinkResourceProperties {
     }
 
     /**
-     * Get the groupId property: The resource provider group id for the resource that has been onboarded to private
-     * link service and that's supported by search.
+     * Get the groupId property: The resource provider group id for the resource that has been onboarded to private link
+     * service and that's supported by search.
      * 
      * @return the groupId value.
      */

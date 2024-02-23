@@ -150,8 +150,7 @@ public final class PolicyAssignmentProperties {
     }
 
     /**
-     * Get the parameters property: The parameter values for the assigned policy rule. The keys are the parameter
-     * names.
+     * Get the parameters property: The parameter values for the assigned policy rule. The keys are the parameter names.
      * 
      * @return the parameters value.
      */
@@ -160,8 +159,7 @@ public final class PolicyAssignmentProperties {
     }
 
     /**
-     * Set the parameters property: The parameter values for the assigned policy rule. The keys are the parameter
-     * names.
+     * Set the parameters property: The parameter values for the assigned policy rule. The keys are the parameter names.
      * 
      * @param parameters the parameters value to set.
      * @return the PolicyAssignmentProperties object itself.

@@ -54,8 +54,8 @@ public class Video extends Codec {
     }
 
     /**
-     * Get the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the
-     * range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
+     * Get the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range
+     * [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
      * ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source
      * setting.
      * 
@@ -66,8 +66,8 @@ public class Video extends Codec {
     }
 
     /**
-     * Set the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the
-     * range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
+     * Set the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range
+     * [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
      * ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source
      * setting.
      * 

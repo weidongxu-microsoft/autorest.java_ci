@@ -272,8 +272,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      * 
      * @return the restorePointInTime value.
      */
@@ -282,8 +282,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      * 
      * @param restorePointInTime the restorePointInTime value to set.
      * @return the ServerProperties object itself.

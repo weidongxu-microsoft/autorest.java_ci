@@ -29,9 +29,9 @@ public final class SearchServiceProperties {
     private Integer replicaCount;
 
     /*
-     * The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater
-     * than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the
-     * allowed values are between 1 and 3.
+     * The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than
+     * 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed
+     * values are between 1 and 3.
      */
     @JsonProperty(value = "partitionCount")
     private Integer partitionCount;
@@ -45,8 +45,8 @@ public final class SearchServiceProperties {
     private HostingMode hostingMode;
 
     /*
-     * This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If
-     * set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the
+     * This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set
+     * to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the
      * exclusive access method.
      */
     @JsonProperty(value = "publicNetworkAccess")
@@ -55,12 +55,12 @@ public final class SearchServiceProperties {
     /*
      * The status of the search service. Possible values include: 'running': The search service is running and no
      * provisioning operations are underway. 'provisioning': The search service is being provisioned or scaled up or
-     * down. 'deleting': The search service is being deleted. 'degraded': The search service is degraded. This can
-     * occur when the underlying search units are not healthy. The search service is most likely operational, but
-     * performance might be slow and some requests might be dropped. 'disabled': The search service is disabled. In
-     * this state, the service will reject all API requests. 'error': The search service is in an error state. If your
-     * service is in the degraded, disabled, or error states, Microsoft is actively investigating the underlying issue.
-     * Dedicated services in these states are still chargeable based on the number of search units provisioned.
+     * down. 'deleting': The search service is being deleted. 'degraded': The search service is degraded. This can occur
+     * when the underlying search units are not healthy. The search service is most likely operational, but performance
+     * might be slow and some requests might be dropped. 'disabled': The search service is disabled. In this state, the
+     * service will reject all API requests. 'error': The search service is in an error state. If your service is in the
+     * degraded, disabled, or error states, Microsoft is actively investigating the underlying issue. Dedicated services
+     * in these states are still chargeable based on the number of search units provisioned.
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private SearchServiceStatus status;
@@ -157,9 +157,9 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Get the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2,
-     * 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with
-     * hostingMode set to 'highDensity', the allowed values are between 1 and 3.
+     * Get the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3,
+     * 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode
+     * set to 'highDensity', the allowed values are between 1 and 3.
      * 
      * @return the partitionCount value.
      */
@@ -168,9 +168,9 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Set the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2,
-     * 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with
-     * hostingMode set to 'highDensity', the allowed values are between 1 and 3.
+     * Set the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3,
+     * 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode
+     * set to 'highDensity', the allowed values are between 1 and 3.
      * 
      * @param partitionCount the partitionCount value to set.
      * @return the SearchServiceProperties object itself.
@@ -208,8 +208,8 @@ public final class SearchServiceProperties {
 
     /**
      * Get the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and
-     * private endpoint connections would be the exclusive access method.
+     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private
+     * endpoint connections would be the exclusive access method.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -219,8 +219,8 @@ public final class SearchServiceProperties {
 
     /**
      * Set the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and
-     * private endpoint connections would be the exclusive access method.
+     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private
+     * endpoint connections would be the exclusive access method.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the SearchServiceProperties object itself.
@@ -231,15 +231,15 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Get the status property: The status of the search service. Possible values include: 'running': The search
-     * service is running and no provisioning operations are underway. 'provisioning': The search service is being
-     * provisioned or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search
-     * service is degraded. This can occur when the underlying search units are not healthy. The search service is most
-     * likely operational, but performance might be slow and some requests might be dropped. 'disabled': The search
-     * service is disabled. In this state, the service will reject all API requests. 'error': The search service is in
-     * an error state. If your service is in the degraded, disabled, or error states, Microsoft is actively
-     * investigating the underlying issue. Dedicated services in these states are still chargeable based on the number
-     * of search units provisioned.
+     * Get the status property: The status of the search service. Possible values include: 'running': The search service
+     * is running and no provisioning operations are underway. 'provisioning': The search service is being provisioned
+     * or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search service is
+     * degraded. This can occur when the underlying search units are not healthy. The search service is most likely
+     * operational, but performance might be slow and some requests might be dropped. 'disabled': The search service is
+     * disabled. In this state, the service will reject all API requests. 'error': The search service is in an error
+     * state. If your service is in the degraded, disabled, or error states, Microsoft is actively investigating the
+     * underlying issue. Dedicated services in these states are still chargeable based on the number of search units
+     * provisioned.
      * 
      * @return the status value.
      */
@@ -257,13 +257,13 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Get the provisioningState property: The state of the last provisioning operation performed on the search
-     * service. Provisioning is an intermediate state that occurs while service capacity is being established. After
-     * capacity is set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll
-     * provisioning status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search
-     * Service operation to see when an operation is completed. If you are using the free service, this value tends to
-     * come back as 'succeeded' directly in the call to Create search service. This is because the free service uses
-     * capacity that is already set up.
+     * Get the provisioningState property: The state of the last provisioning operation performed on the search service.
+     * Provisioning is an intermediate state that occurs while service capacity is being established. After capacity is
+     * set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll provisioning
+     * status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search Service
+     * operation to see when an operation is completed. If you are using the free service, this value tends to come back
+     * as 'succeeded' directly in the call to Create search service. This is because the free service uses capacity that
+     * is already set up.
      * 
      * @return the provisioningState value.
      */
@@ -314,8 +314,8 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to
-     * utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
      * 
      * @return the disableLocalAuth value.
      */
@@ -324,8 +324,8 @@ public final class SearchServiceProperties {
     }
 
     /**
-     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to
-     * utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
      * 
      * @param disableLocalAuth the disableLocalAuth value to set.
      * @return the SearchServiceProperties object itself.

@@ -316,8 +316,8 @@ public final class MetricAlertProperties {
     }
 
     /**
-     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when
-     * an alert condition is resolved.
+     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -326,8 +326,8 @@ public final class MetricAlertProperties {
     }
 
     /**
-     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when
-     * an alert condition is resolved.
+     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @param actions the actions value to set.
      * @return the MetricAlertProperties object itself.

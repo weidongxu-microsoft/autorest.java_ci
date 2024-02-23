@@ -66,8 +66,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should
-     * be used for linking resources which require read access.
+     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @return the resourceId value.
      */
@@ -76,8 +76,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should
-     * be used for linking resources which require read access.
+     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @param resourceId the resourceId value to set.
      * @return the LinkedServiceInner object itself.

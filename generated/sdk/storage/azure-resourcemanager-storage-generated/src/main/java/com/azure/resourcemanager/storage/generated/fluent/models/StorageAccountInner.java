@@ -171,8 +171,8 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Get the primaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
-     * or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.
+     * Get the primaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue, or
+     * table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.
      * 
      * @return the primaryEndpoints value.
      */
@@ -522,8 +522,8 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
@@ -532,8 +532,8 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @param allowBlobPublicAccess the allowBlobPublicAccess value to set.
      * @return the StorageAccountInner object itself.
@@ -573,9 +573,8 @@ public final class StorageAccountInner extends Resource {
 
     /**
      * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -585,9 +584,8 @@ public final class StorageAccountInner extends Resource {
 
     /**
      * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
      * @return the StorageAccountInner object itself.
@@ -783,8 +781,8 @@ public final class StorageAccountInner extends Resource {
 
     /**
      * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
@@ -794,8 +792,8 @@ public final class StorageAccountInner extends Resource {
 
     /**
      * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @param dnsEndpointType the dnsEndpointType value to set.
      * @return the StorageAccountInner object itself.

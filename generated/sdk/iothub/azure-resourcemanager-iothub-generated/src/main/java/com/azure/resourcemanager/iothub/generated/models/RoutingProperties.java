@@ -23,9 +23,9 @@ public final class RoutingProperties {
     private RoutingEndpoints endpoints;
 
     /*
-     * The list of user-provided routing rules that the IoT hub uses to route messages to built-in and custom
-     * endpoints. A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5 routing rules are allowed
-     * for free hubs.
+     * The list of user-provided routing rules that the IoT hub uses to route messages to built-in and custom endpoints.
+     * A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5 routing rules are allowed for free
+     * hubs.
      */
     @JsonProperty(value = "routes")
     private List<RouteProperties> routes;
@@ -39,8 +39,8 @@ public final class RoutingProperties {
     private FallbackRouteProperties fallbackRoute;
 
     /*
-     * The list of user-provided enrichments that the IoT hub applies to messages to be delivered to built-in and
-     * custom endpoints. See: https://aka.ms/telemetryoneventgrid
+     * The list of user-provided enrichments that the IoT hub applies to messages to be delivered to built-in and custom
+     * endpoints. See: https://aka.ms/telemetryoneventgrid
      */
     @JsonProperty(value = "enrichments")
     private List<EnrichmentProperties> enrichments;

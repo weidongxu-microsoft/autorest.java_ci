@@ -98,8 +98,7 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Get the requestMessage property: The request message for requesting approval of the shared private link
-     * resource.
+     * Get the requestMessage property: The request message for requesting approval of the shared private link resource.
      * 
      * @return the requestMessage value.
      */
@@ -108,8 +107,7 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Set the requestMessage property: The request message for requesting approval of the shared private link
-     * resource.
+     * Set the requestMessage property: The request message for requesting approval of the shared private link resource.
      * 
      * @param requestMessage the requestMessage value to set.
      * @return the SharedPrivateLinkResourceProperties object itself.
@@ -144,8 +142,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Get the status property: Status of the shared private link resource. Valid values are Pending, Approved,
-     * Rejected or Disconnected.
+     * Get the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected
+     * or Disconnected.
      * 
      * @return the status value.
      */
@@ -154,8 +152,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Set the status property: Status of the shared private link resource. Valid values are Pending, Approved,
-     * Rejected or Disconnected.
+     * Set the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected
+     * or Disconnected.
      * 
      * @param status the status value to set.
      * @return the SharedPrivateLinkResourceProperties object itself.

@@ -25,8 +25,8 @@ public final class EventSummaryInner extends ProxyResource {
     private EventProperties innerProperties;
 
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the
-     * user is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
+     * is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -195,8 +195,8 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the billingProfileDisplayName property: The display name of the billing profile for which the event
-     * happened. The property is only available for billing account of type MicrosoftCustomerAgreement.
+     * Get the billingProfileDisplayName property: The display name of the billing profile for which the event happened.
+     * The property is only available for billing account of type MicrosoftCustomerAgreement.
      * 
      * @return the billingProfileDisplayName value.
      */
@@ -298,8 +298,8 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalanceInBillingCurrency property: The balance in billing currency after the event, Note: This
-     * will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Get the closedBalanceInBillingCurrency property: The balance in billing currency after the event, Note: This will
+     * not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the closedBalanceInBillingCurrency value.
      */

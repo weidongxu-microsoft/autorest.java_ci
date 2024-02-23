@@ -141,8 +141,8 @@ public final class NamespaceUpdateParameters {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules"
      * /&gt;.
@@ -154,8 +154,8 @@ public final class NamespaceUpdateParameters {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules"
      * /&gt;.
@@ -172,8 +172,8 @@ public final class NamespaceUpdateParameters {
     }
 
     /**
-     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
@@ -182,8 +182,8 @@ public final class NamespaceUpdateParameters {
     }
 
     /**
-     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @param inboundIpRules the inboundIpRules value to set.
      * @return the NamespaceUpdateParameters object itself.

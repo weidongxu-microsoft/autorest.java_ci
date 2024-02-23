@@ -52,8 +52,7 @@ public final class ListContainerSasInput {
     }
 
     /**
-     * Get the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current
-     * time.
+     * Get the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current time.
      * 
      * @return the expiryTime value.
      */
@@ -62,8 +61,7 @@ public final class ListContainerSasInput {
     }
 
     /**
-     * Set the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current
-     * time.
+     * Set the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current time.
      * 
      * @param expiryTime the expiryTime value to set.
      * @return the ListContainerSasInput object itself.

@@ -34,8 +34,7 @@ import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPolic
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * ObjectReplicationPoliciesOperationsClient.
+ * An instance of this class provides access to all the operations defined in ObjectReplicationPoliciesOperationsClient.
  */
 public final class ObjectReplicationPoliciesOperationsClientImpl implements ObjectReplicationPoliciesOperationsClient {
     /**
@@ -60,8 +59,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientObjectReplicationPoliciesOperations to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientObjectReplicationPoliciesOperations to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")

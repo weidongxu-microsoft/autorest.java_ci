@@ -114,10 +114,10 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
     }
 
     /**
-     * Get the plan property: Specifies information about the marketplace image used to create the virtual machine.
-     * This element is only used for marketplace images. Before you can use a marketplace image from an API, you must
-     * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and
-     * then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
+     * Get the plan property: Specifies information about the marketplace image used to create the virtual machine. This
+     * element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable
+     * the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and then
+     * click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
      * **Save**.
      * 
      * @return the plan value.
@@ -127,10 +127,10 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
     }
 
     /**
-     * Set the plan property: Specifies information about the marketplace image used to create the virtual machine.
-     * This element is only used for marketplace images. Before you can use a marketplace image from an API, you must
-     * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and
-     * then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
+     * Set the plan property: Specifies information about the marketplace image used to create the virtual machine. This
+     * element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable
+     * the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and then
+     * click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
      * **Save**.
      * 
      * @param plan the plan value to set.
@@ -377,8 +377,7 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
     }
 
     /**
-     * Get the networkProfileConfiguration property: Specifies the network profile configuration of the virtual
-     * machine.
+     * Get the networkProfileConfiguration property: Specifies the network profile configuration of the virtual machine.
      * 
      * @return the networkProfileConfiguration value.
      */
@@ -387,8 +386,7 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
     }
 
     /**
-     * Set the networkProfileConfiguration property: Specifies the network profile configuration of the virtual
-     * machine.
+     * Set the networkProfileConfiguration property: Specifies the network profile configuration of the virtual machine.
      * 
      * @param networkProfileConfiguration the networkProfileConfiguration value to set.
      * @return the VirtualMachineScaleSetVMInner object itself.
@@ -473,10 +471,10 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
 
     /**
      * Get the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
-     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
-     * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
-     * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
-     * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
+     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
+     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
+     * information, see [Azure Hybrid Use Benefit for Windows
      * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
      * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
      * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
@@ -490,10 +488,10 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
 
     /**
      * Set the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
-     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
-     * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
-     * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
-     * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
+     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
+     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
+     * information, see [Azure Hybrid Use Benefit for Windows
      * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
      * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
      * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;

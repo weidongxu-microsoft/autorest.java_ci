@@ -63,8 +63,8 @@ public final class EventDataInner {
     private String correlationId;
 
     /*
-     * the event name. This value should not be confused with OperationName. For practical purposes, OperationName
-     * might be more appealing to end users.
+     * the event name. This value should not be confused with OperationName. For practical purposes, OperationName might
+     * be more appealing to end users.
      */
     @JsonProperty(value = "eventName", access = JsonProperty.Access.WRITE_ONLY)
     private LocalizableStringInner eventName;
@@ -113,8 +113,8 @@ public final class EventDataInner {
     private LocalizableStringInner resourceType;
 
     /*
-     * It is usually a GUID shared among the events corresponding to single operation. This value should not be
-     * confused with EventName.
+     * It is usually a GUID shared among the events corresponding to single operation. This value should not be confused
+     * with EventName.
      */
     @JsonProperty(value = "operationId", access = JsonProperty.Access.WRITE_ONLY)
     private String operationId;
@@ -141,10 +141,10 @@ public final class EventDataInner {
 
     /*
      * the event sub status. Most of the time, when included, this captures the HTTP status code of the REST call.
-     * Common values are: OK (HTTP Status Code: 200), Created (HTTP Status Code: 201), Accepted (HTTP Status Code:
-     * 202), No Content (HTTP Status Code: 204), Bad Request(HTTP Status Code: 400), Not Found (HTTP Status Code: 404),
-     * Conflict (HTTP Status Code: 409), Internal Server Error (HTTP Status Code: 500), Service Unavailable (HTTP
-     * Status Code:503), Gateway Timeout (HTTP Status Code: 504)
+     * Common values are: OK (HTTP Status Code: 200), Created (HTTP Status Code: 201), Accepted (HTTP Status Code: 202),
+     * No Content (HTTP Status Code: 204), Bad Request(HTTP Status Code: 400), Not Found (HTTP Status Code: 404),
+     * Conflict (HTTP Status Code: 409), Internal Server Error (HTTP Status Code: 500), Service Unavailable (HTTP Status
+     * Code:503), Gateway Timeout (HTTP Status Code: 504)
      */
     @JsonProperty(value = "subStatus", access = JsonProperty.Access.WRITE_ONLY)
     private LocalizableStringInner subStatus;
@@ -385,10 +385,9 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the submissionTimestamp property: the timestamp of when the event became available for querying via this
-     * API. It is in ISO 8601 format. This value should not be confused eventTimestamp. As there might be a delay
-     * between the occurrence time of the event, and the time that the event is submitted to the Azure logging
-     * infrastructure.
+     * Get the submissionTimestamp property: the timestamp of when the event became available for querying via this API.
+     * It is in ISO 8601 format. This value should not be confused eventTimestamp. As there might be a delay between the
+     * occurrence time of the event, and the time that the event is submitted to the Azure logging infrastructure.
      * 
      * @return the submissionTimestamp value.
      */

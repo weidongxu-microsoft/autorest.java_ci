@@ -261,8 +261,8 @@ public final class AppServiceCertificateOrderProperties {
     }
 
     /**
-     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed
-     * when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when
+     * it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
@@ -271,8 +271,8 @@ public final class AppServiceCertificateOrderProperties {
     }
 
     /**
-     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed
-     * when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when
+     * it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param autoRenew the autoRenew value to set.
      * @return the AppServiceCertificateOrderProperties object itself.

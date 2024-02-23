@@ -9,8 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes the properties of a TransformOutput, which are the rules to be applied while generating the desired
- * output.
+ * Describes the properties of a TransformOutput, which are the rules to be applied while generating the desired output.
  */
 @Fluent
 public final class TransformOutput {

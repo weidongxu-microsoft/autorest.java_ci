@@ -64,8 +64,8 @@ public final class ExportDefinition {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time
-     * period must be provided.
+     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
+     * must be provided.
      * 
      * @return the timeframe value.
      */
@@ -74,8 +74,8 @@ public final class ExportDefinition {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time
-     * period must be provided.
+     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
+     * must be provided.
      * 
      * @param timeframe the timeframe value to set.
      * @return the ExportDefinition object itself.

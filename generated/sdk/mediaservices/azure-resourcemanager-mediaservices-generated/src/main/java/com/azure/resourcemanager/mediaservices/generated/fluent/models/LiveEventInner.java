@@ -152,8 +152,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used
-     * for the live event and settings for the live encoder if it is used.
+     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
+     * the live event and settings for the live encoder if it is used.
      * 
      * @return the encoding value.
      */
@@ -162,8 +162,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used
-     * for the live event and settings for the live encoder if it is used.
+     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
+     * the live event and settings for the live encoder if it is used.
      * 
      * @param encoding the encoding value to set.
      * @return the LiveEventInner object itself.

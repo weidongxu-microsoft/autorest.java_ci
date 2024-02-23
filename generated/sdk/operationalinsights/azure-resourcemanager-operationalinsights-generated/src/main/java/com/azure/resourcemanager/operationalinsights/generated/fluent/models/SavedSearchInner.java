@@ -35,8 +35,8 @@ public final class SavedSearchInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify
-     * the current Etag.
+     * Get the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the
+     * current Etag.
      * 
      * @return the etag value.
      */
@@ -45,8 +45,8 @@ public final class SavedSearchInner extends ProxyResource {
     }
 
     /**
-     * Set the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify
-     * the current Etag.
+     * Set the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the
+     * current Etag.
      * 
      * @param etag the etag value to set.
      * @return the SavedSearchInner object itself.
@@ -158,9 +158,9 @@ public final class SavedSearchInner extends ProxyResource {
     }
 
     /**
-     * Get the functionParameters property: The optional function parameters if query serves as a function. Value
-     * should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
-     * more examples and proper syntax please refer to
+     * Get the functionParameters property: The optional function parameters if query serves as a function. Value should
+     * be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more
+     * examples and proper syntax please refer to
      * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      * 
      * @return the functionParameters value.
@@ -170,9 +170,9 @@ public final class SavedSearchInner extends ProxyResource {
     }
 
     /**
-     * Set the functionParameters property: The optional function parameters if query serves as a function. Value
-     * should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
-     * more examples and proper syntax please refer to
+     * Set the functionParameters property: The optional function parameters if query serves as a function. Value should
+     * be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more
+     * examples and proper syntax please refer to
      * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      * 
      * @param functionParameters the functionParameters value to set.

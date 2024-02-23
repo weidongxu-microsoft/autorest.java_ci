@@ -38,8 +38,8 @@ public final class ThresholdRuleCondition extends RuleCondition {
     private Duration windowSize;
 
     /*
-     * the time aggregation operator. How the data that are collected should be combined over time. The default value
-     * is the PrimaryAggregationType of the Metric.
+     * the time aggregation operator. How the data that are collected should be combined over time. The default value is
+     * the PrimaryAggregationType of the Metric.
      */
     @JsonProperty(value = "timeAggregation")
     private TimeAggregationOperator timeAggregation;

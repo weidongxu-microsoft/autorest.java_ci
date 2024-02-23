@@ -28,8 +28,8 @@ public final class NaptrRecord {
     private Integer preference;
 
     /*
-     * The flags specific to DDDS applications. Values currently defined in RFC 3404 are uppercase and lowercase
-     * letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation marks.
+     * The flags specific to DDDS applications. Values currently defined in RFC 3404 are uppercase and lowercase letters
+     * "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation marks.
      */
     @JsonProperty(value = "flags")
     private String flags;
@@ -43,16 +43,16 @@ public final class NaptrRecord {
     /*
      * The regular expression that the DDDS application uses to convert an input value into an output value. For
      * example: an IP phone system might use a regular expression to convert a phone number that is entered by a user
-     * into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for 'regexp' or a
-     * value for 'replacement'.
+     * into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for 'regexp' or a value
+     * for 'replacement'.
      */
     @JsonProperty(value = "regexp")
     private String regexp;
 
     /*
      * The replacement is a fully qualified domain name (FQDN) of the next domain name that you want the DDDS
-     * application to submit a DNS query for. The DDDS application replaces the input value with the value specified
-     * for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you specify a value for
+     * application to submit a DNS query for. The DDDS application replaces the input value with the value specified for
+     * replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you specify a value for
      * 'regexp', specify a dot (.) for 'replacement'.
      */
     @JsonProperty(value = "replacement")

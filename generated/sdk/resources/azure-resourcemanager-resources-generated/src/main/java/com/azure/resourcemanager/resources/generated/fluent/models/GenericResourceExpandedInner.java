@@ -42,8 +42,8 @@ public final class GenericResourceExpandedInner extends GenericResourceInner {
     }
 
     /**
-     * Get the createdTime property: The created time of the resource. This is only present if requested via the
-     * $expand query parameter.
+     * Get the createdTime property: The created time of the resource. This is only present if requested via the $expand
+     * query parameter.
      * 
      * @return the createdTime value.
      */
@@ -52,8 +52,8 @@ public final class GenericResourceExpandedInner extends GenericResourceInner {
     }
 
     /**
-     * Get the changedTime property: The changed time of the resource. This is only present if requested via the
-     * $expand query parameter.
+     * Get the changedTime property: The changed time of the resource. This is only present if requested via the $expand
+     * query parameter.
      * 
      * @return the changedTime value.
      */
@@ -62,8 +62,8 @@ public final class GenericResourceExpandedInner extends GenericResourceInner {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the resource. This is only present if requested
-     * via the $expand query parameter.
+     * Get the provisioningState property: The provisioning state of the resource. This is only present if requested via
+     * the $expand query parameter.
      * 
      * @return the provisioningState value.
      */

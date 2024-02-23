@@ -107,8 +107,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Get the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration
-     * that should be associated with this partner namespace. This takes the following format:
+     * Get the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration that
+     * should be associated with this partner namespace. This takes the following format:
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}.
      * 
      * @return the partnerRegistrationFullyQualifiedId value.
@@ -118,8 +118,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Set the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration
-     * that should be associated with this partner namespace. This takes the following format:
+     * Set the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration that
+     * should be associated with this partner namespace. This takes the following format:
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}.
      * 
      * @param partnerRegistrationFullyQualifiedId the partnerRegistrationFullyQualifiedId value to set.
@@ -163,8 +163,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules"
      * /&gt;.
@@ -176,8 +176,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules"
      * /&gt;.
@@ -191,8 +191,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
@@ -201,8 +201,8 @@ public final class PartnerNamespaceProperties {
     }
 
     /**
-     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @param inboundIpRules the inboundIpRules value to set.
      * @return the PartnerNamespaceProperties object itself.

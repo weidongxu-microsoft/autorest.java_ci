@@ -51,8 +51,8 @@ public final class ComponentFeatureCapabilitiesClientImpl implements ComponentFe
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientComponentFeatureCapabilities to
-     * be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientComponentFeatureCapabilities to be
+     * used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")

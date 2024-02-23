@@ -34,8 +34,7 @@ public final class ResourceUriList {
     }
 
     /**
-     * Get the value property: A list of IDs or Owner IDs of resources which are encrypted with the disk encryption
-     * set.
+     * Get the value property: A list of IDs or Owner IDs of resources which are encrypted with the disk encryption set.
      * 
      * @return the value value.
      */
@@ -44,8 +43,7 @@ public final class ResourceUriList {
     }
 
     /**
-     * Set the value property: A list of IDs or Owner IDs of resources which are encrypted with the disk encryption
-     * set.
+     * Set the value property: A list of IDs or Owner IDs of resources which are encrypted with the disk encryption set.
      * 
      * @param value the value value to set.
      * @return the ResourceUriList object itself.

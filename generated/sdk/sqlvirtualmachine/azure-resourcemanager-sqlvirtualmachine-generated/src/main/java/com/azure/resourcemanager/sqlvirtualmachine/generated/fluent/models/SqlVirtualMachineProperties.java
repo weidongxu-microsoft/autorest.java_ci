@@ -295,8 +295,8 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
      * 
      * @return the wsfcDomainCredentials value.
      */
@@ -305,8 +305,8 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
      * 
      * @param wsfcDomainCredentials the wsfcDomainCredentials value to set.
      * @return the SqlVirtualMachineProperties object itself.

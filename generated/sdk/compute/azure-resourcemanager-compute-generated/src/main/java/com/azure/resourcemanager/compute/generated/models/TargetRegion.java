@@ -71,8 +71,8 @@ public final class TargetRegion {
     }
 
     /**
-     * Get the regionalReplicaCount property: The number of replicas of the Image Version to be created per region.
-     * This property is updatable.
+     * Get the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This
+     * property is updatable.
      * 
      * @return the regionalReplicaCount value.
      */
@@ -81,8 +81,8 @@ public final class TargetRegion {
     }
 
     /**
-     * Set the regionalReplicaCount property: The number of replicas of the Image Version to be created per region.
-     * This property is updatable.
+     * Set the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This
+     * property is updatable.
      * 
      * @param regionalReplicaCount the regionalReplicaCount value to set.
      * @return the TargetRegion object itself.

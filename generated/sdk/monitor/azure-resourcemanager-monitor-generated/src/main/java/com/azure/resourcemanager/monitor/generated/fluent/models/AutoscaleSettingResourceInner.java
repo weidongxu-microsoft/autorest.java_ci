@@ -58,8 +58,8 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling
-     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
+     * for different time periods. A maximum of 20 profiles can be specified.
      * 
      * @return the profiles value.
      */
@@ -68,8 +68,8 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling
-     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
+     * for different time periods. A maximum of 20 profiles can be specified.
      * 
      * @param profiles the profiles value to set.
      * @return the AutoscaleSettingResourceInner object itself.

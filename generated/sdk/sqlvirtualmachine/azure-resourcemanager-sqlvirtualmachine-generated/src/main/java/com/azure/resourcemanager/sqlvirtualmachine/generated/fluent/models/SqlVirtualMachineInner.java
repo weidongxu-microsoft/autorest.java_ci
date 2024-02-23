@@ -287,8 +287,8 @@ public final class SqlVirtualMachineInner extends Resource {
     }
 
     /**
-     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
      * 
      * @return the wsfcDomainCredentials value.
      */
@@ -297,8 +297,8 @@ public final class SqlVirtualMachineInner extends Resource {
     }
 
     /**
-     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
      * 
      * @param wsfcDomainCredentials the wsfcDomainCredentials value to set.
      * @return the SqlVirtualMachineInner object itself.

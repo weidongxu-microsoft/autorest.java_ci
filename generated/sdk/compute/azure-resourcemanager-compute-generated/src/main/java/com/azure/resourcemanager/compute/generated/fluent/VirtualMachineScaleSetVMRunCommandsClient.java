@@ -15,8 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineR
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * VirtualMachineScaleSetVMRunCommandsClient.
+ * An instance of this class provides access to all the operations defined in VirtualMachineScaleSetVMRunCommandsClient.
  */
 public interface VirtualMachineScaleSetVMRunCommandsClient {
     /**

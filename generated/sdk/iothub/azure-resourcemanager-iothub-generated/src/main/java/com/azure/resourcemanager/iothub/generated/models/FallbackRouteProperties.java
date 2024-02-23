@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The properties of the fallback route. IoT Hub uses these properties when it routes messages to the fallback
- * endpoint.
+ * The properties of the fallback route. IoT Hub uses these properties when it routes messages to the fallback endpoint.
  */
 @Fluent
 public final class FallbackRouteProperties {
@@ -122,8 +121,8 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Get the endpointNames property: The list of endpoints to which the messages that satisfy the condition are
-     * routed to. Currently only 1 endpoint is allowed.
+     * Get the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed
+     * to. Currently only 1 endpoint is allowed.
      * 
      * @return the endpointNames value.
      */
@@ -132,8 +131,8 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Set the endpointNames property: The list of endpoints to which the messages that satisfy the condition are
-     * routed to. Currently only 1 endpoint is allowed.
+     * Set the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed
+     * to. Currently only 1 endpoint is allowed.
      * 
      * @param endpointNames the endpointNames value to set.
      * @return the FallbackRouteProperties object itself.

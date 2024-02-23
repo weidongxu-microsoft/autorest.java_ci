@@ -26,8 +26,7 @@ public final class ContainerAppsConfiguration {
     private String platformReservedCidr;
 
     /*
-     * An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS
-     * server
+     * An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server
      */
     @JsonProperty(value = "platformReservedDnsIP")
     private String platformReservedDnsIp;
@@ -106,8 +105,8 @@ public final class ContainerAppsConfiguration {
     }
 
     /**
-     * Get the platformReservedDnsIp property: An IP address from the IP range defined by platformReservedCidr that
-     * will be reserved for the internal DNS server.
+     * Get the platformReservedDnsIp property: An IP address from the IP range defined by platformReservedCidr that will
+     * be reserved for the internal DNS server.
      * 
      * @return the platformReservedDnsIp value.
      */
@@ -116,8 +115,8 @@ public final class ContainerAppsConfiguration {
     }
 
     /**
-     * Set the platformReservedDnsIp property: An IP address from the IP range defined by platformReservedCidr that
-     * will be reserved for the internal DNS server.
+     * Set the platformReservedDnsIp property: An IP address from the IP range defined by platformReservedCidr that will
+     * be reserved for the internal DNS server.
      * 
      * @param platformReservedDnsIp the platformReservedDnsIp value to set.
      * @return the ContainerAppsConfiguration object itself.

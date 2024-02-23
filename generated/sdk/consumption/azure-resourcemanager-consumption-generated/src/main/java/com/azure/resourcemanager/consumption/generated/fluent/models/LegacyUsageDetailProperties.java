@@ -178,8 +178,8 @@ public final class LegacyUsageDetailProperties {
 
     /*
      * Additional details of this usage item. By default this is not populated, unless it's specified in $expand. Use
-     * this field to get usage line item specific details such as the actual VM Size (ServiceType) or the ratio in
-     * which the reservation discount is applied.
+     * this field to get usage line item specific details such as the actual VM Size (ServiceType) or the ratio in which
+     * the reservation discount is applied.
      */
     @JsonProperty(value = "additionalInfo", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalInfo;
@@ -501,8 +501,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the
-     * usage or was purchased. This value is not provided for marketplace usage.
+     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage
+     * or was purchased. This value is not provided for marketplace usage.
      * 
      * @return the consumedService value.
      */
@@ -596,8 +596,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the reservationName property: User provided display name of the reservation. Last known name for a
-     * particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular
+     * day is populated in the daily data. Only applies to records relevant to reservations.
      * 
      * @return the reservationName value.
      */

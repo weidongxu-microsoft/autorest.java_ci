@@ -65,8 +65,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualNetworkPeerings to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualNetworkPeerings to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

@@ -81,9 +81,9 @@ public final class ReservationSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the reservationId property: The reservation ID is the identifier of a reservation within a reservation
-     * order. Each reservation is the grouping for applying the benefit scope and also specifies the number of
-     * instances to which the reservation benefit can be applied to.
+     * Get the reservationId property: The reservation ID is the identifier of a reservation within a reservation order.
+     * Each reservation is the grouping for applying the benefit scope and also specifies the number of instances to
+     * which the reservation benefit can be applied to.
      * 
      * @return the reservationId value.
      */

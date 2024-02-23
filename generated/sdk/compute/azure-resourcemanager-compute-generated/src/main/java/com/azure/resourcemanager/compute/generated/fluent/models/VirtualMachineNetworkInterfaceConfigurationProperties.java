@@ -333,8 +333,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Get the auxiliarySku property: Specifies whether the Auxiliary sku is enabled for the Network Interface
-     * resource.
+     * Get the auxiliarySku property: Specifies whether the Auxiliary sku is enabled for the Network Interface resource.
      * 
      * @return the auxiliarySku value.
      */
@@ -343,8 +342,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Set the auxiliarySku property: Specifies whether the Auxiliary sku is enabled for the Network Interface
-     * resource.
+     * Set the auxiliarySku property: Specifies whether the Auxiliary sku is enabled for the Network Interface resource.
      * 
      * @param auxiliarySku the auxiliarySku value to set.
      * @return the VirtualMachineNetworkInterfaceConfigurationProperties object itself.

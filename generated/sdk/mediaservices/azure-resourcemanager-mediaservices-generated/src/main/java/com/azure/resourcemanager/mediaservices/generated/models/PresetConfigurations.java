@@ -35,15 +35,15 @@ public final class PresetConfigurations {
     private Float keyFrameIntervalInSeconds;
 
     /*
-     * The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as
-     * 6000000 to avoid producing very high bitrate outputs for contents with high complexity.
+     * The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as 6000000
+     * to avoid producing very high bitrate outputs for contents with high complexity.
      */
     @JsonProperty(value = "maxBitrateBps")
     private Integer maxBitrateBps;
 
     /*
-     * The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P
-     * even if the input is 4K.
+     * The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P even
+     * if the input is 4K.
      */
     @JsonProperty(value = "maxHeight")
     private Integer maxHeight;

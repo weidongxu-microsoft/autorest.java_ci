@@ -33,8 +33,8 @@ public final class StorageAccountPropertiesCreateParameters {
     private AllowedCopyScope allowedCopyScope;
 
     /*
-     * Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be
-     * 'Enabled' or 'Disabled'.
+     * Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled'
+     * or 'Disabled'.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
@@ -53,8 +53,8 @@ public final class StorageAccountPropertiesCreateParameters {
 
     /*
      * User domain assigned to the storage account. Name is the CNAME source. Only one custom domain is supported per
-     * storage account at this time. To clear the existing custom domain, use an empty string for the custom domain
-     * name property.
+     * storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name
+     * property.
      */
     @JsonProperty(value = "customDomain")
     private CustomDomain customDomain;
@@ -72,9 +72,9 @@ public final class StorageAccountPropertiesCreateParameters {
     private NetworkRuleSet networkRuleSet;
 
     /*
-     * Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium'
-     * access tier is the default value for premium block blobs storage account type and it cannot be changed for the
-     * premium block blobs storage account type.
+     * Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access
+     * tier is the default value for premium block blobs storage account type and it cannot be changed for the premium
+     * block blobs storage account type.
      */
     @JsonProperty(value = "accessTier")
     private AccessTier accessTier;
@@ -509,8 +509,8 @@ public final class StorageAccountPropertiesCreateParameters {
     }
 
     /**
-     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
@@ -519,8 +519,8 @@ public final class StorageAccountPropertiesCreateParameters {
     }
 
     /**
-     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @param allowBlobPublicAccess the allowBlobPublicAccess value to set.
      * @return the StorageAccountPropertiesCreateParameters object itself.
@@ -554,9 +554,8 @@ public final class StorageAccountPropertiesCreateParameters {
 
     /**
      * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -566,9 +565,8 @@ public final class StorageAccountPropertiesCreateParameters {
 
     /**
      * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
      * @return the StorageAccountPropertiesCreateParameters object itself.
@@ -675,8 +673,8 @@ public final class StorageAccountPropertiesCreateParameters {
 
     /**
      * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
@@ -686,8 +684,8 @@ public final class StorageAccountPropertiesCreateParameters {
 
     /**
      * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @param dnsEndpointType the dnsEndpointType value to set.
      * @return the StorageAccountPropertiesCreateParameters object itself.

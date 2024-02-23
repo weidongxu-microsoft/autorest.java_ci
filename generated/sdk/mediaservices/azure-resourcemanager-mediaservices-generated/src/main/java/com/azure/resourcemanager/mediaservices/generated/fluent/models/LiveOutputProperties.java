@@ -40,8 +40,8 @@ public final class LiveOutputProperties {
     /*
      * ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during
      * Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with
-     * original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window
-     * length. Service will use implicit default value 30m only if Live Event enables LL.
+     * original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length.
+     * Service will use implicit default value 30m only if Live Event enables LL.
      */
     @JsonProperty(value = "rewindWindowLength")
     private Duration rewindWindowLength;

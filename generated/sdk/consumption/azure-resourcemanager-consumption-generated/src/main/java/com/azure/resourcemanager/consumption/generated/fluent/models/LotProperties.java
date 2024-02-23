@@ -51,8 +51,8 @@ public final class LotProperties {
     private OffsetDateTime expirationDate;
 
     /*
-     * The po number of the invoice on which the lot was added. This property is not available for
-     * ConsumptionCommitment lots.
+     * The po number of the invoice on which the lot was added. This property is not available for ConsumptionCommitment
+     * lots.
      */
     @JsonProperty(value = "poNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String poNumber;

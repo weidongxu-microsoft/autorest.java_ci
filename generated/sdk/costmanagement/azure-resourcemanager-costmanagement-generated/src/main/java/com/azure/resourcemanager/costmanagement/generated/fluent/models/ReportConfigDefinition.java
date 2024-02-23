@@ -19,8 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ReportConfigDefinition {
     /*
      * The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast
-     * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on
-     * dates.
+     * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
      */
     @JsonProperty(value = "type", required = true)
     private ReportType type;
@@ -56,8 +55,8 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
-     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
      * 
      * @return the type value.
@@ -67,8 +66,8 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
-     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
      * 
      * @param type the type value to set.

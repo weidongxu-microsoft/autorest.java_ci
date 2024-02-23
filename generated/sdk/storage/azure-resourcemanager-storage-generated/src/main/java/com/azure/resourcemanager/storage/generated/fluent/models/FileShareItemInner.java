@@ -186,8 +186,8 @@ public final class FileShareItemInner extends AzureEntityResource {
     }
 
     /**
-     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between
-     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @return the accessTier value.
      */
@@ -196,8 +196,8 @@ public final class FileShareItemInner extends AzureEntityResource {
     }
 
     /**
-     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between
-     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @param accessTier the accessTier value to set.
      * @return the FileShareItemInner object itself.

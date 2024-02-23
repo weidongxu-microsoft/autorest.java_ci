@@ -256,8 +256,8 @@ public final class UpdateSummaryInner extends ArmBaseModel {
     }
 
     /**
-     * Get the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version
-     * as per the last device scan.
+     * Get the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version as
+     * per the last device scan.
      * 
      * @return the totalNumberOfUpdatesAvailable value.
      */

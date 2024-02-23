@@ -37,8 +37,8 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Get the status property: Indicates whether the connection has been approved, rejected or removed by the key
-     * vault owner.
+     * Get the status property: Indicates whether the connection has been approved, rejected or removed by the key vault
+     * owner.
      * 
      * @return the status value.
      */
@@ -47,8 +47,8 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Set the status property: Indicates whether the connection has been approved, rejected or removed by the key
-     * vault owner.
+     * Set the status property: Indicates whether the connection has been approved, rejected or removed by the key vault
+     * owner.
      * 
      * @param status the status value to set.
      * @return the PrivateLinkServiceConnectionState object itself.

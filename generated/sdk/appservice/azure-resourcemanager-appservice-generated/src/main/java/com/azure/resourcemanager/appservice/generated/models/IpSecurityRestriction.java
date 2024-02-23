@@ -92,8 +92,7 @@ public final class IpSecurityRestriction {
      * X-Forwarded-For (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For#Examples).
      * The matching logic is ..
      * - If the property is null or empty (default), any forwarded-for chains (or lack of) are allowed.
-     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the
-     * property.
+     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the property.
      * 
      * X-Azure-FDID and X-FD-HealthProbe.
      * The matching logic is exact match.
@@ -328,8 +327,7 @@ public final class IpSecurityRestriction {
      * X-Forwarded-For (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For#Examples).
      * The matching logic is ..
      * - If the property is null or empty (default), any forwarded-for chains (or lack of) are allowed.
-     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the
-     * property.
+     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the property.
      * 
      * X-Azure-FDID and X-FD-HealthProbe.
      * The matching logic is exact match.
@@ -354,8 +352,7 @@ public final class IpSecurityRestriction {
      * X-Forwarded-For (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For#Examples).
      * The matching logic is ..
      * - If the property is null or empty (default), any forwarded-for chains (or lack of) are allowed.
-     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the
-     * property.
+     * - If any address (excluding port number) in the chain (comma separated) matches the CIDR defined by the property.
      * 
      * X-Azure-FDID and X-FD-HealthProbe.
      * The matching logic is exact match.

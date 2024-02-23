@@ -167,10 +167,10 @@ public final class RedirectConfiguration extends RouteConfiguration {
     }
 
     /**
-     * Get the customQueryString property: The set of query strings to be placed in the redirect URL. Setting this
-     * value would replace any existing query string; leave empty to preserve the incoming query string. Query string
-     * must be in &lt;key&gt;=&lt;value&gt; format. The first ? and &amp; will be added automatically so do not include
-     * them in the front, but do separate multiple query strings with &amp;.
+     * Get the customQueryString property: The set of query strings to be placed in the redirect URL. Setting this value
+     * would replace any existing query string; leave empty to preserve the incoming query string. Query string must be
+     * in &lt;key&gt;=&lt;value&gt; format. The first ? and &amp; will be added automatically so do not include them in
+     * the front, but do separate multiple query strings with &amp;.
      * 
      * @return the customQueryString value.
      */
@@ -179,10 +179,10 @@ public final class RedirectConfiguration extends RouteConfiguration {
     }
 
     /**
-     * Set the customQueryString property: The set of query strings to be placed in the redirect URL. Setting this
-     * value would replace any existing query string; leave empty to preserve the incoming query string. Query string
-     * must be in &lt;key&gt;=&lt;value&gt; format. The first ? and &amp; will be added automatically so do not include
-     * them in the front, but do separate multiple query strings with &amp;.
+     * Set the customQueryString property: The set of query strings to be placed in the redirect URL. Setting this value
+     * would replace any existing query string; leave empty to preserve the incoming query string. Query string must be
+     * in &lt;key&gt;=&lt;value&gt; format. The first ? and &amp; will be added automatically so do not include them in
+     * the front, but do separate multiple query strings with &amp;.
      * 
      * @param customQueryString the customQueryString value to set.
      * @return the RedirectConfiguration object itself.

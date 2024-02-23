@@ -133,8 +133,8 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the metadata property: The policy set definition metadata. Metadata is an open ended object and is
-     * typically a collection of key value pairs.
+     * Get the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
+     * a collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -143,8 +143,8 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the metadata property: The policy set definition metadata. Metadata is an open ended object and is
-     * typically a collection of key value pairs.
+     * Set the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
+     * a collection of key value pairs.
      * 
      * @param metadata the metadata value to set.
      * @return the PolicySetDefinitionProperties object itself.

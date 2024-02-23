@@ -196,9 +196,9 @@ public final class RoutingEventHubProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric
-     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
-     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @return the name value.
      */
@@ -207,9 +207,9 @@ public final class RoutingEventHubProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric
-     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
-     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @param name the name value to set.
      * @return the RoutingEventHubProperties object itself.

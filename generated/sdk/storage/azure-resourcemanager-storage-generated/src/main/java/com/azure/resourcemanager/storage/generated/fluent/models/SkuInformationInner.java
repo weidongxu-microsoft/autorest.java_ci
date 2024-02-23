@@ -120,8 +120,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the locations property: The set of locations that the SKU is available. This will be supported and
-     * registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
+     * Get the locations property: The set of locations that the SKU is available. This will be supported and registered
+     * Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
      * 
      * @return the locations value.
      */

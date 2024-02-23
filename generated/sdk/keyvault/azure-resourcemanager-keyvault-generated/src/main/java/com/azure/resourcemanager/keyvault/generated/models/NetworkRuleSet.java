@@ -14,8 +14,8 @@ import java.util.List;
 @Fluent
 public final class NetworkRuleSet {
     /*
-     * Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'. If not specified the
-     * default is 'AzureServices'.
+     * Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'. If not specified the default
+     * is 'AzureServices'.
      */
     @JsonProperty(value = "bypass")
     private NetworkRuleBypassOptions bypass;

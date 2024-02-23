@@ -375,8 +375,7 @@ public final class RecommendationProperties {
     }
 
     /**
-     * Get the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is
-     * invalid.
+     * Get the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is invalid.
      * 
      * @return the enabled value.
      */
@@ -385,8 +384,7 @@ public final class RecommendationProperties {
     }
 
     /**
-     * Set the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is
-     * invalid.
+     * Set the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is invalid.
      * 
      * @param enabled the enabled value to set.
      * @return the RecommendationProperties object itself.

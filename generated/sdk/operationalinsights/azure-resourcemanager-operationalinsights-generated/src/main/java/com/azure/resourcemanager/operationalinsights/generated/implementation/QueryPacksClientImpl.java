@@ -61,8 +61,8 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientQueryPacks to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientQueryPacks to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")

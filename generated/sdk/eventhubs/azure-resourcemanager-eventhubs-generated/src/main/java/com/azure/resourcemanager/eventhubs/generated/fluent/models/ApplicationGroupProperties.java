@@ -88,8 +88,8 @@ public final class ApplicationGroupProperties {
     }
 
     /**
-     * Get the policies property: List of group policies that define the behavior of application group. The policies
-     * can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Get the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @return the policies value.
      */
@@ -98,8 +98,8 @@ public final class ApplicationGroupProperties {
     }
 
     /**
-     * Set the policies property: List of group policies that define the behavior of application group. The policies
-     * can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Set the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @param policies the policies value to set.
      * @return the ApplicationGroupProperties object itself.

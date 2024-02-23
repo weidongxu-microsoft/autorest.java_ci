@@ -78,8 +78,8 @@ public final class PolicyExemptionInner extends ProxyResource {
     }
 
     /**
-     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
-     * policy assignment is an assignment of a policy set definition.
+     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @return the policyDefinitionReferenceIds value.
      */
@@ -88,8 +88,8 @@ public final class PolicyExemptionInner extends ProxyResource {
     }
 
     /**
-     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
-     * policy assignment is an assignment of a policy set definition.
+     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @param policyDefinitionReferenceIds the policyDefinitionReferenceIds value to set.
      * @return the PolicyExemptionInner object itself.

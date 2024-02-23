@@ -210,8 +210,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Get the configurationsBlobName property: The blob name to be used when importing configurations from the
-     * provided input blob container.
+     * Get the configurationsBlobName property: The blob name to be used when importing configurations from the provided
+     * input blob container.
      * 
      * @return the configurationsBlobName value.
      */
@@ -220,8 +220,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Set the configurationsBlobName property: The blob name to be used when importing configurations from the
-     * provided input blob container.
+     * Set the configurationsBlobName property: The blob name to be used when importing configurations from the provided
+     * input blob container.
      * 
      * @param configurationsBlobName the configurationsBlobName value to set.
      * @return the ImportDevicesRequest object itself.

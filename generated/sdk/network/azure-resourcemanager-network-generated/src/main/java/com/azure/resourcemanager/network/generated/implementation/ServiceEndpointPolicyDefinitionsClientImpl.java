@@ -64,8 +64,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientServiceEndpointPolicyDefinitions to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientServiceEndpointPolicyDefinitions to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

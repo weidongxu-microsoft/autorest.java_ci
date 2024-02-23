@@ -92,10 +92,9 @@ public final class DateAfterModification {
     }
 
     /**
-     * Get the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier
-     * change time. This property is only applicable for tierToArchive actions and requires
-     * daysAfterModificationGreaterThan to be set for baseBlobs based actions. The blob will be archived if both the
-     * conditions are satisfied.
+     * Get the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change
+     * time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to
+     * be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
      * 
      * @return the daysAfterLastTierChangeGreaterThan value.
      */
@@ -104,10 +103,9 @@ public final class DateAfterModification {
     }
 
     /**
-     * Set the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier
-     * change time. This property is only applicable for tierToArchive actions and requires
-     * daysAfterModificationGreaterThan to be set for baseBlobs based actions. The blob will be archived if both the
-     * conditions are satisfied.
+     * Set the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change
+     * time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to
+     * be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
      * 
      * @param daysAfterLastTierChangeGreaterThan the daysAfterLastTierChangeGreaterThan value to set.
      * @return the DateAfterModification object itself.

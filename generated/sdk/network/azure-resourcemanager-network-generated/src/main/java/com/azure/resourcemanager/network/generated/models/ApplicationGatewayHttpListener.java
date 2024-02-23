@@ -321,8 +321,7 @@ public final class ApplicationGatewayHttpListener extends SubResource {
     }
 
     /**
-     * Get the hostNames property: List of Host names for HTTP Listener that allows special wildcard characters as
-     * well.
+     * Get the hostNames property: List of Host names for HTTP Listener that allows special wildcard characters as well.
      * 
      * @return the hostNames value.
      */
@@ -331,8 +330,7 @@ public final class ApplicationGatewayHttpListener extends SubResource {
     }
 
     /**
-     * Set the hostNames property: List of Host names for HTTP Listener that allows special wildcard characters as
-     * well.
+     * Set the hostNames property: List of Host names for HTTP Listener that allows special wildcard characters as well.
      * 
      * @param hostNames the hostNames value to set.
      * @return the ApplicationGatewayHttpListener object itself.

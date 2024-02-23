@@ -115,8 +115,8 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Get the matchConditions property: A list of match conditions that must meet in order for the actions of this
-     * rule to run. Having no match conditions means the actions will always run.
+     * Get the matchConditions property: A list of match conditions that must meet in order for the actions of this rule
+     * to run. Having no match conditions means the actions will always run.
      * 
      * @return the matchConditions value.
      */
@@ -125,8 +125,8 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Set the matchConditions property: A list of match conditions that must meet in order for the actions of this
-     * rule to run. Having no match conditions means the actions will always run.
+     * Set the matchConditions property: A list of match conditions that must meet in order for the actions of this rule
+     * to run. Having no match conditions means the actions will always run.
      * 
      * @param matchConditions the matchConditions value to set.
      * @return the RulesEngineRule object itself.

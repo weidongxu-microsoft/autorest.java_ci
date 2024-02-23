@@ -125,8 +125,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled,
-     * then none of its receivers will receive communications.
+     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
+     * none of its receivers will receive communications.
      * 
      * @return the enabled value.
      */
@@ -135,8 +135,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled,
-     * then none of its receivers will receive communications.
+     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
+     * none of its receivers will receive communications.
      * 
      * @param enabled the enabled value to set.
      * @return the ActionGroup object itself.
@@ -247,8 +247,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this
-     * action group.
+     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
+     * group.
      * 
      * @return the automationRunbookReceivers value.
      */
@@ -257,8 +257,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this
-     * action group.
+     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
+     * group.
      * 
      * @param automationRunbookReceivers the automationRunbookReceivers value to set.
      * @return the ActionGroup object itself.
@@ -309,8 +309,7 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the azureFunctionReceivers property: The list of azure function receivers that are part of this action
-     * group.
+     * Get the azureFunctionReceivers property: The list of azure function receivers that are part of this action group.
      * 
      * @return the azureFunctionReceivers value.
      */
@@ -319,8 +318,7 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the azureFunctionReceivers property: The list of azure function receivers that are part of this action
-     * group.
+     * Set the azureFunctionReceivers property: The list of azure function receivers that are part of this action group.
      * 
      * @param azureFunctionReceivers the azureFunctionReceivers value to set.
      * @return the ActionGroup object itself.

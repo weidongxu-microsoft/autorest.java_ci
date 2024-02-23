@@ -24,8 +24,8 @@ public final class VMInsightsOnboardingStatusProperties {
     private String resourceId;
 
     /*
-     * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription,
-     * is considered onboarded if at least one resource under it is onboarded.
+     * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is
+     * considered onboarded if at least one resource under it is onboarded.
      */
     @JsonProperty(value = "onboardingStatus", required = true)
     private OnboardingStatus onboardingStatus;
@@ -72,8 +72,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope,
-     * e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @return the onboardingStatus value.
      */
@@ -82,8 +82,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope,
-     * e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @param onboardingStatus the onboardingStatus value to set.
      * @return the VMInsightsOnboardingStatusProperties object itself.

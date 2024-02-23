@@ -43,11 +43,10 @@ public final class CloningInfo {
 
     /*
      * ARM resource ID of the source app. App resource ID is of the form
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{
-     * slotName}
-     * for other slots.
+     * slotName} for other slots.
      */
     @JsonProperty(value = "sourceWebAppId", required = true)
     private String sourceWebAppId;
@@ -87,8 +86,7 @@ public final class CloningInfo {
     private String trafficManagerProfileId;
 
     /*
-     * Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already
-     * exist.
+     * Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.
      */
     @JsonProperty(value = "trafficManagerProfileName")
     private String trafficManagerProfileName;
@@ -189,8 +187,8 @@ public final class CloningInfo {
 
     /**
      * Get the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
      * for other slots.
      * 
@@ -202,8 +200,8 @@ public final class CloningInfo {
 
     /**
      * Set the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
      * for other slots.
      * 
@@ -256,8 +254,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these
-     * settings override the settings cloned
+     * Get the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings
+     * override the settings cloned
      * from source app. Otherwise, application settings from source app are retained.
      * 
      * @return the appSettingsOverrides value.
@@ -267,8 +265,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these
-     * settings override the settings cloned
+     * Set the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings
+     * override the settings cloned
      * from source app. Otherwise, application settings from source app are retained.
      * 
      * @param appSettingsOverrides the appSettingsOverrides value to set.
@@ -280,8 +278,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source
-     * and destination app.
+     * Get the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and
+     * destination app.
      * 
      * @return the configureLoadBalancing value.
      */
@@ -290,8 +288,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source
-     * and destination app.
+     * Set the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and
+     * destination app.
      * 
      * @param configureLoadBalancing the configureLoadBalancing value to set.
      * @return the CloningInfo object itself.

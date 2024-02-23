@@ -142,8 +142,8 @@ public final class CacheItem {
     }
 
     /**
-     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a
-     * resource group or a management group resource ID for a subscription.
+     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
+     * group or a management group resource ID for a subscription.
      * 
      * @return the parent value.
      */
@@ -152,8 +152,8 @@ public final class CacheItem {
     }
 
     /**
-     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a
-     * resource group or a management group resource ID for a subscription.
+     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
+     * group or a management group resource ID for a subscription.
      * 
      * @param parent the parent value to set.
      * @return the CacheItem object itself.

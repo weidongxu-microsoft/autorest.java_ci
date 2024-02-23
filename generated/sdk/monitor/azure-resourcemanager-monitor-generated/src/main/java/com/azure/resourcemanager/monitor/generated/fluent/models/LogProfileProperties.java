@@ -30,8 +30,8 @@ public final class LogProfileProperties {
     private String serviceBusRuleId;
 
     /*
-     * List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of
-     * valid ARM locations including the 'global' location.
+     * List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid
+     * ARM locations including the 'global' location.
      */
     @JsonProperty(value = "locations", required = true)
     private List<String> locations;

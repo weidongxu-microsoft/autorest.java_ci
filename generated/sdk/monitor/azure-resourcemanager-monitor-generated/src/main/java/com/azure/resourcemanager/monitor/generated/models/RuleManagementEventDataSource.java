@@ -137,8 +137,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Get the operationName property: The name of the operation that should be checked for. If no name is provided,
-     * any operation will match.
+     * Get the operationName property: The name of the operation that should be checked for. If no name is provided, any
+     * operation will match.
      * 
      * @return the operationName value.
      */
@@ -147,8 +147,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Set the operationName property: The name of the operation that should be checked for. If no name is provided,
-     * any operation will match.
+     * Set the operationName property: The name of the operation that should be checked for. If no name is provided, any
+     * operation will match.
      * 
      * @param operationName the operationName value to set.
      * @return the RuleManagementEventDataSource object itself.

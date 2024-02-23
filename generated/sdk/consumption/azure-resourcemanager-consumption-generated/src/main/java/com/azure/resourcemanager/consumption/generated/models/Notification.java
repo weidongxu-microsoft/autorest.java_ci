@@ -35,9 +35,9 @@ public final class Notification {
     private BigDecimal threshold;
 
     /*
-     * Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one
-     * contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must
-     * have at least one contact email specified.
+     * Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one contact
+     * email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at
+     * least one contact email specified.
      */
     @JsonProperty(value = "contactEmails", required = true)
     private List<String> contactEmails;
@@ -181,8 +181,7 @@ public final class Notification {
 
     /**
      * Get the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded.
-     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group
-     * scopes.
+     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      * 
      * @return the contactGroups value.
      */
@@ -192,8 +191,7 @@ public final class Notification {
 
     /**
      * Set the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded.
-     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group
-     * scopes.
+     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      * 
      * @param contactGroups the contactGroups value to set.
      * @return the Notification object itself.

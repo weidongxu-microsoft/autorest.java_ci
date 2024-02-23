@@ -66,8 +66,8 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientWorkspaces to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientWorkspaces to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")

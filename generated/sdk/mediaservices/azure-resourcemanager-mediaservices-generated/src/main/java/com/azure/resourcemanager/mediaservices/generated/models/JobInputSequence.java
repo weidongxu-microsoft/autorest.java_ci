@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a
- * single input.
+ * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a single
+ * input.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobInputSequence")

@@ -64,8 +64,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Get the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is
-     * Disabled.
+     * Get the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is Disabled.
      * 
      * @return the state value.
      */
@@ -74,8 +73,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Set the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is
-     * Disabled.
+     * Set the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is Disabled.
      * 
      * @param state the state value to set.
      * @return the UpdateTopicSpacesConfigurationInfo object itself.

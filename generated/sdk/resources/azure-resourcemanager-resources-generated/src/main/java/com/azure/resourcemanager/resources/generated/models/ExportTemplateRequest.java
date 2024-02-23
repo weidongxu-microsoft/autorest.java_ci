@@ -14,8 +14,7 @@ import java.util.List;
 @Fluent
 public final class ExportTemplateRequest {
     /*
-     * The IDs of the resources to filter the export by. To export all resources, supply an array with single entry
-     * '*'.
+     * The IDs of the resources to filter the export by. To export all resources, supply an array with single entry '*'.
      */
     @JsonProperty(value = "resources")
     private List<String> resources;

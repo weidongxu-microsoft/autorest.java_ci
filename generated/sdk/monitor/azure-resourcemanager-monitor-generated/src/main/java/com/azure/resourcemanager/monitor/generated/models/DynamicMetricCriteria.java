@@ -39,8 +39,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     private DynamicThresholdFailingPeriods failingPeriods;
 
     /*
-     * Use this option to set the date from which to start learning the metric historical data and calculate the
-     * dynamic thresholds (in ISO8601 format)
+     * Use this option to set the date from which to start learning the metric historical data and calculate the dynamic
+     * thresholds (in ISO8601 format)
      */
     @JsonProperty(value = "ignoreDataBefore")
     private OffsetDateTime ignoreDataBefore;

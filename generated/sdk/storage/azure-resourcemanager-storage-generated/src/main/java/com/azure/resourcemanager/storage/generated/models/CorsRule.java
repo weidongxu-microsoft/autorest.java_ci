@@ -75,8 +75,8 @@ public final class CorsRule {
     }
 
     /**
-     * Get the allowedMethods property: Required if CorsRule element is present. A list of HTTP methods that are
-     * allowed to be executed by the origin.
+     * Get the allowedMethods property: Required if CorsRule element is present. A list of HTTP methods that are allowed
+     * to be executed by the origin.
      * 
      * @return the allowedMethods value.
      */
@@ -85,8 +85,8 @@ public final class CorsRule {
     }
 
     /**
-     * Set the allowedMethods property: Required if CorsRule element is present. A list of HTTP methods that are
-     * allowed to be executed by the origin.
+     * Set the allowedMethods property: Required if CorsRule element is present. A list of HTTP methods that are allowed
+     * to be executed by the origin.
      * 
      * @param allowedMethods the allowedMethods value to set.
      * @return the CorsRule object itself.
@@ -119,8 +119,8 @@ public final class CorsRule {
     }
 
     /**
-     * Get the exposedHeaders property: Required if CorsRule element is present. A list of response headers to expose
-     * to CORS clients.
+     * Get the exposedHeaders property: Required if CorsRule element is present. A list of response headers to expose to
+     * CORS clients.
      * 
      * @return the exposedHeaders value.
      */
@@ -129,8 +129,8 @@ public final class CorsRule {
     }
 
     /**
-     * Set the exposedHeaders property: Required if CorsRule element is present. A list of response headers to expose
-     * to CORS clients.
+     * Set the exposedHeaders property: Required if CorsRule element is present. A list of response headers to expose to
+     * CORS clients.
      * 
      * @param exposedHeaders the exposedHeaders value to set.
      * @return the CorsRule object itself.
@@ -141,8 +141,8 @@ public final class CorsRule {
     }
 
     /**
-     * Get the allowedHeaders property: Required if CorsRule element is present. A list of headers allowed to be part
-     * of the cross-origin request.
+     * Get the allowedHeaders property: Required if CorsRule element is present. A list of headers allowed to be part of
+     * the cross-origin request.
      * 
      * @return the allowedHeaders value.
      */
@@ -151,8 +151,8 @@ public final class CorsRule {
     }
 
     /**
-     * Set the allowedHeaders property: Required if CorsRule element is present. A list of headers allowed to be part
-     * of the cross-origin request.
+     * Set the allowedHeaders property: Required if CorsRule element is present. A list of headers allowed to be part of
+     * the cross-origin request.
      * 
      * @param allowedHeaders the allowedHeaders value to set.
      * @return the CorsRule object itself.

@@ -226,8 +226,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     }
 
     /**
-     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
-     * Vault.
+     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
      * 
      * @return the channelIntegrityKeyVersion value.
      */
@@ -236,8 +235,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     }
 
     /**
-     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
-     * Vault.
+     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
      * 
      * @param channelIntegrityKeyVersion the channelIntegrityKeyVersion value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoProperties object itself.

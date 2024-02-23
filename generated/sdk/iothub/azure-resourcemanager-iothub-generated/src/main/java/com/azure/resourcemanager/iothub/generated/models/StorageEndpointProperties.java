@@ -29,8 +29,8 @@ public final class StorageEndpointProperties {
     private String connectionString;
 
     /*
-     * The name of the root container where you upload files. The container need not exist but should be creatable
-     * using the connectionString specified.
+     * The name of the root container where you upload files. The container need not exist but should be creatable using
+     * the connectionString specified.
      */
     @JsonProperty(value = "containerName", required = true)
     private String containerName;

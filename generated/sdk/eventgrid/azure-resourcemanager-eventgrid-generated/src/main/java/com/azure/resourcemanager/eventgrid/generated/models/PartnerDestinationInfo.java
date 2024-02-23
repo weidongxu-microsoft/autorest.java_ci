@@ -62,8 +62,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination
-     * associated with the channel will be
+     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this Azure subscription.
      * 
      * @return the azureSubscriptionId value.
@@ -73,8 +73,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination
-     * associated with the channel will be
+     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this Azure subscription.
      * 
      * @param azureSubscriptionId the azureSubscriptionId value to set.

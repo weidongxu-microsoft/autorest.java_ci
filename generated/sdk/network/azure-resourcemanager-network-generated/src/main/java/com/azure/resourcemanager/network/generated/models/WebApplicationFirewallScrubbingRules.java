@@ -20,8 +20,8 @@ public final class WebApplicationFirewallScrubbingRules {
     private ScrubbingRuleEntryMatchVariable matchVariable;
 
     /*
-     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this
-     * rule applies to.
+     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule
+     * applies to.
      */
     @JsonProperty(value = "selectorMatchOperator", required = true)
     private ScrubbingRuleEntryMatchOperator selectorMatchOperator;

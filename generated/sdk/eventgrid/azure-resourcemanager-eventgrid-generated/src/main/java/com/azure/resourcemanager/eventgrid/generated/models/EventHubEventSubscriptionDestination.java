@@ -40,8 +40,8 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of
-     * an event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an
+     * event subscription.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +50,8 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of
-     * an event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an
+     * event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the EventHubEventSubscriptionDestination object itself.

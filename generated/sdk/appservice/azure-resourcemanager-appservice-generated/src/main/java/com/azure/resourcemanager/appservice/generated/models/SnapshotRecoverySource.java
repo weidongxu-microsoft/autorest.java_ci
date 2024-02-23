@@ -20,11 +20,10 @@ public final class SnapshotRecoverySource {
 
     /*
      * ARM resource ID of the source app.
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{
-     * slotName}
-     * for other slots.
+     * slotName} for other slots.
      */
     @JsonProperty(value = "id")
     private String id;
@@ -57,8 +56,8 @@ public final class SnapshotRecoverySource {
 
     /**
      * Get the id property: ARM resource ID of the source app.
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
      * for other slots.
      * 
@@ -70,8 +69,8 @@ public final class SnapshotRecoverySource {
 
     /**
      * Set the id property: ARM resource ID of the source app.
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
-     * production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
      * for other slots.
      * 

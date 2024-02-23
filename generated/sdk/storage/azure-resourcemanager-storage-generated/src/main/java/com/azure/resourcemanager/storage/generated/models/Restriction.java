@@ -27,8 +27,8 @@ public final class Restriction {
     private List<String> values;
 
     /*
-     * The reason for the restriction. As of now this can be "QuotaId" or "NotAvailableForSubscription". Quota Id is
-     * set when the SKU has requiredQuotas parameter as the subscription does not belong to that quota. The
+     * The reason for the restriction. As of now this can be "QuotaId" or "NotAvailableForSubscription". Quota Id is set
+     * when the SKU has requiredQuotas parameter as the subscription does not belong to that quota. The
      * "NotAvailableForSubscription" is related to capacity at DC.
      */
     @JsonProperty(value = "reasonCode")
@@ -61,8 +61,8 @@ public final class Restriction {
 
     /**
      * Get the reasonCode property: The reason for the restriction. As of now this can be "QuotaId" or
-     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription
-     * does not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
+     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription does
+     * not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
      * 
      * @return the reasonCode value.
      */
@@ -72,8 +72,8 @@ public final class Restriction {
 
     /**
      * Set the reasonCode property: The reason for the restriction. As of now this can be "QuotaId" or
-     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription
-     * does not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
+     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription does
+     * not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
      * 
      * @param reasonCode the reasonCode value to set.
      * @return the Restriction object itself.

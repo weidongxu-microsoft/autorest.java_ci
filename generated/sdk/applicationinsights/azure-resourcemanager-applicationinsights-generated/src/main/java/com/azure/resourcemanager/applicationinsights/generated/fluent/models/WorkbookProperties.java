@@ -28,8 +28,7 @@ public final class WorkbookProperties {
     private String serializedData;
 
     /*
-     * This instance's version of the data model. This can change as new features are added that can be marked
-     * workbook.
+     * This instance's version of the data model. This can change as new features are added that can be marked workbook.
      */
     @JsonProperty(value = "version")
     private String version;

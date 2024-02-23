@@ -74,8 +74,8 @@ public final class LogAnalyticsQueryPackProperties {
 
     /**
      * Get the provisioningState property: Current state of this QueryPack: whether or not is has been provisioned
-     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values
-     * will include Succeeded, Deploying, Canceled, and Failed.
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */

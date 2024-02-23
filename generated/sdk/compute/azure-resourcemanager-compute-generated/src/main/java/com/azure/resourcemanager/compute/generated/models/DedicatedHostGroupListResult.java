@@ -55,8 +55,8 @@ public final class DedicatedHostGroupListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of Dedicated Host Groups. Call ListNext() with this
-     * URI to fetch the next page of Dedicated Host Groups.
+     * Get the nextLink property: The URI to fetch the next page of Dedicated Host Groups. Call ListNext() with this URI
+     * to fetch the next page of Dedicated Host Groups.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +65,8 @@ public final class DedicatedHostGroupListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of Dedicated Host Groups. Call ListNext() with this
-     * URI to fetch the next page of Dedicated Host Groups.
+     * Set the nextLink property: The URI to fetch the next page of Dedicated Host Groups. Call ListNext() with this URI
+     * to fetch the next page of Dedicated Host Groups.
      * 
      * @param nextLink the nextLink value to set.
      * @return the DedicatedHostGroupListResult object itself.

@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListAuthorizations API service call retrieves all authorizations that belongs to an
- * ExpressRouteCircuit.
+ * Response for ListAuthorizations API service call retrieves all authorizations that belongs to an ExpressRouteCircuit.
  */
 @Fluent
 public final class AuthorizationListResult {

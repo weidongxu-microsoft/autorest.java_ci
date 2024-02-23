@@ -39,8 +39,8 @@ public final class NamespaceTopicEventSubscriptionDestination extends EventSubsc
     }
 
     /**
-     * Get the resourceId property: The Azure resource Id that represents the endpoint of the Event Grid Namespace
-     * Topic destination of an event subscription.
+     * Get the resourceId property: The Azure resource Id that represents the endpoint of the Event Grid Namespace Topic
+     * destination of an event subscription.
      * This field is required and the Namespace Topic resource listed must already exist.
      * The resource ARM Id should follow this pattern:
      * /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.EventGrid/namespaces/{NamespaceName}/topics/{TopicName}.
@@ -52,8 +52,8 @@ public final class NamespaceTopicEventSubscriptionDestination extends EventSubsc
     }
 
     /**
-     * Set the resourceId property: The Azure resource Id that represents the endpoint of the Event Grid Namespace
-     * Topic destination of an event subscription.
+     * Set the resourceId property: The Azure resource Id that represents the endpoint of the Event Grid Namespace Topic
+     * destination of an event subscription.
      * This field is required and the Namespace Topic resource listed must already exist.
      * The resource ARM Id should follow this pattern:
      * /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.EventGrid/namespaces/{NamespaceName}/topics/{TopicName}.

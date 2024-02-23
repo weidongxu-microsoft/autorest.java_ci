@@ -37,8 +37,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be
-     * throttled.Rate limit is always per second.
+     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
+     * limit is always per second.
      * 
      * @return the rateLimitThreshold value.
      */
@@ -47,8 +47,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be
-     * throttled.Rate limit is always per second.
+     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
+     * limit is always per second.
      * 
      * @param rateLimitThreshold the rateLimitThreshold value to set.
      * @return the ThrottlingPolicy object itself.

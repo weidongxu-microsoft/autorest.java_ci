@@ -64,8 +64,8 @@ public final class VMInsightsOnboardingStatusInner extends ProxyResource {
     }
 
     /**
-     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope,
-     * e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @return the onboardingStatus value.
      */
@@ -74,8 +74,8 @@ public final class VMInsightsOnboardingStatusInner extends ProxyResource {
     }
 
     /**
-     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope,
-     * e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @param onboardingStatus the onboardingStatus value to set.
      * @return the VMInsightsOnboardingStatusInner object itself.

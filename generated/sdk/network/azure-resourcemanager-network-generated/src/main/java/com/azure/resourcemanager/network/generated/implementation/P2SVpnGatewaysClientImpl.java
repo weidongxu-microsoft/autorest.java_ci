@@ -72,8 +72,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientP2SVpnGateways to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientP2SVpnGateways to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

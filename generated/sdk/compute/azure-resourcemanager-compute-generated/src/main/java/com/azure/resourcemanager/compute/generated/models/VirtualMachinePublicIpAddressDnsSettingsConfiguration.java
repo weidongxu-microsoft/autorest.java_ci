@@ -36,8 +36,7 @@ public final class VirtualMachinePublicIpAddressDnsSettingsConfiguration {
 
     /**
      * Get the domainNameLabel property: The Domain name label prefix of the PublicIPAddress resources that will be
-     * created. The generated name label is the concatenation of the domain name label and vm network profile unique
-     * ID.
+     * created. The generated name label is the concatenation of the domain name label and vm network profile unique ID.
      * 
      * @return the domainNameLabel value.
      */
@@ -47,8 +46,7 @@ public final class VirtualMachinePublicIpAddressDnsSettingsConfiguration {
 
     /**
      * Set the domainNameLabel property: The Domain name label prefix of the PublicIPAddress resources that will be
-     * created. The generated name label is the concatenation of the domain name label and vm network profile unique
-     * ID.
+     * created. The generated name label is the concatenation of the domain name label and vm network profile unique ID.
      * 
      * @param domainNameLabel the domainNameLabel value to set.
      * @return the VirtualMachinePublicIpAddressDnsSettingsConfiguration object itself.

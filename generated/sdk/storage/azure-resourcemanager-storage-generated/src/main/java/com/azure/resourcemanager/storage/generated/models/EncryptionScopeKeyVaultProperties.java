@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute
- * is set to 'Microsoft.KeyVault'.
+ * The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is
+ * set to 'Microsoft.KeyVault'.
  */
 @Fluent
 public final class EncryptionScopeKeyVaultProperties {

@@ -255,8 +255,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to
-     * be used to authenticate with event hub.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      * 
      * @return the managedIdentityResourceId value.
      */
@@ -265,8 +265,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to
-     * be used to authenticate with event hub.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      * 
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventHubConnectionProperties object itself.

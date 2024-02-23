@@ -12,8 +12,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.ObjectReplicationPolicyInner;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * ObjectReplicationPoliciesOperationsClient.
+ * An instance of this class provides access to all the operations defined in ObjectReplicationPoliciesOperationsClient.
  */
 public interface ObjectReplicationPoliciesOperationsClient {
     /**

@@ -27,8 +27,8 @@ public final class ScaleCapacity {
     private String maximum;
 
     /*
-     * the number of instances that will be set if metrics are not available for evaluation. The default is only used
-     * if the current instance count is lower than the default.
+     * the number of instances that will be set if metrics are not available for evaluation. The default is only used if
+     * the current instance count is lower than the default.
      */
     @JsonProperty(value = "default", required = true)
     private String defaultProperty;

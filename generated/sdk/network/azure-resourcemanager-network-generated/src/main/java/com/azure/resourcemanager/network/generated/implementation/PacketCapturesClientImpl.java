@@ -67,8 +67,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientPacketCaptures to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientPacketCaptures to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

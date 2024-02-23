@@ -34,8 +34,8 @@ public final class LiveEventPreview {
     private String previewLocator;
 
     /*
-     * The name of streaming policy used for the live event preview. This value is specified at creation time and
-     * cannot be updated.
+     * The name of streaming policy used for the live event preview. This value is specified at creation time and cannot
+     * be updated.
      */
     @JsonProperty(value = "streamingPolicyName")
     private String streamingPolicyName;
@@ -56,8 +56,7 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the endpoints property: The endpoints for preview. Do not share the preview URL with the live event
-     * audience.
+     * Get the endpoints property: The endpoints for preview. Do not share the preview URL with the live event audience.
      * 
      * @return the endpoints value.
      */
@@ -66,8 +65,7 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the endpoints property: The endpoints for preview. Do not share the preview URL with the live event
-     * audience.
+     * Set the endpoints property: The endpoints for preview. Do not share the preview URL with the live event audience.
      * 
      * @param endpoints the endpoints value to set.
      * @return the LiveEventPreview object itself.
@@ -122,8 +120,8 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value
-     * is specified at creation time and cannot be updated.
+     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
+     * specified at creation time and cannot be updated.
      * 
      * @return the streamingPolicyName value.
      */
@@ -132,8 +130,8 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value
-     * is specified at creation time and cannot be updated.
+     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
+     * specified at creation time and cannot be updated.
      * 
      * @param streamingPolicyName the streamingPolicyName value to set.
      * @return the LiveEventPreview object itself.

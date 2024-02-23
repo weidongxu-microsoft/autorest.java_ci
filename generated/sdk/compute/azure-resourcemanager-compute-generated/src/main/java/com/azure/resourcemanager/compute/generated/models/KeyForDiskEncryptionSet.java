@@ -34,9 +34,8 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Get the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is
-     * optional and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set
-     * subscription.
+     * Get the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional
+     * and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
      * 
      * @return the sourceVault value.
      */
@@ -45,9 +44,8 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Set the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is
-     * optional and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set
-     * subscription.
+     * Set the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional
+     * and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
      * 
      * @param sourceVault the sourceVault value to set.
      * @return the KeyForDiskEncryptionSet object itself.

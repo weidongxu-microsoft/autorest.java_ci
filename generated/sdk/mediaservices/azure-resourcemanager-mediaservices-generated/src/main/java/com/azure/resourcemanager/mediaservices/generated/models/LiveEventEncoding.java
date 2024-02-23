@@ -82,10 +82,9 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Get the presetName property: The optional encoding preset name, used when encodingType is not None. This value
-     * is specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default
-     * preset name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is
-     * ‘Default1080p’.
+     * Get the presetName property: The optional encoding preset name, used when encodingType is not None. This value is
+     * specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset
+     * name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      * 
      * @return the presetName value.
      */
@@ -94,10 +93,9 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Set the presetName property: The optional encoding preset name, used when encodingType is not None. This value
-     * is specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default
-     * preset name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is
-     * ‘Default1080p’.
+     * Set the presetName property: The optional encoding preset name, used when encodingType is not None. This value is
+     * specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset
+     * name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      * 
      * @param presetName the presetName value to set.
      * @return the LiveEventEncoding object itself.

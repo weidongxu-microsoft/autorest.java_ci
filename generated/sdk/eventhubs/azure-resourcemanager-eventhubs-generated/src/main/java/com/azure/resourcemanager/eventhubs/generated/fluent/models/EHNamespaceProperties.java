@@ -243,8 +243,8 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -253,8 +253,8 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the EHNamespaceProperties object itself.

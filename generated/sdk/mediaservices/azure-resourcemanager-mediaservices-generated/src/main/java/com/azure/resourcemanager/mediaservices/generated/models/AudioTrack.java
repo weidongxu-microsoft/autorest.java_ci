@@ -65,8 +65,8 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of
-     * the asset.
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @return the fileName value.
      */
@@ -75,8 +75,8 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of
-     * the asset.
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @param fileName the fileName value to set.
      * @return the AudioTrack object itself.

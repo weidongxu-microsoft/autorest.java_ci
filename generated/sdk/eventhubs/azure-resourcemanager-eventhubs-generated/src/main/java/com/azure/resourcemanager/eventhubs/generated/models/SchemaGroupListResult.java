@@ -53,8 +53,8 @@ public final class SchemaGroupListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * Schema Groups.
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Schema
+     * Groups.
      * 
      * @return the nextLink value.
      */
@@ -63,8 +63,8 @@ public final class SchemaGroupListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * Schema Groups.
+     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Schema
+     * Groups.
      * 
      * @param nextLink the nextLink value to set.
      * @return the SchemaGroupListResult object itself.

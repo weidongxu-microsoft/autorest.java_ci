@@ -113,8 +113,8 @@ public final class H264Video extends Video {
 
     /**
      * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured
-     * to produce a single output video.
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
      * 
      * @return the sceneChangeDetection value.
      */
@@ -124,8 +124,8 @@ public final class H264Video extends Video {
 
     /**
      * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured
-     * to produce a single output video.
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
      * 
      * @param sceneChangeDetection the sceneChangeDetection value to set.
      * @return the H264Video object itself.

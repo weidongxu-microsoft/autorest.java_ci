@@ -153,8 +153,7 @@ public final class CustomRule {
     }
 
     /**
-     * Get the rateLimitDurationInMinutes property: Time window for resetting the rate limit count. Default is 1
-     * minute.
+     * Get the rateLimitDurationInMinutes property: Time window for resetting the rate limit count. Default is 1 minute.
      * 
      * @return the rateLimitDurationInMinutes value.
      */
@@ -163,8 +162,7 @@ public final class CustomRule {
     }
 
     /**
-     * Set the rateLimitDurationInMinutes property: Time window for resetting the rate limit count. Default is 1
-     * minute.
+     * Set the rateLimitDurationInMinutes property: Time window for resetting the rate limit count. Default is 1 minute.
      * 
      * @param rateLimitDurationInMinutes the rateLimitDurationInMinutes value to set.
      * @return the CustomRule object itself.

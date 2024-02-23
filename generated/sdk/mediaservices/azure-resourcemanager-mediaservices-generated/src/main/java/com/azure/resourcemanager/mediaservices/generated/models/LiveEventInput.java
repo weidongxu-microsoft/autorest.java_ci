@@ -60,8 +60,8 @@ public final class LiveEventInput {
     }
 
     /**
-     * Get the streamingProtocol property: The input protocol for the live event. This is specified at creation time
-     * and cannot be updated.
+     * Get the streamingProtocol property: The input protocol for the live event. This is specified at creation time and
+     * cannot be updated.
      * 
      * @return the streamingProtocol value.
      */
@@ -70,8 +70,8 @@ public final class LiveEventInput {
     }
 
     /**
-     * Set the streamingProtocol property: The input protocol for the live event. This is specified at creation time
-     * and cannot be updated.
+     * Set the streamingProtocol property: The input protocol for the live event. This is specified at creation time and
+     * cannot be updated.
      * 
      * @param streamingProtocol the streamingProtocol value to set.
      * @return the LiveEventInput object itself.

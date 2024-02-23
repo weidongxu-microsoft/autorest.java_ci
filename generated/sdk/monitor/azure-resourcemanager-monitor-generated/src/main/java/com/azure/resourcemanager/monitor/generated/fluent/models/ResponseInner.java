@@ -29,8 +29,8 @@ public final class ResponseInner {
     private String timespan;
 
     /*
-     * The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special
-     * case for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D,
+     * The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special case
+     * for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D,
      * FULL*).
      * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
      * This is not present if a metadata request was made.
@@ -107,9 +107,9 @@ public final class ResponseInner {
     }
 
     /**
-     * Get the interval property: The interval (window size) for which the metric data was returned in ISO 8601
-     * duration format with a special case for 'FULL' value that returns single datapoint for entire time span
-     * requested (*Examples: PT15M, PT1H, P1D, FULL*).
+     * Get the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration
+     * format with a special case for 'FULL' value that returns single datapoint for entire time span requested
+     * (*Examples: PT15M, PT1H, P1D, FULL*).
      * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
      * This is not present if a metadata request was made.
      * 
@@ -120,9 +120,9 @@ public final class ResponseInner {
     }
 
     /**
-     * Set the interval property: The interval (window size) for which the metric data was returned in ISO 8601
-     * duration format with a special case for 'FULL' value that returns single datapoint for entire time span
-     * requested (*Examples: PT15M, PT1H, P1D, FULL*).
+     * Set the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration
+     * format with a special case for 'FULL' value that returns single datapoint for entire time span requested
+     * (*Examples: PT15M, PT1H, P1D, FULL*).
      * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
      * This is not present if a metadata request was made.
      * 

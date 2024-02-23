@@ -53,8 +53,7 @@ public final class ApplicationGatewayListenerPropertiesFormat {
     private ProvisioningState provisioningState;
 
     /*
-     * List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special wildcard characters as
-     * well.
+     * List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special wildcard characters as well.
      */
     @JsonProperty(value = "hostNames")
     private List<String> hostNames;

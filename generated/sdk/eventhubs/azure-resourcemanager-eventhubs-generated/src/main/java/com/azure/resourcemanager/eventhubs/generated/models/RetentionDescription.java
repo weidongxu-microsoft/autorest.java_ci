@@ -19,8 +19,8 @@ public final class RetentionDescription {
     private CleanupPolicyRetentionDescription cleanupPolicy;
 
     /*
-     * Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete.
-     * If cleanupPolicy is Compact the returned value of this property is Long.MaxValue
+     * Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If
+     * cleanupPolicy is Compact the returned value of this property is Long.MaxValue
      */
     @JsonProperty(value = "retentionTimeInHours")
     private Long retentionTimeInHours;

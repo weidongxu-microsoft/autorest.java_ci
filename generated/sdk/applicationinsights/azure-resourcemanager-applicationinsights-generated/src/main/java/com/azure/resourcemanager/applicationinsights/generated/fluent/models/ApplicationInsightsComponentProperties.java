@@ -54,9 +54,9 @@ public final class ApplicationInsightsComponentProperties {
     private RequestSource requestSource;
 
     /*
-     * Application Insights Instrumentation key. A read-only value that applications can use to identify the
-     * destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction
-     * of each new Application Insights component.
+     * Application Insights Instrumentation key. A read-only value that applications can use to identify the destination
+     * for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new
+     * Application Insights component.
      */
     @JsonProperty(value = "InstrumentationKey", access = JsonProperty.Access.WRITE_ONLY)
     private String instrumentationKey;
@@ -95,8 +95,8 @@ public final class ApplicationInsightsComponentProperties {
     private String provisioningState;
 
     /*
-     * Percentage of the data produced by the application being monitored that is being sampled for Application
-     * Insights telemetry.
+     * Percentage of the data produced by the application being monitored that is being sampled for Application Insights
+     * telemetry.
      */
     @JsonProperty(value = "SamplingPercentage")
     private Double samplingPercentage;
@@ -156,8 +156,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and
-     * cannot be changed.
+     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot
+     * be changed.
      * 
      * @return the applicationId value.
      */
@@ -240,8 +240,8 @@ public final class ApplicationInsightsComponentProperties {
 
     /**
      * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that
-     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This
-     * value will be supplied upon construction of each new Application Insights component.
+     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value
+     * will be supplied upon construction of each new Application Insights component.
      * 
      * @return the instrumentationKey value.
      */
@@ -301,8 +301,8 @@ public final class ApplicationInsightsComponentProperties {
 
     /**
      * Get the provisioningState property: Current state of this component: whether or not is has been provisioned
-     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values
-     * will include Succeeded, Deploying, Canceled, and Failed.
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */

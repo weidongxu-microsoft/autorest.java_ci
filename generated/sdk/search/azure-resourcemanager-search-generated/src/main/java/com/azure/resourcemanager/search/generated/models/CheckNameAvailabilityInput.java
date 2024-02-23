@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class CheckNameAvailabilityInput {
     /*
      * The search service name to validate. Search service names must only contain lowercase letters, digits or dashes,
-     * cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between
-     * 2 and 60 characters in length.
+     * cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2
+     * and 60 characters in length.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

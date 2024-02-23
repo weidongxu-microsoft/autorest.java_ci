@@ -57,8 +57,8 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientExportConfigurations to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientExportConfigurations to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")

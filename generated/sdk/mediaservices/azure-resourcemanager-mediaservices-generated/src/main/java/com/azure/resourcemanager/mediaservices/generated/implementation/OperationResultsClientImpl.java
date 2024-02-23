@@ -51,8 +51,8 @@ public final class OperationResultsClientImpl implements OperationResultsClient 
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesOperationResults to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesOperationResults to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesOp")

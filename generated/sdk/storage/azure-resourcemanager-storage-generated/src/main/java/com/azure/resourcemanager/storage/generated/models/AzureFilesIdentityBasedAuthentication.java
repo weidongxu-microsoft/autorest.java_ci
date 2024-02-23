@@ -84,8 +84,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Get the defaultSharePermission property: Default share permission for users using Kerberos authentication if
-     * RBAC role is not assigned.
+     * Get the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC
+     * role is not assigned.
      * 
      * @return the defaultSharePermission value.
      */
@@ -94,8 +94,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Set the defaultSharePermission property: Default share permission for users using Kerberos authentication if
-     * RBAC role is not assigned.
+     * Set the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC
+     * role is not assigned.
      * 
      * @param defaultSharePermission the defaultSharePermission value to set.
      * @return the AzureFilesIdentityBasedAuthentication object itself.

@@ -150,8 +150,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
-     * not. The default is false.
+     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @return the autoMitigate value.
      */
@@ -160,8 +160,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
-     * not. The default is false.
+     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the LogSearchRule object itself.
@@ -232,8 +232,7 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
-     * AlertingAction.
+     * Get the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
      * 
      * @return the schedule value.
      */
@@ -242,8 +241,7 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
-     * AlertingAction.
+     * Set the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
      * 
      * @param schedule the schedule value to set.
      * @return the LogSearchRule object itself.

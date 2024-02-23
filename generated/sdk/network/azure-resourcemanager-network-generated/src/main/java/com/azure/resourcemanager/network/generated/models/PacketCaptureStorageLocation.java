@@ -19,8 +19,8 @@ public final class PacketCaptureStorageLocation {
     private String storageId;
 
     /*
-     * The URI of the storage path to save the packet capture. Must be a well-formed URI describing the location to
-     * save the packet capture.
+     * The URI of the storage path to save the packet capture. Must be a well-formed URI describing the location to save
+     * the packet capture.
      */
     @JsonProperty(value = "storagePath")
     private String storagePath;

@@ -27,8 +27,8 @@ public final class H265Video extends Video {
     private Boolean sceneChangeDetection;
 
     /*
-     * Tells the encoder how to choose its encoding settings. Quality will provide for a higher compression ratio but
-     * at a higher cost and longer compute time. Speed will produce a relatively larger file but is faster and more
+     * Tells the encoder how to choose its encoding settings. Quality will provide for a higher compression ratio but at
+     * a higher cost and longer compute time. Speed will produce a relatively larger file but is faster and more
      * economical. The default value is Balanced.
      */
     @JsonProperty(value = "complexity")

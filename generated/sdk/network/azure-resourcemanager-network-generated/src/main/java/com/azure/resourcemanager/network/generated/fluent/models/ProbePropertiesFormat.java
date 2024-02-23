@@ -55,8 +55,8 @@ public final class ProbePropertiesFormat {
 
     /*
      * The number of consecutive successful or failed probes in order to allow or deny traffic from being delivered to
-     * this endpoint. After failing the number of consecutive probes equal to this value, the endpoint will be taken
-     * out of rotation and require the same number of successful consecutive probes to be placed back in rotation.
+     * this endpoint. After failing the number of consecutive probes equal to this value, the endpoint will be taken out
+     * of rotation and require the same number of successful consecutive probes to be placed back in rotation.
      */
     @JsonProperty(value = "probeThreshold")
     private Integer probeThreshold;
@@ -134,10 +134,9 @@ public final class ProbePropertiesFormat {
     }
 
     /**
-     * Get the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for
-     * health status. Typically, the interval is slightly less than half the allocated timeout period (in seconds)
-     * which allows two full probes before taking the instance out of rotation. The default value is 15, the minimum
-     * value is 5.
+     * Get the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health
+     * status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows
+     * two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
      * 
      * @return the intervalInSeconds value.
      */
@@ -146,10 +145,9 @@ public final class ProbePropertiesFormat {
     }
 
     /**
-     * Set the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for
-     * health status. Typically, the interval is slightly less than half the allocated timeout period (in seconds)
-     * which allows two full probes before taking the instance out of rotation. The default value is 15, the minimum
-     * value is 5.
+     * Set the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health
+     * status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows
+     * two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
      * 
      * @param intervalInSeconds the intervalInSeconds value to set.
      * @return the ProbePropertiesFormat object itself.
@@ -186,8 +184,8 @@ public final class ProbePropertiesFormat {
     /**
      * Get the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny
      * traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this
-     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes
-     * to be placed back in rotation.
+     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to
+     * be placed back in rotation.
      * 
      * @return the probeThreshold value.
      */
@@ -198,8 +196,8 @@ public final class ProbePropertiesFormat {
     /**
      * Set the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny
      * traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this
-     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes
-     * to be placed back in rotation.
+     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to
+     * be placed back in rotation.
      * 
      * @param probeThreshold the probeThreshold value to set.
      * @return the ProbePropertiesFormat object itself.

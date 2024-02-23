@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The result of the request to list REST API operations. It contains a list of operations and a URL to get the next
- * set of results.
+ * The result of the request to list REST API operations. It contains a list of operations and a URL to get the next set
+ * of results.
  */
 @Immutable
 public final class OperationListResult {

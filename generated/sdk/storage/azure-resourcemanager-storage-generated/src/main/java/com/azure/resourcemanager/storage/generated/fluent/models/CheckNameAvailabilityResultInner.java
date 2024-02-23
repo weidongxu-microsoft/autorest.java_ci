@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class CheckNameAvailabilityResultInner {
     /*
-     * Gets a boolean value that indicates whether the name is available for you to use. If true, the name is
-     * available. If false, the name has already been taken or is invalid and cannot be used.
+     * Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available.
+     * If false, the name has already been taken or is invalid and cannot be used.
      */
     @JsonProperty(value = "nameAvailable", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean nameAvailable;
@@ -40,8 +40,8 @@ public final class CheckNameAvailabilityResultInner {
     }
 
     /**
-     * Get the nameAvailable property: Gets a boolean value that indicates whether the name is available for you to
-     * use. If true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
+     * Get the nameAvailable property: Gets a boolean value that indicates whether the name is available for you to use.
+     * If true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
      * 
      * @return the nameAvailable value.
      */

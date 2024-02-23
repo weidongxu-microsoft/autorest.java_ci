@@ -263,8 +263,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource.
-     * For default limits, see [Application Gateway
+     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource. For
+     * default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the authenticationCertificates value.
@@ -274,8 +274,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource.
-     * For default limits, see [Application Gateway
+     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource. For
+     * default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param authenticationCertificates the authenticationCertificates value to set.
@@ -374,8 +374,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
+     * limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the frontendIpConfigurations value.
@@ -385,8 +385,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
+     * limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param frontendIpConfigurations the frontendIpConfigurations value to set.
@@ -712,8 +712,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
+     * limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the redirectConfigurations value.
@@ -723,8 +723,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
+     * limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param redirectConfigurations the redirectConfigurations value to set.
@@ -1004,8 +1004,8 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application
-     * gateway resource.
+     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway
+     * resource.
      * 
      * @return the defaultPredefinedSslPolicy value.
      */

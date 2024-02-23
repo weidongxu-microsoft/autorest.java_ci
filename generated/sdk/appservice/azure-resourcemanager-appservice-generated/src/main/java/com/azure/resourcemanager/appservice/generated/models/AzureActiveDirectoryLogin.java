@@ -56,8 +56,8 @@ public final class AzureActiveDirectoryLogin {
     }
 
     /**
-     * Get the disableWwwAuthenticate property: &lt;code&gt;true&lt;/code&gt; if the www-authenticate provider should
-     * be omitted from the request; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the disableWwwAuthenticate property: &lt;code&gt;true&lt;/code&gt; if the www-authenticate provider should be
+     * omitted from the request; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the disableWwwAuthenticate value.
      */
@@ -66,8 +66,8 @@ public final class AzureActiveDirectoryLogin {
     }
 
     /**
-     * Set the disableWwwAuthenticate property: &lt;code&gt;true&lt;/code&gt; if the www-authenticate provider should
-     * be omitted from the request; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the disableWwwAuthenticate property: &lt;code&gt;true&lt;/code&gt; if the www-authenticate provider should be
+     * omitted from the request; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param disableWwwAuthenticate the disableWwwAuthenticate value to set.
      * @return the AzureActiveDirectoryLogin object itself.

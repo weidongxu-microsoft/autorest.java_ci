@@ -211,8 +211,8 @@ public final class SitePropertiesInner {
     private Boolean hostNamesDisabled;
 
     /*
-     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt
-     * record for verification.
+     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record
+     * for verification.
      */
     @JsonProperty(value = "customDomainVerificationId")
     private String customDomainVerificationId;
@@ -537,8 +537,8 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @return the vnetRouteAllEnabled value.
      */
@@ -547,8 +547,8 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @param vnetRouteAllEnabled the vnetRouteAllEnabled value to set.
      * @return the SitePropertiesInner object itself.
@@ -919,8 +919,7 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @return the dailyMemoryTimeQuota value.
      */
@@ -929,8 +928,7 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @param dailyMemoryTimeQuota the dailyMemoryTimeQuota value to set.
      * @return the SitePropertiesInner object itself.
@@ -1130,8 +1128,8 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
@@ -1142,8 +1140,8 @@ public final class SitePropertiesInner {
     }
 
     /**
-     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 

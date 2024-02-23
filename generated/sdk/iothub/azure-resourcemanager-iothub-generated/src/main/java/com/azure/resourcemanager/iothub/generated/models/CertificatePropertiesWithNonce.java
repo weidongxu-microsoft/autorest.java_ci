@@ -132,8 +132,7 @@ public final class CertificatePropertiesWithNonce {
     }
 
     /**
-     * Get the verificationCode property: The certificate's verification code that will be used for proof of
-     * possession.
+     * Get the verificationCode property: The certificate's verification code that will be used for proof of possession.
      * 
      * @return the verificationCode value.
      */

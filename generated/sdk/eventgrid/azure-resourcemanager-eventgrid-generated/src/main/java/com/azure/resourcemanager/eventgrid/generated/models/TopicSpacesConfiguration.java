@@ -73,8 +73,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Get the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is
-     * Disabled.
+     * Get the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is Disabled.
      * 
      * @return the state value.
      */
@@ -83,8 +82,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Set the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is
-     * Disabled.
+     * Set the state property: Indicate if Topic Spaces Configuration is enabled for the namespace. Default is Disabled.
      * 
      * @param state the state value to set.
      * @return the TopicSpacesConfiguration object itself.
@@ -95,8 +93,8 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Get the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which
-     * events will be routed to from TopicSpaces under a namespace.
+     * Get the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events
+     * will be routed to from TopicSpaces under a namespace.
      * This property should be in the following format
      * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.
@@ -108,8 +106,8 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Set the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which
-     * events will be routed to from TopicSpaces under a namespace.
+     * Set the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events
+     * will be routed to from TopicSpaces under a namespace.
      * This property should be in the following format
      * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.

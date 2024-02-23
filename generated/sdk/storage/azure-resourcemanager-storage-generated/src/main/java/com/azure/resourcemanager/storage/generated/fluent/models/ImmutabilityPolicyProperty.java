@@ -36,10 +36,10 @@ public final class ImmutabilityPolicyProperty {
 
     /*
      * This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be
-     * written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new
-     * blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with
-     * ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties
-     * are mutually exclusive.
+     * written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks
+     * can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with
+     * ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are
+     * mutually exclusive.
      */
     @JsonProperty(value = "allowProtectedAppendWritesAll")
     private Boolean allowProtectedAppendWritesAll;
@@ -85,9 +85,9 @@ public final class ImmutabilityPolicyProperty {
 
     /**
      * Get the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention
-     * policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection
-     * and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This
-     * property cannot be changed with ExtendImmutabilityPolicy API.
+     * policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and
+     * compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property
+     * cannot be changed with ExtendImmutabilityPolicy API.
      * 
      * @return the allowProtectedAppendWrites value.
      */
@@ -97,9 +97,9 @@ public final class ImmutabilityPolicyProperty {
 
     /**
      * Set the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention
-     * policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection
-     * and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This
-     * property cannot be changed with ExtendImmutabilityPolicy API.
+     * policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and
+     * compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property
+     * cannot be changed with ExtendImmutabilityPolicy API.
      * 
      * @param allowProtectedAppendWrites the allowProtectedAppendWrites value to set.
      * @return the ImmutabilityPolicyProperty object itself.

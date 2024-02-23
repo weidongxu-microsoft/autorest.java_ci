@@ -43,8 +43,7 @@ public final class IotHubProperties {
     private Boolean disableModuleSas;
 
     /*
-     * If true, egress from IotHub will be restricted to only the allowed FQDNs that are configured via
-     * allowedFqdnList.
+     * If true, egress from IotHub will be restricted to only the allowed FQDNs that are configured via allowedFqdnList.
      */
     @JsonProperty(value = "restrictOutboundNetworkAccess")
     private Boolean restrictOutboundNetworkAccess;
@@ -368,8 +367,8 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2"
-     * to have clients that use a TLS version below 1.2 to be rejected.
+     * Get the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to
+     * have clients that use a TLS version below 1.2 to be rejected.
      * 
      * @return the minTlsVersion value.
      */
@@ -378,8 +377,8 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2"
-     * to have clients that use a TLS version below 1.2 to be rejected.
+     * Set the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to
+     * have clients that use a TLS version below 1.2 to be rejected.
      * 
      * @param minTlsVersion the minTlsVersion value to set.
      * @return the IotHubProperties object itself.
@@ -619,8 +618,8 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the enableDataResidency property: This property when set to true, will enable data residency, thus,
-     * disabling disaster recovery.
+     * Get the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling
+     * disaster recovery.
      * 
      * @return the enableDataResidency value.
      */
@@ -629,8 +628,8 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the enableDataResidency property: This property when set to true, will enable data residency, thus,
-     * disabling disaster recovery.
+     * Set the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling
+     * disaster recovery.
      * 
      * @param enableDataResidency the enableDataResidency value to set.
      * @return the IotHubProperties object itself.

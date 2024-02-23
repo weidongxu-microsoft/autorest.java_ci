@@ -104,8 +104,8 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported device registry information for the IoT Hub.
+     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob container.
+     * This blob will contain the exported device registry information for the IoT Hub.
      * 
      * @return the exportBlobName value.
      */
@@ -114,8 +114,8 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported device registry information for the IoT Hub.
+     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob container.
+     * This blob will contain the exported device registry information for the IoT Hub.
      * 
      * @param exportBlobName the exportBlobName value to set.
      * @return the ExportDevicesRequest object itself.

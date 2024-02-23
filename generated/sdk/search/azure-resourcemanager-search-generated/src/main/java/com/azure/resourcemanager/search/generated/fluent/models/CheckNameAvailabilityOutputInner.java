@@ -21,8 +21,8 @@ public final class CheckNameAvailabilityOutputInner {
 
     /*
      * The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming
-     * requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is
-     * already in use and is therefore unavailable.
+     * requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already
+     * in use and is therefore unavailable.
      */
     @JsonProperty(value = "reason", access = JsonProperty.Access.WRITE_ONLY)
     private UnavailableNameReason reason;
@@ -50,9 +50,9 @@ public final class CheckNameAvailabilityOutputInner {
     }
 
     /**
-     * Get the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does
-     * not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates
-     * that the name is already in use and is therefore unavailable.
+     * Get the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does not
+     * match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that
+     * the name is already in use and is therefore unavailable.
      * 
      * @return the reason value.
      */

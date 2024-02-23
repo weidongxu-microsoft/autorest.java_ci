@@ -172,8 +172,8 @@ public final class SitePatchResourcePropertiesInner {
     private Boolean hostNamesDisabled;
 
     /*
-     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt
-     * record for verification.
+     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record
+     * for verification.
      */
     @JsonProperty(value = "customDomainVerificationId")
     private String customDomainVerificationId;
@@ -744,8 +744,7 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Get the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @return the dailyMemoryTimeQuota value.
      */
@@ -754,8 +753,7 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
-     * only).
+     * Set the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      * 
      * @param dailyMemoryTimeQuota the dailyMemoryTimeQuota value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -933,8 +931,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
@@ -945,8 +943,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration.
+     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
      * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 

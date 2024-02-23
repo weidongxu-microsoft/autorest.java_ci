@@ -43,8 +43,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the kind property: The kind of application that this component refers to, used to customize UI. This value
-     * is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+     * Get the kind property: The kind of application that this component refers to, used to customize UI. This value is
+     * a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
      * 
      * @return the kind value.
      */
@@ -53,8 +53,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the kind property: The kind of application that this component refers to, used to customize UI. This value
-     * is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+     * Set the kind property: The kind of application that this component refers to, used to customize UI. This value is
+     * a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
      * 
      * @param kind the kind value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -92,8 +92,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and
-     * cannot be changed.
+     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot
+     * be changed.
      * 
      * @return the applicationId value.
      */
@@ -185,8 +185,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
 
     /**
      * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that
-     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This
-     * value will be supplied upon construction of each new Application Insights component.
+     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value
+     * will be supplied upon construction of each new Application Insights component.
      * 
      * @return the instrumentationKey value.
      */
@@ -249,8 +249,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
 
     /**
      * Get the provisioningState property: Current state of this component: whether or not is has been provisioned
-     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values
-     * will include Succeeded, Deploying, Canceled, and Failed.
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */

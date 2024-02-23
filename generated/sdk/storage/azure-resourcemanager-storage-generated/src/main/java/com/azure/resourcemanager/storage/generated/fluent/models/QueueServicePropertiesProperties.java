@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class QueueServicePropertiesProperties {
     /*
      * Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no
-     * CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled
-     * for the Queue service.
+     * CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for
+     * the Queue service.
      */
     @JsonProperty(value = "cors")
     private CorsRules cors;

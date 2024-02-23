@@ -120,10 +120,10 @@ public final class DomainProperties {
      * last event subscription at the scope
      * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the
      * domain topic when it is no longer needed
-     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management
-     * mode can be used if the user wants full
-     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
-     * perform less operations and manage fewer
+     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode
+     * can be used if the user wants full
+     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform
+     * less operations and manage fewer
      * resources by the user.
      */
     @JsonProperty(value = "autoDeleteTopicWithLastSubscription")
@@ -268,8 +268,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
      * 
@@ -280,8 +280,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso
      * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
      * 
@@ -294,8 +294,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
@@ -304,8 +304,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @param inboundIpRules the inboundIpRules value to set.
      * @return the DomainProperties object itself.
@@ -340,8 +340,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Get the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism
-     * for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+     * Get the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism for
+     * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
      * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The
      * default value for this property is true.
      * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic
@@ -361,8 +361,8 @@ public final class DomainProperties {
     }
 
     /**
-     * Set the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism
-     * for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+     * Set the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism for
+     * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
      * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The
      * default value for this property is true.
      * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic
@@ -392,10 +392,10 @@ public final class DomainProperties {
      * last event subscription at the scope
      * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the
      * domain topic when it is no longer needed
-     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management
-     * mode can be used if the user wants full
-     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
-     * perform less operations and manage fewer
+     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode
+     * can be used if the user wants full
+     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform
+     * less operations and manage fewer
      * resources by the user.
      * 
      * @return the autoDeleteTopicWithLastSubscription value.
@@ -413,10 +413,10 @@ public final class DomainProperties {
      * last event subscription at the scope
      * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the
      * domain topic when it is no longer needed
-     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management
-     * mode can be used if the user wants full
-     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
-     * perform less operations and manage fewer
+     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode
+     * can be used if the user wants full
+     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform
+     * less operations and manage fewer
      * resources by the user.
      * 
      * @param autoDeleteTopicWithLastSubscription the autoDeleteTopicWithLastSubscription value to set.

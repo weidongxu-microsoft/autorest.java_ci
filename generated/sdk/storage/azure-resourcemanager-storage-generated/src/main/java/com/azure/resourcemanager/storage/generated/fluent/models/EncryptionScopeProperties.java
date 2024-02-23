@@ -17,8 +17,7 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class EncryptionScopeProperties {
     /*
-     * The provider for the encryption scope. Possible values (case-insensitive): Microsoft.Storage,
-     * Microsoft.KeyVault.
+     * The provider for the encryption scope. Possible values (case-insensitive): Microsoft.Storage, Microsoft.KeyVault.
      */
     @JsonProperty(value = "source")
     private EncryptionScopeSource source;
@@ -84,8 +83,7 @@ public final class EncryptionScopeProperties {
     }
 
     /**
-     * Get the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled,
-     * Disabled.
+     * Get the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
      * 
      * @return the state value.
      */
@@ -94,8 +92,7 @@ public final class EncryptionScopeProperties {
     }
 
     /**
-     * Set the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled,
-     * Disabled.
+     * Set the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
      * 
      * @param state the state value to set.
      * @return the EncryptionScopeProperties object itself.

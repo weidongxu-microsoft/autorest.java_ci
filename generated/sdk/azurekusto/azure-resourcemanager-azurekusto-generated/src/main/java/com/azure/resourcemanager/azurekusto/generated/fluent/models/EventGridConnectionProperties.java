@@ -124,8 +124,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage
-     * account events.
+     * Get the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account
+     * events.
      * 
      * @return the eventGridResourceId value.
      */
@@ -134,8 +134,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage
-     * account events.
+     * Set the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account
+     * events.
      * 
      * @param eventGridResourceId the eventGridResourceId value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -294,8 +294,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to
-     * be used to authenticate with event hub and storage account.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      * 
      * @return the managedIdentityResourceId value.
      */
@@ -304,8 +304,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to
-     * be used to authenticate with event hub and storage account.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      * 
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventGridConnectionProperties object itself.

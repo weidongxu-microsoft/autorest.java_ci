@@ -259,8 +259,8 @@ public final class ModernUsageDetailProperties {
 
     /*
      * Term (in months). Displays the term for the validity of the offer. For example. In case of reserved instances it
-     * displays 12 months for yearly term of reserved instance. For one time purchases or recurring purchases, the
-     * terms displays 1 month; This is not applicable for Azure consumption.
+     * displays 12 months for yearly term of reserved instance. For one time purchases or recurring purchases, the terms
+     * displays 1 month; This is not applicable for Azure consumption.
      */
     @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
@@ -530,8 +530,8 @@ public final class ModernUsageDetailProperties {
 
     /**
      * Get the billingProfileId property: Identifier for the billing profile that groups costs across invoices in the a
-     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and
-     * the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the
+     * customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
      * 
      * @return the billingProfileId value.
      */
@@ -541,8 +541,8 @@ public final class ModernUsageDetailProperties {
 
     /**
      * Get the billingProfileName property: Name of the billing profile that groups costs across invoices in the a
-     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and
-     * the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the
+     * customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
      * 
      * @return the billingProfileName value.
      */
@@ -711,8 +711,8 @@ public final class ModernUsageDetailProperties {
     }
 
     /**
-     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the
-     * usage or was purchased. This value is not provided for marketplace usage.
+     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage
+     * or was purchased. This value is not provided for marketplace usage.
      * 
      * @return the consumedService value.
      */
@@ -750,8 +750,8 @@ public final class ModernUsageDetailProperties {
     }
 
     /**
-     * Get the invoiceSectionId property: Identifier of the project that is being charged in the invoice. Not
-     * applicable for Microsoft Customer Agreements onboarded by partners.
+     * Get the invoiceSectionId property: Identifier of the project that is being charged in the invoice. Not applicable
+     * for Microsoft Customer Agreements onboarded by partners.
      * 
      * @return the invoiceSectionId value.
      */
@@ -760,8 +760,8 @@ public final class ModernUsageDetailProperties {
     }
 
     /**
-     * Get the invoiceSectionName property: Name of the project that is being charged in the invoice. Not applicable
-     * for Microsoft Customer Agreements onboarded by partners.
+     * Get the invoiceSectionName property: Name of the project that is being charged in the invoice. Not applicable for
+     * Microsoft Customer Agreements onboarded by partners.
      * 
      * @return the invoiceSectionName value.
      */
@@ -800,8 +800,8 @@ public final class ModernUsageDetailProperties {
     }
 
     /**
-     * Get the reservationName property: User provided display name of the reservation. Last known name for a
-     * particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular
+     * day is populated in the daily data. Only applies to records relevant to reservations.
      * 
      * @return the reservationName value.
      */
@@ -838,8 +838,8 @@ public final class ModernUsageDetailProperties {
     }
 
     /**
-     * Get the term property: Term (in months). Displays the term for the validity of the offer. For example. In case
-     * of reserved instances it displays 12 months for yearly term of reserved instance. For one time purchases or
+     * Get the term property: Term (in months). Displays the term for the validity of the offer. For example. In case of
+     * reserved instances it displays 12 months for yearly term of reserved instance. For one time purchases or
      * recurring purchases, the terms displays 1 month; This is not applicable for Azure consumption.
      * 
      * @return the term value.

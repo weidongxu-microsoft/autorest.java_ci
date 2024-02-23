@@ -146,9 +146,9 @@ public final class SavedSearchProperties {
     }
 
     /**
-     * Get the functionParameters property: The optional function parameters if query serves as a function. Value
-     * should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
-     * more examples and proper syntax please refer to
+     * Get the functionParameters property: The optional function parameters if query serves as a function. Value should
+     * be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more
+     * examples and proper syntax please refer to
      * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      * 
      * @return the functionParameters value.
@@ -158,9 +158,9 @@ public final class SavedSearchProperties {
     }
 
     /**
-     * Set the functionParameters property: The optional function parameters if query serves as a function. Value
-     * should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
-     * more examples and proper syntax please refer to
+     * Set the functionParameters property: The optional function parameters if query serves as a function. Value should
+     * be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more
+     * examples and proper syntax please refer to
      * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      * 
      * @param functionParameters the functionParameters value to set.

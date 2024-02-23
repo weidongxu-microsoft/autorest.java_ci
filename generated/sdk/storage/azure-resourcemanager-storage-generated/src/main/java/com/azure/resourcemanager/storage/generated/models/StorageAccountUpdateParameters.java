@@ -23,9 +23,9 @@ public final class StorageAccountUpdateParameters {
     private Sku sku;
 
     /*
-     * Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and
-     * grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag
-     * must have a key no greater in length than 128 characters and a value no greater in length than 256 characters.
+     * Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and grouping
+     * this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a
+     * key no greater in length than 128 characters and a value no greater in length than 256 characters.
      */
     @JsonProperty(value = "tags")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -80,8 +80,8 @@ public final class StorageAccountUpdateParameters {
     /**
      * Get the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used
      * in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
-     * resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length
-     * than 256 characters.
+     * resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length than
+     * 256 characters.
      * 
      * @return the tags value.
      */
@@ -92,8 +92,8 @@ public final class StorageAccountUpdateParameters {
     /**
      * Set the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used
      * in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
-     * resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length
-     * than 256 characters.
+     * resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length than
+     * 256 characters.
      * 
      * @param tags the tags value to set.
      * @return the StorageAccountUpdateParameters object itself.
@@ -448,8 +448,8 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
@@ -458,8 +458,8 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @param allowBlobPublicAccess the allowBlobPublicAccess value to set.
      * @return the StorageAccountUpdateParameters object itself.
@@ -499,9 +499,8 @@ public final class StorageAccountUpdateParameters {
 
     /**
      * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -511,9 +510,8 @@ public final class StorageAccountUpdateParameters {
 
     /**
      * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
      * @return the StorageAccountUpdateParameters object itself.
@@ -660,8 +658,8 @@ public final class StorageAccountUpdateParameters {
 
     /**
      * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
@@ -671,8 +669,8 @@ public final class StorageAccountUpdateParameters {
 
     /**
      * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @param dnsEndpointType the dnsEndpointType value to set.
      * @return the StorageAccountUpdateParameters object itself.

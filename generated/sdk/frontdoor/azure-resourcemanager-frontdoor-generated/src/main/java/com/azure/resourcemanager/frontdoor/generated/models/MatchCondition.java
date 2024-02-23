@@ -21,8 +21,7 @@ public final class MatchCondition {
     private MatchVariable matchVariable;
 
     /*
-     * Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is
-     * null.
+     * Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is null.
      */
     @JsonProperty(value = "selector")
     private String selector;

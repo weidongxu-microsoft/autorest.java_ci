@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SecuritySettingsProperties {
     /*
-     * Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the
-     * local web UI of the device. The Actual password should have at least 8 characters that are a combination of
-     * uppercase, lowercase, numeric, and special characters.
+     * Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the local
+     * web UI of the device. The Actual password should have at least 8 characters that are a combination of uppercase,
+     * lowercase, numeric, and special characters.
      */
     @JsonProperty(value = "deviceAdminPassword", required = true)
     private AsymmetricEncryptedSecret deviceAdminPassword;

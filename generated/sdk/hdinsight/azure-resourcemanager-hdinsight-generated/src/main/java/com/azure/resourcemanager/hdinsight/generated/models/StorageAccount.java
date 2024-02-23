@@ -121,8 +121,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the container property: The container in the storage account, only to be specified for WASB storage
-     * accounts.
+     * Get the container property: The container in the storage account, only to be specified for WASB storage accounts.
      * 
      * @return the container value.
      */
@@ -131,8 +130,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the container property: The container in the storage account, only to be specified for WASB storage
-     * accounts.
+     * Set the container property: The container in the storage account, only to be specified for WASB storage accounts.
      * 
      * @param container the container value to set.
      * @return the StorageAccount object itself.
@@ -183,8 +181,8 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake
-     * Storage Gen 2.
+     * Get the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage
+     * Gen 2.
      * 
      * @return the resourceId value.
      */
@@ -193,8 +191,8 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake
-     * Storage Gen 2.
+     * Set the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage
+     * Gen 2.
      * 
      * @param resourceId the resourceId value to set.
      * @return the StorageAccount object itself.
@@ -205,8 +203,8 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only
-     * to be specified for Azure Data Lake Storage Gen 2.
+     * Get the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to
+     * be specified for Azure Data Lake Storage Gen 2.
      * 
      * @return the msiResourceId value.
      */
@@ -215,8 +213,8 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only
-     * to be specified for Azure Data Lake Storage Gen 2.
+     * Set the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to
+     * be specified for Azure Data Lake Storage Gen 2.
      * 
      * @param msiResourceId the msiResourceId value to set.
      * @return the StorageAccount object itself.

@@ -32,8 +32,8 @@ public final class PushInfo {
      * - H is the hour designator, and it follows the value for the number of hours.
      * - M is the minute designator, and it follows the value for the number of minutes.
      * - S is the second designator, and it follows the value for the number of seconds.
-     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field
-     * where its minimum value is 1 minute, and its maximum is determined
+     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field where
+     * its minimum value is 1 minute, and its maximum is determined
      * by topic’s EventRetentionInDays value. The followings are examples of valid values:
      * - \'P0DT23H12M\' or \'PT23H12M\': for duration of 23 hours and 12 minutes.
      * - \'P1D\' or \'P1DT0H0M0S\': for duration of 1 day.
@@ -98,8 +98,8 @@ public final class PushInfo {
      * - H is the hour designator, and it follows the value for the number of hours.
      * - M is the minute designator, and it follows the value for the number of minutes.
      * - S is the second designator, and it follows the value for the number of seconds.
-     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field
-     * where its minimum value is 1 minute, and its maximum is determined
+     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field where
+     * its minimum value is 1 minute, and its maximum is determined
      * by topic’s EventRetentionInDays value. The followings are examples of valid values:
      * - \'P0DT23H12M\' or \'PT23H12M\': for duration of 23 hours and 12 minutes.
      * - \'P1D\' or \'P1DT0H0M0S\': for duration of 1 day.
@@ -124,8 +124,8 @@ public final class PushInfo {
      * - H is the hour designator, and it follows the value for the number of hours.
      * - M is the minute designator, and it follows the value for the number of minutes.
      * - S is the second designator, and it follows the value for the number of seconds.
-     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field
-     * where its minimum value is 1 minute, and its maximum is determined
+     * This duration value cannot be set greater than the topic’s EventRetentionInDays. It is is an optional field where
+     * its minimum value is 1 minute, and its maximum is determined
      * by topic’s EventRetentionInDays value. The followings are examples of valid values:
      * - \'P0DT23H12M\' or \'PT23H12M\': for duration of 23 hours and 12 minutes.
      * - \'P1D\' or \'P1DT0H0M0S\': for duration of 1 day.

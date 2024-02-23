@@ -52,9 +52,9 @@ public final class NetworkRuleSet {
     }
 
     /**
-     * Get the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible
-     * values are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass
-     * none of those traffics.
+     * Get the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values
+     * are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of
+     * those traffics.
      * 
      * @return the bypass value.
      */
@@ -63,9 +63,9 @@ public final class NetworkRuleSet {
     }
 
     /**
-     * Set the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible
-     * values are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass
-     * none of those traffics.
+     * Set the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values
+     * are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of
+     * those traffics.
      * 
      * @param bypass the bypass value to set.
      * @return the NetworkRuleSet object itself.

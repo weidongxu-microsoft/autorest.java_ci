@@ -112,10 +112,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the location property: Required. Gets or sets the location of the resource. This will be one of the
-     * supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a
-     * resource cannot be changed once it is created, but if an identical geo region is specified on update, the
-     * request will succeed.
+     * Get the location property: Required. Gets or sets the location of the resource. This will be one of the supported
+     * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource
+     * cannot be changed once it is created, but if an identical geo region is specified on update, the request will
+     * succeed.
      * 
      * @return the location value.
      */
@@ -124,10 +124,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the location property: Required. Gets or sets the location of the resource. This will be one of the
-     * supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a
-     * resource cannot be changed once it is created, but if an identical geo region is specified on update, the
-     * request will succeed.
+     * Set the location property: Required. Gets or sets the location of the resource. This will be one of the supported
+     * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource
+     * cannot be changed once it is created, but if an identical geo region is specified on update, the request will
+     * succeed.
      * 
      * @param location the location value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -581,8 +581,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
@@ -591,8 +591,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @param allowBlobPublicAccess the allowBlobPublicAccess value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -632,9 +632,8 @@ public final class StorageAccountCreateParameters {
 
     /**
      * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -644,9 +643,8 @@ public final class StorageAccountCreateParameters {
 
     /**
      * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures,
-     * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to
-     * true.
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -766,8 +764,8 @@ public final class StorageAccountCreateParameters {
 
     /**
      * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
@@ -777,8 +775,8 @@ public final class StorageAccountCreateParameters {
 
     /**
      * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-     * endpoint URL will have an alphanumeric DNS Zone identifier.
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @param dnsEndpointType the dnsEndpointType value to set.
      * @return the StorageAccountCreateParameters object itself.

@@ -32,8 +32,8 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Get the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window
-     * is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
+     * Get the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is
+     * calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
      * 
      * @return the numberOfEvaluationPeriods value.
      */
@@ -42,8 +42,8 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Set the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window
-     * is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
+     * Set the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is
+     * calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
      * 
      * @param numberOfEvaluationPeriods the numberOfEvaluationPeriods value to set.
      * @return the DynamicThresholdFailingPeriods object itself.

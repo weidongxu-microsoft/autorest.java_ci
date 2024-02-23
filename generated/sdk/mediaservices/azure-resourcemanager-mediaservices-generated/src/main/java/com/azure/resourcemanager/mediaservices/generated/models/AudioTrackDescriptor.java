@@ -40,8 +40,8 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     }
 
     /**
-     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine
-     * the tracks into stereo or multi-channel audio tracks.
+     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
+     * tracks into stereo or multi-channel audio tracks.
      * 
      * @return the channelMapping value.
      */
@@ -50,8 +50,8 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     }
 
     /**
-     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine
-     * the tracks into stereo or multi-channel audio tracks.
+     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
+     * tracks into stereo or multi-channel audio tracks.
      * 
      * @param channelMapping the channelMapping value to set.
      * @return the AudioTrackDescriptor object itself.

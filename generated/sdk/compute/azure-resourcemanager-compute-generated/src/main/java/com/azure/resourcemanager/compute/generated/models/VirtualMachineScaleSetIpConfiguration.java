@@ -162,8 +162,8 @@ public final class VirtualMachineScaleSetIpConfiguration {
     }
 
     /**
-     * Get the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address
-     * pools of application gateways. A scale set can reference backend address pools of multiple application gateways.
+     * Get the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools
+     * of application gateways. A scale set can reference backend address pools of multiple application gateways.
      * Multiple scale sets cannot use the same application gateway.
      * 
      * @return the applicationGatewayBackendAddressPools value.
@@ -173,8 +173,8 @@ public final class VirtualMachineScaleSetIpConfiguration {
     }
 
     /**
-     * Set the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address
-     * pools of application gateways. A scale set can reference backend address pools of multiple application gateways.
+     * Set the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools
+     * of application gateways. A scale set can reference backend address pools of multiple application gateways.
      * Multiple scale sets cannot use the same application gateway.
      * 
      * @param applicationGatewayBackendAddressPools the applicationGatewayBackendAddressPools value to set.

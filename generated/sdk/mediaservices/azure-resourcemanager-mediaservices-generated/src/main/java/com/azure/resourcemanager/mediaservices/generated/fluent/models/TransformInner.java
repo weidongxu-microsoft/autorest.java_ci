@@ -56,8 +56,7 @@ public final class TransformInner extends ProxyResource {
     }
 
     /**
-     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ'
-     * format.
+     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the created value.
      */

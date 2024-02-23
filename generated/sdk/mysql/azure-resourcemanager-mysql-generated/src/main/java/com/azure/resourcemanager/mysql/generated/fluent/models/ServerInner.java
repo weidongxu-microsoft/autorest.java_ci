@@ -280,8 +280,8 @@ public final class ServerInner extends Resource {
     }
 
     /**
-     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      * 
      * @return the restorePointInTime value.
      */
@@ -290,8 +290,8 @@ public final class ServerInner extends Resource {
     }
 
     /**
-     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      * 
      * @param restorePointInTime the restorePointInTime value to set.
      * @return the ServerInner object itself.

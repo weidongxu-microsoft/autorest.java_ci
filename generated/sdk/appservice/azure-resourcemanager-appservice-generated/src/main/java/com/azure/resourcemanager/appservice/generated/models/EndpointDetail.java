@@ -107,8 +107,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Get the isAccessible property: Whether it is possible to create a TCP connection from the App Service
-     * Environment to this IpAddress at this Port.
+     * Get the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment
+     * to this IpAddress at this Port.
      * 
      * @return the isAccessible value.
      */
@@ -117,8 +117,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Set the isAccessible property: Whether it is possible to create a TCP connection from the App Service
-     * Environment to this IpAddress at this Port.
+     * Set the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment
+     * to this IpAddress at this Port.
      * 
      * @param isAccessible the isAccessible value to set.
      * @return the EndpointDetail object itself.

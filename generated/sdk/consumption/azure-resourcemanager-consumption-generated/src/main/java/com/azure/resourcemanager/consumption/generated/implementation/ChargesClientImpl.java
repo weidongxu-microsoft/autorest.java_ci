@@ -50,8 +50,8 @@ public final class ChargesClientImpl implements ChargesClient {
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientCharges to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientCharges to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")

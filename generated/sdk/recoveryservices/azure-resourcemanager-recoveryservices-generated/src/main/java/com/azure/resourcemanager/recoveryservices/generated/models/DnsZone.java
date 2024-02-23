@@ -25,8 +25,7 @@ public class DnsZone {
     }
 
     /**
-     * Get the subResource property: Subresource type for vault AzureBackup, AzureBackup_secondary or
-     * AzureSiteRecovery.
+     * Get the subResource property: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery.
      * 
      * @return the subResource value.
      */
@@ -35,8 +34,7 @@ public class DnsZone {
     }
 
     /**
-     * Set the subResource property: Subresource type for vault AzureBackup, AzureBackup_secondary or
-     * AzureSiteRecovery.
+     * Set the subResource property: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery.
      * 
      * @param subResource the subResource value to set.
      * @return the DnsZone object itself.

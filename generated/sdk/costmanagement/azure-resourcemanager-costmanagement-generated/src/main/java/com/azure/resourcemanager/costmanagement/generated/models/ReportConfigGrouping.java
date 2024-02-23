@@ -52,8 +52,7 @@ public final class ReportConfigGrouping {
     }
 
     /**
-     * Get the name property: The name of the column to group. This version supports subscription lowest possible
-     * grain.
+     * Get the name property: The name of the column to group. This version supports subscription lowest possible grain.
      * 
      * @return the name value.
      */
@@ -62,8 +61,7 @@ public final class ReportConfigGrouping {
     }
 
     /**
-     * Set the name property: The name of the column to group. This version supports subscription lowest possible
-     * grain.
+     * Set the name property: The name of the column to group. This version supports subscription lowest possible grain.
      * 
      * @param name the name value to set.
      * @return the ReportConfigGrouping object itself.

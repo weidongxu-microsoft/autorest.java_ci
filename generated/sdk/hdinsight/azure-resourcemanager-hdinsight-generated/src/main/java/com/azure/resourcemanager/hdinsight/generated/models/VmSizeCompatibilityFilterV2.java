@@ -59,8 +59,8 @@ public final class VmSizeCompatibilityFilterV2 {
     private List<String> vmSizes;
 
     /*
-     * Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string
-     * or others mean for both.
+     * Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string or
+     * others mean for both.
      */
     @JsonProperty(value = "espApplied")
     private String espApplied;

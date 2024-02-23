@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Specifies the security posture to be used for all virtual machines in the scale set. Minimum api-version:
- * 2023-03-01.
+ * Specifies the security posture to be used for all virtual machines in the scale set. Minimum api-version: 2023-03-01.
  */
 @Fluent
 public final class SecurityPostureReference {

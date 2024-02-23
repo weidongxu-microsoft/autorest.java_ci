@@ -8,8 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * This property defines the creation time based filtering condition. Blob Inventory schema parameter 'Creation-Time'
- * is mandatory with this filter.
+ * This property defines the creation time based filtering condition. Blob Inventory schema parameter 'Creation-Time' is
+ * mandatory with this filter.
  */
 @Fluent
 public final class BlobInventoryCreationTime {

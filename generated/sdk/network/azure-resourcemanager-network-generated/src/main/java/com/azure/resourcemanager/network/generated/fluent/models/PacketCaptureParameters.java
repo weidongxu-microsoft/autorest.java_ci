@@ -74,8 +74,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Get the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are
-     * currently supported.
+     * Get the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      * 
      * @return the target value.
      */
@@ -84,8 +84,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Set the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are
-     * currently supported.
+     * Set the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      * 
      * @param target the target value to set.
      * @return the PacketCaptureParameters object itself.
@@ -96,8 +96,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Get the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture.
-     * If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     * Get the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
      * 
      * @return the scope value.
      */
@@ -106,8 +106,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Set the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture.
-     * If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     * Set the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
      * 
      * @param scope the scope value to set.
      * @return the PacketCaptureParameters object itself.
@@ -138,8 +138,7 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Get the bytesToCapturePerPacket property: Number of bytes captured per packet, the remaining bytes are
-     * truncated.
+     * Get the bytesToCapturePerPacket property: Number of bytes captured per packet, the remaining bytes are truncated.
      * 
      * @return the bytesToCapturePerPacket value.
      */
@@ -148,8 +147,7 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Set the bytesToCapturePerPacket property: Number of bytes captured per packet, the remaining bytes are
-     * truncated.
+     * Set the bytesToCapturePerPacket property: Number of bytes captured per packet, the remaining bytes are truncated.
      * 
      * @param bytesToCapturePerPacket the bytesToCapturePerPacket value to set.
      * @return the PacketCaptureParameters object itself.

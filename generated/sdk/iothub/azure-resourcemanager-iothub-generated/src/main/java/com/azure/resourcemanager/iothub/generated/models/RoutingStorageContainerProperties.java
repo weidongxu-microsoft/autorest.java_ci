@@ -77,8 +77,8 @@ public final class RoutingStorageContainerProperties {
     private String fileNameFormat;
 
     /*
-     * Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value
-     * is 300 seconds.
+     * Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is
+     * 300 seconds.
      */
     @JsonProperty(value = "batchFrequencyInSeconds")
     private Integer batchFrequencyInSeconds;
@@ -204,9 +204,9 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric
-     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
-     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @return the name value.
      */
@@ -215,9 +215,9 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric
-     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
-     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @param name the name value to set.
      * @return the RoutingStorageContainerProperties object itself.

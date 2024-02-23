@@ -305,8 +305,8 @@ public final class EventSubscriptionProperties {
     }
 
     /**
-     * Get the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any
-     * event that cannot be delivered to its' destination is sent to the dead letter destination.
+     * Get the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event
+     * that cannot be delivered to its' destination is sent to the dead letter destination.
      * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
      * tokens being used during delivery / dead-lettering.
      * 
@@ -317,8 +317,8 @@ public final class EventSubscriptionProperties {
     }
 
     /**
-     * Set the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any
-     * event that cannot be delivered to its' destination is sent to the dead letter destination.
+     * Set the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event
+     * that cannot be delivered to its' destination is sent to the dead letter destination.
      * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
      * tokens being used during delivery / dead-lettering.
      * 

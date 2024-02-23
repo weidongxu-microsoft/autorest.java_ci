@@ -397,8 +397,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point
-     * in the subnet.
+     * Get the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in
+     * the subnet.
      * 
      * @return the privateEndpointNetworkPolicies value.
      */
@@ -407,8 +407,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Set the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point
-     * in the subnet.
+     * Set the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in
+     * the subnet.
      * 
      * @param privateEndpointNetworkPolicies the privateEndpointNetworkPolicies value to set.
      * @return the SubnetPropertiesFormatInner object itself.

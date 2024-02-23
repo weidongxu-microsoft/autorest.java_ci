@@ -35,22 +35,22 @@ public final class BlobInventoryPolicyFilter {
     private List<String> blobTypes;
 
     /*
-     * Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values
-     * 'VersionId and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
+     * Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values 'VersionId
+     * and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
      */
     @JsonProperty(value = "includeBlobVersions")
     private Boolean includeBlobVersions;
 
     /*
-     * Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value
-     * 'Snapshot' is required if this property is set to true, else it must be excluded.
+     * Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value 'Snapshot'
+     * is required if this property is set to true, else it must be excluded.
      */
     @JsonProperty(value = "includeSnapshots")
     private Boolean includeSnapshots;
 
     /*
-     * For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime
-     * and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the
+     * For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime and
+     * RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the
      * definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and RemainingRetentionDays' and for Hns
      * disabled accounts the definition.schemaFields must include 'Deleted and RemainingRetentionDays', else it must be
      * excluded.

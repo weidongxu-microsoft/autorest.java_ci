@@ -74,8 +74,8 @@ public final class DevicesClientImpl implements DevicesClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientDevices to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientDevices to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")

@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Rectangle {
     /*
-     * The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size
-     * of the video (For example, 50%).
+     * The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size of
+     * the video (For example, 50%).
      */
     @JsonProperty(value = "left")
     private String left;

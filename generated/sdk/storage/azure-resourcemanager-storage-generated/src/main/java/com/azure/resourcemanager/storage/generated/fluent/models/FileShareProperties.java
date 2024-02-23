@@ -271,8 +271,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between
-     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @return the accessTier value.
      */
@@ -281,8 +281,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between
-     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @param accessTier the accessTier value to set.
      * @return the FileShareProperties object itself.

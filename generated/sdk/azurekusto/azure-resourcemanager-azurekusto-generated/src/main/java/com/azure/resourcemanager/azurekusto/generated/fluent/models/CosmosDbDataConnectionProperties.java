@@ -16,8 +16,7 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class CosmosDbDataConnectionProperties {
     /*
-     * The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this
-     * table.
+     * The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table.
      */
     @JsonProperty(value = "tableName", required = true)
     private String tableName;

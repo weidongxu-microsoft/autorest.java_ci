@@ -40,8 +40,8 @@ public class JobInputClip extends JobInput {
     private ClipTime start;
 
     /*
-     * Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the
-     * input media.
+     * Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input
+     * media.
      */
     @JsonProperty(value = "end")
     private ClipTime end;

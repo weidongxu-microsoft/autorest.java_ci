@@ -41,8 +41,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * VirtualMachineScaleSetVMRunCommandsClient.
+ * An instance of this class provides access to all the operations defined in VirtualMachineScaleSetVMRunCommandsClient.
  */
 public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements VirtualMachineScaleSetVMRunCommandsClient {
     /**
@@ -67,8 +66,8 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMRunCommands to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMRunCommands to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")

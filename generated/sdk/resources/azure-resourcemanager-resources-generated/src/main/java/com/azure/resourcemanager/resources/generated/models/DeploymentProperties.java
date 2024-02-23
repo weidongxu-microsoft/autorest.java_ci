@@ -30,8 +30,8 @@ public class DeploymentProperties {
     /*
      * Name and value pairs that define the deployment parameters for the template. You use this element when you want
      * to provide the parameter values directly in the request rather than link to an existing parameter file. Use
-     * either the parametersLink property or the parameters property, but not both. It can be a JObject or a well
-     * formed JSON string.
+     * either the parametersLink property or the parameters property, but not both. It can be a JObject or a well formed
+     * JSON string.
      */
     @JsonProperty(value = "parameters")
     private Object parameters;
@@ -44,10 +44,10 @@ public class DeploymentProperties {
     private ParametersLink parametersLink;
 
     /*
-     * The mode that is used to deploy resources. This value can be either Incremental or Complete. In Incremental
-     * mode, resources are deployed without deleting existing resources that are not included in the template. In
-     * Complete mode, resources are deployed and existing resources in the resource group that are not included in the
-     * template are deleted. Be careful when using Complete mode as you may unintentionally delete resources.
+     * The mode that is used to deploy resources. This value can be either Incremental or Complete. In Incremental mode,
+     * resources are deployed without deleting existing resources that are not included in the template. In Complete
+     * mode, resources are deployed and existing resources in the resource group that are not included in the template
+     * are deleted. Be careful when using Complete mode as you may unintentionally delete resources.
      */
     @JsonProperty(value = "mode", required = true)
     private DeploymentMode mode;
@@ -79,8 +79,8 @@ public class DeploymentProperties {
 
     /**
      * Get the template property: The template content. You use this element when you want to pass the template syntax
-     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON
-     * string. Use either the templateLink property or the template property, but not both.
+     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string.
+     * Use either the templateLink property or the template property, but not both.
      * 
      * @return the template value.
      */
@@ -90,8 +90,8 @@ public class DeploymentProperties {
 
     /**
      * Set the template property: The template content. You use this element when you want to pass the template syntax
-     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON
-     * string. Use either the templateLink property or the template property, but not both.
+     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string.
+     * Use either the templateLink property or the template property, but not both.
      * 
      * @param template the template value to set.
      * @return the DeploymentProperties object itself.
@@ -124,8 +124,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the parameters property: Name and value pairs that define the deployment parameters for the template. You
-     * use this element when you want to provide the parameter values directly in the request rather than link to an
+     * Get the parameters property: Name and value pairs that define the deployment parameters for the template. You use
+     * this element when you want to provide the parameter values directly in the request rather than link to an
      * existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can
      * be a JObject or a well formed JSON string.
      * 
@@ -136,8 +136,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the parameters property: Name and value pairs that define the deployment parameters for the template. You
-     * use this element when you want to provide the parameter values directly in the request rather than link to an
+     * Set the parameters property: Name and value pairs that define the deployment parameters for the template. You use
+     * this element when you want to provide the parameter values directly in the request rather than link to an
      * existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can
      * be a JObject or a well formed JSON string.
      * 

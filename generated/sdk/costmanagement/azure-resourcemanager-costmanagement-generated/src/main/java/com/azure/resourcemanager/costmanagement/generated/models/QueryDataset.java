@@ -22,8 +22,8 @@ public final class QueryDataset {
     private GranularityType granularity;
 
     /*
-     * Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias
-     * for the aggregated column. Query can have up to 2 aggregation clauses.
+     * Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias for
+     * the aggregated column. Query can have up to 2 aggregation clauses.
      */
     @JsonProperty(value = "aggregation")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

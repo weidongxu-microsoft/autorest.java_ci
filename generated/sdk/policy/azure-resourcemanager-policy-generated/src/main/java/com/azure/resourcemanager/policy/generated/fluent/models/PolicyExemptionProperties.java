@@ -54,8 +54,7 @@ public final class PolicyExemptionProperties {
     private String description;
 
     /*
-     * The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value
-     * pairs.
+     * The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;
@@ -87,8 +86,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
-     * policy assignment is an assignment of a policy set definition.
+     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @return the policyDefinitionReferenceIds value.
      */
@@ -97,8 +96,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
-     * policy assignment is an assignment of a policy set definition.
+     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @param policyDefinitionReferenceIds the policyDefinitionReferenceIds value to set.
      * @return the PolicyExemptionProperties object itself.

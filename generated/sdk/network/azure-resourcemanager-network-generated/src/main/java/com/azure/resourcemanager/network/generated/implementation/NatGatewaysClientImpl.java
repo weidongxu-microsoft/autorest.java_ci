@@ -66,8 +66,8 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNatGateways to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNatGateways to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

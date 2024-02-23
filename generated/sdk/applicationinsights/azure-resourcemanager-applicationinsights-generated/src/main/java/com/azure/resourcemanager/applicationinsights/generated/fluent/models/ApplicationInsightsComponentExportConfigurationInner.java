@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ApplicationInsightsComponentExportConfigurationInner {
     /*
-     * The unique ID of the export configuration inside an Application Insights component. It is auto generated when
-     * the Continuous Export configuration is created.
+     * The unique ID of the export configuration inside an Application Insights component. It is auto generated when the
+     * Continuous Export configuration is created.
      */
     @JsonProperty(value = "ExportId", access = JsonProperty.Access.WRITE_ONLY)
     private String exportId;
@@ -139,8 +139,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the exportId property: The unique ID of the export configuration inside an Application Insights component.
-     * It is auto generated when the Continuous Export configuration is created.
+     * Get the exportId property: The unique ID of the export configuration inside an Application Insights component. It
+     * is auto generated when the Continuous Export configuration is created.
      * 
      * @return the exportId value.
      */
@@ -285,8 +285,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the exportStatus property: This indicates current Continuous Export configuration status. The possible
-     * values are 'Preparing', 'Success', 'Failure'.
+     * Get the exportStatus property: This indicates current Continuous Export configuration status. The possible values
+     * are 'Preparing', 'Success', 'Failure'.
      * 
      * @return the exportStatus value.
      */
@@ -314,8 +314,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the permanentErrorReason property: This is the reason the Continuous Export configuration started failing.
-     * It can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
+     * Get the permanentErrorReason property: This is the reason the Continuous Export configuration started failing. It
+     * can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
      * 
      * @return the permanentErrorReason value.
      */

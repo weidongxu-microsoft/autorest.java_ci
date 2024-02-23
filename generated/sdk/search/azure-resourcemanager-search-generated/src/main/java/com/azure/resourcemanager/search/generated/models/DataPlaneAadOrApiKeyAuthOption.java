@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for
- * authentication.
+ * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for authentication.
  */
 @Fluent
 public final class DataPlaneAadOrApiKeyAuthOption {

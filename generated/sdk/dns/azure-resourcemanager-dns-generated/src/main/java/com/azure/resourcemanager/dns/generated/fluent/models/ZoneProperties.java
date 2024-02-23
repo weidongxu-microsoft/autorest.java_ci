@@ -87,8 +87,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be
-     * created in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
+     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be created
+     * in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
      * 
      * @return the maxNumberOfRecordsPerRecordSet value.
      */
@@ -107,8 +107,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt
-     * to set this value will be ignored.
+     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt to
+     * set this value will be ignored.
      * 
      * @return the nameServers value.
      */
@@ -137,8 +137,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
-     * in this DNS zone. This is a only when ZoneType is Private.
+     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
+     * this DNS zone. This is a only when ZoneType is Private.
      * 
      * @return the registrationVirtualNetworks value.
      */
@@ -147,8 +147,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
-     * in this DNS zone. This is a only when ZoneType is Private.
+     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
+     * this DNS zone. This is a only when ZoneType is Private.
      * 
      * @param registrationVirtualNetworks the registrationVirtualNetworks value to set.
      * @return the ZoneProperties object itself.
@@ -159,8 +159,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
-     * this DNS zone. This is a only when ZoneType is Private.
+     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
+     * DNS zone. This is a only when ZoneType is Private.
      * 
      * @return the resolutionVirtualNetworks value.
      */
@@ -169,8 +169,8 @@ public final class ZoneProperties {
     }
 
     /**
-     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
-     * this DNS zone. This is a only when ZoneType is Private.
+     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
+     * DNS zone. This is a only when ZoneType is Private.
      * 
      * @param resolutionVirtualNetworks the resolutionVirtualNetworks value to set.
      * @return the ZoneProperties object itself.

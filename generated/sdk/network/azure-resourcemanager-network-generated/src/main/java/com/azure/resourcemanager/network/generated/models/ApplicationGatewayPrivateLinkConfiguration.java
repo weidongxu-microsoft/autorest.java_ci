@@ -126,8 +126,7 @@ public final class ApplicationGatewayPrivateLinkConfiguration extends SubResourc
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the application gateway private link
-     * configuration.
+     * Get the provisioningState property: The provisioning state of the application gateway private link configuration.
      * 
      * @return the provisioningState value.
      */

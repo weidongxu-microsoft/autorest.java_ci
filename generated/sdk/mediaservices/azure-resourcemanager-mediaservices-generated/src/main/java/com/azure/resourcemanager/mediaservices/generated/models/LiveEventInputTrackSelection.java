@@ -84,8 +84,8 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Get the value property: Property value to select. This property is reserved for future use, any value set on
-     * this property will be ignored.
+     * Get the value property: Property value to select. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @return the value value.
      */
@@ -94,8 +94,8 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Set the value property: Property value to select. This property is reserved for future use, any value set on
-     * this property will be ignored.
+     * Set the value property: Property value to select. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @param value the value value to set.
      * @return the LiveEventInputTrackSelection object itself.

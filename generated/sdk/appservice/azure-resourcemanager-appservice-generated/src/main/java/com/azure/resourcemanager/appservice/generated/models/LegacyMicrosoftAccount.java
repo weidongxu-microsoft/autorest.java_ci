@@ -108,8 +108,8 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Get the validation property: The configuration settings of the legacy Microsoft Account provider token
-     * validation flow.
+     * Get the validation property: The configuration settings of the legacy Microsoft Account provider token validation
+     * flow.
      * 
      * @return the validation value.
      */
@@ -118,8 +118,8 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Set the validation property: The configuration settings of the legacy Microsoft Account provider token
-     * validation flow.
+     * Set the validation property: The configuration settings of the legacy Microsoft Account provider token validation
+     * flow.
      * 
      * @param validation the validation value to set.
      * @return the LegacyMicrosoftAccount object itself.

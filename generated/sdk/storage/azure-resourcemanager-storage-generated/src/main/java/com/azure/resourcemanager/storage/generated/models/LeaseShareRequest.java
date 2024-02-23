@@ -92,8 +92,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before
-     * it is broken, in seconds, between 0 and 60.
+     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
+     * is broken, in seconds, between 0 and 60.
      * 
      * @return the breakPeriod value.
      */
@@ -102,8 +102,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before
-     * it is broken, in seconds, between 0 and 60.
+     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
+     * is broken, in seconds, between 0 and 60.
      * 
      * @param breakPeriod the breakPeriod value to set.
      * @return the LeaseShareRequest object itself.

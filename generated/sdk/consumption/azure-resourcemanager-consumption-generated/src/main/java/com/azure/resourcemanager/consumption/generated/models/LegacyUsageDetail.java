@@ -237,8 +237,8 @@ public final class LegacyUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the
-     * usage or was purchased. This value is not provided for marketplace usage.
+     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage
+     * or was purchased. This value is not provided for marketplace usage.
      * 
      * @return the consumedService value.
      */
@@ -332,8 +332,8 @@ public final class LegacyUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the reservationName property: User provided display name of the reservation. Last known name for a
-     * particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular
+     * day is populated in the daily data. Only applies to records relevant to reservations.
      * 
      * @return the reservationName value.
      */

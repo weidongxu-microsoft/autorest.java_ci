@@ -106,8 +106,7 @@ public final class CacheConfiguration {
 
     /**
      * Get the cacheDuration property: The duration for which the content needs to be cached. Allowed format is in ISO
-     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a
-     * year.
+     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a year.
      * 
      * @return the cacheDuration value.
      */
@@ -117,8 +116,7 @@ public final class CacheConfiguration {
 
     /**
      * Set the cacheDuration property: The duration for which the content needs to be cached. Allowed format is in ISO
-     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a
-     * year.
+     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a year.
      * 
      * @param cacheDuration the cacheDuration value to set.
      * @return the CacheConfiguration object itself.

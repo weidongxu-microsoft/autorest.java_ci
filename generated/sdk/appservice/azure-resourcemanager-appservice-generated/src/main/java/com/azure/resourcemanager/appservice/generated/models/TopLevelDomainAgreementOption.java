@@ -20,8 +20,8 @@ public final class TopLevelDomainAgreementOption {
     private Boolean includePrivacy;
 
     /*
-     * If <code>true</code>, then the list of agreements will include agreements for domain transfer as well;
-     * otherwise, <code>false</code>.
+     * If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise,
+     * <code>false</code>.
      */
     @JsonProperty(value = "forTransfer")
     private Boolean forTransfer;

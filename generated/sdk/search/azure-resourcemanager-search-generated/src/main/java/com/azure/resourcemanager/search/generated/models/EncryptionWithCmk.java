@@ -20,9 +20,9 @@ public final class EncryptionWithCmk {
     private SearchEncryptionWithCmk enforcement;
 
     /*
-     * Describes whether the search service is compliant or not with respect to having non-customer-encrypted
-     * resources. If a service has more than one non-customer-encrypted resource and 'Enforcement' is 'enabled' then
-     * the service will be marked as 'nonCompliant'.
+     * Describes whether the search service is compliant or not with respect to having non-customer-encrypted resources.
+     * If a service has more than one non-customer-encrypted resource and 'Enforcement' is 'enabled' then the service
+     * will be marked as 'nonCompliant'.
      */
     @JsonProperty(value = "encryptionComplianceStatus", access = JsonProperty.Access.WRITE_ONLY)
     private SearchEncryptionComplianceStatus encryptionComplianceStatus;

@@ -39,8 +39,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * ExpressRouteCrossConnectionPeeringsClient.
+ * An instance of this class provides access to all the operations defined in ExpressRouteCrossConnectionPeeringsClient.
  */
 public final class ExpressRouteCrossConnectionPeeringsClientImpl implements ExpressRouteCrossConnectionPeeringsClient {
     /**
@@ -65,8 +64,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnectionPeerings to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnectionPeerings to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

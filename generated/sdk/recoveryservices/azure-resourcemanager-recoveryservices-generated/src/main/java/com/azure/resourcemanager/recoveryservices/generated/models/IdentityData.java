@@ -70,8 +70,7 @@ public final class IdentityData {
 
     /**
      * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any
-     * identities.
+     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @return the type value.
      */
@@ -81,8 +80,7 @@ public final class IdentityData {
 
     /**
      * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any
-     * identities.
+     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @param type the type value to set.
      * @return the IdentityData object itself.

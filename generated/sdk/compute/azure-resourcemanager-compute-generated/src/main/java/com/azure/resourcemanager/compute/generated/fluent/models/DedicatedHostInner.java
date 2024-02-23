@@ -157,8 +157,8 @@ public final class DedicatedHostInner extends Resource {
     }
 
     /**
-     * Get the licenseType property: Specifies the software license type that will be applied to the VMs deployed on
-     * the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
+     * Get the licenseType property: Specifies the software license type that will be applied to the VMs deployed on the
+     * dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
      * default value is: **None.**.
      * 
      * @return the licenseType value.
@@ -168,8 +168,8 @@ public final class DedicatedHostInner extends Resource {
     }
 
     /**
-     * Set the licenseType property: Specifies the software license type that will be applied to the VMs deployed on
-     * the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
+     * Set the licenseType property: Specifies the software license type that will be applied to the VMs deployed on the
+     * dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
      * default value is: **None.**.
      * 
      * @param licenseType the licenseType value to set.

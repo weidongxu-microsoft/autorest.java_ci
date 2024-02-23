@@ -65,8 +65,8 @@ public final class ResourceNameAvailabilityInner {
 
     /**
      * Get the reason property: &lt;code&gt;Invalid&lt;/code&gt; indicates the name provided does not match Azure App
-     * Service naming requirements. &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use
-     * and is therefore unavailable.
+     * Service naming requirements. &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use and
+     * is therefore unavailable.
      * 
      * @return the reason value.
      */
@@ -76,8 +76,8 @@ public final class ResourceNameAvailabilityInner {
 
     /**
      * Set the reason property: &lt;code&gt;Invalid&lt;/code&gt; indicates the name provided does not match Azure App
-     * Service naming requirements. &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use
-     * and is therefore unavailable.
+     * Service naming requirements. &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use and
+     * is therefore unavailable.
      * 
      * @param reason the reason value to set.
      * @return the ResourceNameAvailabilityInner object itself.

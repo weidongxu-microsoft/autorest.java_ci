@@ -199,8 +199,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Get the supportedByVirtualMachines property: This indicates this vm size is supported by virtual machines or
-     * not.
+     * Get the supportedByVirtualMachines property: This indicates this vm size is supported by virtual machines or not.
      * 
      * @return the supportedByVirtualMachines value.
      */
@@ -209,8 +208,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Set the supportedByVirtualMachines property: This indicates this vm size is supported by virtual machines or
-     * not.
+     * Set the supportedByVirtualMachines property: This indicates this vm size is supported by virtual machines or not.
      * 
      * @param supportedByVirtualMachines the supportedByVirtualMachines value to set.
      * @return the VmSizeProperty object itself.

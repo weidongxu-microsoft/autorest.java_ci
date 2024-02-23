@@ -187,8 +187,8 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend
-     * address pool.
+     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend address
+     * pool.
      * 
      * @return the loadBalancingRules value.
      */
@@ -215,8 +215,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Get the inboundNatRules property: An array of references to inbound NAT rules that use this backend address
-     * pool.
+     * Get the inboundNatRules property: An array of references to inbound NAT rules that use this backend address pool.
      * 
      * @return the inboundNatRules value.
      */

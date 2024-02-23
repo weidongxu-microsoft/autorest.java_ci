@@ -60,8 +60,7 @@ public final class MetricTrigger {
     private Duration timeWindow;
 
     /*
-     * time aggregation type. How the data that is collected should be combined over time. The default value is
-     * Average.
+     * time aggregation type. How the data that is collected should be combined over time. The default value is Average.
      */
     @JsonProperty(value = "timeAggregation", required = true)
     private TimeAggregationType timeAggregation;

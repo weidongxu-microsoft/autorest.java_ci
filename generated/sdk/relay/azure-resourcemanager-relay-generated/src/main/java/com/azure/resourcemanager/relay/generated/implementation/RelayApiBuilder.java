@@ -20,8 +20,8 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = { RelayApiImpl.class })
 public final class RelayApiBuilder {
     /*
-     * Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
-     * part of the URI for every service call.
+     * Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part
+     * of the URI for every service call.
      */
     private String subscriptionId;
 
