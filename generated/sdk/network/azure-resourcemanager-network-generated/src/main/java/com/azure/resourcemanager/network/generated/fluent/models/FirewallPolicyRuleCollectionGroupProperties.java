@@ -46,8 +46,7 @@ public final class FirewallPolicyRuleCollectionGroupProperties {
     }
 
     /**
-     * Get the size property: A read-only string that represents the size of the
-     * FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
+     * Get the size property: A read-only string that represents the size of the FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
      * 
      * @return the size value.
      */

@@ -13,11 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StreamingPolicyPlayReadyConfiguration {
     /*
-     * Template for the URL of the custom service delivering licenses to end user players. Not required when using Azure
-     * Media Services for issuing licenses. The template supports replaceable tokens that the service will update at
-     * runtime with the value specific to the request. The currently supported token values are {AlternativeMediaId},
-     * which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced
-     * with the value of identifier of the key being requested.
+     * Template for the URL of the custom service delivering licenses to end user players.  Not required when using Azure Media Services for issuing licenses.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
      */
     @JsonProperty(value = "customLicenseAcquisitionUrlTemplate")
     private String customLicenseAcquisitionUrlTemplate;
@@ -35,12 +31,7 @@ public final class StreamingPolicyPlayReadyConfiguration {
     }
 
     /**
-     * Get the customLicenseAcquisitionUrlTemplate property: Template for the URL of the custom service delivering
-     * licenses to end user players. Not required when using Azure Media Services for issuing licenses. The template
-     * supports replaceable tokens that the service will update at runtime with the value specific to the request. The
-     * currently supported token values are {AlternativeMediaId}, which is replaced with the value of
-     * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
-     * key being requested.
+     * Get the customLicenseAcquisitionUrlTemplate property: Template for the URL of the custom service delivering licenses to end user players.  Not required when using Azure Media Services for issuing licenses.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
      * 
      * @return the customLicenseAcquisitionUrlTemplate value.
      */
@@ -49,12 +40,7 @@ public final class StreamingPolicyPlayReadyConfiguration {
     }
 
     /**
-     * Set the customLicenseAcquisitionUrlTemplate property: Template for the URL of the custom service delivering
-     * licenses to end user players. Not required when using Azure Media Services for issuing licenses. The template
-     * supports replaceable tokens that the service will update at runtime with the value specific to the request. The
-     * currently supported token values are {AlternativeMediaId}, which is replaced with the value of
-     * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
-     * key being requested.
+     * Set the customLicenseAcquisitionUrlTemplate property: Template for the URL of the custom service delivering licenses to end user players.  Not required when using Azure Media Services for issuing licenses.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
      * 
      * @param customLicenseAcquisitionUrlTemplate the customLicenseAcquisitionUrlTemplate value to set.
      * @return the StreamingPolicyPlayReadyConfiguration object itself.

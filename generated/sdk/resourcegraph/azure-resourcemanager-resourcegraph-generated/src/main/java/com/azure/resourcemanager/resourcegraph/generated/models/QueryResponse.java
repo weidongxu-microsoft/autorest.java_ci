@@ -19,8 +19,7 @@ public interface QueryResponse {
     long totalRecords();
 
     /**
-     * Gets the count property: Number of records returned in the current response. In the case of paging, this is the
-     * number of records in the current page.
+     * Gets the count property: Number of records returned in the current response. In the case of paging, this is the number of records in the current page.
      * 
      * @return the count value.
      */
@@ -34,8 +33,7 @@ public interface QueryResponse {
     ResultTruncated resultTruncated();
 
     /**
-     * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @return the skipToken value.
      */

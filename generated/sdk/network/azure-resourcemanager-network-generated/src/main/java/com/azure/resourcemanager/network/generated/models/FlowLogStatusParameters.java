@@ -26,8 +26,7 @@ public final class FlowLogStatusParameters {
     }
 
     /**
-     * Get the targetResourceId property: The target resource where getting the flow log and traffic analytics
-     * (optional) status.
+     * Get the targetResourceId property: The target resource where getting the flow log and traffic analytics (optional) status.
      * 
      * @return the targetResourceId value.
      */
@@ -36,8 +35,7 @@ public final class FlowLogStatusParameters {
     }
 
     /**
-     * Set the targetResourceId property: The target resource where getting the flow log and traffic analytics
-     * (optional) status.
+     * Set the targetResourceId property: The target resource where getting the flow log and traffic analytics (optional) status.
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the FlowLogStatusParameters object itself.

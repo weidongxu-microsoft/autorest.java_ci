@@ -23,12 +23,10 @@ public interface IpGroupsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param expand Expands resourceIds (of Firewalls/Network Security Groups etc.) back referenced by the IpGroups
-     * resource.
+     * @param expand Expands resourceIds (of Firewalls/Network Security Groups etc.) back referenced by the IpGroups resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified ipGroups along with {@link Response}.
      */
@@ -42,8 +40,7 @@ public interface IpGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified ipGroups.
      */
@@ -57,8 +54,7 @@ public interface IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of the IpGroups resource information.
      */
@@ -74,8 +70,7 @@ public interface IpGroupsClient {
      * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of the IpGroups resource information.
      */
@@ -90,8 +85,7 @@ public interface IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the IpGroups resource information.
      */
@@ -106,8 +100,7 @@ public interface IpGroupsClient {
      * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the IpGroups resource information.
      */
@@ -123,8 +116,7 @@ public interface IpGroupsClient {
      * @param parameters Parameters supplied to the update ipGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the IpGroups resource information along with {@link Response}.
      */
@@ -139,8 +131,7 @@ public interface IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param parameters Parameters supplied to the update ipGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the IpGroups resource information.
      */
@@ -153,8 +144,7 @@ public interface IpGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -168,8 +158,7 @@ public interface IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -182,8 +171,7 @@ public interface IpGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -196,8 +184,7 @@ public interface IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -208,8 +195,7 @@ public interface IpGroupsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all IpGroups in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -222,8 +208,7 @@ public interface IpGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all IpGroups in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -233,8 +218,7 @@ public interface IpGroupsClient {
     /**
      * Gets all IpGroups in a subscription.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all IpGroups in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -246,8 +230,7 @@ public interface IpGroupsClient {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all IpGroups in a subscription as paginated response with {@link PagedIterable}.
      */

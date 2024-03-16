@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface VirtualNetworkTapPropertiesFormat {
     /**
-     * Gets the networkInterfaceTapConfigurations property: Specifies the list of resource IDs for the network interface
-     * IP configuration that needs to be tapped.
+     * Gets the networkInterfaceTapConfigurations property: Specifies the list of resource IDs for the network interface IP configuration that needs to be tapped.
      * 
      * @return the networkInterfaceTapConfigurations value.
      */
@@ -34,16 +33,14 @@ public interface VirtualNetworkTapPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP Address of the
-     * collector nic that will receive the tap.
+     * Gets the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP Address of the collector nic that will receive the tap.
      * 
      * @return the destinationNetworkInterfaceIpConfiguration value.
      */
     NetworkInterfaceIpConfiguration destinationNetworkInterfaceIpConfiguration();
 
     /**
-     * Gets the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP address on the
-     * internal Load Balancer that will receive the tap.
+     * Gets the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP address on the internal Load Balancer that will receive the tap.
      * 
      * @return the destinationLoadBalancerFrontEndIpConfiguration value.
      */
@@ -57,8 +54,7 @@ public interface VirtualNetworkTapPropertiesFormat {
     Integer destinationPort();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapPropertiesFormatInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapPropertiesFormatInner object.
      * 
      * @return the inner object.
      */

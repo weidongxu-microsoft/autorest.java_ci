@@ -97,8 +97,8 @@ public final class WorkflowTriggersImpl implements WorkflowTriggers {
 
     public Response<JsonSchema> getSchemaJsonWithResponse(String resourceGroupName, String name, String workflowName,
         String triggerName, Context context) {
-        Response<JsonSchemaInner> inner = this.serviceClient().getSchemaJsonWithResponse(resourceGroupName, name,
-            workflowName, triggerName, context);
+        Response<JsonSchemaInner> inner = this.serviceClient()
+            .getSchemaJsonWithResponse(resourceGroupName, name, workflowName, triggerName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new JsonSchemaImpl(inner.getValue(), this.manager()));

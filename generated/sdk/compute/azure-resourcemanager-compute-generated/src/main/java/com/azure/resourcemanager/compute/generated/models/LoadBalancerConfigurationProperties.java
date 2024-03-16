@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class LoadBalancerConfigurationProperties {
     /*
-     * Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load
-     * balancer configuration must have exactly one frontend IP configuration.
+     * Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP configuration.
      */
     @JsonProperty(value = "frontendIpConfigurations", required = true)
     private List<LoadBalancerFrontendIpConfiguration> frontendIpConfigurations;
@@ -28,9 +27,7 @@ public final class LoadBalancerConfigurationProperties {
     }
 
     /**
-     * Get the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4
-     * frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP
-     * configuration.
+     * Get the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP configuration.
      * 
      * @return the frontendIpConfigurations value.
      */
@@ -39,9 +36,7 @@ public final class LoadBalancerConfigurationProperties {
     }
 
     /**
-     * Set the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4
-     * frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP
-     * configuration.
+     * Set the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP configuration.
      * 
      * @param frontendIpConfigurations the frontendIpConfigurations value to set.
      * @return the LoadBalancerConfigurationProperties object itself.

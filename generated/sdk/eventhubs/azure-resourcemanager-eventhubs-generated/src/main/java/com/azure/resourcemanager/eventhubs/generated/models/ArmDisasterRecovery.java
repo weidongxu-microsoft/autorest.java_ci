@@ -50,16 +50,14 @@ public interface ArmDisasterRecovery {
     String location();
 
     /**
-     * Gets the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible
-     * values 'Accepted' or 'Succeeded' or 'Failed'.
+     * Gets the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or 'Failed'.
      * 
      * @return the provisioningState value.
      */
     ProvisioningStateDR provisioningState();
 
     /**
-     * Gets the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO
-     * DR pairing.
+     * Gets the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
      * 
      * @return the partnerNamespace value.
      */
@@ -73,8 +71,7 @@ public interface ArmDisasterRecovery {
     String alternateName();
 
     /**
-     * Gets the role property: role of namespace in GEO DR - possible values 'Primary' or 'PrimaryNotReplicating' or
-     * 'Secondary'.
+     * Gets the role property: role of namespace in GEO DR - possible values 'Primary' or 'PrimaryNotReplicating' or 'Secondary'.
      * 
      * @return the role value.
      */
@@ -147,8 +144,7 @@ public interface ArmDisasterRecovery {
         }
 
         /**
-         * The stage of the ArmDisasterRecovery definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ArmDisasterRecovery definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPartnerNamespace, DefinitionStages.WithAlternateName {
             /**
@@ -172,11 +168,9 @@ public interface ArmDisasterRecovery {
          */
         interface WithPartnerNamespace {
             /**
-             * Specifies the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which
-             * is part of GEO DR pairing.
+             * Specifies the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
              * 
-             * @param partnerNamespace ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR
-             * pairing.
+             * @param partnerNamespace ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
              * @return the next definition stage.
              */
             WithCreate withPartnerNamespace(String partnerNamespace);
@@ -232,11 +226,9 @@ public interface ArmDisasterRecovery {
          */
         interface WithPartnerNamespace {
             /**
-             * Specifies the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which
-             * is part of GEO DR pairing.
+             * Specifies the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
              * 
-             * @param partnerNamespace ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR
-             * pairing.
+             * @param partnerNamespace ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
              * @return the next definition stage.
              */
             Update withPartnerNamespace(String partnerNamespace);

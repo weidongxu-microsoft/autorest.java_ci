@@ -51,8 +51,7 @@ public final class CommunityGalleriesClientImpl implements CommunityGalleriesCli
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCommunityGalleries to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCommunityGalleries to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -75,8 +74,7 @@ public final class CommunityGalleriesClientImpl implements CommunityGalleriesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery by gallery public name along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a community gallery by gallery public name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CommunityGalleryInner>> getWithResponseAsync(String location, String publicGalleryName) {
@@ -112,8 +110,7 @@ public final class CommunityGalleriesClientImpl implements CommunityGalleriesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery by gallery public name along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a community gallery by gallery public name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CommunityGalleryInner>> getWithResponseAsync(String location, String publicGalleryName,

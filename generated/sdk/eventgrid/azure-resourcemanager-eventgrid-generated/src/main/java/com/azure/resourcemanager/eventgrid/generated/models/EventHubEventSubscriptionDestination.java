@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the event hub destination for an event subscription.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = EventHubEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("EventHub")
 @Fluent
 public final class EventHubEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -28,6 +32,7 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
      * Creates an instance of EventHubEventSubscriptionDestination class.
      */
     public EventHubEventSubscriptionDestination() {
+        withEndpointType(EndpointType.EVENT_HUB);
     }
 
     /**
@@ -40,8 +45,7 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an
-     * event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +54,7 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an
-     * event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the EventHubEventSubscriptionDestination object itself.

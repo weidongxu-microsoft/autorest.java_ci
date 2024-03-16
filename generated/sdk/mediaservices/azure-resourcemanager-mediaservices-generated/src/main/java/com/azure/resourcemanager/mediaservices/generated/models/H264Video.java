@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Describes all the properties for encoding a video with the H.264 codec.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = H264Video.class, visible = true)
 @JsonTypeName("#Microsoft.Media.H264Video")
 @Fluent
 public final class H264Video extends Video {
@@ -37,8 +37,7 @@ public final class H264Video extends Video {
     private H264RateControlMode rateControlMode;
 
     /*
-     * Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false.
-     * This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
      */
     @JsonProperty(value = "sceneChangeDetection")
     private Boolean sceneChangeDetection;
@@ -47,11 +46,11 @@ public final class H264Video extends Video {
      * Creates an instance of H264Video class.
      */
     public H264Video() {
+        withOdataType("#Microsoft.Media.H264Video");
     }
 
     /**
-     * Get the complexity property: Tells the encoder how to choose its encoding settings. The default value is
-     * Balanced.
+     * Get the complexity property: Tells the encoder how to choose its encoding settings. The default value is Balanced.
      * 
      * @return the complexity value.
      */
@@ -60,8 +59,7 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Set the complexity property: Tells the encoder how to choose its encoding settings. The default value is
-     * Balanced.
+     * Set the complexity property: Tells the encoder how to choose its encoding settings. The default value is Balanced.
      * 
      * @param complexity the complexity value to set.
      * @return the H264Video object itself.
@@ -112,9 +110,7 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
-     * produce a single output video.
+     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
      * 
      * @return the sceneChangeDetection value.
      */
@@ -123,9 +119,7 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
-     * produce a single output video.
+     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
      * 
      * @param sceneChangeDetection the sceneChangeDetection value to set.
      * @return the H264Video object itself.

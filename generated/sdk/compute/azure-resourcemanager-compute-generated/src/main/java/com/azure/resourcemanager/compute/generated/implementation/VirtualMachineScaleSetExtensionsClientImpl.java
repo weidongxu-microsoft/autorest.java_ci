@@ -66,8 +66,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetExtensions to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetExtensions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -145,8 +144,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -195,8 +193,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -319,8 +316,10 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
     public SyncPoller<PollResult<VirtualMachineScaleSetExtensionInner>, VirtualMachineScaleSetExtensionInner>
         beginCreateOrUpdate(String resourceGroupName, String vmScaleSetName, String vmssExtensionName,
             VirtualMachineScaleSetExtensionInner extensionParameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, vmssExtensionName, extensionParameters,
-            context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, vmssExtensionName, extensionParameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -339,7 +338,8 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
     private Mono<VirtualMachineScaleSetExtensionInner> createOrUpdateAsync(String resourceGroupName,
         String vmScaleSetName, String vmssExtensionName, VirtualMachineScaleSetExtensionInner extensionParameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, vmssExtensionName, extensionParameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -411,8 +411,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -461,8 +460,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -624,7 +622,8 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
     private Mono<VirtualMachineScaleSetExtensionInner> updateAsync(String resourceGroupName, String vmScaleSetName,
         String vmssExtensionName, VirtualMachineScaleSetExtensionUpdate extensionParameters, Context context) {
         return beginUpdateAsync(resourceGroupName, vmScaleSetName, vmssExtensionName, extensionParameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -900,8 +899,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetExtensionInner>> getWithResponseAsync(String resourceGroupName,
@@ -944,8 +942,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetExtensionInner>> getWithResponseAsync(String resourceGroupName,
@@ -1040,8 +1037,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all extensions in a VM scale set along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of all extensions in a VM scale set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetExtensionInner>> listSinglePageAsync(String resourceGroupName,
@@ -1080,8 +1076,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all extensions in a VM scale set along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of all extensions in a VM scale set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetExtensionInner>> listSinglePageAsync(String resourceGroupName,
@@ -1186,8 +1181,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List VM scale set extension operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List VM scale set extension operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetExtensionInner>> listNextSinglePageAsync(String nextLink) {
@@ -1215,8 +1209,7 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List VM scale set extension operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List VM scale set extension operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetExtensionInner>> listNextSinglePageAsync(String nextLink,

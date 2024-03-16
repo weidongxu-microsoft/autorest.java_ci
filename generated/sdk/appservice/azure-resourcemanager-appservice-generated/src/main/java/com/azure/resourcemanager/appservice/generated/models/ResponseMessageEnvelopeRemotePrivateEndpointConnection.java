@@ -11,17 +11,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Message envelope that contains the common Azure resource manager properties and the resource provider specific
- * content.
+ * Message envelope that contains the common Azure resource manager properties and the resource provider specific content.
  */
 @Fluent
 public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     /*
-     * Resource Id. Typically ID is populated only for responses to GET requests. Caller is responsible for passing in
-     * this
+     * Resource Id. Typically ID is populated only for responses to GET requests. Caller is responsible for passing in this
      * value for GET requests only.
-     * For example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}
+     * For example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}
      */
     @JsonProperty(value = "id")
     private String id;
@@ -100,11 +97,9 @@ public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     }
 
     /**
-     * Get the id property: Resource Id. Typically ID is populated only for responses to GET requests. Caller is
-     * responsible for passing in this
+     * Get the id property: Resource Id. Typically ID is populated only for responses to GET requests. Caller is responsible for passing in this
      * value for GET requests only.
-     * For example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}.
+     * For example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}.
      * 
      * @return the id value.
      */
@@ -113,11 +108,9 @@ public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     }
 
     /**
-     * Set the id property: Resource Id. Typically ID is populated only for responses to GET requests. Caller is
-     * responsible for passing in this
+     * Set the id property: Resource Id. Typically ID is populated only for responses to GET requests. Caller is responsible for passing in this
      * value for GET requests only.
-     * For example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}.
+     * For example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}.
      * 
      * @param id the id value to set.
      * @return the ResponseMessageEnvelopeRemotePrivateEndpointConnection object itself.

@@ -103,7 +103,8 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         List<ServiceEndpointPolicyInner> inner = this.innerModel().serviceEndpointPolicies();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -113,7 +114,8 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         List<PrivateEndpointInner> inner = this.innerModel().privateEndpoints();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -123,7 +125,8 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         List<IpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new IpConfigurationImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new IpConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -133,7 +136,8 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         List<IpConfigurationProfileInner> inner = this.innerModel().ipConfigurationProfiles();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -229,14 +233,16 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
     }
 
     public Subnet create() {
-        this.innerObject = serviceManager.serviceClient().getSubnets().createOrUpdate(resourceGroupName,
-            virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Subnet create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSubnets().createOrUpdate(resourceGroupName,
-            virtualNetworkName, subnetName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), context);
         return this;
     }
 
@@ -251,14 +257,16 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
     }
 
     public Subnet apply() {
-        this.innerObject = serviceManager.serviceClient().getSubnets().createOrUpdate(resourceGroupName,
-            virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Subnet apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSubnets().createOrUpdate(resourceGroupName,
-            virtualNetworkName, subnetName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), context);
         return this;
     }
 
@@ -272,38 +280,46 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
 
     public Subnet refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getSubnets()
-            .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Subnet refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getSubnets()
-            .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubnets()
+            .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, context)
+            .getValue();
         return this;
     }
 
     public void prepareNetworkPolicies(PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters) {
-        serviceManager.subnets().prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            prepareNetworkPoliciesRequestParameters);
+        serviceManager.subnets()
+            .prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                prepareNetworkPoliciesRequestParameters);
     }
 
     public void prepareNetworkPolicies(PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters,
         Context context) {
-        serviceManager.subnets().prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            prepareNetworkPoliciesRequestParameters, context);
+        serviceManager.subnets()
+            .prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                prepareNetworkPoliciesRequestParameters, context);
     }
 
     public void unprepareNetworkPolicies(UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters) {
-        serviceManager.subnets().unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            unprepareNetworkPoliciesRequestParameters);
+        serviceManager.subnets()
+            .unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                unprepareNetworkPoliciesRequestParameters);
     }
 
     public void unprepareNetworkPolicies(UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters,
         Context context) {
-        serviceManager.subnets().unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            unprepareNetworkPoliciesRequestParameters, context);
+        serviceManager.subnets()
+            .unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                unprepareNetworkPoliciesRequestParameters, context);
     }
 
     public SubnetImpl withName(String name) {

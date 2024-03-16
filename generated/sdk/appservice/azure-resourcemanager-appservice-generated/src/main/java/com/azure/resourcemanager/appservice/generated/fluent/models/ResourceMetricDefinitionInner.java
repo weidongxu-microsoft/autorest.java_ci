@@ -65,8 +65,7 @@ public final class ResourceMetricDefinitionInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the metricAvailabilities property: List of time grains supported for the metric together with retention
-     * period.
+     * Get the metricAvailabilities property: List of time grains supported for the metric together with retention period.
      * 
      * @return the metricAvailabilities value.
      */

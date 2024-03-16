@@ -25,8 +25,7 @@ public final class ExpressionEvaluationOptions {
     }
 
     /**
-     * Get the scope property: The scope to be used for evaluation of parameters, variables and functions in a nested
-     * template.
+     * Get the scope property: The scope to be used for evaluation of parameters, variables and functions in a nested template.
      * 
      * @return the scope value.
      */
@@ -35,8 +34,7 @@ public final class ExpressionEvaluationOptions {
     }
 
     /**
-     * Set the scope property: The scope to be used for evaluation of parameters, variables and functions in a nested
-     * template.
+     * Set the scope property: The scope to be used for evaluation of parameters, variables and functions in a nested template.
      * 
      * @param scope the scope value to set.
      * @return the ExpressionEvaluationOptions object itself.

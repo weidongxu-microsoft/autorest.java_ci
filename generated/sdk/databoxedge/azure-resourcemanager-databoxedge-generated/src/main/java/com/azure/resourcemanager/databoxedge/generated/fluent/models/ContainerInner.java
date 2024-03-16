@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * Represents a container on the Data Box Edge/Gateway device.
+ * Represents a container on the  Data Box Edge/Gateway device.
  */
 @Fluent
 public final class ContainerInner extends ArmBaseModel {

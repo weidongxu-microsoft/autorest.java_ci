@@ -97,8 +97,7 @@ public final class NetworkSecurityGroupInner extends Resource {
     }
 
     /**
-     * Get the flushConnection property: When enabled, flows created from Network Security Group connections will be
-     * re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+     * Get the flushConnection property: When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
      * 
      * @return the flushConnection value.
      */
@@ -107,8 +106,7 @@ public final class NetworkSecurityGroupInner extends Resource {
     }
 
     /**
-     * Set the flushConnection property: When enabled, flows created from Network Security Group connections will be
-     * re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+     * Set the flushConnection property: When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
      * 
      * @param flushConnection the flushConnection value to set.
      * @return the NetworkSecurityGroupInner object itself.

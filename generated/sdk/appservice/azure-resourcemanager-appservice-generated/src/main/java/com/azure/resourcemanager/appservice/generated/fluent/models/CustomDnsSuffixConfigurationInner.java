@@ -86,8 +86,7 @@ public final class CustomDnsSuffixConfigurationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used
-     * as the default SSL/TLS certificate for sites with the custom domain suffix.
+     * Get the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used as the default SSL/TLS certificate for sites with the custom domain suffix.
      * 
      * @return the certificateUrl value.
      */
@@ -96,8 +95,7 @@ public final class CustomDnsSuffixConfigurationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used
-     * as the default SSL/TLS certificate for sites with the custom domain suffix.
+     * Set the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used as the default SSL/TLS certificate for sites with the custom domain suffix.
      * 
      * @param certificateUrl the certificateUrl value to set.
      * @return the CustomDnsSuffixConfigurationInner object itself.
@@ -111,8 +109,7 @@ public final class CustomDnsSuffixConfigurationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault
-     * certificate reference. If not specified, the system-assigned ASE identity will be used if available.
+     * Get the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault certificate reference. If not specified, the system-assigned ASE identity will be used if available.
      * 
      * @return the keyVaultReferenceIdentity value.
      */
@@ -121,8 +118,7 @@ public final class CustomDnsSuffixConfigurationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault
-     * certificate reference. If not specified, the system-assigned ASE identity will be used if available.
+     * Set the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault certificate reference. If not specified, the system-assigned ASE identity will be used if available.
      * 
      * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
      * @return the CustomDnsSuffixConfigurationInner object itself.

@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the HybridConnection destination for an event subscription.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = HybridConnectionEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("HybridConnection")
 @Fluent
 public final class HybridConnectionEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -28,6 +32,7 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
      * Creates an instance of HybridConnectionEventSubscriptionDestination class.
      */
     public HybridConnectionEventSubscriptionDestination() {
+        withEndpointType(EndpointType.HYBRID_CONNECTION);
     }
 
     /**
@@ -40,8 +45,7 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
     }
 
     /**
-     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
-     * subscription.
+     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +54,7 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
     }
 
     /**
-     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
-     * subscription.
+     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the HybridConnectionEventSubscriptionDestination object itself.

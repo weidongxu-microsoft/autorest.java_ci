@@ -138,13 +138,15 @@ public final class VirtualMachineExtensionImpl
     }
 
     public VirtualMachineExtension create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
             .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachineExtension create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
             .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), context);
         return this;
     }
@@ -162,14 +164,16 @@ public final class VirtualMachineExtensionImpl
     }
 
     public VirtualMachineExtension apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions().update(resourceGroupName,
-            vmName, vmExtensionName, updateExtensionParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
+            .update(resourceGroupName, vmName, vmExtensionName, updateExtensionParameters, Context.NONE);
         return this;
     }
 
     public VirtualMachineExtension apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions().update(resourceGroupName,
-            vmName, vmExtensionName, updateExtensionParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
+            .update(resourceGroupName, vmName, vmExtensionName, updateExtensionParameters, context);
         return this;
     }
 
@@ -184,15 +188,19 @@ public final class VirtualMachineExtensionImpl
 
     public VirtualMachineExtension refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
-            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
+            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualMachineExtension refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
-            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineExtensions()
+            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, context)
+            .getValue();
         return this;
     }
 

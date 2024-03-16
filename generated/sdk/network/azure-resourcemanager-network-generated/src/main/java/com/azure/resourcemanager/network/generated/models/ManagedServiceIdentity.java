@@ -15,32 +15,25 @@ import java.util.Map;
 @Fluent
 public final class ManagedServiceIdentity {
     /*
-     * The principal id of the system assigned identity. This property will only be provided for a system assigned
-     * identity.
+     * The principal id of the system assigned identity. This property will only be provided for a system assigned identity.
      */
     @JsonProperty(value = "principalId", access = JsonProperty.Access.WRITE_ONLY)
     private String principalId;
 
     /*
-     * The tenant id of the system assigned identity. This property will only be provided for a system assigned
-     * identity.
+     * The tenant id of the system assigned identity. This property will only be provided for a system assigned identity.
      */
     @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
     /*
-     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly
-     * created identity and a set of user assigned identities. The type 'None' will remove any identities from the
-     * virtual machine.
+     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine.
      */
     @JsonProperty(value = "type")
     private ResourceIdentityType type;
 
     /*
-     * The list of user identities associated with resource. The user identity dictionary key references will be ARM
-     * resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
-     * userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with resource. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -53,8 +46,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the principalId property: The principal id of the system assigned identity. This property will only be
-     * provided for a system assigned identity.
+     * Get the principalId property: The principal id of the system assigned identity. This property will only be provided for a system assigned identity.
      * 
      * @return the principalId value.
      */
@@ -63,8 +55,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the tenantId property: The tenant id of the system assigned identity. This property will only be provided for
-     * a system assigned identity.
+     * Get the tenantId property: The tenant id of the system assigned identity. This property will only be provided for a system assigned identity.
      * 
      * @return the tenantId value.
      */
@@ -73,9 +64,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
-     * any identities from the virtual machine.
+     * Get the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine.
      * 
      * @return the type value.
      */
@@ -84,9 +73,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Set the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
-     * any identities from the virtual machine.
+     * Set the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine.
      * 
      * @param type the type value to set.
      * @return the ManagedServiceIdentity object itself.
@@ -97,9 +84,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user identities associated with resource. The user identity
-     * dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user identities associated with resource. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -108,9 +93,7 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user identities associated with resource. The user identity
-     * dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user identities associated with resource. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the ManagedServiceIdentity object itself.

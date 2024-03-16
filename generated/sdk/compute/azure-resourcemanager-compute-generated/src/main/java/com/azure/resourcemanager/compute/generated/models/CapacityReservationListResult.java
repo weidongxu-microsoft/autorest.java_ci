@@ -22,8 +22,7 @@ public final class CapacityReservationListResult {
     private List<CapacityReservationInner> value;
 
     /*
-     * The URI to fetch the next page of capacity reservations. Call ListNext() with this URI to fetch the next page of
-     * capacity reservations.
+     * The URI to fetch the next page of capacity reservations. Call ListNext() with this URI to fetch the next page of capacity reservations.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class CapacityReservationListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of capacity reservations. Call ListNext() with this URI
-     * to fetch the next page of capacity reservations.
+     * Get the nextLink property: The URI to fetch the next page of capacity reservations. Call ListNext() with this URI to fetch the next page of capacity reservations.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class CapacityReservationListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of capacity reservations. Call ListNext() with this URI
-     * to fetch the next page of capacity reservations.
+     * Set the nextLink property: The URI to fetch the next page of capacity reservations. Call ListNext() with this URI to fetch the next page of capacity reservations.
      * 
      * @param nextLink the nextLink value to set.
      * @return the CapacityReservationListResult object itself.

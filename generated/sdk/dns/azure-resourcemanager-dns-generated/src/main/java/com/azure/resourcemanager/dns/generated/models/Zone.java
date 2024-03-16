@@ -66,32 +66,28 @@ public interface Zone {
     SystemData systemData();
 
     /**
-     * Gets the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.
-     * This is a read-only property and any attempt to set this value will be ignored.
+     * Gets the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
      * 
      * @return the maxNumberOfRecordSets value.
      */
     Long maxNumberOfRecordSets();
 
     /**
-     * Gets the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be
-     * created in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
+     * Gets the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be created in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
      * 
      * @return the maxNumberOfRecordsPerRecordSet value.
      */
     Long maxNumberOfRecordsPerRecordSet();
 
     /**
-     * Gets the numberOfRecordSets property: The current number of record sets in this DNS zone. This is a read-only
-     * property and any attempt to set this value will be ignored.
+     * Gets the numberOfRecordSets property: The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this value will be ignored.
      * 
      * @return the numberOfRecordSets value.
      */
     Long numberOfRecordSets();
 
     /**
-     * Gets the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt
-     * to set this value will be ignored.
+     * Gets the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
      * 
      * @return the nameServers value.
      */
@@ -105,16 +101,14 @@ public interface Zone {
     ZoneType zoneType();
 
     /**
-     * Gets the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
-     * in this DNS zone. This is a only when ZoneType is Private.
+     * Gets the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType is Private.
      * 
      * @return the registrationVirtualNetworks value.
      */
     List<SubResource> registrationVirtualNetworks();
 
     /**
-     * Gets the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
-     * this DNS zone. This is a only when ZoneType is Private.
+     * Gets the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this DNS zone. This is a only when ZoneType is Private.
      * 
      * @return the resolutionVirtualNetworks value.
      */
@@ -207,8 +201,7 @@ public interface Zone {
         }
 
         /**
-         * The stage of the Zone definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Zone definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithEtag, DefinitionStages.WithZoneType,
@@ -274,11 +267,9 @@ public interface Zone {
          */
         interface WithRegistrationVirtualNetworks {
             /**
-             * Specifies the registrationVirtualNetworks property: A list of references to virtual networks that
-             * register hostnames in this DNS zone. This is a only when ZoneType is Private..
+             * Specifies the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType is Private..
              * 
-             * @param registrationVirtualNetworks A list of references to virtual networks that register hostnames in
-             * this DNS zone. This is a only when ZoneType is Private.
+             * @param registrationVirtualNetworks A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType is Private.
              * @return the next definition stage.
              */
             WithCreate withRegistrationVirtualNetworks(List<SubResource> registrationVirtualNetworks);
@@ -289,11 +280,9 @@ public interface Zone {
          */
         interface WithResolutionVirtualNetworks {
             /**
-             * Specifies the resolutionVirtualNetworks property: A list of references to virtual networks that resolve
-             * records in this DNS zone. This is a only when ZoneType is Private..
+             * Specifies the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this DNS zone. This is a only when ZoneType is Private..
              * 
-             * @param resolutionVirtualNetworks A list of references to virtual networks that resolve records in this
-             * DNS zone. This is a only when ZoneType is Private.
+             * @param resolutionVirtualNetworks A list of references to virtual networks that resolve records in this DNS zone. This is a only when ZoneType is Private.
              * @return the next definition stage.
              */
             WithCreate withResolutionVirtualNetworks(List<SubResource> resolutionVirtualNetworks);
@@ -304,11 +293,9 @@ public interface Zone {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current
-             * zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
+             * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
              * 
-             * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify
-             * the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+             * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -319,11 +306,9 @@ public interface Zone {
          */
         interface WithIfNoneMatch {
             /**
-             * Specifies the ifNoneMatch property: Set to '*' to allow a new DNS zone to be created, but to prevent
-             * updating an existing zone. Other values will be ignored..
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone. Other values will be ignored..
              * 
-             * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing
-             * zone. Other values will be ignored.
+             * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone. Other values will be ignored.
              * @return the next definition stage.
              */
             WithCreate withIfNoneMatch(String ifNoneMatch);
@@ -379,11 +364,9 @@ public interface Zone {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current
-             * zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
+             * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
              * 
-             * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify
-             * the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+             * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

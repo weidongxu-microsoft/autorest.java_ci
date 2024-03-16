@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Select audio tracks from the input by specifying a track identifier.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = SelectAudioTrackById.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.SelectAudioTrackById")
 @Fluent
 public final class SelectAudioTrackById extends AudioTrackDescriptor {
@@ -26,6 +30,7 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackById class.
      */
     public SelectAudioTrackById() {
+        withOdataType("#Microsoft.Media.SelectAudioTrackById");
     }
 
     /**

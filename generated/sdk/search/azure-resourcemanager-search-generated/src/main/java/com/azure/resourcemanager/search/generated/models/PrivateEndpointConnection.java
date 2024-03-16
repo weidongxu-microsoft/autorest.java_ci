@@ -32,8 +32,7 @@ public interface PrivateEndpointConnection {
     String type();
 
     /**
-     * Gets the properties property: Describes the properties of an existing private endpoint connection to the search
-     * service.
+     * Gets the properties property: Describes the properties of an existing private endpoint connection to the Azure AI Search service.
      * 
      * @return the properties value.
      */

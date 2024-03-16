@@ -67,8 +67,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCapacityReservations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCapacityReservations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -140,8 +139,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -150,8 +148,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -191,8 +188,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -202,8 +198,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -242,8 +237,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -266,8 +260,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -291,8 +284,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -307,13 +299,14 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     public SyncPoller<PollResult<CapacityReservationInner>, CapacityReservationInner> beginCreateOrUpdate(
         String resourceGroupName, String capacityReservationGroupName, String capacityReservationName,
         CapacityReservationInner parameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName,
-            parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName,
+                parameters)
+            .getSyncPoller();
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -329,13 +322,14 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     public SyncPoller<PollResult<CapacityReservationInner>, CapacityReservationInner> beginCreateOrUpdate(
         String resourceGroupName, String capacityReservationGroupName, String capacityReservationName,
         CapacityReservationInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName,
+                parameters, context)
+            .getSyncPoller();
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -354,8 +348,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -376,8 +369,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -396,8 +388,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to create or update a capacity reservation. Please note some properties can be set only during
-     * capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
+     * The operation to create or update a capacity reservation. Please note some properties can be set only during capacity reservation creation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -426,8 +417,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName,
@@ -477,8 +467,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName,
@@ -601,8 +590,10 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     public SyncPoller<PollResult<CapacityReservationInner>, CapacityReservationInner> beginUpdate(
         String resourceGroupName, String capacityReservationGroupName, String capacityReservationName,
         CapacityReservationUpdate parameters, Context context) {
-        return this.beginUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName, parameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -621,7 +612,8 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     private Mono<CapacityReservationInner> updateAsync(String resourceGroupName, String capacityReservationGroupName,
         String capacityReservationName, CapacityReservationUpdate parameters) {
         return beginUpdateAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName, parameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -684,9 +676,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -729,9 +719,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -773,9 +761,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -795,9 +781,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -819,9 +803,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -839,9 +821,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -860,9 +840,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -880,9 +858,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -897,13 +873,12 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     private Mono<Void> deleteAsync(String resourceGroupName, String capacityReservationGroupName,
         String capacityReservationName, Context context) {
         return beginDeleteAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -918,9 +893,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources
-     * are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more
-     * details.
+     * The operation to delete a capacity reservation. This operation is allowed only when all the associated resources are disassociated from the capacity reservation. Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -942,14 +915,11 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
      * @param capacityReservationName The name of the capacity reservation.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
-     * properties of the capacity reservation that is managed by the platform and can change outside of control plane
-     * operations.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime properties of the capacity reservation that is managed by the platform and can change outside of control plane operations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapacityReservationInner>> getWithResponseAsync(String resourceGroupName,
@@ -990,15 +960,12 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
      * @param capacityReservationName The name of the capacity reservation.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
-     * properties of the capacity reservation that is managed by the platform and can change outside of control plane
-     * operations.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime properties of the capacity reservation that is managed by the platform and can change outside of control plane operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return specifies information about the capacity reservation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapacityReservationInner>> getWithResponseAsync(String resourceGroupName,
@@ -1056,9 +1023,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
      * @param capacityReservationName The name of the capacity reservation.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
-     * properties of the capacity reservation that is managed by the platform and can change outside of control plane
-     * operations.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime properties of the capacity reservation that is managed by the platform and can change outside of control plane operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1093,16 +1058,14 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CapacityReservationInner>>
@@ -1134,8 +1097,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -1143,8 +1105,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CapacityReservationInner>> listByCapacityReservationGroupSinglePageAsync(
@@ -1176,8 +1137,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -1195,8 +1155,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -1215,8 +1174,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -1233,8 +1191,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
     }
 
     /**
-     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in
-     * the response to get the next page of capacity reservations.
+     * Lists all of the capacity reservations in the specified capacity reservation group. Use the nextLink property in the response to get the next page of capacity reservations.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
@@ -1260,8 +1217,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CapacityReservationInner>>
@@ -1291,8 +1247,7 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list capacity reservation operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CapacityReservationInner>>

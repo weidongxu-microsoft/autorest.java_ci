@@ -64,8 +64,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientBandwidthSchedules to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientBandwidthSchedules to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -127,8 +126,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BandwidthScheduleInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -166,8 +164,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BandwidthScheduleInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -204,8 +201,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<BandwidthScheduleInner> listByDataBoxEdgeDeviceAsync(String deviceName,
@@ -223,8 +219,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<BandwidthScheduleInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName,
@@ -241,8 +236,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<BandwidthScheduleInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
@@ -258,8 +252,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return all the bandwidth schedules for a Data Box Edge/Data Box Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<BandwidthScheduleInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName,
@@ -276,8 +269,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified bandwidth schedule along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the properties of the specified bandwidth schedule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BandwidthScheduleInner>> getWithResponseAsync(String deviceName, String name,
@@ -317,8 +309,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified bandwidth schedule along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the properties of the specified bandwidth schedule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BandwidthScheduleInner>> getWithResponseAsync(String deviceName, String name,
@@ -874,8 +865,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of bandwidth schedules along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the collection of bandwidth schedules along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BandwidthScheduleInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -905,8 +895,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of bandwidth schedules along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the collection of bandwidth schedules along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BandwidthScheduleInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink,

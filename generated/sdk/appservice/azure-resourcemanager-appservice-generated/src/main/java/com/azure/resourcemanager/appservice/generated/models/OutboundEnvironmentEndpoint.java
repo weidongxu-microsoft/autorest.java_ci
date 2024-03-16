@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface OutboundEnvironmentEndpoint {
     /**
-     * Gets the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Gets the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @return the category value.
      */
@@ -27,8 +26,7 @@ public interface OutboundEnvironmentEndpoint {
     List<EndpointDependency> endpoints();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner object.
      * 
      * @return the inner object.
      */

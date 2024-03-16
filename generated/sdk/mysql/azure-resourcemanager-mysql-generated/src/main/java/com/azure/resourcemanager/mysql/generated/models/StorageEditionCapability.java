@@ -42,6 +42,18 @@ public final class StorageEditionCapability {
     @JsonProperty(value = "maxBackupRetentionDays", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxBackupRetentionDays;
 
+    /*
+     * Minimal backup interval hours
+     */
+    @JsonProperty(value = "minBackupIntervalHours", access = JsonProperty.Access.WRITE_ONLY)
+    private Long minBackupIntervalHours;
+
+    /*
+     * Maximum backup interval hours
+     */
+    @JsonProperty(value = "maxBackupIntervalHours", access = JsonProperty.Access.WRITE_ONLY)
+    private Long maxBackupIntervalHours;
+
     /**
      * Creates an instance of StorageEditionCapability class.
      */
@@ -91,6 +103,24 @@ public final class StorageEditionCapability {
      */
     public Long maxBackupRetentionDays() {
         return this.maxBackupRetentionDays;
+    }
+
+    /**
+     * Get the minBackupIntervalHours property: Minimal backup interval hours.
+     * 
+     * @return the minBackupIntervalHours value.
+     */
+    public Long minBackupIntervalHours() {
+        return this.minBackupIntervalHours;
+    }
+
+    /**
+     * Get the maxBackupIntervalHours property: Maximum backup interval hours.
+     * 
+     * @return the maxBackupIntervalHours value.
+     */
+    public Long maxBackupIntervalHours() {
+        return this.maxBackupIntervalHours;
     }
 
     /**

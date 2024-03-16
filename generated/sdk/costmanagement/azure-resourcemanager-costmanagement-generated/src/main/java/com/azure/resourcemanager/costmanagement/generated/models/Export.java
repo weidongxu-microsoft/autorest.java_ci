@@ -34,8 +34,7 @@ public interface Export {
     String type();
 
     /**
-     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -99,29 +98,14 @@ public interface Export {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope associated with query and export operations. This includes
-             * '/subscriptions/{subscriptionId}/' for subscription scope,
-             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
-             * Management Group scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * billingProfile scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
-             * for invoiceSection scope, and
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
-             * partners.
+             * @param scope The scope associated with query and export operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for Management Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}' for invoiceSection scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for partners.
              * @return the next definition stage.
              */
             WithCreate withExistingScope(String scope);
         }
 
         /**
-         * The stage of the Export definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Export definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithEtag, DefinitionStages.WithSchedule,
             DefinitionStages.WithFormat, DefinitionStages.WithDeliveryInfo, DefinitionStages.WithDefinition {
@@ -146,11 +130,9 @@ public interface Export {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
@@ -246,11 +228,9 @@ public interface Export {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             Update withEtag(String etag);

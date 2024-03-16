@@ -30,8 +30,9 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
 
     public Response<GalleryImageVersion> getWithResponse(String resourceGroupName, String galleryName,
         String galleryImageName, String galleryImageVersionName, ReplicationStatusTypes expand, Context context) {
-        Response<GalleryImageVersionInner> inner = this.serviceClient().getWithResponse(resourceGroupName, galleryName,
-            galleryImageName, galleryImageVersionName, expand, context);
+        Response<GalleryImageVersionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, expand,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new GalleryImageVersionImpl(inner.getValue(), this.manager()));
@@ -97,8 +98,10 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
         }
         ReplicationStatusTypes localExpand = null;
-        return this.getWithResponse(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName,
-            localExpand, Context.NONE).getValue();
+        return this
+            .getWithResponse(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, localExpand,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<GalleryImageVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand,

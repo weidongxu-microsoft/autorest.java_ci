@@ -143,8 +143,7 @@ public final class LoadBalancingSettingsModel extends SubResource {
     }
 
     /**
-     * Get the additionalLatencyMilliseconds property: The additional latency in milliseconds for probes to fall into
-     * the lowest latency bucket.
+     * Get the additionalLatencyMilliseconds property: The additional latency in milliseconds for probes to fall into the lowest latency bucket.
      * 
      * @return the additionalLatencyMilliseconds value.
      */
@@ -153,8 +152,7 @@ public final class LoadBalancingSettingsModel extends SubResource {
     }
 
     /**
-     * Set the additionalLatencyMilliseconds property: The additional latency in milliseconds for probes to fall into
-     * the lowest latency bucket.
+     * Set the additionalLatencyMilliseconds property: The additional latency in milliseconds for probes to fall into the lowest latency bucket.
      * 
      * @param additionalLatencyMilliseconds the additionalLatencyMilliseconds value to set.
      * @return the LoadBalancingSettingsModel object itself.

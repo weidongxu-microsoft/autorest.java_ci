@@ -49,8 +49,7 @@ public final class StorageAccount {
     private String resourceId;
 
     /*
-     * The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data
-     * Lake Storage Gen 2.
+     * The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data Lake Storage Gen 2.
      */
     @JsonProperty(value = "msiResourceId")
     private String msiResourceId;
@@ -68,8 +67,7 @@ public final class StorageAccount {
     private String fileshare;
 
     /*
-     * Enable secure channel or not, it's an optional field. Default value is false when cluster version < 5.1 and true
-     * when cluster version >= 5.1 ,
+     * Enable secure channel or not, it's an optional field. Default value is false when cluster version < 5.1 and true when cluster version >= 5.1 , 
      */
     @JsonProperty(value = "enableSecureChannel")
     private Boolean enableSecureChannel;
@@ -181,8 +179,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage
-     * Gen 2.
+     * Get the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage Gen 2.
      * 
      * @return the resourceId value.
      */
@@ -191,8 +188,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage
-     * Gen 2.
+     * Set the resourceId property: The resource ID of storage account, only to be specified for Azure Data Lake Storage Gen 2.
      * 
      * @param resourceId the resourceId value to set.
      * @return the StorageAccount object itself.
@@ -203,8 +199,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to
-     * be specified for Azure Data Lake Storage Gen 2.
+     * Get the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data Lake Storage Gen 2.
      * 
      * @return the msiResourceId value.
      */
@@ -213,8 +208,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to
-     * be specified for Azure Data Lake Storage Gen 2.
+     * Set the msiResourceId property: The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data Lake Storage Gen 2.
      * 
      * @param msiResourceId the msiResourceId value to set.
      * @return the StorageAccount object itself.
@@ -265,8 +259,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the enableSecureChannel property: Enable secure channel or not, it's an optional field. Default value is
-     * false when cluster version &lt; 5.1 and true when cluster version &gt;= 5.1 ,.
+     * Get the enableSecureChannel property: Enable secure channel or not, it's an optional field. Default value is false when cluster version &lt; 5.1 and true when cluster version &gt;= 5.1 ,.
      * 
      * @return the enableSecureChannel value.
      */
@@ -275,8 +268,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the enableSecureChannel property: Enable secure channel or not, it's an optional field. Default value is
-     * false when cluster version &lt; 5.1 and true when cluster version &gt;= 5.1 ,.
+     * Set the enableSecureChannel property: Enable secure channel or not, it's an optional field. Default value is false when cluster version &lt; 5.1 and true when cluster version &gt;= 5.1 ,.
      * 
      * @param enableSecureChannel the enableSecureChannel value to set.
      * @return the StorageAccount object itself.

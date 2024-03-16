@@ -48,8 +48,7 @@ public final class GatewaysClientImpl implements GatewaysClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientGateways to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientGateways to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")

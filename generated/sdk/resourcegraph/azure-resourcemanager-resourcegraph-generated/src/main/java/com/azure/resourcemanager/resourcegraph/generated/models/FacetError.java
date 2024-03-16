@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * A facet whose execution resulted in an error.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "resultType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "resultType", defaultImpl = FacetError.class, visible = true)
 @JsonTypeName("FacetError")
 @Fluent
 public final class FacetError extends Facet {
@@ -28,6 +28,7 @@ public final class FacetError extends Facet {
      * Creates an instance of FacetError class.
      */
     public FacetError() {
+        withResultType("FacetError");
     }
 
     /**

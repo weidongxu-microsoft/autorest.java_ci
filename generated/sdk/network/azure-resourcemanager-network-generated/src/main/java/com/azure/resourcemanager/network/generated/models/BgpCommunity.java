@@ -26,8 +26,7 @@ public final class BgpCommunity {
     private String communityName;
 
     /*
-     * The value of the bgp community. For more information:
-     * https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
+     * The value of the bgp community. For more information: https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
      */
     @JsonProperty(value = "communityValue")
     private String communityValue;
@@ -97,8 +96,7 @@ public final class BgpCommunity {
     }
 
     /**
-     * Get the communityValue property: The value of the bgp community. For more information:
-     * https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
+     * Get the communityValue property: The value of the bgp community. For more information: https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
      * 
      * @return the communityValue value.
      */
@@ -107,8 +105,7 @@ public final class BgpCommunity {
     }
 
     /**
-     * Set the communityValue property: The value of the bgp community. For more information:
-     * https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
+     * Set the communityValue property: The value of the bgp community. For more information: https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing.
      * 
      * @param communityValue the communityValue value to set.
      * @return the BgpCommunity object itself.

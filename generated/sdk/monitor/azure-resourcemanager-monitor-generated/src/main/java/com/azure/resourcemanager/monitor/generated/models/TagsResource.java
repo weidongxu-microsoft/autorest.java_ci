@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /**
- * A container holding only the Tags for a resource, allowing the user to update the tags on a PrivateLinkScope
- * instance.
+ * A container holding only the Tags for a resource, allowing the user to update the tags on a PrivateLinkScope instance.
  */
 @Fluent
 public final class TagsResource {

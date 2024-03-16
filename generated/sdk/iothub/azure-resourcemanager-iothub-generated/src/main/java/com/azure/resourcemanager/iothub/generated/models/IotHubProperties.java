@@ -30,8 +30,7 @@ public final class IotHubProperties {
     private Boolean disableLocalAuth;
 
     /*
-     * If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for
-     * authentication.
+     * If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for authentication.
      */
     @JsonProperty(value = "disableDeviceSAS")
     private Boolean disableDeviceSas;
@@ -73,8 +72,7 @@ public final class IotHubProperties {
     private NetworkRuleSetProperties networkRuleSets;
 
     /*
-     * Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS
-     * version below 1.2 to be rejected.
+     * Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS version below 1.2 to be rejected.
      */
     @JsonProperty(value = "minTlsVersion")
     private String minTlsVersion;
@@ -104,25 +102,20 @@ public final class IotHubProperties {
     private String hostname;
 
     /*
-     * The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has
-     * to be present in the dictionary while making create or update calls for the IoT hub.
+     * The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has to be present in the dictionary while making create or update calls for the IoT hub.
      */
     @JsonProperty(value = "eventHubEndpoints")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, EventHubProperties> eventHubEndpoints;
 
     /*
-     * The routing related properties of the IoT hub. See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging
+     * The routing related properties of the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging
      */
     @JsonProperty(value = "routing")
     private RoutingProperties routing;
 
     /*
-     * The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure
-     * Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error
-     * to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to
-     * True, causes an error to be thrown.
+     * The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to True, causes an error to be thrown.
      */
     @JsonProperty(value = "storageEndpoints")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -178,8 +171,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the authorizationPolicies property: The shared access policies you can use to secure a connection to the IoT
-     * hub.
+     * Get the authorizationPolicies property: The shared access policies you can use to secure a connection to the IoT hub.
      * 
      * @return the authorizationPolicies value.
      */
@@ -188,8 +180,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the authorizationPolicies property: The shared access policies you can use to secure a connection to the IoT
-     * hub.
+     * Set the authorizationPolicies property: The shared access policies you can use to secure a connection to the IoT hub.
      * 
      * @param authorizationPolicies the authorizationPolicies value to set.
      * @return the IotHubProperties object itself.
@@ -201,8 +192,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the disableLocalAuth property: If true, SAS tokens with Iot hub scoped SAS keys cannot be used for
-     * authentication.
+     * Get the disableLocalAuth property: If true, SAS tokens with Iot hub scoped SAS keys cannot be used for authentication.
      * 
      * @return the disableLocalAuth value.
      */
@@ -211,8 +201,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the disableLocalAuth property: If true, SAS tokens with Iot hub scoped SAS keys cannot be used for
-     * authentication.
+     * Set the disableLocalAuth property: If true, SAS tokens with Iot hub scoped SAS keys cannot be used for authentication.
      * 
      * @param disableLocalAuth the disableLocalAuth value to set.
      * @return the IotHubProperties object itself.
@@ -223,8 +212,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the disableDeviceSas property: If true, all device(including Edge devices but excluding modules) scoped SAS
-     * keys cannot be used for authentication.
+     * Get the disableDeviceSas property: If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for authentication.
      * 
      * @return the disableDeviceSas value.
      */
@@ -233,8 +221,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the disableDeviceSas property: If true, all device(including Edge devices but excluding modules) scoped SAS
-     * keys cannot be used for authentication.
+     * Set the disableDeviceSas property: If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for authentication.
      * 
      * @param disableDeviceSas the disableDeviceSas value to set.
      * @return the IotHubProperties object itself.
@@ -265,8 +252,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the restrictOutboundNetworkAccess property: If true, egress from IotHub will be restricted to only the
-     * allowed FQDNs that are configured via allowedFqdnList.
+     * Get the restrictOutboundNetworkAccess property: If true, egress from IotHub will be restricted to only the allowed FQDNs that are configured via allowedFqdnList.
      * 
      * @return the restrictOutboundNetworkAccess value.
      */
@@ -275,8 +261,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the restrictOutboundNetworkAccess property: If true, egress from IotHub will be restricted to only the
-     * allowed FQDNs that are configured via allowedFqdnList.
+     * Set the restrictOutboundNetworkAccess property: If true, egress from IotHub will be restricted to only the allowed FQDNs that are configured via allowedFqdnList.
      * 
      * @param restrictOutboundNetworkAccess the restrictOutboundNetworkAccess value to set.
      * @return the IotHubProperties object itself.
@@ -367,8 +352,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to
-     * have clients that use a TLS version below 1.2 to be rejected.
+     * Get the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS version below 1.2 to be rejected.
      * 
      * @return the minTlsVersion value.
      */
@@ -377,8 +361,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to
-     * have clients that use a TLS version below 1.2 to be rejected.
+     * Set the minTlsVersion property: Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS version below 1.2 to be rejected.
      * 
      * @param minTlsVersion the minTlsVersion value to set.
      * @return the IotHubProperties object itself.
@@ -437,9 +420,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the eventHubEndpoints property: The Event Hub-compatible endpoint properties. The only possible keys to this
-     * dictionary is events. This key has to be present in the dictionary while making create or update calls for the
-     * IoT hub.
+     * Get the eventHubEndpoints property: The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has to be present in the dictionary while making create or update calls for the IoT hub.
      * 
      * @return the eventHubEndpoints value.
      */
@@ -448,9 +429,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the eventHubEndpoints property: The Event Hub-compatible endpoint properties. The only possible keys to this
-     * dictionary is events. This key has to be present in the dictionary while making create or update calls for the
-     * IoT hub.
+     * Set the eventHubEndpoints property: The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has to be present in the dictionary while making create or update calls for the IoT hub.
      * 
      * @param eventHubEndpoints the eventHubEndpoints value to set.
      * @return the IotHubProperties object itself.
@@ -461,8 +440,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the routing property: The routing related properties of the IoT hub. See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging.
+     * Get the routing property: The routing related properties of the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging.
      * 
      * @return the routing value.
      */
@@ -471,8 +449,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the routing property: The routing related properties of the IoT hub. See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging.
+     * Set the routing property: The routing related properties of the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging.
      * 
      * @param routing the routing value to set.
      * @return the IotHubProperties object itself.
@@ -483,10 +460,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the storageEndpoints property: The list of Azure Storage endpoints where you can upload files. Currently you
-     * can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one
-     * storage account causes an error to be thrown. Not specifying a value for this property when the
-     * enableFileUploadNotifications property is set to True, causes an error to be thrown.
+     * Get the storageEndpoints property: The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to True, causes an error to be thrown.
      * 
      * @return the storageEndpoints value.
      */
@@ -495,10 +469,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the storageEndpoints property: The list of Azure Storage endpoints where you can upload files. Currently you
-     * can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one
-     * storage account causes an error to be thrown. Not specifying a value for this property when the
-     * enableFileUploadNotifications property is set to True, causes an error to be thrown.
+     * Set the storageEndpoints property: The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to True, causes an error to be thrown.
      * 
      * @param storageEndpoints the storageEndpoints value to set.
      * @return the IotHubProperties object itself.
@@ -618,8 +589,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Get the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling
-     * disaster recovery.
+     * Get the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling disaster recovery.
      * 
      * @return the enableDataResidency value.
      */
@@ -628,8 +598,7 @@ public final class IotHubProperties {
     }
 
     /**
-     * Set the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling
-     * disaster recovery.
+     * Set the enableDataResidency property: This property when set to true, will enable data residency, thus, disabling disaster recovery.
      * 
      * @param enableDataResidency the enableDataResidency value to set.
      * @return the IotHubProperties object itself.

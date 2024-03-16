@@ -67,8 +67,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientDatabasePrincipalAssignments to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientDatabasePrincipalAssignments to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -140,8 +139,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -189,8 +187,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -295,8 +292,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster database principalAssignment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a Kusto cluster database principalAssignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalAssignmentInner>> getWithResponseAsync(String resourceGroupName,
@@ -342,8 +338,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster database principalAssignment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a Kusto cluster database principalAssignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalAssignmentInner>> getWithResponseAsync(String resourceGroupName,
@@ -445,8 +440,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database principal assignment along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return class representing a database principal assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -499,8 +493,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database principal assignment along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return class representing a database principal assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -630,8 +623,10 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
     public SyncPoller<PollResult<DatabasePrincipalAssignmentInner>, DatabasePrincipalAssignmentInner>
         beginCreateOrUpdate(String resourceGroupName, String clusterName, String databaseName,
             String principalAssignmentName, DatabasePrincipalAssignmentInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName, parameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -973,8 +968,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the list Kusto database principal assignments operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabasePrincipalAssignmentInner>> listSinglePageAsync(String resourceGroupName,
@@ -1016,8 +1010,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the list Kusto database principal assignments operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabasePrincipalAssignmentInner>> listSinglePageAsync(String resourceGroupName,
@@ -1058,8 +1051,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response as paginated response with
-     * {@link PagedFlux}.
+     * @return the list Kusto database principal assignments operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DatabasePrincipalAssignmentInner> listAsync(String resourceGroupName, String clusterName,
@@ -1077,8 +1069,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response as paginated response with
-     * {@link PagedFlux}.
+     * @return the list Kusto database principal assignments operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DatabasePrincipalAssignmentInner> listAsync(String resourceGroupName, String clusterName,
@@ -1095,8 +1086,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list Kusto database principal assignments operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DatabasePrincipalAssignmentInner> list(String resourceGroupName, String clusterName,
@@ -1114,8 +1104,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principal assignments operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list Kusto database principal assignments operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DatabasePrincipalAssignmentInner> list(String resourceGroupName, String clusterName,

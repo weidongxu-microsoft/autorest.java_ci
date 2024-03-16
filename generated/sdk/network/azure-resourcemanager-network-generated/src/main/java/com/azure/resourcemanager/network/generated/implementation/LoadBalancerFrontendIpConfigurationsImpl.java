@@ -42,8 +42,8 @@ public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalan
 
     public Response<FrontendIpConfiguration> getWithResponse(String resourceGroupName, String loadBalancerName,
         String frontendIpConfigurationName, Context context) {
-        Response<FrontendIpConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            loadBalancerName, frontendIpConfigurationName, context);
+        Response<FrontendIpConfigurationInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, loadBalancerName, frontendIpConfigurationName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FrontendIpConfigurationImpl(inner.getValue(), this.manager()));

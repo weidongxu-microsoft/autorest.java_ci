@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class VaultAccessPolicyProperties {
     /*
-     * An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same
-     * tenant ID as the key vault's tenant ID.
+     * An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
      */
     @JsonProperty(value = "accessPolicies", required = true)
     private List<AccessPolicyEntry> accessPolicies;
@@ -28,8 +27,7 @@ public final class VaultAccessPolicyProperties {
     }
 
     /**
-     * Get the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities
-     * in the array must use the same tenant ID as the key vault's tenant ID.
+     * Get the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
      * 
      * @return the accessPolicies value.
      */
@@ -38,8 +36,7 @@ public final class VaultAccessPolicyProperties {
     }
 
     /**
-     * Set the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities
-     * in the array must use the same tenant ID as the key vault's tenant ID.
+     * Set the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
      * 
      * @param accessPolicies the accessPolicies value to set.
      * @return the VaultAccessPolicyProperties object itself.

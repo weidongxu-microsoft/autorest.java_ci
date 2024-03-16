@@ -19,8 +19,7 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     private Boolean protectFromScaleIn;
 
     /*
-     * Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should
-     * not be applied to the virtual machine scale set VM.
+     * Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
      */
     @JsonProperty(value = "protectFromScaleSetActions")
     private Boolean protectFromScaleSetActions;
@@ -32,8 +31,7 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     }
 
     /**
-     * Get the protectFromScaleIn property: Indicates that the virtual machine scale set VM shouldn't be considered for
-     * deletion during a scale-in operation.
+     * Get the protectFromScaleIn property: Indicates that the virtual machine scale set VM shouldn't be considered for deletion during a scale-in operation.
      * 
      * @return the protectFromScaleIn value.
      */
@@ -42,8 +40,7 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     }
 
     /**
-     * Set the protectFromScaleIn property: Indicates that the virtual machine scale set VM shouldn't be considered for
-     * deletion during a scale-in operation.
+     * Set the protectFromScaleIn property: Indicates that the virtual machine scale set VM shouldn't be considered for deletion during a scale-in operation.
      * 
      * @param protectFromScaleIn the protectFromScaleIn value to set.
      * @return the VirtualMachineScaleSetVMProtectionPolicy object itself.
@@ -54,8 +51,7 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     }
 
     /**
-     * Get the protectFromScaleSetActions property: Indicates that model updates or actions (including scale-in)
-     * initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
+     * Get the protectFromScaleSetActions property: Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
      * 
      * @return the protectFromScaleSetActions value.
      */
@@ -64,8 +60,7 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     }
 
     /**
-     * Set the protectFromScaleSetActions property: Indicates that model updates or actions (including scale-in)
-     * initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
+     * Set the protectFromScaleSetActions property: Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
      * 
      * @param protectFromScaleSetActions the protectFromScaleSetActions value to set.
      * @return the VirtualMachineScaleSetVMProtectionPolicy object itself.

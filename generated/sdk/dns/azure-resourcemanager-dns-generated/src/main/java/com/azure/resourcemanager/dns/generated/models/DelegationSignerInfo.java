@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class DelegationSignerInfo {
     /*
-     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See:
-     * https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
+     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
      */
     @JsonProperty(value = "digestAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer digestAlgorithmType;
@@ -38,8 +37,7 @@ public final class DelegationSignerInfo {
     }
 
     /**
-     * Get the digestAlgorithmType property: The digest algorithm type represents the standard digest algorithm number
-     * used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
+     * Get the digestAlgorithmType property: The digest algorithm type represents the standard digest algorithm number used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
      * 
      * @return the digestAlgorithmType value.
      */
@@ -48,8 +46,7 @@ public final class DelegationSignerInfo {
     }
 
     /**
-     * Get the digestValue property: The digest value is a cryptographic hash value of the referenced DNSKEY Resource
-     * Record.
+     * Get the digestValue property: The digest value is a cryptographic hash value of the referenced DNSKEY Resource Record.
      * 
      * @return the digestValue value.
      */

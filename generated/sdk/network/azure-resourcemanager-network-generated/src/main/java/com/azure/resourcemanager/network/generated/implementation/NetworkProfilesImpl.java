@@ -37,8 +37,8 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
 
     public Response<NetworkProfile> getByResourceGroupWithResponse(String resourceGroupName, String networkProfileName,
         String expand, Context context) {
-        Response<NetworkProfileInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            networkProfileName, expand, context);
+        Response<NetworkProfileInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkProfileImpl(inner.getValue(), this.manager()));

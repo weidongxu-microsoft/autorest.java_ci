@@ -19,15 +19,13 @@ public final class ApplicationGatewayUrlConfiguration {
     private String modifiedPath;
 
     /*
-     * Query string which user has provided for url rewrite. Null means no query string will be updated. Default value
-     * is null.
+     * Query string which user has provided for url rewrite. Null means no query string will be updated. Default value is null.
      */
     @JsonProperty(value = "modifiedQueryString")
     private String modifiedQueryString;
 
     /*
-     * If set as true, it will re-evaluate the url path map provided in path based request routing rules using modified
-     * path. Default value is false.
+     * If set as true, it will re-evaluate the url path map provided in path based request routing rules using modified path. Default value is false.
      */
     @JsonProperty(value = "reroute")
     private Boolean reroute;
@@ -39,8 +37,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Get the modifiedPath property: Url path which user has provided for url rewrite. Null means no path will be
-     * updated. Default value is null.
+     * Get the modifiedPath property: Url path which user has provided for url rewrite. Null means no path will be updated. Default value is null.
      * 
      * @return the modifiedPath value.
      */
@@ -49,8 +46,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Set the modifiedPath property: Url path which user has provided for url rewrite. Null means no path will be
-     * updated. Default value is null.
+     * Set the modifiedPath property: Url path which user has provided for url rewrite. Null means no path will be updated. Default value is null.
      * 
      * @param modifiedPath the modifiedPath value to set.
      * @return the ApplicationGatewayUrlConfiguration object itself.
@@ -61,8 +57,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Get the modifiedQueryString property: Query string which user has provided for url rewrite. Null means no query
-     * string will be updated. Default value is null.
+     * Get the modifiedQueryString property: Query string which user has provided for url rewrite. Null means no query string will be updated. Default value is null.
      * 
      * @return the modifiedQueryString value.
      */
@@ -71,8 +66,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Set the modifiedQueryString property: Query string which user has provided for url rewrite. Null means no query
-     * string will be updated. Default value is null.
+     * Set the modifiedQueryString property: Query string which user has provided for url rewrite. Null means no query string will be updated. Default value is null.
      * 
      * @param modifiedQueryString the modifiedQueryString value to set.
      * @return the ApplicationGatewayUrlConfiguration object itself.
@@ -83,8 +77,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Get the reroute property: If set as true, it will re-evaluate the url path map provided in path based request
-     * routing rules using modified path. Default value is false.
+     * Get the reroute property: If set as true, it will re-evaluate the url path map provided in path based request routing rules using modified path. Default value is false.
      * 
      * @return the reroute value.
      */
@@ -93,8 +86,7 @@ public final class ApplicationGatewayUrlConfiguration {
     }
 
     /**
-     * Set the reroute property: If set as true, it will re-evaluate the url path map provided in path based request
-     * routing rules using modified path. Default value is false.
+     * Set the reroute property: If set as true, it will re-evaluate the url path map provided in path based request routing rules using modified path. Default value is false.
      * 
      * @param reroute the reroute value to set.
      * @return the ApplicationGatewayUrlConfiguration object itself.

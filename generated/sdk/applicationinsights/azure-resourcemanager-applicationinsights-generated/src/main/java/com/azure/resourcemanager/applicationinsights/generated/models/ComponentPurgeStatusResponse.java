@@ -18,8 +18,7 @@ public interface ComponentPurgeStatusResponse {
     PurgeState status();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeStatusResponseInner object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeStatusResponseInner object.
      * 
      * @return the inner object.
      */

@@ -39,8 +39,7 @@ public interface DiagnosticSettingsCategoryResource {
     CategoryType categoryType();
 
     /**
-     * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner object.
      * 
      * @return the inner object.
      */

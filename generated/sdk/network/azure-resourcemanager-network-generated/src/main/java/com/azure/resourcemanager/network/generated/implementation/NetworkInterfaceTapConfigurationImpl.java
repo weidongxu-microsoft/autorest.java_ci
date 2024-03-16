@@ -72,13 +72,16 @@ public final class NetworkInterfaceTapConfigurationImpl implements NetworkInterf
     }
 
     public NetworkInterfaceTapConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations().createOrUpdate(
-            resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
+            .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public NetworkInterfaceTapConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
             .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
@@ -95,13 +98,16 @@ public final class NetworkInterfaceTapConfigurationImpl implements NetworkInterf
     }
 
     public NetworkInterfaceTapConfiguration apply() {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations().createOrUpdate(
-            resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
+            .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public NetworkInterfaceTapConfiguration apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
             .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
@@ -116,14 +122,18 @@ public final class NetworkInterfaceTapConfigurationImpl implements NetworkInterf
     }
 
     public NetworkInterfaceTapConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
-            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkInterfaceTapConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
-            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkInterfaceTapConfigurations()
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context)
+            .getValue();
         return this;
     }
 

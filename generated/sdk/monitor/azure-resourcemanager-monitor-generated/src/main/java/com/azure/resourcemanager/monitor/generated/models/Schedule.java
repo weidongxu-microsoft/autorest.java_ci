@@ -51,8 +51,7 @@ public final class Schedule {
     }
 
     /**
-     * Get the timeWindowInMinutes property: Time window for which data needs to be fetched for query (should be greater
-     * than or equal to frequencyInMinutes).
+     * Get the timeWindowInMinutes property: Time window for which data needs to be fetched for query (should be greater than or equal to frequencyInMinutes).
      * 
      * @return the timeWindowInMinutes value.
      */
@@ -61,8 +60,7 @@ public final class Schedule {
     }
 
     /**
-     * Set the timeWindowInMinutes property: Time window for which data needs to be fetched for query (should be greater
-     * than or equal to frequencyInMinutes).
+     * Set the timeWindowInMinutes property: Time window for which data needs to be fetched for query (should be greater than or equal to frequencyInMinutes).
      * 
      * @param timeWindowInMinutes the timeWindowInMinutes value to set.
      * @return the Schedule object itself.

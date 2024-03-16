@@ -20,15 +20,13 @@ public final class WebApplicationFirewallScrubbingRules {
     private ScrubbingRuleEntryMatchVariable matchVariable;
 
     /*
-     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule
-     * applies to.
+     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
      */
     @JsonProperty(value = "selectorMatchOperator", required = true)
     private ScrubbingRuleEntryMatchOperator selectorMatchOperator;
 
     /*
-     * When matchVariable is a collection, operator used to specify which elements in the collection this rule applies
-     * to.
+     * When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
      */
     @JsonProperty(value = "selector")
     private String selector;
@@ -66,8 +64,7 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
-     * which elements in the collection this rule applies to.
+     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
      * 
      * @return the selectorMatchOperator value.
      */
@@ -76,8 +73,7 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
-     * which elements in the collection this rule applies to.
+     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
      * 
      * @param selectorMatchOperator the selectorMatchOperator value to set.
      * @return the WebApplicationFirewallScrubbingRules object itself.
@@ -89,8 +85,7 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the
-     * collection this rule applies to.
+     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
      * 
      * @return the selector value.
      */
@@ -99,8 +94,7 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the
-     * collection this rule applies to.
+     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
      * 
      * @param selector the selector value to set.
      * @return the WebApplicationFirewallScrubbingRules object itself.

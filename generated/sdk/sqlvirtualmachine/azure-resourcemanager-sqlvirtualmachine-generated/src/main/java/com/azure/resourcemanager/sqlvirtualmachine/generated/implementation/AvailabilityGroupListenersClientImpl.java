@@ -64,8 +64,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     }
 
     /**
-     * The interface defining all the services for SqlVirtualMachineManagementClientAvailabilityGroupListeners to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for SqlVirtualMachineManagementClientAvailabilityGroupListeners to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "SqlVirtualMachineMan")
@@ -126,8 +125,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Gets an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param expand The child resources to include in the response.
@@ -170,8 +168,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Gets an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param expand The child resources to include in the response.
@@ -214,8 +211,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Gets an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,8 +230,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Gets an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param expand The child resources to include in the response.
@@ -255,8 +250,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Gets an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -275,16 +269,14 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL Server availability group listener along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a SQL Server availability group listener along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -326,8 +318,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -335,8 +326,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL Server availability group listener along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a SQL Server availability group listener along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -377,8 +367,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -401,8 +390,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -427,8 +415,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -441,15 +428,16 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     public SyncPoller<PollResult<AvailabilityGroupListenerInner>, AvailabilityGroupListenerInner> beginCreateOrUpdate(
         String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName,
         AvailabilityGroupListenerInner parameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineGroupName,
-            availabilityGroupListenerName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName,
+                parameters)
+            .getSyncPoller();
     }
 
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -463,15 +451,16 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     public SyncPoller<PollResult<AvailabilityGroupListenerInner>, AvailabilityGroupListenerInner> beginCreateOrUpdate(
         String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName,
         AvailabilityGroupListenerInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineGroupName,
-            availabilityGroupListenerName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName,
+                parameters, context)
+            .getSyncPoller();
     }
 
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -491,8 +480,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -513,8 +501,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -533,8 +520,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Creates or updates an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param parameters The availability group listener.
@@ -554,8 +540,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -597,8 +582,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param context The context to associate with this operation.
@@ -640,8 +624,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -661,8 +644,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param context The context to associate with this operation.
@@ -684,8 +666,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -703,8 +684,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param context The context to associate with this operation.
@@ -724,8 +704,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -743,8 +722,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param context The context to associate with this operation.
@@ -757,14 +735,14 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     private Mono<Void> deleteAsync(String resourceGroupName, String sqlVirtualMachineGroupName,
         String availabilityGroupListenerName, Context context) {
         return beginDeleteAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -780,8 +758,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Deletes an availability group listener.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
      * @param context The context to associate with this operation.
@@ -798,14 +775,12 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilityGroupListenerInner>> listByGroupSinglePageAsync(String resourceGroupName,
@@ -839,15 +814,13 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilityGroupListenerInner>> listByGroupSinglePageAsync(String resourceGroupName,
@@ -880,8 +853,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -898,8 +870,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -917,8 +888,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -934,8 +904,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     /**
      * Lists all availability group listeners in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     * the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -958,8 +927,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilityGroupListenerInner>> listByGroupNextSinglePageAsync(String nextLink) {
@@ -988,8 +956,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of availability group listeners along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilityGroupListenerInner>> listByGroupNextSinglePageAsync(String nextLink,

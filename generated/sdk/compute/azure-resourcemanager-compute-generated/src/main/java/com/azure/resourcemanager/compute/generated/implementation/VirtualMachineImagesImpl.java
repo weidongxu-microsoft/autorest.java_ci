@@ -56,11 +56,13 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
 
     public Response<List<VirtualMachineImageResource>> listWithResponse(String location, String publisherName,
         String offer, String skus, String expand, Integer top, String orderby, Context context) {
-        Response<List<VirtualMachineImageResourceInner>> inner = this.serviceClient().listWithResponse(location,
-            publisherName, offer, skus, expand, top, orderby, context);
+        Response<List<VirtualMachineImageResourceInner>> inner = this.serviceClient()
+            .listWithResponse(location, publisherName, offer, skus, expand, top, orderby, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -70,9 +72,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
     public List<VirtualMachineImageResource> list(String location, String publisherName, String offer, String skus) {
         List<VirtualMachineImageResourceInner> inner = this.serviceClient().list(location, publisherName, offer, skus);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -84,7 +86,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
             = this.serviceClient().listOffersWithResponse(location, publisherName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -94,9 +98,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
     public List<VirtualMachineImageResource> listOffers(String location, String publisherName) {
         List<VirtualMachineImageResourceInner> inner = this.serviceClient().listOffers(location, publisherName);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -107,7 +111,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
             = this.serviceClient().listPublishersWithResponse(location, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -117,9 +123,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
     public List<VirtualMachineImageResource> listPublishers(String location) {
         List<VirtualMachineImageResourceInner> inner = this.serviceClient().listPublishers(location);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -131,7 +137,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
             = this.serviceClient().listSkusWithResponse(location, publisherName, offer, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -141,9 +149,9 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
     public List<VirtualMachineImageResource> listSkus(String location, String publisherName, String offer) {
         List<VirtualMachineImageResourceInner> inner = this.serviceClient().listSkus(location, publisherName, offer);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

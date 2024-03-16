@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The StaticStringRoutingEnrichment model.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "valueType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "valueType",
+    defaultImpl = StaticStringRoutingEnrichment.class,
+    visible = true)
 @JsonTypeName("String")
 @Fluent
 public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment {
@@ -26,6 +30,7 @@ public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment
      * Creates an instance of StaticStringRoutingEnrichment class.
      */
     public StaticStringRoutingEnrichment() {
+        withValueType(StaticRoutingEnrichmentType.STRING);
     }
 
     /**

@@ -217,9 +217,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions are launched
-     * only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions
-     * do not run on the extra overprovisioned VMs.
+     * Get the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs.
      * 
      * @return the doNotRunExtensionsOnOverprovisionedVMs value.
      */
@@ -228,9 +226,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions are launched
-     * only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions
-     * do not run on the extra overprovisioned VMs.
+     * Set the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs.
      * 
      * @param doNotRunExtensionsOnOverprovisionedVMs the doNotRunExtensionsOnOverprovisionedVMs value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.
@@ -245,9 +241,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the singlePlacementGroup property: When true this limits the scale set to a single placement group, of max
-     * size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
-     * singlePlacementGroup is false, it may not be modified to true.
+     * Get the singlePlacementGroup property: When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.
      * 
      * @return the singlePlacementGroup value.
      */
@@ -256,9 +250,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the singlePlacementGroup property: When true this limits the scale set to a single placement group, of max
-     * size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
-     * singlePlacementGroup is false, it may not be modified to true.
+     * Set the singlePlacementGroup property: When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.
      * 
      * @param singlePlacementGroup the singlePlacementGroup value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.
@@ -272,9 +264,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the Virtual
-     * Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability to
-     * support attaching managed data disks with UltraSSD_LRS storage account type.
+     * Get the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the Virtual Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability to support attaching managed data disks with UltraSSD_LRS storage account type.
      * 
      * @return the additionalCapabilities value.
      */
@@ -283,9 +273,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the Virtual
-     * Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability to
-     * support attaching managed data disks with UltraSSD_LRS storage account type.
+     * Set the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the Virtual Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability to support attaching managed data disks with UltraSSD_LRS storage account type.
      * 
      * @param additionalCapabilities the additionalCapabilities value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.
@@ -299,8 +287,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in the Virtual
-     * Machine Scale Set.
+     * Get the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in the Virtual Machine Scale Set.
      * 
      * @return the scaleInPolicy value.
      */
@@ -309,8 +296,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in the Virtual
-     * Machine Scale Set.
+     * Set the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in the Virtual Machine Scale Set.
      * 
      * @param scaleInPolicy the scaleInPolicy value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.
@@ -324,8 +310,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+     * Get the proximityPlacementGroup property: Specifies information about the proximity placement group that the virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
      * 
      * @return the proximityPlacementGroup value.
      */
@@ -334,8 +319,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+     * Set the proximityPlacementGroup property: Specifies information about the proximity placement group that the virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
      * 
      * @param proximityPlacementGroup the proximityPlacementGroup value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.
@@ -349,8 +333,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs within
-     * the same VMSS Flex instance.
+     * Get the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs within the same VMSS Flex instance.
      * 
      * @return the priorityMixPolicy value.
      */
@@ -359,8 +342,7 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs within
-     * the same VMSS Flex instance.
+     * Set the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs within the same VMSS Flex instance.
      * 
      * @param priorityMixPolicy the priorityMixPolicy value to set.
      * @return the VirtualMachineScaleSetUpdate object itself.

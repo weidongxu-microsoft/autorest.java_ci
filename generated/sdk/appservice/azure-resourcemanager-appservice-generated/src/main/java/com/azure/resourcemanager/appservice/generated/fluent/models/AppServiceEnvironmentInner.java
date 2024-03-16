@@ -82,9 +82,8 @@ public final class AppServiceEnvironmentInner {
     private Integer frontEndScaleFactor;
 
     /*
-     * <code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can
-     * be suspended, e.g. when the management endpoint is no longer available
-     * (most likely because NSG blocked the incoming traffic).
+     * <code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the management endpoint is no longer available
+     *  (most likely because NSG blocked the incoming traffic).
      */
     @JsonProperty(value = "suspended", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean suspended;
@@ -188,8 +187,7 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
-     * for the App Service Environment.
+     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
      * 
      * @return the internalLoadBalancingMode value.
      */
@@ -198,8 +196,7 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
-     * for the App Service Environment.
+     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
      * 
      * @param internalLoadBalancingMode the internalLoadBalancingMode value to set.
      * @return the AppServiceEnvironmentInner object itself.
@@ -308,10 +305,8 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer
-     * available
-     * (most likely because NSG blocked the incoming traffic).
+     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer available
+     *  (most likely because NSG blocked the incoming traffic).
      * 
      * @return the suspended value.
      */

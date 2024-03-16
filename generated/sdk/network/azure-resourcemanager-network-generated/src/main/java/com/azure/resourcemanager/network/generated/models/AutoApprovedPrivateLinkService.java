@@ -18,8 +18,7 @@ public interface AutoApprovedPrivateLinkService {
     String privateLinkService();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner object.
      * 
      * @return the inner object.
      */

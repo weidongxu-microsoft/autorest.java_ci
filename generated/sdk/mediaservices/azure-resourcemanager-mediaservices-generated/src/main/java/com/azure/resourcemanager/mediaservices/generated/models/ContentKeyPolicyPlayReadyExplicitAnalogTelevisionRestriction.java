@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Configures the Explicit Analog Television Output Restriction control bits. For further details see the PlayReady
- * Compliance Rules.
+ * Configures the Explicit Analog Television Output Restriction control bits. For further details see the PlayReady Compliance Rules.
  */
 @Fluent
 public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction {

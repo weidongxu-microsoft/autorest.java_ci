@@ -93,13 +93,15 @@ public final class ServerSecurityAlertPolicyImpl
     }
 
     public ServerSecurityAlertPolicy create() {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
             .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServerSecurityAlertPolicy create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
             .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), context);
         return this;
     }
@@ -116,13 +118,15 @@ public final class ServerSecurityAlertPolicyImpl
     }
 
     public ServerSecurityAlertPolicy apply() {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
             .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServerSecurityAlertPolicy apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
             .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), context);
         return this;
     }
@@ -138,14 +142,18 @@ public final class ServerSecurityAlertPolicyImpl
     }
 
     public ServerSecurityAlertPolicy refresh() {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
-            .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
+            .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ServerSecurityAlertPolicy refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerSecurityAlertPolicies()
-            .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServerSecurityAlertPolicies()
+            .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, context)
+            .getValue();
         return this;
     }
 

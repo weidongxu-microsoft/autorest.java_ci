@@ -61,8 +61,7 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between service consumer and provider.
+     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -71,8 +70,7 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between service consumer and provider.
+     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.

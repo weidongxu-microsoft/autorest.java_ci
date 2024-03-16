@@ -57,8 +57,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientInboundSecurityRuleOperations to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientInboundSecurityRuleOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -82,8 +81,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -132,8 +130,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -182,8 +179,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -206,8 +202,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -231,8 +226,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -253,8 +247,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -265,8 +258,10 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
     public SyncPoller<PollResult<InboundSecurityRuleInner>, InboundSecurityRuleInner> beginCreateOrUpdate(
         String resourceGroupName, String networkVirtualApplianceName, String ruleCollectionName,
         InboundSecurityRuleInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, ruleCollectionName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, parameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -275,8 +270,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -286,7 +280,8 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
     private Mono<InboundSecurityRuleInner> createOrUpdateAsync(String resourceGroupName,
         String networkVirtualApplianceName, String ruleCollectionName, InboundSecurityRuleInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, parameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -295,8 +290,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -317,8 +311,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -337,8 +330,7 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
-     * operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

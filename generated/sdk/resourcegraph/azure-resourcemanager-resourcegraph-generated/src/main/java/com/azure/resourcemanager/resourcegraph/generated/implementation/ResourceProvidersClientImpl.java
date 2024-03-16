@@ -52,8 +52,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * The interface defining all the services for ResourceGraphClientResourceProviders to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ResourceGraphClientResourceProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceGraphClientR")

@@ -12,14 +12,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * A management event rule condition.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = ManagementEventRuleCondition.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.ManagementEventRuleCondition")
 @Fluent
 public final class ManagementEventRuleCondition extends RuleCondition {
     /*
-     * How the data that is collected should be combined over time and when the alert is activated. Note that for
-     * management event alerts aggregation is optional – if it is not provided then any event will cause the alert to
-     * activate.
+     * How the data that is collected should be combined over time and when the alert is activated. Note that for management event alerts aggregation is optional – if it is not provided then any event will cause the alert to activate.
      */
     @JsonProperty(value = "aggregation")
     private ManagementEventAggregationCondition aggregation;
@@ -28,12 +30,11 @@ public final class ManagementEventRuleCondition extends RuleCondition {
      * Creates an instance of ManagementEventRuleCondition class.
      */
     public ManagementEventRuleCondition() {
+        withOdataType("Microsoft.Azure.Management.Insights.Models.ManagementEventRuleCondition");
     }
 
     /**
-     * Get the aggregation property: How the data that is collected should be combined over time and when the alert is
-     * activated. Note that for management event alerts aggregation is optional – if it is not provided then any event
-     * will cause the alert to activate.
+     * Get the aggregation property: How the data that is collected should be combined over time and when the alert is activated. Note that for management event alerts aggregation is optional – if it is not provided then any event will cause the alert to activate.
      * 
      * @return the aggregation value.
      */
@@ -42,9 +43,7 @@ public final class ManagementEventRuleCondition extends RuleCondition {
     }
 
     /**
-     * Set the aggregation property: How the data that is collected should be combined over time and when the alert is
-     * activated. Note that for management event alerts aggregation is optional – if it is not provided then any event
-     * will cause the alert to activate.
+     * Set the aggregation property: How the data that is collected should be combined over time and when the alert is activated. Note that for management event alerts aggregation is optional – if it is not provided then any event will cause the alert to activate.
      * 
      * @param aggregation the aggregation value to set.
      * @return the ManagementEventRuleCondition object itself.

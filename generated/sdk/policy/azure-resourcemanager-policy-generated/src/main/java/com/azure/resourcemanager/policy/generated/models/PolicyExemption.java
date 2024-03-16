@@ -50,8 +50,7 @@ public interface PolicyExemption {
     String policyAssignmentId();
 
     /**
-     * Gets the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
-     * policy assignment is an assignment of a policy set definition.
+     * Gets the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
      * 
      * @return the policyDefinitionReferenceIds value.
      */
@@ -65,8 +64,7 @@ public interface PolicyExemption {
     ExemptionCategory exemptionCategory();
 
     /**
-     * Gets the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the
-     * policy exemption.
+     * Gets the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
      * 
      * @return the expiresOn value.
      */
@@ -87,8 +85,7 @@ public interface PolicyExemption {
     String description();
 
     /**
-     * Gets the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a
-     * collection of key value pairs.
+     * Gets the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -125,11 +122,7 @@ public interface PolicyExemption {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
-             * '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-             * '/subscriptions/{subscriptionId}'), resource group (format:
-             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+             * @param scope The scope of the policy exemption. Valid scopes are: management group (format: '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format: '/subscriptions/{subscriptionId}'), resource group (format: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
              * @return the next definition stage.
              */
             WithPolicyAssignmentId withExistingScope(String scope);
@@ -153,8 +146,7 @@ public interface PolicyExemption {
          */
         interface WithExemptionCategory {
             /**
-             * Specifies the exemptionCategory property: The policy exemption category. Possible values are Waiver and
-             * Mitigated..
+             * Specifies the exemptionCategory property: The policy exemption category. Possible values are Waiver and Mitigated..
              * 
              * @param exemptionCategory The policy exemption category. Possible values are Waiver and Mitigated.
              * @return the next definition stage.
@@ -163,8 +155,7 @@ public interface PolicyExemption {
         }
 
         /**
-         * The stage of the PolicyExemption definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PolicyExemption definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPolicyDefinitionReferenceIds, DefinitionStages.WithExpiresOn,
             DefinitionStages.WithDisplayName, DefinitionStages.WithDescription, DefinitionStages.WithMetadata {
@@ -189,11 +180,9 @@ public interface PolicyExemption {
          */
         interface WithPolicyDefinitionReferenceIds {
             /**
-             * Specifies the policyDefinitionReferenceIds property: The policy definition reference ID list when the
-             * associated policy assignment is an assignment of a policy set definition..
+             * Specifies the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition..
              * 
-             * @param policyDefinitionReferenceIds The policy definition reference ID list when the associated policy
-             * assignment is an assignment of a policy set definition.
+             * @param policyDefinitionReferenceIds The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
              * @return the next definition stage.
              */
             WithCreate withPolicyDefinitionReferenceIds(List<String> policyDefinitionReferenceIds);
@@ -204,11 +193,9 @@ public interface PolicyExemption {
          */
         interface WithExpiresOn {
             /**
-             * Specifies the expiresOn property: The expiration date and time (in UTC ISO 8601 format
-             * yyyy-MM-ddTHH:mm:ssZ) of the policy exemption..
+             * Specifies the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption..
              * 
-             * @param expiresOn The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy
-             * exemption.
+             * @param expiresOn The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
              * @return the next definition stage.
              */
             WithCreate withExpiresOn(OffsetDateTime expiresOn);
@@ -245,11 +232,9 @@ public interface PolicyExemption {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy exemption metadata. Metadata is an open ended object and is
-             * typically a collection of key value pairs..
+             * Specifies the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs..
              * 
-             * @param metadata The policy exemption metadata. Metadata is an open ended object and is typically a
-             * collection of key value pairs.
+             * @param metadata The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
              * @return the next definition stage.
              */
             WithCreate withMetadata(Object metadata);
@@ -307,11 +292,9 @@ public interface PolicyExemption {
          */
         interface WithPolicyDefinitionReferenceIds {
             /**
-             * Specifies the policyDefinitionReferenceIds property: The policy definition reference ID list when the
-             * associated policy assignment is an assignment of a policy set definition..
+             * Specifies the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition..
              * 
-             * @param policyDefinitionReferenceIds The policy definition reference ID list when the associated policy
-             * assignment is an assignment of a policy set definition.
+             * @param policyDefinitionReferenceIds The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
              * @return the next definition stage.
              */
             Update withPolicyDefinitionReferenceIds(List<String> policyDefinitionReferenceIds);
@@ -322,8 +305,7 @@ public interface PolicyExemption {
          */
         interface WithExemptionCategory {
             /**
-             * Specifies the exemptionCategory property: The policy exemption category. Possible values are Waiver and
-             * Mitigated..
+             * Specifies the exemptionCategory property: The policy exemption category. Possible values are Waiver and Mitigated..
              * 
              * @param exemptionCategory The policy exemption category. Possible values are Waiver and Mitigated.
              * @return the next definition stage.
@@ -336,11 +318,9 @@ public interface PolicyExemption {
          */
         interface WithExpiresOn {
             /**
-             * Specifies the expiresOn property: The expiration date and time (in UTC ISO 8601 format
-             * yyyy-MM-ddTHH:mm:ssZ) of the policy exemption..
+             * Specifies the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption..
              * 
-             * @param expiresOn The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy
-             * exemption.
+             * @param expiresOn The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
              * @return the next definition stage.
              */
             Update withExpiresOn(OffsetDateTime expiresOn);
@@ -377,11 +357,9 @@ public interface PolicyExemption {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy exemption metadata. Metadata is an open ended object and is
-             * typically a collection of key value pairs..
+             * Specifies the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs..
              * 
-             * @param metadata The policy exemption metadata. Metadata is an open ended object and is typically a
-             * collection of key value pairs.
+             * @param metadata The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
              * @return the next definition stage.
              */
             Update withMetadata(Object metadata);

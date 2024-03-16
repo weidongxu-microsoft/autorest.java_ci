@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * A rule management event data source. The discriminator fields is always RuleManagementEventDataSource in this case.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = RuleManagementEventDataSource.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource")
 @Fluent
 public final class RuleManagementEventDataSource extends RuleDataSource {
@@ -74,6 +78,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
      * Creates an instance of RuleManagementEventDataSource class.
      */
     public RuleManagementEventDataSource() {
+        withOdataType("Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource");
     }
 
     /**
@@ -137,8 +142,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Get the operationName property: The name of the operation that should be checked for. If no name is provided, any
-     * operation will match.
+     * Get the operationName property: The name of the operation that should be checked for. If no name is provided, any operation will match.
      * 
      * @return the operationName value.
      */
@@ -147,8 +151,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Set the operationName property: The name of the operation that should be checked for. If no name is provided, any
-     * operation will match.
+     * Set the operationName property: The name of the operation that should be checked for. If no name is provided, any operation will match.
      * 
      * @param operationName the operationName value to set.
      * @return the RuleManagementEventDataSource object itself.
@@ -199,8 +202,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Get the status property: The status of the operation that should be checked for. If no status is provided, any
-     * status will match.
+     * Get the status property: The status of the operation that should be checked for. If no status is provided, any status will match.
      * 
      * @return the status value.
      */
@@ -209,8 +211,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Set the status property: The status of the operation that should be checked for. If no status is provided, any
-     * status will match.
+     * Set the status property: The status of the operation that should be checked for. If no status is provided, any status will match.
      * 
      * @param status the status value to set.
      * @return the RuleManagementEventDataSource object itself.

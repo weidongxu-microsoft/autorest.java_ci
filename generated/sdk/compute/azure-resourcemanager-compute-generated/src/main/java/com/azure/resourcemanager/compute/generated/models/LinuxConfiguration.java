@@ -8,9 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies the Linux operating system settings on the virtual machine. For a list of supported Linux distributions,
- * see [Linux on Azure-Endorsed
- * Distributions](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
+ * Specifies the Linux operating system settings on the virtual machine. For a list of supported Linux distributions, see [Linux on Azure-Endorsed Distributions](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
  */
 @Fluent
 public final class LinuxConfiguration {
@@ -27,9 +25,7 @@ public final class LinuxConfiguration {
     private SshConfiguration ssh;
 
     /*
-     * Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not
-     * specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed
-     * on the VM so that extensions can be added to the VM later.
+     * Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      */
     @JsonProperty(value = "provisionVMAgent")
     private Boolean provisionVMAgent;
@@ -93,9 +89,7 @@ public final class LinuxConfiguration {
     }
 
     /**
-     * Get the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual
-     * machine. When this property is not specified in the request body, default behavior is to set it to true. This
-     * will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+     * Get the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      * 
      * @return the provisionVMAgent value.
      */
@@ -104,9 +98,7 @@ public final class LinuxConfiguration {
     }
 
     /**
-     * Set the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual
-     * machine. When this property is not specified in the request body, default behavior is to set it to true. This
-     * will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+     * Set the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      * 
      * @param provisionVMAgent the provisionVMAgent value to set.
      * @return the LinuxConfiguration object itself.
@@ -137,8 +129,7 @@ public final class LinuxConfiguration {
     }
 
     /**
-     * Get the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the
-     * Linux virtual machine. Default value is false.
+     * Get the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the Linux virtual machine. Default value is false.
      * 
      * @return the enableVMAgentPlatformUpdates value.
      */
@@ -147,8 +138,7 @@ public final class LinuxConfiguration {
     }
 
     /**
-     * Set the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the
-     * Linux virtual machine. Default value is false.
+     * Set the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the Linux virtual machine. Default value is false.
      * 
      * @param enableVMAgentPlatformUpdates the enableVMAgentPlatformUpdates value to set.
      * @return the LinuxConfiguration object itself.

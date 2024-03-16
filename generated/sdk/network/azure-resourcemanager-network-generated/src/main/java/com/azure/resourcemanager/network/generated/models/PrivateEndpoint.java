@@ -73,8 +73,7 @@ public interface PrivateEndpoint {
     Subnet subnet();
 
     /**
-     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private
-     * endpoint.
+     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private endpoint.
      * 
      * @return the networkInterfaces value.
      */
@@ -88,16 +87,14 @@ public interface PrivateEndpoint {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateLinkServiceConnections property: A grouping of information about the connection to the remote
-     * resource.
+     * Gets the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource.
      * 
      * @return the privateLinkServiceConnections value.
      */
     List<PrivateLinkServiceConnection> privateLinkServiceConnections();
 
     /**
-     * Gets the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the
-     * remote resource. Used when the network admin does not have access to approve connections to the remote resource.
+     * Gets the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
      * 
      * @return the manualPrivateLinkServiceConnections value.
      */
@@ -111,24 +108,21 @@ public interface PrivateEndpoint {
     List<CustomDnsConfigPropertiesFormat> customDnsConfigs();
 
     /**
-     * Gets the applicationSecurityGroups property: Application security groups in which the private endpoint IP
-     * configuration is included.
+     * Gets the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included.
      * 
      * @return the applicationSecurityGroups value.
      */
     List<ApplicationSecurityGroup> applicationSecurityGroups();
 
     /**
-     * Gets the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map
-     * to the First Party Service's endpoints.
+     * Gets the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
      * 
      * @return the ipConfigurations value.
      */
     List<PrivateEndpointIpConfiguration> ipConfigurations();
 
     /**
-     * Gets the customNetworkInterfaceName property: The custom name of the network interface attached to the private
-     * endpoint.
+     * Gets the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint.
      * 
      * @return the customNetworkInterfaceName value.
      */
@@ -214,8 +208,7 @@ public interface PrivateEndpoint {
         }
 
         /**
-         * The stage of the PrivateEndpoint definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PrivateEndpoint definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithSubnet, DefinitionStages.WithPrivateLinkServiceConnections,
@@ -282,11 +275,9 @@ public interface PrivateEndpoint {
          */
         interface WithPrivateLinkServiceConnections {
             /**
-             * Specifies the privateLinkServiceConnections property: A grouping of information about the connection to
-             * the remote resource..
+             * Specifies the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource..
              * 
-             * @param privateLinkServiceConnections A grouping of information about the connection to the remote
-             * resource.
+             * @param privateLinkServiceConnections A grouping of information about the connection to the remote resource.
              * @return the next definition stage.
              */
             WithCreate
@@ -298,12 +289,9 @@ public interface PrivateEndpoint {
          */
         interface WithManualPrivateLinkServiceConnections {
             /**
-             * Specifies the manualPrivateLinkServiceConnections property: A grouping of information about the
-             * connection to the remote resource. Used when the network admin does not have access to approve
-             * connections to the remote resource..
+             * Specifies the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource..
              * 
-             * @param manualPrivateLinkServiceConnections A grouping of information about the connection to the remote
-             * resource. Used when the network admin does not have access to approve connections to the remote resource.
+             * @param manualPrivateLinkServiceConnections A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
              * @return the next definition stage.
              */
             WithCreate withManualPrivateLinkServiceConnections(
@@ -328,11 +316,9 @@ public interface PrivateEndpoint {
          */
         interface WithApplicationSecurityGroups {
             /**
-             * Specifies the applicationSecurityGroups property: Application security groups in which the private
-             * endpoint IP configuration is included..
+             * Specifies the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included..
              * 
-             * @param applicationSecurityGroups Application security groups in which the private endpoint IP
-             * configuration is included.
+             * @param applicationSecurityGroups Application security groups in which the private endpoint IP configuration is included.
              * @return the next definition stage.
              */
             WithCreate withApplicationSecurityGroups(List<ApplicationSecurityGroupInner> applicationSecurityGroups);
@@ -343,11 +329,9 @@ public interface PrivateEndpoint {
          */
         interface WithIpConfigurations {
             /**
-             * Specifies the ipConfigurations property: A list of IP configurations of the private endpoint. This will
-             * be used to map to the First Party Service's endpoints..
+             * Specifies the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints..
              * 
-             * @param ipConfigurations A list of IP configurations of the private endpoint. This will be used to map to
-             * the First Party Service's endpoints.
+             * @param ipConfigurations A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
              * @return the next definition stage.
              */
             WithCreate withIpConfigurations(List<PrivateEndpointIpConfiguration> ipConfigurations);
@@ -358,11 +342,9 @@ public interface PrivateEndpoint {
          */
         interface WithCustomNetworkInterfaceName {
             /**
-             * Specifies the customNetworkInterfaceName property: The custom name of the network interface attached to
-             * the private endpoint..
+             * Specifies the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint..
              * 
-             * @param customNetworkInterfaceName The custom name of the network interface attached to the private
-             * endpoint.
+             * @param customNetworkInterfaceName The custom name of the network interface attached to the private endpoint.
              * @return the next definition stage.
              */
             WithCreate withCustomNetworkInterfaceName(String customNetworkInterfaceName);
@@ -447,11 +429,9 @@ public interface PrivateEndpoint {
          */
         interface WithPrivateLinkServiceConnections {
             /**
-             * Specifies the privateLinkServiceConnections property: A grouping of information about the connection to
-             * the remote resource..
+             * Specifies the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource..
              * 
-             * @param privateLinkServiceConnections A grouping of information about the connection to the remote
-             * resource.
+             * @param privateLinkServiceConnections A grouping of information about the connection to the remote resource.
              * @return the next definition stage.
              */
             Update withPrivateLinkServiceConnections(List<PrivateLinkServiceConnection> privateLinkServiceConnections);
@@ -462,12 +442,9 @@ public interface PrivateEndpoint {
          */
         interface WithManualPrivateLinkServiceConnections {
             /**
-             * Specifies the manualPrivateLinkServiceConnections property: A grouping of information about the
-             * connection to the remote resource. Used when the network admin does not have access to approve
-             * connections to the remote resource..
+             * Specifies the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource..
              * 
-             * @param manualPrivateLinkServiceConnections A grouping of information about the connection to the remote
-             * resource. Used when the network admin does not have access to approve connections to the remote resource.
+             * @param manualPrivateLinkServiceConnections A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
              * @return the next definition stage.
              */
             Update withManualPrivateLinkServiceConnections(
@@ -492,11 +469,9 @@ public interface PrivateEndpoint {
          */
         interface WithApplicationSecurityGroups {
             /**
-             * Specifies the applicationSecurityGroups property: Application security groups in which the private
-             * endpoint IP configuration is included..
+             * Specifies the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included..
              * 
-             * @param applicationSecurityGroups Application security groups in which the private endpoint IP
-             * configuration is included.
+             * @param applicationSecurityGroups Application security groups in which the private endpoint IP configuration is included.
              * @return the next definition stage.
              */
             Update withApplicationSecurityGroups(List<ApplicationSecurityGroupInner> applicationSecurityGroups);
@@ -507,11 +482,9 @@ public interface PrivateEndpoint {
          */
         interface WithIpConfigurations {
             /**
-             * Specifies the ipConfigurations property: A list of IP configurations of the private endpoint. This will
-             * be used to map to the First Party Service's endpoints..
+             * Specifies the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints..
              * 
-             * @param ipConfigurations A list of IP configurations of the private endpoint. This will be used to map to
-             * the First Party Service's endpoints.
+             * @param ipConfigurations A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
              * @return the next definition stage.
              */
             Update withIpConfigurations(List<PrivateEndpointIpConfiguration> ipConfigurations);
@@ -522,11 +495,9 @@ public interface PrivateEndpoint {
          */
         interface WithCustomNetworkInterfaceName {
             /**
-             * Specifies the customNetworkInterfaceName property: The custom name of the network interface attached to
-             * the private endpoint..
+             * Specifies the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint..
              * 
-             * @param customNetworkInterfaceName The custom name of the network interface attached to the private
-             * endpoint.
+             * @param customNetworkInterfaceName The custom name of the network interface attached to the private endpoint.
              * @return the next definition stage.
              */
             Update withCustomNetworkInterfaceName(String customNetworkInterfaceName);

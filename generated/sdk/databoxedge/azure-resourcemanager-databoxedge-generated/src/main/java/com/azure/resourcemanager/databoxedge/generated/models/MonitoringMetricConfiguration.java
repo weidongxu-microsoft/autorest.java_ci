@@ -48,8 +48,7 @@ public interface MonitoringMetricConfiguration {
     List<MetricConfiguration> metricConfigurations();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner object.
      * 
      * @return the inner object.
      */

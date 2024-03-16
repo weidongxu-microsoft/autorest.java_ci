@@ -58,8 +58,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVipSwaps to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVipSwaps to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -95,16 +94,14 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
-     * service can either be Staging or Production.
+     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the SwapResource which identifies the slot type for the specified cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SwapResourceInner>> getWithResponseAsync(String groupName, String resourceName) {
@@ -132,8 +129,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
-     * service can either be Staging or Production.
+     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
@@ -141,8 +137,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the SwapResource which identifies the slot type for the specified cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SwapResourceInner>> getWithResponseAsync(String groupName, String resourceName,
@@ -170,16 +165,14 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
-     * service can either be Staging or Production.
+     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SwapResource which identifies the slot type for the specified cloud service on successful completion
-     * of {@link Mono}.
+     * @return the SwapResource which identifies the slot type for the specified cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SwapResourceInner> getAsync(String groupName, String resourceName) {
@@ -187,8 +180,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
-     * service can either be Staging or Production.
+     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
@@ -196,8 +188,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response}.
+     * @return the SwapResource which identifies the slot type for the specified cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SwapResourceInner> getWithResponse(String groupName, String resourceName, Context context) {
@@ -205,8 +196,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
-     * service can either be Staging or Production.
+     * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
@@ -225,8 +215,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -268,8 +257,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -311,8 +299,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -331,8 +318,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -353,8 +339,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -371,8 +356,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -390,8 +374,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -408,8 +391,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -428,8 +410,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -444,8 +425,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
-     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     * cloud service.
+     * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -457,16 +437,14 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
-     * cloud service can either be Staging or Production.
+     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SwapResourceListResultInner>> listWithResponseAsync(String groupName, String resourceName) {
@@ -493,8 +471,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
-     * cloud service can either be Staging or Production.
+     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
@@ -502,8 +479,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SwapResourceListResultInner>> listWithResponseAsync(String groupName, String resourceName,
@@ -530,16 +506,14 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
-     * cloud service can either be Staging or Production.
+     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of SwapResource which identifies the slot type for the specified cloud service on successful
-     * completion of {@link Mono}.
+     * @return the list of SwapResource which identifies the slot type for the specified cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SwapResourceListResultInner> listAsync(String groupName, String resourceName) {
@@ -547,8 +521,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
-     * cloud service can either be Staging or Production.
+     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
@@ -556,8 +529,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with
-     * {@link Response}.
+     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SwapResourceListResultInner> listWithResponse(String groupName, String resourceName,
@@ -566,8 +538,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     }
 
     /**
-     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
-     * cloud service can either be Staging or Production.
+     * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production.
      * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.

@@ -52,8 +52,7 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientGlobals to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientGlobals to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")

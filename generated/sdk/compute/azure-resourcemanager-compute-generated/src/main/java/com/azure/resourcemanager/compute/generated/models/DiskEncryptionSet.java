@@ -51,8 +51,7 @@ public interface DiskEncryptionSet {
     Map<String, String> tags();
 
     /**
-     * Gets the identity property: The managed identity for the disk encryption set. It should be given permission on
-     * the key vault before it can be used to encrypt disks.
+     * Gets the identity property: The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks.
      * 
      * @return the identity value.
      */
@@ -73,8 +72,7 @@ public interface DiskEncryptionSet {
     KeyForDiskEncryptionSet activeKey();
 
     /**
-     * Gets the previousKeys property: A readonly collection of key vault keys previously used by this disk encryption
-     * set while a key rotation is in progress. It will be empty if there is no ongoing key rotation.
+     * Gets the previousKeys property: A readonly collection of key vault keys previously used by this disk encryption set while a key rotation is in progress. It will be empty if there is no ongoing key rotation.
      * 
      * @return the previousKeys value.
      */
@@ -88,8 +86,7 @@ public interface DiskEncryptionSet {
     String provisioningState();
 
     /**
-     * Gets the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
-     * encryption set to the latest key version.
+     * Gets the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
      * 
      * @return the rotationToLatestKeyVersionEnabled value.
      */
@@ -103,16 +100,14 @@ public interface DiskEncryptionSet {
     OffsetDateTime lastKeyRotationTimestamp();
 
     /**
-     * Gets the autoKeyRotationError property: The error that was encountered during auto-key rotation. If an error is
-     * present, then auto-key rotation will not be attempted until the error on this disk encryption set is fixed.
+     * Gets the autoKeyRotationError property: The error that was encountered during auto-key rotation. If an error is present, then auto-key rotation will not be attempted until the error on this disk encryption set is fixed.
      * 
      * @return the autoKeyRotationError value.
      */
     ApiError autoKeyRotationError();
 
     /**
-     * Gets the federatedClientId property: Multi-tenant application client id to access key vault in a different
-     * tenant. Setting the value to 'None' will clear the property.
+     * Gets the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
      * 
      * @return the federatedClientId value.
      */
@@ -198,8 +193,7 @@ public interface DiskEncryptionSet {
         }
 
         /**
-         * The stage of the DiskEncryptionSet definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DiskEncryptionSet definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithEncryptionType, DefinitionStages.WithActiveKey,
@@ -238,11 +232,9 @@ public interface DiskEncryptionSet {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The managed identity for the disk encryption set. It should be given
-             * permission on the key vault before it can be used to encrypt disks..
+             * Specifies the identity property: The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks..
              * 
-             * @param identity The managed identity for the disk encryption set. It should be given permission on the
-             * key vault before it can be used to encrypt disks.
+             * @param identity The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks.
              * @return the next definition stage.
              */
             WithCreate withIdentity(EncryptionSetIdentity identity);
@@ -279,11 +271,9 @@ public interface DiskEncryptionSet {
          */
         interface WithRotationToLatestKeyVersionEnabled {
             /**
-             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating
-             * of this disk encryption set to the latest key version..
+             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version..
              * 
-             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk
-             * encryption set to the latest key version.
+             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
              * @return the next definition stage.
              */
             WithCreate withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
@@ -294,11 +284,9 @@ public interface DiskEncryptionSet {
          */
         interface WithFederatedClientId {
             /**
-             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a
-             * different tenant. Setting the value to 'None' will clear the property..
+             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property..
              * 
-             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant.
-             * Setting the value to 'None' will clear the property.
+             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
              * @return the next definition stage.
              */
             WithCreate withFederatedClientId(String federatedClientId);
@@ -356,11 +344,9 @@ public interface DiskEncryptionSet {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The managed identity for the disk encryption set. It should be given
-             * permission on the key vault before it can be used to encrypt disks..
+             * Specifies the identity property: The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks..
              * 
-             * @param identity The managed identity for the disk encryption set. It should be given permission on the
-             * key vault before it can be used to encrypt disks.
+             * @param identity The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks.
              * @return the next definition stage.
              */
             Update withIdentity(EncryptionSetIdentity identity);
@@ -384,8 +370,7 @@ public interface DiskEncryptionSet {
          */
         interface WithActiveKey {
             /**
-             * Specifies the activeKey property: Key Vault Key Url to be used for server side encryption of Managed
-             * Disks and Snapshots.
+             * Specifies the activeKey property: Key Vault Key Url to be used for server side encryption of Managed Disks and Snapshots.
              * 
              * @param activeKey Key Vault Key Url to be used for server side encryption of Managed Disks and Snapshots.
              * @return the next definition stage.
@@ -398,11 +383,9 @@ public interface DiskEncryptionSet {
          */
         interface WithRotationToLatestKeyVersionEnabled {
             /**
-             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating
-             * of this disk encryption set to the latest key version..
+             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version..
              * 
-             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk
-             * encryption set to the latest key version.
+             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
              * @return the next definition stage.
              */
             Update withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
@@ -413,11 +396,9 @@ public interface DiskEncryptionSet {
          */
         interface WithFederatedClientId {
             /**
-             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a
-             * different tenant. Setting the value to 'None' will clear the property..
+             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property..
              * 
-             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant.
-             * Setting the value to 'None' will clear the property.
+             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
              * @return the next definition stage.
              */
             Update withFederatedClientId(String federatedClientId);

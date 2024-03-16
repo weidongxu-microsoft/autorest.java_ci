@@ -91,8 +91,7 @@ public final class StaticSiteBasicAuthPropertiesArmResourceInner extends ProxyOn
     }
 
     /**
-     * Get the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments
-     * it is active.
+     * Get the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments it is active.
      * 
      * @return the applicableEnvironmentsMode value.
      */
@@ -101,8 +100,7 @@ public final class StaticSiteBasicAuthPropertiesArmResourceInner extends ProxyOn
     }
 
     /**
-     * Set the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments
-     * it is active.
+     * Set the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments it is active.
      * 
      * @param applicableEnvironmentsMode the applicableEnvironmentsMode value to set.
      * @return the StaticSiteBasicAuthPropertiesArmResourceInner object itself.
@@ -117,8 +115,7 @@ public final class StaticSiteBasicAuthPropertiesArmResourceInner extends ProxyOn
     }
 
     /**
-     * Get the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is
-     * set to SpecifiedEnvironments.
+     * Get the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments.
      * 
      * @return the environments value.
      */
@@ -127,8 +124,7 @@ public final class StaticSiteBasicAuthPropertiesArmResourceInner extends ProxyOn
     }
 
     /**
-     * Set the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is
-     * set to SpecifiedEnvironments.
+     * Set the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments.
      * 
      * @param environments the environments value to set.
      * @return the StaticSiteBasicAuthPropertiesArmResourceInner object itself.

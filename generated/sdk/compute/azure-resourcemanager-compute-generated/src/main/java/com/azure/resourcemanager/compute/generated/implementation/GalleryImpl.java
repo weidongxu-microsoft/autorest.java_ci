@@ -105,14 +105,16 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     }
 
     public Gallery create() {
-        this.innerObject = serviceManager.serviceClient().getGalleries().createOrUpdate(resourceGroupName, galleryName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
+            .createOrUpdate(resourceGroupName, galleryName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Gallery create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getGalleries().createOrUpdate(resourceGroupName, galleryName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
+            .createOrUpdate(resourceGroupName, galleryName, this.innerModel(), context);
         return this;
     }
 
@@ -128,14 +130,16 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     }
 
     public Gallery apply() {
-        this.innerObject = serviceManager.serviceClient().getGalleries().update(resourceGroupName, galleryName,
-            updateGallery, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
+            .update(resourceGroupName, galleryName, updateGallery, Context.NONE);
         return this;
     }
 
     public Gallery apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getGalleries().update(resourceGroupName, galleryName,
-            updateGallery, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
+            .update(resourceGroupName, galleryName, updateGallery, context);
         return this;
     }
 
@@ -149,7 +153,8 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     public Gallery refresh() {
         SelectPermissions localSelect = null;
         GalleryExpandParams localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getGalleries()
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
             .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -158,7 +163,8 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     public Gallery refresh(Context context) {
         SelectPermissions localSelect = null;
         GalleryExpandParams localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getGalleries()
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleries()
             .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, localExpand, context)
             .getValue();
         return this;

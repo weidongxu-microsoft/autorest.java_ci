@@ -120,8 +120,7 @@ public interface LogAnalyticsQueryPackQuery {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.operationalinsights.generated.fluent.models.LogAnalyticsQueryPackQueryInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.LogAnalyticsQueryPackQueryInner object.
      * 
      * @return the inner object.
      */
@@ -159,8 +158,7 @@ public interface LogAnalyticsQueryPackQuery {
         }
 
         /**
-         * The stage of the LogAnalyticsQueryPackQuery definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LogAnalyticsQueryPackQuery definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDisplayName, DefinitionStages.WithDescription,

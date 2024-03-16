@@ -53,8 +53,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String accountName,
         BlobInventoryPolicyName blobInventoryPolicyName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, blobInventoryPolicyName,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context);
     }
 
     public void delete(String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName) {

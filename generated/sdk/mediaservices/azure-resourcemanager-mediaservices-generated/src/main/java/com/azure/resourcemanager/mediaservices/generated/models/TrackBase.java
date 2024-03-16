@@ -5,18 +5,16 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base type for concrete track types. A derived type must be used to represent the Track.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = TrackBase.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = TrackBase.class, visible = true)
 @JsonTypeName("TrackBase")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AudioTrack", value = AudioTrack.class),
@@ -24,10 +22,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "#Microsoft.Media.TextTrack", value = TextTrack.class) })
 @Immutable
 public class TrackBase {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of TrackBase class.
      */
     public TrackBase() {
+        this.odataType = "TrackBase";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the TrackBase object itself.
+     */
+    protected TrackBase withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

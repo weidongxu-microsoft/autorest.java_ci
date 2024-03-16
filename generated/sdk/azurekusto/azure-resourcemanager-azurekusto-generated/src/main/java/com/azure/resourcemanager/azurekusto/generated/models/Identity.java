@@ -28,17 +28,13 @@ public final class Identity {
     private String tenantId;
 
     /*
-     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
-     * identity and a set of user-assigned identities. The type 'None' will remove all identities.
+     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
      */
     @JsonProperty(value = "type", required = true)
     private IdentityType type;
 
     /*
-     * The list of user identities associated with the Kusto cluster. The user identity dictionary key references will
-     * be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
-     * userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with the Kusto cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -69,8 +65,7 @@ public final class Identity {
     }
 
     /**
-     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
+     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
      * 
      * @return the type value.
      */
@@ -79,8 +74,7 @@ public final class Identity {
     }
 
     /**
-     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
+     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
      * 
      * @param type the type value to set.
      * @return the Identity object itself.
@@ -91,9 +85,7 @@ public final class Identity {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user identities associated with the Kusto cluster. The user
-     * identity dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user identities associated with the Kusto cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -102,9 +94,7 @@ public final class Identity {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user identities associated with the Kusto cluster. The user
-     * identity dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user identities associated with the Kusto cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the Identity object itself.

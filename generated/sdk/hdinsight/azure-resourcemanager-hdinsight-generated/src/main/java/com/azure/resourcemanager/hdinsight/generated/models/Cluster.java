@@ -145,8 +145,7 @@ public interface Cluster {
         }
 
         /**
-         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithTags,
             DefinitionStages.WithZones, DefinitionStages.WithProperties, DefinitionStages.WithIdentity {
@@ -389,8 +388,7 @@ public interface Cluster {
      * @param parameters The parameters for executing script actions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     * status code 404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void executeScriptActions(ExecuteScriptActionParameters parameters);
@@ -402,8 +400,7 @@ public interface Cluster {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     * status code 404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void executeScriptActions(ExecuteScriptActionParameters parameters, Context context);

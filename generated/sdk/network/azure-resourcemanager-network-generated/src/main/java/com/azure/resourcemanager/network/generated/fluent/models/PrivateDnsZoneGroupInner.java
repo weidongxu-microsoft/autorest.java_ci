@@ -41,8 +41,7 @@ public final class PrivateDnsZoneGroupInner extends SubResource {
     }
 
     /**
-     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -51,8 +50,7 @@ public final class PrivateDnsZoneGroupInner extends SubResource {
     }
 
     /**
-     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the PrivateDnsZoneGroupInner object itself.
@@ -99,8 +97,7 @@ public final class PrivateDnsZoneGroupInner extends SubResource {
     }
 
     /**
-     * Get the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone
-     * group.
+     * Get the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone group.
      * 
      * @return the privateDnsZoneConfigs value.
      */
@@ -109,8 +106,7 @@ public final class PrivateDnsZoneGroupInner extends SubResource {
     }
 
     /**
-     * Set the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone
-     * group.
+     * Set the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone group.
      * 
      * @param privateDnsZoneConfigs the privateDnsZoneConfigs value to set.
      * @return the PrivateDnsZoneGroupInner object itself.

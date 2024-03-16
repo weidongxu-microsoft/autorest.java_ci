@@ -48,8 +48,8 @@ public final class ProvidersImpl implements Providers {
 
     public Response<Void> registerAtManagementGroupScopeWithResponse(String resourceProviderNamespace, String groupId,
         Context context) {
-        return this.serviceClient().registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId,
-            context);
+        return this.serviceClient()
+            .registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId, context);
     }
 
     public void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId) {

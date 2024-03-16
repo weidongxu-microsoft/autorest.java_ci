@@ -64,9 +64,7 @@ public interface ConsumerGroup {
     OffsetDateTime updatedAt();
 
     /**
-     * Gets the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum
-     * length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
-     * also user-defined configuration settings can be stored.
+     * Gets the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
      * 
      * @return the userMetadata value.
      */
@@ -133,8 +131,7 @@ public interface ConsumerGroup {
         }
 
         /**
-         * The stage of the ConsumerGroup definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ConsumerGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithUserMetadata {
             /**
@@ -158,13 +155,9 @@ public interface ConsumerGroup {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: User Metadata is a placeholder to store user-defined string data
-             * with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their
-             * contact information also user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored..
              * 
-             * @param userMetadata User Metadata is a placeholder to store user-defined string data with maximum length
-             * 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
-             * also user-defined configuration settings can be stored.
+             * @param userMetadata User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             WithCreate withUserMetadata(String userMetadata);
@@ -207,13 +200,9 @@ public interface ConsumerGroup {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: User Metadata is a placeholder to store user-defined string data
-             * with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their
-             * contact information also user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored..
              * 
-             * @param userMetadata User Metadata is a placeholder to store user-defined string data with maximum length
-             * 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
-             * also user-defined configuration settings can be stored.
+             * @param userMetadata User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             Update withUserMetadata(String userMetadata);

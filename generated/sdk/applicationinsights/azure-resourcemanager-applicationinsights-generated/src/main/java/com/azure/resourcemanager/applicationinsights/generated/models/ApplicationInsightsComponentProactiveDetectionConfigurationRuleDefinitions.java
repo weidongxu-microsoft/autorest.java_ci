@@ -211,8 +211,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationRu
     }
 
     /**
-     * Get the supportsEmailNotifications property: A flag indicating whether email notifications are supported for
-     * detections for this rule.
+     * Get the supportsEmailNotifications property: A flag indicating whether email notifications are supported for detections for this rule.
      * 
      * @return the supportsEmailNotifications value.
      */
@@ -221,8 +220,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationRu
     }
 
     /**
-     * Set the supportsEmailNotifications property: A flag indicating whether email notifications are supported for
-     * detections for this rule.
+     * Set the supportsEmailNotifications property: A flag indicating whether email notifications are supported for detections for this rule.
      * 
      * @param supportsEmailNotifications the supportsEmailNotifications value to set.
      * @return the ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions object itself.

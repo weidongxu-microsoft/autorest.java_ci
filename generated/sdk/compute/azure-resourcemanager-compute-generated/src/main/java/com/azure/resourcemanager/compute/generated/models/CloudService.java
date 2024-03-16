@@ -65,8 +65,7 @@ public interface CloudService {
     SystemData systemData();
 
     /**
-     * Gets the zones property: List of logical availability zone of the resource. List should contain only 1 zone where
-     * cloud service should be provisioned. This field is optional.
+     * Gets the zones property: List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.
      * 
      * @return the zones value.
      */
@@ -152,8 +151,7 @@ public interface CloudService {
         }
 
         /**
-         * The stage of the CloudService definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CloudService definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithProperties,
             DefinitionStages.WithSystemData, DefinitionStages.WithZones {
@@ -217,11 +215,9 @@ public interface CloudService {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: List of logical availability zone of the resource. List should contain only
-             * 1 zone where cloud service should be provisioned. This field is optional..
+             * Specifies the zones property: List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional..
              * 
-             * @param zones List of logical availability zone of the resource. List should contain only 1 zone where
-             * cloud service should be provisioned. This field is optional.
+             * @param zones List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -291,8 +287,7 @@ public interface CloudService {
     /**
      * Starts the cloud service.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start();
@@ -302,30 +297,25 @@ public interface CloudService {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(Context context);
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff();
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff(Context context);
@@ -333,8 +323,7 @@ public interface CloudService {
     /**
      * Restarts one or more role instances in a cloud service.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
@@ -345,8 +334,7 @@ public interface CloudService {
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(RoleInstances parameters, Context context);
@@ -354,8 +342,7 @@ public interface CloudService {
     /**
      * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage();
@@ -366,33 +353,26 @@ public interface CloudService {
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(RoleInstances parameters, Context context);
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild();
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(RoleInstances parameters, Context context);
@@ -400,8 +380,7 @@ public interface CloudService {
     /**
      * Deletes role instances in a cloud service.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstances();
@@ -412,8 +391,7 @@ public interface CloudService {
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstances(RoleInstances parameters, Context context);

@@ -34,8 +34,7 @@ import com.azure.resourcemanager.network.generated.models.NetworkManagerConnecti
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * SubscriptionNetworkManagerConnectionsClient.
+ * An instance of this class provides access to all the operations defined in SubscriptionNetworkManagerConnectionsClient.
  */
 public final class SubscriptionNetworkManagerConnectionsClientImpl
     implements SubscriptionNetworkManagerConnectionsClient {
@@ -61,8 +60,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientSubscriptionNetworkManagerConnections to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientSubscriptionNetworkManagerConnections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -122,8 +120,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Network Manager Connection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Network Manager Connection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerConnectionInner>>
@@ -162,8 +159,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Network Manager Connection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Network Manager Connection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerConnectionInner>> createOrUpdateWithResponseAsync(
@@ -249,8 +245,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specified connection created by this subscription along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return a specified connection created by this subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerConnectionInner>> getWithResponseAsync(String networkManagerConnectionName) {
@@ -282,8 +277,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specified connection created by this subscription along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return a specified connection created by this subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerConnectionInner>> getWithResponseAsync(String networkManagerConnectionName,
@@ -458,16 +452,12 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     /**
      * List all network manager connections created by this subscription.
      * 
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of network manager connections along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of network manager connections along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkManagerConnectionInner>> listSinglePageAsync(Integer top, String skipToken) {
@@ -492,17 +482,13 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     /**
      * List all network manager connections created by this subscription.
      * 
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of network manager connections along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of network manager connections along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkManagerConnectionInner>> listSinglePageAsync(Integer top, String skipToken,
@@ -528,11 +514,8 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     /**
      * List all network manager connections created by this subscription.
      * 
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -562,11 +545,8 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     /**
      * List all network manager connections created by this subscription.
      * 
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -596,11 +576,8 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     /**
      * List all network manager connections created by this subscription.
      * 
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -621,8 +598,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of network manager connections along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of network manager connections along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkManagerConnectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -650,8 +626,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of network manager connections along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of network manager connections along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkManagerConnectionInner>> listNextSinglePageAsync(String nextLink,

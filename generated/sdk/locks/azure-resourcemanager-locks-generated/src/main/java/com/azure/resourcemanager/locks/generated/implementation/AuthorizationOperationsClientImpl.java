@@ -56,8 +56,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
     }
 
     /**
-     * The interface defining all the services for ManagementLockClientAuthorizationOperations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ManagementLockClientAuthorizationOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ManagementLockClient")
@@ -82,8 +81,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listSinglePageAsync() {
@@ -107,8 +105,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listSinglePageAsync(Context context) {
@@ -128,8 +125,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list Microsoft.Authorization operations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OperationInner> listAsync() {
@@ -143,8 +139,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list Microsoft.Authorization operations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OperationInner> listAsync(Context context) {
@@ -157,8 +152,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list Microsoft.Authorization operations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OperationInner> list() {
@@ -172,8 +166,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list Microsoft.Authorization operations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OperationInner> list(Context context) {
@@ -189,8 +182,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listNextSinglePageAsync(String nextLink) {
@@ -218,8 +210,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listNextSinglePageAsync(String nextLink, Context context) {

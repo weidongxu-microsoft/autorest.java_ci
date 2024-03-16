@@ -35,23 +35,19 @@ public final class ManagedHsmProperties {
     private String hsmUri;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is
-     * enabled by default for all managed HSMs and is immutable.
+     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
-     * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured
-     * retention period or for a default period of 90 days. It accepts values between 7 and 90.
+     * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values between 7 and 90.
      */
     @JsonProperty(value = "softDeleteRetentionInDays")
     private Integer softDeleteRetentionInDays;
 
     /*
-     * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property
-     * to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM
-     * service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
+     * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
@@ -117,8 +113,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
-     * to the managed HSM pool.
+     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
      * 
      * @return the tenantId value.
      */
@@ -127,8 +122,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
-     * to the managed HSM pool.
+     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
      * 
      * @param tenantId the tenantId value to set.
      * @return the ManagedHsmProperties object itself.
@@ -168,8 +162,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
+     * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
      * 
      * @return the enableSoftDelete value.
      */
@@ -178,8 +171,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
+     * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
      * 
      * @param enableSoftDelete the enableSoftDelete value to set.
      * @return the ManagedHsmProperties object itself.
@@ -190,9 +182,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
-     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
-     * between 7 and 90.
+     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values between 7 and 90.
      * 
      * @return the softDeleteRetentionInDays value.
      */
@@ -201,9 +191,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
-     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
-     * between 7 and 90.
+     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values between 7 and 90.
      * 
      * @param softDeleteRetentionInDays the softDeleteRetentionInDays value to set.
      * @return the ManagedHsmProperties object itself.
@@ -214,10 +202,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
-     * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
-     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
-     * functionality is irreversible.
+     * Get the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      * 
      * @return the enablePurgeProtection value.
      */
@@ -226,10 +211,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
-     * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
-     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
-     * functionality is irreversible.
+     * Set the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      * 
      * @param enablePurgeProtection the enablePurgeProtection value to set.
      * @return the ManagedHsmProperties object itself.
@@ -240,8 +222,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the createMode property: The create mode to indicate whether the resource is being created or is being
-     * recovered from a deleted resource.
+     * Get the createMode property: The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
      * 
      * @return the createMode value.
      */
@@ -250,8 +231,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the createMode property: The create mode to indicate whether the resource is being created or is being
-     * recovered from a deleted resource.
+     * Set the createMode property: The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
      * 
      * @param createMode the createMode value to set.
      * @return the ManagedHsmProperties object itself.
@@ -320,8 +300,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed hsm
-     * pool.
+     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed hsm pool.
      * 
      * @return the privateEndpointConnections value.
      */

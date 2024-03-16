@@ -37,8 +37,8 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     public Response<VirtualRouter> getByResourceGroupWithResponse(String resourceGroupName, String virtualRouterName,
         String expand, Context context) {
-        Response<VirtualRouterInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            virtualRouterName, expand, context);
+        Response<VirtualRouterInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualRouterImpl(inner.getValue(), this.manager()));

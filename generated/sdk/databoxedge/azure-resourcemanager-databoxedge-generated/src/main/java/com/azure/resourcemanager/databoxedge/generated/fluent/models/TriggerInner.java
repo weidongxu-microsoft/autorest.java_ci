@@ -9,25 +9,30 @@ import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.FileEventTrigger;
 import com.azure.resourcemanager.databoxedge.generated.models.PeriodicTimerEventTrigger;
+import com.azure.resourcemanager.databoxedge.generated.models.TriggerEventType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Trigger details.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = TriggerInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = TriggerInner.class, visible = true)
 @JsonTypeName("Trigger")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "FileEvent", value = FileEventTrigger.class),
     @JsonSubTypes.Type(name = "PeriodicTimerEvent", value = PeriodicTimerEventTrigger.class) })
 @Immutable
 public class TriggerInner extends ArmBaseModel {
+    /*
+     * Trigger Kind.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private TriggerEventType kind;
+
     /*
      * Metadata pertaining to creation and last modification of Trigger
      */
@@ -38,6 +43,27 @@ public class TriggerInner extends ArmBaseModel {
      * Creates an instance of TriggerInner class.
      */
     public TriggerInner() {
+        this.kind = TriggerEventType.fromString("Trigger");
+    }
+
+    /**
+     * Get the kind property: Trigger Kind.
+     * 
+     * @return the kind value.
+     */
+    public TriggerEventType kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Trigger Kind.
+     * 
+     * @param kind the kind value to set.
+     * @return the TriggerInner object itself.
+     */
+    protected TriggerInner withKind(TriggerEventType kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

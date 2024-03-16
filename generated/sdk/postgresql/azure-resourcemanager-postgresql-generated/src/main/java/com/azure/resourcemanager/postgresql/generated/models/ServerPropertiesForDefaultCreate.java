@@ -13,13 +13,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The properties used to create a new server.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "createMode",
+    defaultImpl = ServerPropertiesForDefaultCreate.class,
+    visible = true)
 @JsonTypeName("Default")
 @Fluent
 public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForCreate {
     /*
-     * The administrator's login name of a server. Can only be specified when the server is being created (and is
-     * required for creation).
+     * The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      */
     @JsonProperty(value = "administratorLogin", required = true)
     private String administratorLogin;
@@ -34,11 +37,11 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      * Creates an instance of ServerPropertiesForDefaultCreate class.
      */
     public ServerPropertiesForDefaultCreate() {
+        withCreateMode(CreateMode.DEFAULT);
     }
 
     /**
-     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @return the administratorLogin value.
      */
@@ -47,8 +50,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     }
 
     /**
-     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @param administratorLogin the administratorLogin value to set.
      * @return the ServerPropertiesForDefaultCreate object itself.

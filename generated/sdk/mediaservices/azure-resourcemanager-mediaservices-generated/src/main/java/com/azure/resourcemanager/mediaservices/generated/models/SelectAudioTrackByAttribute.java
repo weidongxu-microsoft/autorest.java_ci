@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Select audio tracks from the input by specifying an attribute and an attribute filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = SelectAudioTrackByAttribute.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.SelectAudioTrackByAttribute")
 @Fluent
 public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
@@ -30,8 +34,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     private AttributeFilter filter;
 
     /*
-     * The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is specified for the Filter
-     * property.
+     * The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
      */
     @JsonProperty(value = "filterValue")
     private String filterValue;
@@ -40,6 +43,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackByAttribute class.
      */
     public SelectAudioTrackByAttribute() {
+        withOdataType("#Microsoft.Media.SelectAudioTrackByAttribute");
     }
 
     /**
@@ -63,8 +67,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Get the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
-     * tracks.
+     * Get the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the tracks.
      * 
      * @return the filter value.
      */
@@ -73,8 +76,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Set the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
-     * tracks.
+     * Set the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the tracks.
      * 
      * @param filter the filter value to set.
      * @return the SelectAudioTrackByAttribute object itself.
@@ -85,8 +87,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Get the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
-     * specified for the Filter property.
+     * Get the filterValue property: The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
      * 
      * @return the filterValue value.
      */
@@ -95,8 +96,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Set the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
-     * specified for the Filter property.
+     * Set the filterValue property: The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
      * 
      * @param filterValue the filterValue value to set.
      * @return the SelectAudioTrackByAttribute object itself.

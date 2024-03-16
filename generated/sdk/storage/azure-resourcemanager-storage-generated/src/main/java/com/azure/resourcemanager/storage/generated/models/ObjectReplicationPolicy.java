@@ -49,16 +49,14 @@ public interface ObjectReplicationPolicy {
     OffsetDateTime enabledTime();
 
     /**
-     * Gets the sourceAccount property: Required. Source account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Gets the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @return the sourceAccount value.
      */
     String sourceAccount();
 
     /**
-     * Gets the destinationAccount property: Required. Destination account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Gets the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @return the destinationAccount value.
      */
@@ -109,18 +107,15 @@ public interface ObjectReplicationPolicy {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account
-             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the ObjectReplicationPolicy definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ObjectReplicationPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithSourceAccount, DefinitionStages.WithDestinationAccount,
             DefinitionStages.WithRules {
@@ -145,11 +140,9 @@ public interface ObjectReplicationPolicy {
          */
         interface WithSourceAccount {
             /**
-             * Specifies the sourceAccount property: Required. Source account name. It should be full resource id if
-             * allowCrossTenantReplication set to false..
+             * Specifies the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false..
              * 
-             * @param sourceAccount Required. Source account name. It should be full resource id if
-             * allowCrossTenantReplication set to false.
+             * @param sourceAccount Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
              * @return the next definition stage.
              */
             WithCreate withSourceAccount(String sourceAccount);
@@ -160,11 +153,9 @@ public interface ObjectReplicationPolicy {
          */
         interface WithDestinationAccount {
             /**
-             * Specifies the destinationAccount property: Required. Destination account name. It should be full resource
-             * id if allowCrossTenantReplication set to false..
+             * Specifies the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false..
              * 
-             * @param destinationAccount Required. Destination account name. It should be full resource id if
-             * allowCrossTenantReplication set to false.
+             * @param destinationAccount Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
              * @return the next definition stage.
              */
             WithCreate withDestinationAccount(String destinationAccount);
@@ -221,11 +212,9 @@ public interface ObjectReplicationPolicy {
          */
         interface WithSourceAccount {
             /**
-             * Specifies the sourceAccount property: Required. Source account name. It should be full resource id if
-             * allowCrossTenantReplication set to false..
+             * Specifies the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false..
              * 
-             * @param sourceAccount Required. Source account name. It should be full resource id if
-             * allowCrossTenantReplication set to false.
+             * @param sourceAccount Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
              * @return the next definition stage.
              */
             Update withSourceAccount(String sourceAccount);
@@ -236,11 +225,9 @@ public interface ObjectReplicationPolicy {
          */
         interface WithDestinationAccount {
             /**
-             * Specifies the destinationAccount property: Required. Destination account name. It should be full resource
-             * id if allowCrossTenantReplication set to false..
+             * Specifies the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false..
              * 
-             * @param destinationAccount Required. Destination account name. It should be full resource id if
-             * allowCrossTenantReplication set to false.
+             * @param destinationAccount Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
              * @return the next definition stage.
              */
             Update withDestinationAccount(String destinationAccount);

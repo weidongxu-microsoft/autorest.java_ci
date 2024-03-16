@@ -76,14 +76,16 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
     }
 
     public Route create() {
-        this.innerObject = serviceManager.serviceClient().getRoutes().createOrUpdate(resourceGroupName, routeTableName,
-            routeName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .createOrUpdate(resourceGroupName, routeTableName, routeName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Route create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutes().createOrUpdate(resourceGroupName, routeTableName,
-            routeName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .createOrUpdate(resourceGroupName, routeTableName, routeName, this.innerModel(), context);
         return this;
     }
 
@@ -98,14 +100,16 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
     }
 
     public Route apply() {
-        this.innerObject = serviceManager.serviceClient().getRoutes().createOrUpdate(resourceGroupName, routeTableName,
-            routeName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .createOrUpdate(resourceGroupName, routeTableName, routeName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Route apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutes().createOrUpdate(resourceGroupName, routeTableName,
-            routeName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .createOrUpdate(resourceGroupName, routeTableName, routeName, this.innerModel(), context);
         return this;
     }
 
@@ -118,14 +122,18 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
     }
 
     public Route refresh() {
-        this.innerObject = serviceManager.serviceClient().getRoutes()
-            .getWithResponse(resourceGroupName, routeTableName, routeName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .getWithResponse(resourceGroupName, routeTableName, routeName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Route refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutes()
-            .getWithResponse(resourceGroupName, routeTableName, routeName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutes()
+            .getWithResponse(resourceGroupName, routeTableName, routeName, context)
+            .getValue();
         return this;
     }
 

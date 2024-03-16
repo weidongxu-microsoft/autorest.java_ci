@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VirtualMachineScaleSetManagedDiskParameters {
     /*
-     * Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it
-     * cannot be used with OS Disk.
+     * Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
      */
     @JsonProperty(value = "storageAccountType")
     private StorageAccountTypes storageAccountType;
@@ -38,8 +37,7 @@ public final class VirtualMachineScaleSetManagedDiskParameters {
     }
 
     /**
-     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
-     * can only be used with data disks, it cannot be used with OS Disk.
+     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @return the storageAccountType value.
      */
@@ -48,8 +46,7 @@ public final class VirtualMachineScaleSetManagedDiskParameters {
     }
 
     /**
-     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
-     * can only be used with data disks, it cannot be used with OS Disk.
+     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @param storageAccountType the storageAccountType value to set.
      * @return the VirtualMachineScaleSetManagedDiskParameters object itself.
@@ -60,8 +57,7 @@ public final class VirtualMachineScaleSetManagedDiskParameters {
     }
 
     /**
-     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
-     * managed disk.
+     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -70,8 +66,7 @@ public final class VirtualMachineScaleSetManagedDiskParameters {
     }
 
     /**
-     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
-     * managed disk.
+     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the VirtualMachineScaleSetManagedDiskParameters object itself.

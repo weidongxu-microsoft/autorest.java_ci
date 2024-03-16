@@ -84,16 +84,20 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
     }
 
     public ConsumerGroup create() {
-        this.innerObject
-            = serviceManager.serviceClient().getConsumerGroups().createOrUpdateWithResponse(resourceGroupName,
-                namespaceName, eventHubName, consumerGroupName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName,
+                this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ConsumerGroup create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getConsumerGroups().createOrUpdateWithResponse(resourceGroupName,
-                namespaceName, eventHubName, consumerGroupName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName,
+                this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -108,16 +112,20 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
     }
 
     public ConsumerGroup apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getConsumerGroups().createOrUpdateWithResponse(resourceGroupName,
-                namespaceName, eventHubName, consumerGroupName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName,
+                this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ConsumerGroup apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getConsumerGroups().createOrUpdateWithResponse(resourceGroupName,
-                namespaceName, eventHubName, consumerGroupName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName,
+                this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -132,15 +140,18 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
     }
 
     public ConsumerGroup refresh() {
-        this.innerObject = serviceManager.serviceClient().getConsumerGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
             .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, Context.NONE)
             .getValue();
         return this;
     }
 
     public ConsumerGroup refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConsumerGroups()
-            .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConsumerGroups()
+            .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context)
+            .getValue();
         return this;
     }
 

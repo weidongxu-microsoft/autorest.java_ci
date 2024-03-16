@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode would
- * be chosen.
+ * Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode would be chosen.
  */
 public final class AudioAnalysisMode extends ExpandableStringEnum<AudioAnalysisMode> {
     /**

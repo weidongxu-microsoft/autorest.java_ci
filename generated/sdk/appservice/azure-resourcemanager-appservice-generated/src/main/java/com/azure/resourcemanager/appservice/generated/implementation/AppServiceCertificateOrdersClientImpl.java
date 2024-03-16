@@ -78,8 +78,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientAppServiceCertificateOrders to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientAppServiceCertificateOrders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -318,8 +317,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listSinglePageAsync() {
@@ -349,8 +347,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listSinglePageAsync(Context context) {
@@ -560,8 +557,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>>
@@ -597,8 +593,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>>
@@ -1049,7 +1044,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     private Mono<AppServiceCertificateOrderInner> createOrUpdateAsync(String resourceGroupName,
         String certificateOrderName, AppServiceCertificateOrderInner certificateDistinguishedName, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1383,8 +1379,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>>
@@ -1425,8 +1420,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>>
@@ -1543,8 +1537,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(String resourceGroupName,
@@ -1588,8 +1581,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(String resourceGroupName,
@@ -1630,8 +1622,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
-     * completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> getCertificateAsync(String resourceGroupName,
@@ -1652,8 +1643,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateResourceInner> getCertificateWithResponse(String resourceGroupName,
@@ -1692,8 +1682,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateCertificateWithResponseAsync(String resourceGroupName,
@@ -1744,8 +1733,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateCertificateWithResponseAsync(String resourceGroupName,
@@ -1794,8 +1782,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is
-     * purchased through Azure.
+     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -1821,8 +1808,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is
-     * purchased through Azure.
+     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -1848,8 +1834,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
-     * purchased through Azure.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -1873,15 +1858,16 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
-     * purchased through Azure.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
         beginCreateOrUpdateCertificate(String resourceGroupName, String certificateOrderName, String name,
             AppServiceCertificateResourceInner keyVaultCertificate, Context context) {
-        return this.beginCreateOrUpdateCertificateAsync(resourceGroupName, certificateOrderName, name,
-            keyVaultCertificate, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateCertificateAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -1896,14 +1882,14 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
-     * completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> createOrUpdateCertificateAsync(String resourceGroupName,
         String certificateOrderName, String name, AppServiceCertificateResourceInner keyVaultCertificate) {
         return beginCreateOrUpdateCertificateAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1919,8 +1905,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
-     * completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> createOrUpdateCertificateAsync(String resourceGroupName,
@@ -2127,8 +2112,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> updateCertificateWithResponseAsync(
@@ -2180,8 +2164,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> updateCertificateWithResponseAsync(
@@ -2230,8 +2213,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
-     * completion of {@link Mono}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> updateCertificateAsync(String resourceGroupName,
@@ -2253,8 +2235,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with
-     * {@link Response}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateResourceInner> updateCertificateWithResponse(String resourceGroupName,
@@ -2717,8 +2698,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2763,8 +2743,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2808,8 +2787,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2829,8 +2807,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2851,8 +2828,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2868,15 +2844,9 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * This method is used to obtain the site seal information for an issued certificate. 
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2920,15 +2890,9 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * This method is used to obtain the site seal information for an issued certificate. 
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2971,15 +2935,9 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * This method is used to obtain the site seal information for an issued certificate. 
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2997,15 +2955,9 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * This method is used to obtain the site seal information for an issued certificate. 
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3024,15 +2976,9 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * This method is used to obtain the site seal information for an issued certificate. 
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3445,8 +3391,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listNextSinglePageAsync(String nextLink) {
@@ -3474,8 +3419,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listNextSinglePageAsync(String nextLink,
@@ -3503,8 +3447,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>>
@@ -3535,8 +3478,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -3564,8 +3506,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>>
@@ -3595,8 +3536,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>> listCertificatesNextSinglePageAsync(String nextLink,

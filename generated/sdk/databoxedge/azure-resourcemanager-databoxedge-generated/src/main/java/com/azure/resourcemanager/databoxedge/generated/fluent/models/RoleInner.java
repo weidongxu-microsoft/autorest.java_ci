@@ -11,19 +11,17 @@ import com.azure.resourcemanager.databoxedge.generated.models.CloudEdgeManagemen
 import com.azure.resourcemanager.databoxedge.generated.models.IoTRole;
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesRole;
 import com.azure.resourcemanager.databoxedge.generated.models.MecRole;
+import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Compute role.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = RoleInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = RoleInner.class, visible = true)
 @JsonTypeName("Role")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "CloudEdgeManagement", value = CloudEdgeManagementRole.class),
@@ -32,6 +30,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "MEC", value = MecRole.class) })
 @Immutable
 public class RoleInner extends ArmBaseModel {
+    /*
+     * Role type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private RoleTypes kind;
+
     /*
      * Metadata pertaining to creation and last modification of Role
      */
@@ -42,6 +47,27 @@ public class RoleInner extends ArmBaseModel {
      * Creates an instance of RoleInner class.
      */
     public RoleInner() {
+        this.kind = RoleTypes.fromString("Role");
+    }
+
+    /**
+     * Get the kind property: Role type.
+     * 
+     * @return the kind value.
+     */
+    public RoleTypes kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Role type.
+     * 
+     * @param kind the kind value to set.
+     * @return the RoleInner object itself.
+     */
+    protected RoleInner withKind(RoleTypes kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

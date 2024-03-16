@@ -34,6 +34,7 @@ import com.azure.core.util.FluxUtil;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.mysql.generated.fluent.ServersClient;
+import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerForUpdate;
 import com.azure.resourcemanager.mysql.generated.models.ServerGtidSetParameter;
@@ -68,8 +69,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientServers to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MySqlManagementClientServers to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -136,6 +136,17 @@ public final class ServersClientImpl implements ServersClient {
         Mono<Response<Flux<ByteBuffer>>> failover(@HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/validateEstimateHighAvailability")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<HighAvailabilityValidationEstimationInner>> validateEstimateHighAvailability(
+            @HostParam("$host") String endpoint, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @BodyParam("application/json") HighAvailabilityValidationEstimationInner parameters,
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -226,7 +237,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.create(this.client.getEndpoint(), apiVersion,
@@ -269,7 +280,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.create(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -422,8 +433,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -456,7 +466,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), apiVersion,
@@ -465,8 +475,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -500,7 +509,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -508,8 +517,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -528,8 +536,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -551,8 +558,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -569,8 +575,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -588,8 +593,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -606,8 +610,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -626,8 +629,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -643,8 +645,7 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -688,7 +689,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), apiVersion,
@@ -725,7 +726,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -890,7 +891,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), apiVersion,
@@ -927,7 +928,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1005,7 +1006,7 @@ public final class ServersClientImpl implements ServersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), apiVersion,
@@ -1040,7 +1041,7 @@ public final class ServersClientImpl implements ServersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1127,7 +1128,7 @@ public final class ServersClientImpl implements ServersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1156,7 +1157,7 @@ public final class ServersClientImpl implements ServersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
@@ -1244,7 +1245,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.failover(this.client.getEndpoint(), apiVersion,
@@ -1281,7 +1282,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.failover(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1419,6 +1420,147 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<HighAvailabilityValidationEstimationInner>> validateEstimateHighAvailabilityWithResponseAsync(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-12-30";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.validateEstimateHighAvailability(this.client.getEndpoint(), apiVersion,
+                this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<HighAvailabilityValidationEstimationInner>> validateEstimateHighAvailabilityWithResponseAsync(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-12-30";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.validateEstimateHighAvailability(this.client.getEndpoint(), apiVersion,
+            this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context);
+    }
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<HighAvailabilityValidationEstimationInner> validateEstimateHighAvailabilityAsync(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters) {
+        return validateEstimateHighAvailabilityWithResponseAsync(resourceGroupName, serverName, parameters)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<HighAvailabilityValidationEstimationInner> validateEstimateHighAvailabilityWithResponse(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters,
+        Context context) {
+        return validateEstimateHighAvailabilityWithResponseAsync(resourceGroupName, serverName, parameters, context)
+            .block();
+    }
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public HighAvailabilityValidationEstimationInner validateEstimateHighAvailability(String resourceGroupName,
+        String serverName, HighAvailabilityValidationEstimationInner parameters) {
+        return validateEstimateHighAvailabilityWithResponse(resourceGroupName, serverName, parameters, Context.NONE)
+            .getValue();
+    }
+
+    /**
      * Restarts a server.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -1452,7 +1594,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.restart(this.client.getEndpoint(), apiVersion,
@@ -1495,7 +1637,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.restart(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1673,7 +1815,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.start(this.client.getEndpoint(), apiVersion,
@@ -1710,7 +1852,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.start(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -1873,7 +2015,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.stop(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1910,7 +2052,7 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.stop(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -2080,7 +2222,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.resetGtid(this.client.getEndpoint(), apiVersion,
@@ -2123,7 +2265,7 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.resetGtid(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),

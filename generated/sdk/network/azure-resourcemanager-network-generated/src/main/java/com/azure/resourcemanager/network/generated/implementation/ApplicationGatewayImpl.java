@@ -392,14 +392,16 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway create() {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways().createOrUpdate(resourceGroupName,
-            applicationGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
+            .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ApplicationGateway create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways().createOrUpdate(resourceGroupName,
-            applicationGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
+            .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -415,15 +417,18 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway apply() {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
             .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public ApplicationGateway apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
-            .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
+            .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -437,14 +442,18 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway refresh() {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
-            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationGateway refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
-            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context)
+            .getValue();
         return this;
     }
 
@@ -469,19 +478,19 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGatewayBackendHealth backendHealth(String expand, Context context) {
-        return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName, expand,
-            context);
+        return serviceManager.applicationGateways()
+            .backendHealth(resourceGroupName, applicationGatewayName, expand, context);
     }
 
     public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest) {
-        return serviceManager.applicationGateways().backendHealthOnDemand(resourceGroupName, applicationGatewayName,
-            probeRequest);
+        return serviceManager.applicationGateways()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest);
     }
 
     public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest,
         String expand, Context context) {
-        return serviceManager.applicationGateways().backendHealthOnDemand(resourceGroupName, applicationGatewayName,
-            probeRequest, expand, context);
+        return serviceManager.applicationGateways()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand, context);
     }
 
     public ApplicationGatewayImpl withRegion(Region location) {

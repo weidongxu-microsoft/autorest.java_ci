@@ -16,8 +16,7 @@ import com.azure.resourcemanager.network.generated.models.IdpsQueryObject;
  */
 public interface FirewallPolicyIdpsSignaturesClient {
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
-     * 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -33,8 +32,7 @@ public interface FirewallPolicyIdpsSignaturesClient {
         IdpsQueryObject parameters, Context context);
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
-     * 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.

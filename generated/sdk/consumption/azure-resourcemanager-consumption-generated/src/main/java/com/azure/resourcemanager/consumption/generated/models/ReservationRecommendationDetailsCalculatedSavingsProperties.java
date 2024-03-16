@@ -49,8 +49,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     private Float reservedUnitCount;
 
     /*
-     * The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost -
-     * totalReservationCost.
+     * The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost - totalReservationCost.
      */
     @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private Float savings;
@@ -98,8 +97,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     }
 
     /**
-     * Get the totalReservationCost property: Reservation cost + software cost of the resources covered by the
-     * reservation + overage cost.
+     * Get the totalReservationCost property: Reservation cost + software cost of the resources covered by the reservation + overage cost.
      * 
      * @return the totalReservationCost value.
      */
@@ -108,8 +106,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     }
 
     /**
-     * Get the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual
-     * machines.
+     * Get the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual machines.
      * 
      * @return the reservedUnitCount value.
      */
@@ -118,8 +115,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     }
 
     /**
-     * Set the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual
-     * machines.
+     * Set the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual machines.
      * 
      * @param reservedUnitCount the reservedUnitCount value to set.
      * @return the ReservationRecommendationDetailsCalculatedSavingsProperties object itself.
@@ -130,8 +126,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     }
 
     /**
-     * Get the savings property: The amount saved by purchasing the recommended quantity of reservation. This is equal
-     * to onDemandCost - totalReservationCost.
+     * Get the savings property: The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost - totalReservationCost.
      * 
      * @return the savings value.
      */

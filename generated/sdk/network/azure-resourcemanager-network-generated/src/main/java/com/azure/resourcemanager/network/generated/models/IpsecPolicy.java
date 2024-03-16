@@ -14,15 +14,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class IpsecPolicy {
     /*
-     * The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN
-     * tunnel.
+     * The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.
      */
     @JsonProperty(value = "saLifeTimeSeconds", required = true)
     private int saLifeTimeSeconds;
 
     /*
-     * The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN
-     * tunnel.
+     * The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
      */
     @JsonProperty(value = "saDataSizeKilobytes", required = true)
     private int saDataSizeKilobytes;
@@ -70,8 +68,7 @@ public final class IpsecPolicy {
     }
 
     /**
-     * Get the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * lifetime in seconds for a site to site VPN tunnel.
+     * Get the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.
      * 
      * @return the saLifeTimeSeconds value.
      */
@@ -80,8 +77,7 @@ public final class IpsecPolicy {
     }
 
     /**
-     * Set the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * lifetime in seconds for a site to site VPN tunnel.
+     * Set the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.
      * 
      * @param saLifeTimeSeconds the saLifeTimeSeconds value to set.
      * @return the IpsecPolicy object itself.
@@ -92,8 +88,7 @@ public final class IpsecPolicy {
     }
 
     /**
-     * Get the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * payload size in KB for a site to site VPN tunnel.
+     * Get the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
      * 
      * @return the saDataSizeKilobytes value.
      */
@@ -102,8 +97,7 @@ public final class IpsecPolicy {
     }
 
     /**
-     * Set the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * payload size in KB for a site to site VPN tunnel.
+     * Set the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
      * 
      * @param saDataSizeKilobytes the saDataSizeKilobytes value to set.
      * @return the IpsecPolicy object itself.

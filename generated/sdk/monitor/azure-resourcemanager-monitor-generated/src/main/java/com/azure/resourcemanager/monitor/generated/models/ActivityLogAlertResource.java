@@ -50,16 +50,14 @@ public interface ActivityLogAlertResource {
     Map<String, String> tags();
 
     /**
-     * Gets the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Gets the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @return the scopes value.
      */
     List<String> scopes();
 
     /**
-     * Gets the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Gets the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -166,8 +164,7 @@ public interface ActivityLogAlertResource {
         }
 
         /**
-         * The stage of the ActivityLogAlertResource definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ActivityLogAlertResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithScopes, DefinitionStages.WithEnabled,
@@ -206,13 +203,9 @@ public interface ActivityLogAlertResource {
          */
         interface WithScopes {
             /**
-             * Specifies the scopes property: A list of resourceIds that will be used as prefixes. The alert will only
-             * apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at
-             * least one item..
+             * Specifies the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item..
              * 
-             * @param scopes A list of resourceIds that will be used as prefixes. The alert will only apply to
-             * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one
-             * item.
+             * @param scopes A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
              * @return the next definition stage.
              */
             WithCreate withScopes(List<String> scopes);
@@ -223,11 +216,9 @@ public interface ActivityLogAlertResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log
-             * alert is not enabled, then none of its actions will be activated..
+             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated..
              * 
-             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not
-             * enabled, then none of its actions will be activated.
+             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
              * @return the next definition stage.
              */
             WithCreate withEnabled(Boolean enabled);
@@ -322,11 +313,9 @@ public interface ActivityLogAlertResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log
-             * alert is not enabled, then none of its actions will be activated..
+             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated..
              * 
-             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not
-             * enabled, then none of its actions will be activated.
+             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);

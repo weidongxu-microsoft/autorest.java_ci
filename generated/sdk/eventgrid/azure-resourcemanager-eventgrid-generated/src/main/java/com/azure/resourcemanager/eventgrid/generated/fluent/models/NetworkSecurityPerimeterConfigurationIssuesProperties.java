@@ -114,8 +114,7 @@ public final class NetworkSecurityPerimeterConfigurationIssuesProperties {
     }
 
     /**
-     * Get the suggestedResourceIds property: ARM IDs of resources that can be associated to the same perimeter to
-     * remediate the issue.
+     * Get the suggestedResourceIds property: ARM IDs of resources that can be associated to the same perimeter to remediate the issue.
      * 
      * @return the suggestedResourceIds value.
      */
@@ -124,8 +123,7 @@ public final class NetworkSecurityPerimeterConfigurationIssuesProperties {
     }
 
     /**
-     * Set the suggestedResourceIds property: ARM IDs of resources that can be associated to the same perimeter to
-     * remediate the issue.
+     * Set the suggestedResourceIds property: ARM IDs of resources that can be associated to the same perimeter to remediate the issue.
      * 
      * @param suggestedResourceIds the suggestedResourceIds value to set.
      * @return the NetworkSecurityPerimeterConfigurationIssuesProperties object itself.

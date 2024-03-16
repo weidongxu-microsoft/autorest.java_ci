@@ -22,8 +22,7 @@ public final class CommunityGalleryImageList {
     private List<CommunityGalleryImageInner> value;
 
     /*
-     * The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of
-     * community gallery images.
+     * The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of community gallery images.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class CommunityGalleryImageList {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of community gallery images. Call ListNext() with this
-     * to fetch the next page of community gallery images.
+     * Get the nextLink property: The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of community gallery images.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class CommunityGalleryImageList {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of community gallery images. Call ListNext() with this
-     * to fetch the next page of community gallery images.
+     * Set the nextLink property: The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of community gallery images.
      * 
      * @param nextLink the nextLink value to set.
      * @return the CommunityGalleryImageList object itself.

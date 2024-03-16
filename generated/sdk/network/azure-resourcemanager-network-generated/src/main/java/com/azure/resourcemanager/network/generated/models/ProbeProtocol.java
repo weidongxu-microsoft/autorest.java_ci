@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The protocol of the end point. If 'Tcp' is specified, a received ACK is required for the probe to be successful. If
- * 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.
+ * The protocol of the end point. If 'Tcp' is specified, a received ACK is required for the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.
  */
 public final class ProbeProtocol extends ExpandableStringEnum<ProbeProtocol> {
     /**

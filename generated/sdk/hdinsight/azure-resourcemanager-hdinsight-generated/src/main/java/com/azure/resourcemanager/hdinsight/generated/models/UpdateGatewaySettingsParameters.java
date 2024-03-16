@@ -37,8 +37,7 @@ public final class UpdateGatewaySettingsParameters {
     }
 
     /**
-     * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
-     * enabled.
+     * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is enabled.
      * 
      * @return the isCredentialEnabled value.
      */
@@ -47,8 +46,7 @@ public final class UpdateGatewaySettingsParameters {
     }
 
     /**
-     * Set the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
-     * enabled.
+     * Set the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is enabled.
      * 
      * @param isCredentialEnabled the isCredentialEnabled value to set.
      * @return the UpdateGatewaySettingsParameters object itself.

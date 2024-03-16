@@ -56,8 +56,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCloudServiceRoles to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCloudServiceRoles to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -223,16 +222,14 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all roles in a cloud service along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of all roles in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceRoleInner>> listSinglePageAsync(String resourceGroupName,
@@ -264,8 +261,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -273,8 +269,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all roles in a cloud service along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of all roles in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceRoleInner>> listSinglePageAsync(String resourceGroupName,
@@ -306,8 +301,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -323,8 +317,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -342,8 +335,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -358,8 +350,7 @@ public final class CloudServiceRolesClientImpl implements CloudServiceRolesClien
     }
 
     /**
-     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles.
-     * Do this till nextLink is null to fetch all the roles.
+     * Gets a list of all roles in a cloud service. Use nextLink property in the response to get the next page of roles. Do this till nextLink is null to fetch all the roles.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.

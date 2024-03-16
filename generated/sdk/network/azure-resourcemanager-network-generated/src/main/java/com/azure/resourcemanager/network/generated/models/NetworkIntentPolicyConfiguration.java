@@ -31,8 +31,7 @@ public final class NetworkIntentPolicyConfiguration {
     }
 
     /**
-     * Get the networkIntentPolicyName property: The name of the Network Intent Policy for storing in target
-     * subscription.
+     * Get the networkIntentPolicyName property: The name of the Network Intent Policy for storing in target subscription.
      * 
      * @return the networkIntentPolicyName value.
      */
@@ -41,8 +40,7 @@ public final class NetworkIntentPolicyConfiguration {
     }
 
     /**
-     * Set the networkIntentPolicyName property: The name of the Network Intent Policy for storing in target
-     * subscription.
+     * Set the networkIntentPolicyName property: The name of the Network Intent Policy for storing in target subscription.
      * 
      * @param networkIntentPolicyName the networkIntentPolicyName value to set.
      * @return the NetworkIntentPolicyConfiguration object itself.

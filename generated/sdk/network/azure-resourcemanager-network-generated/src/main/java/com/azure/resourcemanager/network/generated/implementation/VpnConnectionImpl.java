@@ -124,7 +124,8 @@ public final class VpnConnectionImpl implements VpnConnection {
         List<VpnSiteLinkConnectionInner> inner = this.innerModel().vpnLinkConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

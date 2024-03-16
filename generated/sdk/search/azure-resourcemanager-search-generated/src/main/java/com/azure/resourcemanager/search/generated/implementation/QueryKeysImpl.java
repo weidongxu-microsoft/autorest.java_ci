@@ -30,8 +30,8 @@ public final class QueryKeysImpl implements QueryKeys {
 
     public Response<QueryKey> createWithResponse(String resourceGroupName, String searchServiceName, String name,
         UUID clientRequestId, Context context) {
-        Response<QueryKeyInner> inner = this.serviceClient().createWithResponse(resourceGroupName, searchServiceName,
-            name, clientRequestId, context);
+        Response<QueryKeyInner> inner = this.serviceClient()
+            .createWithResponse(resourceGroupName, searchServiceName, name, clientRequestId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueryKeyImpl(inner.getValue(), this.manager()));
@@ -64,8 +64,8 @@ public final class QueryKeysImpl implements QueryKeys {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String searchServiceName, String key,
         UUID clientRequestId, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, searchServiceName, key, clientRequestId,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, searchServiceName, key, clientRequestId, context);
     }
 
     public void delete(String resourceGroupName, String searchServiceName, String key) {

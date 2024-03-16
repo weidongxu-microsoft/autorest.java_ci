@@ -458,8 +458,7 @@ public final class VpnConnectionProperties {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -468,8 +467,7 @@ public final class VpnConnectionProperties {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the VpnConnectionProperties object itself.

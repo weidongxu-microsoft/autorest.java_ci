@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * IoT Addon.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = IoTAddon.class, visible = true)
 @JsonTypeName("IotEdge")
 @Fluent
 public final class IoTAddon extends AddonInner {
@@ -29,6 +29,7 @@ public final class IoTAddon extends AddonInner {
      * Creates an instance of IoTAddon class.
      */
     public IoTAddon() {
+        withKind(AddonType.IOT_EDGE);
     }
 
     /**

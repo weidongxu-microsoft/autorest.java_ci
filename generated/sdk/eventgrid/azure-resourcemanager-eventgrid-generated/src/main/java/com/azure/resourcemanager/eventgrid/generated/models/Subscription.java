@@ -116,8 +116,7 @@ public interface Subscription {
         }
 
         /**
-         * The stage of the Subscription definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Subscription definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDeliveryConfiguration,
             DefinitionStages.WithEventDeliverySchema, DefinitionStages.WithFiltersConfiguration {
@@ -142,8 +141,7 @@ public interface Subscription {
          */
         interface WithDeliveryConfiguration {
             /**
-             * Specifies the deliveryConfiguration property: Information about the delivery configuration of the event
-             * subscription..
+             * Specifies the deliveryConfiguration property: Information about the delivery configuration of the event subscription..
              * 
              * @param deliveryConfiguration Information about the delivery configuration of the event subscription.
              * @return the next definition stage.
@@ -215,8 +213,7 @@ public interface Subscription {
          */
         interface WithDeliveryConfiguration {
             /**
-             * Specifies the deliveryConfiguration property: Information about the delivery configuration of the event
-             * subscription..
+             * Specifies the deliveryConfiguration property: Information about the delivery configuration of the event subscription..
              * 
              * @param deliveryConfiguration Information about the delivery configuration of the event subscription.
              * @return the next definition stage.

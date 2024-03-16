@@ -36,9 +36,7 @@ public final class SecuritySettings extends ArmBaseModel {
     }
 
     /**
-     * Get the deviceAdminPassword property: Device administrator password as an encrypted string (encrypted using RSA
-     * PKCS #1) is used to sign into the local web UI of the device. The Actual password should have at least 8
-     * characters that are a combination of uppercase, lowercase, numeric, and special characters.
+     * Get the deviceAdminPassword property: Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the  local web UI of the device. The Actual password should have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters.
      * 
      * @return the deviceAdminPassword value.
      */
@@ -47,9 +45,7 @@ public final class SecuritySettings extends ArmBaseModel {
     }
 
     /**
-     * Set the deviceAdminPassword property: Device administrator password as an encrypted string (encrypted using RSA
-     * PKCS #1) is used to sign into the local web UI of the device. The Actual password should have at least 8
-     * characters that are a combination of uppercase, lowercase, numeric, and special characters.
+     * Set the deviceAdminPassword property: Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the  local web UI of the device. The Actual password should have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters.
      * 
      * @param deviceAdminPassword the deviceAdminPassword value to set.
      * @return the SecuritySettings object itself.

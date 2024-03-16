@@ -32,15 +32,13 @@ public final class CacheItem {
     private String channel;
 
     /*
-     * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect,
-     * NotApplicable
+     * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect, NotApplicable
      */
     @JsonProperty(value = "subchannel", required = true)
     private String subchannel;
 
     /*
-     * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management
-     * group resource ID for a subscription.
+     * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management group resource ID for a subscription.
      */
     @JsonProperty(value = "parent")
     private String parent;
@@ -98,8 +96,7 @@ public final class CacheItem {
     }
 
     /**
-     * Get the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal,
-     * Unknown.
+     * Get the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal, Unknown.
      * 
      * @return the channel value.
      */
@@ -108,8 +105,7 @@ public final class CacheItem {
     }
 
     /**
-     * Set the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal,
-     * Unknown.
+     * Set the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal, Unknown.
      * 
      * @param channel the channel value to set.
      * @return the CacheItem object itself.
@@ -120,8 +116,7 @@ public final class CacheItem {
     }
 
     /**
-     * Get the subchannel property: Indicates the type of modern account. Allowed values include: Individual,
-     * Enterprise, Partner, Indirect, NotApplicable.
+     * Get the subchannel property: Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect, NotApplicable.
      * 
      * @return the subchannel value.
      */
@@ -130,8 +125,7 @@ public final class CacheItem {
     }
 
     /**
-     * Set the subchannel property: Indicates the type of modern account. Allowed values include: Individual,
-     * Enterprise, Partner, Indirect, NotApplicable.
+     * Set the subchannel property: Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect, NotApplicable.
      * 
      * @param subchannel the subchannel value to set.
      * @return the CacheItem object itself.
@@ -142,8 +136,7 @@ public final class CacheItem {
     }
 
     /**
-     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
-     * group or a management group resource ID for a subscription.
+     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management group resource ID for a subscription.
      * 
      * @return the parent value.
      */
@@ -152,8 +145,7 @@ public final class CacheItem {
     }
 
     /**
-     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
-     * group or a management group resource ID for a subscription.
+     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management group resource ID for a subscription.
      * 
      * @param parent the parent value to set.
      * @return the CacheItem object itself.
@@ -164,8 +156,7 @@ public final class CacheItem {
     }
 
     /**
-     * Get the status property: Indicates the status of the scope. Status only applies to subscriptions and billing
-     * accounts.
+     * Get the status property: Indicates the status of the scope. Status only applies to subscriptions and billing accounts.
      * 
      * @return the status value.
      */
@@ -174,8 +165,7 @@ public final class CacheItem {
     }
 
     /**
-     * Set the status property: Indicates the status of the scope. Status only applies to subscriptions and billing
-     * accounts.
+     * Set the status property: Indicates the status of the scope. Status only applies to subscriptions and billing accounts.
      * 
      * @param status the status value to set.
      * @return the CacheItem object itself.

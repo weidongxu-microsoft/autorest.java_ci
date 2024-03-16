@@ -72,14 +72,16 @@ public final class StaticSiteLinkedBackendArmResourceImpl implements StaticSiteL
     }
 
     public StaticSiteLinkedBackendArmResource create() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
-            linkedBackendName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
-            linkedBackendName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), context);
         return this;
     }
 
@@ -95,14 +97,16 @@ public final class StaticSiteLinkedBackendArmResourceImpl implements StaticSiteL
     }
 
     public StaticSiteLinkedBackendArmResource apply() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
-            linkedBackendName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
-            linkedBackendName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), context);
         return this;
     }
 
@@ -116,26 +120,30 @@ public final class StaticSiteLinkedBackendArmResourceImpl implements StaticSiteL
     }
 
     public StaticSiteLinkedBackendArmResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context)
+            .getValue();
         return this;
     }
 
     public void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        serviceManager.staticSites().validateBackend(resourceGroupName, name, linkedBackendName,
-            staticSiteLinkedBackendEnvelope);
+        serviceManager.staticSites()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope);
     }
 
     public void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
         Context context) {
-        serviceManager.staticSites().validateBackend(resourceGroupName, name, linkedBackendName,
-            staticSiteLinkedBackendEnvelope, context);
+        serviceManager.staticSites()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
     }
 
     public StaticSiteLinkedBackendArmResourceImpl withKind(String kind) {

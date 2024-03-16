@@ -30,8 +30,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     private UserArtifactManage manageActions;
 
     /*
-     * Additional settings for the VM app that contains the target package and config file name when it is deployed to
-     * target VM or VM scale set.
+     * Additional settings for the VM app that contains the target package and config file name when it is deployed to target VM or VM scale set.
      */
     @JsonProperty(value = "settings")
     private UserArtifactSettings settings;
@@ -102,8 +101,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Get the settings property: Additional settings for the VM app that contains the target package and config file
-     * name when it is deployed to target VM or VM scale set.
+     * Get the settings property: Additional settings for the VM app that contains the target package and config file name when it is deployed to target VM or VM scale set.
      * 
      * @return the settings value.
      */
@@ -112,8 +110,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Set the settings property: Additional settings for the VM app that contains the target package and config file
-     * name when it is deployed to target VM or VM scale set.
+     * Set the settings property: Additional settings for the VM app that contains the target package and config file name when it is deployed to target VM or VM scale set.
      * 
      * @param settings the settings value to set.
      * @return the GalleryApplicationVersionPublishingProfile object itself.
@@ -124,8 +121,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Get the advancedSettings property: Optional. Additional settings to pass to the vm-application-manager extension.
-     * For advanced use only.
+     * Get the advancedSettings property: Optional. Additional settings to pass to the vm-application-manager extension. For advanced use only.
      * 
      * @return the advancedSettings value.
      */
@@ -134,8 +130,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Set the advancedSettings property: Optional. Additional settings to pass to the vm-application-manager extension.
-     * For advanced use only.
+     * Set the advancedSettings property: Optional. Additional settings to pass to the vm-application-manager extension. For advanced use only.
      * 
      * @param advancedSettings the advancedSettings value to set.
      * @return the GalleryApplicationVersionPublishingProfile object itself.
@@ -166,8 +161,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Get the customActions property: A list of custom actions that can be performed with this Gallery Application
-     * Version.
+     * Get the customActions property: A list of custom actions that can be performed with this Gallery Application Version.
      * 
      * @return the customActions value.
      */
@@ -176,8 +170,7 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     }
 
     /**
-     * Set the customActions property: A list of custom actions that can be performed with this Gallery Application
-     * Version.
+     * Set the customActions property: A list of custom actions that can be performed with this Gallery Application Version.
      * 
      * @param customActions the customActions value to set.
      * @return the GalleryApplicationVersionPublishingProfile object itself.

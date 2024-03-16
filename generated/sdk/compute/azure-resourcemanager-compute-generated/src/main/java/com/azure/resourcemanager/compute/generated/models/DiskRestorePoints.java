@@ -21,8 +21,7 @@ public interface DiskRestorePoints {
      * @param diskRestorePointName The name of the disk restore point created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return disk restorePoint resource along with {@link Response}.
      */
@@ -37,8 +36,7 @@ public interface DiskRestorePoints {
      * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs.
      * @param diskRestorePointName The name of the disk restore point created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return disk restorePoint resource.
      */
@@ -52,8 +50,7 @@ public interface DiskRestorePoints {
      * @param restorePointCollectionName The name of the restore point collection that the disk restore point belongs.
      * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Disk Restore Points operation response as paginated response with {@link PagedIterable}.
      */
@@ -68,8 +65,7 @@ public interface DiskRestorePoints {
      * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Disk Restore Points operation response as paginated response with {@link PagedIterable}.
      */
@@ -85,8 +81,7 @@ public interface DiskRestorePoints {
      * @param diskRestorePointName The name of the disk restore point created.
      * @param grantAccessData Access data object supplied in the body of the get disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a disk access SAS uri.
      */
@@ -103,8 +98,7 @@ public interface DiskRestorePoints {
      * @param grantAccessData Access data object supplied in the body of the get disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a disk access SAS uri.
      */
@@ -119,8 +113,7 @@ public interface DiskRestorePoints {
      * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs.
      * @param diskRestorePointName The name of the disk restore point created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void revokeAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
@@ -135,8 +128,7 @@ public interface DiskRestorePoints {
      * @param diskRestorePointName The name of the disk restore point created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void revokeAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,

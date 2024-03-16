@@ -20,8 +20,7 @@ public final class ResourceIdentity {
     private UUID principalId;
 
     /*
-     * The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active
-     * Directory principal for the resource.
+     * The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.
      */
     @JsonProperty(value = "type")
     private IdentityType type;
@@ -48,8 +47,7 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Get the type property: The identity type. Set this to 'SystemAssigned' in order to automatically create and
-     * assign an Azure Active Directory principal for the resource.
+     * Get the type property: The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.
      * 
      * @return the type value.
      */
@@ -58,8 +56,7 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Set the type property: The identity type. Set this to 'SystemAssigned' in order to automatically create and
-     * assign an Azure Active Directory principal for the resource.
+     * Set the type property: The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.
      * 
      * @param type the type value to set.
      * @return the ResourceIdentity object itself.

@@ -22,8 +22,7 @@ public final class ApplicationInsightsComponentListResult {
     private List<ApplicationInsightsComponentInner> value;
 
     /*
-     * The URI to get the next set of Application Insights component definitions if too many components where returned
-     * in the result set.
+     * The URI to get the next set of Application Insights component definitions if too many components where returned in the result set.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class ApplicationInsightsComponentListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to get the next set of Application Insights component definitions if too many
-     * components where returned in the result set.
+     * Get the nextLink property: The URI to get the next set of Application Insights component definitions if too many components where returned in the result set.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class ApplicationInsightsComponentListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to get the next set of Application Insights component definitions if too many
-     * components where returned in the result set.
+     * Set the nextLink property: The URI to get the next set of Application Insights component definitions if too many components where returned in the result set.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ApplicationInsightsComponentListResult object itself.

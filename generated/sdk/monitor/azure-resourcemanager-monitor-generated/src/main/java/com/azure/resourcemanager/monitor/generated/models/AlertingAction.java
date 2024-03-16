@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specify action need to be taken when rule type is Alert.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "odata.type", defaultImpl = AlertingAction.class, visible = true)
 @JsonTypeName("Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction")
 @Fluent
 public final class AlertingAction extends Action {
@@ -45,6 +45,8 @@ public final class AlertingAction extends Action {
      * Creates an instance of AlertingAction class.
      */
     public AlertingAction() {
+        withOdataType(
+            "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction");
     }
 
     /**

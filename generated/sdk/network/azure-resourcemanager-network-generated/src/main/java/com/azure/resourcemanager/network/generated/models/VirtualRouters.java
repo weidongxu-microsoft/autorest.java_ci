@@ -18,8 +18,7 @@ public interface VirtualRouters {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String virtualRouterName);
@@ -31,8 +30,7 @@ public interface VirtualRouters {
      * @param virtualRouterName The name of the Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String virtualRouterName, Context context);
@@ -45,8 +43,7 @@ public interface VirtualRouters {
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router along with {@link Response}.
      */
@@ -59,8 +56,7 @@ public interface VirtualRouters {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router.
      */
@@ -71,8 +67,7 @@ public interface VirtualRouters {
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
@@ -84,8 +79,7 @@ public interface VirtualRouters {
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
@@ -94,8 +88,7 @@ public interface VirtualRouters {
     /**
      * Gets all the Virtual Routers in a subscription.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -106,8 +99,7 @@ public interface VirtualRouters {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -118,8 +110,7 @@ public interface VirtualRouters {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router along with {@link Response}.
      */
@@ -132,8 +123,7 @@ public interface VirtualRouters {
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router along with {@link Response}.
      */
@@ -144,8 +134,7 @@ public interface VirtualRouters {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -156,8 +145,7 @@ public interface VirtualRouters {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);

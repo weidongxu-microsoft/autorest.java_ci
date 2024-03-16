@@ -62,8 +62,7 @@ public final class WebhookReceiver {
     }
 
     /**
-     * Get the name property: The name of the webhook receiver. Names must be unique across all receivers within an
-     * action group.
+     * Get the name property: The name of the webhook receiver. Names must be unique across all receivers within an action group.
      * 
      * @return the name value.
      */
@@ -72,8 +71,7 @@ public final class WebhookReceiver {
     }
 
     /**
-     * Set the name property: The name of the webhook receiver. Names must be unique across all receivers within an
-     * action group.
+     * Set the name property: The name of the webhook receiver. Names must be unique across all receivers within an action group.
      * 
      * @param name the name value to set.
      * @return the WebhookReceiver object itself.

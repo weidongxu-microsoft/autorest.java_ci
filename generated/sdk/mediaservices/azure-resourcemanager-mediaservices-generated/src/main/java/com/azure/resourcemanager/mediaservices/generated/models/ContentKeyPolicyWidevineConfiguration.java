@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specifies a configuration for Widevine licenses.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyWidevineConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyWidevineConfiguration")
 @Fluent
 public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolicyConfiguration {
@@ -27,6 +31,7 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyWidevineConfiguration class.
      */
     public ContentKeyPolicyWidevineConfiguration() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyWidevineConfiguration");
     }
 
     /**

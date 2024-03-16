@@ -97,8 +97,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
     }
 
     /**
-     * Get the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should
-     * be sent to subscription owners.
+     * Get the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should be sent to subscription owners.
      * 
      * @return the sendEmailsToSubscriptionOwners value.
      */
@@ -107,8 +106,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
     }
 
     /**
-     * Set the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should
-     * be sent to subscription owners.
+     * Set the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should be sent to subscription owners.
      * 
      * @param sendEmailsToSubscriptionOwners the sendEmailsToSubscriptionOwners value to set.
      * @return the ApplicationInsightsComponentProactiveDetectionConfigurationInner object itself.
@@ -162,8 +160,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
     }
 
     /**
-     * Get the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values
-     * for all components).
+     * Get the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values for all components).
      * 
      * @return the ruleDefinitions value.
      */
@@ -172,8 +169,7 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
     }
 
     /**
-     * Set the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values
-     * for all components).
+     * Set the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values for all components).
      * 
      * @param ruleDefinitions the ruleDefinitions value to set.
      * @return the ApplicationInsightsComponentProactiveDetectionConfigurationInner object itself.

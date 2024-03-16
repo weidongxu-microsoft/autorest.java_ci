@@ -128,8 +128,7 @@ public interface Secret {
         }
 
         /**
-         * The stage of the Secret definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Secret definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

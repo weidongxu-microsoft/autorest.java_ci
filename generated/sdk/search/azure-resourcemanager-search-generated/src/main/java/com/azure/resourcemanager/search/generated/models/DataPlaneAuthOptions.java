@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Defines the options for how the search service authenticates a data plane request. This cannot be set if
- * 'disableLocalAuth' is set to true.
+ * Defines the options for how the search service authenticates a data plane request. This cannot be set if 'disableLocalAuth' is set to true.
  */
 @Fluent
 public final class DataPlaneAuthOptions {
@@ -20,8 +19,7 @@ public final class DataPlaneAuthOptions {
     private Object apiKeyOnly;
 
     /*
-     * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for
-     * authentication.
+     * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for authentication.
      */
     @JsonProperty(value = "aadOrApiKey")
     private DataPlaneAadOrApiKeyAuthOption aadOrApiKey;
@@ -53,8 +51,7 @@ public final class DataPlaneAuthOptions {
     }
 
     /**
-     * Get the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID
-     * tenant can be used for authentication.
+     * Get the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for authentication.
      * 
      * @return the aadOrApiKey value.
      */
@@ -63,8 +60,7 @@ public final class DataPlaneAuthOptions {
     }
 
     /**
-     * Set the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID
-     * tenant can be used for authentication.
+     * Set the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for authentication.
      * 
      * @param aadOrApiKey the aadOrApiKey value to set.
      * @return the DataPlaneAuthOptions object itself.

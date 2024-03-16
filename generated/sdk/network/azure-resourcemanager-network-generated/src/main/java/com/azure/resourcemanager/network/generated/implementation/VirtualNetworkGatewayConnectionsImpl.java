@@ -77,8 +77,8 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
 
     public ConnectionSharedKey setSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         ConnectionSharedKeyInner parameters, Context context) {
-        ConnectionSharedKeyInner inner = this.serviceClient().setSharedKey(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters, context);
+        ConnectionSharedKeyInner inner = this.serviceClient()
+            .setSharedKey(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
         if (inner != null) {
             return new ConnectionSharedKeyImpl(inner, this.manager());
         } else {
@@ -88,8 +88,8 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
 
     public Response<ConnectionSharedKey> getSharedKeyWithResponse(String resourceGroupName,
         String virtualNetworkGatewayConnectionName, Context context) {
-        Response<ConnectionSharedKeyInner> inner = this.serviceClient().getSharedKeyWithResponse(resourceGroupName,
-            virtualNetworkGatewayConnectionName, context);
+        Response<ConnectionSharedKeyInner> inner = this.serviceClient()
+            .getSharedKeyWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ConnectionSharedKeyImpl(inner.getValue(), this.manager()));
@@ -136,8 +136,8 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
 
     public ConnectionResetSharedKey resetSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         ConnectionResetSharedKeyInner parameters, Context context) {
-        ConnectionResetSharedKeyInner inner = this.serviceClient().resetSharedKey(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters, context);
+        ConnectionResetSharedKeyInner inner = this.serviceClient()
+            .resetSharedKey(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
         if (inner != null) {
             return new ConnectionResetSharedKeyImpl(inner, this.manager());
         } else {
@@ -151,20 +151,20 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
 
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         VpnPacketCaptureStartParameters parameters, Context context) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName,
-            parameters, context);
+        return this.serviceClient()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
     public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         VpnPacketCaptureStopParameters parameters) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName,
-            parameters);
+        return this.serviceClient()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
     }
 
     public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         VpnPacketCaptureStopParameters parameters, Context context) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName,
-            parameters, context);
+        return this.serviceClient()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
     public String getIkeSas(String resourceGroupName, String virtualNetworkGatewayConnectionName) {

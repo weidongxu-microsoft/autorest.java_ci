@@ -34,14 +34,14 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
 
     public void delete(String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName,
         Context context) {
-        this.serviceClient().delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
-            context);
+        this.serviceClient()
+            .delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
     }
 
     public Response<VpnServerConfigurationPolicyGroup> getWithResponse(String resourceGroupName,
         String vpnServerConfigurationName, String configurationPolicyGroupName, Context context) {
-        Response<VpnServerConfigurationPolicyGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            vpnServerConfigurationName, configurationPolicyGroupName, context);
+        Response<VpnServerConfigurationPolicyGroupInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnServerConfigurationPolicyGroupImpl(inner.getValue(), this.manager()));

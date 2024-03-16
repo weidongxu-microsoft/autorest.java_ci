@@ -13,13 +13,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Describes a built-in preset for encoding the input video with the Standard Encoder.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = BuiltInStandardEncoderPreset.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.BuiltInStandardEncoderPreset")
 @Fluent
 public final class BuiltInStandardEncoderPreset extends Preset {
     /*
-     * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and
-     * H265ContentAwareEncoding BuiltInStandardEncoderPreset.
+     * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      */
     @JsonProperty(value = "configurations")
     private PresetConfigurations configurations;
@@ -34,11 +37,11 @@ public final class BuiltInStandardEncoderPreset extends Preset {
      * Creates an instance of BuiltInStandardEncoderPreset class.
      */
     public BuiltInStandardEncoderPreset() {
+        withOdataType("#Microsoft.Media.BuiltInStandardEncoderPreset");
     }
 
     /**
-     * Get the configurations property: Optional configuration settings for encoder. Configurations is only supported
-     * for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
+     * Get the configurations property: Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      * 
      * @return the configurations value.
      */
@@ -47,8 +50,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     }
 
     /**
-     * Set the configurations property: Optional configuration settings for encoder. Configurations is only supported
-     * for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
+     * Set the configurations property: Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      * 
      * @param configurations the configurations value to set.
      * @return the BuiltInStandardEncoderPreset object itself.

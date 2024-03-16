@@ -76,16 +76,20 @@ public final class NetworkGroupImpl implements NetworkGroup, NetworkGroup.Defini
     }
 
     public NetworkGroup create() {
-        this.innerObject
-            = serviceManager.serviceClient().getNetworkGroups().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, this.innerModel(), createIfMatch, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, this.innerModel(),
+                createIfMatch, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkGroup create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getNetworkGroups().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, this.innerModel(), createIfMatch, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, this.innerModel(),
+                createIfMatch, context)
+            .getValue();
         return this;
     }
 
@@ -102,16 +106,20 @@ public final class NetworkGroupImpl implements NetworkGroup, NetworkGroup.Defini
     }
 
     public NetworkGroup apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getNetworkGroups().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, this.innerModel(), updateIfMatch, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, this.innerModel(),
+                updateIfMatch, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkGroup apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getNetworkGroups().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, this.innerModel(), updateIfMatch, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, this.innerModel(),
+                updateIfMatch, context)
+            .getValue();
         return this;
     }
 
@@ -125,14 +133,18 @@ public final class NetworkGroupImpl implements NetworkGroup, NetworkGroup.Defini
     }
 
     public NetworkGroup refresh() {
-        this.innerObject = serviceManager.serviceClient().getNetworkGroups()
-            .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkGroup refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkGroups()
-            .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkGroups()
+            .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, context)
+            .getValue();
         return this;
     }
 

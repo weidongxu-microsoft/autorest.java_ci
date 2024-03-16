@@ -249,13 +249,15 @@ public final class VirtualNetworkGatewayConnectionImpl implements VirtualNetwork
     }
 
     public VirtualNetworkGatewayConnection create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
             .createOrUpdate(resourceGroupName, virtualNetworkGatewayConnectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkGatewayConnection create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
             .createOrUpdate(resourceGroupName, virtualNetworkGatewayConnectionName, this.innerModel(), context);
         return this;
     }
@@ -273,13 +275,15 @@ public final class VirtualNetworkGatewayConnectionImpl implements VirtualNetwork
     }
 
     public VirtualNetworkGatewayConnection apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
             .updateTags(resourceGroupName, virtualNetworkGatewayConnectionName, updateParameters, Context.NONE);
         return this;
     }
 
     public VirtualNetworkGatewayConnection apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
             .updateTags(resourceGroupName, virtualNetworkGatewayConnectionName, updateParameters, context);
         return this;
     }
@@ -294,56 +298,59 @@ public final class VirtualNetworkGatewayConnectionImpl implements VirtualNetwork
     }
 
     public VirtualNetworkGatewayConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
             .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, Context.NONE)
             .getValue();
         return this;
     }
 
     public VirtualNetworkGatewayConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayConnections()
-            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkGatewayConnections()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context)
+            .getValue();
         return this;
     }
 
     public String startPacketCapture() {
-        return serviceManager.virtualNetworkGatewayConnections().startPacketCapture(resourceGroupName,
-            virtualNetworkGatewayConnectionName);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName);
     }
 
     public String startPacketCapture(VpnPacketCaptureStartParameters parameters, Context context) {
-        return serviceManager.virtualNetworkGatewayConnections().startPacketCapture(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters, context);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
     public String stopPacketCapture(VpnPacketCaptureStopParameters parameters) {
-        return serviceManager.virtualNetworkGatewayConnections().stopPacketCapture(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
     }
 
     public String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context) {
-        return serviceManager.virtualNetworkGatewayConnections().stopPacketCapture(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters, context);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
     public String getIkeSas() {
-        return serviceManager.virtualNetworkGatewayConnections().getIkeSas(resourceGroupName,
-            virtualNetworkGatewayConnectionName);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName);
     }
 
     public String getIkeSas(Context context) {
-        return serviceManager.virtualNetworkGatewayConnections().getIkeSas(resourceGroupName,
-            virtualNetworkGatewayConnectionName, context);
+        return serviceManager.virtualNetworkGatewayConnections()
+            .getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName, context);
     }
 
     public void resetConnection() {
-        serviceManager.virtualNetworkGatewayConnections().resetConnection(resourceGroupName,
-            virtualNetworkGatewayConnectionName);
+        serviceManager.virtualNetworkGatewayConnections()
+            .resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName);
     }
 
     public void resetConnection(Context context) {
-        serviceManager.virtualNetworkGatewayConnections().resetConnection(resourceGroupName,
-            virtualNetworkGatewayConnectionName, context);
+        serviceManager.virtualNetworkGatewayConnections()
+            .resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName, context);
     }
 
     public VirtualNetworkGatewayConnectionImpl withRegion(Region location) {

@@ -37,8 +37,8 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
 
     public Response<PublicIpPrefix> getByResourceGroupWithResponse(String resourceGroupName, String publicIpPrefixName,
         String expand, Context context) {
-        Response<PublicIpPrefixInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            publicIpPrefixName, expand, context);
+        Response<PublicIpPrefixInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PublicIpPrefixImpl(inner.getValue(), this.manager()));

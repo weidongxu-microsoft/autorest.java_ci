@@ -76,7 +76,8 @@ public final class EventHubConsumerGroupInfoImpl
     }
 
     public EventHubConsumerGroupInfo create() {
-        this.innerObject = serviceManager.serviceClient().getIotHubResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getIotHubResources()
             .createEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
                 createConsumerGroupBody, Context.NONE)
             .getValue();
@@ -84,8 +85,11 @@ public final class EventHubConsumerGroupInfoImpl
     }
 
     public EventHubConsumerGroupInfo create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getIotHubResources().createEventHubConsumerGroupWithResponse(
-            resourceGroupName, resourceName, eventHubEndpointName, name, createConsumerGroupBody, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getIotHubResources()
+            .createEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
+                createConsumerGroupBody, context)
+            .getValue();
         return this;
     }
 
@@ -98,13 +102,17 @@ public final class EventHubConsumerGroupInfoImpl
     }
 
     public EventHubConsumerGroupInfo refresh() {
-        this.innerObject = serviceManager.serviceClient().getIotHubResources().getEventHubConsumerGroupWithResponse(
-            resourceGroupName, resourceName, eventHubEndpointName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getIotHubResources()
+            .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public EventHubConsumerGroupInfo refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getIotHubResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getIotHubResources()
             .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name, context)
             .getValue();
         return this;

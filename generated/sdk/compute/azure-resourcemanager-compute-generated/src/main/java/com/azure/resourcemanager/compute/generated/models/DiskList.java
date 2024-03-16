@@ -54,8 +54,7 @@ public final class DiskList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next
-     * page of disks.
+     * Get the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next page of disks.
      * 
      * @return the nextLink value.
      */
@@ -64,8 +63,7 @@ public final class DiskList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next
-     * page of disks.
+     * Set the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next page of disks.
      * 
      * @param nextLink the nextLink value to set.
      * @return the DiskList object itself.

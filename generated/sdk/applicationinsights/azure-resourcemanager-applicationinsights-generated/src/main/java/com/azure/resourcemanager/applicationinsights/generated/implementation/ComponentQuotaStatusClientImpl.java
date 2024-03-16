@@ -51,8 +51,7 @@ public final class ComponentQuotaStatusClientImpl implements ComponentQuotaStatu
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientComponentQuotaStatus to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientComponentQuotaStatus to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
@@ -75,8 +74,7 @@ public final class ComponentQuotaStatusClientImpl implements ComponentQuotaStatu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component daily data volume cap status along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return an Application Insights component daily data volume cap status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentQuotaStatusInner>> getWithResponseAsync(String resourceGroupName,
@@ -113,8 +111,7 @@ public final class ComponentQuotaStatusClientImpl implements ComponentQuotaStatu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component daily data volume cap status along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return an Application Insights component daily data volume cap status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentQuotaStatusInner>> getWithResponseAsync(String resourceGroupName,

@@ -22,8 +22,7 @@ public interface Addons {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Addon> listByRole(String deviceName, String roleName, String resourceGroupName);
 
@@ -37,8 +36,7 @@ public interface Addons {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Addon> listByRole(String deviceName, String roleName, String resourceGroupName, Context context);
 

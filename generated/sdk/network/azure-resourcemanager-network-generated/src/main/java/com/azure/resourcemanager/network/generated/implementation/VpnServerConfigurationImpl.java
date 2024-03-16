@@ -158,7 +158,8 @@ public final class VpnServerConfigurationImpl
         List<P2SVpnGatewayInner> inner = this.innerModel().p2SVpnGateways();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -167,9 +168,9 @@ public final class VpnServerConfigurationImpl
     public List<VpnServerConfigurationPolicyGroup> configurationPolicyGroups() {
         List<VpnServerConfigurationPolicyGroupInner> inner = this.innerModel().configurationPolicyGroups();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VpnServerConfigurationPolicyGroupImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VpnServerConfigurationPolicyGroupImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -211,14 +212,16 @@ public final class VpnServerConfigurationImpl
     }
 
     public VpnServerConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getVpnServerConfigurations().createOrUpdate(resourceGroupName,
-            vpnServerConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnServerConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVpnServerConfigurations().createOrUpdate(resourceGroupName,
-            vpnServerConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, this.innerModel(), context);
         return this;
     }
 
@@ -234,16 +237,20 @@ public final class VpnServerConfigurationImpl
     }
 
     public VpnServerConfiguration apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getVpnServerConfigurations().updateTagsWithResponse(resourceGroupName,
-                vpnServerConfigurationName, updateVpnServerConfigurationParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .updateTagsWithResponse(resourceGroupName, vpnServerConfigurationName,
+                updateVpnServerConfigurationParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VpnServerConfiguration apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getVpnServerConfigurations().updateTagsWithResponse(resourceGroupName,
-                vpnServerConfigurationName, updateVpnServerConfigurationParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .updateTagsWithResponse(resourceGroupName, vpnServerConfigurationName,
+                updateVpnServerConfigurationParameters, context)
+            .getValue();
         return this;
     }
 
@@ -257,14 +264,18 @@ public final class VpnServerConfigurationImpl
     }
 
     public VpnServerConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getVpnServerConfigurations()
-            .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VpnServerConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVpnServerConfigurations()
-            .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnServerConfigurations()
+            .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context)
+            .getValue();
         return this;
     }
 

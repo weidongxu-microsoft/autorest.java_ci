@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Rule of type application.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "ruleType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "ruleType", defaultImpl = ApplicationRule.class, visible = true)
 @JsonTypeName("ApplicationRule")
 @Fluent
 public final class ApplicationRule extends FirewallPolicyRule {
@@ -81,6 +81,7 @@ public final class ApplicationRule extends FirewallPolicyRule {
      * Creates an instance of ApplicationRule class.
      */
     public ApplicationRule() {
+        withRuleType(FirewallPolicyRuleType.APPLICATION_RULE);
     }
 
     /**

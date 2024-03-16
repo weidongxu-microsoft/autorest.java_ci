@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * &lt;code&gt;Invalid&lt;/code&gt; indicates the name provided does not match Azure App Service naming requirements.
- * &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use and is therefore unavailable.
+ * &lt;code&gt;Invalid&lt;/code&gt; indicates the name provided does not match Azure App Service naming requirements. &lt;code&gt;AlreadyExists&lt;/code&gt; indicates that the name is already in use and is therefore unavailable.
  */
 public final class InAvailabilityReasonType extends ExpandableStringEnum<InAvailabilityReasonType> {
     /**

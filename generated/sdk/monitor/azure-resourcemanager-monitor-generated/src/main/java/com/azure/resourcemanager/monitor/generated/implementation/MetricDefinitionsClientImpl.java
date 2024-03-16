@@ -56,8 +56,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
     }
 
     /**
-     * The interface defining all the services for MonitorClientMetricDefinitions to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MonitorClientMetricDefinitions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientMetricD")
@@ -80,8 +79,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return represents collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricDefinitionInner>> listSinglePageAsync(String resourceUri, String metricnamespace) {
@@ -111,8 +109,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return represents collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricDefinitionInner>> listSinglePageAsync(String resourceUri, String metricnamespace,

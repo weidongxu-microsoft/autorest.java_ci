@@ -140,8 +140,7 @@ public final class AzureFirewallNatRule {
     }
 
     /**
-     * Get the destinationAddresses property: List of destination IP addresses for this rule. Supports IP ranges,
-     * prefixes, and service tags.
+     * Get the destinationAddresses property: List of destination IP addresses for this rule. Supports IP ranges, prefixes, and service tags.
      * 
      * @return the destinationAddresses value.
      */
@@ -150,8 +149,7 @@ public final class AzureFirewallNatRule {
     }
 
     /**
-     * Set the destinationAddresses property: List of destination IP addresses for this rule. Supports IP ranges,
-     * prefixes, and service tags.
+     * Set the destinationAddresses property: List of destination IP addresses for this rule. Supports IP ranges, prefixes, and service tags.
      * 
      * @param destinationAddresses the destinationAddresses value to set.
      * @return the AzureFirewallNatRule object itself.

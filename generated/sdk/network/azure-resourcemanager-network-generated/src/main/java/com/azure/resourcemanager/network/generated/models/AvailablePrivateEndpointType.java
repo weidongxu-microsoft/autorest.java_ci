@@ -46,8 +46,7 @@ public interface AvailablePrivateEndpointType {
     String displayName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner object.
      * 
      * @return the inner object.
      */

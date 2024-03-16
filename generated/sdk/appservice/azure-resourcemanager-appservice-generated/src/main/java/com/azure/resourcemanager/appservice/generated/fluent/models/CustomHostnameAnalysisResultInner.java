@@ -47,8 +47,7 @@ public final class CustomHostnameAnalysisResultInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the isHostnameAlreadyVerified property: &lt;code&gt;true&lt;/code&gt; if hostname is already verified;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isHostnameAlreadyVerified property: &lt;code&gt;true&lt;/code&gt; if hostname is already verified; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isHostnameAlreadyVerified value.
      */
@@ -75,8 +74,7 @@ public final class CustomHostnameAnalysisResultInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hasConflictOnScaleUnit property: &lt;code&gt;true&lt;/code&gt; if there is a conflict on a scale unit;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the hasConflictOnScaleUnit property: &lt;code&gt;true&lt;/code&gt; if there is a conflict on a scale unit; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the hasConflictOnScaleUnit value.
      */
@@ -85,8 +83,7 @@ public final class CustomHostnameAnalysisResultInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hasConflictAcrossSubscription property: &lt;code&gt;true&lt;/code&gt; if there is a conflict across
-     * subscriptions; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the hasConflictAcrossSubscription property: &lt;code&gt;true&lt;/code&gt; if there is a conflict across subscriptions; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the hasConflictAcrossSubscription value.
      */
@@ -95,8 +92,7 @@ public final class CustomHostnameAnalysisResultInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the conflictingAppResourceId property: Name of the conflicting app on scale unit if it's within the same
-     * subscription.
+     * Get the conflictingAppResourceId property: Name of the conflicting app on scale unit if it's within the same subscription.
      * 
      * @return the conflictingAppResourceId value.
      */

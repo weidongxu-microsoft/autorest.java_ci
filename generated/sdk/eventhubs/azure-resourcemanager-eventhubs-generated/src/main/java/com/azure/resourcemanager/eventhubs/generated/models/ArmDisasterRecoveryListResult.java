@@ -21,8 +21,7 @@ public final class ArmDisasterRecoveryListResult {
     private List<ArmDisasterRecoveryInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete list of Alias(Disaster Recovery
-     * configuration)
+     * Link to the next set of results. Not empty if Value contains incomplete list of Alias(Disaster Recovery configuration)
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
@@ -54,8 +53,7 @@ public final class ArmDisasterRecoveryListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * Alias(Disaster Recovery configuration).
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Alias(Disaster Recovery configuration).
      * 
      * @return the nextLink value.
      */

@@ -30,15 +30,17 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
 
     public PagedIterable<RoleAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
-        PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        PagedIterable<RoleAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String filter, Context context) {
-        PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
+        PagedIterable<RoleAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, filter, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 

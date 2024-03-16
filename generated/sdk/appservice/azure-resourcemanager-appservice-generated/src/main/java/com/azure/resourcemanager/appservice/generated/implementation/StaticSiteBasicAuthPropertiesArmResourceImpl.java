@@ -83,14 +83,17 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl implements Stati
     }
 
     public StaticSiteBasicAuthPropertiesArmResource create() {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().createOrUpdateBasicAuthWithResponse(resourceGroupName,
-                name, basicAuthName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
             .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
             .getValue();
         return this;
@@ -108,14 +111,17 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl implements Stati
     }
 
     public StaticSiteBasicAuthPropertiesArmResource apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().createOrUpdateBasicAuthWithResponse(resourceGroupName,
-                name, basicAuthName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
             .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
             .getValue();
         return this;
@@ -132,14 +138,18 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl implements Stati
     }
 
     public StaticSiteBasicAuthPropertiesArmResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context)
+            .getValue();
         return this;
     }
 

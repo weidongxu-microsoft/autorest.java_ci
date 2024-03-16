@@ -129,8 +129,7 @@ public final class RouteTableInner extends Resource {
     }
 
     /**
-     * Get the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table.
-     * True means disable.
+     * Get the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable.
      * 
      * @return the disableBgpRoutePropagation value.
      */
@@ -139,8 +138,7 @@ public final class RouteTableInner extends Resource {
     }
 
     /**
-     * Set the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table.
-     * True means disable.
+     * Set the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable.
      * 
      * @param disableBgpRoutePropagation the disableBgpRoutePropagation value to set.
      * @return the RouteTableInner object itself.

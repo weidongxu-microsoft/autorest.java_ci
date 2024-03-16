@@ -57,28 +57,21 @@ public interface LiveOutput {
     String assetName();
 
     /**
-     * Gets the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
-     * length that can be archived in the asset for this live output. This also sets the maximum content length for the
-     * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
+     * Gets the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content length that can be archived in the asset for this live output. This also sets the maximum content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
      * 
      * @return the archiveWindowLength value.
      */
     Duration archiveWindowLength();
 
     /**
-     * Gets the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to
-     * control seek-able window length during Live. The service won't use this property once LiveOutput stops. The
-     * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
-     * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
-     * enables LL.
+     * Gets the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event enables LL.
      * 
      * @return the rewindWindowLength value.
      */
     Duration rewindWindowLength();
 
     /**
-     * Gets the manifestName property: The manifest file name. If not provided, the service will generate one
-     * automatically.
+     * Gets the manifestName property: The manifest file name. If not provided, the service will generate one automatically.
      * 
      * @return the manifestName value.
      */
@@ -92,8 +85,7 @@ public interface LiveOutput {
     Hls hls();
 
     /**
-     * Gets the outputSnapTime property: The initial timestamp that the live output will start at, any content before
-     * this value will not be archived.
+     * Gets the outputSnapTime property: The initial timestamp that the live output will start at, any content before this value will not be archived.
      * 
      * @return the outputSnapTime value.
      */
@@ -167,8 +159,7 @@ public interface LiveOutput {
         }
 
         /**
-         * The stage of the LiveOutput definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the LiveOutput definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithAssetName,
             DefinitionStages.WithArchiveWindowLength, DefinitionStages.WithRewindWindowLength,
@@ -220,14 +211,9 @@ public interface LiveOutput {
          */
         interface WithArchiveWindowLength {
             /**
-             * Specifies the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the
-             * maximum content length that can be archived in the asset for this live output. This also sets the maximum
-             * content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of
-             * archive window..
+             * Specifies the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content length that can be archived in the asset for this live output. This also sets the maximum content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window..
              * 
-             * @param archiveWindowLength ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
-             * length that can be archived in the asset for this live output. This also sets the maximum content length
-             * for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
+             * @param archiveWindowLength ISO 8601 time between 1 minute to 25 hours to indicate the maximum content length that can be archived in the asset for this live output. This also sets the maximum content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
              * @return the next definition stage.
              */
             WithCreate withArchiveWindowLength(Duration archiveWindowLength);
@@ -238,17 +224,9 @@ public interface LiveOutput {
          */
         interface WithRewindWindowLength {
             /**
-             * Specifies the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of
-             * archiveWindowLength to control seek-able window length during Live. The service won't use this property
-             * once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For
-             * example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit
-             * default value 30m only if Live Event enables LL..
+             * Specifies the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event enables LL..
              * 
-             * @param rewindWindowLength ISO 8601 time between 1 minute to the duration of archiveWindowLength to
-             * control seek-able window length during Live. The service won't use this property once LiveOutput stops.
-             * The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to
-             * indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only
-             * if Live Event enables LL.
+             * @param rewindWindowLength ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event enables LL.
              * @return the next definition stage.
              */
             WithCreate withRewindWindowLength(Duration rewindWindowLength);
@@ -259,8 +237,7 @@ public interface LiveOutput {
          */
         interface WithManifestName {
             /**
-             * Specifies the manifestName property: The manifest file name. If not provided, the service will generate
-             * one automatically..
+             * Specifies the manifestName property: The manifest file name. If not provided, the service will generate one automatically..
              * 
              * @param manifestName The manifest file name. If not provided, the service will generate one automatically.
              * @return the next definition stage.
@@ -286,11 +263,9 @@ public interface LiveOutput {
          */
         interface WithOutputSnapTime {
             /**
-             * Specifies the outputSnapTime property: The initial timestamp that the live output will start at, any
-             * content before this value will not be archived..
+             * Specifies the outputSnapTime property: The initial timestamp that the live output will start at, any content before this value will not be archived..
              * 
-             * @param outputSnapTime The initial timestamp that the live output will start at, any content before this
-             * value will not be archived.
+             * @param outputSnapTime The initial timestamp that the live output will start at, any content before this value will not be archived.
              * @return the next definition stage.
              */
             WithCreate withOutputSnapTime(Long outputSnapTime);

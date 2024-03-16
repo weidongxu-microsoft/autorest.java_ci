@@ -63,8 +63,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     }
 
     /**
-     * The interface defining all the services for ResourceManagementClientTagOperations to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ResourceManagementClientTagOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
@@ -155,8 +154,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag value for a predefined tag name.
      * 
-     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name.
-     * The value being deleted must not be in use as a tag value for the given tag name for any resource.
+     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name. The value being deleted must not be in use as a tag value for the given tag name for any resource.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to delete.
@@ -191,8 +189,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag value for a predefined tag name.
      * 
-     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name.
-     * The value being deleted must not be in use as a tag value for the given tag name for any resource.
+     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name. The value being deleted must not be in use as a tag value for the given tag name for any resource.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to delete.
@@ -227,8 +224,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag value for a predefined tag name.
      * 
-     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name.
-     * The value being deleted must not be in use as a tag value for the given tag name for any resource.
+     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name. The value being deleted must not be in use as a tag value for the given tag name for any resource.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to delete.
@@ -245,8 +241,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag value for a predefined tag name.
      * 
-     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name.
-     * The value being deleted must not be in use as a tag value for the given tag name for any resource.
+     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name. The value being deleted must not be in use as a tag value for the given tag name for any resource.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to delete.
@@ -264,8 +259,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag value for a predefined tag name.
      * 
-     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name.
-     * The value being deleted must not be in use as a tag value for the given tag name for any resource.
+     * This operation allows deleting a value from the list of predefined values for an existing predefined tag name. The value being deleted must not be in use as a tag value for the given tag name for any resource.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to delete.
@@ -281,8 +275,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined value for a predefined tag name.
      * 
-     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag
-     * value can have a maximum of 256 characters.
+     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag value can have a maximum of 256 characters.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to create.
@@ -317,8 +310,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined value for a predefined tag name.
      * 
-     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag
-     * value can have a maximum of 256 characters.
+     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag value can have a maximum of 256 characters.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to create.
@@ -354,8 +346,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined value for a predefined tag name.
      * 
-     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag
-     * value can have a maximum of 256 characters.
+     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag value can have a maximum of 256 characters.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to create.
@@ -372,8 +363,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined value for a predefined tag name.
      * 
-     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag
-     * value can have a maximum of 256 characters.
+     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag value can have a maximum of 256 characters.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to create.
@@ -391,8 +381,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined value for a predefined tag name.
      * 
-     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag
-     * value can have a maximum of 256 characters.
+     * This operation allows adding a value to the list of predefined values for an existing predefined tag name. A tag value can have a maximum of 256 characters.
      * 
      * @param tagName The name of the tag.
      * @param tagValue The value of the tag to create.
@@ -409,9 +398,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined tag name.
      * 
-     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name
-     * can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which
-     * are reserved for Azure use: 'microsoft', 'azure', 'windows'.
+     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which are reserved for Azure use: 'microsoft', 'azure', 'windows'.
      * 
      * @param tagName The name of the tag to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -442,9 +429,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined tag name.
      * 
-     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name
-     * can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which
-     * are reserved for Azure use: 'microsoft', 'azure', 'windows'.
+     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which are reserved for Azure use: 'microsoft', 'azure', 'windows'.
      * 
      * @param tagName The name of the tag to create.
      * @param context The context to associate with this operation.
@@ -475,9 +460,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined tag name.
      * 
-     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name
-     * can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which
-     * are reserved for Azure use: 'microsoft', 'azure', 'windows'.
+     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which are reserved for Azure use: 'microsoft', 'azure', 'windows'.
      * 
      * @param tagName The name of the tag to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -493,9 +476,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined tag name.
      * 
-     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name
-     * can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which
-     * are reserved for Azure use: 'microsoft', 'azure', 'windows'.
+     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which are reserved for Azure use: 'microsoft', 'azure', 'windows'.
      * 
      * @param tagName The name of the tag to create.
      * @param context The context to associate with this operation.
@@ -512,9 +493,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates a predefined tag name.
      * 
-     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name
-     * can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which
-     * are reserved for Azure use: 'microsoft', 'azure', 'windows'.
+     * This operation allows adding a name to the list of predefined tag names for the given subscription. A tag name can have a maximum of 512 characters and is case-insensitive. Tag names cannot have the following prefixes which are reserved for Azure use: 'microsoft', 'azure', 'windows'.
      * 
      * @param tagName The name of the tag to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -530,9 +509,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag name.
      * 
-     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name
-     * being deleted must not be in use as a tag name for any resource. All predefined values for the given name must
-     * have already been deleted.
+     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name being deleted must not be in use as a tag name for any resource. All predefined values for the given name must have already been deleted.
      * 
      * @param tagName The name of the tag.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -563,9 +540,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag name.
      * 
-     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name
-     * being deleted must not be in use as a tag name for any resource. All predefined values for the given name must
-     * have already been deleted.
+     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name being deleted must not be in use as a tag name for any resource. All predefined values for the given name must have already been deleted.
      * 
      * @param tagName The name of the tag.
      * @param context The context to associate with this operation.
@@ -596,9 +571,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag name.
      * 
-     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name
-     * being deleted must not be in use as a tag name for any resource. All predefined values for the given name must
-     * have already been deleted.
+     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name being deleted must not be in use as a tag name for any resource. All predefined values for the given name must have already been deleted.
      * 
      * @param tagName The name of the tag.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -614,9 +587,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag name.
      * 
-     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name
-     * being deleted must not be in use as a tag name for any resource. All predefined values for the given name must
-     * have already been deleted.
+     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name being deleted must not be in use as a tag name for any resource. All predefined values for the given name must have already been deleted.
      * 
      * @param tagName The name of the tag.
      * @param context The context to associate with this operation.
@@ -633,9 +604,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Deletes a predefined tag name.
      * 
-     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name
-     * being deleted must not be in use as a tag name for any resource. All predefined values for the given name must
-     * have already been deleted.
+     * This operation allows deleting a name from the list of predefined tag names for the given subscription. The name being deleted must not be in use as a tag name for any resource. All predefined values for the given name must have already been deleted.
      * 
      * @param tagName The name of the tag.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -650,9 +619,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -680,9 +647,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -712,9 +677,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -728,9 +691,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -747,9 +708,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -763,9 +722,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Gets a summary of tag usage under the subscription.
      * 
-     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and
-     * returns a summary of usage for each tag name and value under the given subscription. In case of a large number of
-     * tags, this operation may return a previously cached result.
+     * This operation performs a union of predefined tags, resource tags, resource group tags and subscription tags, and returns a summary of usage for each tag name and value under the given subscription. In case of a large number of tags, this operation may return a previously cached result.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -781,16 +738,14 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates or updates the entire set of tags on a resource or subscription.
      * 
-     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The
-     * specified entity can have a maximum of 50 tags.
+     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags API requests and responses.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> createOrUpdateAtScopeWithResponseAsync(String scope,
@@ -817,8 +772,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates or updates the entire set of tags on a resource or subscription.
      * 
-     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The
-     * specified entity can have a maximum of 50 tags.
+     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags API requests and responses.
@@ -826,8 +780,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> createOrUpdateAtScopeWithResponseAsync(String scope,
@@ -853,8 +806,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates or updates the entire set of tags on a resource or subscription.
      * 
-     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The
-     * specified entity can have a maximum of 50 tags.
+     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags API requests and responses.
@@ -872,8 +824,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates or updates the entire set of tags on a resource or subscription.
      * 
-     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The
-     * specified entity can have a maximum of 50 tags.
+     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags API requests and responses.
@@ -892,8 +843,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Creates or updates the entire set of tags on a resource or subscription.
      * 
-     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The
-     * specified entity can have a maximum of 50 tags.
+     * This operation allows adding or replacing the entire set of tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags API requests and responses.
@@ -910,19 +860,14 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Selectively updates the set of tags on a resource or subscription.
      * 
-     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription.
-     * The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the
-     * entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the
-     * values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or
-     * name/value pairs.
+     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or name/value pairs.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags patch API request only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> updateAtScopeWithResponseAsync(String scope,
@@ -949,11 +894,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Selectively updates the set of tags on a resource or subscription.
      * 
-     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription.
-     * The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the
-     * entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the
-     * values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or
-     * name/value pairs.
+     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or name/value pairs.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags patch API request only.
@@ -961,8 +902,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper resource for tags API requests and responses along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> updateAtScopeWithResponseAsync(String scope, TagsPatchResource parameters,
@@ -988,11 +928,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Selectively updates the set of tags on a resource or subscription.
      * 
-     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription.
-     * The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the
-     * entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the
-     * values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or
-     * name/value pairs.
+     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or name/value pairs.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags patch API request only.
@@ -1009,11 +945,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Selectively updates the set of tags on a resource or subscription.
      * 
-     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription.
-     * The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the
-     * entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the
-     * values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or
-     * name/value pairs.
+     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or name/value pairs.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags patch API request only.
@@ -1032,11 +964,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
     /**
      * Selectively updates the set of tags on a resource or subscription.
      * 
-     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription.
-     * The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the
-     * entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the
-     * values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or
-     * name/value pairs.
+     * This operation allows replacing, merging or selectively deleting tags on the specified resource or subscription. The specified entity can have a maximum of 50 tags at the end of the operation. The 'replace' option replaces the entire set of existing tags with a new set. The 'merge' option allows adding tags with new names and updating the values of tags with existing names. The 'delete' option allows selectively deleting tags based on given names or name/value pairs.
      * 
      * @param scope The resource scope.
      * @param parameters Wrapper resource for tags patch API request only.
@@ -1057,8 +985,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the entire set of tags on a resource or subscription along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the entire set of tags on a resource or subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> getAtScopeWithResponseAsync(String scope) {
@@ -1084,8 +1011,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the entire set of tags on a resource or subscription along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the entire set of tags on a resource or subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResourceInner>> getAtScopeWithResponseAsync(String scope, Context context) {

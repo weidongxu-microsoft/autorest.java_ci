@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of the request to list networkManagerEffectiveConnectivityConfiguration. It contains a list of groups and a
- * skiptoken to get the next set of results.
+ * Result of the request to list networkManagerEffectiveConnectivityConfiguration. It contains a list of groups and a skiptoken to get the next set of results.
  */
 @Fluent
 public final class NetworkManagerEffectiveConnectivityConfigurationListResultInner {
@@ -22,8 +21,7 @@ public final class NetworkManagerEffectiveConnectivityConfigurationListResultInn
     private List<EffectiveConnectivityConfiguration> value;
 
     /*
-     * When present, the value can be passed to a subsequent query call (together with the same query and scopes used in
-     * the current request) to retrieve the next page of data.
+     * When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      */
     @JsonProperty(value = "skipToken")
     private String skipToken;
@@ -56,8 +54,7 @@ public final class NetworkManagerEffectiveConnectivityConfigurationListResultInn
     }
 
     /**
-     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @return the skipToken value.
      */
@@ -66,8 +63,7 @@ public final class NetworkManagerEffectiveConnectivityConfigurationListResultInn
     }
 
     /**
-     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @param skipToken the skipToken value to set.
      * @return the NetworkManagerEffectiveConnectivityConfigurationListResultInner object itself.

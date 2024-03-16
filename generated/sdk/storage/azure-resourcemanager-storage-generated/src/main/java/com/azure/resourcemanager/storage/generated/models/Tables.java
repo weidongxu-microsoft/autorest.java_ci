@@ -15,30 +15,23 @@ public interface Tables {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response}.
      */
     Response<Table> getWithResponse(String resourceGroupName, String accountName, String tableName, Context context);
 
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -49,12 +42,9 @@ public interface Tables {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -66,12 +56,9 @@ public interface Tables {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -81,31 +68,25 @@ public interface Tables {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Table> list(String resourceGroupName, String accountName);
 
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Table> list(String resourceGroupName, String accountName, Context context);
 
@@ -116,8 +97,7 @@ public interface Tables {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response}.
      */
     Table getById(String id);
 
@@ -129,8 +109,7 @@ public interface Tables {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response}.
      */
     Response<Table> getByIdWithResponse(String id, Context context);
 

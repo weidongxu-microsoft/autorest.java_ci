@@ -18,25 +18,21 @@ public interface DomainAvailabilityCheckResult {
     String name();
 
     /**
-     * Gets the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the available value.
      */
     Boolean available();
 
     /**
-     * Gets the domainType property: Valid values are Regular domain: Azure will charge the full price of domain
-     * registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost
-     * anything.
+     * Gets the domainType property: Valid values are Regular domain: Azure will charge the full price of domain registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost anything.
      * 
      * @return the domainType value.
      */
     DomainType domainType();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainAvailabilityCheckResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainAvailabilityCheckResultInner object.
      * 
      * @return the inner object.
      */

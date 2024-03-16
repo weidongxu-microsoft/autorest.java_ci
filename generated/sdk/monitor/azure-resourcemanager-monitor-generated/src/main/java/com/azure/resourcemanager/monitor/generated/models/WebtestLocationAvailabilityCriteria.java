@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specifies the metric alert rule criteria for a web test resource.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = WebtestLocationAvailabilityCriteria.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Monitor.WebtestLocationAvailabilityCriteria")
 @Fluent
 public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriteria {
@@ -39,6 +43,7 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
      * Creates an instance of WebtestLocationAvailabilityCriteria class.
      */
     public WebtestLocationAvailabilityCriteria() {
+        withOdataType(Odatatype.MICROSOFT_AZURE_MONITOR_WEBTEST_LOCATION_AVAILABILITY_CRITERIA);
     }
 
     /**

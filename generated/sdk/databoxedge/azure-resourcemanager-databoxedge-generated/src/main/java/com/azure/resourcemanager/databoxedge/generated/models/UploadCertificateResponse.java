@@ -67,8 +67,7 @@ public interface UploadCertificateResponse {
     String aadAudience();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner object.
      * 
      * @return the inner object.
      */

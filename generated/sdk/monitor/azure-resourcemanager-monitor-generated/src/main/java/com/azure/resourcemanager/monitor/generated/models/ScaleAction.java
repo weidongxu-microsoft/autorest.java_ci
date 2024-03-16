@@ -27,15 +27,13 @@ public final class ScaleAction {
     private ScaleType type;
 
     /*
-     * the number of instances that are involved in the scaling action. This value must be 1 or greater. The default
-     * value is 1.
+     * the number of instances that are involved in the scaling action. This value must be 1 or greater. The default value is 1.
      */
     @JsonProperty(value = "value")
     private String value;
 
     /*
-     * the amount of time to wait since the last scaling action before this action occurs. It must be between 1 week and
-     * 1 minute in ISO 8601 format.
+     * the amount of time to wait since the last scaling action before this action occurs. It must be between 1 week and 1 minute in ISO 8601 format.
      */
     @JsonProperty(value = "cooldown", required = true)
     private Duration cooldown;
@@ -47,8 +45,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Get the direction property: the scale direction. Whether the scaling action increases or decreases the number of
-     * instances.
+     * Get the direction property: the scale direction. Whether the scaling action increases or decreases the number of instances.
      * 
      * @return the direction value.
      */
@@ -57,8 +54,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Set the direction property: the scale direction. Whether the scaling action increases or decreases the number of
-     * instances.
+     * Set the direction property: the scale direction. Whether the scaling action increases or decreases the number of instances.
      * 
      * @param direction the direction value to set.
      * @return the ScaleAction object itself.
@@ -89,8 +85,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Get the value property: the number of instances that are involved in the scaling action. This value must be 1 or
-     * greater. The default value is 1.
+     * Get the value property: the number of instances that are involved in the scaling action. This value must be 1 or greater. The default value is 1.
      * 
      * @return the value value.
      */
@@ -99,8 +94,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Set the value property: the number of instances that are involved in the scaling action. This value must be 1 or
-     * greater. The default value is 1.
+     * Set the value property: the number of instances that are involved in the scaling action. This value must be 1 or greater. The default value is 1.
      * 
      * @param value the value value to set.
      * @return the ScaleAction object itself.
@@ -111,8 +105,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Get the cooldown property: the amount of time to wait since the last scaling action before this action occurs. It
-     * must be between 1 week and 1 minute in ISO 8601 format.
+     * Get the cooldown property: the amount of time to wait since the last scaling action before this action occurs. It must be between 1 week and 1 minute in ISO 8601 format.
      * 
      * @return the cooldown value.
      */
@@ -121,8 +114,7 @@ public final class ScaleAction {
     }
 
     /**
-     * Set the cooldown property: the amount of time to wait since the last scaling action before this action occurs. It
-     * must be between 1 week and 1 minute in ISO 8601 format.
+     * Set the cooldown property: the amount of time to wait since the last scaling action before this action occurs. It must be between 1 week and 1 minute in ISO 8601 format.
      * 
      * @param cooldown the cooldown value to set.
      * @return the ScaleAction object itself.

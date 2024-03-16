@@ -29,18 +29,13 @@ public final class CapacityReservationGroupProperties {
     private List<SubResourceReadOnly> virtualMachinesAssociated;
 
     /*
-     * The capacity reservation group instance view which has the list of instance views for all the capacity
-     * reservations that belong to the capacity reservation group.
+     * The capacity reservation group instance view which has the list of instance views for all the capacity reservations that belong to the capacity reservation group.
      */
     @JsonProperty(value = "instanceView", access = JsonProperty.Access.WRITE_ONLY)
     private CapacityReservationGroupInstanceView instanceView;
 
     /*
-     * Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls.
-     * keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a
-     * single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants.
-     * **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more
-     * details.
+     * Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      */
     @JsonProperty(value = "sharingProfile")
     private ResourceSharingProfile sharingProfile;
@@ -52,8 +47,7 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
-     * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity
-     * reservation group.
+     * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity reservation group.
      * 
      * @return the capacityReservations value.
      */
@@ -62,8 +56,7 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
-     * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the
-     * capacity reservation group.
+     * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the capacity reservation group.
      * 
      * @return the virtualMachinesAssociated value.
      */
@@ -72,8 +65,7 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
-     * Get the instanceView property: The capacity reservation group instance view which has the list of instance views
-     * for all the capacity reservations that belong to the capacity reservation group.
+     * Get the instanceView property: The capacity reservation group instance view which has the list of instance views for all the capacity reservations that belong to the capacity reservation group.
      * 
      * @return the instanceView value.
      */
@@ -82,11 +74,7 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
-     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
-     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
-     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
-     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
-     * https://aka.ms/computereservationsharing for more details.
+     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @return the sharingProfile value.
      */
@@ -95,11 +83,7 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
-     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
-     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
-     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
-     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
-     * https://aka.ms/computereservationsharing for more details.
+     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @param sharingProfile the sharingProfile value to set.
      * @return the CapacityReservationGroupProperties object itself.

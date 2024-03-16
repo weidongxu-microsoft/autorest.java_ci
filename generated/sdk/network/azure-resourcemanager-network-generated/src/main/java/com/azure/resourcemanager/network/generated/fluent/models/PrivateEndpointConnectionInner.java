@@ -55,8 +55,7 @@ public final class PrivateEndpointConnectionInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,8 +64,7 @@ public final class PrivateEndpointConnectionInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the PrivateEndpointConnectionInner object itself.
@@ -113,8 +111,7 @@ public final class PrivateEndpointConnectionInner extends SubResource {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between service consumer and provider.
+     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -123,8 +120,7 @@ public final class PrivateEndpointConnectionInner extends SubResource {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between service consumer and provider.
+     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionInner object itself.

@@ -14,22 +14,19 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class EncryptionService {
     /*
-     * A boolean indicating whether or not the service encrypts the data as it is stored. Encryption at rest is enabled
-     * by default today and cannot be disabled.
+     * A boolean indicating whether or not the service encrypts the data as it is stored. Encryption at rest is enabled by default today and cannot be disabled.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
-     * Gets a rough estimate of the date/time when the encryption was last enabled by the user. Data is encrypted at
-     * rest by default today and cannot be disabled.
+     * Gets a rough estimate of the date/time when the encryption was last enabled by the user. Data is encrypted at rest by default today and cannot be disabled.
      */
     @JsonProperty(value = "lastEnabledTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastEnabledTime;
 
     /*
-     * Encryption key type to be used for the encryption service. 'Account' key type implies that an account-scoped
-     * encryption key will be used. 'Service' key type implies that a default service key is used.
+     * Encryption key type to be used for the encryption service. 'Account' key type implies that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is used.
      */
     @JsonProperty(value = "keyType")
     private KeyType keyType;
@@ -41,8 +38,7 @@ public final class EncryptionService {
     }
 
     /**
-     * Get the enabled property: A boolean indicating whether or not the service encrypts the data as it is stored.
-     * Encryption at rest is enabled by default today and cannot be disabled.
+     * Get the enabled property: A boolean indicating whether or not the service encrypts the data as it is stored. Encryption at rest is enabled by default today and cannot be disabled.
      * 
      * @return the enabled value.
      */
@@ -51,8 +47,7 @@ public final class EncryptionService {
     }
 
     /**
-     * Set the enabled property: A boolean indicating whether or not the service encrypts the data as it is stored.
-     * Encryption at rest is enabled by default today and cannot be disabled.
+     * Set the enabled property: A boolean indicating whether or not the service encrypts the data as it is stored. Encryption at rest is enabled by default today and cannot be disabled.
      * 
      * @param enabled the enabled value to set.
      * @return the EncryptionService object itself.
@@ -63,8 +58,7 @@ public final class EncryptionService {
     }
 
     /**
-     * Get the lastEnabledTime property: Gets a rough estimate of the date/time when the encryption was last enabled by
-     * the user. Data is encrypted at rest by default today and cannot be disabled.
+     * Get the lastEnabledTime property: Gets a rough estimate of the date/time when the encryption was last enabled by the user. Data is encrypted at rest by default today and cannot be disabled.
      * 
      * @return the lastEnabledTime value.
      */
@@ -73,9 +67,7 @@ public final class EncryptionService {
     }
 
     /**
-     * Get the keyType property: Encryption key type to be used for the encryption service. 'Account' key type implies
-     * that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is
-     * used.
+     * Get the keyType property: Encryption key type to be used for the encryption service. 'Account' key type implies that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is used.
      * 
      * @return the keyType value.
      */
@@ -84,9 +76,7 @@ public final class EncryptionService {
     }
 
     /**
-     * Set the keyType property: Encryption key type to be used for the encryption service. 'Account' key type implies
-     * that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is
-     * used.
+     * Set the keyType property: Encryption key type to be used for the encryption service. 'Account' key type implies that an account-scoped encryption key will be used. 'Service' key type implies that a default service key is used.
      * 
      * @param keyType the keyType value to set.
      * @return the EncryptionService object itself.

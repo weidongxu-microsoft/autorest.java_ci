@@ -74,14 +74,18 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
     private ResourceGroupPatchable updateParameters;
 
     public ResourceGroup create() {
-        this.innerObject = serviceManager.serviceClient().getResourceGroups()
-            .createOrUpdateWithResponse(resourceGroupName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getResourceGroups()
+            .createOrUpdateWithResponse(resourceGroupName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ResourceGroup create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getResourceGroups()
-            .createOrUpdateWithResponse(resourceGroupName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getResourceGroups()
+            .createOrUpdateWithResponse(resourceGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -97,14 +101,18 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
     }
 
     public ResourceGroup apply() {
-        this.innerObject = serviceManager.serviceClient().getResourceGroups()
-            .updateWithResponse(resourceGroupName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getResourceGroups()
+            .updateWithResponse(resourceGroupName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ResourceGroup apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getResourceGroups()
-            .updateWithResponse(resourceGroupName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getResourceGroups()
+            .updateWithResponse(resourceGroupName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -116,8 +124,10 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
     }
 
     public ResourceGroup refresh() {
-        this.innerObject = serviceManager.serviceClient().getResourceGroups()
-            .getWithResponse(resourceGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getResourceGroups()
+            .getWithResponse(resourceGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 

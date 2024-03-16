@@ -64,8 +64,7 @@ public final class AssetsClientImpl implements AssetsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesAssets to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for AzureMediaServicesAssets to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesAs")
@@ -170,8 +169,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -214,8 +212,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -259,8 +256,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -303,8 +299,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -347,8 +342,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -373,8 +367,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset in the Media Services account along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the details of an Asset in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -417,8 +410,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset in the Media Services account along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the details of an Asset in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -963,8 +955,7 @@ public final class AssetsClientImpl implements AssetsClient {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -973,8 +964,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(String resourceGroupName,
@@ -1013,8 +1003,7 @@ public final class AssetsClientImpl implements AssetsClient {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1024,8 +1013,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(String resourceGroupName,
@@ -1063,8 +1051,7 @@ public final class AssetsClientImpl implements AssetsClient {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1085,8 +1072,7 @@ public final class AssetsClientImpl implements AssetsClient {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1108,8 +1094,7 @@ public final class AssetsClientImpl implements AssetsClient {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1138,8 +1123,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     * along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageEncryptedAssetDecryptionDataInner>>
@@ -1182,8 +1166,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     * along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageEncryptedAssetDecryptionDataInner>> getEncryptionKeyWithResponseAsync(
@@ -1224,8 +1207,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     * on successful completion of {@link Mono}.
+     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyAsync(String resourceGroupName,
@@ -1246,8 +1228,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     * along with {@link Response}.
+     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyWithResponse(String resourceGroupName,
@@ -1285,8 +1266,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListStreamingLocatorsResponseInner>>
@@ -1330,8 +1310,7 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListStreamingLocatorsResponseInner>> listStreamingLocatorsWithResponseAsync(

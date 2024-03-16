@@ -11,9 +11,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStat
  */
 public interface BlobRestoreStatus {
     /**
-     * Gets the status property: The status of blob restore progress. Possible values are: - InProgress: Indicates that
-     * blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed:
-     * Indicates that blob restore is failed.
+     * Gets the status property: The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is failed.
      * 
      * @return the status value.
      */

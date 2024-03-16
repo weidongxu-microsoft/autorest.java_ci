@@ -72,8 +72,7 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Get the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the
-     * follower cluster.
+     * Get the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the follower cluster.
      * 
      * @return the attachedDatabaseConfigurationName value.
      */
@@ -82,8 +81,7 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Set the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the
-     * follower cluster.
+     * Set the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the follower cluster.
      * 
      * @param attachedDatabaseConfigurationName the attachedDatabaseConfigurationName value to set.
      * @return the FollowerDatabaseDefinitionInner object itself.
@@ -95,8 +93,7 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following all
-     * databases.
+     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following all databases.
      * 
      * @return the databaseName value.
      */

@@ -55,8 +55,7 @@ public final class ApplicationInsightsComponentQuotaStatusInner {
     }
 
     /**
-     * Get the expirationTime property: Date and time when the daily data volume cap will be reset, and data ingestion
-     * will resume.
+     * Get the expirationTime property: Date and time when the daily data volume cap will be reset, and data ingestion will resume.
      * 
      * @return the expirationTime value.
      */

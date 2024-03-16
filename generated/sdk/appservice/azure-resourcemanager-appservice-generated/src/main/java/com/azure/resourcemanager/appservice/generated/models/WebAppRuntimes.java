@@ -61,8 +61,7 @@ public final class WebAppRuntimes {
     }
 
     /**
-     * Get the linuxContainerSettings property: Linux-specific settings associated with the Java container minor
-     * version.
+     * Get the linuxContainerSettings property: Linux-specific settings associated with the Java container minor version.
      * 
      * @return the linuxContainerSettings value.
      */
@@ -71,8 +70,7 @@ public final class WebAppRuntimes {
     }
 
     /**
-     * Get the windowsContainerSettings property: Windows-specific settings associated with the Java container minor
-     * version.
+     * Get the windowsContainerSettings property: Windows-specific settings associated with the Java container minor version.
      * 
      * @return the windowsContainerSettings value.
      */

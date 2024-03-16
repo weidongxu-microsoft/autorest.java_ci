@@ -14,23 +14,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SshPublicKeyGenerateKeyPairResultInner {
     /*
-     * Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is
-     * returned in RFC3447 format and should be treated as a secret.
+     * Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
      */
     @JsonProperty(value = "privateKey", required = true)
     private String privateKey;
 
     /*
-     * Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in
-     * ssh-rsa format.
+     * Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
      */
     @JsonProperty(value = "publicKey", required = true)
     private String publicKey;
 
     /*
-     * The ARM resource id in the form of
-     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{
-     * SshPublicKeyName}
+     * The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}
      */
     @JsonProperty(value = "id", required = true)
     private String id;
@@ -42,8 +38,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Get the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine
-     * through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
+     * Get the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
      * 
      * @return the privateKey value.
      */
@@ -52,8 +47,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Set the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine
-     * through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
+     * Set the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
      * 
      * @param privateKey the privateKey value to set.
      * @return the SshPublicKeyGenerateKeyPairResultInner object itself.
@@ -64,8 +58,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Get the publicKey property: Public key portion of the key pair used to authenticate to a virtual machine through
-     * ssh. The public key is in ssh-rsa format.
+     * Get the publicKey property: Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
      * 
      * @return the publicKey value.
      */
@@ -74,8 +67,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Set the publicKey property: Public key portion of the key pair used to authenticate to a virtual machine through
-     * ssh. The public key is in ssh-rsa format.
+     * Set the publicKey property: Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
      * 
      * @param publicKey the publicKey value to set.
      * @return the SshPublicKeyGenerateKeyPairResultInner object itself.
@@ -86,8 +78,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Get the id property: The ARM resource id in the form of
-     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}.
+     * Get the id property: The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}.
      * 
      * @return the id value.
      */
@@ -96,8 +87,7 @@ public final class SshPublicKeyGenerateKeyPairResultInner {
     }
 
     /**
-     * Set the id property: The ARM resource id in the form of
-     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}.
+     * Set the id property: The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}.
      * 
      * @param id the id value to set.
      * @return the SshPublicKeyGenerateKeyPairResultInner object itself.

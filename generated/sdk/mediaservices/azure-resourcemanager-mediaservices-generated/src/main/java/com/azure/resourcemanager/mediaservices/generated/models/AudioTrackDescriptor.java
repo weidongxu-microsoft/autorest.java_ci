@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "@odata.type",
-    defaultImpl = AudioTrackDescriptor.class)
+    defaultImpl = AudioTrackDescriptor.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.AudioTrackDescriptor")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -27,8 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class AudioTrackDescriptor extends TrackDescriptor {
     /*
-     * Optional designation for single channel audio tracks. Can be used to combine the tracks into stereo or
-     * multi-channel audio tracks.
+     * Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
      */
     @JsonProperty(value = "channelMapping")
     private ChannelMapping channelMapping;
@@ -37,11 +36,11 @@ public class AudioTrackDescriptor extends TrackDescriptor {
      * Creates an instance of AudioTrackDescriptor class.
      */
     public AudioTrackDescriptor() {
+        withOdataType("#Microsoft.Media.AudioTrackDescriptor");
     }
 
     /**
-     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
-     * tracks into stereo or multi-channel audio tracks.
+     * Get the channelMapping property: Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
      * 
      * @return the channelMapping value.
      */
@@ -50,8 +49,7 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     }
 
     /**
-     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
-     * tracks into stereo or multi-channel audio tracks.
+     * Set the channelMapping property: Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
      * 
      * @param channelMapping the channelMapping value to set.
      * @return the AudioTrackDescriptor object itself.

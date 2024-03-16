@@ -11,8 +11,7 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.App
  */
 public interface ApplicationInsightsComponentExportConfiguration {
     /**
-     * Gets the exportId property: The unique ID of the export configuration inside an Application Insights component.
-     * It is auto generated when the Continuous Export configuration is created.
+     * Gets the exportId property: The unique ID of the export configuration inside an Application Insights component. It is auto generated when the Continuous Export configuration is created.
      * 
      * @return the exportId value.
      */
@@ -26,9 +25,7 @@ public interface ApplicationInsightsComponentExportConfiguration {
     String instrumentationKey();
 
     /**
-     * Gets the recordTypes property: This comma separated list of document types that will be exported. The possible
-     * values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',
-     * 'PerformanceCounters', 'Availability', 'Messages'.
+     * Gets the recordTypes property: This comma separated list of document types that will be exported. The possible values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
      * 
      * @return the recordTypes value.
      */
@@ -84,8 +81,7 @@ public interface ApplicationInsightsComponentExportConfiguration {
     String destinationType();
 
     /**
-     * Gets the isUserEnabled property: This will be 'true' if the Continuous Export configuration is enabled, otherwise
-     * it will be 'false'.
+     * Gets the isUserEnabled property: This will be 'true' if the Continuous Export configuration is enabled, otherwise it will be 'false'.
      * 
      * @return the isUserEnabled value.
      */
@@ -106,16 +102,14 @@ public interface ApplicationInsightsComponentExportConfiguration {
     String notificationQueueEnabled();
 
     /**
-     * Gets the exportStatus property: This indicates current Continuous Export configuration status. The possible
-     * values are 'Preparing', 'Success', 'Failure'.
+     * Gets the exportStatus property: This indicates current Continuous Export configuration status. The possible values are 'Preparing', 'Success', 'Failure'.
      * 
      * @return the exportStatus value.
      */
     String exportStatus();
 
     /**
-     * Gets the lastSuccessTime property: The last time data was successfully delivered to the destination storage
-     * container for this Continuous Export configuration.
+     * Gets the lastSuccessTime property: The last time data was successfully delivered to the destination storage container for this Continuous Export configuration.
      * 
      * @return the lastSuccessTime value.
      */
@@ -129,8 +123,7 @@ public interface ApplicationInsightsComponentExportConfiguration {
     String lastGapTime();
 
     /**
-     * Gets the permanentErrorReason property: This is the reason the Continuous Export configuration started failing.
-     * It can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
+     * Gets the permanentErrorReason property: This is the reason the Continuous Export configuration started failing. It can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
      * 
      * @return the permanentErrorReason value.
      */
@@ -151,9 +144,7 @@ public interface ApplicationInsightsComponentExportConfiguration {
     String containerName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentExportConfigurationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentExportConfigurationInner object.
      * 
      * @return the inner object.
      */

@@ -29,8 +29,7 @@ public final class ExportExecutionProperties {
     private ExecutionStatus status;
 
     /*
-     * The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For
-     * Scheduled executions, it is the constant value - System.
+     * The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For Scheduled executions, it is the constant value - System.
      */
     @JsonProperty(value = "submittedBy")
     private String submittedBy;
@@ -112,8 +111,7 @@ public final class ExportExecutionProperties {
     }
 
     /**
-     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
+     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For Scheduled executions, it is the constant value - System.
      * 
      * @return the submittedBy value.
      */
@@ -122,8 +120,7 @@ public final class ExportExecutionProperties {
     }
 
     /**
-     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
+     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For Scheduled executions, it is the constant value - System.
      * 
      * @param submittedBy the submittedBy value to set.
      * @return the ExportExecutionProperties object itself.

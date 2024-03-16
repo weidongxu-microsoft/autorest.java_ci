@@ -53,8 +53,7 @@ public interface StaticSitesWorkflowPreview {
     String contents();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner object.
      * 
      * @return the inner object.
      */

@@ -9,9 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed
- * disk along with VMGuestState blob, VMGuestStateOnly for encryption of just the VMGuestState blob, and NonPersistedTPM
- * for not persisting firmware state in the VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
+ * Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, VMGuestStateOnly for encryption of just the VMGuestState blob, and NonPersistedTPM for not persisting firmware state in the VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
  */
 public final class SecurityEncryptionTypes extends ExpandableStringEnum<SecurityEncryptionTypes> {
     /**

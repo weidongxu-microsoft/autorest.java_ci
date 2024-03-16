@@ -22,8 +22,7 @@ public final class SecurityAlertPolicyProperties {
     private ServerSecurityAlertPolicyState state;
 
     /*
-     * Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability,
-     * Access_Anomaly
+     * Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly
      */
     @JsonProperty(value = "disabledAlerts")
     private List<String> disabledAlerts;
@@ -41,8 +40,7 @@ public final class SecurityAlertPolicyProperties {
     private Boolean emailAccountAdmins;
 
     /*
-     * Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold
-     * all Threat Detection audit logs.
+     * Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      */
     @JsonProperty(value = "storageEndpoint")
     private String storageEndpoint;
@@ -86,8 +84,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Get the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
-     * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+     * Get the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
      * 
      * @return the disabledAlerts value.
      */
@@ -96,8 +93,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Set the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
-     * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+     * Set the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
      * 
      * @param disabledAlerts the disabledAlerts value to set.
      * @return the SecurityAlertPolicyProperties object itself.
@@ -148,8 +144,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Get the storageEndpoint property: Specifies the blob storage endpoint (e.g.
-     * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Get the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      * 
      * @return the storageEndpoint value.
      */
@@ -158,8 +153,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Set the storageEndpoint property: Specifies the blob storage endpoint (e.g.
-     * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Set the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      * 
      * @param storageEndpoint the storageEndpoint value to set.
      * @return the SecurityAlertPolicyProperties object itself.
@@ -170,8 +164,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Get the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
-     * account.
+     * Get the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account.
      * 
      * @return the storageAccountAccessKey value.
      */
@@ -180,8 +173,7 @@ public final class SecurityAlertPolicyProperties {
     }
 
     /**
-     * Set the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
-     * account.
+     * Set the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account.
      * 
      * @param storageAccountAccessKey the storageAccountAccessKey value to set.
      * @return the SecurityAlertPolicyProperties object itself.

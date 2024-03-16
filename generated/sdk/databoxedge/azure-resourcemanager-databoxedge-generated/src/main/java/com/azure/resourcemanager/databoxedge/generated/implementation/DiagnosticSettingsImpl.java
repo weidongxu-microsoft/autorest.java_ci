@@ -53,8 +53,8 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
 
     public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(String deviceName,
         String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        DiagnosticProactiveLogCollectionSettingsInner inner
-            = this.serviceClient().updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
+        DiagnosticProactiveLogCollectionSettingsInner inner = this.serviceClient()
+            .updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
                 proactiveLogCollectionSettings);
         if (inner != null) {
             return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
@@ -66,8 +66,8 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
     public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(String deviceName,
         String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
         Context context) {
-        DiagnosticProactiveLogCollectionSettingsInner inner
-            = this.serviceClient().updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
+        DiagnosticProactiveLogCollectionSettingsInner inner = this.serviceClient()
+            .updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
                 proactiveLogCollectionSettings, context);
         if (inner != null) {
             return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
@@ -113,8 +113,9 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
     public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(String deviceName,
         String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        DiagnosticRemoteSupportSettingsInner inner = this.serviceClient().updateDiagnosticRemoteSupportSettings(
-            deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
+        DiagnosticRemoteSupportSettingsInner inner = this.serviceClient()
+            .updateDiagnosticRemoteSupportSettings(deviceName, resourceGroupName, diagnosticRemoteSupportSettings,
+                context);
         if (inner != null) {
             return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
         } else {

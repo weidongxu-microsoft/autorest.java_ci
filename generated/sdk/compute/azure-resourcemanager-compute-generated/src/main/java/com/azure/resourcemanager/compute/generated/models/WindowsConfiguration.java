@@ -14,32 +14,25 @@ import java.util.List;
 @Fluent
 public final class WindowsConfiguration {
     /*
-     * Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not
-     * specified in the request body, it is set to true by default. This will ensure that VM Agent is installed on the
-     * VM so that extensions can be added to the VM later.
+     * Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, it is set to true by default. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      */
     @JsonProperty(value = "provisionVMAgent")
     private Boolean provisionVMAgent;
 
     /*
-     * Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For
-     * virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
+     * Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
      */
     @JsonProperty(value = "enableAutomaticUpdates")
     private Boolean enableAutomaticUpdates;
 
     /*
-     * Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible values can be
-     * [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value
-     * from time zones returned by
-     * [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
+     * Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
      */
     @JsonProperty(value = "timeZone")
     private String timeZone;
 
     /*
-     * Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file,
-     * which is used by Windows Setup.
+     * Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup.
      */
     @JsonProperty(value = "additionalUnattendContent")
     private List<AdditionalUnattendContent> additionalUnattendContent;
@@ -69,9 +62,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual
-     * machine. When this property is not specified in the request body, it is set to true by default. This will ensure
-     * that VM Agent is installed on the VM so that extensions can be added to the VM later.
+     * Get the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, it is set to true by default. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      * 
      * @return the provisionVMAgent value.
      */
@@ -80,9 +71,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual
-     * machine. When this property is not specified in the request body, it is set to true by default. This will ensure
-     * that VM Agent is installed on the VM so that extensions can be added to the VM later.
+     * Set the provisionVMAgent property: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, it is set to true by default. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
      * 
      * @param provisionVMAgent the provisionVMAgent value to set.
      * @return the WindowsConfiguration object itself.
@@ -93,9 +82,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the enableAutomaticUpdates property: Indicates whether Automatic Updates is enabled for the Windows virtual
-     * machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will
-     * take effect on OS reprovisioning.
+     * Get the enableAutomaticUpdates property: Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
      * 
      * @return the enableAutomaticUpdates value.
      */
@@ -104,9 +91,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the enableAutomaticUpdates property: Indicates whether Automatic Updates is enabled for the Windows virtual
-     * machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will
-     * take effect on OS reprovisioning.
+     * Set the enableAutomaticUpdates property: Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
      * 
      * @param enableAutomaticUpdates the enableAutomaticUpdates value to set.
      * @return the WindowsConfiguration object itself.
@@ -117,11 +102,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the timeZone property: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible
-     * values can be
-     * [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value
-     * from time zones returned by
-     * [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
+     * Get the timeZone property: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
      * 
      * @return the timeZone value.
      */
@@ -130,11 +111,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the timeZone property: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible
-     * values can be
-     * [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value
-     * from time zones returned by
-     * [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
+     * Set the timeZone property: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
      * 
      * @param timeZone the timeZone value to set.
      * @return the WindowsConfiguration object itself.
@@ -145,8 +122,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the additionalUnattendContent property: Specifies additional base-64 encoded XML formatted information that
-     * can be included in the Unattend.xml file, which is used by Windows Setup.
+     * Get the additionalUnattendContent property: Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup.
      * 
      * @return the additionalUnattendContent value.
      */
@@ -155,8 +131,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the additionalUnattendContent property: Specifies additional base-64 encoded XML formatted information that
-     * can be included in the Unattend.xml file, which is used by Windows Setup.
+     * Set the additionalUnattendContent property: Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup.
      * 
      * @param additionalUnattendContent the additionalUnattendContent value to set.
      * @return the WindowsConfiguration object itself.
@@ -188,8 +163,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the winRM property: Specifies the Windows Remote Management listeners. This enables remote Windows
-     * PowerShell.
+     * Get the winRM property: Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell.
      * 
      * @return the winRM value.
      */
@@ -198,8 +172,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the winRM property: Specifies the Windows Remote Management listeners. This enables remote Windows
-     * PowerShell.
+     * Set the winRM property: Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell.
      * 
      * @param winRM the winRM value to set.
      * @return the WindowsConfiguration object itself.
@@ -210,8 +183,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Get the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the
-     * Windows virtual machine. Default value is false.
+     * Get the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the Windows virtual machine. Default value is false.
      * 
      * @return the enableVMAgentPlatformUpdates value.
      */
@@ -220,8 +192,7 @@ public final class WindowsConfiguration {
     }
 
     /**
-     * Set the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the
-     * Windows virtual machine. Default value is false.
+     * Set the enableVMAgentPlatformUpdates property: Indicates whether VMAgent Platform Updates is enabled for the Windows virtual machine. Default value is false.
      * 
      * @param enableVMAgentPlatformUpdates the enableVMAgentPlatformUpdates value to set.
      * @return the WindowsConfiguration object itself.

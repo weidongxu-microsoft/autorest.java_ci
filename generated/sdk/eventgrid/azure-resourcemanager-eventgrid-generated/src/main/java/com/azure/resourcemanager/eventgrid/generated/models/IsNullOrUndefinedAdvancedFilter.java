@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * IsNullOrUndefined Advanced Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = IsNullOrUndefinedAdvancedFilter.class,
+    visible = true)
 @JsonTypeName("IsNullOrUndefined")
 @Fluent
 public final class IsNullOrUndefinedAdvancedFilter extends AdvancedFilter {
@@ -19,6 +23,7 @@ public final class IsNullOrUndefinedAdvancedFilter extends AdvancedFilter {
      * Creates an instance of IsNullOrUndefinedAdvancedFilter class.
      */
     public IsNullOrUndefinedAdvancedFilter() {
+        withOperatorType(AdvancedFilterOperatorType.IS_NULL_OR_UNDEFINED);
     }
 
     /**

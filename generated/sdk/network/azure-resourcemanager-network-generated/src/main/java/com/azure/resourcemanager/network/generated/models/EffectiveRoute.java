@@ -82,8 +82,7 @@ public final class EffectiveRoute {
     }
 
     /**
-     * Get the disableBgpRoutePropagation property: If true, on-premises routes are not propagated to the network
-     * interfaces in the subnet.
+     * Get the disableBgpRoutePropagation property: If true, on-premises routes are not propagated to the network interfaces in the subnet.
      * 
      * @return the disableBgpRoutePropagation value.
      */
@@ -92,8 +91,7 @@ public final class EffectiveRoute {
     }
 
     /**
-     * Set the disableBgpRoutePropagation property: If true, on-premises routes are not propagated to the network
-     * interfaces in the subnet.
+     * Set the disableBgpRoutePropagation property: If true, on-premises routes are not propagated to the network interfaces in the subnet.
      * 
      * @param disableBgpRoutePropagation the disableBgpRoutePropagation value to set.
      * @return the EffectiveRoute object itself.

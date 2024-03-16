@@ -84,8 +84,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public void deleteBastionShareableLinkByToken(String resourceGroupName, String bastionHostname,
         BastionShareableLinkTokenListRequest bslTokenRequest, Context context) {
-        this.serviceClient().deleteBastionShareableLinkByToken(resourceGroupName, bastionHostname, bslTokenRequest,
-            context);
+        this.serviceClient()
+            .deleteBastionShareableLinkByToken(resourceGroupName, bastionHostname, bslTokenRequest, context);
     }
 
     public PagedIterable<BastionShareableLink> getBastionShareableLink(String resourceGroupName, String bastionHostname,
@@ -174,9 +174,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<ActiveConnectivityConfigurationsListResult> listActiveConnectivityConfigurationsWithResponse(
         String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Integer top,
         Context context) {
-        Response<ActiveConnectivityConfigurationsListResultInner> inner
-            = this.serviceClient().listActiveConnectivityConfigurationsWithResponse(resourceGroupName,
-                networkManagerName, parameters, top, context);
+        Response<ActiveConnectivityConfigurationsListResultInner> inner = this.serviceClient()
+            .listActiveConnectivityConfigurationsWithResponse(resourceGroupName, networkManagerName, parameters, top,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ActiveConnectivityConfigurationsListResultImpl(inner.getValue(), this.manager()));
@@ -223,9 +223,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
         listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(String resourceGroupName,
             String virtualNetworkName, QueryRequestOptions parameters, Integer top, Context context) {
-        Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner> inner
-            = this.serviceClient().listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(resourceGroupName,
-                virtualNetworkName, parameters, top, context);
+        Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner> inner = this.serviceClient()
+            .listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(resourceGroupName, virtualNetworkName,
+                parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerEffectiveConnectivityConfigurationListResultImpl(inner.getValue(), this.manager()));
@@ -249,9 +249,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<NetworkManagerEffectiveSecurityAdminRulesListResult>
         listNetworkManagerEffectiveSecurityAdminRulesWithResponse(String resourceGroupName, String virtualNetworkName,
             QueryRequestOptions parameters, Integer top, Context context) {
-        Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner> inner
-            = this.serviceClient().listNetworkManagerEffectiveSecurityAdminRulesWithResponse(resourceGroupName,
-                virtualNetworkName, parameters, top, context);
+        Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner> inner = this.serviceClient()
+            .listNetworkManagerEffectiveSecurityAdminRulesWithResponse(resourceGroupName, virtualNetworkName,
+                parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerEffectiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
@@ -306,8 +306,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public VpnProfileResponse generatevirtualwanvpnserverconfigurationvpnprofile(String resourceGroupName,
         String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams, Context context) {
-        VpnProfileResponseInner inner = this.serviceClient().generatevirtualwanvpnserverconfigurationvpnprofile(
-            resourceGroupName, virtualWanName, vpnClientParams, context);
+        VpnProfileResponseInner inner = this.serviceClient()
+            .generatevirtualwanvpnserverconfigurationvpnprofile(resourceGroupName, virtualWanName, vpnClientParams,
+                context);
         if (inner != null) {
             return new VpnProfileResponseImpl(inner, this.manager());
         } else {

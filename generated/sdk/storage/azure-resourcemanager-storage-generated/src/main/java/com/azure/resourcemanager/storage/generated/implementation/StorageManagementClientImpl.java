@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.annotation.ServiceClient;
+import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.azure.core.http.HttpPipeline;
 import com.azure.core.http.HttpResponse;
@@ -31,6 +32,7 @@ import com.azure.resourcemanager.storage.generated.fluent.FileServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.FileSharesClient;
 import com.azure.resourcemanager.storage.generated.fluent.LocalUsersOperationsClient;
 import com.azure.resourcemanager.storage.generated.fluent.ManagementPoliciesClient;
+import com.azure.resourcemanager.storage.generated.fluent.NetworkSecurityPerimeterConfigurationsClient;
 import com.azure.resourcemanager.storage.generated.fluent.ObjectReplicationPoliciesOperationsClient;
 import com.azure.resourcemanager.storage.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.storage.generated.fluent.PrivateEndpointConnectionsClient;
@@ -139,6 +141,90 @@ public final class StorageManagementClientImpl implements StorageManagementClien
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
+    }
+
+    /**
+     * The BlobServicesClient object to access its operations.
+     */
+    private final BlobServicesClient blobServices;
+
+    /**
+     * Gets the BlobServicesClient object to access its operations.
+     * 
+     * @return the BlobServicesClient object.
+     */
+    public BlobServicesClient getBlobServices() {
+        return this.blobServices;
+    }
+
+    /**
+     * The BlobContainersClient object to access its operations.
+     */
+    private final BlobContainersClient blobContainers;
+
+    /**
+     * Gets the BlobContainersClient object to access its operations.
+     * 
+     * @return the BlobContainersClient object.
+     */
+    public BlobContainersClient getBlobContainers() {
+        return this.blobContainers;
+    }
+
+    /**
+     * The FileServicesClient object to access its operations.
+     */
+    private final FileServicesClient fileServices;
+
+    /**
+     * Gets the FileServicesClient object to access its operations.
+     * 
+     * @return the FileServicesClient object.
+     */
+    public FileServicesClient getFileServices() {
+        return this.fileServices;
+    }
+
+    /**
+     * The FileSharesClient object to access its operations.
+     */
+    private final FileSharesClient fileShares;
+
+    /**
+     * Gets the FileSharesClient object to access its operations.
+     * 
+     * @return the FileSharesClient object.
+     */
+    public FileSharesClient getFileShares() {
+        return this.fileShares;
+    }
+
+    /**
+     * The QueueServicesClient object to access its operations.
+     */
+    private final QueueServicesClient queueServices;
+
+    /**
+     * Gets the QueueServicesClient object to access its operations.
+     * 
+     * @return the QueueServicesClient object.
+     */
+    public QueueServicesClient getQueueServices() {
+        return this.queueServices;
+    }
+
+    /**
+     * The QueuesClient object to access its operations.
+     */
+    private final QueuesClient queues;
+
+    /**
+     * Gets the QueuesClient object to access its operations.
+     * 
+     * @return the QueuesClient object.
+     */
+    public QueuesClient getQueues() {
+        return this.queues;
     }
 
     /**
@@ -310,90 +396,6 @@ public final class StorageManagementClientImpl implements StorageManagementClien
     }
 
     /**
-     * The BlobServicesClient object to access its operations.
-     */
-    private final BlobServicesClient blobServices;
-
-    /**
-     * Gets the BlobServicesClient object to access its operations.
-     * 
-     * @return the BlobServicesClient object.
-     */
-    public BlobServicesClient getBlobServices() {
-        return this.blobServices;
-    }
-
-    /**
-     * The BlobContainersClient object to access its operations.
-     */
-    private final BlobContainersClient blobContainers;
-
-    /**
-     * Gets the BlobContainersClient object to access its operations.
-     * 
-     * @return the BlobContainersClient object.
-     */
-    public BlobContainersClient getBlobContainers() {
-        return this.blobContainers;
-    }
-
-    /**
-     * The FileServicesClient object to access its operations.
-     */
-    private final FileServicesClient fileServices;
-
-    /**
-     * Gets the FileServicesClient object to access its operations.
-     * 
-     * @return the FileServicesClient object.
-     */
-    public FileServicesClient getFileServices() {
-        return this.fileServices;
-    }
-
-    /**
-     * The FileSharesClient object to access its operations.
-     */
-    private final FileSharesClient fileShares;
-
-    /**
-     * Gets the FileSharesClient object to access its operations.
-     * 
-     * @return the FileSharesClient object.
-     */
-    public FileSharesClient getFileShares() {
-        return this.fileShares;
-    }
-
-    /**
-     * The QueueServicesClient object to access its operations.
-     */
-    private final QueueServicesClient queueServices;
-
-    /**
-     * Gets the QueueServicesClient object to access its operations.
-     * 
-     * @return the QueueServicesClient object.
-     */
-    public QueueServicesClient getQueueServices() {
-        return this.queueServices;
-    }
-
-    /**
-     * The QueuesClient object to access its operations.
-     */
-    private final QueuesClient queues;
-
-    /**
-     * Gets the QueuesClient object to access its operations.
-     * 
-     * @return the QueuesClient object.
-     */
-    public QueuesClient getQueues() {
-        return this.queues;
-    }
-
-    /**
      * The TableServicesClient object to access its operations.
      */
     private final TableServicesClient tableServices;
@@ -422,6 +424,20 @@ public final class StorageManagementClientImpl implements StorageManagementClien
     }
 
     /**
+     * The NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     */
+    private final NetworkSecurityPerimeterConfigurationsClient networkSecurityPerimeterConfigurations;
+
+    /**
+     * Gets the NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     * 
+     * @return the NetworkSecurityPerimeterConfigurationsClient object.
+     */
+    public NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations() {
+        return this.networkSecurityPerimeterConfigurations;
+    }
+
+    /**
      * Initializes an instance of StorageManagementClient client.
      * 
      * @param httpPipeline The HTTP pipeline to send requests through.
@@ -438,7 +454,13 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-01-01";
+        this.apiVersion = "2023-04-01";
+        this.blobServices = new BlobServicesClientImpl(this);
+        this.blobContainers = new BlobContainersClientImpl(this);
+        this.fileServices = new FileServicesClientImpl(this);
+        this.fileShares = new FileSharesClientImpl(this);
+        this.queueServices = new QueueServicesClientImpl(this);
+        this.queues = new QueuesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.skus = new SkusClientImpl(this);
         this.storageAccounts = new StorageAccountsClientImpl(this);
@@ -451,14 +473,9 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.objectReplicationPoliciesOperations = new ObjectReplicationPoliciesOperationsClientImpl(this);
         this.localUsersOperations = new LocalUsersOperationsClientImpl(this);
         this.encryptionScopes = new EncryptionScopesClientImpl(this);
-        this.blobServices = new BlobServicesClientImpl(this);
-        this.blobContainers = new BlobContainersClientImpl(this);
-        this.fileServices = new FileServicesClientImpl(this);
-        this.fileShares = new FileSharesClientImpl(this);
-        this.queueServices = new QueueServicesClientImpl(this);
-        this.queues = new QueuesClientImpl(this);
         this.tableServices = new TableServicesClientImpl(this);
         this.tables = new TablesClientImpl(this);
+        this.networkSecurityPerimeterConfigurations = new NetworkSecurityPerimeterConfigurationsClientImpl(this);
     }
 
     /**
@@ -521,8 +538,8 @@ public final class StorageManagementClientImpl implements StorageManagementClien
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
-                            SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter()
+                            .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }
@@ -563,7 +580,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         }
 
         public String getHeaderValue(String s) {
-            return httpHeaders.getValue(s);
+            return httpHeaders.getValue(HttpHeaderName.fromString(s));
         }
 
         public HttpHeaders getHeaders() {

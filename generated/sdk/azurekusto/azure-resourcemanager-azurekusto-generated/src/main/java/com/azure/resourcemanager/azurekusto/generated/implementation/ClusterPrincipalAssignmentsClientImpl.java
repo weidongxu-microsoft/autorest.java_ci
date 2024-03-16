@@ -67,8 +67,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientClusterPrincipalAssignments to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientClusterPrincipalAssignments to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -134,8 +133,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -179,8 +177,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -410,8 +407,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a cluster principal assignment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a cluster principal assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -459,8 +455,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a cluster principal assignment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a cluster principal assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -622,7 +617,8 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
     private Mono<ClusterPrincipalAssignmentInner> createOrUpdateAsync(String resourceGroupName, String clusterName,
         String principalAssignmentName, ClusterPrincipalAssignmentInner parameters, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, clusterName, principalAssignmentName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -895,8 +891,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the list Kusto cluster principal assignments operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterPrincipalAssignmentInner>> listSinglePageAsync(String resourceGroupName,
@@ -934,8 +929,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the list Kusto cluster principal assignments operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterPrincipalAssignmentInner>> listSinglePageAsync(String resourceGroupName,
@@ -972,8 +966,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response as paginated response with
-     * {@link PagedFlux}.
+     * @return the list Kusto cluster principal assignments operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClusterPrincipalAssignmentInner> listAsync(String resourceGroupName, String clusterName) {
@@ -989,8 +982,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response as paginated response with
-     * {@link PagedFlux}.
+     * @return the list Kusto cluster principal assignments operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClusterPrincipalAssignmentInner> listAsync(String resourceGroupName, String clusterName,
@@ -1006,8 +998,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list Kusto cluster principal assignments operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClusterPrincipalAssignmentInner> list(String resourceGroupName, String clusterName) {
@@ -1023,8 +1014,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto cluster principal assignments operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list Kusto cluster principal assignments operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClusterPrincipalAssignmentInner> list(String resourceGroupName, String clusterName,

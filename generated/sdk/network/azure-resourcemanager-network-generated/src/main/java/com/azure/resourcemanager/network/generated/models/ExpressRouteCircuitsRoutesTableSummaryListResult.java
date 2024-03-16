@@ -26,9 +26,7 @@ public interface ExpressRouteCircuitsRoutesTableSummaryListResult {
     String nextLink();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableSummaryListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableSummaryListResultInner object.
      * 
      * @return the inner object.
      */

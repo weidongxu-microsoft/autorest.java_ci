@@ -15,25 +15,19 @@ import java.time.Duration;
 @Fluent
 public final class Fade {
     /*
-     * The Duration of the fade effect in the video. The value can be in ISO 8601 format (For example, PT05S to fade
-     * In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from the start time), or a
-     * relative value to stream duration (For example, 10% to fade 10% of stream duration)
+     * The Duration of the fade effect in the video. The value can be in ISO 8601 format (For example, PT05S to fade In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from the start time), or a relative value to stream duration (For example, 10% to fade 10% of stream duration)
      */
     @JsonProperty(value = "duration", required = true)
     private Duration duration;
 
     /*
-     * The Color for the fade In/Out. it can be on the CSS Level1 colors
-     * https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g:
-     * rgb(255,0,0), 0xFF0000 or #FF0000
+     * The Color for the fade In/Out. it can be on the CSS Level1 colors https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g: rgb(255,0,0), 0xFF0000 or #FF0000
      */
     @JsonProperty(value = "fadeColor", required = true)
     private String fadeColor;
 
     /*
-     * The position in the input video from where to start fade. The value can be in ISO 8601 format (For example, PT05S
-     * to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to
-     * stream duration (For example, 10% to start at 10% of stream duration). Default is 0
+     * The position in the input video from where to start fade. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Default is 0
      */
     @JsonProperty(value = "start")
     private String start;
@@ -45,9 +39,7 @@ public final class Fade {
     }
 
     /**
-     * Get the duration property: The Duration of the fade effect in the video. The value can be in ISO 8601 format (For
-     * example, PT05S to fade In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from
-     * the start time), or a relative value to stream duration (For example, 10% to fade 10% of stream duration).
+     * Get the duration property: The Duration of the fade effect in the video. The value can be in ISO 8601 format (For example, PT05S to fade In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from the start time), or a relative value to stream duration (For example, 10% to fade 10% of stream duration).
      * 
      * @return the duration value.
      */
@@ -56,9 +48,7 @@ public final class Fade {
     }
 
     /**
-     * Set the duration property: The Duration of the fade effect in the video. The value can be in ISO 8601 format (For
-     * example, PT05S to fade In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from
-     * the start time), or a relative value to stream duration (For example, 10% to fade 10% of stream duration).
+     * Set the duration property: The Duration of the fade effect in the video. The value can be in ISO 8601 format (For example, PT05S to fade In/Out a color during 5 seconds), or a frame count (For example, 10 to fade 10 frames from the start time), or a relative value to stream duration (For example, 10% to fade 10% of stream duration).
      * 
      * @param duration the duration value to set.
      * @return the Fade object itself.
@@ -69,9 +59,7 @@ public final class Fade {
     }
 
     /**
-     * Get the fadeColor property: The Color for the fade In/Out. it can be on the CSS Level1 colors
-     * https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g:
-     * rgb(255,0,0), 0xFF0000 or #FF0000.
+     * Get the fadeColor property: The Color for the fade In/Out. it can be on the CSS Level1 colors https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g: rgb(255,0,0), 0xFF0000 or #FF0000.
      * 
      * @return the fadeColor value.
      */
@@ -80,9 +68,7 @@ public final class Fade {
     }
 
     /**
-     * Set the fadeColor property: The Color for the fade In/Out. it can be on the CSS Level1 colors
-     * https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g:
-     * rgb(255,0,0), 0xFF0000 or #FF0000.
+     * Set the fadeColor property: The Color for the fade In/Out. it can be on the CSS Level1 colors https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color_keywords or an RGB/hex value: e.g: rgb(255,0,0), 0xFF0000 or #FF0000.
      * 
      * @param fadeColor the fadeColor value to set.
      * @return the Fade object itself.
@@ -93,9 +79,7 @@ public final class Fade {
     }
 
     /**
-     * Get the start property: The position in the input video from where to start fade. The value can be in ISO 8601
-     * format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame),
-     * or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Default is 0.
+     * Get the start property: The position in the input video from where to start fade. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Default is 0.
      * 
      * @return the start value.
      */
@@ -104,9 +88,7 @@ public final class Fade {
     }
 
     /**
-     * Set the start property: The position in the input video from where to start fade. The value can be in ISO 8601
-     * format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame),
-     * or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Default is 0.
+     * Set the start property: The position in the input video from where to start fade. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Default is 0.
      * 
      * @param start the start value to set.
      * @return the Fade object itself.

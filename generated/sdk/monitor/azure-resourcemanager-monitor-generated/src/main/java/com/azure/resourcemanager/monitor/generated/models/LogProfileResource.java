@@ -50,33 +50,28 @@ public interface LogProfileResource {
     Map<String, String> tags();
 
     /**
-     * Gets the storageAccountId property: the resource id of the storage account to which you would like to send the
-     * Activity Log.
+     * Gets the storageAccountId property: the resource id of the storage account to which you would like to send the Activity Log.
      * 
      * @return the storageAccountId value.
      */
     String storageAccountId();
 
     /**
-     * Gets the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like
-     * to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource
-     * ID}/authorizationrules/{key name}'.
+     * Gets the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
      * 
      * @return the serviceBusRuleId value.
      */
     String serviceBusRuleId();
 
     /**
-     * Gets the locations property: List of regions for which Activity Log events should be stored or streamed. It is a
-     * comma separated list of valid ARM locations including the 'global' location.
+     * Gets the locations property: List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
      * 
      * @return the locations value.
      */
     List<String> locations();
 
     /**
-     * Gets the categories property: the categories of the logs. These categories are created as is convenient to the
-     * user. Some values are: 'Write', 'Delete', and/or 'Action.'.
+     * Gets the categories property: the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
      * 
      * @return the categories value.
      */
@@ -153,11 +148,9 @@ public interface LogProfileResource {
          */
         interface WithLocations {
             /**
-             * Specifies the locations property: List of regions for which Activity Log events should be stored or
-             * streamed. It is a comma separated list of valid ARM locations including the 'global' location..
+             * Specifies the locations property: List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location..
              * 
-             * @param locations List of regions for which Activity Log events should be stored or streamed. It is a
-             * comma separated list of valid ARM locations including the 'global' location.
+             * @param locations List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
              * @return the next definition stage.
              */
             WithCategories withLocations(List<String> locations);
@@ -168,11 +161,9 @@ public interface LogProfileResource {
          */
         interface WithCategories {
             /**
-             * Specifies the categories property: the categories of the logs. These categories are created as is
-             * convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
+             * Specifies the categories property: the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
              * 
-             * @param categories the categories of the logs. These categories are created as is convenient to the user.
-             * Some values are: 'Write', 'Delete', and/or 'Action.'.
+             * @param categories the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
              * @return the next definition stage.
              */
             WithRetentionPolicy withCategories(List<String> categories);
@@ -192,8 +183,7 @@ public interface LogProfileResource {
         }
 
         /**
-         * The stage of the LogProfileResource definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LogProfileResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithStorageAccountId,
             DefinitionStages.WithServiceBusRuleId {
@@ -231,11 +221,9 @@ public interface LogProfileResource {
          */
         interface WithStorageAccountId {
             /**
-             * Specifies the storageAccountId property: the resource id of the storage account to which you would like
-             * to send the Activity Log..
+             * Specifies the storageAccountId property: the resource id of the storage account to which you would like to send the Activity Log..
              * 
-             * @param storageAccountId the resource id of the storage account to which you would like to send the
-             * Activity Log.
+             * @param storageAccountId the resource id of the storage account to which you would like to send the Activity Log.
              * @return the next definition stage.
              */
             WithCreate withStorageAccountId(String storageAccountId);
@@ -246,13 +234,9 @@ public interface LogProfileResource {
          */
         interface WithServiceBusRuleId {
             /**
-             * Specifies the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which
-             * you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format:
-             * '{service bus resource ID}/authorizationrules/{key name}'..
+             * Specifies the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'..
              * 
-             * @param serviceBusRuleId The service bus rule ID of the service bus namespace in which you would like to
-             * have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus
-             * resource ID}/authorizationrules/{key name}'.
+             * @param serviceBusRuleId The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
              * @return the next definition stage.
              */
             WithCreate withServiceBusRuleId(String serviceBusRuleId);
@@ -310,11 +294,9 @@ public interface LogProfileResource {
          */
         interface WithStorageAccountId {
             /**
-             * Specifies the storageAccountId property: the resource id of the storage account to which you would like
-             * to send the Activity Log..
+             * Specifies the storageAccountId property: the resource id of the storage account to which you would like to send the Activity Log..
              * 
-             * @param storageAccountId the resource id of the storage account to which you would like to send the
-             * Activity Log.
+             * @param storageAccountId the resource id of the storage account to which you would like to send the Activity Log.
              * @return the next definition stage.
              */
             Update withStorageAccountId(String storageAccountId);
@@ -325,13 +307,9 @@ public interface LogProfileResource {
          */
         interface WithServiceBusRuleId {
             /**
-             * Specifies the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which
-             * you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format:
-             * '{service bus resource ID}/authorizationrules/{key name}'..
+             * Specifies the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'..
              * 
-             * @param serviceBusRuleId The service bus rule ID of the service bus namespace in which you would like to
-             * have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus
-             * resource ID}/authorizationrules/{key name}'.
+             * @param serviceBusRuleId The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
              * @return the next definition stage.
              */
             Update withServiceBusRuleId(String serviceBusRuleId);
@@ -342,11 +320,9 @@ public interface LogProfileResource {
          */
         interface WithLocations {
             /**
-             * Specifies the locations property: List of regions for which Activity Log events should be stored or
-             * streamed. It is a comma separated list of valid ARM locations including the 'global' location..
+             * Specifies the locations property: List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location..
              * 
-             * @param locations List of regions for which Activity Log events should be stored or streamed. It is a
-             * comma separated list of valid ARM locations including the 'global' location.
+             * @param locations List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
              * @return the next definition stage.
              */
             Update withLocations(List<String> locations);
@@ -357,11 +333,9 @@ public interface LogProfileResource {
          */
         interface WithCategories {
             /**
-             * Specifies the categories property: the categories of the logs. These categories are created as is
-             * convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
+             * Specifies the categories property: the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
              * 
-             * @param categories the categories of the logs. These categories are created as is convenient to the user.
-             * Some values are: 'Write', 'Delete', and/or 'Action.'.
+             * @param categories the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
              * @return the next definition stage.
              */
             Update withCategories(List<String> categories);

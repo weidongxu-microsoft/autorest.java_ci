@@ -56,8 +56,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
     }
 
     /**
-     * The interface defining all the services for MonitorClientAlertRuleIncidents to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MonitorClientAlertRuleIncidents to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientAlertRu")
@@ -90,8 +89,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an incident associated to an alert rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IncidentInner>> getWithResponseAsync(String resourceGroupName, String ruleName,
@@ -132,8 +130,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an incident associated to an alert rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IncidentInner>> getWithResponseAsync(String resourceGroupName, String ruleName,
@@ -222,8 +219,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IncidentInner>> listByAlertRuleSinglePageAsync(String resourceGroupName,
@@ -262,8 +258,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IncidentInner>> listByAlertRuleSinglePageAsync(String resourceGroupName, String ruleName,

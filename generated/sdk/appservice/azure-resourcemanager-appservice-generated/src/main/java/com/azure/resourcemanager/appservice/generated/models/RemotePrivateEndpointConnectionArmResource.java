@@ -76,9 +76,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner object.
      * 
      * @return the inner object.
      */
@@ -116,9 +114,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
         }
 
         /**
-         * The stage of the RemotePrivateEndpointConnectionArmResource definition which contains all the minimum
-         * required properties for the resource to be created, but also allows for any other optional properties to be
-         * specified.
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithPrivateEndpoint,
             DefinitionStages.WithPrivateLinkServiceConnectionState, DefinitionStages.WithIpAddresses {
@@ -165,8 +161,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
         }
 
         /**
-         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify
-         * privateLinkServiceConnectionState.
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify privateLinkServiceConnectionState.
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
@@ -252,8 +247,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
         }
 
         /**
-         * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify
-         * privateLinkServiceConnectionState.
+         * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify privateLinkServiceConnectionState.
          */
         interface WithPrivateLinkServiceConnectionState {
             /**

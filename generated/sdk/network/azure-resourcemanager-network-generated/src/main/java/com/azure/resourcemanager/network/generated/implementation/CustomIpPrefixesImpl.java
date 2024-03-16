@@ -37,8 +37,8 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
 
     public Response<CustomIpPrefix> getByResourceGroupWithResponse(String resourceGroupName, String customIpPrefixName,
         String expand, Context context) {
-        Response<CustomIpPrefixInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            customIpPrefixName, expand, context);
+        Response<CustomIpPrefixInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CustomIpPrefixImpl(inner.getValue(), this.manager()));

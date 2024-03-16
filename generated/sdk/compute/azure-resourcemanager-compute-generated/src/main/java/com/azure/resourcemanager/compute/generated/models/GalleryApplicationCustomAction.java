@@ -15,7 +15,7 @@ import java.util.List;
 @Fluent
 public final class GalleryApplicationCustomAction {
     /*
-     * The name of the custom action. Must be unique within the Gallery Application Version.
+     * The name of the custom action.  Must be unique within the Gallery Application Version.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -45,7 +45,7 @@ public final class GalleryApplicationCustomAction {
     }
 
     /**
-     * Get the name property: The name of the custom action. Must be unique within the Gallery Application Version.
+     * Get the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
      * 
      * @return the name value.
      */
@@ -54,7 +54,7 @@ public final class GalleryApplicationCustomAction {
     }
 
     /**
-     * Set the name property: The name of the custom action. Must be unique within the Gallery Application Version.
+     * Set the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
      * 
      * @param name the name value to set.
      * @return the GalleryApplicationCustomAction object itself.

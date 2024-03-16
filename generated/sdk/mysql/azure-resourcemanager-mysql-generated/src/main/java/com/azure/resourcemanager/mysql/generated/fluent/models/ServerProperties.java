@@ -27,8 +27,7 @@ import java.util.List;
 @Fluent
 public final class ServerProperties {
     /*
-     * The administrator's login name of a server. Can only be specified when the server is being created (and is
-     * required for creation).
+     * The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      */
     @JsonProperty(value = "administratorLogin")
     private String administratorLogin;
@@ -148,8 +147,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @return the administratorLogin value.
      */
@@ -158,8 +156,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @param administratorLogin the administratorLogin value to set.
      * @return the ServerProperties object itself.
@@ -170,8 +167,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the administratorLoginPassword property: The password of the administrator login (required for server
-     * creation).
+     * Get the administratorLoginPassword property: The password of the administrator login (required for server creation).
      * 
      * @return the administratorLoginPassword value.
      */
@@ -180,8 +176,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the administratorLoginPassword property: The password of the administrator login (required for server
-     * creation).
+     * Set the administratorLoginPassword property: The password of the administrator login (required for server creation).
      * 
      * @param administratorLoginPassword the administratorLoginPassword value to set.
      * @return the ServerProperties object itself.
@@ -272,8 +267,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
-     * from.
+     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from.
      * 
      * @return the restorePointInTime value.
      */
@@ -282,8 +276,7 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
-     * from.
+     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from.
      * 
      * @param restorePointInTime the restorePointInTime value to set.
      * @return the ServerProperties object itself.

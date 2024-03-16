@@ -35,8 +35,9 @@ public final class ReportsImpl implements Reports {
     public Response<LatencyScorecard> getLatencyScorecardsWithResponse(String resourceGroupName, String profileName,
         String experimentName, LatencyScorecardAggregationInterval aggregationInterval, String endDateTimeUtc,
         String country, Context context) {
-        Response<LatencyScorecardInner> inner = this.serviceClient().getLatencyScorecardsWithResponse(resourceGroupName,
-            profileName, experimentName, aggregationInterval, endDateTimeUtc, country, context);
+        Response<LatencyScorecardInner> inner = this.serviceClient()
+            .getLatencyScorecardsWithResponse(resourceGroupName, profileName, experimentName, aggregationInterval,
+                endDateTimeUtc, country, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LatencyScorecardImpl(inner.getValue(), this.manager()));
@@ -47,8 +48,8 @@ public final class ReportsImpl implements Reports {
 
     public LatencyScorecard getLatencyScorecards(String resourceGroupName, String profileName, String experimentName,
         LatencyScorecardAggregationInterval aggregationInterval) {
-        LatencyScorecardInner inner = this.serviceClient().getLatencyScorecards(resourceGroupName, profileName,
-            experimentName, aggregationInterval);
+        LatencyScorecardInner inner = this.serviceClient()
+            .getLatencyScorecards(resourceGroupName, profileName, experimentName, aggregationInterval);
         if (inner != null) {
             return new LatencyScorecardImpl(inner, this.manager());
         } else {
@@ -60,9 +61,9 @@ public final class ReportsImpl implements Reports {
         String experimentName, OffsetDateTime startDateTimeUtc, OffsetDateTime endDateTimeUtc,
         TimeseriesAggregationInterval aggregationInterval, TimeseriesType timeseriesType, String endpointParam,
         String country, Context context) {
-        Response<TimeseriesInner> inner
-            = this.serviceClient().getTimeseriesWithResponse(resourceGroupName, profileName, experimentName,
-                startDateTimeUtc, endDateTimeUtc, aggregationInterval, timeseriesType, endpointParam, country, context);
+        Response<TimeseriesInner> inner = this.serviceClient()
+            .getTimeseriesWithResponse(resourceGroupName, profileName, experimentName, startDateTimeUtc, endDateTimeUtc,
+                aggregationInterval, timeseriesType, endpointParam, country, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TimeseriesImpl(inner.getValue(), this.manager()));
@@ -74,8 +75,9 @@ public final class ReportsImpl implements Reports {
     public Timeseries getTimeseries(String resourceGroupName, String profileName, String experimentName,
         OffsetDateTime startDateTimeUtc, OffsetDateTime endDateTimeUtc,
         TimeseriesAggregationInterval aggregationInterval, TimeseriesType timeseriesType) {
-        TimeseriesInner inner = this.serviceClient().getTimeseries(resourceGroupName, profileName, experimentName,
-            startDateTimeUtc, endDateTimeUtc, aggregationInterval, timeseriesType);
+        TimeseriesInner inner = this.serviceClient()
+            .getTimeseries(resourceGroupName, profileName, experimentName, startDateTimeUtc, endDateTimeUtc,
+                aggregationInterval, timeseriesType);
         if (inner != null) {
             return new TimeseriesImpl(inner, this.manager());
         } else {

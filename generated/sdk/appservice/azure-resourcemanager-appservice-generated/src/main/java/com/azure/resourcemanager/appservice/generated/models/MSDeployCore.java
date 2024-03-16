@@ -128,8 +128,7 @@ public class MSDeployCore {
     }
 
     /**
-     * Get the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is
-     * used.
+     * Get the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is used.
      * 
      * @return the setParametersXmlFileUri value.
      */
@@ -138,8 +137,7 @@ public class MSDeployCore {
     }
 
     /**
-     * Set the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is
-     * used.
+     * Set the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is used.
      * 
      * @param setParametersXmlFileUri the setParametersXmlFileUri value to set.
      * @return the MSDeployCore object itself.

@@ -31,8 +31,8 @@ public final class GalleriesImpl implements Galleries {
 
     public Response<Gallery> getByResourceGroupWithResponse(String resourceGroupName, String galleryName,
         SelectPermissions select, GalleryExpandParams expand, Context context) {
-        Response<GalleryInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            galleryName, select, expand, context);
+        Response<GalleryInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, galleryName, select, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new GalleryImpl(inner.getValue(), this.manager()));

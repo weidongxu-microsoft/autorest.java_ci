@@ -74,14 +74,18 @@ public final class PolicyDefinitionImpl
     private String policyDefinitionName;
 
     public PolicyDefinition create() {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public PolicyDefinition create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -96,14 +100,18 @@ public final class PolicyDefinitionImpl
     }
 
     public PolicyDefinition apply() {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public PolicyDefinition apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .createOrUpdateWithResponse(policyDefinitionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -115,14 +123,18 @@ public final class PolicyDefinitionImpl
     }
 
     public PolicyDefinition refresh() {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .getWithResponse(policyDefinitionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .getWithResponse(policyDefinitionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PolicyDefinition refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicyDefinitions()
-            .getWithResponse(policyDefinitionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicyDefinitions()
+            .getWithResponse(policyDefinitionName, context)
+            .getValue();
         return this;
     }
 

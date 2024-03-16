@@ -63,8 +63,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * The interface defining all the services for MonitorClientActionGroups to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for MonitorClientActionGroups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientActionG")
@@ -662,8 +661,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listSinglePageAsync() {
@@ -692,8 +690,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listSinglePageAsync(Context context) {
@@ -772,8 +769,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -807,8 +803,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -894,8 +889,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
@@ -938,8 +932,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
@@ -982,8 +975,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
@@ -1001,8 +993,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
@@ -1020,8 +1011,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     }
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.

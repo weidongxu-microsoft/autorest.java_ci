@@ -73,8 +73,7 @@ public interface NatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName);
 
@@ -87,8 +86,7 @@ public interface NatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName, Context context);
 

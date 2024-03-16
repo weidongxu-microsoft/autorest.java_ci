@@ -12,16 +12,14 @@ import java.util.Map;
  */
 public interface ClusterQuotaConfigurationProperties {
     /**
-     * Gets the settings property: All possible Cluster settings - a collection of key/value paired settings which apply
-     * to quotas and configurations imposed on the cluster.
+     * Gets the settings property: All possible Cluster settings - a collection of key/value paired settings which apply to quotas and configurations imposed on the cluster.
      * 
      * @return the settings value.
      */
     Map<String, String> settings();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner object.
+     * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner object.
      * 
      * @return the inner object.
      */

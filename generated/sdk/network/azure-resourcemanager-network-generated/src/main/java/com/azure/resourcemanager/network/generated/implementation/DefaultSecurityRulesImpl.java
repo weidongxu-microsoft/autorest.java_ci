@@ -41,8 +41,8 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
 
     public Response<SecurityRule> getWithResponse(String resourceGroupName, String networkSecurityGroupName,
         String defaultSecurityRuleName, Context context) {
-        Response<SecurityRuleInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkSecurityGroupName, defaultSecurityRuleName, context);
+        Response<SecurityRuleInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SecurityRuleImpl(inner.getValue(), this.manager()));

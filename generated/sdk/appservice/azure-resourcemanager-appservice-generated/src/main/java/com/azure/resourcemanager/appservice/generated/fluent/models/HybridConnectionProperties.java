@@ -49,8 +49,7 @@ public final class HybridConnectionProperties {
     private String sendKeyName;
 
     /*
-     * The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be
-     * returned
+     * The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
      * normally, use the POST /listKeys API instead.
      */
     @JsonProperty(value = "sendKeyValue")
@@ -169,8 +168,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to
-     * authenticate to Service Bus.
+     * Get the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus.
      * 
      * @return the sendKeyName value.
      */
@@ -179,8 +177,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Set the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to
-     * authenticate to Service Bus.
+     * Set the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus.
      * 
      * @param sendKeyName the sendKeyName value to set.
      * @return the HybridConnectionProperties object itself.
@@ -191,8 +188,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In
-     * ARM this key will not be returned
+     * Get the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
      * normally, use the POST /listKeys API instead.
      * 
      * @return the sendKeyValue value.
@@ -202,8 +198,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Set the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In
-     * ARM this key will not be returned
+     * Set the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
      * normally, use the POST /listKeys API instead.
      * 
      * @param sendKeyValue the sendKeyValue value to set.
@@ -215,8 +210,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is
-     * .servicebus.windows.net.
+     * Get the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
      * 
      * @return the serviceBusSuffix value.
      */
@@ -225,8 +219,7 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Set the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is
-     * .servicebus.windows.net.
+     * Set the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
      * 
      * @param serviceBusSuffix the serviceBusSuffix value to set.
      * @return the HybridConnectionProperties object itself.

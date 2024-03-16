@@ -92,8 +92,7 @@ public interface CertificateDescription {
         }
 
         /**
-         * The stage of the CertificateDescription definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CertificateDescription definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithProperties, DefinitionStages.WithIfMatch {
             /**
@@ -130,11 +129,9 @@ public interface CertificateDescription {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: ETag of the Certificate. Do not specify for creating a brand new
-             * certificate. Required to update an existing certificate..
+             * Specifies the ifMatch property: ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate..
              * 
-             * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to
-             * update an existing certificate.
+             * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -190,11 +187,9 @@ public interface CertificateDescription {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: ETag of the Certificate. Do not specify for creating a brand new
-             * certificate. Required to update an existing certificate..
+             * Specifies the ifMatch property: ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate..
              * 
-             * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to
-             * update an existing certificate.
+             * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

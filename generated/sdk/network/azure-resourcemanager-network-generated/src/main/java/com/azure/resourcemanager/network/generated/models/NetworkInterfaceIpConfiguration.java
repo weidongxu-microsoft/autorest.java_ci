@@ -20,8 +20,7 @@ public interface NetworkInterfaceIpConfiguration {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -56,8 +55,7 @@ public interface NetworkInterfaceIpConfiguration {
     List<VirtualNetworkTap> virtualNetworkTaps();
 
     /**
-     * Gets the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
-     * resource.
+     * Gets the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
      * 
      * @return the applicationGatewayBackendAddressPools value.
      */
@@ -92,8 +90,7 @@ public interface NetworkInterfaceIpConfiguration {
     IpAllocationMethod privateIpAllocationMethod();
 
     /**
-     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is
-     * IPv4.
+     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -121,8 +118,7 @@ public interface NetworkInterfaceIpConfiguration {
     PublicIpAddress publicIpAddress();
 
     /**
-     * Gets the applicationSecurityGroups property: Application security groups in which the IP configuration is
-     * included.
+     * Gets the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
      * 
      * @return the applicationSecurityGroups value.
      */
@@ -143,8 +139,7 @@ public interface NetworkInterfaceIpConfiguration {
     NetworkInterfaceIpConfigurationPrivateLinkConnectionProperties privateLinkConnectionProperties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner object.
      * 
      * @return the inner object.
      */

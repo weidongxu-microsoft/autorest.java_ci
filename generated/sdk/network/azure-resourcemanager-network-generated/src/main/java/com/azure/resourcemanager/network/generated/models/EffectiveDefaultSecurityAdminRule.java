@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Network default admin rule.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = EffectiveDefaultSecurityAdminRule.class,
+    visible = true)
 @JsonTypeName("Default")
 @Fluent
 public final class EffectiveDefaultSecurityAdminRule extends EffectiveBaseSecurityAdminRule {
@@ -28,6 +32,7 @@ public final class EffectiveDefaultSecurityAdminRule extends EffectiveBaseSecuri
      * Creates an instance of EffectiveDefaultSecurityAdminRule class.
      */
     public EffectiveDefaultSecurityAdminRule() {
+        withKind(EffectiveAdminRuleKind.DEFAULT);
     }
 
     /**
@@ -172,9 +177,7 @@ public final class EffectiveDefaultSecurityAdminRule extends EffectiveBaseSecuri
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @return the priority value.
      */

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -17,15 +18,22 @@ import java.time.OffsetDateTime;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "authType",
-    defaultImpl = ResourceCertificateDetails.class)
+    defaultImpl = ResourceCertificateDetails.class,
+    visible = true)
 @JsonTypeName("ResourceCertificateDetails")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "AzureActiveDirectory", value = ResourceCertificateAndAadDetails.class),
     @JsonSubTypes.Type(name = "AccessControlService", value = ResourceCertificateAndAcsDetails.class) })
 @Fluent
 public class ResourceCertificateDetails {
+    /*
+     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "authType", required = true)
+    private String authType;
+
     /*
      * The base64 encoded certificate raw data string.
      */
@@ -78,6 +86,27 @@ public class ResourceCertificateDetails {
      * Creates an instance of ResourceCertificateDetails class.
      */
     public ResourceCertificateDetails() {
+        this.authType = "ResourceCertificateDetails";
+    }
+
+    /**
+     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     * 
+     * @return the authType value.
+     */
+    public String authType() {
+        return this.authType;
+    }
+
+    /**
+     * Set the authType property: This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     * 
+     * @param authType the authType value to set.
+     * @return the ResourceCertificateDetails object itself.
+     */
+    protected ResourceCertificateDetails withAuthType(String authType) {
+        this.authType = authType;
+        return this;
     }
 
     /**

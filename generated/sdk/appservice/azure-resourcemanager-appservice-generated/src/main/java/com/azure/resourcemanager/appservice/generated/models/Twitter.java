@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Twitter {
     /*
-     * <code>false</code> if the Twitter provider should not be enabled despite the set registration; otherwise,
-     * <code>true</code>.
+     * <code>false</code> if the Twitter provider should not be enabled despite the set registration; otherwise, <code>true</code>.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -32,8 +31,7 @@ public final class Twitter {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Twitter provider should not be enabled despite
-     * the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Twitter provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -42,8 +40,7 @@ public final class Twitter {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Twitter provider should not be enabled despite
-     * the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Twitter provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the Twitter object itself.

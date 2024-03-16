@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.annotation.ServiceClient;
+import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.azure.core.http.HttpPipeline;
 import com.azure.core.http.HttpResponse;
@@ -69,14 +70,12 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = EventGridManagementClientBuilder.class)
 public final class EventGridManagementClientImpl implements EventGridManagementClient {
     /**
-     * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of
-     * the URI for every service call.
+     * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms
-     * part of the URI for every service call.
+     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -595,8 +594,7 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The
-     * subscription ID forms part of the URI for every service call.
+     * @param subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     EventGridManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
@@ -700,8 +698,8 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
-                            SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter()
+                            .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }
@@ -742,7 +740,7 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
         }
 
         public String getHeaderValue(String s) {
-            return httpHeaders.getValue(s);
+            return httpHeaders.getValue(HttpHeaderName.fromString(s));
         }
 
         public HttpHeaders getHeaders() {

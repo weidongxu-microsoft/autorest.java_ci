@@ -22,8 +22,7 @@ public final class ActivityLogAlertActionGroup {
     private String actionGroupId;
 
     /*
-     * the dictionary of custom properties to include with the post operation. These data are appended to the webhook
-     * payload.
+     * the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
      */
     @JsonProperty(value = "webhookProperties")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -56,8 +55,7 @@ public final class ActivityLogAlertActionGroup {
     }
 
     /**
-     * Get the webhookProperties property: the dictionary of custom properties to include with the post operation. These
-     * data are appended to the webhook payload.
+     * Get the webhookProperties property: the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
      * 
      * @return the webhookProperties value.
      */
@@ -66,8 +64,7 @@ public final class ActivityLogAlertActionGroup {
     }
 
     /**
-     * Set the webhookProperties property: the dictionary of custom properties to include with the post operation. These
-     * data are appended to the webhook payload.
+     * Set the webhookProperties property: the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
      * 
      * @param webhookProperties the webhookProperties value to set.
      * @return the ActivityLogAlertActionGroup object itself.

@@ -39,8 +39,7 @@ public interface ApplicationInsightsComponentAnalyticsItem {
     String version();
 
     /**
-     * Gets the scope property: Enum indicating if this item definition is owned by a specific user or is shared between
-     * all users with access to the Application Insights component.
+     * Gets the scope property: Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.
      * 
      * @return the scope value.
      */
@@ -68,17 +67,14 @@ public interface ApplicationInsightsComponentAnalyticsItem {
     String timeModified();
 
     /**
-     * Gets the properties property: A set of properties that can be defined in the context of a specific item type.
-     * Each type may have its own properties.
+     * Gets the properties property: A set of properties that can be defined in the context of a specific item type. Each type may have its own properties.
      * 
      * @return the properties value.
      */
     ApplicationInsightsComponentAnalyticsItemProperties properties();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentAnalyticsItemInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentAnalyticsItemInner object.
      * 
      * @return the inner object.
      */

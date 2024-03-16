@@ -26,8 +26,7 @@ public final class ContainerNetworkInterfaceIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the container network interface IP configuration
-     * resource.
+     * Get the provisioningState property: The provisioning state of the container network interface IP configuration resource.
      * 
      * @return the provisioningState value.
      */

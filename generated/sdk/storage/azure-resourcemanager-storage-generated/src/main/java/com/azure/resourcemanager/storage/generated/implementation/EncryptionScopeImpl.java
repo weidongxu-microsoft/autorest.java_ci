@@ -78,14 +78,16 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
     }
 
     public EncryptionScope create() {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
             .putWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public EncryptionScope create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
             .putWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), context)
             .getValue();
         return this;
@@ -102,14 +104,16 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
     }
 
     public EncryptionScope apply() {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
             .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public EncryptionScope apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
             .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), context)
             .getValue();
         return this;
@@ -125,14 +129,18 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
     }
 
     public EncryptionScope refresh() {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
-            .getWithResponse(resourceGroupName, accountName, encryptionScopeName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
+            .getWithResponse(resourceGroupName, accountName, encryptionScopeName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public EncryptionScope refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEncryptionScopes()
-            .getWithResponse(resourceGroupName, accountName, encryptionScopeName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getEncryptionScopes()
+            .getWithResponse(resourceGroupName, accountName, encryptionScopeName, context)
+            .getValue();
         return this;
     }
 

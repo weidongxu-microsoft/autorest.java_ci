@@ -28,17 +28,13 @@ public final class IdentityData {
     private String tenantId;
 
     /*
-     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
-     * identity and a set of user-assigned identities. The type 'None' will remove any identities.
+     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      */
     @JsonProperty(value = "type", required = true)
     private ResourceIdentityType type;
 
     /*
-     * The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys
-     * will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
-     * userAssignedIdentities/{identityName}'.
+     * The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -69,8 +65,7 @@ public final class IdentityData {
     }
 
     /**
-     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
+     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @return the type value.
      */
@@ -79,8 +74,7 @@ public final class IdentityData {
     }
 
     /**
-     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
+     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @param type the type value to set.
      * @return the IdentityData object itself.
@@ -91,9 +85,7 @@ public final class IdentityData {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The
-     * user-assigned identity dictionary keys will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -102,9 +94,7 @@ public final class IdentityData {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The
-     * user-assigned identity dictionary keys will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the IdentityData object itself.

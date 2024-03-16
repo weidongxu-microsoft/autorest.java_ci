@@ -8,17 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * A charge summary resource.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = ChargeSummary.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = ChargeSummary.class, visible = true)
 @JsonTypeName("ChargeSummary")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "legacy", value = LegacyChargeSummary.class),
@@ -26,8 +23,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class ChargeSummary extends ProxyResource {
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
-     * is updating the latest version or not.
+     * Specifies the kind of charge summary.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private ChargeSummaryKind kind;
+
+    /*
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -36,11 +39,31 @@ public class ChargeSummary extends ProxyResource {
      * Creates an instance of ChargeSummary class.
      */
     public ChargeSummary() {
+        this.kind = ChargeSummaryKind.fromString("ChargeSummary");
     }
 
     /**
-     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Get the kind property: Specifies the kind of charge summary.
+     * 
+     * @return the kind value.
+     */
+    public ChargeSummaryKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Specifies the kind of charge summary.
+     * 
+     * @param kind the kind value to set.
+     * @return the ChargeSummary object itself.
+     */
+    protected ChargeSummary withKind(ChargeSummaryKind kind) {
+        this.kind = kind;
+        return this;
+    }
+
+    /**
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -49,8 +72,7 @@ public class ChargeSummary extends ProxyResource {
     }
 
     /**
-     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @param etag the etag value to set.
      * @return the ChargeSummary object itself.

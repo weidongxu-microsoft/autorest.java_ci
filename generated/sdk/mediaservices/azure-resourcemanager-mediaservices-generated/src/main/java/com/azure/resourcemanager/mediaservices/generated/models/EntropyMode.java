@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The entropy mode to be used for this layer. If not specified, the encoder chooses the mode that is appropriate for
- * the profile and level.
+ * The entropy mode to be used for this layer. If not specified, the encoder chooses the mode that is appropriate for the profile and level.
  */
 public final class EntropyMode extends ExpandableStringEnum<EntropyMode> {
     /**

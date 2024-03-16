@@ -27,7 +27,8 @@ public final class CertificateListDescriptionImpl implements CertificateListDesc
         List<CertificateDescriptionInner> inner = this.innerModel().value();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new CertificateDescriptionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new CertificateDescriptionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

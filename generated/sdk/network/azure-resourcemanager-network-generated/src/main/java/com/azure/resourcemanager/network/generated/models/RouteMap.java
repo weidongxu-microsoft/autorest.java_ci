@@ -20,8 +20,7 @@ public interface RouteMap {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -42,16 +41,14 @@ public interface RouteMap {
     String type();
 
     /**
-     * Gets the associatedInboundConnections property: List of connections which have this RoutMap associated for
-     * inbound traffic.
+     * Gets the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic.
      * 
      * @return the associatedInboundConnections value.
      */
     List<String> associatedInboundConnections();
 
     /**
-     * Gets the associatedOutboundConnections property: List of connections which have this RoutMap associated for
-     * outbound traffic.
+     * Gets the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic.
      * 
      * @return the associatedOutboundConnections value.
      */
@@ -117,8 +114,7 @@ public interface RouteMap {
         }
 
         /**
-         * The stage of the RouteMap definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the RouteMap definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithAssociatedInboundConnections,
             DefinitionStages.WithAssociatedOutboundConnections, DefinitionStages.WithRules {
@@ -143,11 +139,9 @@ public interface RouteMap {
          */
         interface WithAssociatedInboundConnections {
             /**
-             * Specifies the associatedInboundConnections property: List of connections which have this RoutMap
-             * associated for inbound traffic..
+             * Specifies the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic..
              * 
-             * @param associatedInboundConnections List of connections which have this RoutMap associated for inbound
-             * traffic.
+             * @param associatedInboundConnections List of connections which have this RoutMap associated for inbound traffic.
              * @return the next definition stage.
              */
             WithCreate withAssociatedInboundConnections(List<String> associatedInboundConnections);
@@ -158,11 +152,9 @@ public interface RouteMap {
          */
         interface WithAssociatedOutboundConnections {
             /**
-             * Specifies the associatedOutboundConnections property: List of connections which have this RoutMap
-             * associated for outbound traffic..
+             * Specifies the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic..
              * 
-             * @param associatedOutboundConnections List of connections which have this RoutMap associated for outbound
-             * traffic.
+             * @param associatedOutboundConnections List of connections which have this RoutMap associated for outbound traffic.
              * @return the next definition stage.
              */
             WithCreate withAssociatedOutboundConnections(List<String> associatedOutboundConnections);
@@ -219,11 +211,9 @@ public interface RouteMap {
          */
         interface WithAssociatedInboundConnections {
             /**
-             * Specifies the associatedInboundConnections property: List of connections which have this RoutMap
-             * associated for inbound traffic..
+             * Specifies the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic..
              * 
-             * @param associatedInboundConnections List of connections which have this RoutMap associated for inbound
-             * traffic.
+             * @param associatedInboundConnections List of connections which have this RoutMap associated for inbound traffic.
              * @return the next definition stage.
              */
             Update withAssociatedInboundConnections(List<String> associatedInboundConnections);
@@ -234,11 +224,9 @@ public interface RouteMap {
          */
         interface WithAssociatedOutboundConnections {
             /**
-             * Specifies the associatedOutboundConnections property: List of connections which have this RoutMap
-             * associated for outbound traffic..
+             * Specifies the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic..
              * 
-             * @param associatedOutboundConnections List of connections which have this RoutMap associated for outbound
-             * traffic.
+             * @param associatedOutboundConnections List of connections which have this RoutMap associated for outbound traffic.
              * @return the next definition stage.
              */
             Update withAssociatedOutboundConnections(List<String> associatedOutboundConnections);

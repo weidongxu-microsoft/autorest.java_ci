@@ -135,8 +135,7 @@ public final class FirewallPolicyInner extends Resource {
     }
 
     /**
-     * Get the size property: A read-only string that represents the size of the FirewallPolicyPropertiesFormat in MB.
-     * (ex 0.5MB).
+     * Get the size property: A read-only string that represents the size of the FirewallPolicyPropertiesFormat in MB. (ex 0.5MB).
      * 
      * @return the size value.
      */

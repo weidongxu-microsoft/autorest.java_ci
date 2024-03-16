@@ -41,8 +41,7 @@ public final class AzureReachabilityReportInner {
     }
 
     /**
-     * Get the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or
-     * City.
+     * Get the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or City.
      * 
      * @return the aggregationLevel value.
      */
@@ -51,8 +50,7 @@ public final class AzureReachabilityReportInner {
     }
 
     /**
-     * Set the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or
-     * City.
+     * Set the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or City.
      * 
      * @param aggregationLevel the aggregationLevel value to set.
      * @return the AzureReachabilityReportInner object itself.

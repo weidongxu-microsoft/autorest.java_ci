@@ -31,8 +31,7 @@ public final class AppInsightsWebAppStackSettings {
     }
 
     /**
-     * Get the isSupported property: &lt;code&gt;true&lt;/code&gt; if remote Application Insights is supported for the
-     * stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isSupported property: &lt;code&gt;true&lt;/code&gt; if remote Application Insights is supported for the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isSupported value.
      */
@@ -41,8 +40,7 @@ public final class AppInsightsWebAppStackSettings {
     }
 
     /**
-     * Get the isDefaultOff property: &lt;code&gt;true&lt;/code&gt; if Application Insights is disabled by default for
-     * the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDefaultOff property: &lt;code&gt;true&lt;/code&gt; if Application Insights is disabled by default for the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDefaultOff value.
      */

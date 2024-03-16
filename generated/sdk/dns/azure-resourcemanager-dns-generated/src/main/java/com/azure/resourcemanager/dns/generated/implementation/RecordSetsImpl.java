@@ -31,8 +31,9 @@ public final class RecordSetsImpl implements RecordSets {
     public Response<RecordSet> updateWithResponse(String resourceGroupName, String zoneName,
         String relativeRecordSetName, RecordType recordType, RecordSetInner parameters, String ifMatch,
         Context context) {
-        Response<RecordSetInner> inner = this.serviceClient().updateWithResponse(resourceGroupName, zoneName,
-            relativeRecordSetName, recordType, parameters, ifMatch, context);
+        Response<RecordSetInner> inner = this.serviceClient()
+            .updateWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecordSetImpl(inner.getValue(), this.manager()));
@@ -55,8 +56,9 @@ public final class RecordSetsImpl implements RecordSets {
     public Response<RecordSet> createOrUpdateWithResponse(String resourceGroupName, String zoneName,
         String relativeRecordSetName, RecordType recordType, RecordSetInner parameters, String ifMatch,
         String ifNoneMatch, Context context) {
-        Response<RecordSetInner> inner = this.serviceClient().createOrUpdateWithResponse(resourceGroupName, zoneName,
-            relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch, context);
+        Response<RecordSetInner> inner = this.serviceClient()
+            .createOrUpdateWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters,
+                ifMatch, ifNoneMatch, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecordSetImpl(inner.getValue(), this.manager()));
@@ -67,8 +69,8 @@ public final class RecordSetsImpl implements RecordSets {
 
     public RecordSet createOrUpdate(String resourceGroupName, String zoneName, String relativeRecordSetName,
         RecordType recordType, RecordSetInner parameters) {
-        RecordSetInner inner = this.serviceClient().createOrUpdate(resourceGroupName, zoneName, relativeRecordSetName,
-            recordType, parameters);
+        RecordSetInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters);
         if (inner != null) {
             return new RecordSetImpl(inner, this.manager());
         } else {
@@ -78,8 +80,8 @@ public final class RecordSetsImpl implements RecordSets {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String zoneName, String relativeRecordSetName,
         RecordType recordType, String ifMatch, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType,
-            ifMatch, context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch, context);
     }
 
     public void delete(String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
@@ -88,8 +90,8 @@ public final class RecordSetsImpl implements RecordSets {
 
     public Response<RecordSet> getWithResponse(String resourceGroupName, String zoneName, String relativeRecordSetName,
         RecordType recordType, Context context) {
-        Response<RecordSetInner> inner = this.serviceClient().getWithResponse(resourceGroupName, zoneName,
-            relativeRecordSetName, recordType, context);
+        Response<RecordSetInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecordSetImpl(inner.getValue(), this.manager()));
@@ -115,8 +117,8 @@ public final class RecordSetsImpl implements RecordSets {
 
     public PagedIterable<RecordSet> listByType(String resourceGroupName, String zoneName, RecordType recordType,
         Integer top, String recordsetnamesuffix, Context context) {
-        PagedIterable<RecordSetInner> inner = this.serviceClient().listByType(resourceGroupName, zoneName, recordType,
-            top, recordsetnamesuffix, context);
+        PagedIterable<RecordSetInner> inner = this.serviceClient()
+            .listByType(resourceGroupName, zoneName, recordType, top, recordsetnamesuffix, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 

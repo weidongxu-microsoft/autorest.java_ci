@@ -32,8 +32,8 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         AttachedDatabaseConfigurationsCheckNameRequest resourceName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, resourceName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, resourceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
@@ -70,8 +70,8 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
 
     public Response<AttachedDatabaseConfiguration> getWithResponse(String resourceGroupName, String clusterName,
         String attachedDatabaseConfigurationName, Context context) {
-        Response<AttachedDatabaseConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            clusterName, attachedDatabaseConfigurationName, context);
+        Response<AttachedDatabaseConfigurationInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, clusterName, attachedDatabaseConfigurationName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AttachedDatabaseConfigurationImpl(inner.getValue(), this.manager()));

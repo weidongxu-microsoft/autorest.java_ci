@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A set of properties that can be defined in the context of a specific item type. Each type may have its own
- * properties.
+ * A set of properties that can be defined in the context of a specific item type. Each type may have its own properties.
  */
 @Fluent
 public final class ApplicationInsightsComponentAnalyticsItemProperties {

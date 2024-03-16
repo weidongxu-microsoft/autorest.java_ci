@@ -168,14 +168,16 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
     }
 
     public CustomIpPrefix create() {
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes().createOrUpdate(resourceGroupName,
-            customIpPrefixName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
+            .createOrUpdate(resourceGroupName, customIpPrefixName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public CustomIpPrefix create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes().createOrUpdate(resourceGroupName,
-            customIpPrefixName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
+            .createOrUpdate(resourceGroupName, customIpPrefixName, this.innerModel(), context);
         return this;
     }
 
@@ -191,14 +193,18 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
     }
 
     public CustomIpPrefix apply() {
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes()
-            .updateTagsWithResponse(resourceGroupName, customIpPrefixName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
+            .updateTagsWithResponse(resourceGroupName, customIpPrefixName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public CustomIpPrefix apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes()
-            .updateTagsWithResponse(resourceGroupName, customIpPrefixName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
+            .updateTagsWithResponse(resourceGroupName, customIpPrefixName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -212,7 +218,8 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
 
     public CustomIpPrefix refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes()
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
             .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -220,8 +227,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
 
     public CustomIpPrefix refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getCustomIpPrefixes()
-            .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCustomIpPrefixes()
+            .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, localExpand, context)
+            .getValue();
         return this;
     }
 

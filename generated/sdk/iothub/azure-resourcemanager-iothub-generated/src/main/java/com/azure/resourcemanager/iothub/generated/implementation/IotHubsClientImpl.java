@@ -56,8 +56,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * The interface defining all the services for IotHubClientIotHubs to be used by the proxy service to perform REST
-     * calls.
+     * The interface defining all the services for IotHubClientIotHubs to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientIotHubs")
@@ -76,13 +75,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -122,13 +119,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -167,13 +162,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -191,13 +184,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -217,13 +208,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -238,13 +227,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -260,13 +247,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -281,13 +266,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -304,13 +287,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -323,13 +304,11 @@ public final class IotHubsClientImpl implements IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
-     * https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
-     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.

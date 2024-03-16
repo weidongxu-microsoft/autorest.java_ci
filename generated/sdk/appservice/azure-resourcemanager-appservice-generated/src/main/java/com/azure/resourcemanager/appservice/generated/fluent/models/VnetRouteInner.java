@@ -45,8 +45,7 @@ public final class VnetRouteInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the startAddress property: The starting address for this route. This may also include a CIDR notation, in
-     * which case the end address must not be specified.
+     * Get the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      * 
      * @return the startAddress value.
      */
@@ -55,8 +54,7 @@ public final class VnetRouteInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the startAddress property: The starting address for this route. This may also include a CIDR notation, in
-     * which case the end address must not be specified.
+     * Set the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      * 
      * @param startAddress the startAddress value to set.
      * @return the VnetRouteInner object itself.
@@ -70,8 +68,7 @@ public final class VnetRouteInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the endAddress property: The ending address for this route. If the start address is specified in CIDR
-     * notation, this must be omitted.
+     * Get the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
      * 
      * @return the endAddress value.
      */
@@ -80,8 +77,7 @@ public final class VnetRouteInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the endAddress property: The ending address for this route. If the start address is specified in CIDR
-     * notation, this must be omitted.
+     * Set the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
      * 
      * @param endAddress the endAddress value to set.
      * @return the VnetRouteInner object itself.

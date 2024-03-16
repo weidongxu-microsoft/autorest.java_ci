@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Select video tracks from the input by specifying a track identifier.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = SelectVideoTrackById.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.SelectVideoTrackById")
 @Fluent
 public final class SelectVideoTrackById extends VideoTrackDescriptor {
@@ -26,6 +30,7 @@ public final class SelectVideoTrackById extends VideoTrackDescriptor {
      * Creates an instance of SelectVideoTrackById class.
      */
     public SelectVideoTrackById() {
+        withOdataType("#Microsoft.Media.SelectVideoTrackById");
     }
 
     /**

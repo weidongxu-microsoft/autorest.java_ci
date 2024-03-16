@@ -51,7 +51,7 @@ public final class StampCapacityInner {
     private WorkerSizeOptions workerSize;
 
     /*
-     * Size ID of machines:
+     * Size ID of machines: 
      * 0 - Small
      * 1 - Medium
      * 2 - Large
@@ -211,7 +211,7 @@ public final class StampCapacityInner {
     }
 
     /**
-     * Get the workerSizeId property: Size ID of machines:
+     * Get the workerSizeId property: Size ID of machines: 
      * 0 - Small
      * 1 - Medium
      * 2 - Large.
@@ -223,7 +223,7 @@ public final class StampCapacityInner {
     }
 
     /**
-     * Set the workerSizeId property: Size ID of machines:
+     * Set the workerSizeId property: Size ID of machines: 
      * 0 - Small
      * 1 - Medium
      * 2 - Large.
@@ -259,8 +259,7 @@ public final class StampCapacityInner {
     }
 
     /**
-     * Get the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all
-     * apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isApplicableForAllComputeModes value.
      */
@@ -269,8 +268,7 @@ public final class StampCapacityInner {
     }
 
     /**
-     * Set the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all
-     * apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isApplicableForAllComputeModes the isApplicableForAllComputeModes value to set.
      * @return the StampCapacityInner object itself.

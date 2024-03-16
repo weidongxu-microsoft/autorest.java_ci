@@ -56,8 +56,8 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
     public NetworkSecurityPerimeterConfiguration reconcile(String resourceGroupName,
         NetworkSecurityPerimeterResourceType resourceType, String resourceName, String perimeterGuid,
         String associationName) {
-        NetworkSecurityPerimeterConfigurationInner inner = this.serviceClient().reconcile(resourceGroupName,
-            resourceType, resourceName, perimeterGuid, associationName);
+        NetworkSecurityPerimeterConfigurationInner inner = this.serviceClient()
+            .reconcile(resourceGroupName, resourceType, resourceName, perimeterGuid, associationName);
         if (inner != null) {
             return new NetworkSecurityPerimeterConfigurationImpl(inner, this.manager());
         } else {
@@ -68,8 +68,8 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
     public NetworkSecurityPerimeterConfiguration reconcile(String resourceGroupName,
         NetworkSecurityPerimeterResourceType resourceType, String resourceName, String perimeterGuid,
         String associationName, Context context) {
-        NetworkSecurityPerimeterConfigurationInner inner = this.serviceClient().reconcile(resourceGroupName,
-            resourceType, resourceName, perimeterGuid, associationName, context);
+        NetworkSecurityPerimeterConfigurationInner inner = this.serviceClient()
+            .reconcile(resourceGroupName, resourceType, resourceName, perimeterGuid, associationName, context);
         if (inner != null) {
             return new NetworkSecurityPerimeterConfigurationImpl(inner, this.manager());
         } else {

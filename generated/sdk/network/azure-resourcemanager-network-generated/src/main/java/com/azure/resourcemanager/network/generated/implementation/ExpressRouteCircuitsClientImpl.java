@@ -71,8 +71,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCircuits to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCircuits to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -405,8 +404,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return information about the specified express route circuit along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -443,8 +441,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return information about the specified express route circuit along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -899,8 +896,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route circuit in a resource group along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listArpTableWithResponseAsync(String resourceGroupName, String circuitName,
@@ -945,8 +941,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route circuit in a resource group along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listArpTableWithResponseAsync(String resourceGroupName, String circuitName,
@@ -989,8 +984,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1015,8 +1009,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1042,8 +1035,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1063,8 +1055,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1085,8 +1076,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route circuit in a resource group on
-     * successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsArpTableListResultInner> listArpTableAsync(String resourceGroupName,
@@ -1106,8 +1096,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route circuit in a resource group on
-     * successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsArpTableListResultInner> listArpTableAsync(String resourceGroupName,
@@ -1163,8 +1152,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route circuit in a resource group along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableWithResponseAsync(String resourceGroupName,
@@ -1209,8 +1197,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route circuit in a resource group along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableWithResponseAsync(String resourceGroupName,
@@ -1253,8 +1240,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1279,8 +1265,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1306,8 +1291,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1327,8 +1311,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
-     * route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1349,8 +1332,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route circuit in a resource group on
-     * successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableListResultInner> listRoutesTableAsync(String resourceGroupName,
@@ -1370,8 +1352,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route circuit in a resource group on
-     * successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableListResultInner> listRoutesTableAsync(String resourceGroupName,
@@ -1427,8 +1408,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableSummaryWithResponseAsync(String resourceGroupName,
@@ -1473,8 +1453,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableSummaryWithResponseAsync(String resourceGroupName,
@@ -1517,8 +1496,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table summary associated with the
-     * express route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1544,8 +1522,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table summary associated with the
-     * express route circuit in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1571,8 +1548,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the
-     * express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1594,8 +1570,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the
-     * express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1616,8 +1591,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group on successful completion of {@link Mono}.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableSummaryListResultInner> listRoutesTableSummaryAsync(
@@ -1637,8 +1611,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group on successful completion of {@link Mono}.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableSummaryListResultInner> listRoutesTableSummaryAsync(
@@ -1657,8 +1630,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsRoutesTableSummaryListResultInner listRoutesTableSummary(String resourceGroupName,
@@ -1677,8 +1649,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource
-     * group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsRoutesTableSummaryListResultInner listRoutesTableSummary(String resourceGroupName,
@@ -1694,8 +1665,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return all the stats from an express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitStatsInner>> getStatsWithResponseAsync(String resourceGroupName,
@@ -1732,8 +1702,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return all the stats from an express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitStatsInner>> getStatsWithResponseAsync(String resourceGroupName,
@@ -1817,8 +1786,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return all stats from an express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitStatsInner>> getPeeringStatsWithResponseAsync(String resourceGroupName,
@@ -1859,8 +1827,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return all stats from an express route circuit in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitStatsInner>> getPeeringStatsWithResponseAsync(String resourceGroupName,
@@ -1950,8 +1917,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the express route circuits in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1985,8 +1951,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the express route circuits in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -2078,8 +2043,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the express route circuits in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listSinglePageAsync() {
@@ -2108,8 +2072,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the express route circuits in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listSinglePageAsync(Context context) {
@@ -2191,8 +2154,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listNextSinglePageAsync(String nextLink) {
@@ -2220,8 +2182,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -2248,8 +2209,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -2278,8 +2238,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListExpressRouteCircuit API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitInner>> listAllNextSinglePageAsync(String nextLink, Context context) {

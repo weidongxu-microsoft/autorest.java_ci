@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
- * 'Enabled' or 'Disabled'.
+ * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
  */
 public final class PublicNetworkAccessEnum extends ExpandableStringEnum<PublicNetworkAccessEnum> {
     /**

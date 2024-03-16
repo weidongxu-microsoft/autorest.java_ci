@@ -10,19 +10,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response containing a list of Private Endpoint connections.
+ * Response containing a list of private endpoint connections.
  */
 @Immutable
 public final class PrivateEndpointConnectionListResult {
     /*
-     * The list of Private Endpoint connections.
+     * The list of private endpoint connections.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> value;
 
     /*
-     * Request URL that can be used to query next page of private endpoint connections. Returned when the total number
-     * of requested private endpoint connections exceed maximum page size.
+     * Request URL that can be used to query next page of private endpoint connections. Returned when the total number of requested private endpoint connections exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
@@ -34,7 +33,7 @@ public final class PrivateEndpointConnectionListResult {
     }
 
     /**
-     * Get the value property: The list of Private Endpoint connections.
+     * Get the value property: The list of private endpoint connections.
      * 
      * @return the value value.
      */
@@ -43,8 +42,7 @@ public final class PrivateEndpointConnectionListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of private endpoint connections.
-     * Returned when the total number of requested private endpoint connections exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of private endpoint connections. Returned when the total number of requested private endpoint connections exceed maximum page size.
      * 
      * @return the nextLink value.
      */

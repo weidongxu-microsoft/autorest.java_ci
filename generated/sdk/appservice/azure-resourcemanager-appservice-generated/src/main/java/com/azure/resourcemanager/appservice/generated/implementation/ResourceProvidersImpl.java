@@ -224,8 +224,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public PagedIterable<GeoRegion> listGeoRegions(SkuName sku, Boolean linuxWorkersEnabled,
         Boolean xenonWorkersEnabled, Boolean linuxDynamicWorkersEnabled, Context context) {
-        PagedIterable<GeoRegionInner> inner = this.serviceClient().listGeoRegions(sku, linuxWorkersEnabled,
-            xenonWorkersEnabled, linuxDynamicWorkersEnabled, context);
+        PagedIterable<GeoRegionInner> inner = this.serviceClient()
+            .listGeoRegions(sku, linuxWorkersEnabled, xenonWorkersEnabled, linuxDynamicWorkersEnabled, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new GeoRegionImpl(inner1, this.manager()));
     }
 

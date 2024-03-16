@@ -83,9 +83,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner object.
      * 
      * @return the inner object.
      */
@@ -123,8 +121,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
         }
 
         /**
-         * The stage of the StaticSiteCustomDomainOverviewArmResource definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StaticSiteCustomDomainOverviewArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithValidationMethod {
             /**
@@ -248,11 +245,9 @@ public interface StaticSiteCustomDomainOverviewArmResource {
      * 
      * Description for Validates a particular custom domain can be added to a static site.
      * 
-     * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
-     * request properties. See example.
+     * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain request properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void validateCustomDomainCanBeAddedToStaticSite(
@@ -263,12 +258,10 @@ public interface StaticSiteCustomDomainOverviewArmResource {
      * 
      * Description for Validates a particular custom domain can be added to a static site.
      * 
-     * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
-     * request properties. See example.
+     * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain request properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void validateCustomDomainCanBeAddedToStaticSite(

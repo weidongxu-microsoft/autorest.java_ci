@@ -23,8 +23,7 @@ public final class QueryResponseInner {
     private long totalRecords;
 
     /*
-     * Number of records returned in the current response. In the case of paging, this is the number of records in the
-     * current page.
+     * Number of records returned in the current response. In the case of paging, this is the number of records in the current page.
      */
     @JsonProperty(value = "count", required = true)
     private long count;
@@ -36,8 +35,7 @@ public final class QueryResponseInner {
     private ResultTruncated resultTruncated;
 
     /*
-     * When present, the value can be passed to a subsequent query call (together with the same query and scopes used in
-     * the current request) to retrieve the next page of data.
+     * When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      */
     @JsonProperty(value = "$skipToken")
     private String skipToken;
@@ -81,8 +79,7 @@ public final class QueryResponseInner {
     }
 
     /**
-     * Get the count property: Number of records returned in the current response. In the case of paging, this is the
-     * number of records in the current page.
+     * Get the count property: Number of records returned in the current response. In the case of paging, this is the number of records in the current page.
      * 
      * @return the count value.
      */
@@ -91,8 +88,7 @@ public final class QueryResponseInner {
     }
 
     /**
-     * Set the count property: Number of records returned in the current response. In the case of paging, this is the
-     * number of records in the current page.
+     * Set the count property: Number of records returned in the current response. In the case of paging, this is the number of records in the current page.
      * 
      * @param count the count value to set.
      * @return the QueryResponseInner object itself.
@@ -123,8 +119,7 @@ public final class QueryResponseInner {
     }
 
     /**
-     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @return the skipToken value.
      */
@@ -133,8 +128,7 @@ public final class QueryResponseInner {
     }
 
     /**
-     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @param skipToken the skipToken value to set.
      * @return the QueryResponseInner object itself.

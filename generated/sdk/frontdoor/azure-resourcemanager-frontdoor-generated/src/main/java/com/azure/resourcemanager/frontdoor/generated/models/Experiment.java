@@ -178,8 +178,7 @@ public interface Experiment {
         }
 
         /**
-         * The stage of the Experiment definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the Experiment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithDescription,
             DefinitionStages.WithEndpointA, DefinitionStages.WithEndpointB, DefinitionStages.WithEnabledState {

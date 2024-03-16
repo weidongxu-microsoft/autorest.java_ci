@@ -136,8 +136,7 @@ public final class ConnectionMonitorHttpConfiguration {
     }
 
     /**
-     * Get the validStatusCodeRanges property: HTTP status codes to consider successful. For instance,
-     * "2xx,301-304,418".
+     * Get the validStatusCodeRanges property: HTTP status codes to consider successful. For instance, "2xx,301-304,418".
      * 
      * @return the validStatusCodeRanges value.
      */
@@ -146,8 +145,7 @@ public final class ConnectionMonitorHttpConfiguration {
     }
 
     /**
-     * Set the validStatusCodeRanges property: HTTP status codes to consider successful. For instance,
-     * "2xx,301-304,418".
+     * Set the validStatusCodeRanges property: HTTP status codes to consider successful. For instance, "2xx,301-304,418".
      * 
      * @param validStatusCodeRanges the validStatusCodeRanges value to set.
      * @return the ConnectionMonitorHttpConfiguration object itself.
@@ -158,8 +156,7 @@ public final class ConnectionMonitorHttpConfiguration {
     }
 
     /**
-     * Get the preferHttps property: Value indicating whether HTTPS is preferred over HTTP in cases where the choice is
-     * not explicit.
+     * Get the preferHttps property: Value indicating whether HTTPS is preferred over HTTP in cases where the choice is not explicit.
      * 
      * @return the preferHttps value.
      */
@@ -168,8 +165,7 @@ public final class ConnectionMonitorHttpConfiguration {
     }
 
     /**
-     * Set the preferHttps property: Value indicating whether HTTPS is preferred over HTTP in cases where the choice is
-     * not explicit.
+     * Set the preferHttps property: Value indicating whether HTTPS is preferred over HTTP in cases where the choice is not explicit.
      * 
      * @param preferHttps the preferHttps value to set.
      * @return the ConnectionMonitorHttpConfiguration object itself.

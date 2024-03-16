@@ -28,8 +28,8 @@ public final class VpnSiteLinkConnectionsImpl implements VpnSiteLinkConnections 
 
     public Response<VpnSiteLinkConnection> getWithResponse(String resourceGroupName, String gatewayName,
         String connectionName, String linkConnectionName, Context context) {
-        Response<VpnSiteLinkConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            gatewayName, connectionName, linkConnectionName, context);
+        Response<VpnSiteLinkConnectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnSiteLinkConnectionImpl(inner.getValue(), this.manager()));

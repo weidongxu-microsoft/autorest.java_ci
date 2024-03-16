@@ -9,8 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information
- * is made publicly available through the Whois
+ * Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information is made publicly available through the Whois 
  * directories as per ICANN requirements.
  */
 @Fluent

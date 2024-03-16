@@ -93,7 +93,8 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         List<VirtualNetworkPeeringInner> inner = this.innerModel().virtualNetworkPeerings();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -178,14 +179,16 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
     }
 
     public VirtualNetwork create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks().createOrUpdate(resourceGroupName,
-            virtualNetworkName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetwork create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks().createOrUpdate(resourceGroupName,
-            virtualNetworkName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, this.innerModel(), context);
         return this;
     }
 
@@ -201,14 +204,18 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
     }
 
     public VirtualNetwork apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks()
-            .updateTagsWithResponse(resourceGroupName, virtualNetworkName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
+            .updateTagsWithResponse(resourceGroupName, virtualNetworkName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualNetwork apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks()
-            .updateTagsWithResponse(resourceGroupName, virtualNetworkName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
+            .updateTagsWithResponse(resourceGroupName, virtualNetworkName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -222,7 +229,8 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public VirtualNetwork refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
             .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -230,8 +238,10 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public VirtualNetwork refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworks()
-            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworks()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -241,8 +251,8 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(Integer top, String skipToken,
         Context context) {
-        return serviceManager.virtualNetworks().listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top,
-            skipToken, context);
+        return serviceManager.virtualNetworks()
+            .listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top, skipToken, context);
     }
 
     public VirtualNetworkImpl withRegion(Region location) {

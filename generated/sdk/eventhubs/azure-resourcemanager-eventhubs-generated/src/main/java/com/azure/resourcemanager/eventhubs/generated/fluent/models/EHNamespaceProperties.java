@@ -78,8 +78,7 @@ public final class EHNamespaceProperties {
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
-     * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. (
-     * '0' if AutoInflateEnabled = true)
+     * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true)
      */
     @JsonProperty(value = "maximumThroughputUnits")
     private Integer maximumThroughputUnits;
@@ -221,8 +220,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub
-     * namespace.
+     * Get the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub namespace.
      * 
      * @return the isAutoInflateEnabled value.
      */
@@ -231,8 +229,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Set the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub
-     * namespace.
+     * Set the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub namespace.
      * 
      * @param isAutoInflateEnabled the isAutoInflateEnabled value to set.
      * @return the EHNamespaceProperties object itself.
@@ -243,8 +240,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -253,8 +249,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the EHNamespaceProperties object itself.
@@ -265,8 +260,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value
-     * should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+     * Get the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
      * 
      * @return the maximumThroughputUnits value.
      */
@@ -275,8 +269,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Set the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value
-     * should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+     * Set the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
      * 
      * @param maximumThroughputUnits the maximumThroughputUnits value to set.
      * @return the EHNamespaceProperties object itself.
@@ -307,8 +300,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions
-     * supported availability zones.
+     * Get the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
      * 
      * @return the zoneRedundant value.
      */
@@ -317,8 +309,7 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Set the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions
-     * supported availability zones.
+     * Set the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
      * 
      * @param zoneRedundant the zoneRedundant value to set.
      * @return the EHNamespaceProperties object itself.

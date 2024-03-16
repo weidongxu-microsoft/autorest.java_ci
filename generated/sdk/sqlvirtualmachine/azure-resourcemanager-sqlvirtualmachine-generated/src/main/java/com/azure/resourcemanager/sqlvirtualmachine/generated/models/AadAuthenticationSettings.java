@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class AadAuthenticationSettings {
     /*
-     * The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system
-     * assigned Managed Identity
+     * The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system assigned Managed Identity
      */
     @JsonProperty(value = "clientId")
     private String clientId;
@@ -26,8 +25,7 @@ public final class AadAuthenticationSettings {
     }
 
     /**
-     * Get the clientId property: The client Id of the Managed Identity to query Microsoft Graph API. An empty string
-     * must be used for the system assigned Managed Identity.
+     * Get the clientId property: The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system assigned Managed Identity.
      * 
      * @return the clientId value.
      */
@@ -36,8 +34,7 @@ public final class AadAuthenticationSettings {
     }
 
     /**
-     * Set the clientId property: The client Id of the Managed Identity to query Microsoft Graph API. An empty string
-     * must be used for the system assigned Managed Identity.
+     * Set the clientId property: The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system assigned Managed Identity.
      * 
      * @param clientId the clientId value to set.
      * @return the AadAuthenticationSettings object itself.

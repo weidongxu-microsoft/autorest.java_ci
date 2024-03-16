@@ -18,8 +18,7 @@ import java.util.List;
 @Fluent
 public final class ProximityPlacementGroupProperties {
     /*
-     * Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources
-     * within an Azure region or Availability Zone. **Ultra** : For future use.
+     * Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      */
     @JsonProperty(value = "proximityPlacementGroupType")
     private ProximityPlacementGroupType proximityPlacementGroupType;
@@ -61,9 +60,7 @@ public final class ProximityPlacementGroupProperties {
     }
 
     /**
-     * Get the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
-     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-     * future use.
+     * Get the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      * 
      * @return the proximityPlacementGroupType value.
      */
@@ -72,9 +69,7 @@ public final class ProximityPlacementGroupProperties {
     }
 
     /**
-     * Set the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
-     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-     * future use.
+     * Set the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      * 
      * @param proximityPlacementGroupType the proximityPlacementGroupType value to set.
      * @return the ProximityPlacementGroupProperties object itself.
@@ -95,8 +90,7 @@ public final class ProximityPlacementGroupProperties {
     }
 
     /**
-     * Get the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the proximity
-     * placement group.
+     * Get the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the proximity placement group.
      * 
      * @return the virtualMachineScaleSets value.
      */
@@ -105,8 +99,7 @@ public final class ProximityPlacementGroupProperties {
     }
 
     /**
-     * Get the availabilitySets property: A list of references to all availability sets in the proximity placement
-     * group.
+     * Get the availabilitySets property: A list of references to all availability sets in the proximity placement group.
      * 
      * @return the availabilitySets value.
      */

@@ -19,29 +19,25 @@ public final class SmbSetting {
     private Multichannel multichannel;
 
     /*
-     * SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1. Should be passed as a
-     * string with delimiter ';'.
+     * SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1. Should be passed as a string with delimiter ';'.
      */
     @JsonProperty(value = "versions")
     private String versions;
 
     /*
-     * SMB authentication methods supported by server. Valid values are NTLMv2, Kerberos. Should be passed as a string
-     * with delimiter ';'.
+     * SMB authentication methods supported by server. Valid values are NTLMv2, Kerberos. Should be passed as a string with delimiter ';'.
      */
     @JsonProperty(value = "authenticationMethods")
     private String authenticationMethods;
 
     /*
-     * Kerberos ticket encryption supported by server. Valid values are RC4-HMAC, AES-256. Should be passed as a string
-     * with delimiter ';'
+     * Kerberos ticket encryption supported by server. Valid values are RC4-HMAC, AES-256. Should be passed as a string with delimiter ';'
      */
     @JsonProperty(value = "kerberosTicketEncryption")
     private String kerberosTicketEncryption;
 
     /*
-     * SMB channel encryption supported by server. Valid values are AES-128-CCM, AES-128-GCM, AES-256-GCM. Should be
-     * passed as a string with delimiter ';'.
+     * SMB channel encryption supported by server. Valid values are AES-128-CCM, AES-128-GCM, AES-256-GCM. Should be passed as a string with delimiter ';'.
      */
     @JsonProperty(value = "channelEncryption")
     private String channelEncryption;
@@ -73,8 +69,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Get the versions property: SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1.
-     * Should be passed as a string with delimiter ';'.
+     * Get the versions property: SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1. Should be passed as a string with delimiter ';'.
      * 
      * @return the versions value.
      */
@@ -83,8 +78,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Set the versions property: SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1.
-     * Should be passed as a string with delimiter ';'.
+     * Set the versions property: SMB protocol versions supported by server. Valid values are SMB2.1, SMB3.0, SMB3.1.1. Should be passed as a string with delimiter ';'.
      * 
      * @param versions the versions value to set.
      * @return the SmbSetting object itself.
@@ -95,8 +89,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Get the authenticationMethods property: SMB authentication methods supported by server. Valid values are NTLMv2,
-     * Kerberos. Should be passed as a string with delimiter ';'.
+     * Get the authenticationMethods property: SMB authentication methods supported by server. Valid values are NTLMv2, Kerberos. Should be passed as a string with delimiter ';'.
      * 
      * @return the authenticationMethods value.
      */
@@ -105,8 +98,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Set the authenticationMethods property: SMB authentication methods supported by server. Valid values are NTLMv2,
-     * Kerberos. Should be passed as a string with delimiter ';'.
+     * Set the authenticationMethods property: SMB authentication methods supported by server. Valid values are NTLMv2, Kerberos. Should be passed as a string with delimiter ';'.
      * 
      * @param authenticationMethods the authenticationMethods value to set.
      * @return the SmbSetting object itself.
@@ -117,8 +109,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Get the kerberosTicketEncryption property: Kerberos ticket encryption supported by server. Valid values are
-     * RC4-HMAC, AES-256. Should be passed as a string with delimiter ';'.
+     * Get the kerberosTicketEncryption property: Kerberos ticket encryption supported by server. Valid values are RC4-HMAC, AES-256. Should be passed as a string with delimiter ';'.
      * 
      * @return the kerberosTicketEncryption value.
      */
@@ -127,8 +118,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Set the kerberosTicketEncryption property: Kerberos ticket encryption supported by server. Valid values are
-     * RC4-HMAC, AES-256. Should be passed as a string with delimiter ';'.
+     * Set the kerberosTicketEncryption property: Kerberos ticket encryption supported by server. Valid values are RC4-HMAC, AES-256. Should be passed as a string with delimiter ';'.
      * 
      * @param kerberosTicketEncryption the kerberosTicketEncryption value to set.
      * @return the SmbSetting object itself.
@@ -139,8 +129,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Get the channelEncryption property: SMB channel encryption supported by server. Valid values are AES-128-CCM,
-     * AES-128-GCM, AES-256-GCM. Should be passed as a string with delimiter ';'.
+     * Get the channelEncryption property: SMB channel encryption supported by server. Valid values are AES-128-CCM, AES-128-GCM, AES-256-GCM. Should be passed as a string with delimiter ';'.
      * 
      * @return the channelEncryption value.
      */
@@ -149,8 +138,7 @@ public final class SmbSetting {
     }
 
     /**
-     * Set the channelEncryption property: SMB channel encryption supported by server. Valid values are AES-128-CCM,
-     * AES-128-GCM, AES-256-GCM. Should be passed as a string with delimiter ';'.
+     * Set the channelEncryption property: SMB channel encryption supported by server. Valid values are AES-128-CCM, AES-128-GCM, AES-256-GCM. Should be passed as a string with delimiter ';'.
      * 
      * @param channelEncryption the channelEncryption value to set.
      * @return the SmbSetting object itself.

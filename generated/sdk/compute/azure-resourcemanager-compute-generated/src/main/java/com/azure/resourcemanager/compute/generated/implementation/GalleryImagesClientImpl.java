@@ -66,8 +66,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientGalleryImages to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientGalleryImages to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -137,15 +136,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -187,16 +183,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -237,15 +230,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryImageInner>, GalleryImageInner> beginCreateOrUpdateAsync(
@@ -261,16 +251,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryImageInner>, GalleryImageInner> beginCreateOrUpdateAsync(
@@ -288,15 +275,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryImageInner>, GalleryImageInner> beginCreateOrUpdate(String resourceGroupName,
@@ -310,16 +294,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryImageInner>, GalleryImageInner> beginCreateOrUpdate(String resourceGroupName,
@@ -333,15 +314,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryImageInner> createOrUpdateAsync(String resourceGroupName, String galleryName,
@@ -355,16 +333,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryImageInner> createOrUpdateAsync(String resourceGroupName, String galleryName,
@@ -378,9 +353,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -398,9 +371,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be created.
-     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters
-     * are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80
-     * characters.
+     * @param galleryImageName The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the create or update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -419,14 +390,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -468,15 +437,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -517,14 +484,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryImageInner>, GalleryImageInner> beginUpdateAsync(String resourceGroupName,
@@ -540,15 +505,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryImageInner>, GalleryImageInner> beginUpdateAsync(String resourceGroupName,
@@ -565,14 +528,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryImageInner>, GalleryImageInner> beginUpdate(String resourceGroupName,
@@ -585,15 +546,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you
-     * want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery image definition that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryImageInner>, GalleryImageInner> beginUpdate(String resourceGroupName,
@@ -607,14 +566,12 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryImageInner> updateAsync(String resourceGroupName, String galleryName, String galleryImageName,
@@ -628,15 +585,13 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryImageInner> updateAsync(String resourceGroupName, String galleryName, String galleryImageName,
@@ -650,8 +605,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -669,8 +623,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be updated.
-     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are
-     * alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryImageName The name of the gallery image definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
      * @param galleryImage Parameters supplied to the update gallery image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -693,8 +646,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryImageInner>> getWithResponseAsync(String resourceGroupName, String galleryName,
@@ -736,8 +688,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryImageInner>> getWithResponseAsync(String resourceGroupName, String galleryName,
@@ -777,8 +728,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the gallery image definition that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryImageInner> getAsync(String resourceGroupName, String galleryName, String galleryImageName) {
@@ -796,8 +746,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GalleryImageInner> getWithResponse(String resourceGroupName, String galleryName,
@@ -1055,8 +1004,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryImageInner>> listByGallerySinglePageAsync(String resourceGroupName,
@@ -1095,8 +1043,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryImageInner>> listByGallerySinglePageAsync(String resourceGroupName,
@@ -1201,8 +1148,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryImageInner>> listByGalleryNextSinglePageAsync(String nextLink) {
@@ -1231,8 +1177,7 @@ public final class GalleryImagesClientImpl implements GalleryImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryImageInner>> listByGalleryNextSinglePageAsync(String nextLink, Context context) {

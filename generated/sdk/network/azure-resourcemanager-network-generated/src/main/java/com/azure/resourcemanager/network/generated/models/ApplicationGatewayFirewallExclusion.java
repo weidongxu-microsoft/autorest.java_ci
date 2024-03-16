@@ -20,15 +20,13 @@ public final class ApplicationGatewayFirewallExclusion {
     private String matchVariable;
 
     /*
-     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this
-     * exclusion applies to.
+     * When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
      */
     @JsonProperty(value = "selectorMatchOperator")
     private String selectorMatchOperator;
 
     /*
-     * When matchVariable is a collection, operator used to specify which elements in the collection this exclusion
-     * applies to.
+     * When matchVariable is a collection, operator used to specify which elements in the collection this exclusion applies to.
      */
     @JsonProperty(value = "selector")
     private String selector;
@@ -60,8 +58,7 @@ public final class ApplicationGatewayFirewallExclusion {
     }
 
     /**
-     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
-     * which elements in the collection this exclusion applies to.
+     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
      * 
      * @return the selectorMatchOperator value.
      */
@@ -70,8 +67,7 @@ public final class ApplicationGatewayFirewallExclusion {
     }
 
     /**
-     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
-     * which elements in the collection this exclusion applies to.
+     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
      * 
      * @param selectorMatchOperator the selectorMatchOperator value to set.
      * @return the ApplicationGatewayFirewallExclusion object itself.
@@ -82,8 +78,7 @@ public final class ApplicationGatewayFirewallExclusion {
     }
 
     /**
-     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the
-     * collection this exclusion applies to.
+     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this exclusion applies to.
      * 
      * @return the selector value.
      */
@@ -92,8 +87,7 @@ public final class ApplicationGatewayFirewallExclusion {
     }
 
     /**
-     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the
-     * collection this exclusion applies to.
+     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this exclusion applies to.
      * 
      * @param selector the selector value to set.
      * @return the ApplicationGatewayFirewallExclusion object itself.

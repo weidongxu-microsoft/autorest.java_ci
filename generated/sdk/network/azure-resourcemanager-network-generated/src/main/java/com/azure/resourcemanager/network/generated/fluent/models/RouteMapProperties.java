@@ -46,8 +46,7 @@ public final class RouteMapProperties {
     }
 
     /**
-     * Get the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound
-     * traffic.
+     * Get the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic.
      * 
      * @return the associatedInboundConnections value.
      */
@@ -56,8 +55,7 @@ public final class RouteMapProperties {
     }
 
     /**
-     * Set the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound
-     * traffic.
+     * Set the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic.
      * 
      * @param associatedInboundConnections the associatedInboundConnections value to set.
      * @return the RouteMapProperties object itself.
@@ -68,8 +66,7 @@ public final class RouteMapProperties {
     }
 
     /**
-     * Get the associatedOutboundConnections property: List of connections which have this RoutMap associated for
-     * outbound traffic.
+     * Get the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic.
      * 
      * @return the associatedOutboundConnections value.
      */
@@ -78,8 +75,7 @@ public final class RouteMapProperties {
     }
 
     /**
-     * Set the associatedOutboundConnections property: List of connections which have this RoutMap associated for
-     * outbound traffic.
+     * Set the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic.
      * 
      * @param associatedOutboundConnections the associatedOutboundConnections value to set.
      * @return the RouteMapProperties object itself.

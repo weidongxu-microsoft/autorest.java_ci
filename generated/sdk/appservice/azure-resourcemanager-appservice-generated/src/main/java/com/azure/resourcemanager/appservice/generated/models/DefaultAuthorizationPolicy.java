@@ -52,8 +52,7 @@ public final class DefaultAuthorizationPolicy {
     }
 
     /**
-     * Get the allowedApplications property: The configuration settings of the Azure Active Directory allowed
-     * applications.
+     * Get the allowedApplications property: The configuration settings of the Azure Active Directory allowed applications.
      * 
      * @return the allowedApplications value.
      */
@@ -62,8 +61,7 @@ public final class DefaultAuthorizationPolicy {
     }
 
     /**
-     * Set the allowedApplications property: The configuration settings of the Azure Active Directory allowed
-     * applications.
+     * Set the allowedApplications property: The configuration settings of the Azure Active Directory allowed applications.
      * 
      * @param allowedApplications the allowedApplications value to set.
      * @return the DefaultAuthorizationPolicy object itself.

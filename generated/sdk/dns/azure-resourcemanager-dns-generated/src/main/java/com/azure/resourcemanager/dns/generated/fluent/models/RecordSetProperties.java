@@ -109,7 +109,7 @@ public final class RecordSetProperties {
     private List<TxtRecord> txtRecords;
 
     /*
-     * The CNAME record in the record set.
+     * The CNAME record in the  record set.
      */
     @JsonProperty(value = "CNAMERecord")
     private CnameRecord cnameRecord;
@@ -229,8 +229,7 @@ public final class RecordSetProperties {
     }
 
     /**
-     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
-     * the dns resource value is taken.
+     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where the dns resource value is taken.
      * 
      * @return the trafficManagementProfile value.
      */
@@ -239,8 +238,7 @@ public final class RecordSetProperties {
     }
 
     /**
-     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
-     * the dns resource value is taken.
+     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where the dns resource value is taken.
      * 
      * @param trafficManagementProfile the trafficManagementProfile value to set.
      * @return the RecordSetProperties object itself.
@@ -391,7 +389,7 @@ public final class RecordSetProperties {
     }
 
     /**
-     * Get the cnameRecord property: The CNAME record in the record set.
+     * Get the cnameRecord property: The CNAME record in the  record set.
      * 
      * @return the cnameRecord value.
      */
@@ -400,7 +398,7 @@ public final class RecordSetProperties {
     }
 
     /**
-     * Set the cnameRecord property: The CNAME record in the record set.
+     * Set the cnameRecord property: The CNAME record in the  record set.
      * 
      * @param cnameRecord the cnameRecord value to set.
      * @return the RecordSetProperties object itself.

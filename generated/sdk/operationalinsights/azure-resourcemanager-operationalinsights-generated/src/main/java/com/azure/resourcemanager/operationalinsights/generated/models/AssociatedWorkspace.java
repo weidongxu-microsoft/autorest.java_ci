@@ -25,9 +25,7 @@ public final class AssociatedWorkspace {
     private String workspaceName;
 
     /*
-     * Associated workspace arm resource id, in the form of:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/
-     * workspaces/{workspaceName}.
+     * Associated workspace arm resource id, in the form of: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
      */
     @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
@@ -63,8 +61,7 @@ public final class AssociatedWorkspace {
     }
 
     /**
-     * Get the resourceId property: Associated workspace arm resource id, in the form of:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
+     * Get the resourceId property: Associated workspace arm resource id, in the form of: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
      * 
      * @return the resourceId value.
      */

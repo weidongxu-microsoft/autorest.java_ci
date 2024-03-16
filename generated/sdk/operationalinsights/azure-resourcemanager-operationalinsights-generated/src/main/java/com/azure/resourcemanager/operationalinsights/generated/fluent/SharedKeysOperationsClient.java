@@ -43,8 +43,7 @@ public interface SharedKeysOperationsClient {
     SharedKeysInner getSharedKeys(String resourceGroupName, String workspaceName);
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -58,8 +57,7 @@ public interface SharedKeysOperationsClient {
     Response<SharedKeysInner> regenerateWithResponse(String resourceGroupName, String workspaceName, Context context);
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.

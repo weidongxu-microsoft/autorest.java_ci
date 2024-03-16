@@ -19,14 +19,13 @@ public final class Encryption {
     private EncryptionServices services;
 
     /*
-     * The encryption keySource (provider). Possible values (case-insensitive): Microsoft.Storage, Microsoft.Keyvault
+     * The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.Storage, Microsoft.Keyvault
      */
     @JsonProperty(value = "keySource")
     private KeySource keySource;
 
     /*
-     * A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed
-     * keys for data at rest.
+     * A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
      */
     @JsonProperty(value = "requireInfrastructureEncryption")
     private Boolean requireInfrastructureEncryption;
@@ -70,8 +69,7 @@ public final class Encryption {
     }
 
     /**
-     * Get the keySource property: The encryption keySource (provider). Possible values (case-insensitive):
-     * Microsoft.Storage, Microsoft.Keyvault.
+     * Get the keySource property: The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.Storage, Microsoft.Keyvault.
      * 
      * @return the keySource value.
      */
@@ -80,8 +78,7 @@ public final class Encryption {
     }
 
     /**
-     * Set the keySource property: The encryption keySource (provider). Possible values (case-insensitive):
-     * Microsoft.Storage, Microsoft.Keyvault.
+     * Set the keySource property: The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.Storage, Microsoft.Keyvault.
      * 
      * @param keySource the keySource value to set.
      * @return the Encryption object itself.
@@ -92,8 +89,7 @@ public final class Encryption {
     }
 
     /**
-     * Get the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
-     * secondary layer of encryption with platform managed keys for data at rest.
+     * Get the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
      * 
      * @return the requireInfrastructureEncryption value.
      */
@@ -102,8 +98,7 @@ public final class Encryption {
     }
 
     /**
-     * Set the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
-     * secondary layer of encryption with platform managed keys for data at rest.
+     * Set the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
      * 
      * @param requireInfrastructureEncryption the requireInfrastructureEncryption value to set.
      * @return the Encryption object itself.

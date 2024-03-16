@@ -37,8 +37,7 @@ public final class DnsResourceReferenceRequest {
     }
 
     /**
-     * Get the targetResources property: A list of references to azure resources for which referencing dns records need
-     * to be queried.
+     * Get the targetResources property: A list of references to azure resources for which referencing dns records need to be queried.
      * 
      * @return the targetResources value.
      */
@@ -47,8 +46,7 @@ public final class DnsResourceReferenceRequest {
     }
 
     /**
-     * Set the targetResources property: A list of references to azure resources for which referencing dns records need
-     * to be queried.
+     * Set the targetResources property: A list of references to azure resources for which referencing dns records need to be queried.
      * 
      * @param targetResources the targetResources value to set.
      * @return the DnsResourceReferenceRequest object itself.

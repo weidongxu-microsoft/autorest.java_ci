@@ -58,9 +58,7 @@ public interface DdosProtectionPlan {
     String etag();
 
     /**
-     * Gets the resourceGuid property: The resource GUID property of the DDoS protection plan resource. It uniquely
-     * identifies the resource, even if the user changes its name or migrate the resource across subscriptions or
-     * resource groups.
+     * Gets the resourceGuid property: The resource GUID property of the DDoS protection plan resource. It uniquely identifies the resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
      * 
      * @return the resourceGuid value.
      */
@@ -74,16 +72,14 @@ public interface DdosProtectionPlan {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the publicIpAddresses property: The list of public IPs associated with the DDoS protection plan resource.
-     * This list is read-only.
+     * Gets the publicIpAddresses property: The list of public IPs associated with the DDoS protection plan resource. This list is read-only.
      * 
      * @return the publicIpAddresses value.
      */
     List<SubResource> publicIpAddresses();
 
     /**
-     * Gets the virtualNetworks property: The list of virtual networks associated with the DDoS protection plan
-     * resource. This list is read-only.
+     * Gets the virtualNetworks property: The list of virtual networks associated with the DDoS protection plan resource. This list is read-only.
      * 
      * @return the virtualNetworks value.
      */
@@ -169,8 +165,7 @@ public interface DdosProtectionPlan {
         }
 
         /**
-         * The stage of the DdosProtectionPlan definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DdosProtectionPlan definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

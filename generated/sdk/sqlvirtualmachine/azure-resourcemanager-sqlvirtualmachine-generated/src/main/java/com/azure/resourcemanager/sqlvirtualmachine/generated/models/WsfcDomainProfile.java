@@ -31,8 +31,7 @@ public final class WsfcDomainProfile {
     private String clusterBootstrapAccount;
 
     /*
-     * Account name used for operating cluster i.e. will be part of administrators group on all the participating
-     * virtual machines in the cluster.
+     * Account name used for operating cluster i.e. will be part of administrators group on all the participating virtual machines in the cluster.
      */
     @JsonProperty(value = "clusterOperatorAccount")
     private String clusterOperatorAccount;
@@ -120,8 +119,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Get the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to
-     * 'Create Computer Objects' in domain).
+     * Get the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to 'Create Computer Objects' in domain).
      * 
      * @return the clusterBootstrapAccount value.
      */
@@ -130,8 +128,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Set the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to
-     * 'Create Computer Objects' in domain).
+     * Set the clusterBootstrapAccount property: Account name used for creating cluster (at minimum needs permissions to 'Create Computer Objects' in domain).
      * 
      * @param clusterBootstrapAccount the clusterBootstrapAccount value to set.
      * @return the WsfcDomainProfile object itself.
@@ -142,8 +139,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Get the clusterOperatorAccount property: Account name used for operating cluster i.e. will be part of
-     * administrators group on all the participating virtual machines in the cluster.
+     * Get the clusterOperatorAccount property: Account name used for operating cluster i.e. will be part of administrators group on all the participating virtual machines in the cluster.
      * 
      * @return the clusterOperatorAccount value.
      */
@@ -152,8 +148,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Set the clusterOperatorAccount property: Account name used for operating cluster i.e. will be part of
-     * administrators group on all the participating virtual machines in the cluster.
+     * Set the clusterOperatorAccount property: Account name used for operating cluster i.e. will be part of administrators group on all the participating virtual machines in the cluster.
      * 
      * @param clusterOperatorAccount the clusterOperatorAccount value to set.
      * @return the WsfcDomainProfile object itself.
@@ -164,8 +159,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Get the sqlServiceAccount property: Account name under which SQL service will run on all participating SQL
-     * virtual machines in the cluster.
+     * Get the sqlServiceAccount property: Account name under which SQL service will run on all participating SQL virtual machines in the cluster.
      * 
      * @return the sqlServiceAccount value.
      */
@@ -174,8 +168,7 @@ public final class WsfcDomainProfile {
     }
 
     /**
-     * Set the sqlServiceAccount property: Account name under which SQL service will run on all participating SQL
-     * virtual machines in the cluster.
+     * Set the sqlServiceAccount property: Account name under which SQL service will run on all participating SQL virtual machines in the cluster.
      * 
      * @param sqlServiceAccount the sqlServiceAccount value to set.
      * @return the WsfcDomainProfile object itself.

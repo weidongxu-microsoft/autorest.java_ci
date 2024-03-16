@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Describes the settings for producing PNG thumbnails.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = PngFormat.class, visible = true)
 @JsonTypeName("#Microsoft.Media.PngFormat")
 @Fluent
 public final class PngFormat extends ImageFormat {
@@ -19,6 +19,7 @@ public final class PngFormat extends ImageFormat {
      * Creates an instance of PngFormat class.
      */
     public PngFormat() {
+        withOdataType("#Microsoft.Media.PngFormat");
     }
 
     /**

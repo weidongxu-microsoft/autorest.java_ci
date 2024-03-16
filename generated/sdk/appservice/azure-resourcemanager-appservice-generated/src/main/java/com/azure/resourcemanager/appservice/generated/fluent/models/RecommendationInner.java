@@ -119,8 +119,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription,
-     * ServerFarm, Site.
+     * Get the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription, ServerFarm, Site.
      * 
      * @return the resourceScope value.
      */
@@ -129,8 +128,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription,
-     * ServerFarm, Site.
+     * Set the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription, ServerFarm, Site.
      * 
      * @param resourceScope the resourceScope value to set.
      * @return the RecommendationInner object itself.
@@ -314,8 +312,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the states property: The list of states of this recommendation. If it's null then it should be considered
-     * "Active".
+     * Get the states property: The list of states of this recommendation. If it's null then it should be considered "Active".
      * 
      * @return the states value.
      */
@@ -324,8 +321,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the states property: The list of states of this recommendation. If it's null then it should be considered
-     * "Active".
+     * Set the states property: The list of states of this recommendation. If it's null then it should be considered "Active".
      * 
      * @param states the states value to set.
      * @return the RecommendationInner object itself.
@@ -385,8 +381,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will
-     * never be notified anymore.
+     * Get the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will never be notified anymore.
      * 
      * @return the nextNotificationTime value.
      */
@@ -395,8 +390,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will
-     * never be notified anymore.
+     * Set the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will never be notified anymore.
      * 
      * @param nextNotificationTime the nextNotificationTime value to set.
      * @return the RecommendationInner object itself.
@@ -433,8 +427,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this
-     * recommendation hasn't been notified yet.
+     * Get the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this recommendation hasn't been notified yet.
      * 
      * @return the notifiedTime value.
      */
@@ -443,8 +436,7 @@ public final class RecommendationInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this
-     * recommendation hasn't been notified yet.
+     * Set the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this recommendation hasn't been notified yet.
      * 
      * @param notifiedTime the notifiedTime value to set.
      * @return the RecommendationInner object itself.

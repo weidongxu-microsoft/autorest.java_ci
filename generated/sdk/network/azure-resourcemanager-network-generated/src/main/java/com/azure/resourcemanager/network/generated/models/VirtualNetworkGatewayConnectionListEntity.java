@@ -161,8 +161,7 @@ public interface VirtualNetworkGatewayConnectionListEntity {
     Boolean enableBgp();
 
     /**
-     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
-     * Connection.
+     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
      * 
      * @return the gatewayCustomBgpIpAddresses value.
      */
@@ -211,16 +210,14 @@ public interface VirtualNetworkGatewayConnectionListEntity {
     Boolean expressRouteGatewayBypass();
 
     /**
-     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
-     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
     Boolean enablePrivateLinkFastPath();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionListEntityInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionListEntityInner object.
      * 
      * @return the inner object.
      */

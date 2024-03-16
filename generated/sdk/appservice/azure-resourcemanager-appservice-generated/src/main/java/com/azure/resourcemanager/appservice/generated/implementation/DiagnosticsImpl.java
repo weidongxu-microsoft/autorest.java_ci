@@ -55,8 +55,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DetectorResponse> getHostingEnvironmentDetectorResponseWithResponse(String resourceGroupName,
         String name, String detectorName, OffsetDateTime startTime, OffsetDateTime endTime, String timeGrain,
         Context context) {
-        Response<DetectorResponseInner> inner = this.serviceClient().getHostingEnvironmentDetectorResponseWithResponse(
-            resourceGroupName, name, detectorName, startTime, endTime, timeGrain, context);
+        Response<DetectorResponseInner> inner = this.serviceClient()
+            .getHostingEnvironmentDetectorResponseWithResponse(resourceGroupName, name, detectorName, startTime,
+                endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));
@@ -91,8 +92,9 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public Response<DetectorResponse> getSiteDetectorResponseWithResponse(String resourceGroupName, String siteName,
         String detectorName, OffsetDateTime startTime, OffsetDateTime endTime, String timeGrain, Context context) {
-        Response<DetectorResponseInner> inner = this.serviceClient().getSiteDetectorResponseWithResponse(
-            resourceGroupName, siteName, detectorName, startTime, endTime, timeGrain, context);
+        Response<DetectorResponseInner> inner = this.serviceClient()
+            .getSiteDetectorResponseWithResponse(resourceGroupName, siteName, detectorName, startTime, endTime,
+                timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));
@@ -163,8 +165,8 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public Response<AnalysisDefinition> getSiteAnalysisWithResponse(String resourceGroupName, String siteName,
         String diagnosticCategory, String analysisName, Context context) {
-        Response<AnalysisDefinitionInner> inner = this.serviceClient().getSiteAnalysisWithResponse(resourceGroupName,
-            siteName, diagnosticCategory, analysisName, context);
+        Response<AnalysisDefinitionInner> inner = this.serviceClient()
+            .getSiteAnalysisWithResponse(resourceGroupName, siteName, diagnosticCategory, analysisName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AnalysisDefinitionImpl(inner.getValue(), this.manager()));
@@ -187,8 +189,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DiagnosticAnalysis> executeSiteAnalysisWithResponse(String resourceGroupName, String siteName,
         String diagnosticCategory, String analysisName, OffsetDateTime startTime, OffsetDateTime endTime,
         String timeGrain, Context context) {
-        Response<DiagnosticAnalysisInner> inner = this.serviceClient().executeSiteAnalysisWithResponse(
-            resourceGroupName, siteName, diagnosticCategory, analysisName, startTime, endTime, timeGrain, context);
+        Response<DiagnosticAnalysisInner> inner = this.serviceClient()
+            .executeSiteAnalysisWithResponse(resourceGroupName, siteName, diagnosticCategory, analysisName, startTime,
+                endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticAnalysisImpl(inner.getValue(), this.manager()));
@@ -250,8 +253,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DiagnosticDetectorResponse> executeSiteDetectorWithResponse(String resourceGroupName,
         String siteName, String detectorName, String diagnosticCategory, OffsetDateTime startTime,
         OffsetDateTime endTime, String timeGrain, Context context) {
-        Response<DiagnosticDetectorResponseInner> inner = this.serviceClient().executeSiteDetectorWithResponse(
-            resourceGroupName, siteName, detectorName, diagnosticCategory, startTime, endTime, timeGrain, context);
+        Response<DiagnosticDetectorResponseInner> inner = this.serviceClient()
+            .executeSiteDetectorWithResponse(resourceGroupName, siteName, detectorName, diagnosticCategory, startTime,
+                endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticDetectorResponseImpl(inner.getValue(), this.manager()));
@@ -288,8 +292,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DetectorResponse> getSiteDetectorResponseSlotWithResponse(String resourceGroupName, String siteName,
         String detectorName, String slot, OffsetDateTime startTime, OffsetDateTime endTime, String timeGrain,
         Context context) {
-        Response<DetectorResponseInner> inner = this.serviceClient().getSiteDetectorResponseSlotWithResponse(
-            resourceGroupName, siteName, detectorName, slot, startTime, endTime, timeGrain, context);
+        Response<DetectorResponseInner> inner = this.serviceClient()
+            .getSiteDetectorResponseSlotWithResponse(resourceGroupName, siteName, detectorName, slot, startTime,
+                endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));
@@ -362,8 +367,9 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public Response<AnalysisDefinition> getSiteAnalysisSlotWithResponse(String resourceGroupName, String siteName,
         String diagnosticCategory, String analysisName, String slot, Context context) {
-        Response<AnalysisDefinitionInner> inner = this.serviceClient().getSiteAnalysisSlotWithResponse(
-            resourceGroupName, siteName, diagnosticCategory, analysisName, slot, context);
+        Response<AnalysisDefinitionInner> inner = this.serviceClient()
+            .getSiteAnalysisSlotWithResponse(resourceGroupName, siteName, diagnosticCategory, analysisName, slot,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AnalysisDefinitionImpl(inner.getValue(), this.manager()));
@@ -374,8 +380,8 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public AnalysisDefinition getSiteAnalysisSlot(String resourceGroupName, String siteName, String diagnosticCategory,
         String analysisName, String slot) {
-        AnalysisDefinitionInner inner = this.serviceClient().getSiteAnalysisSlot(resourceGroupName, siteName,
-            diagnosticCategory, analysisName, slot);
+        AnalysisDefinitionInner inner = this.serviceClient()
+            .getSiteAnalysisSlot(resourceGroupName, siteName, diagnosticCategory, analysisName, slot);
         if (inner != null) {
             return new AnalysisDefinitionImpl(inner, this.manager());
         } else {
@@ -386,9 +392,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DiagnosticAnalysis> executeSiteAnalysisSlotWithResponse(String resourceGroupName, String siteName,
         String diagnosticCategory, String analysisName, String slot, OffsetDateTime startTime, OffsetDateTime endTime,
         String timeGrain, Context context) {
-        Response<DiagnosticAnalysisInner> inner
-            = this.serviceClient().executeSiteAnalysisSlotWithResponse(resourceGroupName, siteName, diagnosticCategory,
-                analysisName, slot, startTime, endTime, timeGrain, context);
+        Response<DiagnosticAnalysisInner> inner = this.serviceClient()
+            .executeSiteAnalysisSlotWithResponse(resourceGroupName, siteName, diagnosticCategory, analysisName, slot,
+                startTime, endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticAnalysisImpl(inner.getValue(), this.manager()));
@@ -399,8 +405,8 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public DiagnosticAnalysis executeSiteAnalysisSlot(String resourceGroupName, String siteName,
         String diagnosticCategory, String analysisName, String slot) {
-        DiagnosticAnalysisInner inner = this.serviceClient().executeSiteAnalysisSlot(resourceGroupName, siteName,
-            diagnosticCategory, analysisName, slot);
+        DiagnosticAnalysisInner inner = this.serviceClient()
+            .executeSiteAnalysisSlot(resourceGroupName, siteName, diagnosticCategory, analysisName, slot);
         if (inner != null) {
             return new DiagnosticAnalysisImpl(inner, this.manager());
         } else {
@@ -426,8 +432,9 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public Response<DetectorDefinitionResource> getSiteDetectorSlotWithResponse(String resourceGroupName,
         String siteName, String diagnosticCategory, String detectorName, String slot, Context context) {
-        Response<DetectorDefinitionResourceInner> inner = this.serviceClient().getSiteDetectorSlotWithResponse(
-            resourceGroupName, siteName, diagnosticCategory, detectorName, slot, context);
+        Response<DetectorDefinitionResourceInner> inner = this.serviceClient()
+            .getSiteDetectorSlotWithResponse(resourceGroupName, siteName, diagnosticCategory, detectorName, slot,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorDefinitionResourceImpl(inner.getValue(), this.manager()));
@@ -438,8 +445,8 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public DetectorDefinitionResource getSiteDetectorSlot(String resourceGroupName, String siteName,
         String diagnosticCategory, String detectorName, String slot) {
-        DetectorDefinitionResourceInner inner = this.serviceClient().getSiteDetectorSlot(resourceGroupName, siteName,
-            diagnosticCategory, detectorName, slot);
+        DetectorDefinitionResourceInner inner = this.serviceClient()
+            .getSiteDetectorSlot(resourceGroupName, siteName, diagnosticCategory, detectorName, slot);
         if (inner != null) {
             return new DetectorDefinitionResourceImpl(inner, this.manager());
         } else {
@@ -450,9 +457,9 @@ public final class DiagnosticsImpl implements Diagnostics {
     public Response<DiagnosticDetectorResponse> executeSiteDetectorSlotWithResponse(String resourceGroupName,
         String siteName, String detectorName, String diagnosticCategory, String slot, OffsetDateTime startTime,
         OffsetDateTime endTime, String timeGrain, Context context) {
-        Response<DiagnosticDetectorResponseInner> inner
-            = this.serviceClient().executeSiteDetectorSlotWithResponse(resourceGroupName, siteName, detectorName,
-                diagnosticCategory, slot, startTime, endTime, timeGrain, context);
+        Response<DiagnosticDetectorResponseInner> inner = this.serviceClient()
+            .executeSiteDetectorSlotWithResponse(resourceGroupName, siteName, detectorName, diagnosticCategory, slot,
+                startTime, endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticDetectorResponseImpl(inner.getValue(), this.manager()));
@@ -463,8 +470,8 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     public DiagnosticDetectorResponse executeSiteDetectorSlot(String resourceGroupName, String siteName,
         String detectorName, String diagnosticCategory, String slot) {
-        DiagnosticDetectorResponseInner inner = this.serviceClient().executeSiteDetectorSlot(resourceGroupName,
-            siteName, detectorName, diagnosticCategory, slot);
+        DiagnosticDetectorResponseInner inner = this.serviceClient()
+            .executeSiteDetectorSlot(resourceGroupName, siteName, detectorName, diagnosticCategory, slot);
         if (inner != null) {
             return new DiagnosticDetectorResponseImpl(inner, this.manager());
         } else {

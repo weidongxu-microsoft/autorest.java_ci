@@ -29,8 +29,7 @@ public final class BudgetInner extends ProxyResource {
     private BudgetProperties innerProperties;
 
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
-     * is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -51,8 +50,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -61,8 +59,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @param etag the etag value to set.
      * @return the BudgetInner object itself.
@@ -119,8 +116,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Get the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time
-     * grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
+     * Get the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
      * 
      * @return the timeGrain value.
      */
@@ -129,8 +125,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Set the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time
-     * grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
+     * Set the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
      * 
      * @param timeGrain the timeGrain value to set.
      * @return the BudgetInner object itself.
@@ -144,10 +139,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Get the timePeriod property: Has start and end date of the budget. The start date must be first of the month and
-     * should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should
-     * not be more than twelve months. Past start date should be selected within the timegrain period. There are no
-     * restrictions on the end date.
+     * Get the timePeriod property: Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
      * 
      * @return the timePeriod value.
      */
@@ -156,10 +148,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Set the timePeriod property: Has start and end date of the budget. The start date must be first of the month and
-     * should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should
-     * not be more than twelve months. Past start date should be selected within the timegrain period. There are no
-     * restrictions on the end date.
+     * Set the timePeriod property: Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
      * 
      * @param timePeriod the timePeriod value to set.
      * @return the BudgetInner object itself.
@@ -205,8 +194,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Get the notifications property: Dictionary of notifications associated with the budget. Budget can have up to
-     * five notifications.
+     * Get the notifications property: Dictionary of notifications associated with the budget. Budget can have up to five notifications.
      * 
      * @return the notifications value.
      */
@@ -215,8 +203,7 @@ public final class BudgetInner extends ProxyResource {
     }
 
     /**
-     * Set the notifications property: Dictionary of notifications associated with the budget. Budget can have up to
-     * five notifications.
+     * Set the notifications property: Dictionary of notifications associated with the budget. Budget can have up to five notifications.
      * 
      * @param notifications the notifications value to set.
      * @return the BudgetInner object itself.

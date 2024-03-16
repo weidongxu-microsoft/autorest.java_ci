@@ -50,8 +50,7 @@ public interface VirtualMachineExtension {
     Map<String, String> tags();
 
     /**
-     * Gets the forceUpdateTag property: How the extension handler should be forced to update even if the extension
-     * configuration has not changed.
+     * Gets the forceUpdateTag property: How the extension handler should be forced to update even if the extension configuration has not changed.
      * 
      * @return the forceUpdateTag value.
      */
@@ -79,17 +78,14 @@ public interface VirtualMachineExtension {
     String typeHandlerVersion();
 
     /**
-     * Gets the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if
-     * one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless
-     * redeployed, even with this property set to true.
+     * Gets the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
      * 
      * @return the autoUpgradeMinorVersion value.
      */
     Boolean autoUpgradeMinorVersion();
 
     /**
-     * Gets the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the
-     * platform if there is a newer version of the extension available.
+     * Gets the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
      * 
      * @return the enableAutomaticUpgrade value.
      */
@@ -103,8 +99,7 @@ public interface VirtualMachineExtension {
     Object settings();
 
     /**
-     * Gets the protectedSettings property: The extension can contain either protectedSettings or
-     * protectedSettingsFromKeyVault or no protected settings at all.
+     * Gets the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
      * 
      * @return the protectedSettings value.
      */
@@ -125,25 +120,21 @@ public interface VirtualMachineExtension {
     VirtualMachineExtensionInstanceView instanceView();
 
     /**
-     * Gets the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed
-     * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The
-     * default is false.
+     * Gets the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
      * 
      * @return the suppressFailures value.
      */
     Boolean suppressFailures();
 
     /**
-     * Gets the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference,
-     * and consumed from key vault.
+     * Gets the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
      * 
      * @return the protectedSettingsFromKeyVault value.
      */
     KeyVaultSecretReference protectedSettingsFromKeyVault();
 
     /**
-     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be
-     * provisioned.
+     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be provisioned.
      * 
      * @return the provisionAfterExtensions value.
      */
@@ -230,8 +221,7 @@ public interface VirtualMachineExtension {
         }
 
         /**
-         * The stage of the VirtualMachineExtension definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualMachineExtension definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithForceUpdateTag, DefinitionStages.WithPublisher,
@@ -274,11 +264,9 @@ public interface VirtualMachineExtension {
          */
         interface WithForceUpdateTag {
             /**
-             * Specifies the forceUpdateTag property: How the extension handler should be forced to update even if the
-             * extension configuration has not changed..
+             * Specifies the forceUpdateTag property: How the extension handler should be forced to update even if the extension configuration has not changed..
              * 
-             * @param forceUpdateTag How the extension handler should be forced to update even if the extension
-             * configuration has not changed.
+             * @param forceUpdateTag How the extension handler should be forced to update even if the extension configuration has not changed.
              * @return the next definition stage.
              */
             WithCreate withForceUpdateTag(String forceUpdateTag);
@@ -302,8 +290,7 @@ public interface VirtualMachineExtension {
          */
         interface WithTypePropertiesType {
             /**
-             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is
-             * "CustomScriptExtension"..
+             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is "CustomScriptExtension"..
              * 
              * @param typePropertiesType Specifies the type of the extension; an example is "CustomScriptExtension".
              * @return the next definition stage.
@@ -329,13 +316,9 @@ public interface VirtualMachineExtension {
          */
         interface WithAutoUpgradeMinorVersion {
             /**
-             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor
-             * version if one is available at deployment time. Once deployed, however, the extension will not upgrade
-             * minor versions unless redeployed, even with this property set to true..
+             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true..
              * 
-             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is
-             * available at deployment time. Once deployed, however, the extension will not upgrade minor versions
-             * unless redeployed, even with this property set to true.
+             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
              * @return the next definition stage.
              */
             WithCreate withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
@@ -346,11 +329,9 @@ public interface VirtualMachineExtension {
          */
         interface WithEnableAutomaticUpgrade {
             /**
-             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically
-             * upgraded by the platform if there is a newer version of the extension available..
+             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available..
              * 
-             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the
-             * platform if there is a newer version of the extension available.
+             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
              * @return the next definition stage.
              */
             WithCreate withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
@@ -374,11 +355,9 @@ public interface VirtualMachineExtension {
          */
         interface WithProtectedSettings {
             /**
-             * Specifies the protectedSettings property: The extension can contain either protectedSettings or
-             * protectedSettingsFromKeyVault or no protected settings at all..
+             * Specifies the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all..
              * 
-             * @param protectedSettings The extension can contain either protectedSettings or
-             * protectedSettingsFromKeyVault or no protected settings at all.
+             * @param protectedSettings The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
              * @return the next definition stage.
              */
             WithCreate withProtectedSettings(Object protectedSettings);
@@ -402,13 +381,9 @@ public interface VirtualMachineExtension {
          */
         interface WithSuppressFailures {
             /**
-             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be
-             * suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of
-             * this value). The default is false..
+             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false..
              * 
-             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed
-             * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value).
-             * The default is false.
+             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
              * @return the next definition stage.
              */
             WithCreate withSuppressFailures(Boolean suppressFailures);
@@ -419,11 +394,9 @@ public interface VirtualMachineExtension {
          */
         interface WithProtectedSettingsFromKeyVault {
             /**
-             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
-             * by reference, and consumed from key vault.
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
              * 
-             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
-             * consumed from key vault.
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and consumed from key vault.
              * @return the next definition stage.
              */
             WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
@@ -434,11 +407,9 @@ public interface VirtualMachineExtension {
          */
         interface WithProvisionAfterExtensions {
             /**
-             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension
-             * needs to be provisioned..
+             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension needs to be provisioned..
              * 
-             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be
-             * provisioned.
+             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be provisioned.
              * @return the next definition stage.
              */
             WithCreate withProvisionAfterExtensions(List<String> provisionAfterExtensions);
@@ -497,11 +468,9 @@ public interface VirtualMachineExtension {
          */
         interface WithForceUpdateTag {
             /**
-             * Specifies the forceUpdateTag property: How the extension handler should be forced to update even if the
-             * extension configuration has not changed..
+             * Specifies the forceUpdateTag property: How the extension handler should be forced to update even if the extension configuration has not changed..
              * 
-             * @param forceUpdateTag How the extension handler should be forced to update even if the extension
-             * configuration has not changed.
+             * @param forceUpdateTag How the extension handler should be forced to update even if the extension configuration has not changed.
              * @return the next definition stage.
              */
             Update withForceUpdateTag(String forceUpdateTag);
@@ -551,13 +520,9 @@ public interface VirtualMachineExtension {
          */
         interface WithAutoUpgradeMinorVersion {
             /**
-             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor
-             * version if one is available at deployment time. Once deployed, however, the extension will not upgrade
-             * minor versions unless redeployed, even with this property set to true..
+             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true..
              * 
-             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is
-             * available at deployment time. Once deployed, however, the extension will not upgrade minor versions
-             * unless redeployed, even with this property set to true.
+             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
              * @return the next definition stage.
              */
             Update withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
@@ -568,11 +533,9 @@ public interface VirtualMachineExtension {
          */
         interface WithEnableAutomaticUpgrade {
             /**
-             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically
-             * upgraded by the platform if there is a newer version of the extension available..
+             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available..
              * 
-             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the
-             * platform if there is a newer version of the extension available.
+             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
              * @return the next definition stage.
              */
             Update withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
@@ -596,11 +559,9 @@ public interface VirtualMachineExtension {
          */
         interface WithProtectedSettings {
             /**
-             * Specifies the protectedSettings property: The extension can contain either protectedSettings or
-             * protectedSettingsFromKeyVault or no protected settings at all..
+             * Specifies the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all..
              * 
-             * @param protectedSettings The extension can contain either protectedSettings or
-             * protectedSettingsFromKeyVault or no protected settings at all.
+             * @param protectedSettings The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
              * @return the next definition stage.
              */
             Update withProtectedSettings(Object protectedSettings);
@@ -611,13 +572,9 @@ public interface VirtualMachineExtension {
          */
         interface WithSuppressFailures {
             /**
-             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be
-             * suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of
-             * this value). The default is false..
+             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false..
              * 
-             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed
-             * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value).
-             * The default is false.
+             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
              * @return the next definition stage.
              */
             Update withSuppressFailures(Boolean suppressFailures);
@@ -628,11 +585,9 @@ public interface VirtualMachineExtension {
          */
         interface WithProtectedSettingsFromKeyVault {
             /**
-             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
-             * by reference, and consumed from key vault.
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
              * 
-             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
-             * consumed from key vault.
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and consumed from key vault.
              * @return the next definition stage.
              */
             Update withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);

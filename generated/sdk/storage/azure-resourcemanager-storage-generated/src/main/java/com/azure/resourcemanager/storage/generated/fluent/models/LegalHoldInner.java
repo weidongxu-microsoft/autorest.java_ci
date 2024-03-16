@@ -15,9 +15,7 @@ import java.util.List;
 @Fluent
 public final class LegalHoldInner {
     /*
-     * The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold
-     * public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of
-     * 1000 blob containers with hasLegalHold=true for a given account.
+     * The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      */
     @JsonProperty(value = "hasLegalHold", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean hasLegalHold;
@@ -29,8 +27,7 @@ public final class LegalHoldInner {
     private List<String> tags;
 
     /*
-     * When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection
-     * and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
+     * When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      */
     @JsonProperty(value = "allowProtectedAppendWritesAll")
     private Boolean allowProtectedAppendWritesAll;
@@ -42,9 +39,7 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one
-     * existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared
-     * out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      * 
      * @return the hasLegalHold value.
      */
@@ -73,9 +68,7 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
-     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
-     * blocks cannot be modified or deleted.
+     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      * 
      * @return the allowProtectedAppendWritesAll value.
      */
@@ -84,9 +77,7 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
-     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
-     * blocks cannot be modified or deleted.
+     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      * 
      * @param allowProtectedAppendWritesAll the allowProtectedAppendWritesAll value to set.
      * @return the LegalHoldInner object itself.

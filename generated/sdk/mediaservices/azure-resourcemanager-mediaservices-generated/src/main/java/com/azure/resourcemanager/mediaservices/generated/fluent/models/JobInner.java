@@ -17,8 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A Job resource type. The progress and state can be obtained by polling a Job or subscribing to events using
- * EventGrid.
+ * A Job resource type. The progress and state can be obtained by polling a Job or subscribing to events using EventGrid.
  */
 @Fluent
 public final class JobInner extends ProxyResource {
@@ -59,8 +58,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Get the created property: The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ'
-     * format.
+     * Get the created property: The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the created value.
      */
@@ -124,8 +122,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Get the lastModified property: The UTC date and time when the customer has last updated the Job, in
-     * 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Get the lastModified property: The UTC date and time when the customer has last updated the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */
@@ -157,8 +154,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Get the priority property: Priority with which the job should be processed. Higher priority jobs are processed
-     * before lower priority jobs. If not set, the default is normal.
+     * Get the priority property: Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
      * 
      * @return the priority value.
      */
@@ -167,8 +163,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Set the priority property: Priority with which the job should be processed. Higher priority jobs are processed
-     * before lower priority jobs. If not set, the default is normal.
+     * Set the priority property: Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
      * 
      * @param priority the priority value to set.
      * @return the JobInner object itself.
@@ -182,8 +177,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Get the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput
-     * state events.
+     * Get the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput state events.
      * 
      * @return the correlationData value.
      */
@@ -192,8 +186,7 @@ public final class JobInner extends ProxyResource {
     }
 
     /**
-     * Set the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput
-     * state events.
+     * Set the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput state events.
      * 
      * @param correlationData the correlationData value to set.
      * @return the JobInner object itself.

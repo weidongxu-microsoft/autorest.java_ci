@@ -64,8 +64,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNetworkVirtualApplianceConnections to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNetworkVirtualApplianceConnections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -129,13 +128,11 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -181,14 +178,12 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -233,8 +228,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -257,8 +251,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -283,8 +276,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -294,8 +286,10 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
     public SyncPoller<PollResult<NetworkVirtualApplianceConnectionInner>, NetworkVirtualApplianceConnectionInner>
         beginCreateOrUpdate(String resourceGroupName, String networkVirtualApplianceName, String connectionName,
             NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, connectionName,
-            networkVirtualApplianceConnectionParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, connectionName,
+                networkVirtualApplianceConnectionParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -304,8 +298,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -316,8 +309,10 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
     public SyncPoller<PollResult<NetworkVirtualApplianceConnectionInner>, NetworkVirtualApplianceConnectionInner>
         beginCreateOrUpdate(String resourceGroupName, String networkVirtualApplianceName, String connectionName,
             NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, connectionName,
-            networkVirtualApplianceConnectionParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, connectionName,
+                networkVirtualApplianceConnectionParameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -326,8 +321,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -347,8 +341,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -369,8 +362,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -390,8 +382,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
-     * PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -415,8 +406,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkVirtualApplianceConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -458,8 +448,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkVirtualApplianceConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -780,8 +769,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceConnectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -821,8 +809,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceConnectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -930,8 +917,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceConnectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -959,8 +945,7 @@ public final class NetworkVirtualApplianceConnectionsClientImpl implements Netwo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return networkVirtualApplianceConnection list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceConnectionInner>> listNextSinglePageAsync(String nextLink,

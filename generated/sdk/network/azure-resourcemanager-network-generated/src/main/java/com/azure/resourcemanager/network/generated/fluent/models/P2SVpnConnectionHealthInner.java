@@ -25,8 +25,7 @@ public final class P2SVpnConnectionHealthInner {
     }
 
     /**
-     * Get the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be
-     * written.
+     * Get the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be written.
      * 
      * @return the sasUrl value.
      */
@@ -35,8 +34,7 @@ public final class P2SVpnConnectionHealthInner {
     }
 
     /**
-     * Set the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be
-     * written.
+     * Set the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be written.
      * 
      * @param sasUrl the sasUrl value to set.
      * @return the P2SVpnConnectionHealthInner object itself.

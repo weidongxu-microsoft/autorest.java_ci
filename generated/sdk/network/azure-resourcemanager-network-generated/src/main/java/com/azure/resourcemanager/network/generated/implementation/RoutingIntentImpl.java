@@ -71,14 +71,16 @@ public final class RoutingIntentImpl implements RoutingIntent, RoutingIntent.Def
     }
 
     public RoutingIntent create() {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents().createOrUpdate(resourceGroupName,
-            virtualHubName, routingIntentName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .createOrUpdate(resourceGroupName, virtualHubName, routingIntentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RoutingIntent create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents().createOrUpdate(resourceGroupName,
-            virtualHubName, routingIntentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .createOrUpdate(resourceGroupName, virtualHubName, routingIntentName, this.innerModel(), context);
         return this;
     }
 
@@ -93,14 +95,16 @@ public final class RoutingIntentImpl implements RoutingIntent, RoutingIntent.Def
     }
 
     public RoutingIntent apply() {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents().createOrUpdate(resourceGroupName,
-            virtualHubName, routingIntentName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .createOrUpdate(resourceGroupName, virtualHubName, routingIntentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RoutingIntent apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents().createOrUpdate(resourceGroupName,
-            virtualHubName, routingIntentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .createOrUpdate(resourceGroupName, virtualHubName, routingIntentName, this.innerModel(), context);
         return this;
     }
 
@@ -114,14 +118,18 @@ public final class RoutingIntentImpl implements RoutingIntent, RoutingIntent.Def
     }
 
     public RoutingIntent refresh() {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents()
-            .getWithResponse(resourceGroupName, virtualHubName, routingIntentName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .getWithResponse(resourceGroupName, virtualHubName, routingIntentName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoutingIntent refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoutingIntents()
-            .getWithResponse(resourceGroupName, virtualHubName, routingIntentName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoutingIntents()
+            .getWithResponse(resourceGroupName, virtualHubName, routingIntentName, context)
+            .getValue();
         return this;
     }
 

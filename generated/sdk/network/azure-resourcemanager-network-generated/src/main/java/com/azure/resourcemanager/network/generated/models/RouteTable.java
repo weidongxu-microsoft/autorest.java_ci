@@ -72,8 +72,7 @@ public interface RouteTable {
     List<Subnet> subnets();
 
     /**
-     * Gets the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table.
-     * True means disable.
+     * Gets the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable.
      * 
      * @return the disableBgpRoutePropagation value.
      */
@@ -173,8 +172,7 @@ public interface RouteTable {
         }
 
         /**
-         * The stage of the RouteTable definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the RouteTable definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithRoutes,
             DefinitionStages.WithDisableBgpRoutePropagation {
@@ -225,11 +223,9 @@ public interface RouteTable {
          */
         interface WithDisableBgpRoutePropagation {
             /**
-             * Specifies the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that
-             * route table. True means disable..
+             * Specifies the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable..
              * 
-             * @param disableBgpRoutePropagation Whether to disable the routes learned by BGP on that route table. True
-             * means disable.
+             * @param disableBgpRoutePropagation Whether to disable the routes learned by BGP on that route table. True means disable.
              * @return the next definition stage.
              */
             WithCreate withDisableBgpRoutePropagation(Boolean disableBgpRoutePropagation);

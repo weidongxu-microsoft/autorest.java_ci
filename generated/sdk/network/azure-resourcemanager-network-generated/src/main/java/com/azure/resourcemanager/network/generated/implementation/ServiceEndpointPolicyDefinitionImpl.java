@@ -80,16 +80,18 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
     }
 
     public ServiceEndpointPolicyDefinition create() {
-        this.innerObject
-            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
-                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
+            .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServiceEndpointPolicyDefinition create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
-                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
+            .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -105,16 +107,18 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
     }
 
     public ServiceEndpointPolicyDefinition apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
-                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
+            .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServiceEndpointPolicyDefinition apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
-                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
+            .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -130,14 +134,17 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
     }
 
     public ServiceEndpointPolicyDefinition refresh() {
-        this.innerObject
-            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().getWithResponse(resourceGroupName,
-                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
+            .getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ServiceEndpointPolicyDefinition refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions()
+        this.innerObject = serviceManager.serviceClient()
+            .getServiceEndpointPolicyDefinitions()
             .getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context)
             .getValue();
         return this;

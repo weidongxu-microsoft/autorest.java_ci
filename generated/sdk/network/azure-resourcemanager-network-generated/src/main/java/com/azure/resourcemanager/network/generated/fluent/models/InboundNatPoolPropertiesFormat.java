@@ -29,15 +29,13 @@ public final class InboundNatPoolPropertiesFormat {
     private TransportProtocol protocol;
 
     /*
-     * The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated
-     * with a load balancer. Acceptable values range between 1 and 65534.
+     * The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65534.
      */
     @JsonProperty(value = "frontendPortRangeStart", required = true)
     private int frontendPortRangeStart;
 
     /*
-     * The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated
-     * with a load balancer. Acceptable values range between 1 and 65535.
+     * The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65535.
      */
     @JsonProperty(value = "frontendPortRangeEnd", required = true)
     private int frontendPortRangeEnd;
@@ -49,23 +47,19 @@ public final class InboundNatPoolPropertiesFormat {
     private int backendPort;
 
     /*
-     * The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4
-     * minutes. This element is only used when the protocol is set to TCP.
+     * The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      */
     @JsonProperty(value = "idleTimeoutInMinutes")
     private Integer idleTimeoutInMinutes;
 
     /*
-     * Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn
-     * Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This
-     * setting can't be changed after you create the endpoint.
+     * Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      */
     @JsonProperty(value = "enableFloatingIP")
     private Boolean enableFloatingIp;
 
     /*
-     * Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is
-     * only used when the protocol is set to TCP.
+     * Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      */
     @JsonProperty(value = "enableTcpReset")
     private Boolean enableTcpReset;
@@ -123,8 +117,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the frontendPortRangeStart property: The first port number in the range of external ports that will be used
-     * to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65534.
+     * Get the frontendPortRangeStart property: The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65534.
      * 
      * @return the frontendPortRangeStart value.
      */
@@ -133,8 +126,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the frontendPortRangeStart property: The first port number in the range of external ports that will be used
-     * to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65534.
+     * Set the frontendPortRangeStart property: The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65534.
      * 
      * @param frontendPortRangeStart the frontendPortRangeStart value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.
@@ -145,8 +137,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the frontendPortRangeEnd property: The last port number in the range of external ports that will be used to
-     * provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65535.
+     * Get the frontendPortRangeEnd property: The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65535.
      * 
      * @return the frontendPortRangeEnd value.
      */
@@ -155,8 +146,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the frontendPortRangeEnd property: The last port number in the range of external ports that will be used to
-     * provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65535.
+     * Set the frontendPortRangeEnd property: The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer. Acceptable values range between 1 and 65535.
      * 
      * @param frontendPortRangeEnd the frontendPortRangeEnd value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.
@@ -167,8 +157,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the backendPort property: The port used for internal connections on the endpoint. Acceptable values are
-     * between 1 and 65535.
+     * Get the backendPort property: The port used for internal connections on the endpoint. Acceptable values are between 1 and 65535.
      * 
      * @return the backendPort value.
      */
@@ -177,8 +166,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the backendPort property: The port used for internal connections on the endpoint. Acceptable values are
-     * between 1 and 65535.
+     * Set the backendPort property: The port used for internal connections on the endpoint. Acceptable values are between 1 and 65535.
      * 
      * @param backendPort the backendPort value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.
@@ -189,8 +177,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
-     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Get the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @return the idleTimeoutInMinutes value.
      */
@@ -199,8 +186,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
-     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Set the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @param idleTimeoutInMinutes the idleTimeoutInMinutes value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.
@@ -211,9 +197,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
-     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Get the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @return the enableFloatingIp value.
      */
@@ -222,9 +206,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
-     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Set the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @param enableFloatingIp the enableFloatingIp value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.
@@ -235,8 +217,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
@@ -245,8 +226,7 @@ public final class InboundNatPoolPropertiesFormat {
     }
 
     /**
-     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @param enableTcpReset the enableTcpReset value to set.
      * @return the InboundNatPoolPropertiesFormat object itself.

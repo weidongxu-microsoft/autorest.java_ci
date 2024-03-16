@@ -61,17 +61,14 @@ public interface VirtualMachineExtensionImage {
     String computeRole();
 
     /**
-     * Gets the handlerSchema property: The schema defined by publisher, where extension consumers should provide
-     * settings in a matching schema.
+     * Gets the handlerSchema property: The schema defined by publisher, where extension consumers should provide settings in a matching schema.
      * 
      * @return the handlerSchema value.
      */
     String handlerSchema();
 
     /**
-     * Gets the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing
-     * extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the
-     * extension is only enabled for CRP VMs but not VMSS.
+     * Gets the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the extension is only enabled for CRP VMs but not VMSS.
      * 
      * @return the vmScaleSetEnabled value.
      */
@@ -85,8 +82,7 @@ public interface VirtualMachineExtensionImage {
     Boolean supportsMultipleExtensions();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner object.
      * 
      * @return the inner object.
      */

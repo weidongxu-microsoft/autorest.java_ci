@@ -33,8 +33,7 @@ public final class DatabaseBackupSetting {
     private String connectionStringName;
 
     /*
-     * Contains a connection string to a database which is being backed up or restored. If the restore should happen to
-     * a new database, the database name inside is the new one.
+     * Contains a connection string to a database which is being backed up or restored. If the restore should happen to a new database, the database name inside is the new one.
      */
     @JsonProperty(value = "connectionString")
     private String connectionString;
@@ -86,8 +85,7 @@ public final class DatabaseBackupSetting {
     }
 
     /**
-     * Get the connectionStringName property: Contains a connection string name that is linked to the
-     * SiteConfig.ConnectionStrings.
+     * Get the connectionStringName property: Contains a connection string name that is linked to the SiteConfig.ConnectionStrings.
      * This is used during restore with overwrite connection strings options.
      * 
      * @return the connectionStringName value.
@@ -97,8 +95,7 @@ public final class DatabaseBackupSetting {
     }
 
     /**
-     * Set the connectionStringName property: Contains a connection string name that is linked to the
-     * SiteConfig.ConnectionStrings.
+     * Set the connectionStringName property: Contains a connection string name that is linked to the SiteConfig.ConnectionStrings.
      * This is used during restore with overwrite connection strings options.
      * 
      * @param connectionStringName the connectionStringName value to set.
@@ -110,8 +107,7 @@ public final class DatabaseBackupSetting {
     }
 
     /**
-     * Get the connectionString property: Contains a connection string to a database which is being backed up or
-     * restored. If the restore should happen to a new database, the database name inside is the new one.
+     * Get the connectionString property: Contains a connection string to a database which is being backed up or restored. If the restore should happen to a new database, the database name inside is the new one.
      * 
      * @return the connectionString value.
      */
@@ -120,8 +116,7 @@ public final class DatabaseBackupSetting {
     }
 
     /**
-     * Set the connectionString property: Contains a connection string to a database which is being backed up or
-     * restored. If the restore should happen to a new database, the database name inside is the new one.
+     * Set the connectionString property: Contains a connection string to a database which is being backed up or restored. If the restore should happen to a new database, the database name inside is the new one.
      * 
      * @param connectionString the connectionString value to set.
      * @return the DatabaseBackupSetting object itself.

@@ -13,58 +13,49 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class PresetConfigurations {
     /*
-     * Allows you to configure the encoder settings to control the balance between speed and quality. Example: set
-     * Complexity as Speed for faster encoding but less compression efficiency.
+     * Allows you to configure the encoder settings to control the balance between speed and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
      */
     @JsonProperty(value = "complexity")
     private Complexity complexity;
 
     /*
-     * Sets the interleave mode of the output to control how audio and video are stored in the container format.
-     * Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and video-only outputs in separate
-     * MP4 files.
+     * Sets the interleave mode of the output to control how audio and video are stored in the container format. Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and video-only outputs in separate MP4 files.
      */
     @JsonProperty(value = "interleaveOutput")
     private InterleaveOutput interleaveOutput;
 
     /*
-     * The key frame interval in seconds. Example: set KeyFrameIntervalInSeconds as 2 to reduce the playback buffering
-     * for some players.
+     * The key frame interval in seconds. Example: set KeyFrameIntervalInSeconds as 2 to reduce the playback buffering for some players.
      */
     @JsonProperty(value = "keyFrameIntervalInSeconds")
     private Float keyFrameIntervalInSeconds;
 
     /*
-     * The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as 6000000
-     * to avoid producing very high bitrate outputs for contents with high complexity.
+     * The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as 6000000 to avoid producing very high bitrate outputs for contents with high complexity.
      */
     @JsonProperty(value = "maxBitrateBps")
     private Integer maxBitrateBps;
 
     /*
-     * The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P even
-     * if the input is 4K.
+     * The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P even if the input is 4K.
      */
     @JsonProperty(value = "maxHeight")
     private Integer maxHeight;
 
     /*
-     * The maximum number of output video layers. Example: set MaxLayers as 4 to make sure at most 4 output layers are
-     * produced to control the overall cost of the encoding job.
+     * The maximum number of output video layers. Example: set MaxLayers as 4 to make sure at most 4 output layers are produced to control the overall cost of the encoding job.
      */
     @JsonProperty(value = "maxLayers")
     private Integer maxLayers;
 
     /*
-     * The minimum bitrate in bits per second (threshold for the bottom video layer). Example: set MinBitrateBps as
-     * 200000 to have a bottom layer that covers users with low network bandwidth.
+     * The minimum bitrate in bits per second (threshold for the bottom video layer). Example: set MinBitrateBps as 200000 to have a bottom layer that covers users with low network bandwidth.
      */
     @JsonProperty(value = "minBitrateBps")
     private Integer minBitrateBps;
 
     /*
-     * The minimum height of output video layers. Example: set MinHeight as 360 to avoid output layers of smaller
-     * resolutions like 180P.
+     * The minimum height of output video layers. Example: set MinHeight as 360 to avoid output layers of smaller resolutions like 180P.
      */
     @JsonProperty(value = "minHeight")
     private Integer minHeight;
@@ -76,8 +67,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the complexity property: Allows you to configure the encoder settings to control the balance between speed
-     * and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
+     * Get the complexity property: Allows you to configure the encoder settings to control the balance between speed and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
      * 
      * @return the complexity value.
      */
@@ -86,8 +76,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the complexity property: Allows you to configure the encoder settings to control the balance between speed
-     * and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
+     * Set the complexity property: Allows you to configure the encoder settings to control the balance between speed and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
      * 
      * @param complexity the complexity value to set.
      * @return the PresetConfigurations object itself.
@@ -98,9 +87,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the interleaveOutput property: Sets the interleave mode of the output to control how audio and video are
-     * stored in the container format. Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and
-     * video-only outputs in separate MP4 files.
+     * Get the interleaveOutput property: Sets the interleave mode of the output to control how audio and video are stored in the container format. Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and video-only outputs in separate MP4 files.
      * 
      * @return the interleaveOutput value.
      */
@@ -109,9 +96,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the interleaveOutput property: Sets the interleave mode of the output to control how audio and video are
-     * stored in the container format. Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and
-     * video-only outputs in separate MP4 files.
+     * Set the interleaveOutput property: Sets the interleave mode of the output to control how audio and video are stored in the container format. Example: set InterleavedOutput as NonInterleavedOutput to produce audio-only and video-only outputs in separate MP4 files.
      * 
      * @param interleaveOutput the interleaveOutput value to set.
      * @return the PresetConfigurations object itself.
@@ -122,8 +107,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the keyFrameIntervalInSeconds property: The key frame interval in seconds. Example: set
-     * KeyFrameIntervalInSeconds as 2 to reduce the playback buffering for some players.
+     * Get the keyFrameIntervalInSeconds property: The key frame interval in seconds. Example: set KeyFrameIntervalInSeconds as 2 to reduce the playback buffering for some players.
      * 
      * @return the keyFrameIntervalInSeconds value.
      */
@@ -132,8 +116,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the keyFrameIntervalInSeconds property: The key frame interval in seconds. Example: set
-     * KeyFrameIntervalInSeconds as 2 to reduce the playback buffering for some players.
+     * Set the keyFrameIntervalInSeconds property: The key frame interval in seconds. Example: set KeyFrameIntervalInSeconds as 2 to reduce the playback buffering for some players.
      * 
      * @param keyFrameIntervalInSeconds the keyFrameIntervalInSeconds value to set.
      * @return the PresetConfigurations object itself.
@@ -144,9 +127,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the maxBitrateBps property: The maximum bitrate in bits per second (threshold for the top video layer).
-     * Example: set MaxBitrateBps as 6000000 to avoid producing very high bitrate outputs for contents with high
-     * complexity.
+     * Get the maxBitrateBps property: The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as 6000000 to avoid producing very high bitrate outputs for contents with high complexity.
      * 
      * @return the maxBitrateBps value.
      */
@@ -155,9 +136,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the maxBitrateBps property: The maximum bitrate in bits per second (threshold for the top video layer).
-     * Example: set MaxBitrateBps as 6000000 to avoid producing very high bitrate outputs for contents with high
-     * complexity.
+     * Set the maxBitrateBps property: The maximum bitrate in bits per second (threshold for the top video layer). Example: set MaxBitrateBps as 6000000 to avoid producing very high bitrate outputs for contents with high complexity.
      * 
      * @param maxBitrateBps the maxBitrateBps value to set.
      * @return the PresetConfigurations object itself.
@@ -168,8 +147,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the maxHeight property: The maximum height of output video layers. Example: set MaxHeight as 720 to produce
-     * output layers up to 720P even if the input is 4K.
+     * Get the maxHeight property: The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P even if the input is 4K.
      * 
      * @return the maxHeight value.
      */
@@ -178,8 +156,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the maxHeight property: The maximum height of output video layers. Example: set MaxHeight as 720 to produce
-     * output layers up to 720P even if the input is 4K.
+     * Set the maxHeight property: The maximum height of output video layers. Example: set MaxHeight as 720 to produce output layers up to 720P even if the input is 4K.
      * 
      * @param maxHeight the maxHeight value to set.
      * @return the PresetConfigurations object itself.
@@ -190,8 +167,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the maxLayers property: The maximum number of output video layers. Example: set MaxLayers as 4 to make sure
-     * at most 4 output layers are produced to control the overall cost of the encoding job.
+     * Get the maxLayers property: The maximum number of output video layers. Example: set MaxLayers as 4 to make sure at most 4 output layers are produced to control the overall cost of the encoding job.
      * 
      * @return the maxLayers value.
      */
@@ -200,8 +176,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the maxLayers property: The maximum number of output video layers. Example: set MaxLayers as 4 to make sure
-     * at most 4 output layers are produced to control the overall cost of the encoding job.
+     * Set the maxLayers property: The maximum number of output video layers. Example: set MaxLayers as 4 to make sure at most 4 output layers are produced to control the overall cost of the encoding job.
      * 
      * @param maxLayers the maxLayers value to set.
      * @return the PresetConfigurations object itself.
@@ -212,8 +187,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the minBitrateBps property: The minimum bitrate in bits per second (threshold for the bottom video layer).
-     * Example: set MinBitrateBps as 200000 to have a bottom layer that covers users with low network bandwidth.
+     * Get the minBitrateBps property: The minimum bitrate in bits per second (threshold for the bottom video layer). Example: set MinBitrateBps as 200000 to have a bottom layer that covers users with low network bandwidth.
      * 
      * @return the minBitrateBps value.
      */
@@ -222,8 +196,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the minBitrateBps property: The minimum bitrate in bits per second (threshold for the bottom video layer).
-     * Example: set MinBitrateBps as 200000 to have a bottom layer that covers users with low network bandwidth.
+     * Set the minBitrateBps property: The minimum bitrate in bits per second (threshold for the bottom video layer). Example: set MinBitrateBps as 200000 to have a bottom layer that covers users with low network bandwidth.
      * 
      * @param minBitrateBps the minBitrateBps value to set.
      * @return the PresetConfigurations object itself.
@@ -234,8 +207,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Get the minHeight property: The minimum height of output video layers. Example: set MinHeight as 360 to avoid
-     * output layers of smaller resolutions like 180P.
+     * Get the minHeight property: The minimum height of output video layers. Example: set MinHeight as 360 to avoid output layers of smaller resolutions like 180P.
      * 
      * @return the minHeight value.
      */
@@ -244,8 +216,7 @@ public final class PresetConfigurations {
     }
 
     /**
-     * Set the minHeight property: The minimum height of output video layers. Example: set MinHeight as 360 to avoid
-     * output layers of smaller resolutions like 180P.
+     * Set the minHeight property: The minimum height of output video layers. Example: set MinHeight as 360 to avoid output layers of smaller resolutions like 180P.
      * 
      * @param minHeight the minHeight value to set.
      * @return the PresetConfigurations object itself.

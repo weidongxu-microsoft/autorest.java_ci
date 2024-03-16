@@ -13,9 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class NetworkProperties {
     /*
-     * A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the
-     * outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are
-     * managed by a customer specific solution.
+     * A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are managed by a customer specific solution.
      */
     @JsonProperty(value = "outboundDependenciesManagedType")
     private OutboundDependenciesManagedType outboundDependenciesManagedType;
@@ -39,9 +37,7 @@ public final class NetworkProperties {
     }
 
     /**
-     * Get the outboundDependenciesManagedType property: A value to describe how the outbound dependencies of a
-     * HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight
-     * service. 'External' means that the outbound dependencies are managed by a customer specific solution.
+     * Get the outboundDependenciesManagedType property: A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are managed by a customer specific solution.
      * 
      * @return the outboundDependenciesManagedType value.
      */
@@ -50,9 +46,7 @@ public final class NetworkProperties {
     }
 
     /**
-     * Set the outboundDependenciesManagedType property: A value to describe how the outbound dependencies of a
-     * HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight
-     * service. 'External' means that the outbound dependencies are managed by a customer specific solution.
+     * Set the outboundDependenciesManagedType property: A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are managed by a customer specific solution.
      * 
      * @param outboundDependenciesManagedType the outboundDependenciesManagedType value to set.
      * @return the NetworkProperties object itself.

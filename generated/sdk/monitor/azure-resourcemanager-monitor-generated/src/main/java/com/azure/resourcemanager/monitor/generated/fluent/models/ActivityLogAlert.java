@@ -17,15 +17,13 @@ import java.util.List;
 @Fluent
 public final class ActivityLogAlert {
     /*
-     * A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds
-     * that fall under one of these prefixes. This list must include at least one item.
+     * A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      */
     @JsonProperty(value = "scopes", required = true)
     private List<String> scopes;
 
     /*
-     * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its
-     * actions will be activated.
+     * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -55,8 +53,7 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @return the scopes value.
      */
@@ -65,8 +62,7 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @param scopes the scopes value to set.
      * @return the ActivityLogAlert object itself.
@@ -77,8 +73,7 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -87,8 +82,7 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlert object itself.

@@ -22,8 +22,7 @@ public final class SshPublicKeysGroupListResult {
     private List<SshPublicKeyResourceInner> value;
 
     /*
-     * The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to fetch the next page of SSH
-     * public keys.
+     * The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to fetch the next page of SSH public keys.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class SshPublicKeysGroupListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to
-     * fetch the next page of SSH public keys.
+     * Get the nextLink property: The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to fetch the next page of SSH public keys.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class SshPublicKeysGroupListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to
-     * fetch the next page of SSH public keys.
+     * Set the nextLink property: The URI to fetch the next page of SSH public keys. Call ListNext() with this URI to fetch the next page of SSH public keys.
      * 
      * @param nextLink the nextLink value to set.
      * @return the SshPublicKeysGroupListResult object itself.

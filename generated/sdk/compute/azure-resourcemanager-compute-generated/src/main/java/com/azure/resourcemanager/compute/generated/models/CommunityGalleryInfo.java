@@ -76,8 +76,7 @@ public final class CommunityGalleryInfo {
     }
 
     /**
-     * Get the publisherContact property: Community gallery publisher support email. The email address of the publisher.
-     * Visible to all users.
+     * Get the publisherContact property: Community gallery publisher support email. The email address of the publisher. Visible to all users.
      * 
      * @return the publisherContact value.
      */
@@ -86,8 +85,7 @@ public final class CommunityGalleryInfo {
     }
 
     /**
-     * Set the publisherContact property: Community gallery publisher support email. The email address of the publisher.
-     * Visible to all users.
+     * Set the publisherContact property: Community gallery publisher support email. The email address of the publisher. Visible to all users.
      * 
      * @param publisherContact the publisherContact value to set.
      * @return the CommunityGalleryInfo object itself.
@@ -118,8 +116,7 @@ public final class CommunityGalleryInfo {
     }
 
     /**
-     * Get the publicNamePrefix property: The prefix of the gallery name that will be displayed publicly. Visible to all
-     * users.
+     * Get the publicNamePrefix property: The prefix of the gallery name that will be displayed publicly. Visible to all users.
      * 
      * @return the publicNamePrefix value.
      */
@@ -128,8 +125,7 @@ public final class CommunityGalleryInfo {
     }
 
     /**
-     * Set the publicNamePrefix property: The prefix of the gallery name that will be displayed publicly. Visible to all
-     * users.
+     * Set the publicNamePrefix property: The prefix of the gallery name that will be displayed publicly. Visible to all users.
      * 
      * @param publicNamePrefix the publicNamePrefix value to set.
      * @return the CommunityGalleryInfo object itself.

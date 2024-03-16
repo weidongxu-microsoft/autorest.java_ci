@@ -46,8 +46,9 @@ public final class DimensionsImpl implements Dimensions {
 
     public PagedIterable<Dimension> byExternalCloudProviderType(ExternalCloudProviderType externalCloudProviderType,
         String externalCloudProviderId, String filter, String expand, String skiptoken, Integer top, Context context) {
-        PagedIterable<DimensionInner> inner = this.serviceClient().byExternalCloudProviderType(
-            externalCloudProviderType, externalCloudProviderId, filter, expand, skiptoken, top, context);
+        PagedIterable<DimensionInner> inner = this.serviceClient()
+            .byExternalCloudProviderType(externalCloudProviderType, externalCloudProviderId, filter, expand, skiptoken,
+                top, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new DimensionImpl(inner1, this.manager()));
     }
 

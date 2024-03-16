@@ -209,8 +209,7 @@ public class FrontDoorUpdateParameters {
     }
 
     /**
-     * Get the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled'
-     * or 'Disabled'.
+     * Get the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
      * 
      * @return the enabledState value.
      */
@@ -219,8 +218,7 @@ public class FrontDoorUpdateParameters {
     }
 
     /**
-     * Set the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled'
-     * or 'Disabled'.
+     * Set the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
      * 
      * @param enabledState the enabledState value to set.
      * @return the FrontDoorUpdateParameters object itself.

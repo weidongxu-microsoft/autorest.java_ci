@@ -32,8 +32,7 @@ public final class VirtualNetworkConfiguration {
     private String dataManagementPublicIpId;
 
     /*
-     * When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the
-     * subnet.
+     * When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the subnet.
      */
     @JsonProperty(value = "state")
     private VnetState state;
@@ -105,8 +104,7 @@ public final class VirtualNetworkConfiguration {
     }
 
     /**
-     * Get the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will
-     * be removed from the subnet.
+     * Get the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the subnet.
      * 
      * @return the state value.
      */
@@ -115,8 +113,7 @@ public final class VirtualNetworkConfiguration {
     }
 
     /**
-     * Set the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will
-     * be removed from the subnet.
+     * Set the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the subnet.
      * 
      * @param state the state value to set.
      * @return the VirtualNetworkConfiguration object itself.

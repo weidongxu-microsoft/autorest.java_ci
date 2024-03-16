@@ -45,25 +45,27 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
         String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName) {
-        PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listCloudServiceRoleInstancePublicIpAddresses(
-            resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName);
+        PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
+            .listCloudServiceRoleInstancePublicIpAddresses(resourceGroupName, cloudServiceName, roleInstanceName,
+                networkInterfaceName, ipConfigurationName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
         String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName,
         Context context) {
-        PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listCloudServiceRoleInstancePublicIpAddresses(
-            resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName, context);
+        PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
+            .listCloudServiceRoleInstancePublicIpAddresses(resourceGroupName, cloudServiceName, roleInstanceName,
+                networkInterfaceName, ipConfigurationName, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(String resourceGroupName,
         String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName,
         String publicIpAddressName, String expand, Context context) {
-        Response<PublicIpAddressInner> inner
-            = this.serviceClient().getCloudServicePublicIpAddressWithResponse(resourceGroupName, cloudServiceName,
-                roleInstanceName, networkInterfaceName, ipConfigurationName, publicIpAddressName, expand, context);
+        Response<PublicIpAddressInner> inner = this.serviceClient()
+            .getCloudServicePublicIpAddressWithResponse(resourceGroupName, cloudServiceName, roleInstanceName,
+                networkInterfaceName, ipConfigurationName, publicIpAddressName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PublicIpAddressImpl(inner.getValue(), this.manager()));
@@ -74,8 +76,9 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public PublicIpAddress getCloudServicePublicIpAddress(String resourceGroupName, String cloudServiceName,
         String roleInstanceName, String networkInterfaceName, String ipConfigurationName, String publicIpAddressName) {
-        PublicIpAddressInner inner = this.serviceClient().getCloudServicePublicIpAddress(resourceGroupName,
-            cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName, publicIpAddressName);
+        PublicIpAddressInner inner = this.serviceClient()
+            .getCloudServicePublicIpAddress(resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName,
+                ipConfigurationName, publicIpAddressName);
         if (inner != null) {
             return new PublicIpAddressImpl(inner, this.manager());
         } else {
@@ -93,8 +96,8 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public Response<PublicIpAddress> getByResourceGroupWithResponse(String resourceGroupName,
         String publicIpAddressName, String expand, Context context) {
-        Response<PublicIpAddressInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            publicIpAddressName, expand, context);
+        Response<PublicIpAddressInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PublicIpAddressImpl(inner.getValue(), this.manager()));
@@ -172,18 +175,18 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName) {
-        PagedIterable<PublicIpAddressInner> inner
-            = this.serviceClient().listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName,
-                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName);
+        PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
+            .listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName,
+                virtualmachineIndex, networkInterfaceName, ipConfigurationName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName, Context context) {
-        PagedIterable<PublicIpAddressInner> inner
-            = this.serviceClient().listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName,
-                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName, context);
+        PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
+            .listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName,
+                virtualmachineIndex, networkInterfaceName, ipConfigurationName, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
@@ -204,9 +207,9 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName, String publicIpAddressName) {
-        PublicIpAddressInner inner = this.serviceClient().getVirtualMachineScaleSetPublicIpAddress(resourceGroupName,
-            virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName,
-            publicIpAddressName);
+        PublicIpAddressInner inner = this.serviceClient()
+            .getVirtualMachineScaleSetPublicIpAddress(resourceGroupName, virtualMachineScaleSetName,
+                virtualmachineIndex, networkInterfaceName, ipConfigurationName, publicIpAddressName);
         if (inner != null) {
             return new PublicIpAddressImpl(inner, this.manager());
         } else {

@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StaticRoutesConfig {
     /*
-     * Boolean indicating whether static routes on this connection are automatically propagate to route tables which
-     * this connection propagates to.
+     * Boolean indicating whether static routes on this connection are automatically propagate to route tables which this connection propagates to.
      */
     @JsonProperty(value = "propagateStaticRoutes", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean propagateStaticRoutes;
@@ -32,8 +31,7 @@ public final class StaticRoutesConfig {
     }
 
     /**
-     * Get the propagateStaticRoutes property: Boolean indicating whether static routes on this connection are
-     * automatically propagate to route tables which this connection propagates to.
+     * Get the propagateStaticRoutes property: Boolean indicating whether static routes on this connection are automatically propagate to route tables which this connection propagates to.
      * 
      * @return the propagateStaticRoutes value.
      */
@@ -42,8 +40,7 @@ public final class StaticRoutesConfig {
     }
 
     /**
-     * Get the vnetLocalRouteOverrideCriteria property: Parameter determining whether NVA in spoke vnet is bypassed for
-     * traffic with destination in spoke.
+     * Get the vnetLocalRouteOverrideCriteria property: Parameter determining whether NVA in spoke vnet is bypassed for traffic with destination in spoke.
      * 
      * @return the vnetLocalRouteOverrideCriteria value.
      */
@@ -52,8 +49,7 @@ public final class StaticRoutesConfig {
     }
 
     /**
-     * Set the vnetLocalRouteOverrideCriteria property: Parameter determining whether NVA in spoke vnet is bypassed for
-     * traffic with destination in spoke.
+     * Set the vnetLocalRouteOverrideCriteria property: Parameter determining whether NVA in spoke vnet is bypassed for traffic with destination in spoke.
      * 
      * @param vnetLocalRouteOverrideCriteria the vnetLocalRouteOverrideCriteria value to set.
      * @return the StaticRoutesConfig object itself.

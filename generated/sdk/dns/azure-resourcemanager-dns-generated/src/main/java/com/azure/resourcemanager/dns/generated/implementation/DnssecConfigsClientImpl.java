@@ -63,8 +63,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
     }
 
     /**
-     * The interface defining all the services for DnsManagementClientDnssecConfigs to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for DnsManagementClientDnssecConfigs to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientD")
@@ -120,10 +119,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -159,10 +156,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -198,10 +193,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -242,10 +235,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -285,10 +276,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -307,10 +296,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -346,10 +333,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -385,10 +370,8 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     * DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -406,8 +389,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -443,8 +425,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -480,8 +461,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -518,8 +498,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -556,8 +535,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -575,8 +553,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -610,8 +587,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -644,8 +620,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -779,8 +754,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneSinglePageAsync(String resourceGroupName,
@@ -818,8 +792,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneSinglePageAsync(String resourceGroupName,
@@ -922,8 +895,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneNextSinglePageAsync(String nextLink) {
@@ -952,8 +924,7 @@ public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneNextSinglePageAsync(String nextLink, Context context) {

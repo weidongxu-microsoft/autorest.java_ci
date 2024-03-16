@@ -56,15 +56,13 @@ public final class OrderProperties {
     private String serialNumber;
 
     /*
-     * Tracking information for the package delivered to the customer whether it has an original or a replacement
-     * device.
+     * Tracking information for the package delivered to the customer whether it has an original or a replacement device.
      */
     @JsonProperty(value = "deliveryTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> deliveryTrackingInfo;
 
     /*
-     * Tracking information for the package returned from the customer whether it has an original or a replacement
-     * device.
+     * Tracking information for the package returned from the customer whether it has an original or a replacement device.
      */
     @JsonProperty(value = "returnTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> returnTrackingInfo;
@@ -158,8 +156,7 @@ public final class OrderProperties {
     }
 
     /**
-     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it
-     * has an original or a replacement device.
+     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it has an original or a replacement device.
      * 
      * @return the deliveryTrackingInfo value.
      */
@@ -168,8 +165,7 @@ public final class OrderProperties {
     }
 
     /**
-     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it
-     * has an original or a replacement device.
+     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it has an original or a replacement device.
      * 
      * @return the returnTrackingInfo value.
      */

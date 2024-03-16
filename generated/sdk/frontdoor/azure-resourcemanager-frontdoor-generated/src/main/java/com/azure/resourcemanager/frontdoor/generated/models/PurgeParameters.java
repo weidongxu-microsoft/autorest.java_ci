@@ -27,8 +27,7 @@ public final class PurgeParameters {
     }
 
     /**
-     * Get the contentPaths property: The path to the content to be purged. Can describe a file path or a wild card
-     * directory.
+     * Get the contentPaths property: The path to the content to be purged. Can describe a file path or a wild card directory.
      * 
      * @return the contentPaths value.
      */
@@ -37,8 +36,7 @@ public final class PurgeParameters {
     }
 
     /**
-     * Set the contentPaths property: The path to the content to be purged. Can describe a file path or a wild card
-     * directory.
+     * Set the contentPaths property: The path to the content to be purged. Can describe a file path or a wild card directory.
      * 
      * @param contentPaths the contentPaths value to set.
      * @return the PurgeParameters object itself.

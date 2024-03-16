@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface AzureReachabilityReport {
     /**
-     * Gets the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or
-     * City.
+     * Gets the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or City.
      * 
      * @return the aggregationLevel value.
      */

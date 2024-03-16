@@ -20,11 +20,9 @@ public interface GalleryImages {
      * @param galleryImageName The name of the gallery image definition to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response}.
      */
     Response<GalleryImage> getWithResponse(String resourceGroupName, String galleryName, String galleryImageName,
         Context context);
@@ -36,8 +34,7 @@ public interface GalleryImages {
      * @param galleryName The name of the Shared Image Gallery from which the Image Definitions are to be retrieved.
      * @param galleryImageName The name of the gallery image definition to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery image definition that you want to create or update.
      */
@@ -50,8 +47,7 @@ public interface GalleryImages {
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition is to be deleted.
      * @param galleryImageName The name of the gallery image definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String galleryName, String galleryImageName);
@@ -64,8 +60,7 @@ public interface GalleryImages {
      * @param galleryImageName The name of the gallery image definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String galleryName, String galleryImageName, Context context);
@@ -76,8 +71,7 @@ public interface GalleryImages {
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery from which Image Definitions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Images operation response as paginated response with {@link PagedIterable}.
      */
@@ -90,8 +84,7 @@ public interface GalleryImages {
      * @param galleryName The name of the Shared Image Gallery from which Image Definitions are to be listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Images operation response as paginated response with {@link PagedIterable}.
      */
@@ -102,11 +95,9 @@ public interface GalleryImages {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response}.
      */
     GalleryImage getById(String id);
 
@@ -116,11 +107,9 @@ public interface GalleryImages {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image definition that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image definition that you want to create or update along with {@link Response}.
      */
     Response<GalleryImage> getByIdWithResponse(String id, Context context);
 
@@ -129,8 +118,7 @@ public interface GalleryImages {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -141,8 +129,7 @@ public interface GalleryImages {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);

@@ -235,9 +235,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the gatewayIpConfigurations value.
      */
@@ -246,9 +244,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param gatewayIpConfigurations the gatewayIpConfigurations value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -263,9 +259,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the authenticationCertificates value.
      */
@@ -274,9 +268,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param authenticationCertificates the authenticationCertificates value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -291,9 +283,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the trustedRootCertificates value.
      */
@@ -302,9 +292,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param trustedRootCertificates the trustedRootCertificates value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -319,9 +307,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the trustedClientCertificates value.
      */
@@ -330,9 +316,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param trustedClientCertificates the trustedClientCertificates value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -347,9 +331,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the sslCertificates value.
      */
@@ -358,9 +340,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param sslCertificates the sslCertificates value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -374,9 +354,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the frontendIpConfigurations value.
      */
@@ -385,9 +363,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param frontendIpConfigurations the frontendIpConfigurations value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -402,9 +378,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the frontendPorts value.
      */
@@ -413,9 +387,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param frontendPorts the frontendPorts value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -452,9 +424,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the backendAddressPools property: Backend address pool of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendAddressPools property: Backend address pool of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendAddressPools value.
      */
@@ -463,9 +433,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the backendAddressPools property: Backend address pool of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendAddressPools property: Backend address pool of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendAddressPools the backendAddressPools value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -480,9 +448,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendHttpSettingsCollection value.
      */
@@ -491,9 +457,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendHttpSettingsCollection the backendHttpSettingsCollection value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -508,9 +472,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendSettingsCollection value.
      */
@@ -519,9 +481,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendSettingsCollection the backendSettingsCollection value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -536,9 +496,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the httpListeners value.
      */
@@ -547,9 +505,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the httpListeners property: Http listeners of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the httpListeners property: Http listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param httpListeners the httpListeners value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -563,8 +519,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application
-     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the listeners value.
      */
@@ -573,8 +528,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application
-     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param listeners the listeners value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -588,9 +542,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the sslProfiles value.
      */
@@ -599,9 +551,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param sslProfiles the sslProfiles value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -615,9 +565,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the urlPathMaps property: URL path map of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the urlPathMaps property: URL path map of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the urlPathMaps value.
      */
@@ -626,9 +574,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the urlPathMaps property: URL path map of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the urlPathMaps property: URL path map of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param urlPathMaps the urlPathMaps value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -712,9 +658,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the redirectConfigurations value.
      */
@@ -723,9 +667,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param redirectConfigurations the redirectConfigurations value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -932,8 +874,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application
-     * gateway regardless whether the policy differs from the WAF Config.
+     * Get the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application gateway regardless whether the policy differs from the WAF Config.
      * 
      * @return the forceFirewallPolicyAssociation value.
      */
@@ -942,8 +883,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Set the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application
-     * gateway regardless whether the policy differs from the WAF Config.
+     * Set the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application gateway regardless whether the policy differs from the WAF Config.
      * 
      * @param forceFirewallPolicyAssociation the forceFirewallPolicyAssociation value to set.
      * @return the ApplicationGatewayInner object itself.
@@ -1004,8 +944,7 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
-     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway
-     * resource.
+     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway resource.
      * 
      * @return the defaultPredefinedSslPolicy value.
      */

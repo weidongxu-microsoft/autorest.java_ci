@@ -53,8 +53,7 @@ public final class ApplicationGatewayFirewallDisabledRuleGroup {
     }
 
     /**
-     * Get the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be
-     * disabled.
+     * Get the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be disabled.
      * 
      * @return the rules value.
      */
@@ -63,8 +62,7 @@ public final class ApplicationGatewayFirewallDisabledRuleGroup {
     }
 
     /**
-     * Set the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be
-     * disabled.
+     * Set the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be disabled.
      * 
      * @param rules the rules value to set.
      * @return the ApplicationGatewayFirewallDisabledRuleGroup object itself.

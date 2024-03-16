@@ -79,8 +79,7 @@ public final class TableAccessPolicy {
     }
 
     /**
-     * Get the permission property: Required. List of abbreviated permissions. Supported permission values include
-     * 'r','a','u','d'.
+     * Get the permission property: Required. List of abbreviated permissions. Supported permission values include 'r','a','u','d'.
      * 
      * @return the permission value.
      */
@@ -89,8 +88,7 @@ public final class TableAccessPolicy {
     }
 
     /**
-     * Set the permission property: Required. List of abbreviated permissions. Supported permission values include
-     * 'r','a','u','d'.
+     * Set the permission property: Required. List of abbreviated permissions. Supported permission values include 'r','a','u','d'.
      * 
      * @param permission the permission value to set.
      * @return the TableAccessPolicy object itself.

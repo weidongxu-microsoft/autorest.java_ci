@@ -81,8 +81,7 @@ public interface ExpressRouteGateways {
     ExpressRouteGateway getByResourceGroup(String resourceGroupName, String expressRouteGatewayName);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
-     * deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -93,8 +92,7 @@ public interface ExpressRouteGateways {
     void deleteByResourceGroup(String resourceGroupName, String expressRouteGatewayName);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
-     * deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -129,8 +127,7 @@ public interface ExpressRouteGateways {
     Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
-     * deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -140,8 +137,7 @@ public interface ExpressRouteGateways {
     void deleteById(String id);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
-     * deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.

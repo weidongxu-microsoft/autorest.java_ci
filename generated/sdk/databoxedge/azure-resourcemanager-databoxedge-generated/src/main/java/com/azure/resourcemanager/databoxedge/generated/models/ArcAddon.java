@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Arc Addon.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = ArcAddon.class, visible = true)
 @JsonTypeName("ArcForKubernetes")
 @Fluent
 public final class ArcAddon extends AddonInner {
@@ -29,6 +29,7 @@ public final class ArcAddon extends AddonInner {
      * Creates an instance of ArcAddon class.
      */
     public ArcAddon() {
+        withKind(AddonType.ARC_FOR_KUBERNETES);
     }
 
     /**

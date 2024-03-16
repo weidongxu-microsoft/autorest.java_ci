@@ -74,13 +74,16 @@ public final class ExpressRoutePortAuthorizationImpl implements ExpressRoutePort
     }
 
     public ExpressRoutePortAuthorization create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations().createOrUpdate(
-            resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public ExpressRoutePortAuthorization create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
             .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
         return this;
     }
@@ -97,13 +100,16 @@ public final class ExpressRoutePortAuthorizationImpl implements ExpressRoutePort
     }
 
     public ExpressRoutePortAuthorization apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations().createOrUpdate(
-            resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public ExpressRoutePortAuthorization apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
             .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
         return this;
     }
@@ -118,14 +124,18 @@ public final class ExpressRoutePortAuthorizationImpl implements ExpressRoutePort
     }
 
     public ExpressRoutePortAuthorization refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
-            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
+            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRoutePortAuthorization refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
-            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePortAuthorizations()
+            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, context)
+            .getValue();
         return this;
     }
 

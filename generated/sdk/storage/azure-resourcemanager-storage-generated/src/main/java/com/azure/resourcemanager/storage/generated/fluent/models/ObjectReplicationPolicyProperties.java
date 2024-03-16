@@ -71,8 +71,7 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Get the sourceAccount property: Required. Source account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Get the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @return the sourceAccount value.
      */
@@ -81,8 +80,7 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Set the sourceAccount property: Required. Source account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Set the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @param sourceAccount the sourceAccount value to set.
      * @return the ObjectReplicationPolicyProperties object itself.
@@ -93,8 +91,7 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Get the destinationAccount property: Required. Destination account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Get the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @return the destinationAccount value.
      */
@@ -103,8 +100,7 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Set the destinationAccount property: Required. Destination account name. It should be full resource id if
-     * allowCrossTenantReplication set to false.
+     * Set the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
      * 
      * @param destinationAccount the destinationAccount value to set.
      * @return the ObjectReplicationPolicyProperties object itself.

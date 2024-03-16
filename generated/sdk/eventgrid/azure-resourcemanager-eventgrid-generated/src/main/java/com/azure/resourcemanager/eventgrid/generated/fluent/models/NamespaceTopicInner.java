@@ -86,8 +86,7 @@ public final class NamespaceTopicInner extends ProxyResource {
     }
 
     /**
-     * Get the inputSchema property: This determines the format that is expected for incoming events published to the
-     * topic.
+     * Get the inputSchema property: This determines the format that is expected for incoming events published to the topic.
      * 
      * @return the inputSchema value.
      */
@@ -96,8 +95,7 @@ public final class NamespaceTopicInner extends ProxyResource {
     }
 
     /**
-     * Set the inputSchema property: This determines the format that is expected for incoming events published to the
-     * topic.
+     * Set the inputSchema property: This determines the format that is expected for incoming events published to the topic.
      * 
      * @param inputSchema the inputSchema value to set.
      * @return the NamespaceTopicInner object itself.
@@ -111,8 +109,7 @@ public final class NamespaceTopicInner extends ProxyResource {
     }
 
     /**
-     * Get the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property
-     * default value is 1 day.
+     * Get the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
      * Min event retention duration value is 1 day and max event retention duration value is 1 day.
      * 
      * @return the eventRetentionInDays value.
@@ -122,8 +119,7 @@ public final class NamespaceTopicInner extends ProxyResource {
     }
 
     /**
-     * Set the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property
-     * default value is 1 day.
+     * Set the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
      * Min event retention duration value is 1 day and max event retention duration value is 1 day.
      * 
      * @param eventRetentionInDays the eventRetentionInDays value to set.

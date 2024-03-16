@@ -14,9 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VirtualNetworkRule {
     /*
-     * Resource ID of a subnet, for example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}
-     * /subnets/{subnetName}.
+     * Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      */
     @JsonProperty(value = "id", required = true)
     private String virtualNetworkResourceId;
@@ -40,8 +38,7 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Get the virtualNetworkResourceId property: Resource ID of a subnet, for example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Get the virtualNetworkResourceId property: Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @return the virtualNetworkResourceId value.
      */
@@ -50,8 +47,7 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Set the virtualNetworkResourceId property: Resource ID of a subnet, for example:
-     * /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Set the virtualNetworkResourceId property: Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @param virtualNetworkResourceId the virtualNetworkResourceId value to set.
      * @return the VirtualNetworkRule object itself.

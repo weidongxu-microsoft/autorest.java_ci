@@ -19,8 +19,7 @@ public final class PartnerDetails {
     private String description;
 
     /*
-     * Long description for the partner's scenarios and integration.Length of this description should not exceed 2048
-     * characters.
+     * Long description for the partner's scenarios and integration.Length of this description should not exceed 2048 characters.
      */
     @JsonProperty(value = "longDescription")
     private String longDescription;
@@ -39,8 +38,7 @@ public final class PartnerDetails {
     }
 
     /**
-     * Get the description property: This is short description about the partner. The length of this description should
-     * not exceed 256 characters.
+     * Get the description property: This is short description about the partner. The length of this description should not exceed 256 characters.
      * 
      * @return the description value.
      */
@@ -49,8 +47,7 @@ public final class PartnerDetails {
     }
 
     /**
-     * Set the description property: This is short description about the partner. The length of this description should
-     * not exceed 256 characters.
+     * Set the description property: This is short description about the partner. The length of this description should not exceed 256 characters.
      * 
      * @param description the description value to set.
      * @return the PartnerDetails object itself.
@@ -61,8 +58,7 @@ public final class PartnerDetails {
     }
 
     /**
-     * Get the longDescription property: Long description for the partner's scenarios and integration.Length of this
-     * description should not exceed 2048 characters.
+     * Get the longDescription property: Long description for the partner's scenarios and integration.Length of this description should not exceed 2048 characters.
      * 
      * @return the longDescription value.
      */
@@ -71,8 +67,7 @@ public final class PartnerDetails {
     }
 
     /**
-     * Set the longDescription property: Long description for the partner's scenarios and integration.Length of this
-     * description should not exceed 2048 characters.
+     * Set the longDescription property: Long description for the partner's scenarios and integration.Length of this description should not exceed 2048 characters.
      * 
      * @param longDescription the longDescription value to set.
      * @return the PartnerDetails object itself.

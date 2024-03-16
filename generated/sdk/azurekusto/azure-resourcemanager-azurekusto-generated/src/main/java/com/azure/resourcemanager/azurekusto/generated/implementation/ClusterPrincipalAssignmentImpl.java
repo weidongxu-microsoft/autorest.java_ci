@@ -86,13 +86,15 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment create() {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
             .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ClusterPrincipalAssignment create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
             .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
@@ -109,13 +111,15 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment apply() {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
             .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ClusterPrincipalAssignment apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
             .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
@@ -131,14 +135,18 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment refresh() {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
-            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ClusterPrincipalAssignment refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
-            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClusterPrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, context)
+            .getValue();
         return this;
     }
 

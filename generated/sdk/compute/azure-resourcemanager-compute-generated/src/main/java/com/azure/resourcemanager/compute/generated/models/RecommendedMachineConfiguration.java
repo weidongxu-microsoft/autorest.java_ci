@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The properties describe the recommended machine configuration for this Image Definition. These properties are
- * updatable.
+ * The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
  */
 @Fluent
 public final class RecommendedMachineConfiguration {

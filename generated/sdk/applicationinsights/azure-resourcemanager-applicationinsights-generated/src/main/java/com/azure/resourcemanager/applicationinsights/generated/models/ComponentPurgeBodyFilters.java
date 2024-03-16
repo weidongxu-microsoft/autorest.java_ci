@@ -19,15 +19,13 @@ public final class ComponentPurgeBodyFilters {
     private String column;
 
     /*
-     * A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >,
-     * >=, <, <=, between, and have the same behavior as they would in a KQL query.
+     * A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >, >=, <, <=, between, and have the same behavior as they would in a KQL query.
      */
     @JsonProperty(value = "operator")
     private String operator;
 
     /*
-     * the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >=
-     * '2017-09-01') or array of values.
+     * the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >= '2017-09-01') or array of values.
      */
     @JsonProperty(value = "value")
     private Object value;
@@ -65,9 +63,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Get the operator property: A query operator to evaluate over the provided column and value(s). Supported
-     * operators are ==, =~, in, in~, &gt;, &gt;=, &lt;, &lt;=, between, and have the same behavior as they would in a
-     * KQL query.
+     * Get the operator property: A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, &gt;, &gt;=, &lt;, &lt;=, between, and have the same behavior as they would in a KQL query.
      * 
      * @return the operator value.
      */
@@ -76,9 +72,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Set the operator property: A query operator to evaluate over the provided column and value(s). Supported
-     * operators are ==, =~, in, in~, &gt;, &gt;=, &lt;, &lt;=, between, and have the same behavior as they would in a
-     * KQL query.
+     * Set the operator property: A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, &gt;, &gt;=, &lt;, &lt;=, between, and have the same behavior as they would in a KQL query.
      * 
      * @param operator the operator value to set.
      * @return the ComponentPurgeBodyFilters object itself.
@@ -89,8 +83,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Get the value property: the value for the operator to function over. This can be a number (e.g., &gt; 100), a
-     * string (timestamp &gt;= '2017-09-01') or array of values.
+     * Get the value property: the value for the operator to function over. This can be a number (e.g., &gt; 100), a string (timestamp &gt;= '2017-09-01') or array of values.
      * 
      * @return the value value.
      */
@@ -99,8 +92,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Set the value property: the value for the operator to function over. This can be a number (e.g., &gt; 100), a
-     * string (timestamp &gt;= '2017-09-01') or array of values.
+     * Set the value property: the value for the operator to function over. This can be a number (e.g., &gt; 100), a string (timestamp &gt;= '2017-09-01') or array of values.
      * 
      * @param value the value value to set.
      * @return the ComponentPurgeBodyFilters object itself.
@@ -111,8 +103,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Get the key property: When filtering over custom dimensions, this key will be used as the name of the custom
-     * dimension.
+     * Get the key property: When filtering over custom dimensions, this key will be used as the name of the custom dimension.
      * 
      * @return the key value.
      */
@@ -121,8 +112,7 @@ public final class ComponentPurgeBodyFilters {
     }
 
     /**
-     * Set the key property: When filtering over custom dimensions, this key will be used as the name of the custom
-     * dimension.
+     * Set the key property: When filtering over custom dimensions, this key will be used as the name of the custom dimension.
      * 
      * @param key the key value to set.
      * @return the ComponentPurgeBodyFilters object itself.

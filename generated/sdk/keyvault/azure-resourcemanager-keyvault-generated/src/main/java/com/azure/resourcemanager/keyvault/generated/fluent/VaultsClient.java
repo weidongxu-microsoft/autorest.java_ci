@@ -204,8 +204,7 @@ public interface VaultsClient {
         AccessPolicyUpdateKind operationKind, VaultAccessPolicyParametersInner parameters);
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -217,8 +216,7 @@ public interface VaultsClient {
     PagedIterable<VaultInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.

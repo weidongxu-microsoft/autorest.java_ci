@@ -38,8 +38,8 @@ public final class ExpressRouteCircuitConnectionsImpl implements ExpressRouteCir
 
     public Response<ExpressRouteCircuitConnection> getWithResponse(String resourceGroupName, String circuitName,
         String peeringName, String connectionName, Context context) {
-        Response<ExpressRouteCircuitConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            circuitName, peeringName, connectionName, context);
+        Response<ExpressRouteCircuitConnectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCircuitConnectionImpl(inner.getValue(), this.manager()));

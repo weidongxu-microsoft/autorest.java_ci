@@ -10,12 +10,12 @@ import com.azure.resourcemanager.search.generated.models.PrivateLinkResourceProp
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a supported private link resource for the search service.
+ * Describes a supported private link resource for the Azure AI Search service.
  */
 @Immutable
 public final class PrivateLinkResourceInner extends ProxyResource {
     /*
-     * Describes the properties of a supported private link resource for the search service.
+     * Describes the properties of a supported private link resource for the Azure AI Search service.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkResourceProperties properties;
@@ -27,8 +27,7 @@ public final class PrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of a supported private link resource for the search
-     * service.
+     * Get the properties property: Describes the properties of a supported private link resource for the Azure AI Search service.
      * 
      * @return the properties value.
      */

@@ -53,8 +53,7 @@ public final class AuthorizationRuleListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
-     * authorization rules.
+     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of authorization rules.
      * 
      * @return the nextLink value.
      */
@@ -63,8 +62,7 @@ public final class AuthorizationRuleListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
-     * authorization rules.
+     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of authorization rules.
      * 
      * @param nextLink the nextLink value to set.
      * @return the AuthorizationRuleListResult object itself.

@@ -78,10 +78,7 @@ public interface Image {
     String provisioningState();
 
     /**
-     * Gets the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the
-     * image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if
-     * the source is managed resource like disk or snapshot, we may require the user to specify the property if we
-     * cannot deduce it from the source managed resource.
+     * Gets the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource.
      * 
      * @return the hyperVGeneration value.
      */
@@ -167,8 +164,7 @@ public interface Image {
         }
 
         /**
-         * The stage of the Image definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Image definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithSourceVirtualMachine, DefinitionStages.WithStorageProfile,
@@ -246,15 +242,9 @@ public interface Image {
          */
         interface WithHyperVGeneration {
             /**
-             * Specifies the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created
-             * from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to
-             * specify the value, if the source is managed resource like disk or snapshot, we may require the user to
-             * specify the property if we cannot deduce it from the source managed resource..
+             * Specifies the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource..
              * 
-             * @param hyperVGeneration Specifies the HyperVGenerationType of the VirtualMachine created from the image.
-             * From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if
-             * the source is managed resource like disk or snapshot, we may require the user to specify the property if
-             * we cannot deduce it from the source managed resource.
+             * @param hyperVGeneration Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource.
              * @return the next definition stage.
              */
             WithCreate withHyperVGeneration(HyperVGenerationTypes hyperVGeneration);
@@ -337,15 +327,9 @@ public interface Image {
          */
         interface WithHyperVGeneration {
             /**
-             * Specifies the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created
-             * from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to
-             * specify the value, if the source is managed resource like disk or snapshot, we may require the user to
-             * specify the property if we cannot deduce it from the source managed resource..
+             * Specifies the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource..
              * 
-             * @param hyperVGeneration Specifies the HyperVGenerationType of the VirtualMachine created from the image.
-             * From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if
-             * the source is managed resource like disk or snapshot, we may require the user to specify the property if
-             * we cannot deduce it from the source managed resource.
+             * @param hyperVGeneration Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource.
              * @return the next definition stage.
              */
             Update withHyperVGeneration(HyperVGenerationTypes hyperVGeneration);

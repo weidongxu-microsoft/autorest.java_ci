@@ -40,8 +40,7 @@ public interface CustomHostnameAnalysisResult {
     String kind();
 
     /**
-     * Gets the isHostnameAlreadyVerified property: &lt;code&gt;true&lt;/code&gt; if hostname is already verified;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the isHostnameAlreadyVerified property: &lt;code&gt;true&lt;/code&gt; if hostname is already verified; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isHostnameAlreadyVerified value.
      */
@@ -62,24 +61,21 @@ public interface CustomHostnameAnalysisResult {
     ErrorEntity customDomainVerificationFailureInfo();
 
     /**
-     * Gets the hasConflictOnScaleUnit property: &lt;code&gt;true&lt;/code&gt; if there is a conflict on a scale unit;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the hasConflictOnScaleUnit property: &lt;code&gt;true&lt;/code&gt; if there is a conflict on a scale unit; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the hasConflictOnScaleUnit value.
      */
     Boolean hasConflictOnScaleUnit();
 
     /**
-     * Gets the hasConflictAcrossSubscription property: &lt;code&gt;true&lt;/code&gt; if there is a conflict across
-     * subscriptions; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the hasConflictAcrossSubscription property: &lt;code&gt;true&lt;/code&gt; if there is a conflict across subscriptions; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the hasConflictAcrossSubscription value.
      */
     Boolean hasConflictAcrossSubscription();
 
     /**
-     * Gets the conflictingAppResourceId property: Name of the conflicting app on scale unit if it's within the same
-     * subscription.
+     * Gets the conflictingAppResourceId property: Name of the conflicting app on scale unit if it's within the same subscription.
      * 
      * @return the conflictingAppResourceId value.
      */
@@ -121,8 +117,7 @@ public interface CustomHostnameAnalysisResult {
     List<String> alternateTxtRecords();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner object.
      * 
      * @return the inner object.
      */

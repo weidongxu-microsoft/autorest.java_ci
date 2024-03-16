@@ -5,7 +5,9 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -14,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "@odata.type",
-    defaultImpl = ContentKeyPolicyRestriction.class)
+    defaultImpl = ContentKeyPolicyRestriction.class,
+    visible = true)
 @JsonTypeName("ContentKeyPolicyRestriction")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -30,10 +32,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = ContentKeyPolicyTokenRestriction.class) })
 @Immutable
 public class ContentKeyPolicyRestriction {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of ContentKeyPolicyRestriction class.
      */
     public ContentKeyPolicyRestriction() {
+        this.odataType = "ContentKeyPolicyRestriction";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the ContentKeyPolicyRestriction object itself.
+     */
+    protected ContentKeyPolicyRestriction withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

@@ -53,8 +53,7 @@ public interface StaticSiteFunctionOverviewArmResource {
     TriggerTypes triggerType();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner object.
      * 
      * @return the inner object.
      */

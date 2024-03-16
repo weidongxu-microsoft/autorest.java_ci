@@ -85,8 +85,7 @@ public final class ClientDiscoveryValueForSingleApiInner {
     }
 
     /**
-     * Get the origin property: The intended executor of the operation;governs the display of the operation in the RBAC
-     * UX and the audit logs UX.
+     * Get the origin property: The intended executor of the operation;governs the display of the operation in the RBAC UX and the audit logs UX.
      * 
      * @return the origin value.
      */
@@ -95,8 +94,7 @@ public final class ClientDiscoveryValueForSingleApiInner {
     }
 
     /**
-     * Set the origin property: The intended executor of the operation;governs the display of the operation in the RBAC
-     * UX and the audit logs UX.
+     * Set the origin property: The intended executor of the operation;governs the display of the operation in the RBAC UX and the audit logs UX.
      * 
      * @param origin the origin value to set.
      * @return the ClientDiscoveryValueForSingleApiInner object itself.

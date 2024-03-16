@@ -26,8 +26,7 @@ public final class PurchasePlan {
     private String name;
 
     /*
-     * Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference
-     * element.
+     * Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
      */
     @JsonProperty(value = "product", required = true)
     private String product;
@@ -79,8 +78,7 @@ public final class PurchasePlan {
     }
 
     /**
-     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as
-     * Offer under the imageReference element.
+     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
      * 
      * @return the product value.
      */
@@ -89,8 +87,7 @@ public final class PurchasePlan {
     }
 
     /**
-     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as
-     * Offer under the imageReference element.
+     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
      * 
      * @param product the product value to set.
      * @return the PurchasePlan object itself.

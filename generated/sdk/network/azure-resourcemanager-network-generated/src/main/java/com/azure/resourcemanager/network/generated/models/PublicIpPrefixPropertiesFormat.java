@@ -48,8 +48,7 @@ public interface PublicIpPrefixPropertiesFormat {
     List<ReferencedPublicIpAddress> publicIpAddresses();
 
     /**
-     * Gets the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration
-     * associated with the public IP prefix.
+     * Gets the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration associated with the public IP prefix.
      * 
      * @return the loadBalancerFrontendIpConfiguration value.
      */
@@ -84,8 +83,7 @@ public interface PublicIpPrefixPropertiesFormat {
     NatGateway natGateway();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixPropertiesFormatInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixPropertiesFormatInner object.
      * 
      * @return the inner object.
      */

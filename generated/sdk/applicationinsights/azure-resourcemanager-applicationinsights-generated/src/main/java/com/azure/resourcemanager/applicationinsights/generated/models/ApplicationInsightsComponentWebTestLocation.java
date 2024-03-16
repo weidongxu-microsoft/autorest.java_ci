@@ -25,9 +25,7 @@ public interface ApplicationInsightsComponentWebTestLocation {
     String tag();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentWebTestLocationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentWebTestLocationInner object.
      * 
      * @return the inner object.
      */

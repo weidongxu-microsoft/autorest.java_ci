@@ -18,16 +18,14 @@ public interface FollowerDatabaseDefinition {
     String clusterResourceId();
 
     /**
-     * Gets the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the
-     * follower cluster.
+     * Gets the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the follower cluster.
      * 
      * @return the attachedDatabaseConfigurationName value.
      */
     String attachedDatabaseConfigurationName();
 
     /**
-     * Gets the databaseName property: The database name owned by this cluster that was followed. * in case following
-     * all databases.
+     * Gets the databaseName property: The database name owned by this cluster that was followed. * in case following all databases.
      * 
      * @return the databaseName value.
      */
@@ -48,8 +46,7 @@ public interface FollowerDatabaseDefinition {
     DatabaseShareOrigin databaseShareOrigin();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.FollowerDatabaseDefinitionInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.FollowerDatabaseDefinitionInner object.
      * 
      * @return the inner object.
      */

@@ -5,18 +5,16 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base class for inputs to a Job.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = JobInput.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInput.class, visible = true)
 @JsonTypeName("JobInput")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputClip", value = JobInputClip.class),
@@ -24,10 +22,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputSequence", value = JobInputSequence.class) })
 @Immutable
 public class JobInput {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of JobInput class.
      */
     public JobInput() {
+        this.odataType = "JobInput";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the JobInput object itself.
+     */
+    protected JobInput withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

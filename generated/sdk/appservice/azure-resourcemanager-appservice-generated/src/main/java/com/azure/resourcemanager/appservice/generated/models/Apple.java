@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Apple {
     /*
-     * <code>false</code> if the Apple provider should not be enabled despite the set registration; otherwise,
-     * <code>true</code>.
+     * <code>false</code> if the Apple provider should not be enabled despite the set registration; otherwise, <code>true</code>.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -38,8 +37,7 @@ public final class Apple {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Apple provider should not be enabled despite the
-     * set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Apple provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -48,8 +46,7 @@ public final class Apple {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Apple provider should not be enabled despite the
-     * set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Apple provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the Apple object itself.

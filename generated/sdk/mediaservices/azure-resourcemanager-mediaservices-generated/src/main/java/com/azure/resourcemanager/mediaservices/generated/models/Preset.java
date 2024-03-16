@@ -5,18 +5,16 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base type for all Presets, which define the recipe or instructions on how the input media files should be processed.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Preset.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Preset.class, visible = true)
 @JsonTypeName("Preset")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.FaceDetectorPreset", value = FaceDetectorPreset.class),
@@ -27,10 +25,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "#Microsoft.Media.StandardEncoderPreset", value = StandardEncoderPreset.class) })
 @Immutable
 public class Preset {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of Preset class.
      */
     public Preset() {
+        this.odataType = "Preset";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the Preset object itself.
+     */
+    protected Preset withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

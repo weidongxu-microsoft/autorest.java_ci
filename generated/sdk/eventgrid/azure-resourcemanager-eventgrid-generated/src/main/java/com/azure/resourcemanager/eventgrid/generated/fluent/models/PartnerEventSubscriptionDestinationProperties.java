@@ -25,8 +25,7 @@ public final class PartnerEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
-     * event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -35,8 +34,7 @@ public final class PartnerEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
-     * event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the PartnerEventSubscriptionDestinationProperties object itself.

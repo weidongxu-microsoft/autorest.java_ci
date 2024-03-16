@@ -26,8 +26,7 @@ public final class SignaturesOverridesListInner {
     }
 
     /**
-     * Get the value property: Describes a list consisting exactly one item describing the policy's signature override
-     * status.
+     * Get the value property: Describes a list consisting exactly one item describing the policy's signature override status.
      * 
      * @return the value value.
      */
@@ -36,8 +35,7 @@ public final class SignaturesOverridesListInner {
     }
 
     /**
-     * Set the value property: Describes a list consisting exactly one item describing the policy's signature override
-     * status.
+     * Set the value property: Describes a list consisting exactly one item describing the policy's signature override status.
      * 
      * @param value the value value to set.
      * @return the SignaturesOverridesListInner object itself.

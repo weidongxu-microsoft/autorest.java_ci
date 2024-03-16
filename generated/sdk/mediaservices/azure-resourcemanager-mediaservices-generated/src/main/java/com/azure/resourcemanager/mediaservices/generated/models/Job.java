@@ -45,8 +45,7 @@ public interface Job {
     SystemData systemData();
 
     /**
-     * Gets the created property: The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ'
-     * format.
+     * Gets the created property: The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the created value.
      */
@@ -74,8 +73,7 @@ public interface Job {
     JobInput input();
 
     /**
-     * Gets the lastModified property: The UTC date and time when the customer has last updated the Job, in
-     * 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Gets the lastModified property: The UTC date and time when the customer has last updated the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */
@@ -89,16 +87,14 @@ public interface Job {
     List<JobOutput> outputs();
 
     /**
-     * Gets the priority property: Priority with which the job should be processed. Higher priority jobs are processed
-     * before lower priority jobs. If not set, the default is normal.
+     * Gets the priority property: Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
      * 
      * @return the priority value.
      */
     Priority priority();
 
     /**
-     * Gets the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput
-     * state events.
+     * Gets the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput state events.
      * 
      * @return the correlationData value.
      */
@@ -165,8 +161,7 @@ public interface Job {
         }
 
         /**
-         * The stage of the Job definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Job definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithInput,
             DefinitionStages.WithOutputs, DefinitionStages.WithPriority, DefinitionStages.WithCorrelationData {
@@ -230,11 +225,9 @@ public interface Job {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: Priority with which the job should be processed. Higher priority jobs
-             * are processed before lower priority jobs. If not set, the default is normal..
+             * Specifies the priority property: Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal..
              * 
-             * @param priority Priority with which the job should be processed. Higher priority jobs are processed
-             * before lower priority jobs. If not set, the default is normal.
+             * @param priority Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
              * @return the next definition stage.
              */
             WithCreate withPriority(Priority priority);
@@ -245,11 +238,9 @@ public interface Job {
          */
         interface WithCorrelationData {
             /**
-             * Specifies the correlationData property: Customer provided key, value pairs that will be returned in Job
-             * and JobOutput state events..
+             * Specifies the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput state events..
              * 
-             * @param correlationData Customer provided key, value pairs that will be returned in Job and JobOutput
-             * state events.
+             * @param correlationData Customer provided key, value pairs that will be returned in Job and JobOutput state events.
              * @return the next definition stage.
              */
             WithCreate withCorrelationData(Map<String, String> correlationData);
@@ -332,11 +323,9 @@ public interface Job {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: Priority with which the job should be processed. Higher priority jobs
-             * are processed before lower priority jobs. If not set, the default is normal..
+             * Specifies the priority property: Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal..
              * 
-             * @param priority Priority with which the job should be processed. Higher priority jobs are processed
-             * before lower priority jobs. If not set, the default is normal.
+             * @param priority Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
              * @return the next definition stage.
              */
             Update withPriority(Priority priority);
@@ -347,11 +336,9 @@ public interface Job {
          */
         interface WithCorrelationData {
             /**
-             * Specifies the correlationData property: Customer provided key, value pairs that will be returned in Job
-             * and JobOutput state events..
+             * Specifies the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput state events..
              * 
-             * @param correlationData Customer provided key, value pairs that will be returned in Job and JobOutput
-             * state events.
+             * @param correlationData Customer provided key, value pairs that will be returned in Job and JobOutput state events.
              * @return the next definition stage.
              */
             Update withCorrelationData(Map<String, String> correlationData);

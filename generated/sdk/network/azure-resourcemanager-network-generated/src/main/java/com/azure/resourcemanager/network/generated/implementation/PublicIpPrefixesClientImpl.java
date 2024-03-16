@@ -66,8 +66,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientPublicIpPrefixes to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientPublicIpPrefixes to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -359,8 +358,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP prefix in a specified resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified public IP prefix in a specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PublicIpPrefixInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -399,8 +397,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP prefix in a specified resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified public IP prefix in a specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PublicIpPrefixInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -858,8 +855,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP prefixes in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the public IP prefixes in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listSinglePageAsync() {
@@ -888,8 +884,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP prefixes in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the public IP prefixes in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listSinglePageAsync(Context context) {
@@ -969,8 +964,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP prefixes in a resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all public IP prefixes in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1004,8 +998,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP prefixes in a resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all public IP prefixes in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1101,8 +1094,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1131,8 +1123,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listAllNextSinglePageAsync(String nextLink, Context context) {
@@ -1159,8 +1150,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listNextSinglePageAsync(String nextLink) {
@@ -1188,8 +1178,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListPublicIpPrefixes API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PublicIpPrefixInner>> listNextSinglePageAsync(String nextLink, Context context) {

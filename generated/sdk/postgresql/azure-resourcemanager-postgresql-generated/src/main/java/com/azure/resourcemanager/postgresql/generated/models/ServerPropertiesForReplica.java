@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The properties to create a new replica.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "createMode",
+    defaultImpl = ServerPropertiesForReplica.class,
+    visible = true)
 @JsonTypeName("Replica")
 @Fluent
 public final class ServerPropertiesForReplica extends ServerPropertiesForCreate {
@@ -27,6 +31,7 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
      * Creates an instance of ServerPropertiesForReplica class.
      */
     public ServerPropertiesForReplica() {
+        withCreateMode(CreateMode.REPLICA);
     }
 
     /**

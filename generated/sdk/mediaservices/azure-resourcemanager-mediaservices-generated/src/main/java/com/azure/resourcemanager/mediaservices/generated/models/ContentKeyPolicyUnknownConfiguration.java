@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Represents a ContentKeyPolicyConfiguration that is unavailable in the current API version.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyUnknownConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyUnknownConfiguration")
 @Immutable
 public final class ContentKeyPolicyUnknownConfiguration extends ContentKeyPolicyConfiguration {
@@ -19,6 +23,7 @@ public final class ContentKeyPolicyUnknownConfiguration extends ContentKeyPolicy
      * Creates an instance of ContentKeyPolicyUnknownConfiguration class.
      */
     public ContentKeyPolicyUnknownConfiguration() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyUnknownConfiguration");
     }
 
     /**

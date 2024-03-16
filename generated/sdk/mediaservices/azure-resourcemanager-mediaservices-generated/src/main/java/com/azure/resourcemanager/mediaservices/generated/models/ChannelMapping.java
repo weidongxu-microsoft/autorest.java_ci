@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Optional designation for single channel audio tracks. Can be used to combine the tracks into stereo or multi-channel
- * audio tracks.
+ * Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
  */
 public final class ChannelMapping extends ExpandableStringEnum<ChannelMapping> {
     /**

@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.annotation.ServiceClient;
+import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.azure.core.http.HttpPipeline;
 import com.azure.core.http.HttpResponse;
@@ -50,14 +51,12 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = FrontDoorManagementClientBuilder.class)
 public final class FrontDoorManagementClientImpl implements FrontDoorManagementClient {
     /**
-     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
-     * part of the URI for every service call.
+     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
-     * forms part of the URI for every service call.
+     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -296,8 +295,7 @@ public final class FrontDoorManagementClientImpl implements FrontDoorManagementC
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The
-     * subscription ID forms part of the URI for every service call.
+     * @param subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     FrontDoorManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
@@ -382,8 +380,8 @@ public final class FrontDoorManagementClientImpl implements FrontDoorManagementC
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
-                            SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter()
+                            .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }
@@ -424,7 +422,7 @@ public final class FrontDoorManagementClientImpl implements FrontDoorManagementC
         }
 
         public String getHeaderValue(String s) {
-            return httpHeaders.getValue(s);
+            return httpHeaders.getValue(HttpHeaderName.fromString(s));
         }
 
         public HttpHeaders getHeaders() {

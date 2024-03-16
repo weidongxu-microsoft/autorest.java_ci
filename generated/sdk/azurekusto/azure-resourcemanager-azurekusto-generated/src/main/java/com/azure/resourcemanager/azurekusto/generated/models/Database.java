@@ -32,6 +32,13 @@ public interface Database {
     String type();
 
     /**
+     * Gets the kind property: Kind of the database.
+     * 
+     * @return the kind value.
+     */
+    Kind kind();
+
+    /**
      * Gets the location property: Resource location.
      * 
      * @return the location value.

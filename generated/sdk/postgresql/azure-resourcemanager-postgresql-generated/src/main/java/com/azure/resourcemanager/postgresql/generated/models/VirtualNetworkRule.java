@@ -40,8 +40,7 @@ public interface VirtualNetworkRule {
     String virtualNetworkSubnetId();
 
     /**
-     * Gets the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet
-     * service endpoint enabled.
+     * Gets the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled.
      * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
@@ -100,8 +99,7 @@ public interface VirtualNetworkRule {
         }
 
         /**
-         * The stage of the VirtualNetworkRule definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetworkRule definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithVirtualNetworkSubnetId, DefinitionStages.WithIgnoreMissingVnetServiceEndpoint {
@@ -139,11 +137,9 @@ public interface VirtualNetworkRule {
          */
         interface WithIgnoreMissingVnetServiceEndpoint {
             /**
-             * Specifies the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network
-             * has vnet service endpoint enabled..
+             * Specifies the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled..
              * 
-             * @param ignoreMissingVnetServiceEndpoint Create firewall rule before the virtual network has vnet service
-             * endpoint enabled.
+             * @param ignoreMissingVnetServiceEndpoint Create firewall rule before the virtual network has vnet service endpoint enabled.
              * @return the next definition stage.
              */
             WithCreate withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint);
@@ -200,11 +196,9 @@ public interface VirtualNetworkRule {
          */
         interface WithIgnoreMissingVnetServiceEndpoint {
             /**
-             * Specifies the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network
-             * has vnet service endpoint enabled..
+             * Specifies the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled..
              * 
-             * @param ignoreMissingVnetServiceEndpoint Create firewall rule before the virtual network has vnet service
-             * endpoint enabled.
+             * @param ignoreMissingVnetServiceEndpoint Create firewall rule before the virtual network has vnet service endpoint enabled.
              * @return the next definition stage.
              */
             Update withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint);

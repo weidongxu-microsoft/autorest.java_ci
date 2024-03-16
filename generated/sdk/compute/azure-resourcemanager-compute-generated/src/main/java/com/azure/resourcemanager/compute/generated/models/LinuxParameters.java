@@ -44,8 +44,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Get the classificationsToInclude property: The update classifications to select when installing patches for
-     * Linux.
+     * Get the classificationsToInclude property: The update classifications to select when installing patches for Linux.
      * 
      * @return the classificationsToInclude value.
      */
@@ -54,8 +53,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Set the classificationsToInclude property: The update classifications to select when installing patches for
-     * Linux.
+     * Set the classificationsToInclude property: The update classifications to select when installing patches for Linux.
      * 
      * @param classificationsToInclude the classificationsToInclude value to set.
      * @return the LinuxParameters object itself.
@@ -67,8 +65,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Get the packageNameMasksToInclude property: packages to include in the patch operation. Format:
-     * packageName_packageVersion.
+     * Get the packageNameMasksToInclude property: packages to include in the patch operation. Format: packageName_packageVersion.
      * 
      * @return the packageNameMasksToInclude value.
      */
@@ -77,8 +74,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Set the packageNameMasksToInclude property: packages to include in the patch operation. Format:
-     * packageName_packageVersion.
+     * Set the packageNameMasksToInclude property: packages to include in the patch operation. Format: packageName_packageVersion.
      * 
      * @param packageNameMasksToInclude the packageNameMasksToInclude value to set.
      * @return the LinuxParameters object itself.
@@ -89,8 +85,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Get the packageNameMasksToExclude property: packages to exclude in the patch operation. Format:
-     * packageName_packageVersion.
+     * Get the packageNameMasksToExclude property: packages to exclude in the patch operation. Format: packageName_packageVersion.
      * 
      * @return the packageNameMasksToExclude value.
      */
@@ -99,8 +94,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Set the packageNameMasksToExclude property: packages to exclude in the patch operation. Format:
-     * packageName_packageVersion.
+     * Set the packageNameMasksToExclude property: packages to exclude in the patch operation. Format: packageName_packageVersion.
      * 
      * @param packageNameMasksToExclude the packageNameMasksToExclude value to set.
      * @return the LinuxParameters object itself.
@@ -111,8 +105,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Get the maintenanceRunId property: This is used as a maintenance run identifier for Auto VM Guest Patching in
-     * Linux.
+     * Get the maintenanceRunId property: This is used as a maintenance run identifier for Auto VM Guest Patching in Linux.
      * 
      * @return the maintenanceRunId value.
      */
@@ -121,8 +114,7 @@ public final class LinuxParameters {
     }
 
     /**
-     * Set the maintenanceRunId property: This is used as a maintenance run identifier for Auto VM Guest Patching in
-     * Linux.
+     * Set the maintenanceRunId property: This is used as a maintenance run identifier for Auto VM Guest Patching in Linux.
      * 
      * @param maintenanceRunId the maintenanceRunId value to set.
      * @return the LinuxParameters object itself.

@@ -59,8 +59,7 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientObjectReplicationPoliciesOperations to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientObjectReplicationPoliciesOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -109,15 +108,12 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account object replication policies along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list storage account object replication policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ObjectReplicationPolicyInner>> listSinglePageAsync(String resourceGroupName,
@@ -149,16 +145,13 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account object replication policies along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list storage account object replication policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ObjectReplicationPolicyInner>> listSinglePageAsync(String resourceGroupName,
@@ -190,10 +183,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -207,10 +198,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -226,10 +215,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -243,10 +230,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * List the object replication policies associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -262,19 +247,13 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Get the object replication policy of the storage account by policy ID.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ObjectReplicationPolicyInner>> getWithResponseAsync(String resourceGroupName,
@@ -307,20 +286,14 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Get the object replication policy of the storage account by policy ID.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ObjectReplicationPolicyInner>> getWithResponseAsync(String resourceGroupName,
@@ -353,19 +326,13 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Get the object replication policy of the storage account by policy ID.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID on successful completion of
-     * {@link Mono}.
+     * @return the object replication policy of the storage account by policy ID on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ObjectReplicationPolicyInner> getAsync(String resourceGroupName, String accountName,
@@ -377,14 +344,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Get the object replication policy of the storage account by policy ID.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -400,14 +362,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Get the object replication policy of the storage account by policy ID.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -422,21 +379,14 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Create or update the object replication policy of the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
-     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
-     * absent.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the replication policy between two storage accounts along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the replication policy between two storage accounts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ObjectReplicationPolicyInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -476,22 +426,15 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Create or update the object replication policy of the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
-     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
-     * absent.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if absent.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the replication policy between two storage accounts along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the replication policy between two storage accounts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ObjectReplicationPolicyInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -531,16 +474,10 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Create or update the object replication policy of the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
-     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
-     * absent.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -556,16 +493,10 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Create or update the object replication policy of the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
-     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
-     * absent.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if absent.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -583,16 +514,10 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Create or update the object replication policy of the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
-     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
-     * absent.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -608,14 +533,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Deletes the object replication policy associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -652,14 +572,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Deletes the object replication policy associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -697,14 +612,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Deletes the object replication policy associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -719,14 +629,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Deletes the object replication policy associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -742,14 +647,9 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
     /**
      * Deletes the object replication policy associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy
-     * on the destination account first. For the source account, provide the value of the policy ID that is returned
-     * when you download the policy that was defined on the destination account. The policy is downloaded as a JSON
-     * file.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param objectReplicationPolicyId For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

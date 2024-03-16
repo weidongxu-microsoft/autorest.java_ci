@@ -38,8 +38,7 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost
-     * Management in the Azure portal.
+     * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      * 
      * @return the scope value.
      */
@@ -48,8 +47,7 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Set the scope property: Sets the default scope the current user will see when they sign into Azure Cost
-     * Management in the Azure portal.
+     * Set the scope property: Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      * 
      * @param scope the scope value to set.
      * @return the SettingInner object itself.
@@ -63,8 +61,7 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Get the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
-     * values: LastUsed.
+     * Get the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      * 
      * @return the startOn value.
      */
@@ -73,8 +70,7 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Set the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
-     * values: LastUsed.
+     * Set the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      * 
      * @param startOn the startOn value to set.
      * @return the SettingInner object itself.

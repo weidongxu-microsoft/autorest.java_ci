@@ -19,8 +19,7 @@ public interface HubVirtualNetworkConnections {
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
-     * connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35,8 +34,7 @@ public interface HubVirtualNetworkConnections {
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
-     * connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -107,8 +105,7 @@ public interface HubVirtualNetworkConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
-     * response with {@link PagedIterable}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HubVirtualNetworkConnection> list(String resourceGroupName, String virtualHubName);
 
@@ -121,8 +118,7 @@ public interface HubVirtualNetworkConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
-     * response with {@link PagedIterable}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HubVirtualNetworkConnection> list(String resourceGroupName, String virtualHubName, Context context);
 }

@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListServiceEndpointPolicyDefinition API service call. Retrieves all service endpoint policy definition
- * that belongs to a service endpoint policy.
+ * Response for ListServiceEndpointPolicyDefinition API service call. Retrieves all service endpoint policy definition that belongs to a service endpoint policy.
  */
 @Fluent
 public final class ServiceEndpointPolicyDefinitionListResult {

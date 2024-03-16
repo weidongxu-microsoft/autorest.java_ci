@@ -284,8 +284,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Get the fullBackupFrequency property: Frequency of full backups. In both cases, full backups begin during the
-     * next scheduled time window.
+     * Get the fullBackupFrequency property: Frequency of full backups. In both cases, full backups begin during the next scheduled time window.
      * 
      * @return the fullBackupFrequency value.
      */
@@ -294,8 +293,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Set the fullBackupFrequency property: Frequency of full backups. In both cases, full backups begin during the
-     * next scheduled time window.
+     * Set the fullBackupFrequency property: Frequency of full backups. In both cases, full backups begin during the next scheduled time window.
      * 
      * @param fullBackupFrequency the fullBackupFrequency value to set.
      * @return the AutoBackupSettings object itself.
@@ -326,8 +324,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Get the fullBackupStartTime property: Start time of a given day during which full backups can take place. 0-23
-     * hours.
+     * Get the fullBackupStartTime property: Start time of a given day during which full backups can take place. 0-23 hours.
      * 
      * @return the fullBackupStartTime value.
      */
@@ -336,8 +333,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Set the fullBackupStartTime property: Start time of a given day during which full backups can take place. 0-23
-     * hours.
+     * Set the fullBackupStartTime property: Start time of a given day during which full backups can take place. 0-23 hours.
      * 
      * @param fullBackupStartTime the fullBackupStartTime value to set.
      * @return the AutoBackupSettings object itself.
@@ -348,8 +344,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Get the fullBackupWindowHours property: Duration of the time window of a given day during which full backups can
-     * take place. 1-23 hours.
+     * Get the fullBackupWindowHours property: Duration of the time window of a given day during which full backups can take place. 1-23 hours.
      * 
      * @return the fullBackupWindowHours value.
      */
@@ -358,8 +353,7 @@ public final class AutoBackupSettings {
     }
 
     /**
-     * Set the fullBackupWindowHours property: Duration of the time window of a given day during which full backups can
-     * take place. 1-23 hours.
+     * Set the fullBackupWindowHours property: Duration of the time window of a given day during which full backups can take place. 1-23 hours.
      * 
      * @param fullBackupWindowHours the fullBackupWindowHours value to set.
      * @return the AutoBackupSettings object itself.

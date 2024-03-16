@@ -17,14 +17,11 @@ import com.azure.resourcemanager.keyvault.generated.models.KeyCreateParameters;
  */
 public interface KeysClient {
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
-     * returned without any write operations being performed. This API does not create subsequent versions, and does not
-     * update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     * running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,14 +34,11 @@ public interface KeysClient {
         KeyCreateParameters parameters, Context context);
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
-     * returned without any write operations being performed. This API does not create subsequent versions, and does not
-     * update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     * running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

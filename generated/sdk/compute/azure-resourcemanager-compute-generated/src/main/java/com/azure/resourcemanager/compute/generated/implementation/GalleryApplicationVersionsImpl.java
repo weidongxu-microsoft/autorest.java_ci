@@ -31,8 +31,9 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
     public Response<GalleryApplicationVersion> getWithResponse(String resourceGroupName, String galleryName,
         String galleryApplicationName, String galleryApplicationVersionName, ReplicationStatusTypes expand,
         Context context) {
-        Response<GalleryApplicationVersionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            galleryName, galleryApplicationName, galleryApplicationVersionName, expand, context);
+        Response<GalleryApplicationVersionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new GalleryApplicationVersionImpl(inner.getValue(), this.manager()));
@@ -43,8 +44,8 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
 
     public GalleryApplicationVersion get(String resourceGroupName, String galleryName, String galleryApplicationName,
         String galleryApplicationVersionName) {
-        GalleryApplicationVersionInner inner = this.serviceClient().get(resourceGroupName, galleryName,
-            galleryApplicationName, galleryApplicationVersionName);
+        GalleryApplicationVersionInner inner = this.serviceClient()
+            .get(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName);
         if (inner != null) {
             return new GalleryApplicationVersionImpl(inner, this.manager());
         } else {
@@ -54,14 +55,14 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
 
     public void delete(String resourceGroupName, String galleryName, String galleryApplicationName,
         String galleryApplicationVersionName) {
-        this.serviceClient().delete(resourceGroupName, galleryName, galleryApplicationName,
-            galleryApplicationVersionName);
+        this.serviceClient()
+            .delete(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName);
     }
 
     public void delete(String resourceGroupName, String galleryName, String galleryApplicationName,
         String galleryApplicationVersionName, Context context) {
-        this.serviceClient().delete(resourceGroupName, galleryName, galleryApplicationName,
-            galleryApplicationVersionName, context);
+        this.serviceClient()
+            .delete(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName, context);
     }
 
     public PagedIterable<GalleryApplicationVersion> listByGalleryApplication(String resourceGroupName,
@@ -100,8 +101,10 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
         }
         ReplicationStatusTypes localExpand = null;
-        return this.getWithResponse(resourceGroupName, galleryName, galleryApplicationName,
-            galleryApplicationVersionName, localExpand, Context.NONE).getValue();
+        return this
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                localExpand, Context.NONE)
+            .getValue();
     }
 
     public Response<GalleryApplicationVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand,

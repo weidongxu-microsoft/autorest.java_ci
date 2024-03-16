@@ -61,8 +61,8 @@ public final class ChannelsImpl implements Channels {
 
     public Response<Void> updateWithResponse(String resourceGroupName, String partnerNamespaceName, String channelName,
         ChannelUpdateParameters channelUpdateParameters, Context context) {
-        return this.serviceClient().updateWithResponse(resourceGroupName, partnerNamespaceName, channelName,
-            channelUpdateParameters, context);
+        return this.serviceClient()
+            .updateWithResponse(resourceGroupName, partnerNamespaceName, channelName, channelUpdateParameters, context);
     }
 
     public void update(String resourceGroupName, String partnerNamespaceName, String channelName,
@@ -78,15 +78,15 @@ public final class ChannelsImpl implements Channels {
 
     public PagedIterable<Channel> listByPartnerNamespace(String resourceGroupName, String partnerNamespaceName,
         String filter, Integer top, Context context) {
-        PagedIterable<ChannelInner> inner = this.serviceClient().listByPartnerNamespace(resourceGroupName,
-            partnerNamespaceName, filter, top, context);
+        PagedIterable<ChannelInner> inner = this.serviceClient()
+            .listByPartnerNamespace(resourceGroupName, partnerNamespaceName, filter, top, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new ChannelImpl(inner1, this.manager()));
     }
 
     public Response<EventSubscriptionFullUrl> getFullUrlWithResponse(String resourceGroupName,
         String partnerNamespaceName, String channelName, Context context) {
-        Response<EventSubscriptionFullUrlInner> inner = this.serviceClient().getFullUrlWithResponse(resourceGroupName,
-            partnerNamespaceName, channelName, context);
+        Response<EventSubscriptionFullUrlInner> inner = this.serviceClient()
+            .getFullUrlWithResponse(resourceGroupName, partnerNamespaceName, channelName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new EventSubscriptionFullUrlImpl(inner.getValue(), this.manager()));

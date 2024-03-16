@@ -64,8 +64,7 @@ public final class LogSearchRuleResourcePatch {
     }
 
     /**
-     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
-     * or false.
+     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
      * 
      * @return the enabled value.
      */
@@ -74,8 +73,7 @@ public final class LogSearchRuleResourcePatch {
     }
 
     /**
-     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
-     * or false.
+     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
      * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRuleResourcePatch object itself.

@@ -100,8 +100,7 @@ public interface ExpressRouteCrossConnection {
     ExpressRouteCircuitReference expressRouteCircuit();
 
     /**
-     * Gets the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity
-     * provider system.
+     * Gets the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity provider system.
      * 
      * @return the serviceProviderProvisioningState value.
      */
@@ -208,8 +207,7 @@ public interface ExpressRouteCrossConnection {
         }
 
         /**
-         * The stage of the ExpressRouteCrossConnection definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRouteCrossConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExpressRouteCircuit,
             DefinitionStages.WithServiceProviderProvisioningState, DefinitionStages.WithServiceProviderNotes,
@@ -261,11 +259,9 @@ public interface ExpressRouteCrossConnection {
          */
         interface WithServiceProviderProvisioningState {
             /**
-             * Specifies the serviceProviderProvisioningState property: The provisioning state of the circuit in the
-             * connectivity provider system..
+             * Specifies the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity provider system..
              * 
-             * @param serviceProviderProvisioningState The provisioning state of the circuit in the connectivity
-             * provider system.
+             * @param serviceProviderProvisioningState The provisioning state of the circuit in the connectivity provider system.
              * @return the next definition stage.
              */
             WithCreate
@@ -277,8 +273,7 @@ public interface ExpressRouteCrossConnection {
          */
         interface WithServiceProviderNotes {
             /**
-             * Specifies the serviceProviderNotes property: Additional read only notes set by the connectivity
-             * provider..
+             * Specifies the serviceProviderNotes property: Additional read only notes set by the connectivity provider..
              * 
              * @param serviceProviderNotes Additional read only notes set by the connectivity provider.
              * @return the next definition stage.

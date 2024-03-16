@@ -80,16 +80,20 @@ public final class ObjectReplicationPolicyImpl
     }
 
     public ObjectReplicationPolicy create() {
-        this.innerObject
-            = serviceManager.serviceClient().getObjectReplicationPoliciesOperations().createOrUpdateWithResponse(
-                resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ObjectReplicationPolicy create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getObjectReplicationPoliciesOperations().createOrUpdateWithResponse(
-                resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -105,16 +109,20 @@ public final class ObjectReplicationPolicyImpl
     }
 
     public ObjectReplicationPolicy apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getObjectReplicationPoliciesOperations().createOrUpdateWithResponse(
-                resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ObjectReplicationPolicy apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getObjectReplicationPoliciesOperations().createOrUpdateWithResponse(
-                resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -129,14 +137,18 @@ public final class ObjectReplicationPolicyImpl
     }
 
     public ObjectReplicationPolicy refresh() {
-        this.innerObject = serviceManager.serviceClient().getObjectReplicationPoliciesOperations()
-            .getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ObjectReplicationPolicy refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getObjectReplicationPoliciesOperations()
-            .getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getObjectReplicationPoliciesOperations()
+            .getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context)
+            .getValue();
         return this;
     }
 

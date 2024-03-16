@@ -8,21 +8,25 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Properties of the Application Group policy.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = ApplicationGroupPolicy.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", defaultImpl = ApplicationGroupPolicy.class, visible = true)
 @JsonTypeName("ApplicationGroupPolicy")
 @JsonSubTypes({ @JsonSubTypes.Type(name = "ThrottlingPolicy", value = ThrottlingPolicy.class) })
 @Fluent
 public class ApplicationGroupPolicy {
+    /*
+     * Application Group Policy types
+     */
+    @JsonTypeId
+    @JsonProperty(value = "type", required = true)
+    private ApplicationGroupPolicyType type;
+
     /*
      * The Name of this policy
      */
@@ -33,6 +37,27 @@ public class ApplicationGroupPolicy {
      * Creates an instance of ApplicationGroupPolicy class.
      */
     public ApplicationGroupPolicy() {
+        this.type = ApplicationGroupPolicyType.fromString("ApplicationGroupPolicy");
+    }
+
+    /**
+     * Get the type property: Application Group Policy types.
+     * 
+     * @return the type value.
+     */
+    public ApplicationGroupPolicyType type() {
+        return this.type;
+    }
+
+    /**
+     * Set the type property: Application Group Policy types.
+     * 
+     * @param type the type value to set.
+     * @return the ApplicationGroupPolicy object itself.
+     */
+    protected ApplicationGroupPolicy withType(ApplicationGroupPolicyType type) {
+        this.type = type;
+        return this;
     }
 
     /**

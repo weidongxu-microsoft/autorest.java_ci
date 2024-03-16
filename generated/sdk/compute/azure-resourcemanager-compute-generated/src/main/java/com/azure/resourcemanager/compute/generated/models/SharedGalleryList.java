@@ -22,8 +22,7 @@ public final class SharedGalleryList {
     private List<SharedGalleryInner> value;
 
     /*
-     * The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch the next page of shared
-     * galleries.
+     * The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch the next page of shared galleries.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class SharedGalleryList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch
-     * the next page of shared galleries.
+     * Get the nextLink property: The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch the next page of shared galleries.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class SharedGalleryList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch
-     * the next page of shared galleries.
+     * Set the nextLink property: The uri to fetch the next page of shared galleries. Call ListNext() with this to fetch the next page of shared galleries.
      * 
      * @param nextLink the nextLink value to set.
      * @return the SharedGalleryList object itself.

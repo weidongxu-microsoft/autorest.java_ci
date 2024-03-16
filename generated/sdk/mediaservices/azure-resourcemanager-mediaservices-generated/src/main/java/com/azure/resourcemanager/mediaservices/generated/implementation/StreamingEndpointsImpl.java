@@ -145,8 +145,8 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
 
     public Response<StreamingEndpoint> operationLocationWithResponse(String resourceGroupName, String accountName,
         String streamingEndpointName, String operationId, Context context) {
-        Response<StreamingEndpointInner> inner = this.serviceClient().operationLocationWithResponse(resourceGroupName,
-            accountName, streamingEndpointName, operationId, context);
+        Response<StreamingEndpointInner> inner = this.serviceClient()
+            .operationLocationWithResponse(resourceGroupName, accountName, streamingEndpointName, operationId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StreamingEndpointImpl(inner.getValue(), this.manager()));
@@ -157,8 +157,8 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
 
     public StreamingEndpoint operationLocation(String resourceGroupName, String accountName,
         String streamingEndpointName, String operationId) {
-        StreamingEndpointInner inner = this.serviceClient().operationLocation(resourceGroupName, accountName,
-            streamingEndpointName, operationId);
+        StreamingEndpointInner inner = this.serviceClient()
+            .operationLocation(resourceGroupName, accountName, streamingEndpointName, operationId);
         if (inner != null) {
             return new StreamingEndpointImpl(inner, this.manager());
         } else {

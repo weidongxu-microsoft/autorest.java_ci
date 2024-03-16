@@ -52,16 +52,14 @@ public interface ApplicationInsightsComponent {
     Map<String, String> tags();
 
     /**
-     * Gets the kind property: The kind of application that this component refers to, used to customize UI. This value
-     * is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+     * Gets the kind property: The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
      * 
      * @return the kind value.
      */
     String kind();
 
     /**
-     * Gets the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and
-     * cannot be changed.
+     * Gets the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
      * 
      * @return the applicationId value.
      */
@@ -82,25 +80,21 @@ public interface ApplicationInsightsComponent {
     ApplicationType applicationType();
 
     /**
-     * Gets the flowType property: Used by the Application Insights system to determine what kind of flow this component
-     * was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+     * Gets the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
      * 
      * @return the flowType value.
      */
     FlowType flowType();
 
     /**
-     * Gets the requestSource property: Describes what tool created this Application Insights component. Customers using
-     * this API should set this to the default 'rest'.
+     * Gets the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
      * 
      * @return the requestSource value.
      */
     RequestSource requestSource();
 
     /**
-     * Gets the instrumentationKey property: Application Insights Instrumentation key. A read-only value that
-     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value
-     * will be supplied upon construction of each new Application Insights component.
+     * Gets the instrumentationKey property: Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.
      * 
      * @return the instrumentationKey value.
      */
@@ -121,33 +115,28 @@ public interface ApplicationInsightsComponent {
     String tenantId();
 
     /**
-     * Gets the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp,
-     * used for communications with HockeyApp.
+     * Gets the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
      * 
      * @return the hockeyAppId value.
      */
     String hockeyAppId();
 
     /**
-     * Gets the hockeyAppToken property: Token used to authenticate communications with between Application Insights and
-     * HockeyApp.
+     * Gets the hockeyAppToken property: Token used to authenticate communications with between Application Insights and HockeyApp.
      * 
      * @return the hockeyAppToken value.
      */
     String hockeyAppToken();
 
     /**
-     * Gets the provisioningState property: Current state of this component: whether or not is has been provisioned
-     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
-     * include Succeeded, Deploying, Canceled, and Failed.
+     * Gets the provisioningState property: Current state of this component: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
     String provisioningState();
 
     /**
-     * Gets the samplingPercentage property: Percentage of the data produced by the application being monitored that is
-     * being sampled for Application Insights telemetry.
+     * Gets the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
      * 
      * @return the samplingPercentage value.
      */
@@ -189,8 +178,7 @@ public interface ApplicationInsightsComponent {
     List<PrivateLinkScopedResource> privateLinkScopedResources();
 
     /**
-     * Gets the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights
-     * ingestion.
+     * Gets the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion.
      * 
      * @return the publicNetworkAccessForIngestion value.
      */
@@ -232,8 +220,7 @@ public interface ApplicationInsightsComponent {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentInner object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentInner object.
      * 
      * @return the inner object.
      */
@@ -295,20 +282,16 @@ public interface ApplicationInsightsComponent {
          */
         interface WithKind {
             /**
-             * Specifies the kind property: The kind of application that this component refers to, used to customize UI.
-             * This value is a freeform string, values should typically be one of the following: web, ios, other, store,
-             * java, phone..
+             * Specifies the kind property: The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone..
              * 
-             * @param kind The kind of application that this component refers to, used to customize UI. This value is a
-             * freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+             * @param kind The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
         /**
-         * The stage of the ApplicationInsightsComponent definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ApplicationInsightsComponent definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithApplicationType,
             DefinitionStages.WithFlowType, DefinitionStages.WithRequestSource, DefinitionStages.WithHockeyAppId,
@@ -363,12 +346,9 @@ public interface ApplicationInsightsComponent {
          */
         interface WithFlowType {
             /**
-             * Specifies the flowType property: Used by the Application Insights system to determine what kind of flow
-             * this component was created by. This is to be set to 'Bluefield' when creating/updating a component via
-             * the REST API..
+             * Specifies the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API..
              * 
-             * @param flowType Used by the Application Insights system to determine what kind of flow this component was
-             * created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+             * @param flowType Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
              * @return the next definition stage.
              */
             WithCreate withFlowType(FlowType flowType);
@@ -379,11 +359,9 @@ public interface ApplicationInsightsComponent {
          */
         interface WithRequestSource {
             /**
-             * Specifies the requestSource property: Describes what tool created this Application Insights component.
-             * Customers using this API should set this to the default 'rest'..
+             * Specifies the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'..
              * 
-             * @param requestSource Describes what tool created this Application Insights component. Customers using
-             * this API should set this to the default 'rest'.
+             * @param requestSource Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
              * @return the next definition stage.
              */
             WithCreate withRequestSource(RequestSource requestSource);
@@ -394,11 +372,9 @@ public interface ApplicationInsightsComponent {
          */
         interface WithHockeyAppId {
             /**
-             * Specifies the hockeyAppId property: The unique application ID created when a new application is added to
-             * HockeyApp, used for communications with HockeyApp..
+             * Specifies the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp..
              * 
-             * @param hockeyAppId The unique application ID created when a new application is added to HockeyApp, used
-             * for communications with HockeyApp.
+             * @param hockeyAppId The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
              * @return the next definition stage.
              */
             WithCreate withHockeyAppId(String hockeyAppId);
@@ -409,11 +385,9 @@ public interface ApplicationInsightsComponent {
          */
         interface WithSamplingPercentage {
             /**
-             * Specifies the samplingPercentage property: Percentage of the data produced by the application being
-             * monitored that is being sampled for Application Insights telemetry..
+             * Specifies the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry..
              * 
-             * @param samplingPercentage Percentage of the data produced by the application being monitored that is
-             * being sampled for Application Insights telemetry.
+             * @param samplingPercentage Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
              * @return the next definition stage.
              */
             WithCreate withSamplingPercentage(Double samplingPercentage);
@@ -463,11 +437,9 @@ public interface ApplicationInsightsComponent {
          */
         interface WithPublicNetworkAccessForIngestion {
             /**
-             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Application
-             * Insights ingestion..
+             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion..
              * 
-             * @param publicNetworkAccessForIngestion The network access type for accessing Application Insights
-             * ingestion.
+             * @param publicNetworkAccessForIngestion The network access type for accessing Application Insights ingestion.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccessForIngestion(PublicNetworkAccessType publicNetworkAccessForIngestion);
@@ -478,8 +450,7 @@ public interface ApplicationInsightsComponent {
          */
         interface WithPublicNetworkAccessForQuery {
             /**
-             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Application
-             * Insights query..
+             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Application Insights query..
              * 
              * @param publicNetworkAccessForQuery The network access type for accessing Application Insights query.
              * @return the next definition stage.
@@ -564,10 +535,7 @@ public interface ApplicationInsightsComponent {
     /**
      * Purges data in an Application Insights component by a set of user-defined filters.
      * 
-     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the
-     * execution of purge requests by sending a single command whose predicate includes all user identities that require
-     * purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge
-     * request to verify that the results are expected.
+     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the execution of purge requests by sending a single command whose predicate includes all user identities that require purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge request to verify that the results are expected.
      * 
      * @param body Describes the body of a request to purge data in a single table of an Application Insights component.
      * @param context The context to associate with this operation.
@@ -581,10 +549,7 @@ public interface ApplicationInsightsComponent {
     /**
      * Purges data in an Application Insights component by a set of user-defined filters.
      * 
-     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the
-     * execution of purge requests by sending a single command whose predicate includes all user identities that require
-     * purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge
-     * request to verify that the results are expected.
+     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the execution of purge requests by sending a single command whose predicate includes all user identities that require purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge request to verify that the results are expected.
      * 
      * @param body Describes the body of a request to purge data in a single table of an Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

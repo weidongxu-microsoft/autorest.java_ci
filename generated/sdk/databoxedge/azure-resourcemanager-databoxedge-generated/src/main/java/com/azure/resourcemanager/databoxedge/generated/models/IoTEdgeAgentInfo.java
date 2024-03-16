@@ -9,8 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * IoT edge agent details is optional, this will be used for download system Agent module while bootstrapping IoT Role
- * if specified.
+ * IoT edge agent details is optional, this will be used for download system Agent module while bootstrapping IoT Role if specified.
  */
 @Fluent
 public final class IoTEdgeAgentInfo {

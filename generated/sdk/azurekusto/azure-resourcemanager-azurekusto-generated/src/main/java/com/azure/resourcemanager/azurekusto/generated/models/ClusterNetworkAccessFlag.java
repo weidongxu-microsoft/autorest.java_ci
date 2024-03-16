@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Whether or not to restrict outbound network access. Value is optional but if passed in, must be 'Enabled' or
- * 'Disabled'.
+ * Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
  */
 public final class ClusterNetworkAccessFlag extends ExpandableStringEnum<ClusterNetworkAccessFlag> {
     /**

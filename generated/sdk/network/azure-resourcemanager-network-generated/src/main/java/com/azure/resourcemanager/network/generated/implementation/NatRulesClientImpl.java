@@ -63,8 +63,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNatRules to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNatRules to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -735,8 +734,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayNatRuleInner>> listByVpnGatewaySinglePageAsync(String resourceGroupName,
@@ -775,8 +773,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayNatRuleInner>> listByVpnGatewaySinglePageAsync(String resourceGroupName,
@@ -814,8 +811,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnGatewayNatRuleInner> listByVpnGatewayAsync(String resourceGroupName, String gatewayName) {
@@ -832,8 +828,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnGatewayNatRuleInner> listByVpnGatewayAsync(String resourceGroupName, String gatewayName,
@@ -850,8 +845,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnGatewayNatRuleInner> listByVpnGateway(String resourceGroupName, String gatewayName) {
@@ -867,8 +861,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnGatewayNatRuleInner> listByVpnGateway(String resourceGroupName, String gatewayName,
@@ -885,8 +878,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayNatRuleInner>> listByVpnGatewayNextSinglePageAsync(String nextLink) {
@@ -915,8 +907,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse}
-     * on successful completion of {@link Mono}.
+     * @return result of the request to list all nat rules to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayNatRuleInner>> listByVpnGatewayNextSinglePageAsync(String nextLink,

@@ -156,8 +156,7 @@ public interface PoliciesClient {
         WebApplicationFirewallPolicyInner parameters, Context context);
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
-     * resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -172,8 +171,7 @@ public interface PoliciesClient {
         beginUpdate(String resourceGroupName, String policyName, TagsObject parameters);
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
-     * resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -189,8 +187,7 @@ public interface PoliciesClient {
         beginUpdate(String resourceGroupName, String policyName, TagsObject parameters, Context context);
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
-     * resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -204,8 +201,7 @@ public interface PoliciesClient {
     WebApplicationFirewallPolicyInner update(String resourceGroupName, String policyName, TagsObject parameters);
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
-     * resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.

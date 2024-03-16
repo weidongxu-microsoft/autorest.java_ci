@@ -6,27 +6,32 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.resourcemanager.azurekusto.generated.models.Kind;
 import com.azure.resourcemanager.azurekusto.generated.models.ReadOnlyFollowingDatabase;
 import com.azure.resourcemanager.azurekusto.generated.models.ReadWriteDatabase;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Class representing a Kusto database.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = DatabaseInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = DatabaseInner.class, visible = true)
 @JsonTypeName("Database")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "ReadWrite", value = ReadWriteDatabase.class),
     @JsonSubTypes.Type(name = "ReadOnlyFollowing", value = ReadOnlyFollowingDatabase.class) })
 @Fluent
 public class DatabaseInner extends ProxyResource {
+    /*
+     * Kind of the database
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private Kind kind;
+
     /*
      * Resource location.
      */
@@ -37,6 +42,27 @@ public class DatabaseInner extends ProxyResource {
      * Creates an instance of DatabaseInner class.
      */
     public DatabaseInner() {
+        this.kind = Kind.fromString("Database");
+    }
+
+    /**
+     * Get the kind property: Kind of the database.
+     * 
+     * @return the kind value.
+     */
+    public Kind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Kind of the database.
+     * 
+     * @param kind the kind value to set.
+     * @return the DatabaseInner object itself.
+     */
+    protected DatabaseInner withKind(Kind kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

@@ -134,8 +134,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public String generatevpnclientpackage(String resourceGroupName, String virtualNetworkGatewayName,
         VpnClientParameters parameters, Context context) {
-        return this.serviceClient().generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters,
-            context);
+        return this.serviceClient()
+            .generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters, context);
     }
 
     public String generateVpnProfile(String resourceGroupName, String virtualNetworkGatewayName,
@@ -145,8 +145,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public String generateVpnProfile(String resourceGroupName, String virtualNetworkGatewayName,
         VpnClientParameters parameters, Context context) {
-        return this.serviceClient().generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters,
-            context);
+        return this.serviceClient()
+            .generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters, context);
     }
 
     public String getVpnProfilePackageUrl(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -180,8 +180,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public Response<String> supportedVpnDevicesWithResponse(String resourceGroupName, String virtualNetworkGatewayName,
         Context context) {
-        return this.serviceClient().supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName,
-            context);
+        return this.serviceClient()
+            .supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
     }
 
     public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -233,8 +233,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public VpnClientIPsecParameters setVpnclientIpsecParameters(String resourceGroupName,
         String virtualNetworkGatewayName, VpnClientIPsecParametersInner vpnclientIpsecParams) {
-        VpnClientIPsecParametersInner inner = this.serviceClient().setVpnclientIpsecParameters(resourceGroupName,
-            virtualNetworkGatewayName, vpnclientIpsecParams);
+        VpnClientIPsecParametersInner inner = this.serviceClient()
+            .setVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams);
         if (inner != null) {
             return new VpnClientIPsecParametersImpl(inner, this.manager());
         } else {
@@ -244,8 +244,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public VpnClientIPsecParameters setVpnclientIpsecParameters(String resourceGroupName,
         String virtualNetworkGatewayName, VpnClientIPsecParametersInner vpnclientIpsecParams, Context context) {
-        VpnClientIPsecParametersInner inner = this.serviceClient().setVpnclientIpsecParameters(resourceGroupName,
-            virtualNetworkGatewayName, vpnclientIpsecParams, context);
+        VpnClientIPsecParametersInner inner = this.serviceClient()
+            .setVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, context);
         if (inner != null) {
             return new VpnClientIPsecParametersImpl(inner, this.manager());
         } else {
@@ -277,14 +277,15 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public Response<String> vpnDeviceConfigurationScriptWithResponse(String resourceGroupName,
         String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters, Context context) {
-        return this.serviceClient().vpnDeviceConfigurationScriptWithResponse(resourceGroupName,
-            virtualNetworkGatewayConnectionName, parameters, context);
+        return this.serviceClient()
+            .vpnDeviceConfigurationScriptWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName,
+                parameters, context);
     }
 
     public String vpnDeviceConfigurationScript(String resourceGroupName, String virtualNetworkGatewayConnectionName,
         VpnDeviceScriptParameters parameters) {
-        return this.serviceClient().vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName,
-            parameters);
+        return this.serviceClient()
+            .vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
     }
 
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -293,8 +294,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
         VpnPacketCaptureStartParameters parameters, Context context) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters,
-            context);
+        return this.serviceClient()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
     }
 
     public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
@@ -304,8 +305,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
         VpnPacketCaptureStopParameters parameters, Context context) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters,
-            context);
+        return this.serviceClient()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
     }
 
     public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(String resourceGroupName,
@@ -332,14 +333,15 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public void disconnectVirtualNetworkGatewayVpnConnections(String resourceGroupName,
         String virtualNetworkGatewayName, P2SVpnConnectionRequest request) {
-        this.serviceClient().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName,
-            request);
+        this.serviceClient()
+            .disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName, request);
     }
 
     public void disconnectVirtualNetworkGatewayVpnConnections(String resourceGroupName,
         String virtualNetworkGatewayName, P2SVpnConnectionRequest request, Context context) {
-        this.serviceClient().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName,
-            request, context);
+        this.serviceClient()
+            .disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName, request,
+                context);
     }
 
     public VirtualNetworkGateway getById(String id) {

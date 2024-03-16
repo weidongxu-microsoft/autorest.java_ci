@@ -32,8 +32,7 @@ public final class P2SVpnConnectionHealthRequest {
     }
 
     /**
-     * Get the vpnUserNamesFilter property: The list of p2s vpn user names whose p2s vpn connection detailed health to
-     * retrieve for.
+     * Get the vpnUserNamesFilter property: The list of p2s vpn user names whose p2s vpn connection detailed health to retrieve for.
      * 
      * @return the vpnUserNamesFilter value.
      */
@@ -42,8 +41,7 @@ public final class P2SVpnConnectionHealthRequest {
     }
 
     /**
-     * Set the vpnUserNamesFilter property: The list of p2s vpn user names whose p2s vpn connection detailed health to
-     * retrieve for.
+     * Set the vpnUserNamesFilter property: The list of p2s vpn user names whose p2s vpn connection detailed health to retrieve for.
      * 
      * @param vpnUserNamesFilter the vpnUserNamesFilter value to set.
      * @return the P2SVpnConnectionHealthRequest object itself.

@@ -20,8 +20,7 @@ public interface LoadBalancingRule {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within the set of load balancing rules used by
-     * the load balancer. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within the set of load balancing rules used by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -49,8 +48,7 @@ public interface LoadBalancingRule {
     SubResource frontendIpConfiguration();
 
     /**
-     * Gets the backendAddressPool property: A reference to a pool of DIPs. Inbound traffic is randomly load balanced
-     * across IPs in the backend IPs.
+     * Gets the backendAddressPool property: A reference to a pool of DIPs. Inbound traffic is randomly load balanced across IPs in the backend IPs.
      * 
      * @return the backendAddressPool value.
      */
@@ -85,49 +83,42 @@ public interface LoadBalancingRule {
     LoadDistribution loadDistribution();
 
     /**
-     * Gets the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique
-     * within the Load Balancer. Acceptable values are between 0 and 65534. Note that value 0 enables "Any Port".
+     * Gets the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values are between 0 and 65534. Note that value 0 enables "Any Port".
      * 
      * @return the frontendPort value.
      */
     int frontendPort();
 
     /**
-     * Gets the backendPort property: The port used for internal connections on the endpoint. Acceptable values are
-     * between 0 and 65535. Note that value 0 enables "Any Port".
+     * Gets the backendPort property: The port used for internal connections on the endpoint. Acceptable values are between 0 and 65535. Note that value 0 enables "Any Port".
      * 
      * @return the backendPort value.
      */
     Integer backendPort();
 
     /**
-     * Gets the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
-     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Gets the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @return the idleTimeoutInMinutes value.
      */
     Integer idleTimeoutInMinutes();
 
     /**
-     * Gets the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
-     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Gets the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @return the enableFloatingIp value.
      */
     Boolean enableFloatingIp();
 
     /**
-     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
     Boolean enableTcpReset();
 
     /**
-     * Gets the disableOutboundSnat property: Configures SNAT for the VMs in the backend pool to use the publicIP
-     * address specified in the frontend of the load balancing rule.
+     * Gets the disableOutboundSnat property: Configures SNAT for the VMs in the backend pool to use the publicIP address specified in the frontend of the load balancing rule.
      * 
      * @return the disableOutboundSnat value.
      */

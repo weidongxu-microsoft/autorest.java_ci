@@ -55,8 +55,7 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     private Boolean isBackingResource;
 
     /*
-     * Indicates that the NSP controls related to backing association are only applicable to a specific feature in
-     * backing resource's data plane.
+     * Indicates that the NSP controls related to backing association are only applicable to a specific feature in backing resource's data plane.
      */
     @JsonProperty(value = "applicableFeatures", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> applicableFeatures;
@@ -149,8 +148,7 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     }
 
     /**
-     * Get the isBackingResource property: True if the EventHub namespace is backed by another Azure resource and not
-     * visible to end users.
+     * Get the isBackingResource property: True if the EventHub namespace is backed by another Azure resource and not visible to end users.
      * 
      * @return the isBackingResource value.
      */
@@ -159,8 +157,7 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     }
 
     /**
-     * Get the applicableFeatures property: Indicates that the NSP controls related to backing association are only
-     * applicable to a specific feature in backing resource's data plane.
+     * Get the applicableFeatures property: Indicates that the NSP controls related to backing association are only applicable to a specific feature in backing resource's data plane.
      * 
      * @return the applicableFeatures value.
      */

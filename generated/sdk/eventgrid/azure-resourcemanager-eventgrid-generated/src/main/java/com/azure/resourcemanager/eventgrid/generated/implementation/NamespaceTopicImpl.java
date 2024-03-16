@@ -80,14 +80,16 @@ public final class NamespaceTopicImpl implements NamespaceTopic, NamespaceTopic.
     }
 
     public NamespaceTopic create() {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics().createOrUpdate(resourceGroupName,
-            namespaceName, topicName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .createOrUpdate(resourceGroupName, namespaceName, topicName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NamespaceTopic create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics().createOrUpdate(resourceGroupName,
-            namespaceName, topicName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .createOrUpdate(resourceGroupName, namespaceName, topicName, this.innerModel(), context);
         return this;
     }
 
@@ -103,14 +105,16 @@ public final class NamespaceTopicImpl implements NamespaceTopic, NamespaceTopic.
     }
 
     public NamespaceTopic apply() {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics().update(resourceGroupName, namespaceName,
-            topicName, updateNamespaceTopicUpdateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .update(resourceGroupName, namespaceName, topicName, updateNamespaceTopicUpdateParameters, Context.NONE);
         return this;
     }
 
     public NamespaceTopic apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics().update(resourceGroupName, namespaceName,
-            topicName, updateNamespaceTopicUpdateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .update(resourceGroupName, namespaceName, topicName, updateNamespaceTopicUpdateParameters, context);
         return this;
     }
 
@@ -124,20 +128,24 @@ public final class NamespaceTopicImpl implements NamespaceTopic, NamespaceTopic.
     }
 
     public NamespaceTopic refresh() {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics()
-            .getWithResponse(resourceGroupName, namespaceName, topicName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .getWithResponse(resourceGroupName, namespaceName, topicName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NamespaceTopic refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopics()
-            .getWithResponse(resourceGroupName, namespaceName, topicName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopics()
+            .getWithResponse(resourceGroupName, namespaceName, topicName, context)
+            .getValue();
         return this;
     }
 
     public Response<TopicSharedAccessKeys> listSharedAccessKeysWithResponse(Context context) {
-        return serviceManager.namespaceTopics().listSharedAccessKeysWithResponse(resourceGroupName, namespaceName,
-            topicName, context);
+        return serviceManager.namespaceTopics()
+            .listSharedAccessKeysWithResponse(resourceGroupName, namespaceName, topicName, context);
     }
 
     public TopicSharedAccessKeys listSharedAccessKeys() {
@@ -145,13 +153,13 @@ public final class NamespaceTopicImpl implements NamespaceTopic, NamespaceTopic.
     }
 
     public TopicSharedAccessKeys regenerateKey(TopicRegenerateKeyRequest regenerateKeyRequest) {
-        return serviceManager.namespaceTopics().regenerateKey(resourceGroupName, namespaceName, topicName,
-            regenerateKeyRequest);
+        return serviceManager.namespaceTopics()
+            .regenerateKey(resourceGroupName, namespaceName, topicName, regenerateKeyRequest);
     }
 
     public TopicSharedAccessKeys regenerateKey(TopicRegenerateKeyRequest regenerateKeyRequest, Context context) {
-        return serviceManager.namespaceTopics().regenerateKey(resourceGroupName, namespaceName, topicName,
-            regenerateKeyRequest, context);
+        return serviceManager.namespaceTopics()
+            .regenerateKey(resourceGroupName, namespaceName, topicName, regenerateKeyRequest, context);
     }
 
     public NamespaceTopicImpl withPublisherType(PublisherType publisherType) {

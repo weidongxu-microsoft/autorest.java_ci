@@ -23,8 +23,7 @@ public final class CreditSummaryInner extends ProxyResource {
     private CreditSummaryProperties innerProperties;
 
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
-     * is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -45,8 +44,7 @@ public final class CreditSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -55,8 +53,7 @@ public final class CreditSummaryInner extends ProxyResource {
     }
 
     /**
-     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @param etag the etag value to set.
      * @return the CreditSummaryInner object itself.
@@ -130,8 +127,7 @@ public final class CreditSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
-     * subjected to change.
+     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be subjected to change.
      * 
      * @return the isEstimatedBalance value.
      */

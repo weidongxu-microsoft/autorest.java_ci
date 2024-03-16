@@ -86,8 +86,7 @@ public final class IncidentInner {
     }
 
     /**
-     * Get the resolvedTime property: The time at which the incident was resolved in ISO8601 format. If null, it means
-     * the incident is still active.
+     * Get the resolvedTime property: The time at which the incident was resolved in ISO8601 format. If null, it means the incident is still active.
      * 
      * @return the resolvedTime value.
      */

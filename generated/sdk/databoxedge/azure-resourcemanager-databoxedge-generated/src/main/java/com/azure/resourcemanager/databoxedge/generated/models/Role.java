@@ -33,6 +33,13 @@ public interface Role {
     String type();
 
     /**
+     * Gets the kind property: Role type.
+     * 
+     * @return the kind value.
+     */
+    RoleTypes kind();
+
+    /**
      * Gets the systemData property: Metadata pertaining to creation and last modification of Role.
      * 
      * @return the systemData value.

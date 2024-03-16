@@ -72,8 +72,8 @@ public final class VaultExtendedInfoesImpl implements VaultExtendedInfoes {
 
     public Response<VaultExtendedInfoResource> updateWithResponse(String resourceGroupName, String vaultName,
         VaultExtendedInfoResourceInner resourceExtendedInfoDetails, Context context) {
-        Response<VaultExtendedInfoResourceInner> inner = this.serviceClient().updateWithResponse(resourceGroupName,
-            vaultName, resourceExtendedInfoDetails, context);
+        Response<VaultExtendedInfoResourceInner> inner = this.serviceClient()
+            .updateWithResponse(resourceGroupName, vaultName, resourceExtendedInfoDetails, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VaultExtendedInfoResourceImpl(inner.getValue(), this.manager()));

@@ -38,8 +38,7 @@ public final class AzureActiveDirectoryValidation {
     }
 
     /**
-     * Get the jwtClaimChecks property: The configuration settings of the checks that should be made while validating
-     * the JWT Claims.
+     * Get the jwtClaimChecks property: The configuration settings of the checks that should be made while validating the JWT Claims.
      * 
      * @return the jwtClaimChecks value.
      */
@@ -48,8 +47,7 @@ public final class AzureActiveDirectoryValidation {
     }
 
     /**
-     * Set the jwtClaimChecks property: The configuration settings of the checks that should be made while validating
-     * the JWT Claims.
+     * Set the jwtClaimChecks property: The configuration settings of the checks that should be made while validating the JWT Claims.
      * 
      * @param jwtClaimChecks the jwtClaimChecks value to set.
      * @return the AzureActiveDirectoryValidation object itself.
@@ -60,8 +58,7 @@ public final class AzureActiveDirectoryValidation {
     }
 
     /**
-     * Get the allowedAudiences property: The list of audiences that can make successful authentication/authorization
-     * requests.
+     * Get the allowedAudiences property: The list of audiences that can make successful authentication/authorization requests.
      * 
      * @return the allowedAudiences value.
      */
@@ -70,8 +67,7 @@ public final class AzureActiveDirectoryValidation {
     }
 
     /**
-     * Set the allowedAudiences property: The list of audiences that can make successful authentication/authorization
-     * requests.
+     * Set the allowedAudiences property: The list of audiences that can make successful authentication/authorization requests.
      * 
      * @param allowedAudiences the allowedAudiences value to set.
      * @return the AzureActiveDirectoryValidation object itself.

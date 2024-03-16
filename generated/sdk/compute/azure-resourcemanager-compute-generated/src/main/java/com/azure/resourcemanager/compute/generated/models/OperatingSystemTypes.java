@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * This property allows you to specify the supported type of the OS that application is built for. Possible values are:
- * **Windows,** **Linux.**.
+ * This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
  */
 public enum OperatingSystemTypes {
     /**

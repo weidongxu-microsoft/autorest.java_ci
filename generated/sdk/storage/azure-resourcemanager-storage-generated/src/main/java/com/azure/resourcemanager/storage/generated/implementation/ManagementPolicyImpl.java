@@ -62,16 +62,20 @@ public final class ManagementPolicyImpl
     }
 
     public ManagementPolicy create() {
-        this.innerObject
-            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
-                accountName, managementPolicyName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagementPolicy create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
-                accountName, managementPolicyName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -87,16 +91,20 @@ public final class ManagementPolicyImpl
     }
 
     public ManagementPolicy apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
-                accountName, managementPolicyName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagementPolicy apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
-                accountName, managementPolicyName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -111,14 +119,18 @@ public final class ManagementPolicyImpl
     }
 
     public ManagementPolicy refresh() {
-        this.innerObject = serviceManager.serviceClient().getManagementPolicies()
-            .getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagementPolicy refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagementPolicies()
-            .getWithResponse(resourceGroupName, accountName, managementPolicyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagementPolicies()
+            .getWithResponse(resourceGroupName, accountName, managementPolicyName, context)
+            .getValue();
         return this;
     }
 

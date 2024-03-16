@@ -107,8 +107,7 @@ public interface NetworkVirtualAppliance {
     String cloudInitConfiguration();
 
     /**
-     * Gets the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are
-     * not supported.
+     * Gets the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not supported.
      * 
      * @return the virtualApplianceAsn value.
      */
@@ -271,8 +270,7 @@ public interface NetworkVirtualAppliance {
         }
 
         /**
-         * The stage of the NetworkVirtualAppliance definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkVirtualAppliance definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithNvaSku,
@@ -315,8 +313,7 @@ public interface NetworkVirtualAppliance {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The service principal that has read access to cloud-init and config
-             * blob..
+             * Specifies the identity property: The service principal that has read access to cloud-init and config blob..
              * 
              * @param identity The service principal that has read access to cloud-init and config blob.
              * @return the next definition stage.
@@ -394,11 +391,9 @@ public interface NetworkVirtualAppliance {
          */
         interface WithVirtualApplianceAsn {
             /**
-             * Specifies the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA
-             * reserved ASN are not supported..
+             * Specifies the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not supported..
              * 
-             * @param virtualApplianceAsn VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not
-             * supported.
+             * @param virtualApplianceAsn VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not supported.
              * @return the next definition stage.
              */
             WithCreate withVirtualApplianceAsn(Long virtualApplianceAsn);
@@ -435,8 +430,7 @@ public interface NetworkVirtualAppliance {
          */
         interface WithInternetIngressPublicIps {
             /**
-             * Specifies the internetIngressPublicIps property: List of Resource Uri of Public IPs for Internet Ingress
-             * Scenario..
+             * Specifies the internetIngressPublicIps property: List of Resource Uri of Public IPs for Internet Ingress Scenario..
              * 
              * @param internetIngressPublicIps List of Resource Uri of Public IPs for Internet Ingress Scenario.
              * @return the next definition stage.

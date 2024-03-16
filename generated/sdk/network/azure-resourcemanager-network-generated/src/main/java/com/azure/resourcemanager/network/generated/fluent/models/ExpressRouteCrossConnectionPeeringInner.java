@@ -52,8 +52,7 @@ public final class ExpressRouteCrossConnectionPeeringInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -62,8 +61,7 @@ public final class ExpressRouteCrossConnectionPeeringInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the ExpressRouteCrossConnectionPeeringInner object itself.
@@ -304,8 +302,7 @@ public final class ExpressRouteCrossConnectionPeeringInner extends SubResource {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the express route cross connection peering
-     * resource.
+     * Get the provisioningState property: The provisioning state of the express route cross connection peering resource.
      * 
      * @return the provisioningState value.
      */

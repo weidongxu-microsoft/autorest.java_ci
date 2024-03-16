@@ -60,8 +60,7 @@ public final class TransformsClientImpl implements TransformsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesTransforms to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for AzureMediaServicesTransforms to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesTr")
@@ -138,8 +137,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TransformInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -182,8 +180,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TransformInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -469,8 +466,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TransformInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
@@ -519,8 +515,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TransformInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
@@ -567,8 +562,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TransformInner> createOrUpdateAsync(String resourceGroupName, String accountName, String transformName,
@@ -590,8 +584,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TransformInner> createOrUpdateWithResponse(String resourceGroupName, String accountName,
@@ -612,8 +605,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public TransformInner createOrUpdate(String resourceGroupName, String accountName, String transformName,
@@ -773,8 +765,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TransformInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -823,8 +814,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TransformInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -871,8 +861,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights on successful completion of {@link Mono}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TransformInner> updateAsync(String resourceGroupName, String accountName, String transformName,
@@ -894,8 +883,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights along with {@link Response}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TransformInner> updateWithResponse(String resourceGroupName, String accountName,
@@ -915,8 +903,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     * as by transcoding or by extracting insights.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public TransformInner update(String resourceGroupName, String accountName, String transformName,
@@ -933,8 +920,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TransformInner>> listNextSinglePageAsync(String nextLink) {
@@ -962,8 +948,7 @@ public final class TransformsClientImpl implements TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of Transform items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TransformInner>> listNextSinglePageAsync(String nextLink, Context context) {

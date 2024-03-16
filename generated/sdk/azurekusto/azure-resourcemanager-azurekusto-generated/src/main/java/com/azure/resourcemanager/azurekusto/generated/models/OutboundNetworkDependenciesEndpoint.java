@@ -40,8 +40,7 @@ public interface OutboundNetworkDependenciesEndpoint {
     String etag();
 
     /**
-     * Gets the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Gets the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @return the category value.
      */
@@ -62,8 +61,7 @@ public interface OutboundNetworkDependenciesEndpoint {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.azurekusto.generated.fluent.models.OutboundNetworkDependenciesEndpointInner object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.OutboundNetworkDependenciesEndpointInner object.
      * 
      * @return the inner object.
      */

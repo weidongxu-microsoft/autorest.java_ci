@@ -70,13 +70,15 @@ public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteC
     }
 
     public ExpressRouteCircuitAuthorization create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
             .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitAuthorization create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
             .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
@@ -93,13 +95,15 @@ public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteC
     }
 
     public ExpressRouteCircuitAuthorization apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
             .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitAuthorization apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
             .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
@@ -114,14 +118,18 @@ public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteC
     }
 
     public ExpressRouteCircuitAuthorization refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
-            .getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
+            .getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRouteCircuitAuthorization refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
-            .getWithResponse(resourceGroupName, circuitName, authorizationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitAuthorizations()
+            .getWithResponse(resourceGroupName, circuitName, authorizationName, context)
+            .getValue();
         return this;
     }
 

@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Specifies a configuration for PlayReady licenses.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyPlayReadyConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration")
 @Fluent
 public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPolicyConfiguration {
@@ -34,6 +38,7 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
      * Creates an instance of ContentKeyPolicyPlayReadyConfiguration class.
      */
     public ContentKeyPolicyPlayReadyConfiguration() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration");
     }
 
     /**

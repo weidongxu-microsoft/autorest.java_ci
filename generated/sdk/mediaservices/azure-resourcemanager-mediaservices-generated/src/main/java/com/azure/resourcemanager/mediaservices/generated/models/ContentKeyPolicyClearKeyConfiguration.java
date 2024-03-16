@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Represents a configuration for non-DRM keys.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyClearKeyConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration")
 @Immutable
 public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolicyConfiguration {
@@ -19,6 +23,7 @@ public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyClearKeyConfiguration class.
      */
     public ContentKeyPolicyClearKeyConfiguration() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration");
     }
 
     /**

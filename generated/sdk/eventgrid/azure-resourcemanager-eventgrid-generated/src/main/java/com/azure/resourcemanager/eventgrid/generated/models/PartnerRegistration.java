@@ -152,8 +152,7 @@ public interface PartnerRegistration {
         }
 
         /**
-         * The stage of the PartnerRegistration definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PartnerRegistration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPartnerRegistrationImmutableId {
             /**
@@ -190,8 +189,7 @@ public interface PartnerRegistration {
          */
         interface WithPartnerRegistrationImmutableId {
             /**
-             * Specifies the partnerRegistrationImmutableId property: The immutableId of the corresponding partner
-             * registration.
+             * Specifies the partnerRegistrationImmutableId property: The immutableId of the corresponding partner registration.
              * Note: This property is marked for deprecation and is not supported in any future GA API version.
              * 
              * @param partnerRegistrationImmutableId The immutableId of the corresponding partner registration.

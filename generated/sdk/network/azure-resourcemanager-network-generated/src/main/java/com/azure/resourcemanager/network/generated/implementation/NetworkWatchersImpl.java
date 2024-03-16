@@ -315,8 +315,8 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
 
     public AzureReachabilityReport getAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
         AzureReachabilityReportParameters parameters, Context context) {
-        AzureReachabilityReportInner inner = this.serviceClient().getAzureReachabilityReport(resourceGroupName,
-            networkWatcherName, parameters, context);
+        AzureReachabilityReportInner inner = this.serviceClient()
+            .getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new AzureReachabilityReportImpl(inner, this.manager());
         } else {

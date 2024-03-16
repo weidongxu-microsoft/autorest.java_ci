@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * NumberGreaterThan Advanced Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = NumberGreaterThanAdvancedFilter.class,
+    visible = true)
 @JsonTypeName("NumberGreaterThan")
 @Fluent
 public final class NumberGreaterThanAdvancedFilter extends AdvancedFilter {
@@ -26,6 +30,7 @@ public final class NumberGreaterThanAdvancedFilter extends AdvancedFilter {
      * Creates an instance of NumberGreaterThanAdvancedFilter class.
      */
     public NumberGreaterThanAdvancedFilter() {
+        withOperatorType(AdvancedFilterOperatorType.NUMBER_GREATER_THAN);
     }
 
     /**

@@ -85,8 +85,7 @@ public interface SqlVirtualMachineGroup {
     ScaleType scaleType();
 
     /**
-     * Gets the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by
-     * the scale type of the group and the OS type.
+     * Gets the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS type.
      * 
      * @return the clusterManagerType value.
      */
@@ -128,8 +127,7 @@ public interface SqlVirtualMachineGroup {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineGroupInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineGroupInner object.
      * 
      * @return the inner object.
      */
@@ -180,16 +178,14 @@ public interface SqlVirtualMachineGroup {
             /**
              * Specifies resourceGroupName.
              * 
-             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value
-             * from the Azure Resource Manager API or the portal.
+             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
 
         /**
-         * The stage of the SqlVirtualMachineGroup definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SqlVirtualMachineGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSqlImageOffer,
             DefinitionStages.WithSqlImageSku, DefinitionStages.WithWsfcDomainProfile {
@@ -227,8 +223,7 @@ public interface SqlVirtualMachineGroup {
          */
         interface WithSqlImageOffer {
             /**
-             * Specifies the sqlImageOffer property: SQL image offer. Examples may include SQL2016-WS2016,
-             * SQL2017-WS2016..
+             * Specifies the sqlImageOffer property: SQL image offer. Examples may include SQL2016-WS2016, SQL2017-WS2016..
              * 
              * @param sqlImageOffer SQL image offer. Examples may include SQL2016-WS2016, SQL2017-WS2016.
              * @return the next definition stage.

@@ -39,16 +39,14 @@ public interface CsmPublishingCredentialsPoliciesEntity {
     String kind();
 
     /**
-     * Gets the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the allow value.
      */
     boolean allow();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner object.
      * 
      * @return the inner object.
      */

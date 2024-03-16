@@ -82,16 +82,18 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
-        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String filter, Integer top,
         Context context) {
-        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, top, context);
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, filter, top, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 

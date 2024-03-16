@@ -152,10 +152,8 @@ public interface GalleryApplicationVersion {
              * Specifies resourceGroupName, galleryName, galleryApplicationName.
              * 
              * @param resourceGroupName The name of the resource group.
-             * @param galleryName The name of the Shared Application Gallery in which the Application Definition
-             * resides.
-             * @param galleryApplicationName The name of the gallery Application Definition in which the Application
-             * Version is to be created.
+             * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
+             * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be created.
              * @return the next definition stage.
              */
             WithCreate withExistingApplication(String resourceGroupName, String galleryName,
@@ -163,8 +161,7 @@ public interface GalleryApplicationVersion {
         }
 
         /**
-         * The stage of the GalleryApplicationVersion definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the GalleryApplicationVersion definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPublishingProfile,
             DefinitionStages.WithSafetyProfile {

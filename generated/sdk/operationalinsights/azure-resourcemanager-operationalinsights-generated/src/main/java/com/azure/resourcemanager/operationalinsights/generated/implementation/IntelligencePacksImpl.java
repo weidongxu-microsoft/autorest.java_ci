@@ -31,8 +31,8 @@ public final class IntelligencePacksImpl implements IntelligencePacks {
 
     public Response<Void> disableWithResponse(String resourceGroupName, String workspaceName,
         String intelligencePackName, Context context) {
-        return this.serviceClient().disableWithResponse(resourceGroupName, workspaceName, intelligencePackName,
-            context);
+        return this.serviceClient()
+            .disableWithResponse(resourceGroupName, workspaceName, intelligencePackName, context);
     }
 
     public void disable(String resourceGroupName, String workspaceName, String intelligencePackName) {
@@ -53,8 +53,11 @@ public final class IntelligencePacksImpl implements IntelligencePacks {
         Response<List<IntelligencePackInner>> inner
             = this.serviceClient().listWithResponse(resourceGroupName, workspaceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new IntelligencePackImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new IntelligencePackImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -64,7 +67,8 @@ public final class IntelligencePacksImpl implements IntelligencePacks {
         List<IntelligencePackInner> inner = this.serviceClient().list(resourceGroupName, workspaceName);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new IntelligencePackImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new IntelligencePackImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

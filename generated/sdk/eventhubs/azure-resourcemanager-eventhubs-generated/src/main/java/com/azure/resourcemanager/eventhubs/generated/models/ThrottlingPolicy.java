@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Properties of the throttling policy.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", defaultImpl = ThrottlingPolicy.class, visible = true)
 @JsonTypeName("ThrottlingPolicy")
 @Fluent
 public final class ThrottlingPolicy extends ApplicationGroupPolicy {
@@ -24,8 +24,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     private long rateLimitThreshold;
 
     /*
-     * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the
-     * Metrics section of Event Hub Namespace inside Azure Portal
+     * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal
      */
     @JsonProperty(value = "metricId", required = true)
     private MetricId metricId;
@@ -34,11 +33,11 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
      * Creates an instance of ThrottlingPolicy class.
      */
     public ThrottlingPolicy() {
+        withType(ApplicationGroupPolicyType.THROTTLING_POLICY);
     }
 
     /**
-     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
-     * limit is always per second.
+     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate limit is always per second.
      * 
      * @return the rateLimitThreshold value.
      */
@@ -47,8 +46,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
-     * limit is always per second.
+     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate limit is always per second.
      * 
      * @param rateLimitThreshold the rateLimitThreshold value to set.
      * @return the ThrottlingPolicy object itself.
@@ -59,8 +57,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Get the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
-     * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
+     * Get the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
      * 
      * @return the metricId value.
      */
@@ -69,8 +66,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
-     * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
+     * Set the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
      * 
      * @param metricId the metricId value to set.
      * @return the ThrottlingPolicy object itself.

@@ -31,15 +31,13 @@ public final class ExpressRouteCircuitRoutesTableSummary {
     private Integer as;
 
     /*
-     * The length of time that the BGP session has been in the Established state, or the current status if not in the
-     * Established state.
+     * The length of time that the BGP session has been in the Established state, or the current status if not in the Established state.
      */
     @JsonProperty(value = "upDown")
     private String upDown;
 
     /*
-     * Current state of the BGP session, and the number of prefixes that have been received from a neighbor or peer
-     * group.
+     * Current state of the BGP session, and the number of prefixes that have been received from a neighbor or peer group.
      */
     @JsonProperty(value = "statePfxRcd")
     private String statePfxRcd;
@@ -111,8 +109,7 @@ public final class ExpressRouteCircuitRoutesTableSummary {
     }
 
     /**
-     * Get the upDown property: The length of time that the BGP session has been in the Established state, or the
-     * current status if not in the Established state.
+     * Get the upDown property: The length of time that the BGP session has been in the Established state, or the current status if not in the Established state.
      * 
      * @return the upDown value.
      */
@@ -121,8 +118,7 @@ public final class ExpressRouteCircuitRoutesTableSummary {
     }
 
     /**
-     * Set the upDown property: The length of time that the BGP session has been in the Established state, or the
-     * current status if not in the Established state.
+     * Set the upDown property: The length of time that the BGP session has been in the Established state, or the current status if not in the Established state.
      * 
      * @param upDown the upDown value to set.
      * @return the ExpressRouteCircuitRoutesTableSummary object itself.
@@ -133,8 +129,7 @@ public final class ExpressRouteCircuitRoutesTableSummary {
     }
 
     /**
-     * Get the statePfxRcd property: Current state of the BGP session, and the number of prefixes that have been
-     * received from a neighbor or peer group.
+     * Get the statePfxRcd property: Current state of the BGP session, and the number of prefixes that have been received from a neighbor or peer group.
      * 
      * @return the statePfxRcd value.
      */
@@ -143,8 +138,7 @@ public final class ExpressRouteCircuitRoutesTableSummary {
     }
 
     /**
-     * Set the statePfxRcd property: Current state of the BGP session, and the number of prefixes that have been
-     * received from a neighbor or peer group.
+     * Set the statePfxRcd property: Current state of the BGP session, and the number of prefixes that have been received from a neighbor or peer group.
      * 
      * @param statePfxRcd the statePfxRcd value to set.
      * @return the ExpressRouteCircuitRoutesTableSummary object itself.

@@ -53,8 +53,7 @@ public final class PrivateDnsZonePropertiesFormat {
     }
 
     /**
-     * Get the recordSets property: A collection of information regarding a recordSet, holding information to identify
-     * private resources.
+     * Get the recordSets property: A collection of information regarding a recordSet, holding information to identify private resources.
      * 
      * @return the recordSets value.
      */

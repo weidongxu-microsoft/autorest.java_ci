@@ -50,8 +50,7 @@ public final class AzureFunctionReceiver {
     }
 
     /**
-     * Get the name property: The name of the azure function receiver. Names must be unique across all receivers within
-     * an action group.
+     * Get the name property: The name of the azure function receiver. Names must be unique across all receivers within an action group.
      * 
      * @return the name value.
      */
@@ -60,8 +59,7 @@ public final class AzureFunctionReceiver {
     }
 
     /**
-     * Set the name property: The name of the azure function receiver. Names must be unique across all receivers within
-     * an action group.
+     * Set the name property: The name of the azure function receiver. Names must be unique across all receivers within an action group.
      * 
      * @param name the name value to set.
      * @return the AzureFunctionReceiver object itself.

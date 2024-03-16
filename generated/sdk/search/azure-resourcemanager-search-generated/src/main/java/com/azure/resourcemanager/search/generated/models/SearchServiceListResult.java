@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response containing a list of search services.
+ * Response containing a list of Azure AI Search services.
  */
 @Immutable
 public final class SearchServiceListResult {
@@ -21,8 +21,7 @@ public final class SearchServiceListResult {
     private List<SearchServiceInner> value;
 
     /*
-     * Request URL that can be used to query next page of search services. Returned when the total number of requested
-     * search services exceed maximum page size.
+     * Request URL that can be used to query next page of search services. Returned when the total number of requested search services exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
@@ -43,8 +42,7 @@ public final class SearchServiceListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of search services. Returned when the
-     * total number of requested search services exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of search services. Returned when the total number of requested search services exceed maximum page size.
      * 
      * @return the nextLink value.
      */

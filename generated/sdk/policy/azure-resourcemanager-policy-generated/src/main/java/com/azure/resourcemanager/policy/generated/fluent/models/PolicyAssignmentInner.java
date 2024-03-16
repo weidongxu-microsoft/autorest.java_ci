@@ -217,8 +217,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Get the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a
-     * collection of key value pairs.
+     * Get the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -227,8 +226,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Set the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a
-     * collection of key value pairs.
+     * Set the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @param metadata the metadata value to set.
      * @return the PolicyAssignmentInner object itself.
@@ -242,8 +240,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Get the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and
-     * DoNotEnforce.
+     * Get the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and DoNotEnforce.
      * 
      * @return the enforcementMode value.
      */
@@ -252,8 +249,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Set the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and
-     * DoNotEnforce.
+     * Set the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and DoNotEnforce.
      * 
      * @param enforcementMode the enforcementMode value to set.
      * @return the PolicyAssignmentInner object itself.
@@ -267,8 +263,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Get the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the
-     * policy.
+     * Get the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the policy.
      * 
      * @return the nonComplianceMessages value.
      */
@@ -277,8 +272,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Set the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the
-     * policy.
+     * Set the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the policy.
      * 
      * @param nonComplianceMessages the nonComplianceMessages value to set.
      * @return the PolicyAssignmentInner object itself.

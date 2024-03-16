@@ -53,8 +53,7 @@ public final class ExpressRouteConnectionProperties {
     private Boolean expressRouteGatewayBypass;
 
     /*
-     * Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass)
-     * must be enabled.
+     * Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      */
     @JsonProperty(value = "enablePrivateLinkFastPath")
     private Boolean enablePrivateLinkFastPath;
@@ -182,8 +181,7 @@ public final class ExpressRouteConnectionProperties {
     }
 
     /**
-     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
-     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
@@ -192,8 +190,7 @@ public final class ExpressRouteConnectionProperties {
     }
 
     /**
-     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
-     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @param enablePrivateLinkFastPath the enablePrivateLinkFastPath value to set.
      * @return the ExpressRouteConnectionProperties object itself.
@@ -204,8 +201,7 @@ public final class ExpressRouteConnectionProperties {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -214,8 +210,7 @@ public final class ExpressRouteConnectionProperties {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the ExpressRouteConnectionProperties object itself.

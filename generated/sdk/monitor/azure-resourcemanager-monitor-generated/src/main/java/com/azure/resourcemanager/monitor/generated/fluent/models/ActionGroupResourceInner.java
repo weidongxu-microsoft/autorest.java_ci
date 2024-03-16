@@ -88,8 +88,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
-     * none of its receivers will receive communications.
+     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
      * 
      * @return the enabled value.
      */
@@ -98,8 +97,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
-     * none of its receivers will receive communications.
+     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
      * 
      * @param enabled the enabled value to set.
      * @return the ActionGroupResourceInner object itself.
@@ -228,8 +226,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
-     * group.
+     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group.
      * 
      * @return the automationRunbookReceivers value.
      */
@@ -238,8 +235,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
-     * group.
+     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group.
      * 
      * @param automationRunbookReceivers the automationRunbookReceivers value to set.
      * @return the ActionGroupResourceInner object itself.
@@ -323,8 +319,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Get the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are
-     * Azure RBAC roles and only built-in roles are supported.
+     * Get the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
      * 
      * @return the armRoleReceivers value.
      */
@@ -333,8 +328,7 @@ public final class ActionGroupResourceInner extends Resource {
     }
 
     /**
-     * Set the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are
-     * Azure RBAC roles and only built-in roles are supported.
+     * Set the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
      * 
      * @param armRoleReceivers the armRoleReceivers value to set.
      * @return the ActionGroupResourceInner object itself.

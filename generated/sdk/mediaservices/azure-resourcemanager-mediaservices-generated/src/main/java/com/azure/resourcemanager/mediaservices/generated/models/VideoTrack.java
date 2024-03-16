@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Represents a video track in the asset.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = VideoTrack.class, visible = true)
 @JsonTypeName("#Microsoft.Media.VideoTrack")
 @Immutable
 public final class VideoTrack extends TrackBase {
@@ -19,6 +19,7 @@ public final class VideoTrack extends TrackBase {
      * Creates an instance of VideoTrack class.
      */
     public VideoTrack() {
+        withOdataType("#Microsoft.Media.VideoTrack");
     }
 
     /**

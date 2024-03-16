@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Represents an audio track in the asset.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = AudioTrack.class, visible = true)
 @JsonTypeName("#Microsoft.Media.AudioTrack")
 @Fluent
 public final class AudioTrack extends TrackBase {
@@ -62,11 +62,11 @@ public final class AudioTrack extends TrackBase {
      * Creates an instance of AudioTrack class.
      */
     public AudioTrack() {
+        withOdataType("#Microsoft.Media.AudioTrack");
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of the asset.
      * 
      * @return the fileName value.
      */
@@ -75,8 +75,7 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of the asset.
      * 
      * @param fileName the fileName value to set.
      * @return the AudioTrack object itself.
@@ -87,8 +86,7 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Get the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
-     * NAME attribute of EXT-X-MEDIA.
+     * Get the displayName property: The display name of the audio track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
      * 
      * @return the displayName value.
      */
@@ -97,8 +95,7 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
-     * NAME attribute of EXT-X-MEDIA.
+     * Set the displayName property: The display name of the audio track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
      * 
      * @param displayName the displayName value to set.
      * @return the AudioTrack object itself.

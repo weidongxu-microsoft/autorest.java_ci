@@ -30,8 +30,9 @@ public final class MetricsImpl implements Metrics {
     public Response<ResponseModel> listWithResponse(String resourceUri, String timespan, String interval,
         String metricnames, String aggregation, Integer top, String orderBy, String filter, ResultType resultType,
         String metricnamespace, Context context) {
-        Response<ResponseInner> inner = this.serviceClient().listWithResponse(resourceUri, timespan, interval,
-            metricnames, aggregation, top, orderBy, filter, resultType, metricnamespace, context);
+        Response<ResponseInner> inner = this.serviceClient()
+            .listWithResponse(resourceUri, timespan, interval, metricnames, aggregation, top, orderBy, filter,
+                resultType, metricnamespace, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ResponseModelImpl(inner.getValue(), this.manager()));

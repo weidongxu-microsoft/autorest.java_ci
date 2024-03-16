@@ -12,8 +12,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * LoadBalancerFrontendIpConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in LoadBalancerFrontendIpConfigurationsClient.
  */
 public interface LoadBalancerFrontendIpConfigurationsClient {
     /**

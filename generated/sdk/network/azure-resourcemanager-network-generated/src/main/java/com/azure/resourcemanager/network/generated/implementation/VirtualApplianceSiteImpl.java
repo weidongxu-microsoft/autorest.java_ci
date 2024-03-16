@@ -70,14 +70,16 @@ public final class VirtualApplianceSiteImpl
     }
 
     public VirtualApplianceSite create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualApplianceSite create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, siteName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 
@@ -92,14 +94,16 @@ public final class VirtualApplianceSiteImpl
     }
 
     public VirtualApplianceSite apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualApplianceSite apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, siteName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 
@@ -114,14 +118,18 @@ public final class VirtualApplianceSiteImpl
     }
 
     public VirtualApplianceSite refresh() {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites()
-            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualApplianceSite refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites()
-            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualApplianceSites()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context)
+            .getValue();
         return this;
     }
 

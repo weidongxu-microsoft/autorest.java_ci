@@ -50,8 +50,7 @@ public final class CreditsClientImpl implements CreditsClient {
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientCredits to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientCredits to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")

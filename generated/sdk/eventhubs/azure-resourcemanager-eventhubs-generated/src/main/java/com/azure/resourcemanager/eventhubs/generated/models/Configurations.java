@@ -13,8 +13,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaC
  */
 public interface Configurations {
     /**
-     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings
-     * not specified in the request body unmodified.
+     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings not specified in the request body unmodified.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
@@ -29,8 +28,7 @@ public interface Configurations {
         ClusterQuotaConfigurationPropertiesInner parameters, Context context);
 
     /**
-     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings
-     * not specified in the request body unmodified.
+     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings not specified in the request body unmodified.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
@@ -44,8 +42,7 @@ public interface Configurations {
         ClusterQuotaConfigurationPropertiesInner parameters);
 
     /**
-     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     * imposed on the cluster.
+     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings imposed on the cluster.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
@@ -53,23 +50,20 @@ public interface Configurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     * imposed on the cluster along with {@link Response}.
+     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings imposed on the cluster along with {@link Response}.
      */
     Response<ClusterQuotaConfigurationProperties> getWithResponse(String resourceGroupName, String clusterName,
         Context context);
 
     /**
-     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     * imposed on the cluster.
+     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings imposed on the cluster.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     * imposed on the cluster.
+     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings imposed on the cluster.
      */
     ClusterQuotaConfigurationProperties get(String resourceGroupName, String clusterName);
 }

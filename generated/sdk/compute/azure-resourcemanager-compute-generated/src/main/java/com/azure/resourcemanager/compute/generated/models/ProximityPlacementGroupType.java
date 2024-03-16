@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within
- * an Azure region or Availability Zone. **Ultra** : For future use.
+ * Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
  */
 public final class ProximityPlacementGroupType extends ExpandableStringEnum<ProximityPlacementGroupType> {
     /**

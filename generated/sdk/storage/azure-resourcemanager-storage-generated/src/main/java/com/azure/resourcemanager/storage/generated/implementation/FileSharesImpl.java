@@ -48,8 +48,8 @@ public final class FileSharesImpl implements FileShares {
 
     public Response<FileShare> getWithResponse(String resourceGroupName, String accountName, String shareName,
         String expand, String xMsSnapshot, Context context) {
-        Response<FileShareInner> inner = this.serviceClient().getWithResponse(resourceGroupName, accountName, shareName,
-            expand, xMsSnapshot, context);
+        Response<FileShareInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, accountName, shareName, expand, xMsSnapshot, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FileShareImpl(inner.getValue(), this.manager()));
@@ -69,8 +69,8 @@ public final class FileSharesImpl implements FileShares {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String shareName,
         String xMsSnapshot, String include, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, include,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, include, context);
     }
 
     public void delete(String resourceGroupName, String accountName, String shareName) {
@@ -79,8 +79,8 @@ public final class FileSharesImpl implements FileShares {
 
     public Response<Void> restoreWithResponse(String resourceGroupName, String accountName, String shareName,
         DeletedShare deletedShare, Context context) {
-        return this.serviceClient().restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare,
-            context);
+        return this.serviceClient()
+            .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
     }
 
     public void restore(String resourceGroupName, String accountName, String shareName, DeletedShare deletedShare) {
@@ -89,8 +89,8 @@ public final class FileSharesImpl implements FileShares {
 
     public Response<LeaseShareResponse> leaseWithResponse(String resourceGroupName, String accountName,
         String shareName, String xMsSnapshot, LeaseShareRequest parameters, Context context) {
-        FileSharesLeaseResponse inner = this.serviceClient().leaseWithResponse(resourceGroupName, accountName,
-            shareName, xMsSnapshot, parameters, context);
+        FileSharesLeaseResponse inner = this.serviceClient()
+            .leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LeaseShareResponseImpl(inner.getValue(), this.manager()));

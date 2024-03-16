@@ -181,8 +181,7 @@ public final class SoaRecord {
     }
 
     /**
-     * Get the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the
-     * negative caching duration.
+     * Get the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the negative caching duration.
      * 
      * @return the minimumTtl value.
      */
@@ -191,8 +190,7 @@ public final class SoaRecord {
     }
 
     /**
-     * Set the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the
-     * negative caching duration.
+     * Set the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the negative caching duration.
      * 
      * @param minimumTtl the minimumTtl value to set.
      * @return the SoaRecord object itself.

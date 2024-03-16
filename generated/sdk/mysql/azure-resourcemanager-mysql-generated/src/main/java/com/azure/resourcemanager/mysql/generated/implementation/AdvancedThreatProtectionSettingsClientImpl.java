@@ -13,6 +13,7 @@ import com.azure.core.annotation.Host;
 import com.azure.core.annotation.HostParam;
 import com.azure.core.annotation.Patch;
 import com.azure.core.annotation.PathParam;
+import com.azure.core.annotation.Put;
 import com.azure.core.annotation.QueryParam;
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceInterface;
@@ -65,8 +66,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientAdvancedThreatProtectionSettings to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientAdvancedThreatProtectionSettings to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -90,6 +90,17 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             @PathParam("advancedThreatProtectionName") AdvancedThreatProtectionName advancedThreatProtectionName,
             @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") AdvancedThreatProtectionForUpdate parameters,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/advancedThreatProtectionSettings/{advancedThreatProtectionName}")
+        @ExpectedResponses({ 200, 201, 202 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Flux<ByteBuffer>>> updatePut(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @PathParam("advancedThreatProtectionName") AdvancedThreatProtectionName advancedThreatProtectionName,
+            @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AdvancedThreatProtectionInner parameters,
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -119,8 +130,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdvancedThreatProtectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -144,7 +154,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.get(this.client.getEndpoint(), resourceGroupName, serverName,
@@ -162,8 +172,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdvancedThreatProtectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -187,7 +196,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.get(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
@@ -257,8 +266,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String serverName,
@@ -287,7 +295,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, serverName,
@@ -306,8 +314,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String serverName,
@@ -337,7 +344,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
@@ -512,6 +519,270 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
     }
 
     /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> updatePutWithResponseAsync(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        if (advancedThreatProtectionName == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter advancedThreatProtectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-12-30";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.updatePut(this.client.getEndpoint(), resourceGroupName, serverName,
+                advancedThreatProtectionName, this.client.getSubscriptionId(), apiVersion, parameters, accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> updatePutWithResponseAsync(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        if (advancedThreatProtectionName == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter advancedThreatProtectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-12-30";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.updatePut(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
+            this.client.getSubscriptionId(), apiVersion, parameters, accept, context);
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePutAsync(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updatePutWithResponseAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters);
+        return this.client.<AdvancedThreatProtectionInner, AdvancedThreatProtectionInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AdvancedThreatProtectionInner.class, AdvancedThreatProtectionInner.class,
+            this.client.getContext());
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePutAsync(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono = updatePutWithResponseAsync(resourceGroupName, serverName,
+            advancedThreatProtectionName, parameters, context);
+        return this.client.<AdvancedThreatProtectionInner, AdvancedThreatProtectionInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AdvancedThreatProtectionInner.class, AdvancedThreatProtectionInner.class,
+            context);
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePut(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters) {
+        return this.beginUpdatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters)
+            .getSyncPoller();
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePut(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters, Context context) {
+        return this
+            .beginUpdatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<AdvancedThreatProtectionInner> updatePutAsync(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters) {
+        return beginUpdatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<AdvancedThreatProtectionInner> updatePutAsync(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters,
+        Context context) {
+        return beginUpdatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AdvancedThreatProtectionInner updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters) {
+        return updatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters).block();
+    }
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AdvancedThreatProtectionInner updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters,
+        Context context) {
+        return updatePutAsync(resourceGroupName, serverName, advancedThreatProtectionName, parameters, context).block();
+    }
+
+    /**
      * Gets a list of server's Advanced Threat Protection states.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -519,8 +790,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -540,7 +810,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), resourceGroupName, serverName,
@@ -559,8 +829,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -580,7 +849,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -665,8 +934,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -694,8 +962,7 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listNextSinglePageAsync(String nextLink,

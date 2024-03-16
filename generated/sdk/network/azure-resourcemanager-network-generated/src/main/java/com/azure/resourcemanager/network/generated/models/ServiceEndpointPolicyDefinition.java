@@ -20,8 +20,7 @@ public interface ServiceEndpointPolicyDefinition {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -77,8 +76,7 @@ public interface ServiceEndpointPolicyDefinition {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner object.
      * 
      * @return the inner object.
      */
@@ -116,8 +114,7 @@ public interface ServiceEndpointPolicyDefinition {
         }
 
         /**
-         * The stage of the ServiceEndpointPolicyDefinition definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ServiceEndpointPolicyDefinition definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithDescription, DefinitionStages.WithService, DefinitionStages.WithServiceResources {
@@ -142,11 +139,9 @@ public interface ServiceEndpointPolicyDefinition {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -242,11 +237,9 @@ public interface ServiceEndpointPolicyDefinition {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);

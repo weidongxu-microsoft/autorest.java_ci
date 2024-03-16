@@ -97,14 +97,20 @@ public final class VnetInfoResourceImpl
     }
 
     public VnetInfoResource create() {
-        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdateVnetConnectionSlotWithResponse(
-            resourceGroupName, name, vnetName, slot, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .createOrUpdateVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public VnetInfoResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdateVnetConnectionSlotWithResponse(
-            resourceGroupName, name, vnetName, slot, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .createOrUpdateVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -119,14 +125,17 @@ public final class VnetInfoResourceImpl
     }
 
     public VnetInfoResource apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getWebApps().updateVnetConnectionSlotWithResponse(resourceGroupName, name,
-                vnetName, slot, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .updateVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public VnetInfoResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
             .updateVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, this.innerModel(), context)
             .getValue();
         return this;
@@ -143,14 +152,18 @@ public final class VnetInfoResourceImpl
     }
 
     public VnetInfoResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VnetInfoResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context)
+            .getValue();
         return this;
     }
 

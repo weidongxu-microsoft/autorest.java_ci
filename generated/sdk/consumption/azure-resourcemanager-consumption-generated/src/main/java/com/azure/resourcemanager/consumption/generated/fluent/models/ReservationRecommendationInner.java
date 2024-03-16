@@ -8,9 +8,11 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.consumption.generated.models.LegacyReservationRecommendation;
 import com.azure.resourcemanager.consumption.generated.models.ModernReservationRecommendation;
+import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationKind;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
@@ -20,15 +22,22 @@ import java.util.Map;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "kind",
-    defaultImpl = ReservationRecommendationInner.class)
+    defaultImpl = ReservationRecommendationInner.class,
+    visible = true)
 @JsonTypeName("ReservationRecommendation")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "legacy", value = LegacyReservationRecommendation.class),
     @JsonSubTypes.Type(name = "modern", value = ModernReservationRecommendation.class) })
 @Immutable
 public class ReservationRecommendationInner extends ProxyResource {
+    /*
+     * Specifies the kind of reservation recommendation.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private ReservationRecommendationKind kind;
+
     /*
      * The etag for the resource.
      */
@@ -58,6 +67,27 @@ public class ReservationRecommendationInner extends ProxyResource {
      * Creates an instance of ReservationRecommendationInner class.
      */
     public ReservationRecommendationInner() {
+        this.kind = ReservationRecommendationKind.fromString("ReservationRecommendation");
+    }
+
+    /**
+     * Get the kind property: Specifies the kind of reservation recommendation.
+     * 
+     * @return the kind value.
+     */
+    public ReservationRecommendationKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Specifies the kind of reservation recommendation.
+     * 
+     * @param kind the kind value to set.
+     * @return the ReservationRecommendationInner object itself.
+     */
+    protected ReservationRecommendationInner withKind(ReservationRecommendationKind kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

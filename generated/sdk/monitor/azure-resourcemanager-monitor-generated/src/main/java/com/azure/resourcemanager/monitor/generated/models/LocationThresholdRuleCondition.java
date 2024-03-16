@@ -13,13 +13,16 @@ import java.time.Duration;
 /**
  * A rule condition based on a certain number of locations failing.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = LocationThresholdRuleCondition.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition")
 @Fluent
 public final class LocationThresholdRuleCondition extends RuleCondition {
     /*
-     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
-     * If specified then it must be between 5 minutes and 1 day.
+     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      */
     @JsonProperty(value = "windowSize")
     private Duration windowSize;
@@ -34,11 +37,11 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
      * Creates an instance of LocationThresholdRuleCondition class.
      */
     public LocationThresholdRuleCondition() {
+        withOdataType("Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition");
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
-     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @return the windowSize value.
      */
@@ -47,8 +50,7 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
-     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @param windowSize the windowSize value to set.
      * @return the LocationThresholdRuleCondition object itself.

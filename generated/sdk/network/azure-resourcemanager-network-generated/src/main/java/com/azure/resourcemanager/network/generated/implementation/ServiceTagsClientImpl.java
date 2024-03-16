@@ -51,8 +51,7 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientServiceTags to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientServiceTags to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -69,14 +68,11 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     /**
      * Gets a list of service tag information resources.
      * 
-     * @param location The location that will be used as a reference for version (not as a filter based on location, you
-     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
-     * subscription belongs to).
+     * @param location The location that will be used as a reference for version (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a list of service tag information resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ServiceTagsListResultInner>> listWithResponseAsync(String location) {
@@ -102,15 +98,12 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     /**
      * Gets a list of service tag information resources.
      * 
-     * @param location The location that will be used as a reference for version (not as a filter based on location, you
-     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
-     * subscription belongs to).
+     * @param location The location that will be used as a reference for version (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a list of service tag information resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ServiceTagsListResultInner>> listWithResponseAsync(String location, Context context) {
@@ -135,9 +128,7 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     /**
      * Gets a list of service tag information resources.
      * 
-     * @param location The location that will be used as a reference for version (not as a filter based on location, you
-     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
-     * subscription belongs to).
+     * @param location The location that will be used as a reference for version (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -151,9 +142,7 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     /**
      * Gets a list of service tag information resources.
      * 
-     * @param location The location that will be used as a reference for version (not as a filter based on location, you
-     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
-     * subscription belongs to).
+     * @param location The location that will be used as a reference for version (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -168,9 +157,7 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
     /**
      * Gets a list of service tag information resources.
      * 
-     * @param location The location that will be used as a reference for version (not as a filter based on location, you
-     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
-     * subscription belongs to).
+     * @param location The location that will be used as a reference for version (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

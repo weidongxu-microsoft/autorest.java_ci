@@ -56,8 +56,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * The interface defining all the services for RecoveryServicesManagementClientPrivateLinkResourcesOperations to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for RecoveryServicesManagementClientPrivateLinkResourcesOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
@@ -98,8 +97,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listSinglePageAsync(String resourceGroupName,
@@ -137,8 +135,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listSinglePageAsync(String resourceGroupName,
@@ -208,8 +205,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault as paginated response with
-     * {@link PagedIterable}.
+     * @return class which represent the stamps associated with the vault as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PrivateLinkResourceInner> list(String resourceGroupName, String vaultName) {
@@ -225,8 +221,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault as paginated response with
-     * {@link PagedIterable}.
+     * @return class which represent the stamps associated with the vault as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PrivateLinkResourceInner> list(String resourceGroupName, String vaultName, Context context) {
@@ -242,8 +237,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information of the private link resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information of the private link resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(String resourceGroupName, String vaultName,
@@ -284,8 +278,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information of the private link resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information of the private link resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(String resourceGroupName, String vaultName,
@@ -376,8 +369,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listNextSinglePageAsync(String nextLink) {
@@ -405,8 +397,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return class which represent the stamps associated with the vault along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listNextSinglePageAsync(String nextLink, Context context) {

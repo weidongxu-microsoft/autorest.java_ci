@@ -8,21 +8,18 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A TLSA record. For more information about the TLSA record format, see RFC 6698:
- * https://www.rfc-editor.org/rfc/rfc6698.
+ * A TLSA record. For more information about the TLSA record format, see RFC 6698: https://www.rfc-editor.org/rfc/rfc6698.
  */
 @Fluent
 public final class TlsaRecord {
     /*
-     * The usage specifies the provided association that will be used to match the certificate presented in the TLS
-     * handshake.
+     * The usage specifies the provided association that will be used to match the certificate presented in the TLS handshake.
      */
     @JsonProperty(value = "usage")
     private Integer usage;
 
     /*
-     * The selector specifies which part of the TLS certificate presented by the server will be matched against the
-     * association data.
+     * The selector specifies which part of the TLS certificate presented by the server will be matched against the association data.
      */
     @JsonProperty(value = "selector")
     private Integer selector;
@@ -46,8 +43,7 @@ public final class TlsaRecord {
     }
 
     /**
-     * Get the usage property: The usage specifies the provided association that will be used to match the certificate
-     * presented in the TLS handshake.
+     * Get the usage property: The usage specifies the provided association that will be used to match the certificate presented in the TLS handshake.
      * 
      * @return the usage value.
      */
@@ -56,8 +52,7 @@ public final class TlsaRecord {
     }
 
     /**
-     * Set the usage property: The usage specifies the provided association that will be used to match the certificate
-     * presented in the TLS handshake.
+     * Set the usage property: The usage specifies the provided association that will be used to match the certificate presented in the TLS handshake.
      * 
      * @param usage the usage value to set.
      * @return the TlsaRecord object itself.
@@ -68,8 +63,7 @@ public final class TlsaRecord {
     }
 
     /**
-     * Get the selector property: The selector specifies which part of the TLS certificate presented by the server will
-     * be matched against the association data.
+     * Get the selector property: The selector specifies which part of the TLS certificate presented by the server will be matched against the association data.
      * 
      * @return the selector value.
      */
@@ -78,8 +72,7 @@ public final class TlsaRecord {
     }
 
     /**
-     * Set the selector property: The selector specifies which part of the TLS certificate presented by the server will
-     * be matched against the association data.
+     * Set the selector property: The selector specifies which part of the TLS certificate presented by the server will be matched against the association data.
      * 
      * @param selector the selector value to set.
      * @return the TlsaRecord object itself.

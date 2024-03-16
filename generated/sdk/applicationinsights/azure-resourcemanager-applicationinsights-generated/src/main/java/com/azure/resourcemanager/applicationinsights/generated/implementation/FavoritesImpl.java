@@ -34,11 +34,13 @@ public final class FavoritesImpl implements Favorites {
     public Response<List<ApplicationInsightsComponentFavorite>> listWithResponse(String resourceGroupName,
         String resourceName, FavoriteType favoriteType, FavoriteSourceType sourceType, Boolean canFetchContent,
         List<String> tags, Context context) {
-        Response<List<ApplicationInsightsComponentFavoriteInner>> inner = this.serviceClient().listWithResponse(
-            resourceGroupName, resourceName, favoriteType, sourceType, canFetchContent, tags, context);
+        Response<List<ApplicationInsightsComponentFavoriteInner>> inner = this.serviceClient()
+            .listWithResponse(resourceGroupName, resourceName, favoriteType, sourceType, canFetchContent, tags,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream()
+                inner.getValue()
+                    .stream()
                     .map(inner1 -> new ApplicationInsightsComponentFavoriteImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
@@ -50,9 +52,9 @@ public final class FavoritesImpl implements Favorites {
         List<ApplicationInsightsComponentFavoriteInner> inner
             = this.serviceClient().list(resourceGroupName, resourceName);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ApplicationInsightsComponentFavoriteImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationInsightsComponentFavoriteImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

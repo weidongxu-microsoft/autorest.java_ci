@@ -51,8 +51,7 @@ public interface SearchService {
     Map<String, String> tags();
 
     /**
-     * Gets the sku property: The SKU of the search service, which determines billing rate and capacity limits. This
-     * property is required when creating a new search service.
+     * Gets the sku property: The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
      * 
      * @return the sku value.
      */
@@ -66,51 +65,35 @@ public interface SearchService {
     Identity identity();
 
     /**
-     * Gets the replicaCount property: The number of replicas in the search service. If specified, it must be a value
-     * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
+     * Gets the replicaCount property: The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
      * 
      * @return the replicaCount value.
      */
     Integer replicaCount();
 
     /**
-     * Gets the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2,
-     * 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode
-     * set to 'highDensity', the allowed values are between 1 and 3.
+     * Gets the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3.
      * 
      * @return the partitionCount value.
      */
     Integer partitionCount();
 
     /**
-     * Gets the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3
-     * high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for
-     * any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this
-     * value must be 'default'.
+     * Gets the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
      * 
      * @return the hostingMode value.
      */
     HostingMode hostingMode();
 
     /**
-     * Gets the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private
-     * endpoint connections would be the exclusive access method.
+     * Gets the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the status property: The status of the search service. Possible values include: 'running': The search
-     * service is running and no provisioning operations are underway. 'provisioning': The search service is being
-     * provisioned or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search service
-     * is degraded. This can occur when the underlying search units are not healthy. The search service is most likely
-     * operational, but performance might be slow and some requests might be dropped. 'disabled': The search service is
-     * disabled. In this state, the service will reject all API requests. 'error': The search service is in an error
-     * state. If your service is in the degraded, disabled, or error states, Microsoft is actively investigating the
-     * underlying issue. Dedicated services in these states are still chargeable based on the number of search units
-     * provisioned.
+     * Gets the status property: The status of the search service. Possible values include: 'running': The search service is running and no provisioning operations are underway. 'provisioning': The search service is being provisioned or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search service is degraded. This can occur when the underlying search units are not healthy. The search service is most likely operational, but performance might be slow and some requests might be dropped. 'disabled': The search service is disabled. In this state, the service will reject all API requests. 'error': The search service is in an error state. 'stopped': The search service is in a subscription that's disabled. If your service is in the degraded, disabled, or error states, it means the Azure AI Search team is actively investigating the underlying issue. Dedicated services in these states are still chargeable based on the number of search units provisioned.
      * 
      * @return the status value.
      */
@@ -124,71 +107,74 @@ public interface SearchService {
     String statusDetails();
 
     /**
-     * Gets the provisioningState property: The state of the last provisioning operation performed on the search
-     * service. Provisioning is an intermediate state that occurs while service capacity is being established. After
-     * capacity is set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll
-     * provisioning status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search
-     * Service operation to see when an operation is completed. If you are using the free service, this value tends to
-     * come back as 'succeeded' directly in the call to Create search service. This is because the free service uses
-     * capacity that is already set up.
+     * Gets the provisioningState property: The state of the last provisioning operation performed on the search service. Provisioning is an intermediate state that occurs while service capacity is being established. After capacity is set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll provisioning status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search Service operation to see when an operation is completed. If you are using the free service, this value tends to come back as 'succeeded' directly in the call to Create search service. This is because the free service uses capacity that is already set up.
      * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
-     * Gets the networkRuleSet property: Network-specific rules that determine how the search service may be reached.
+     * Gets the networkRuleSet property: Network specific rules that determine how the Azure AI Search service may be reached.
      * 
      * @return the networkRuleSet value.
      */
     NetworkRuleSet networkRuleSet();
 
     /**
-     * Gets the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
-     * using customer manager keys within a search service.
+     * Gets the disabledDataExfiltrationOptions property: A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future.
+     * 
+     * @return the disabledDataExfiltrationOptions value.
+     */
+    List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions();
+
+    /**
+     * Gets the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service.
      * 
      * @return the encryptionWithCmk value.
      */
     EncryptionWithCmk encryptionWithCmk();
 
     /**
-     * Gets the disableLocalAuth property: When set to true, calls to the search service will not be permitted to
-     * utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     * Gets the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
      * 
      * @return the disableLocalAuth value.
      */
     Boolean disableLocalAuth();
 
     /**
-     * Gets the authOptions property: Defines the options for how the data plane API of a search service authenticates
-     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     * Gets the authOptions property: Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true.
      * 
      * @return the authOptions value.
      */
     DataPlaneAuthOptions authOptions();
 
     /**
-     * Gets the privateEndpointConnections property: The list of private endpoint connections to the search service.
-     * 
-     * @return the privateEndpointConnections value.
-     */
-    List<PrivateEndpointConnection> privateEndpointConnections();
-
-    /**
-     * Gets the semanticSearch property: Sets options that control the availability of semantic search. This
-     * configuration is only possible for certain search SKUs in certain locations.
+     * Gets the semanticSearch property: Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations.
      * 
      * @return the semanticSearch value.
      */
     SearchSemanticSearch semanticSearch();
 
     /**
-     * Gets the sharedPrivateLinkResources property: The list of shared private link resources managed by the search
-     * service.
+     * Gets the privateEndpointConnections property: The list of private endpoint connections to the Azure AI Search service.
+     * 
+     * @return the privateEndpointConnections value.
+     */
+    List<PrivateEndpointConnection> privateEndpointConnections();
+
+    /**
+     * Gets the sharedPrivateLinkResources property: The list of shared private link resources managed by the Azure AI Search service.
      * 
      * @return the sharedPrivateLinkResources value.
      */
     List<SharedPrivateLinkResource> sharedPrivateLinkResources();
+
+    /**
+     * Gets the etag property: A system generated property representing the service's etag that can be for optimistic concurrency control during updates.
+     * 
+     * @return the etag value.
+     */
+    String etag();
 
     /**
      * Gets the region of the resource.
@@ -263,23 +249,21 @@ public interface SearchService {
             /**
              * Specifies resourceGroupName.
              * 
-             * @param resourceGroupName The name of the resource group within the current subscription. You can obtain
-             * this value from the Azure Resource Manager API or the portal.
+             * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
 
         /**
-         * The stage of the SearchService definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SearchService definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithReplicaCount, DefinitionStages.WithPartitionCount, DefinitionStages.WithHostingMode,
             DefinitionStages.WithPublicNetworkAccess, DefinitionStages.WithNetworkRuleSet,
-            DefinitionStages.WithEncryptionWithCmk, DefinitionStages.WithDisableLocalAuth,
-            DefinitionStages.WithAuthOptions, DefinitionStages.WithSemanticSearch,
-            DefinitionStages.WithClientRequestId {
+            DefinitionStages.WithDisabledDataExfiltrationOptions, DefinitionStages.WithEncryptionWithCmk,
+            DefinitionStages.WithDisableLocalAuth, DefinitionStages.WithAuthOptions,
+            DefinitionStages.WithSemanticSearch, DefinitionStages.WithClientRequestId {
             /**
              * Executes the create request.
              * 
@@ -314,11 +298,9 @@ public interface SearchService {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: The SKU of the search service, which determines billing rate and capacity
-             * limits. This property is required when creating a new search service..
+             * Specifies the sku property: The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service..
              * 
-             * @param sku The SKU of the search service, which determines billing rate and capacity limits. This
-             * property is required when creating a new search service.
+             * @param sku The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);
@@ -342,11 +324,9 @@ public interface SearchService {
          */
         interface WithReplicaCount {
             /**
-             * Specifies the replicaCount property: The number of replicas in the search service. If specified, it must
-             * be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU..
+             * Specifies the replicaCount property: The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU..
              * 
-             * @param replicaCount The number of replicas in the search service. If specified, it must be a value
-             * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
+             * @param replicaCount The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
              * @return the next definition stage.
              */
             WithCreate withReplicaCount(Integer replicaCount);
@@ -357,13 +337,9 @@ public interface SearchService {
          */
         interface WithPartitionCount {
             /**
-             * Specifies the partitionCount property: The number of partitions in the search service; if specified, it
-             * can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3'
-             * services with hostingMode set to 'highDensity', the allowed values are between 1 and 3..
+             * Specifies the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3..
              * 
-             * @param partitionCount The number of partitions in the search service; if specified, it can be 1, 2, 3, 4,
-             * 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with
-             * hostingMode set to 'highDensity', the allowed values are between 1 and 3.
+             * @param partitionCount The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3.
              * @return the next definition stage.
              */
             WithCreate withPartitionCount(Integer partitionCount);
@@ -374,15 +350,9 @@ public interface SearchService {
          */
         interface WithHostingMode {
             /**
-             * Specifies the hostingMode property: Applicable only for the standard3 SKU. You can set this property to
-             * enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the
-             * maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or
-             * 'highDensity'. For all other SKUs, this value must be 'default'..
+             * Specifies the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'..
              * 
-             * @param hostingMode Applicable only for the standard3 SKU. You can set this property to enable up to 3
-             * high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes
-             * allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all
-             * other SKUs, this value must be 'default'.
+             * @param hostingMode Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
              * @return the next definition stage.
              */
             WithCreate withHostingMode(HostingMode hostingMode);
@@ -393,13 +363,9 @@ public interface SearchService {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes
-             * on existing customer resources and templates. If set to 'disabled', traffic over public interface is not
-             * allowed, and private endpoint connections would be the exclusive access method..
+             * Specifies the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method..
              * 
-             * @param publicNetworkAccess This value can be set to 'enabled' to avoid breaking changes on existing
-             * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and
-             * private endpoint connections would be the exclusive access method.
+             * @param publicNetworkAccess This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -410,13 +376,26 @@ public interface SearchService {
          */
         interface WithNetworkRuleSet {
             /**
-             * Specifies the networkRuleSet property: Network-specific rules that determine how the search service may
-             * be reached..
+             * Specifies the networkRuleSet property: Network specific rules that determine how the Azure AI Search service may be reached..
              * 
-             * @param networkRuleSet Network-specific rules that determine how the search service may be reached.
+             * @param networkRuleSet Network specific rules that determine how the Azure AI Search service may be reached.
              * @return the next definition stage.
              */
             WithCreate withNetworkRuleSet(NetworkRuleSet networkRuleSet);
+        }
+
+        /**
+         * The stage of the SearchService definition allowing to specify disabledDataExfiltrationOptions.
+         */
+        interface WithDisabledDataExfiltrationOptions {
+            /**
+             * Specifies the disabledDataExfiltrationOptions property: A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future..
+             * 
+             * @param disabledDataExfiltrationOptions A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future.
+             * @return the next definition stage.
+             */
+            WithCreate withDisabledDataExfiltrationOptions(
+                List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions);
         }
 
         /**
@@ -424,11 +403,9 @@ public interface SearchService {
          */
         interface WithEncryptionWithCmk {
             /**
-             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as
-             * indexes) using customer manager keys within a search service..
+             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service..
              * 
-             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using
-             * customer manager keys within a search service.
+             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service.
              * @return the next definition stage.
              */
             WithCreate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
@@ -439,12 +416,9 @@ public interface SearchService {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be
-             * permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions'
-             * are defined..
+             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined..
              * 
-             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize
-             * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
              * @return the next definition stage.
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
@@ -455,11 +429,9 @@ public interface SearchService {
          */
         interface WithAuthOptions {
             /**
-             * Specifies the authOptions property: Defines the options for how the data plane API of a search service
-             * authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
+             * Specifies the authOptions property: Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
              * 
-             * @param authOptions Defines the options for how the data plane API of a search service authenticates
-             * requests. This cannot be set if 'disableLocalAuth' is set to true.
+             * @param authOptions Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true.
              * @return the next definition stage.
              */
             WithCreate withAuthOptions(DataPlaneAuthOptions authOptions);
@@ -470,11 +442,9 @@ public interface SearchService {
          */
         interface WithSemanticSearch {
             /**
-             * Specifies the semanticSearch property: Sets options that control the availability of semantic search.
-             * This configuration is only possible for certain search SKUs in certain locations..
+             * Specifies the semanticSearch property: Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations..
              * 
-             * @param semanticSearch Sets options that control the availability of semantic search. This configuration
-             * is only possible for certain search SKUs in certain locations.
+             * @param semanticSearch Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations.
              * @return the next definition stage.
              */
             WithCreate withSemanticSearch(SearchSemanticSearch semanticSearch);
@@ -485,11 +455,9 @@ public interface SearchService {
          */
         interface WithClientRequestId {
             /**
-             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
-             * specified, this will be included in response information as a way to track the request..
+             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request..
              * 
-             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this
-             * will be included in response information as a way to track the request.
+             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
             WithCreate withClientRequestId(UUID clientRequestId);
@@ -509,8 +477,9 @@ public interface SearchService {
     interface Update
         extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithIdentity, UpdateStages.WithReplicaCount,
         UpdateStages.WithPartitionCount, UpdateStages.WithHostingMode, UpdateStages.WithPublicNetworkAccess,
-        UpdateStages.WithNetworkRuleSet, UpdateStages.WithEncryptionWithCmk, UpdateStages.WithDisableLocalAuth,
-        UpdateStages.WithAuthOptions, UpdateStages.WithSemanticSearch, UpdateStages.WithClientRequestId {
+        UpdateStages.WithNetworkRuleSet, UpdateStages.WithDisabledDataExfiltrationOptions,
+        UpdateStages.WithEncryptionWithCmk, UpdateStages.WithDisableLocalAuth, UpdateStages.WithAuthOptions,
+        UpdateStages.WithSemanticSearch, UpdateStages.WithClientRequestId {
         /**
          * Executes the update request.
          * 
@@ -549,11 +518,9 @@ public interface SearchService {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: The SKU of the search service, which determines the billing rate and capacity
-             * limits. This property is required when creating a new search service..
+             * Specifies the sku property: The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service..
              * 
-             * @param sku The SKU of the search service, which determines the billing rate and capacity limits. This
-             * property is required when creating a new search service.
+             * @param sku The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
              * @return the next definition stage.
              */
             Update withSku(Sku sku);
@@ -564,9 +531,9 @@ public interface SearchService {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The identity of the resource..
+             * Specifies the identity property: Details about the search service identity. A null value indicates that the search service has no identity assigned..
              * 
-             * @param identity The identity of the resource.
+             * @param identity Details about the search service identity. A null value indicates that the search service has no identity assigned.
              * @return the next definition stage.
              */
             Update withIdentity(Identity identity);
@@ -577,11 +544,9 @@ public interface SearchService {
          */
         interface WithReplicaCount {
             /**
-             * Specifies the replicaCount property: The number of replicas in the search service. If specified, it must
-             * be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU..
+             * Specifies the replicaCount property: The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU..
              * 
-             * @param replicaCount The number of replicas in the search service. If specified, it must be a value
-             * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
+             * @param replicaCount The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
              * @return the next definition stage.
              */
             Update withReplicaCount(Integer replicaCount);
@@ -592,13 +557,9 @@ public interface SearchService {
          */
         interface WithPartitionCount {
             /**
-             * Specifies the partitionCount property: The number of partitions in the search service; if specified, it
-             * can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3'
-             * services with hostingMode set to 'highDensity', the allowed values are between 1 and 3..
+             * Specifies the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3..
              * 
-             * @param partitionCount The number of partitions in the search service; if specified, it can be 1, 2, 3, 4,
-             * 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with
-             * hostingMode set to 'highDensity', the allowed values are between 1 and 3.
+             * @param partitionCount The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3.
              * @return the next definition stage.
              */
             Update withPartitionCount(Integer partitionCount);
@@ -609,15 +570,9 @@ public interface SearchService {
          */
         interface WithHostingMode {
             /**
-             * Specifies the hostingMode property: Applicable only for the standard3 SKU. You can set this property to
-             * enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the
-             * maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or
-             * 'highDensity'. For all other SKUs, this value must be 'default'..
+             * Specifies the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'..
              * 
-             * @param hostingMode Applicable only for the standard3 SKU. You can set this property to enable up to 3
-             * high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes
-             * allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all
-             * other SKUs, this value must be 'default'.
+             * @param hostingMode Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
              * @return the next definition stage.
              */
             Update withHostingMode(HostingMode hostingMode);
@@ -628,13 +583,9 @@ public interface SearchService {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes
-             * on existing customer resources and templates. If set to 'disabled', traffic over public interface is not
-             * allowed, and private endpoint connections would be the exclusive access method..
+             * Specifies the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method..
              * 
-             * @param publicNetworkAccess This value can be set to 'enabled' to avoid breaking changes on existing
-             * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and
-             * private endpoint connections would be the exclusive access method.
+             * @param publicNetworkAccess This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -645,13 +596,26 @@ public interface SearchService {
          */
         interface WithNetworkRuleSet {
             /**
-             * Specifies the networkRuleSet property: Network-specific rules that determine how the search service may
-             * be reached..
+             * Specifies the networkRuleSet property: Network specific rules that determine how the Azure AI Search service may be reached..
              * 
-             * @param networkRuleSet Network-specific rules that determine how the search service may be reached.
+             * @param networkRuleSet Network specific rules that determine how the Azure AI Search service may be reached.
              * @return the next definition stage.
              */
             Update withNetworkRuleSet(NetworkRuleSet networkRuleSet);
+        }
+
+        /**
+         * The stage of the SearchService update allowing to specify disabledDataExfiltrationOptions.
+         */
+        interface WithDisabledDataExfiltrationOptions {
+            /**
+             * Specifies the disabledDataExfiltrationOptions property: A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future..
+             * 
+             * @param disabledDataExfiltrationOptions A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future.
+             * @return the next definition stage.
+             */
+            Update withDisabledDataExfiltrationOptions(
+                List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions);
         }
 
         /**
@@ -659,11 +623,9 @@ public interface SearchService {
          */
         interface WithEncryptionWithCmk {
             /**
-             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as
-             * indexes) using customer manager keys within a search service..
+             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service..
              * 
-             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using
-             * customer manager keys within a search service.
+             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service.
              * @return the next definition stage.
              */
             Update withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
@@ -674,12 +636,9 @@ public interface SearchService {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be
-             * permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions'
-             * are defined..
+             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined..
              * 
-             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize
-             * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
              * @return the next definition stage.
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
@@ -690,11 +649,9 @@ public interface SearchService {
          */
         interface WithAuthOptions {
             /**
-             * Specifies the authOptions property: Defines the options for how the data plane API of a search service
-             * authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
+             * Specifies the authOptions property: Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
              * 
-             * @param authOptions Defines the options for how the data plane API of a search service authenticates
-             * requests. This cannot be set if 'disableLocalAuth' is set to true.
+             * @param authOptions Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true.
              * @return the next definition stage.
              */
             Update withAuthOptions(DataPlaneAuthOptions authOptions);
@@ -705,11 +662,9 @@ public interface SearchService {
          */
         interface WithSemanticSearch {
             /**
-             * Specifies the semanticSearch property: Sets options that control the availability of semantic search.
-             * This configuration is only possible for certain search SKUs in certain locations..
+             * Specifies the semanticSearch property: Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations..
              * 
-             * @param semanticSearch Sets options that control the availability of semantic search. This configuration
-             * is only possible for certain search SKUs in certain locations.
+             * @param semanticSearch Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations.
              * @return the next definition stage.
              */
             Update withSemanticSearch(SearchSemanticSearch semanticSearch);
@@ -720,11 +675,9 @@ public interface SearchService {
          */
         interface WithClientRequestId {
             /**
-             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
-             * specified, this will be included in response information as a way to track the request..
+             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request..
              * 
-             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this
-             * will be included in response information as a way to track the request.
+             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
             Update withClientRequestId(UUID clientRequestId);

@@ -67,14 +67,17 @@ public final class LinkedStorageAccountsResourceImpl implements LinkedStorageAcc
     }
 
     public LinkedStorageAccountsResource create() {
-        this.innerObject
-            = serviceManager.serviceClient().getLinkedStorageAccounts().createOrUpdateWithResponse(resourceGroupName,
-                workspaceName, dataSourceType, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceType, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public LinkedStorageAccountsResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLinkedStorageAccounts()
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
             .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceType, this.innerModel(), context)
             .getValue();
         return this;
@@ -92,14 +95,17 @@ public final class LinkedStorageAccountsResourceImpl implements LinkedStorageAcc
     }
 
     public LinkedStorageAccountsResource apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getLinkedStorageAccounts().createOrUpdateWithResponse(resourceGroupName,
-                workspaceName, dataSourceType, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceType, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public LinkedStorageAccountsResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLinkedStorageAccounts()
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
             .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceType, this.innerModel(), context)
             .getValue();
         return this;
@@ -116,14 +122,18 @@ public final class LinkedStorageAccountsResourceImpl implements LinkedStorageAcc
     }
 
     public LinkedStorageAccountsResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getLinkedStorageAccounts()
-            .getWithResponse(resourceGroupName, workspaceName, dataSourceType, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
+            .getWithResponse(resourceGroupName, workspaceName, dataSourceType, Context.NONE)
+            .getValue();
         return this;
     }
 
     public LinkedStorageAccountsResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLinkedStorageAccounts()
-            .getWithResponse(resourceGroupName, workspaceName, dataSourceType, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLinkedStorageAccounts()
+            .getWithResponse(resourceGroupName, workspaceName, dataSourceType, context)
+            .getValue();
         return this;
     }
 

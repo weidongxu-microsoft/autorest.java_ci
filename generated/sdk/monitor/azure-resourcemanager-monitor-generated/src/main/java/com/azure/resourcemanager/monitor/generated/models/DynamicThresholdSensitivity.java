@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The extent of deviation required to trigger an alert. This will affect how tight the threshold is to the metric
- * series pattern.
+ * The extent of deviation required to trigger an alert. This will affect how tight the threshold is to the metric series pattern.
  */
 public final class DynamicThresholdSensitivity extends ExpandableStringEnum<DynamicThresholdSensitivity> {
     /**

@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * A list of AzureVMSS instances which can be included or excluded to run packet capture. If both included and excluded
- * are empty, then the packet capture will run on all instances of AzureVMSS.
+ * A list of AzureVMSS instances which can be included or excluded to run packet capture. If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
  */
 @Fluent
 public final class PacketCaptureMachineScope {
@@ -53,8 +52,7 @@ public final class PacketCaptureMachineScope {
     }
 
     /**
-     * Get the exclude property: List of AzureVMSS instances which has to be excluded from the AzureVMSS from running
-     * packet capture.
+     * Get the exclude property: List of AzureVMSS instances which has to be excluded from the AzureVMSS from running packet capture.
      * 
      * @return the exclude value.
      */
@@ -63,8 +61,7 @@ public final class PacketCaptureMachineScope {
     }
 
     /**
-     * Set the exclude property: List of AzureVMSS instances which has to be excluded from the AzureVMSS from running
-     * packet capture.
+     * Set the exclude property: List of AzureVMSS instances which has to be excluded from the AzureVMSS from running packet capture.
      * 
      * @param exclude the exclude value to set.
      * @return the PacketCaptureMachineScope object itself.

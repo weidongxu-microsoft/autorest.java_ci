@@ -16,31 +16,30 @@ import java.util.UUID;
  */
 public interface ResourceProvidersClient {
     /**
-     * Gets the quota usage for a search SKU in the given subscription.
+     * Gets the quota usage for a search sku in the given subscription.
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @param skuName The unique SKU name that identifies a billable tier.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota usage for a search SKU in the given subscription along with {@link Response}.
+     * @return the quota usage for a search sku in the given subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QuotaUsageResultInner> usageBySubscriptionSkuWithResponse(String location, String skuName,
         UUID clientRequestId, Context context);
 
     /**
-     * Gets the quota usage for a search SKU in the given subscription.
+     * Gets the quota usage for a search sku in the given subscription.
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @param skuName The unique SKU name that identifies a billable tier.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota usage for a search SKU in the given subscription.
+     * @return the quota usage for a search sku in the given subscription.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     QuotaUsageResultInner usageBySubscriptionSku(String location, String skuName);

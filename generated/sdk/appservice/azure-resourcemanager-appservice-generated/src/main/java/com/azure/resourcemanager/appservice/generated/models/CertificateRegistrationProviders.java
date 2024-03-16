@@ -14,11 +14,9 @@ public interface CertificateRegistrationProviders {
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */
@@ -27,13 +25,11 @@ public interface CertificateRegistrationProviders {
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */

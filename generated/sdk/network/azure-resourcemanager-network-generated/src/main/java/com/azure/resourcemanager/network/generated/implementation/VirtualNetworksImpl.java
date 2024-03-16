@@ -43,8 +43,8 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
 
     public Response<VirtualNetwork> getByResourceGroupWithResponse(String resourceGroupName, String virtualNetworkName,
         String expand, Context context) {
-        Response<VirtualNetworkInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            virtualNetworkName, expand, context);
+        Response<VirtualNetworkInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkImpl(inner.getValue(), this.manager()));

@@ -55,8 +55,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     }
 
     /**
-     * The interface defining all the services for RecoveryServicesManagementClientRecoveryServices to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for RecoveryServicesManagementClientRecoveryServices to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
@@ -85,8 +84,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     /**
      * API to check for resource name availability.
      * A name is available if no other resource exists that has the same SubscriptionId, Resource Name and Type
-     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24
-     * Hours Ago.
+     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24 Hours Ago.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param location Location of the resource.
@@ -94,8 +92,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for check name availability API along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return response for check name availability API along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -131,8 +128,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     /**
      * API to check for resource name availability.
      * A name is available if no other resource exists that has the same SubscriptionId, Resource Name and Type
-     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24
-     * Hours Ago.
+     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24 Hours Ago.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param location Location of the resource.
@@ -141,8 +137,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for check name availability API along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return response for check name availability API along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -176,8 +171,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     /**
      * API to check for resource name availability.
      * A name is available if no other resource exists that has the same SubscriptionId, Resource Name and Type
-     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24
-     * Hours Ago.
+     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24 Hours Ago.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param location Location of the resource.
@@ -197,8 +191,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     /**
      * API to check for resource name availability.
      * A name is available if no other resource exists that has the same SubscriptionId, Resource Name and Type
-     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24
-     * Hours Ago.
+     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24 Hours Ago.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param location Location of the resource.
@@ -218,8 +211,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     /**
      * API to check for resource name availability.
      * A name is available if no other resource exists that has the same SubscriptionId, Resource Name and Type
-     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24
-     * Hours Ago.
+     * or if one or more such resources exist, each of these must be GC'd and their time of deletion be more than 24 Hours Ago.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param location Location of the resource.
@@ -243,8 +235,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities response for Microsoft.RecoveryServices along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return capabilities response for Microsoft.RecoveryServices along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapabilitiesResponseInner>> capabilitiesWithResponseAsync(String location,
@@ -281,8 +272,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities response for Microsoft.RecoveryServices along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return capabilities response for Microsoft.RecoveryServices along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapabilitiesResponseInner>> capabilitiesWithResponseAsync(String location,

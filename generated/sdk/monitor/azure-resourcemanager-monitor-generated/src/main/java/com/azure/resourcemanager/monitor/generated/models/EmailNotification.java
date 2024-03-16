@@ -38,8 +38,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Get the sendToSubscriptionAdministrator property: a value indicating whether to send email to subscription
-     * administrator.
+     * Get the sendToSubscriptionAdministrator property: a value indicating whether to send email to subscription administrator.
      * 
      * @return the sendToSubscriptionAdministrator value.
      */
@@ -48,8 +47,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Set the sendToSubscriptionAdministrator property: a value indicating whether to send email to subscription
-     * administrator.
+     * Set the sendToSubscriptionAdministrator property: a value indicating whether to send email to subscription administrator.
      * 
      * @param sendToSubscriptionAdministrator the sendToSubscriptionAdministrator value to set.
      * @return the EmailNotification object itself.
@@ -60,8 +58,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Get the sendToSubscriptionCoAdministrators property: a value indicating whether to send email to subscription
-     * co-administrators.
+     * Get the sendToSubscriptionCoAdministrators property: a value indicating whether to send email to subscription co-administrators.
      * 
      * @return the sendToSubscriptionCoAdministrators value.
      */
@@ -70,8 +67,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Set the sendToSubscriptionCoAdministrators property: a value indicating whether to send email to subscription
-     * co-administrators.
+     * Set the sendToSubscriptionCoAdministrators property: a value indicating whether to send email to subscription co-administrators.
      * 
      * @param sendToSubscriptionCoAdministrators the sendToSubscriptionCoAdministrators value to set.
      * @return the EmailNotification object itself.
@@ -82,8 +78,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Get the customEmails property: the custom e-mails list. This value can be null or empty, in which case this
-     * attribute will be ignored.
+     * Get the customEmails property: the custom e-mails list. This value can be null or empty, in which case this attribute will be ignored.
      * 
      * @return the customEmails value.
      */
@@ -92,8 +87,7 @@ public final class EmailNotification {
     }
 
     /**
-     * Set the customEmails property: the custom e-mails list. This value can be null or empty, in which case this
-     * attribute will be ignored.
+     * Set the customEmails property: the custom e-mails list. This value can be null or empty, in which case this attribute will be ignored.
      * 
      * @param customEmails the customEmails value to set.
      * @return the EmailNotification object itself.

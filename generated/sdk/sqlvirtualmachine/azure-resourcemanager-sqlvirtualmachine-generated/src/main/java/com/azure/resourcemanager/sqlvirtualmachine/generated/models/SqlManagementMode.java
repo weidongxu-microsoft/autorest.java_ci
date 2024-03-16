@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql
- * Management, refrain from using it.
+ * SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
  */
 public final class SqlManagementMode extends ExpandableStringEnum<SqlManagementMode> {
     /**

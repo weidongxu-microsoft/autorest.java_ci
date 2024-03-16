@@ -20,14 +20,12 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = { SearchManagementClientImpl.class })
 public final class SearchManagementClientBuilder {
     /*
-     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
-     * Manager API, command line tools, or the portal.
+     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      */
     private String subscriptionId;
 
     /**
-     * Sets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
-     * Manager API, command line tools, or the portal.
+     * Sets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the SearchManagementClientBuilder.
@@ -125,11 +123,13 @@ public final class SearchManagementClientBuilder {
     public SearchManagementClientImpl buildClient() {
         String localEndpoint = (endpoint != null) ? endpoint : "https://management.azure.com";
         AzureEnvironment localEnvironment = (environment != null) ? environment : AzureEnvironment.AZURE;
-        HttpPipeline localPipeline = (pipeline != null) ? pipeline
+        HttpPipeline localPipeline = (pipeline != null)
+            ? pipeline
             : new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
         Duration localDefaultPollInterval
             = (defaultPollInterval != null) ? defaultPollInterval : Duration.ofSeconds(30);
-        SerializerAdapter localSerializerAdapter = (serializerAdapter != null) ? serializerAdapter
+        SerializerAdapter localSerializerAdapter = (serializerAdapter != null)
+            ? serializerAdapter
             : SerializerFactory.createDefaultManagementSerializerAdapter();
         SearchManagementClientImpl client = new SearchManagementClientImpl(localPipeline, localSerializerAdapter,
             localDefaultPollInterval, localEnvironment, this.subscriptionId, localEndpoint);

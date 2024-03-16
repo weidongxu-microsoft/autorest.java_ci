@@ -51,8 +51,7 @@ public final class OpenIdConnectClientCredential {
     }
 
     /**
-     * Get the clientSecretSettingName property: The app setting that contains the client secret for the custom Open ID
-     * Connect provider.
+     * Get the clientSecretSettingName property: The app setting that contains the client secret for the custom Open ID Connect provider.
      * 
      * @return the clientSecretSettingName value.
      */
@@ -61,8 +60,7 @@ public final class OpenIdConnectClientCredential {
     }
 
     /**
-     * Set the clientSecretSettingName property: The app setting that contains the client secret for the custom Open ID
-     * Connect provider.
+     * Set the clientSecretSettingName property: The app setting that contains the client secret for the custom Open ID Connect provider.
      * 
      * @param clientSecretSettingName the clientSecretSettingName value to set.
      * @return the OpenIdConnectClientCredential object itself.

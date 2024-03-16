@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface SharingUpdate {
     /**
-     * Gets the operationType property: This property allows you to specify the operation type of gallery sharing
-     * update. Possible values are: **Add,** **Remove,** **Reset.**.
+     * Gets the operationType property: This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**.
      * 
      * @return the operationType value.
      */

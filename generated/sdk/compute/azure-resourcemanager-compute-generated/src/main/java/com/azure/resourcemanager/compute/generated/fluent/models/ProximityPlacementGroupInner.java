@@ -26,8 +26,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     private ProximityPlacementGroupProperties innerProperties;
 
     /*
-     * Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated
-     * with the proximity placement group can be created.
+     * Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
      */
     @JsonProperty(value = "zones")
     private List<String> zones;
@@ -48,8 +47,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Get the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or
-     * availability set associated with the proximity placement group can be created.
+     * Get the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
      * 
      * @return the zones value.
      */
@@ -58,8 +56,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Set the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or
-     * availability set associated with the proximity placement group can be created.
+     * Set the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
      * 
      * @param zones the zones value to set.
      * @return the ProximityPlacementGroupInner object itself.
@@ -88,9 +85,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Get the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
-     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-     * future use.
+     * Get the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      * 
      * @return the proximityPlacementGroupType value.
      */
@@ -99,9 +94,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Set the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
-     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-     * future use.
+     * Set the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      * 
      * @param proximityPlacementGroupType the proximityPlacementGroupType value to set.
      * @return the ProximityPlacementGroupInner object itself.
@@ -125,8 +118,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Get the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the proximity
-     * placement group.
+     * Get the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the proximity placement group.
      * 
      * @return the virtualMachineScaleSets value.
      */
@@ -135,8 +127,7 @@ public final class ProximityPlacementGroupInner extends Resource {
     }
 
     /**
-     * Get the availabilitySets property: A list of references to all availability sets in the proximity placement
-     * group.
+     * Get the availabilitySets property: A list of references to all availability sets in the proximity placement group.
      * 
      * @return the availabilitySets value.
      */

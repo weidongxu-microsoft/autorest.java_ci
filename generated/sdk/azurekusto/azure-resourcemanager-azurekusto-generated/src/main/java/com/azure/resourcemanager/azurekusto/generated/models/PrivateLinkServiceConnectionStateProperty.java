@@ -77,8 +77,7 @@ public final class PrivateLinkServiceConnectionStateProperty {
     }
 
     /**
-     * Get the actionsRequired property: Any action that is required beyond basic workflow (approve/ reject/
-     * disconnect).
+     * Get the actionsRequired property: Any action that is required beyond basic workflow (approve/ reject/ disconnect).
      * 
      * @return the actionsRequired value.
      */

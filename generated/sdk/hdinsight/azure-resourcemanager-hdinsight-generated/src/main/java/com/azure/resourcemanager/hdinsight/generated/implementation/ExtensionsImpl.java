@@ -149,8 +149,9 @@ public final class ExtensionsImpl implements Extensions {
 
     public Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(String resourceGroupName,
         String clusterName, String extensionName, String operationId, Context context) {
-        Response<AsyncOperationResultInner> inner = this.serviceClient().getAzureAsyncOperationStatusWithResponse(
-            resourceGroupName, clusterName, extensionName, operationId, context);
+        Response<AsyncOperationResultInner> inner = this.serviceClient()
+            .getAzureAsyncOperationStatusWithResponse(resourceGroupName, clusterName, extensionName, operationId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AsyncOperationResultImpl(inner.getValue(), this.manager()));
@@ -161,8 +162,8 @@ public final class ExtensionsImpl implements Extensions {
 
     public AsyncOperationResult getAzureAsyncOperationStatus(String resourceGroupName, String clusterName,
         String extensionName, String operationId) {
-        AsyncOperationResultInner inner = this.serviceClient().getAzureAsyncOperationStatus(resourceGroupName,
-            clusterName, extensionName, operationId);
+        AsyncOperationResultInner inner = this.serviceClient()
+            .getAzureAsyncOperationStatus(resourceGroupName, clusterName, extensionName, operationId);
         if (inner != null) {
             return new AsyncOperationResultImpl(inner, this.manager());
         } else {

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Represents an Asset for input into a Job.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputAsset.class, visible = true)
 @JsonTypeName("#Microsoft.Media.JobInputAsset")
 @Fluent
 public final class JobInputAsset extends JobInputClip {
@@ -28,6 +28,7 @@ public final class JobInputAsset extends JobInputClip {
      * Creates an instance of JobInputAsset class.
      */
     public JobInputAsset() {
+        withOdataType("#Microsoft.Media.JobInputAsset");
     }
 
     /**

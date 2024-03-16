@@ -77,9 +77,9 @@ public final class ExpressRouteCircuitImpl
     public List<ExpressRouteCircuitAuthorization> authorizations() {
         List<ExpressRouteCircuitAuthorizationInner> inner = this.innerModel().authorizations();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -88,9 +88,9 @@ public final class ExpressRouteCircuitImpl
     public List<ExpressRouteCircuitPeering> peerings() {
         List<ExpressRouteCircuitPeeringInner> inner = this.innerModel().peerings();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -172,14 +172,16 @@ public final class ExpressRouteCircuitImpl
     }
 
     public ExpressRouteCircuit create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits().createOrUpdate(resourceGroupName,
-            circuitName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .createOrUpdate(resourceGroupName, circuitName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuit create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits().createOrUpdate(resourceGroupName,
-            circuitName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .createOrUpdate(resourceGroupName, circuitName, this.innerModel(), context);
         return this;
     }
 
@@ -195,14 +197,18 @@ public final class ExpressRouteCircuitImpl
     }
 
     public ExpressRouteCircuit apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits()
-            .updateTagsWithResponse(resourceGroupName, circuitName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .updateTagsWithResponse(resourceGroupName, circuitName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRouteCircuit apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits()
-            .updateTagsWithResponse(resourceGroupName, circuitName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .updateTagsWithResponse(resourceGroupName, circuitName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -215,14 +221,18 @@ public final class ExpressRouteCircuitImpl
     }
 
     public ExpressRouteCircuit refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits()
-            .getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRouteCircuit refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuits()
-            .getByResourceGroupWithResponse(resourceGroupName, circuitName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuits()
+            .getByResourceGroupWithResponse(resourceGroupName, circuitName, context)
+            .getValue();
         return this;
     }
 

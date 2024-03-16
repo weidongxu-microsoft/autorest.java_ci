@@ -83,14 +83,18 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
     }
 
     public Subscription create() {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions().createOrUpdate(
-            resourceGroupName, namespaceName, topicName, eventSubscriptionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
+            .createOrUpdate(resourceGroupName, namespaceName, topicName, eventSubscriptionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public Subscription create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions().createOrUpdate(
-            resourceGroupName, namespaceName, topicName, eventSubscriptionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
+            .createOrUpdate(resourceGroupName, namespaceName, topicName, eventSubscriptionName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -106,16 +110,18 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
     }
 
     public Subscription apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions().update(resourceGroupName,
-                namespaceName, topicName, eventSubscriptionName, updateEventSubscriptionUpdateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
+            .update(resourceGroupName, namespaceName, topicName, eventSubscriptionName,
+                updateEventSubscriptionUpdateParameters, Context.NONE);
         return this;
     }
 
     public Subscription apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions().update(resourceGroupName,
-                namespaceName, topicName, eventSubscriptionName, updateEventSubscriptionUpdateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
+            .update(resourceGroupName, namespaceName, topicName, eventSubscriptionName,
+                updateEventSubscriptionUpdateParameters, context);
         return this;
     }
 
@@ -130,26 +136,30 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
     }
 
     public Subscription refresh() {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions()
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
             .getWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, Context.NONE)
             .getValue();
         return this;
     }
 
     public Subscription refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaceTopicEventSubscriptions()
-            .getWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaceTopicEventSubscriptions()
+            .getWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context)
+            .getValue();
         return this;
     }
 
     public Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(Context context) {
-        return serviceManager.namespaceTopicEventSubscriptions().getDeliveryAttributesWithResponse(resourceGroupName,
-            namespaceName, topicName, eventSubscriptionName, context);
+        return serviceManager.namespaceTopicEventSubscriptions()
+            .getDeliveryAttributesWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName,
+                context);
     }
 
     public DeliveryAttributeListResult getDeliveryAttributes() {
-        return serviceManager.namespaceTopicEventSubscriptions().getDeliveryAttributes(resourceGroupName, namespaceName,
-            topicName, eventSubscriptionName);
+        return serviceManager.namespaceTopicEventSubscriptions()
+            .getDeliveryAttributes(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
     }
 
     public SubscriptionImpl withDeliveryConfiguration(DeliveryConfiguration deliveryConfiguration) {

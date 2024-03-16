@@ -25,8 +25,7 @@ public interface RetrieveBootDiagnosticsDataResult {
     String serialConsoleLogBlobUri();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner object.
      * 
      * @return the inner object.
      */

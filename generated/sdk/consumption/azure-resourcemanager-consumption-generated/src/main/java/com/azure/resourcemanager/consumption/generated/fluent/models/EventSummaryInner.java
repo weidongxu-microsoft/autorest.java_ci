@@ -25,8 +25,7 @@ public final class EventSummaryInner extends ProxyResource {
     private EventProperties innerProperties;
 
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
-     * is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;
@@ -47,8 +46,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -57,8 +55,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @param etag the etag value to set.
      * @return the EventSummaryInner object itself.
@@ -96,8 +93,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the adjustments property: The amount of balance adjustment. The property is not available for
-     * ConsumptionCommitment lots.
+     * Get the adjustments property: The amount of balance adjustment. The property is not available for ConsumptionCommitment lots.
      * 
      * @return the adjustments value.
      */
@@ -124,8 +120,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalance property: The balance after the event, Note: This will not be returned for Contributor
-     * Organization Type in Multi-Entity consumption commitment.
+     * Get the closedBalance property: The balance after the event, Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the closedBalance value.
      */
@@ -175,8 +170,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the invoiceNumber property: The number which uniquely identifies the invoice on which the event was billed.
-     * This will be empty for unbilled events.
+     * Get the invoiceNumber property: The number which uniquely identifies the invoice on which the event was billed. This will be empty for unbilled events.
      * 
      * @return the invoiceNumber value.
      */
@@ -185,8 +179,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the billingProfileId property: The ID that uniquely identifies the billing profile for which the event
-     * happened. The property is only available for billing account of type MicrosoftCustomerAgreement.
+     * Get the billingProfileId property: The ID that uniquely identifies the billing profile for which the event happened. The property is only available for billing account of type MicrosoftCustomerAgreement.
      * 
      * @return the billingProfileId value.
      */
@@ -195,8 +188,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the billingProfileDisplayName property: The display name of the billing profile for which the event happened.
-     * The property is only available for billing account of type MicrosoftCustomerAgreement.
+     * Get the billingProfileDisplayName property: The display name of the billing profile for which the event happened. The property is only available for billing account of type MicrosoftCustomerAgreement.
      * 
      * @return the billingProfileDisplayName value.
      */
@@ -259,8 +251,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the creditExpiredInBillingCurrency property: The amount of expired credit or commitment for NewCredit or
-     * SettleCharges event in billing currency.
+     * Get the creditExpiredInBillingCurrency property: The amount of expired credit or commitment for NewCredit or SettleCharges event in billing currency.
      * 
      * @return the creditExpiredInBillingCurrency value.
      */
@@ -269,8 +260,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the newCreditInBillingCurrency property: The amount of new credit or commitment for NewCredit or
-     * SettleCharges event in billing currency.
+     * Get the newCreditInBillingCurrency property: The amount of new credit or commitment for NewCredit or SettleCharges event in billing currency.
      * 
      * @return the newCreditInBillingCurrency value.
      */
@@ -288,8 +278,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the chargesInBillingCurrency property: The amount of charges for events of type SettleCharges and
-     * PendingEligibleCharges in billing currency.
+     * Get the chargesInBillingCurrency property: The amount of charges for events of type SettleCharges and PendingEligibleCharges in billing currency.
      * 
      * @return the chargesInBillingCurrency value.
      */
@@ -298,8 +287,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalanceInBillingCurrency property: The balance in billing currency after the event, Note: This will
-     * not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Get the closedBalanceInBillingCurrency property: The balance in billing currency after the event, Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the closedBalanceInBillingCurrency value.
      */
@@ -308,8 +296,7 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
-     * subjected to change.
+     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be subjected to change.
      * 
      * @return the isEstimatedBalance value.
      */

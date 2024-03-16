@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Sku {
     /*
-     * Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on
-     * backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig
+     * Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig
      */
     @JsonProperty(value = "name", required = true)
     private SkuName name;
@@ -51,9 +50,7 @@ public final class Sku {
     }
 
     /**
-     * Get the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do
-     * not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the
-     * backupstorageconfig.
+     * Get the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig.
      * 
      * @return the name value.
      */
@@ -62,9 +59,7 @@ public final class Sku {
     }
 
     /**
-     * Set the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do
-     * not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the
-     * backupstorageconfig.
+     * Set the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig.
      * 
      * @param name the name value to set.
      * @return the Sku object itself.

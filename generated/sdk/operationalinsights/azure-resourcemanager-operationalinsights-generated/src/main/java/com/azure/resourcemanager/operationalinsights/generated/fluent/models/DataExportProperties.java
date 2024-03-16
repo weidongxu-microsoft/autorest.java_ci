@@ -167,8 +167,7 @@ public final class DataExportProperties {
     }
 
     /**
-     * Get the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
-     * destination resource in Azure.
+     * Get the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
      * 
      * @return the resourceId value.
      */
@@ -177,8 +176,7 @@ public final class DataExportProperties {
     }
 
     /**
-     * Set the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
-     * destination resource in Azure.
+     * Set the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
      * 
      * @param resourceId the resourceId value to set.
      * @return the DataExportProperties object itself.
@@ -201,8 +199,7 @@ public final class DataExportProperties {
     }
 
     /**
-     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
-     * Storage Account.
+     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
      * 
      * @return the eventHubName value.
      */
@@ -211,8 +208,7 @@ public final class DataExportProperties {
     }
 
     /**
-     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
-     * Storage Account.
+     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
      * 
      * @param eventHubName the eventHubName value to set.
      * @return the DataExportProperties object itself.

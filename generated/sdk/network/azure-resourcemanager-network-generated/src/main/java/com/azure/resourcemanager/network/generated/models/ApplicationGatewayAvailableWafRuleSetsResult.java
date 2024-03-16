@@ -19,9 +19,7 @@ public interface ApplicationGatewayAvailableWafRuleSetsResult {
     List<ApplicationGatewayFirewallRuleSet> value();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner object.
      * 
      * @return the inner object.
      */

@@ -10,12 +10,12 @@ import com.azure.resourcemanager.search.generated.models.PrivateEndpointConnecti
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes an existing private endpoint connection to the search service.
+ * Describes an existing private endpoint connection to the Azure AI Search service.
  */
 @Fluent
 public final class PrivateEndpointConnectionInner extends ProxyResource {
     /*
-     * Describes the properties of an existing private endpoint connection to the search service.
+     * Describes the properties of an existing private endpoint connection to the Azure AI Search service.
      */
     @JsonProperty(value = "properties")
     private PrivateEndpointConnectionProperties properties;
@@ -27,8 +27,7 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of an existing private endpoint connection to the search
-     * service.
+     * Get the properties property: Describes the properties of an existing private endpoint connection to the Azure AI Search service.
      * 
      * @return the properties value.
      */
@@ -37,8 +36,7 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: Describes the properties of an existing private endpoint connection to the search
-     * service.
+     * Set the properties property: Describes the properties of an existing private endpoint connection to the Azure AI Search service.
      * 
      * @param properties the properties value to set.
      * @return the PrivateEndpointConnectionInner object itself.

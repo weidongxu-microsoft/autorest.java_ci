@@ -132,8 +132,7 @@ public final class LocalUserInner extends ProxyResource {
     }
 
     /**
-     * Get the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared
-     * key.
+     * Get the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key.
      * 
      * @return the hasSharedKey value.
      */
@@ -142,8 +141,7 @@ public final class LocalUserInner extends ProxyResource {
     }
 
     /**
-     * Set the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared
-     * key.
+     * Set the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key.
      * 
      * @param hasSharedKey the hasSharedKey value to set.
      * @return the LocalUserInner object itself.
@@ -180,8 +178,7 @@ public final class LocalUserInner extends ProxyResource {
     }
 
     /**
-     * Get the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH
-     * password.
+     * Get the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password.
      * 
      * @return the hasSshPassword value.
      */
@@ -190,8 +187,7 @@ public final class LocalUserInner extends ProxyResource {
     }
 
     /**
-     * Set the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH
-     * password.
+     * Set the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password.
      * 
      * @param hasSshPassword the hasSshPassword value to set.
      * @return the LocalUserInner object itself.

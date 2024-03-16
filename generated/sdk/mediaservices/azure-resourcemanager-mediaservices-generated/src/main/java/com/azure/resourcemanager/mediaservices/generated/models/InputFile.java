@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * An InputDefinition for a single file. TrackSelections are scoped to the file specified.
+ * An InputDefinition for a single file.  TrackSelections are scoped to the file specified.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = InputFile.class, visible = true)
 @JsonTypeName("#Microsoft.Media.InputFile")
 @Fluent
 public final class InputFile extends InputDefinition {
@@ -27,6 +27,7 @@ public final class InputFile extends InputDefinition {
      * Creates an instance of InputFile class.
      */
     public InputFile() {
+        withOdataType("#Microsoft.Media.InputFile");
     }
 
     /**

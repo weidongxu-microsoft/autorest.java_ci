@@ -115,14 +115,18 @@ public final class ManagedHsmKeyImpl implements ManagedHsmKey, ManagedHsmKey.Def
     }
 
     public ManagedHsmKey create() {
-        this.innerObject = serviceManager.serviceClient().getManagedHsmKeys()
-            .createIfNotExistWithResponse(resourceGroupName, name, keyName, createParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsmKeys()
+            .createIfNotExistWithResponse(resourceGroupName, name, keyName, createParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagedHsmKey create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagedHsmKeys()
-            .createIfNotExistWithResponse(resourceGroupName, name, keyName, createParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsmKeys()
+            .createIfNotExistWithResponse(resourceGroupName, name, keyName, createParameters, context)
+            .getValue();
         return this;
     }
 
@@ -134,14 +138,18 @@ public final class ManagedHsmKeyImpl implements ManagedHsmKey, ManagedHsmKey.Def
     }
 
     public ManagedHsmKey refresh() {
-        this.innerObject = serviceManager.serviceClient().getManagedHsmKeys()
-            .getWithResponse(resourceGroupName, name, keyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsmKeys()
+            .getWithResponse(resourceGroupName, name, keyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagedHsmKey refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagedHsmKeys()
-            .getWithResponse(resourceGroupName, name, keyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsmKeys()
+            .getWithResponse(resourceGroupName, name, keyName, context)
+            .getValue();
         return this;
     }
 

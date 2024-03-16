@@ -42,8 +42,7 @@ public final class SqlVirtualMachineGroupProperties {
     private ScaleType scaleType;
 
     /*
-     * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the
-     * OS type.
+     * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS type.
      */
     @JsonProperty(value = "clusterManagerType", access = JsonProperty.Access.WRITE_ONLY)
     private ClusterManagerType clusterManagerType;
@@ -125,8 +124,7 @@ public final class SqlVirtualMachineGroupProperties {
     }
 
     /**
-     * Get the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by
-     * the scale type of the group and the OS type.
+     * Get the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS type.
      * 
      * @return the clusterManagerType value.
      */

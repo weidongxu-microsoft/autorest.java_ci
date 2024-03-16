@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Connection draining allows open connections to a backend server to be active for a specified time after the backend
- * server got removed from the configuration.
+ * Connection draining allows open connections to a backend server to be active for a specified time after the backend server got removed from the configuration.
  */
 @Fluent
 public final class ApplicationGatewayConnectionDraining {
@@ -52,8 +51,7 @@ public final class ApplicationGatewayConnectionDraining {
     }
 
     /**
-     * Get the drainTimeoutInSec property: The number of seconds connection draining is active. Acceptable values are
-     * from 1 second to 3600 seconds.
+     * Get the drainTimeoutInSec property: The number of seconds connection draining is active. Acceptable values are from 1 second to 3600 seconds.
      * 
      * @return the drainTimeoutInSec value.
      */
@@ -62,8 +60,7 @@ public final class ApplicationGatewayConnectionDraining {
     }
 
     /**
-     * Set the drainTimeoutInSec property: The number of seconds connection draining is active. Acceptable values are
-     * from 1 second to 3600 seconds.
+     * Set the drainTimeoutInSec property: The number of seconds connection draining is active. Acceptable values are from 1 second to 3600 seconds.
      * 
      * @param drainTimeoutInSec the drainTimeoutInSec value to set.
      * @return the ApplicationGatewayConnectionDraining object itself.

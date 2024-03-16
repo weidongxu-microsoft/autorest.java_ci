@@ -199,8 +199,7 @@ public final class BastionHostInner extends Resource {
     }
 
     /**
-     * Get the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
-     * only.
+     * Get the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only.
      * 
      * @return the virtualNetwork value.
      */
@@ -209,8 +208,7 @@ public final class BastionHostInner extends Resource {
     }
 
     /**
-     * Set the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
-     * only.
+     * Set the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only.
      * 
      * @param virtualNetwork the virtualNetwork value to set.
      * @return the BastionHostInner object itself.

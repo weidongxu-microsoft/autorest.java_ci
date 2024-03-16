@@ -17,8 +17,7 @@ public interface PrivateLinkScopes {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AzureMonitorPrivateLinkScope> list();
 
@@ -29,8 +28,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AzureMonitorPrivateLinkScope> list(Context context);
 
@@ -41,8 +39,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AzureMonitorPrivateLinkScope> listByResourceGroup(String resourceGroupName);
 
@@ -54,8 +51,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AzureMonitorPrivateLinkScope> listByResourceGroup(String resourceGroupName, Context context);
 

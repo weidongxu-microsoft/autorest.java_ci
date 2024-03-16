@@ -12,8 +12,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverr
 import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverridesListInner;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * FirewallPolicyIdpsSignaturesOverridesClient.
+ * An instance of this class provides access to all the operations defined in FirewallPolicyIdpsSignaturesOverridesClient.
  */
 public interface FirewallPolicyIdpsSignaturesOverridesClient {
     /**

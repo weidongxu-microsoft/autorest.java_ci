@@ -22,8 +22,7 @@ public final class WebTestListResult {
     private List<WebTestInner> value;
 
     /*
-     * The link to get the next part of the returned list of web tests, should the return set be too large for a single
-     * request. May be null.
+     * The link to get the next part of the returned list of web tests, should the return set be too large for a single request. May be null.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class WebTestListResult {
     }
 
     /**
-     * Get the nextLink property: The link to get the next part of the returned list of web tests, should the return set
-     * be too large for a single request. May be null.
+     * Get the nextLink property: The link to get the next part of the returned list of web tests, should the return set be too large for a single request. May be null.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class WebTestListResult {
     }
 
     /**
-     * Set the nextLink property: The link to get the next part of the returned list of web tests, should the return set
-     * be too large for a single request. May be null.
+     * Set the nextLink property: The link to get the next part of the returned list of web tests, should the return set be too large for a single request. May be null.
      * 
      * @param nextLink the nextLink value to set.
      * @return the WebTestListResult object itself.

@@ -194,14 +194,16 @@ public final class AppServiceEnvironmentResourceImpl implements AppServiceEnviro
     }
 
     public AppServiceEnvironmentResource create() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments().createOrUpdate(resourceGroupName,
-            name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServiceEnvironmentResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments().createOrUpdate(resourceGroupName,
-            name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -218,14 +220,18 @@ public final class AppServiceEnvironmentResourceImpl implements AppServiceEnviro
     }
 
     public AppServiceEnvironmentResource apply() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AppServiceEnvironmentResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, context)
+            .getValue();
         return this;
     }
 
@@ -238,14 +244,18 @@ public final class AppServiceEnvironmentResourceImpl implements AppServiceEnviro
     }
 
     public AppServiceEnvironmentResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AppServiceEnvironmentResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 
@@ -258,8 +268,8 @@ public final class AppServiceEnvironmentResourceImpl implements AppServiceEnviro
     }
 
     public Response<Void> testUpgradeAvailableNotificationWithResponse(Context context) {
-        return serviceManager.appServiceEnvironments().testUpgradeAvailableNotificationWithResponse(resourceGroupName,
-            name, context);
+        return serviceManager.appServiceEnvironments()
+            .testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
     }
 
     public void testUpgradeAvailableNotification() {

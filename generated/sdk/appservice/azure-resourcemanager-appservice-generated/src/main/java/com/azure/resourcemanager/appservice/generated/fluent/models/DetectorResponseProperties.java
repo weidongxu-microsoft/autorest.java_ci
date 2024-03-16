@@ -115,8 +115,7 @@ public final class DetectorResponseProperties {
     }
 
     /**
-     * Get the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
-     * UI.
+     * Get the dataProvidersMetadata property: Additional configuration for different data providers to be used by the UI.
      * 
      * @return the dataProvidersMetadata value.
      */
@@ -125,8 +124,7 @@ public final class DetectorResponseProperties {
     }
 
     /**
-     * Set the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
-     * UI.
+     * Set the dataProvidersMetadata property: Additional configuration for different data providers to be used by the UI.
      * 
      * @param dataProvidersMetadata the dataProvidersMetadata value to set.
      * @return the DetectorResponseProperties object itself.

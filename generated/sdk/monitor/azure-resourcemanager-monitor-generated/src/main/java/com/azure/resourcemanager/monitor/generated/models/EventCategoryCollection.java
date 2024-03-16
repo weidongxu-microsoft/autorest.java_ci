@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * A collection of event categories. Currently possible values are: Administrative, Security, ServiceHealth, Alert,
- * Recommendation, Policy.
+ * A collection of event categories. Currently possible values are: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
  */
 @Fluent
 public final class EventCategoryCollection {

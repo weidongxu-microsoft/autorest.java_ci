@@ -5,18 +5,16 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * The action that is performed when the alert rule becomes active, and when an alert condition is resolved.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "odata.type",
-    defaultImpl = RuleAction.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "odata.type", defaultImpl = RuleAction.class, visible = true)
 @JsonTypeName("RuleAction")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -27,10 +25,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = RuleWebhookAction.class) })
 @Immutable
 public class RuleAction {
+    /*
+     * specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of RuleAction class.
      */
     public RuleAction() {
+        this.odataType = "RuleAction";
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the RuleAction object itself.
+     */
+    protected RuleAction withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

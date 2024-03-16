@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.annotation.ServiceClient;
+import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.azure.core.http.HttpPipeline;
 import com.azure.core.http.HttpResponse;
@@ -36,7 +37,11 @@ import com.azure.resourcemanager.mysql.generated.fluent.GetPrivateDnsZoneSuffixe
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedCapabilitiesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedCapabilitySetsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.LogFilesClient;
+import com.azure.resourcemanager.mysql.generated.fluent.LongRunningBackupsClient;
+import com.azure.resourcemanager.mysql.generated.fluent.LongRunningBackupsOperationsClient;
+import com.azure.resourcemanager.mysql.generated.fluent.MaintenancesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.MySqlManagementClient;
+import com.azure.resourcemanager.mysql.generated.fluent.OperationProgressClient;
 import com.azure.resourcemanager.mysql.generated.fluent.OperationResultsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ReplicasClient;
@@ -169,6 +174,34 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
     }
 
     /**
+     * The LongRunningBackupsClient object to access its operations.
+     */
+    private final LongRunningBackupsClient longRunningBackups;
+
+    /**
+     * Gets the LongRunningBackupsClient object to access its operations.
+     * 
+     * @return the LongRunningBackupsClient object.
+     */
+    public LongRunningBackupsClient getLongRunningBackups() {
+        return this.longRunningBackups;
+    }
+
+    /**
+     * The LongRunningBackupsOperationsClient object to access its operations.
+     */
+    private final LongRunningBackupsOperationsClient longRunningBackupsOperations;
+
+    /**
+     * Gets the LongRunningBackupsOperationsClient object to access its operations.
+     * 
+     * @return the LongRunningBackupsOperationsClient object.
+     */
+    public LongRunningBackupsOperationsClient getLongRunningBackupsOperations() {
+        return this.longRunningBackupsOperations;
+    }
+
+    /**
      * The ConfigurationsClient object to access its operations.
      */
     private final ConfigurationsClient configurations;
@@ -250,6 +283,20 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
      */
     public ServersMigrationsClient getServersMigrations() {
         return this.serversMigrations;
+    }
+
+    /**
+     * The AdvancedThreatProtectionSettingsClient object to access its operations.
+     */
+    private final AdvancedThreatProtectionSettingsClient advancedThreatProtectionSettings;
+
+    /**
+     * Gets the AdvancedThreatProtectionSettingsClient object to access its operations.
+     * 
+     * @return the AdvancedThreatProtectionSettingsClient object.
+     */
+    public AdvancedThreatProtectionSettingsClient getAdvancedThreatProtectionSettings() {
+        return this.advancedThreatProtectionSettings;
     }
 
     /**
@@ -351,6 +398,20 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
     }
 
     /**
+     * The OperationProgressClient object to access its operations.
+     */
+    private final OperationProgressClient operationProgress;
+
+    /**
+     * Gets the OperationProgressClient object to access its operations.
+     * 
+     * @return the OperationProgressClient object.
+     */
+    public OperationProgressClient getOperationProgress() {
+        return this.operationProgress;
+    }
+
+    /**
      * The GetPrivateDnsZoneSuffixesClient object to access its operations.
      */
     private final GetPrivateDnsZoneSuffixesClient getPrivateDnsZoneSuffixes;
@@ -379,17 +440,17 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
     }
 
     /**
-     * The AdvancedThreatProtectionSettingsClient object to access its operations.
+     * The MaintenancesClient object to access its operations.
      */
-    private final AdvancedThreatProtectionSettingsClient advancedThreatProtectionSettings;
+    private final MaintenancesClient maintenances;
 
     /**
-     * Gets the AdvancedThreatProtectionSettingsClient object to access its operations.
+     * Gets the MaintenancesClient object to access its operations.
      * 
-     * @return the AdvancedThreatProtectionSettingsClient object.
+     * @return the MaintenancesClient object.
      */
-    public AdvancedThreatProtectionSettingsClient getAdvancedThreatProtectionSettings() {
-        return this.advancedThreatProtectionSettings;
+    public MaintenancesClient getMaintenances() {
+        return this.maintenances;
     }
 
     /**
@@ -412,12 +473,15 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         this.azureADAdministrators = new AzureADAdministratorsClientImpl(this);
         this.backups = new BackupsClientImpl(this);
         this.backupAndExports = new BackupAndExportsClientImpl(this);
+        this.longRunningBackups = new LongRunningBackupsClientImpl(this);
+        this.longRunningBackupsOperations = new LongRunningBackupsOperationsClientImpl(this);
         this.configurations = new ConfigurationsClientImpl(this);
         this.databases = new DatabasesClientImpl(this);
         this.firewallRules = new FirewallRulesClientImpl(this);
         this.servers = new ServersClientImpl(this);
         this.replicas = new ReplicasClientImpl(this);
         this.serversMigrations = new ServersMigrationsClientImpl(this);
+        this.advancedThreatProtectionSettings = new AdvancedThreatProtectionSettingsClientImpl(this);
         this.logFiles = new LogFilesClientImpl(this);
         this.locationBasedCapabilities = new LocationBasedCapabilitiesClientImpl(this);
         this.locationBasedCapabilitySets = new LocationBasedCapabilitySetsClientImpl(this);
@@ -425,9 +489,10 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         this.checkNameAvailabilities = new CheckNameAvailabilitiesClientImpl(this);
         this.checkNameAvailabilityWithoutLocations = new CheckNameAvailabilityWithoutLocationsClientImpl(this);
         this.operationResults = new OperationResultsClientImpl(this);
+        this.operationProgress = new OperationProgressClientImpl(this);
         this.getPrivateDnsZoneSuffixes = new GetPrivateDnsZoneSuffixesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
-        this.advancedThreatProtectionSettings = new AdvancedThreatProtectionSettingsClientImpl(this);
+        this.maintenances = new MaintenancesClientImpl(this);
     }
 
     /**
@@ -490,8 +555,8 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
-                            SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter()
+                            .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }
@@ -532,7 +597,7 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         }
 
         public String getHeaderValue(String s) {
-            return httpHeaders.getValue(s);
+            return httpHeaders.getValue(HttpHeaderName.fromString(s));
         }
 
         public HttpHeaders getHeaders() {

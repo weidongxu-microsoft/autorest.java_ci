@@ -40,8 +40,7 @@ public final class MetricTrigger {
     private String metricResourceLocation;
 
     /*
-     * the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric
-     * definitions for the metric. Must be between 12 hours and 1 minute.
+     * the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
      */
     @JsonProperty(value = "timeGrain", required = true)
     private Duration timeGrain;
@@ -53,8 +52,7 @@ public final class MetricTrigger {
     private MetricStatisticType statistic;
 
     /*
-     * the range of time in which instance data is collected. This value must be greater than the delay in metric
-     * collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
+     * the range of time in which instance data is collected. This value must be greater than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
      */
     @JsonProperty(value = "timeWindow", required = true)
     private Duration timeWindow;
@@ -78,9 +76,7 @@ public final class MetricTrigger {
     private double threshold;
 
     /*
-     * List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":
-     * "Equals","Values":["default"]}].
+     * List of dimension conditions. For example: [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      */
     @JsonProperty(value = "dimensions")
     private List<ScaleRuleMetricDimension> dimensions;
@@ -178,8 +174,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Get the timeGrain property: the granularity of metrics the rule monitors. Must be one of the predefined values
-     * returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
+     * Get the timeGrain property: the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
      * 
      * @return the timeGrain value.
      */
@@ -188,8 +183,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Set the timeGrain property: the granularity of metrics the rule monitors. Must be one of the predefined values
-     * returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
+     * Set the timeGrain property: the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
      * 
      * @param timeGrain the timeGrain value to set.
      * @return the MetricTrigger object itself.
@@ -220,9 +214,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Get the timeWindow property: the range of time in which instance data is collected. This value must be greater
-     * than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5
-     * minutes.
+     * Get the timeWindow property: the range of time in which instance data is collected. This value must be greater than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
      * 
      * @return the timeWindow value.
      */
@@ -231,9 +223,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Set the timeWindow property: the range of time in which instance data is collected. This value must be greater
-     * than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5
-     * minutes.
+     * Set the timeWindow property: the range of time in which instance data is collected. This value must be greater than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
      * 
      * @param timeWindow the timeWindow value to set.
      * @return the MetricTrigger object itself.
@@ -244,8 +234,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Get the timeAggregation property: time aggregation type. How the data that is collected should be combined over
-     * time. The default value is Average.
+     * Get the timeAggregation property: time aggregation type. How the data that is collected should be combined over time. The default value is Average.
      * 
      * @return the timeAggregation value.
      */
@@ -254,8 +243,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Set the timeAggregation property: time aggregation type. How the data that is collected should be combined over
-     * time. The default value is Average.
+     * Set the timeAggregation property: time aggregation type. How the data that is collected should be combined over time. The default value is Average.
      * 
      * @param timeAggregation the timeAggregation value to set.
      * @return the MetricTrigger object itself.
@@ -306,8 +294,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Get the dimensions property: List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
+     * Get the dimensions property: List of dimension conditions. For example: [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      * 
      * @return the dimensions value.
      */
@@ -316,8 +303,7 @@ public final class MetricTrigger {
     }
 
     /**
-     * Set the dimensions property: List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
+     * Set the dimensions property: List of dimension conditions. For example: [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      * 
      * @param dimensions the dimensions value to set.
      * @return the MetricTrigger object itself.

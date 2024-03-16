@@ -7,6 +7,7 @@ package com.azure.resourcemanager.search.generated.implementation;
 import com.azure.resourcemanager.search.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.search.generated.models.Operation;
 import com.azure.resourcemanager.search.generated.models.OperationDisplay;
+import com.azure.resourcemanager.search.generated.models.OperationProperties;
 
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
@@ -24,6 +25,18 @@ public final class OperationImpl implements Operation {
 
     public OperationDisplay display() {
         return this.innerModel().display();
+    }
+
+    public Boolean isDataAction() {
+        return this.innerModel().isDataAction();
+    }
+
+    public String origin() {
+        return this.innerModel().origin();
+    }
+
+    public OperationProperties properties() {
+        return this.innerModel().properties();
     }
 
     public OperationInner innerModel() {

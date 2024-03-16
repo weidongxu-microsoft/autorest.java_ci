@@ -75,8 +75,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientVaults to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientVaults to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -232,8 +231,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -275,8 +273,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -465,8 +462,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -508,8 +504,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -831,8 +826,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultAccessPolicyParametersInner>> updateAccessPolicyWithResponseAsync(
@@ -880,8 +874,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultAccessPolicyParametersInner>> updateAccessPolicyWithResponseAsync(
@@ -976,8 +969,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
@@ -1010,8 +1002,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
@@ -1046,8 +1037,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
@@ -1063,8 +1053,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1080,8 +1069,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
@@ -1098,8 +1086,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1114,8 +1101,7 @@ public final class VaultsClientImpl implements VaultsClient {
     }
 
     /**
-     * The List operation gets information about the vaults associated with the subscription and within the specified
-     * resource group.
+     * The List operation gets information about the vaults associated with the subscription and within the specified resource group.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
@@ -1265,8 +1251,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedSinglePageAsync() {
@@ -1294,8 +1279,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedSinglePageAsync(Context context) {
@@ -1817,8 +1801,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>>
@@ -1851,8 +1834,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>>

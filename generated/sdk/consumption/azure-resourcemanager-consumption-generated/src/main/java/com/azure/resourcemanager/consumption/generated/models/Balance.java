@@ -63,8 +63,7 @@ public interface Balance {
     BigDecimal beginningBalance();
 
     /**
-     * Gets the endingBalance property: The ending balance for the billing period (for open periods this will be updated
-     * daily).
+     * Gets the endingBalance property: The ending balance for the billing period (for open periods this will be updated daily).
      * 
      * @return the endingBalance value.
      */

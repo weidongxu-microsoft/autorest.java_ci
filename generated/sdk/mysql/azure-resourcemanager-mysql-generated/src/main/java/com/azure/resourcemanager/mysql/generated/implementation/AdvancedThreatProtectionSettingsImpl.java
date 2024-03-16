@@ -31,8 +31,8 @@ public final class AdvancedThreatProtectionSettingsImpl implements AdvancedThrea
 
     public Response<AdvancedThreatProtection> getWithResponse(String resourceGroupName, String serverName,
         AdvancedThreatProtectionName advancedThreatProtectionName, Context context) {
-        Response<AdvancedThreatProtectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            serverName, advancedThreatProtectionName, context);
+        Response<AdvancedThreatProtectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, serverName, advancedThreatProtectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AdvancedThreatProtectionImpl(inner.getValue(), this.manager()));
@@ -66,8 +66,31 @@ public final class AdvancedThreatProtectionSettingsImpl implements AdvancedThrea
     public AdvancedThreatProtection update(String resourceGroupName, String serverName,
         AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionForUpdate parameters,
         Context context) {
-        AdvancedThreatProtectionInner inner = this.serviceClient().update(resourceGroupName, serverName,
-            advancedThreatProtectionName, parameters, context);
+        AdvancedThreatProtectionInner inner = this.serviceClient()
+            .update(resourceGroupName, serverName, advancedThreatProtectionName, parameters, context);
+        if (inner != null) {
+            return new AdvancedThreatProtectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public AdvancedThreatProtection updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters) {
+        AdvancedThreatProtectionInner inner
+            = this.serviceClient().updatePut(resourceGroupName, serverName, advancedThreatProtectionName, parameters);
+        if (inner != null) {
+            return new AdvancedThreatProtectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public AdvancedThreatProtection updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters,
+        Context context) {
+        AdvancedThreatProtectionInner inner = this.serviceClient()
+            .updatePut(resourceGroupName, serverName, advancedThreatProtectionName, parameters, context);
         if (inner != null) {
             return new AdvancedThreatProtectionImpl(inner, this.manager());
         } else {

@@ -118,8 +118,7 @@ public final class StaticSite {
     private EnterpriseGradeCdnStatus enterpriseGradeCdnStatus;
 
     /*
-     * State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled',
-     * 'Disabled' or an empty string.
+     * State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
@@ -195,8 +194,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the repositoryToken property: A user's github repository token. This is used to setup the Github Actions
-     * workflow file and API secrets.
+     * Get the repositoryToken property: A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
      * 
      * @return the repositoryToken value.
      */
@@ -205,8 +203,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the repositoryToken property: A user's github repository token. This is used to setup the Github Actions
-     * workflow file and API secrets.
+     * Set the repositoryToken property: A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
      * 
      * @param repositoryToken the repositoryToken value to set.
      * @return the StaticSite object itself.
@@ -246,8 +243,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not
-     * allowed for a static web app.
+     * Get the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not allowed for a static web app.
      * 
      * @return the stagingEnvironmentPolicy value.
      */
@@ -256,8 +252,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not
-     * allowed for a static web app.
+     * Set the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not allowed for a static web app.
      * 
      * @param stagingEnvironmentPolicy the stagingEnvironmentPolicy value to set.
      * @return the StaticSite object itself.
@@ -268,8 +263,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
-     * web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the allowConfigFileUpdates value.
      */
@@ -278,8 +272,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
-     * web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param allowConfigFileUpdates the allowConfigFileUpdates value to set.
      * @return the StaticSite object itself.
@@ -346,8 +339,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the provider property: The provider that submitted the last deployment to the primary environment of the
-     * static site.
+     * Get the provider property: The provider that submitted the last deployment to the primary environment of the static site.
      * 
      * @return the provider value.
      */
@@ -356,8 +348,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the provider property: The provider that submitted the last deployment to the primary environment of the
-     * static site.
+     * Set the provider property: The provider that submitted the last deployment to the primary environment of the static site.
      * 
      * @param provider the provider value to set.
      * @return the StaticSite object itself.
@@ -368,8 +359,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving
-     * traffic to the static web app.
+     * Get the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving traffic to the static web app.
      * 
      * @return the enterpriseGradeCdnStatus value.
      */
@@ -378,8 +368,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving
-     * traffic to the static web app.
+     * Set the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving traffic to the static web app.
      * 
      * @param enterpriseGradeCdnStatus the enterpriseGradeCdnStatus value to set.
      * @return the StaticSite object itself.
@@ -390,8 +379,7 @@ public final class StaticSite {
     }
 
     /**
-     * Get the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web
-     * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Get the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -400,8 +388,7 @@ public final class StaticSite {
     }
 
     /**
-     * Set the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web
-     * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Set the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StaticSite object itself.

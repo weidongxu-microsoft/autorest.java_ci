@@ -88,7 +88,8 @@ public final class ProcessInfoImpl implements ProcessInfo {
         List<ProcessThreadInfoInner> inner = this.innerModel().threads();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -107,7 +108,8 @@ public final class ProcessInfoImpl implements ProcessInfo {
         List<ProcessModuleInfoInner> inner = this.innerModel().modules();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

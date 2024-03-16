@@ -58,8 +58,7 @@ public interface CustomIpPrefix {
     String etag();
 
     /**
-     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
-     * from.
+     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
      * 
      * @return the zones value.
      */
@@ -80,8 +79,7 @@ public interface CustomIpPrefix {
     String asn();
 
     /**
-     * Gets the cidr property: The prefix range in CIDR notation. Should include the start address and the prefix
-     * length.
+     * Gets the cidr property: The prefix range in CIDR notation. Should include the start address and the prefix length.
      * 
      * @return the cidr value.
      */
@@ -258,8 +256,7 @@ public interface CustomIpPrefix {
         }
 
         /**
-         * The stage of the CustomIpPrefix definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CustomIpPrefix definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithZones,
@@ -314,8 +311,7 @@ public interface CustomIpPrefix {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource
-             * needs to come from..
+             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from..
              * 
              * @param zones A list of availability zones denoting the IP allocated for the resource needs to come from.
              * @return the next definition stage.
@@ -341,8 +337,7 @@ public interface CustomIpPrefix {
          */
         interface WithCidr {
             /**
-             * Specifies the cidr property: The prefix range in CIDR notation. Should include the start address and the
-             * prefix length..
+             * Specifies the cidr property: The prefix range in CIDR notation. Should include the start address and the prefix length..
              * 
              * @param cidr The prefix range in CIDR notation. Should include the start address and the prefix length.
              * @return the next definition stage.

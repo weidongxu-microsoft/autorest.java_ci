@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * A rule metric data source. The discriminator value is always RuleMetricDataSource in this case.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = RuleMetricDataSource.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource")
 @Fluent
 public final class RuleMetricDataSource extends RuleDataSource {
@@ -26,6 +30,7 @@ public final class RuleMetricDataSource extends RuleDataSource {
      * Creates an instance of RuleMetricDataSource class.
      */
     public RuleMetricDataSource() {
+        withOdataType("Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource");
     }
 
     /**

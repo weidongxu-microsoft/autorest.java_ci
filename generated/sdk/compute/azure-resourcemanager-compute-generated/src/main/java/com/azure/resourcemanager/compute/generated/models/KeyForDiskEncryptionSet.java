@@ -14,15 +14,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class KeyForDiskEncryptionSet {
     /*
-     * Resource id of the KeyVault containing the key or secret. This property is optional and cannot be used if the
-     * KeyVault subscription is not the same as the Disk Encryption Set subscription.
+     * Resource id of the KeyVault containing the key or secret. This property is optional and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
      */
     @JsonProperty(value = "sourceVault")
     private SourceVault sourceVault;
 
     /*
-     * Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is required regardless of
-     * rotationToLatestKeyVersionEnabled value.
+     * Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is required regardless of rotationToLatestKeyVersionEnabled value.
      */
     @JsonProperty(value = "keyUrl", required = true)
     private String keyUrl;
@@ -34,8 +32,7 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Get the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional
-     * and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
+     * Get the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
      * 
      * @return the sourceVault value.
      */
@@ -44,8 +41,7 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Set the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional
-     * and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
+     * Set the sourceVault property: Resource id of the KeyVault containing the key or secret. This property is optional and cannot be used if the KeyVault subscription is not the same as the Disk Encryption Set subscription.
      * 
      * @param sourceVault the sourceVault value to set.
      * @return the KeyForDiskEncryptionSet object itself.
@@ -56,8 +52,7 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Get the keyUrl property: Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is
-     * required regardless of rotationToLatestKeyVersionEnabled value.
+     * Get the keyUrl property: Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is required regardless of rotationToLatestKeyVersionEnabled value.
      * 
      * @return the keyUrl value.
      */
@@ -66,8 +61,7 @@ public final class KeyForDiskEncryptionSet {
     }
 
     /**
-     * Set the keyUrl property: Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is
-     * required regardless of rotationToLatestKeyVersionEnabled value.
+     * Set the keyUrl property: Fully versioned Key Url pointing to a key in KeyVault. Version segment of the Url is required regardless of rotationToLatestKeyVersionEnabled value.
      * 
      * @param keyUrl the keyUrl value to set.
      * @return the KeyForDiskEncryptionSet object itself.

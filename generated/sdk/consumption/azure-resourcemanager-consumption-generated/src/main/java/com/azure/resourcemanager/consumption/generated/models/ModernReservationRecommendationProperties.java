@@ -7,6 +7,7 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
@@ -19,15 +20,22 @@ import java.util.UUID;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "scope",
-    defaultImpl = ModernReservationRecommendationProperties.class)
+    defaultImpl = ModernReservationRecommendationProperties.class,
+    visible = true)
 @JsonTypeName("ModernReservationRecommendationProperties")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "Single", value = ModernSingleScopeReservationRecommendationProperties.class),
     @JsonSubTypes.Type(name = "Shared", value = ModernSharedScopeReservationRecommendationProperties.class) })
 @Immutable
 public class ModernReservationRecommendationProperties {
+    /*
+     * Shared or single recommendation.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "scope", required = true)
+    private String scope;
+
     /*
      * Resource Location.
      */
@@ -128,6 +136,27 @@ public class ModernReservationRecommendationProperties {
      * Creates an instance of ModernReservationRecommendationProperties class.
      */
     public ModernReservationRecommendationProperties() {
+        this.scope = "ModernReservationRecommendationProperties";
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     * 
+     * @return the scope value.
+     */
+    public String scope() {
+        return this.scope;
+    }
+
+    /**
+     * Set the scope property: Shared or single recommendation.
+     * 
+     * @param scope the scope value to set.
+     * @return the ModernReservationRecommendationProperties object itself.
+     */
+    protected ModernReservationRecommendationProperties withScope(String scope) {
+        this.scope = scope;
+        return this;
     }
 
     /**

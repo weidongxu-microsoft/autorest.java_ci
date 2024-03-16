@@ -149,8 +149,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public Response<Void> deleteCertificateWithResponse(String resourceGroupName, String certificateOrderName,
         String name, Context context) {
-        return this.serviceClient().deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name,
-            context);
+        return this.serviceClient()
+            .deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
     }
 
     public void deleteCertificate(String resourceGroupName, String certificateOrderName, String name) {
@@ -159,8 +159,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public Response<Void> reissueWithResponse(String resourceGroupName, String certificateOrderName,
         ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context) {
-        return this.serviceClient().reissueWithResponse(resourceGroupName, certificateOrderName,
-            reissueCertificateOrderRequest, context);
+        return this.serviceClient()
+            .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
     }
 
     public void reissue(String resourceGroupName, String certificateOrderName,
@@ -170,8 +170,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public Response<Void> renewWithResponse(String resourceGroupName, String certificateOrderName,
         RenewCertificateOrderRequest renewCertificateOrderRequest, Context context) {
-        return this.serviceClient().renewWithResponse(resourceGroupName, certificateOrderName,
-            renewCertificateOrderRequest, context);
+        return this.serviceClient()
+            .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
     }
 
     public void renew(String resourceGroupName, String certificateOrderName,
@@ -190,8 +190,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public Response<Void> resendRequestEmailsWithResponse(String resourceGroupName, String certificateOrderName,
         NameIdentifierInner nameIdentifier, Context context) {
-        return this.serviceClient().resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName,
-            nameIdentifier, context);
+        return this.serviceClient()
+            .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
     }
 
     public void resendRequestEmails(String resourceGroupName, String certificateOrderName,
@@ -201,8 +201,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public Response<SiteSeal> retrieveSiteSealWithResponse(String resourceGroupName, String certificateOrderName,
         SiteSealRequest siteSealRequest, Context context) {
-        Response<SiteSealInner> inner = this.serviceClient().retrieveSiteSealWithResponse(resourceGroupName,
-            certificateOrderName, siteSealRequest, context);
+        Response<SiteSealInner> inner = this.serviceClient()
+            .retrieveSiteSealWithResponse(resourceGroupName, certificateOrderName, siteSealRequest, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SiteSealImpl(inner.getValue(), this.manager()));
@@ -237,7 +237,9 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             = this.serviceClient().retrieveCertificateActionsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -249,7 +251,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             = this.serviceClient().retrieveCertificateActions(resourceGroupName, name);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -260,8 +263,11 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         Response<List<CertificateEmailInner>> inner
             = this.serviceClient().retrieveCertificateEmailHistoryWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new CertificateEmailImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -272,7 +278,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             = this.serviceClient().retrieveCertificateEmailHistory(resourceGroupName, name);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new CertificateEmailImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

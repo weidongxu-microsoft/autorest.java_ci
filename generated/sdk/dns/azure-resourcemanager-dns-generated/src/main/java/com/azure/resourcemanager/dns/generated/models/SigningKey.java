@@ -44,8 +44,7 @@ public final class SigningKey {
     private String publicKey;
 
     /*
-     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See:
-     * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
+     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
      */
     @JsonProperty(value = "securityAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer securityAlgorithmType;
@@ -102,9 +101,7 @@ public final class SigningKey {
     }
 
     /**
-     * Get the securityAlgorithmType property: The security algorithm type represents the standard security algorithm
-     * number of the DNSKEY Resource Record. See:
-     * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
+     * Get the securityAlgorithmType property: The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
      * 
      * @return the securityAlgorithmType value.
      */

@@ -78,14 +78,16 @@ public final class PermissionBindingImpl
     }
 
     public PermissionBinding create() {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings().createOrUpdate(resourceGroupName,
-            namespaceName, permissionBindingName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .createOrUpdate(resourceGroupName, namespaceName, permissionBindingName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PermissionBinding create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings().createOrUpdate(resourceGroupName,
-            namespaceName, permissionBindingName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .createOrUpdate(resourceGroupName, namespaceName, permissionBindingName, this.innerModel(), context);
         return this;
     }
 
@@ -100,14 +102,16 @@ public final class PermissionBindingImpl
     }
 
     public PermissionBinding apply() {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings().createOrUpdate(resourceGroupName,
-            namespaceName, permissionBindingName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .createOrUpdate(resourceGroupName, namespaceName, permissionBindingName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PermissionBinding apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings().createOrUpdate(resourceGroupName,
-            namespaceName, permissionBindingName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .createOrUpdate(resourceGroupName, namespaceName, permissionBindingName, this.innerModel(), context);
         return this;
     }
 
@@ -121,14 +125,18 @@ public final class PermissionBindingImpl
     }
 
     public PermissionBinding refresh() {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings()
-            .getWithResponse(resourceGroupName, namespaceName, permissionBindingName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .getWithResponse(resourceGroupName, namespaceName, permissionBindingName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PermissionBinding refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPermissionBindings()
-            .getWithResponse(resourceGroupName, namespaceName, permissionBindingName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPermissionBindings()
+            .getWithResponse(resourceGroupName, namespaceName, permissionBindingName, context)
+            .getValue();
         return this;
     }
 

@@ -13,17 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ImmutableStorageAccount {
     /*
-     * A boolean flag which enables account-level immutability. All the containers under such an account have
-     * object-level immutability enabled by default.
+     * A boolean flag which enables account-level immutability. All the containers under such an account have object-level immutability enabled by default.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
-     * Specifies the default account-level immutability policy which is inherited and applied to objects that do not
-     * possess an explicit immutability policy at the object level. The object-level immutability policy has higher
-     * precedence than the container-level immutability policy, which has a higher precedence than the account-level
-     * immutability policy.
+     * Specifies the default account-level immutability policy which is inherited and applied to objects that do not possess an explicit immutability policy at the object level. The object-level immutability policy has higher precedence than the container-level immutability policy, which has a higher precedence than the account-level immutability policy.
      */
     @JsonProperty(value = "immutabilityPolicy")
     private AccountImmutabilityPolicyProperties immutabilityPolicy;
@@ -35,8 +31,7 @@ public final class ImmutableStorageAccount {
     }
 
     /**
-     * Get the enabled property: A boolean flag which enables account-level immutability. All the containers under such
-     * an account have object-level immutability enabled by default.
+     * Get the enabled property: A boolean flag which enables account-level immutability. All the containers under such an account have object-level immutability enabled by default.
      * 
      * @return the enabled value.
      */
@@ -45,8 +40,7 @@ public final class ImmutableStorageAccount {
     }
 
     /**
-     * Set the enabled property: A boolean flag which enables account-level immutability. All the containers under such
-     * an account have object-level immutability enabled by default.
+     * Set the enabled property: A boolean flag which enables account-level immutability. All the containers under such an account have object-level immutability enabled by default.
      * 
      * @param enabled the enabled value to set.
      * @return the ImmutableStorageAccount object itself.
@@ -57,10 +51,7 @@ public final class ImmutableStorageAccount {
     }
 
     /**
-     * Get the immutabilityPolicy property: Specifies the default account-level immutability policy which is inherited
-     * and applied to objects that do not possess an explicit immutability policy at the object level. The object-level
-     * immutability policy has higher precedence than the container-level immutability policy, which has a higher
-     * precedence than the account-level immutability policy.
+     * Get the immutabilityPolicy property: Specifies the default account-level immutability policy which is inherited and applied to objects that do not possess an explicit immutability policy at the object level. The object-level immutability policy has higher precedence than the container-level immutability policy, which has a higher precedence than the account-level immutability policy.
      * 
      * @return the immutabilityPolicy value.
      */
@@ -69,10 +60,7 @@ public final class ImmutableStorageAccount {
     }
 
     /**
-     * Set the immutabilityPolicy property: Specifies the default account-level immutability policy which is inherited
-     * and applied to objects that do not possess an explicit immutability policy at the object level. The object-level
-     * immutability policy has higher precedence than the container-level immutability policy, which has a higher
-     * precedence than the account-level immutability policy.
+     * Set the immutabilityPolicy property: Specifies the default account-level immutability policy which is inherited and applied to objects that do not possess an explicit immutability policy at the object level. The object-level immutability policy has higher precedence than the container-level immutability policy, which has a higher precedence than the account-level immutability policy.
      * 
      * @param immutabilityPolicy the immutabilityPolicy value to set.
      * @return the ImmutableStorageAccount object itself.

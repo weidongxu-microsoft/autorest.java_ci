@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Filters limit rule actions to a subset of blobs within the storage account. If multiple filters are defined, a
- * logical AND is performed on all filters.
+ * Filters limit rule actions to a subset of blobs within the storage account. If multiple filters are defined, a logical AND is performed on all filters.
  */
 @Fluent
 public final class ManagementPolicyFilter {
@@ -22,8 +21,7 @@ public final class ManagementPolicyFilter {
     private List<String> prefixMatch;
 
     /*
-     * An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete
-     * actions are supported for appendBlob.
+     * An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete actions are supported for appendBlob.
      */
     @JsonProperty(value = "blobTypes", required = true)
     private List<String> blobTypes;
@@ -61,8 +59,7 @@ public final class ManagementPolicyFilter {
     }
 
     /**
-     * Get the blobTypes property: An array of predefined enum values. Currently blockBlob supports all tiering and
-     * delete actions. Only delete actions are supported for appendBlob.
+     * Get the blobTypes property: An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete actions are supported for appendBlob.
      * 
      * @return the blobTypes value.
      */
@@ -71,8 +68,7 @@ public final class ManagementPolicyFilter {
     }
 
     /**
-     * Set the blobTypes property: An array of predefined enum values. Currently blockBlob supports all tiering and
-     * delete actions. Only delete actions are supported for appendBlob.
+     * Set the blobTypes property: An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete actions are supported for appendBlob.
      * 
      * @param blobTypes the blobTypes value to set.
      * @return the ManagementPolicyFilter object itself.

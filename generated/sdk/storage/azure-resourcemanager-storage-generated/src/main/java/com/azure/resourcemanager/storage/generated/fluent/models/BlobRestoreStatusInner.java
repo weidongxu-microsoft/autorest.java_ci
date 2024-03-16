@@ -15,9 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class BlobRestoreStatusInner {
     /*
-     * The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. -
-     * Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is
-     * failed.
+     * The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is failed.
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private BlobRestoreProgressStatus status;
@@ -47,9 +45,7 @@ public final class BlobRestoreStatusInner {
     }
 
     /**
-     * Get the status property: The status of blob restore progress. Possible values are: - InProgress: Indicates that
-     * blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed:
-     * Indicates that blob restore is failed.
+     * Get the status property: The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is failed.
      * 
      * @return the status value.
      */

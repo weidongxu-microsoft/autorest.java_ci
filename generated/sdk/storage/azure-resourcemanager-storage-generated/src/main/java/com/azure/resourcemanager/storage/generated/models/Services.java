@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The signed services accessible with the account SAS. Possible values include: Blob (b), Queue (q), Table (t), File
- * (f).
+ * The signed services accessible with the account SAS. Possible values include: Blob (b), Queue (q), Table (t), File (f).
  */
 public final class Services extends ExpandableStringEnum<Services> {
     /**

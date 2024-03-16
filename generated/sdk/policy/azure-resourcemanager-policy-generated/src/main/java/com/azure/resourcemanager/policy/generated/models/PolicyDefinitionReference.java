@@ -68,8 +68,7 @@ public final class PolicyDefinitionReference {
     }
 
     /**
-     * Get the parameters property: The parameter values for the referenced policy rule. The keys are the parameter
-     * names.
+     * Get the parameters property: The parameter values for the referenced policy rule. The keys are the parameter names.
      * 
      * @return the parameters value.
      */
@@ -78,8 +77,7 @@ public final class PolicyDefinitionReference {
     }
 
     /**
-     * Set the parameters property: The parameter values for the referenced policy rule. The keys are the parameter
-     * names.
+     * Set the parameters property: The parameter values for the referenced policy rule. The keys are the parameter names.
      * 
      * @param parameters the parameters value to set.
      * @return the PolicyDefinitionReference object itself.
@@ -90,8 +88,7 @@ public final class PolicyDefinitionReference {
     }
 
     /**
-     * Get the policyDefinitionReferenceId property: A unique id (within the policy set definition) for this policy
-     * definition reference.
+     * Get the policyDefinitionReferenceId property: A unique id (within the policy set definition) for this policy definition reference.
      * 
      * @return the policyDefinitionReferenceId value.
      */
@@ -100,8 +97,7 @@ public final class PolicyDefinitionReference {
     }
 
     /**
-     * Set the policyDefinitionReferenceId property: A unique id (within the policy set definition) for this policy
-     * definition reference.
+     * Set the policyDefinitionReferenceId property: A unique id (within the policy set definition) for this policy definition reference.
      * 
      * @param policyDefinitionReferenceId the policyDefinitionReferenceId value to set.
      * @return the PolicyDefinitionReference object itself.

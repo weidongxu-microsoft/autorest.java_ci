@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * IsNotNull Advanced Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = IsNotNullAdvancedFilter.class,
+    visible = true)
 @JsonTypeName("IsNotNull")
 @Fluent
 public final class IsNotNullAdvancedFilter extends AdvancedFilter {
@@ -19,6 +23,7 @@ public final class IsNotNullAdvancedFilter extends AdvancedFilter {
      * Creates an instance of IsNotNullAdvancedFilter class.
      */
     public IsNotNullAdvancedFilter() {
+        withOperatorType(AdvancedFilterOperatorType.IS_NOT_NULL);
     }
 
     /**

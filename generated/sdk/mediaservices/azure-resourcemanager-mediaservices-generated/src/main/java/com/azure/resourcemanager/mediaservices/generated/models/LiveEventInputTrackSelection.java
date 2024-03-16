@@ -8,14 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A track selection condition. This property is reserved for future use, any value set on this property will be
- * ignored.
+ * A track selection condition. This property is reserved for future use, any value set on this property will be ignored.
  */
 @Fluent
 public final class LiveEventInputTrackSelection {
     /*
-     * Property name to select. This property is reserved for future use, any value set on this property will be
-     * ignored.
+     * Property name to select. This property is reserved for future use, any value set on this property will be ignored.
      */
     @JsonProperty(value = "property")
     private String property;
@@ -27,8 +25,7 @@ public final class LiveEventInputTrackSelection {
     private String operation;
 
     /*
-     * Property value to select. This property is reserved for future use, any value set on this property will be
-     * ignored.
+     * Property value to select. This property is reserved for future use, any value set on this property will be ignored.
      */
     @JsonProperty(value = "value")
     private String value;
@@ -40,8 +37,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Get the property property: Property name to select. This property is reserved for future use, any value set on
-     * this property will be ignored.
+     * Get the property property: Property name to select. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @return the property value.
      */
@@ -50,8 +46,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Set the property property: Property name to select. This property is reserved for future use, any value set on
-     * this property will be ignored.
+     * Set the property property: Property name to select. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @param property the property value to set.
      * @return the LiveEventInputTrackSelection object itself.
@@ -62,8 +57,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Get the operation property: Comparing operation. This property is reserved for future use, any value set on this
-     * property will be ignored.
+     * Get the operation property: Comparing operation. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @return the operation value.
      */
@@ -72,8 +66,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Set the operation property: Comparing operation. This property is reserved for future use, any value set on this
-     * property will be ignored.
+     * Set the operation property: Comparing operation. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @param operation the operation value to set.
      * @return the LiveEventInputTrackSelection object itself.
@@ -84,8 +77,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Get the value property: Property value to select. This property is reserved for future use, any value set on this
-     * property will be ignored.
+     * Get the value property: Property value to select. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @return the value value.
      */
@@ -94,8 +86,7 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Set the value property: Property value to select. This property is reserved for future use, any value set on this
-     * property will be ignored.
+     * Set the value property: Property value to select. This property is reserved for future use, any value set on this property will be ignored.
      * 
      * @param value the value value to set.
      * @return the LiveEventInputTrackSelection object itself.

@@ -22,8 +22,7 @@ public final class GalleryApplicationList {
     private List<GalleryApplicationInner> value;
 
     /*
-     * The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this
-     * to fetch the next page of gallery Application Definitions.
+     * The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this to fetch the next page of gallery Application Definitions.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class GalleryApplicationList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery.
-     * Call ListNext() with this to fetch the next page of gallery Application Definitions.
+     * Get the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this to fetch the next page of gallery Application Definitions.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class GalleryApplicationList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery.
-     * Call ListNext() with this to fetch the next page of gallery Application Definitions.
+     * Set the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this to fetch the next page of gallery Application Definitions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryApplicationList object itself.

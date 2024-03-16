@@ -50,8 +50,7 @@ public final class OperationsClientImpl implements OperationsClient {
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientOperations to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -69,8 +68,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of resource provider operations along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a list of resource provider operations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Mono<Response<OperationListResultInner>> listWithResponseAsync() {
@@ -91,8 +89,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of resource provider operations along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a list of resource provider operations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationListResultInner>> listWithResponseAsync(Context context) {

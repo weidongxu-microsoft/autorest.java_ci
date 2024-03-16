@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The instance view of a capacity reservation that includes the name of the capacity reservation. It is used for the
- * response to the instance view of a capacity reservation group.
+ * The instance view of a capacity reservation that includes the name of the capacity reservation. It is used for the response to the instance view of a capacity reservation group.
  */
 @Fluent
 public final class CapacityReservationInstanceViewWithName extends CapacityReservationInstanceView {

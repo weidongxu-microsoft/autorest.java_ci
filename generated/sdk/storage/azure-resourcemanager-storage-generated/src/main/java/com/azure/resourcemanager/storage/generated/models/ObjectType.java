@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * This is a required field. This field specifies the scope of the inventory created either at the blob or container
- * level.
+ * This is a required field. This field specifies the scope of the inventory created either at the blob or container level.
  */
 public final class ObjectType extends ExpandableStringEnum<ObjectType> {
     /**

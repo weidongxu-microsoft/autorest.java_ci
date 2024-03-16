@@ -55,8 +55,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,8 +64,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the RouteInner object itself.
@@ -161,8 +159,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Get the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only
-     * allowed in routes where the next hop type is VirtualAppliance.
+     * Get the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
      * 
      * @return the nextHopIpAddress value.
      */
@@ -171,8 +168,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Set the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only
-     * allowed in routes where the next hop type is VirtualAppliance.
+     * Set the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
      * 
      * @param nextHopIpAddress the nextHopIpAddress value to set.
      * @return the RouteInner object itself.
@@ -195,8 +191,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Get the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes
-     * regardless of LPM.
+     * Get the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes regardless of LPM.
      * 
      * @return the hasBgpOverride value.
      */
@@ -205,8 +200,7 @@ public final class RouteInner extends SubResource {
     }
 
     /**
-     * Set the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes
-     * regardless of LPM.
+     * Set the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes regardless of LPM.
      * 
      * @param hasBgpOverride the hasBgpOverride value to set.
      * @return the RouteInner object itself.

@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * NumberNotInRange Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = NumberNotInRangeFilter.class,
+    visible = true)
 @JsonTypeName("NumberNotInRange")
 @Fluent
 public final class NumberNotInRangeFilter extends Filter {
@@ -27,6 +31,7 @@ public final class NumberNotInRangeFilter extends Filter {
      * Creates an instance of NumberNotInRangeFilter class.
      */
     public NumberNotInRangeFilter() {
+        withOperatorType(FilterOperatorType.NUMBER_NOT_IN_RANGE);
     }
 
     /**

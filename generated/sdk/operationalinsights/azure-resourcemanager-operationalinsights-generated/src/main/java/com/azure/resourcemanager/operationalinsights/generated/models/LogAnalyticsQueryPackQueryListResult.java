@@ -22,8 +22,7 @@ public final class LogAnalyticsQueryPackQueryListResult {
     private List<LogAnalyticsQueryPackQueryInner> value;
 
     /*
-     * The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned
-     * in the result set.
+     * The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned in the result set.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class LogAnalyticsQueryPackQueryListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many
-     * QueryPack-Queries where returned in the result set.
+     * Get the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned in the result set.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class LogAnalyticsQueryPackQueryListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many
-     * QueryPack-Queries where returned in the result set.
+     * Set the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned in the result set.
      * 
      * @param nextLink the nextLink value to set.
      * @return the LogAnalyticsQueryPackQueryListResult object itself.

@@ -60,8 +60,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteConnections to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteConnections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -273,8 +272,10 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     public SyncPoller<PollResult<ExpressRouteConnectionInner>, ExpressRouteConnectionInner> beginCreateOrUpdate(
         String resourceGroupName, String expressRouteGatewayName, String connectionName,
         ExpressRouteConnectionInner putExpressRouteConnectionParameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, connectionName,
-            putExpressRouteConnectionParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, connectionName,
+                putExpressRouteConnectionParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -294,8 +295,10 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     public SyncPoller<PollResult<ExpressRouteConnectionInner>, ExpressRouteConnectionInner> beginCreateOrUpdate(
         String resourceGroupName, String expressRouteGatewayName, String connectionName,
         ExpressRouteConnectionInner putExpressRouteConnectionParameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, connectionName,
-            putExpressRouteConnectionParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, connectionName,
+                putExpressRouteConnectionParameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -387,8 +390,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ExpressRouteConnection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified ExpressRouteConnection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -430,8 +432,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ExpressRouteConnection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified ExpressRouteConnection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteConnectionInner>> getWithResponseAsync(String resourceGroupName,

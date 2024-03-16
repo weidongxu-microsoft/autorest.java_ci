@@ -53,8 +53,7 @@ public final class BudgetTimePeriod {
     }
 
     /**
-     * Get the endDate property: The end date for the budget. If not provided, we default this to 10 years from the
-     * start date.
+     * Get the endDate property: The end date for the budget. If not provided, we default this to 10 years from the start date.
      * 
      * @return the endDate value.
      */
@@ -63,8 +62,7 @@ public final class BudgetTimePeriod {
     }
 
     /**
-     * Set the endDate property: The end date for the budget. If not provided, we default this to 10 years from the
-     * start date.
+     * Set the endDate property: The end date for the budget. If not provided, we default this to 10 years from the start date.
      * 
      * @param endDate the endDate value to set.
      * @return the BudgetTimePeriod object itself.

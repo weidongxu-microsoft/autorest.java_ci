@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LegacyMicrosoftAccount {
     /*
-     * <code>false</code> if the legacy Microsoft Account provider should not be enabled despite the set registration;
-     * otherwise, <code>true</code>.
+     * <code>false</code> if the legacy Microsoft Account provider should not be enabled despite the set registration; otherwise, <code>true</code>.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -44,8 +43,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the legacy Microsoft Account provider should not be
-     * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the legacy Microsoft Account provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -54,8 +52,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the legacy Microsoft Account provider should not be
-     * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the legacy Microsoft Account provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the LegacyMicrosoftAccount object itself.
@@ -66,8 +63,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Get the registration property: The configuration settings of the app registration for the legacy Microsoft
-     * Account provider.
+     * Get the registration property: The configuration settings of the app registration for the legacy Microsoft Account provider.
      * 
      * @return the registration value.
      */
@@ -76,8 +72,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Set the registration property: The configuration settings of the app registration for the legacy Microsoft
-     * Account provider.
+     * Set the registration property: The configuration settings of the app registration for the legacy Microsoft Account provider.
      * 
      * @param registration the registration value to set.
      * @return the LegacyMicrosoftAccount object itself.
@@ -108,8 +103,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Get the validation property: The configuration settings of the legacy Microsoft Account provider token validation
-     * flow.
+     * Get the validation property: The configuration settings of the legacy Microsoft Account provider token validation flow.
      * 
      * @return the validation value.
      */
@@ -118,8 +112,7 @@ public final class LegacyMicrosoftAccount {
     }
 
     /**
-     * Set the validation property: The configuration settings of the legacy Microsoft Account provider token validation
-     * flow.
+     * Set the validation property: The configuration settings of the legacy Microsoft Account provider token validation flow.
      * 
      * @param validation the validation value to set.
      * @return the LegacyMicrosoftAccount object itself.

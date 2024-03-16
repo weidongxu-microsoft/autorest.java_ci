@@ -20,8 +20,7 @@ public interface FirewallPolicyRuleCollectionGroup {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -42,8 +41,7 @@ public interface FirewallPolicyRuleCollectionGroup {
     String type();
 
     /**
-     * Gets the size property: A read-only string that represents the size of the
-     * FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
+     * Gets the size property: A read-only string that represents the size of the FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
      * 
      * @return the size value.
      */
@@ -64,8 +62,7 @@ public interface FirewallPolicyRuleCollectionGroup {
     List<FirewallPolicyRuleCollection> ruleCollections();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the firewall policy rule collection group
-     * resource.
+     * Gets the provisioningState property: The provisioning state of the firewall policy rule collection group resource.
      * 
      * @return the provisioningState value.
      */
@@ -79,8 +76,7 @@ public interface FirewallPolicyRuleCollectionGroup {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyRuleCollectionGroupInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyRuleCollectionGroupInner object.
      * 
      * @return the inner object.
      */
@@ -118,8 +114,7 @@ public interface FirewallPolicyRuleCollectionGroup {
         }
 
         /**
-         * The stage of the FirewallPolicyRuleCollectionGroup definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FirewallPolicyRuleCollectionGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithName, DefinitionStages.WithPriority, DefinitionStages.WithRuleCollections {
@@ -144,11 +139,9 @@ public interface FirewallPolicyRuleCollectionGroup {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -217,11 +210,9 @@ public interface FirewallPolicyRuleCollectionGroup {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);

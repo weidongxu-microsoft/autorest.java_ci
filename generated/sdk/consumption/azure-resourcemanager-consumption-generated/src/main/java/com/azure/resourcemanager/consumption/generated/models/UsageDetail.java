@@ -33,6 +33,13 @@ public interface UsageDetail {
     String type();
 
     /**
+     * Gets the kind property: Specifies the kind of usage details.
+     * 
+     * @return the kind value.
+     */
+    UsageDetailsKind kind();
+
+    /**
      * Gets the etag property: The etag for the resource.
      * 
      * @return the etag value.

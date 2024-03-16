@@ -38,15 +38,13 @@ public final class EffectiveNetworkSecurityRule {
     private String destinationPortRange;
 
     /*
-     * The source port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as
-     * separator (e.g. 100-400), or an asterisk (*).
+     * The source port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      */
     @JsonProperty(value = "sourcePortRanges")
     private List<String> sourcePortRanges;
 
     /*
-     * The destination port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as
-     * separator (e.g. 100-400), or an asterisk (*).
+     * The destination port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      */
     @JsonProperty(value = "destinationPortRanges")
     private List<String> destinationPortRanges;
@@ -64,15 +62,13 @@ public final class EffectiveNetworkSecurityRule {
     private String destinationAddressPrefix;
 
     /*
-     * The source address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork,
-     * AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * The source address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      */
     @JsonProperty(value = "sourceAddressPrefixes")
     private List<String> sourceAddressPrefixes;
 
     /*
-     * The destination address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork,
-     * AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * The destination address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      */
     @JsonProperty(value = "destinationAddressPrefixes")
     private List<String> destinationAddressPrefixes;
@@ -194,8 +190,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Get the sourcePortRanges property: The source port ranges. Expected values include a single integer between 0 and
-     * 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
+     * Get the sourcePortRanges property: The source port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      * 
      * @return the sourcePortRanges value.
      */
@@ -204,8 +199,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Set the sourcePortRanges property: The source port ranges. Expected values include a single integer between 0 and
-     * 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
+     * Set the sourcePortRanges property: The source port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      * 
      * @param sourcePortRanges the sourcePortRanges value to set.
      * @return the EffectiveNetworkSecurityRule object itself.
@@ -216,8 +210,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Get the destinationPortRanges property: The destination port ranges. Expected values include a single integer
-     * between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
+     * Get the destinationPortRanges property: The destination port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      * 
      * @return the destinationPortRanges value.
      */
@@ -226,8 +219,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Set the destinationPortRanges property: The destination port ranges. Expected values include a single integer
-     * between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
+     * Set the destinationPortRanges property: The destination port ranges. Expected values include a single integer between 0 and 65535, a range using '-' as separator (e.g. 100-400), or an asterisk (*).
      * 
      * @param destinationPortRanges the destinationPortRanges value to set.
      * @return the EffectiveNetworkSecurityRule object itself.
@@ -278,8 +270,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Get the sourceAddressPrefixes property: The source address prefixes. Expected values include CIDR IP ranges,
-     * Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * Get the sourceAddressPrefixes property: The source address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      * 
      * @return the sourceAddressPrefixes value.
      */
@@ -288,8 +279,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Set the sourceAddressPrefixes property: The source address prefixes. Expected values include CIDR IP ranges,
-     * Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * Set the sourceAddressPrefixes property: The source address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      * 
      * @param sourceAddressPrefixes the sourceAddressPrefixes value to set.
      * @return the EffectiveNetworkSecurityRule object itself.
@@ -300,8 +290,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Get the destinationAddressPrefixes property: The destination address prefixes. Expected values include CIDR IP
-     * ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * Get the destinationAddressPrefixes property: The destination address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      * 
      * @return the destinationAddressPrefixes value.
      */
@@ -310,8 +299,7 @@ public final class EffectiveNetworkSecurityRule {
     }
 
     /**
-     * Set the destinationAddressPrefixes property: The destination address prefixes. Expected values include CIDR IP
-     * ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
+     * Set the destinationAddressPrefixes property: The destination address prefixes. Expected values include CIDR IP ranges, Default Tags (VirtualNetwork, AzureLoadBalancer, Internet), System Tags, and the asterisk (*).
      * 
      * @param destinationAddressPrefixes the destinationAddressPrefixes value to set.
      * @return the EffectiveNetworkSecurityRule object itself.

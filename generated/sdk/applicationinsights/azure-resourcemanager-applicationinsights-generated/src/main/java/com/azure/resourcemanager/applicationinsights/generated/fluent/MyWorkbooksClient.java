@@ -25,8 +25,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category as paginated response with
-     * {@link PagedIterable}.
+     * @return all private workbooks defined within a specified resource group and category as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<MyWorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category);
@@ -37,14 +36,12 @@ public interface MyWorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     * false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category as paginated response with
-     * {@link PagedIterable}.
+     * @return all private workbooks defined within a specified resource group and category as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<MyWorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category,
@@ -57,8 +54,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category as paginated response with
-     * {@link PagedIterable}.
+     * @return all private workbooks defined within a specified subscription and category as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<MyWorkbookInner> list(CategoryType category);
@@ -68,14 +64,12 @@ public interface MyWorkbooksClient {
      * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     * false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category as paginated response with
-     * {@link PagedIterable}.
+     * @return all private workbooks defined within a specified subscription and category as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<MyWorkbookInner> list(CategoryType category, List<String> tags, Boolean canFetchContent,

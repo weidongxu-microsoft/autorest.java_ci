@@ -44,8 +44,7 @@ public final class Ingress {
     private List<TrafficWeight> traffic;
 
     /*
-     * Bool indicating if HTTP connections to is allowed. If set to false HTTP connections are automatically redirected
-     * to HTTPS connections
+     * Bool indicating if HTTP connections to is allowed. If set to false HTTP connections are automatically redirected to HTTPS connections
      */
     @JsonProperty(value = "allowInsecure")
     private Boolean allowInsecure;
@@ -146,8 +145,7 @@ public final class Ingress {
     }
 
     /**
-     * Get the allowInsecure property: Bool indicating if HTTP connections to is allowed. If set to false HTTP
-     * connections are automatically redirected to HTTPS connections.
+     * Get the allowInsecure property: Bool indicating if HTTP connections to is allowed. If set to false HTTP connections are automatically redirected to HTTPS connections.
      * 
      * @return the allowInsecure value.
      */
@@ -156,8 +154,7 @@ public final class Ingress {
     }
 
     /**
-     * Set the allowInsecure property: Bool indicating if HTTP connections to is allowed. If set to false HTTP
-     * connections are automatically redirected to HTTPS connections.
+     * Set the allowInsecure property: Bool indicating if HTTP connections to is allowed. If set to false HTTP connections are automatically redirected to HTTPS connections.
      * 
      * @param allowInsecure the allowInsecure value to set.
      * @return the Ingress object itself.

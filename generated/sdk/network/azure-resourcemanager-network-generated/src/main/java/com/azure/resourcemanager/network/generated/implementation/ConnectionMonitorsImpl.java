@@ -31,8 +31,8 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
 
     public Response<ConnectionMonitorResult> getWithResponse(String resourceGroupName, String networkWatcherName,
         String connectionMonitorName, Context context) {
-        Response<ConnectionMonitorResultInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkWatcherName, connectionMonitorName, context);
+        Response<ConnectionMonitorResultInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ConnectionMonitorResultImpl(inner.getValue(), this.manager()));

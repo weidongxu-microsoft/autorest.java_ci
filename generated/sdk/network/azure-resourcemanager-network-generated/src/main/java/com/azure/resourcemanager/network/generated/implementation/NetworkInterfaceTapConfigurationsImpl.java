@@ -38,8 +38,8 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
 
     public Response<NetworkInterfaceTapConfiguration> getWithResponse(String resourceGroupName,
         String networkInterfaceName, String tapConfigurationName, Context context) {
-        Response<NetworkInterfaceTapConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkInterfaceName, tapConfigurationName, context);
+        Response<NetworkInterfaceTapConfigurationInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceTapConfigurationImpl(inner.getValue(), this.manager()));

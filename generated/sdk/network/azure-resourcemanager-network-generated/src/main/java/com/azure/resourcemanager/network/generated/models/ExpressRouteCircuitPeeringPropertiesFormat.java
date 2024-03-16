@@ -139,24 +139,21 @@ public interface ExpressRouteCircuitPeeringPropertiesFormat {
     ExpressRouteConnectionId expressRouteConnection();
 
     /**
-     * Gets the connections property: The list of circuit connections associated with Azure Private Peering for this
-     * circuit.
+     * Gets the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the connections value.
      */
     List<ExpressRouteCircuitConnection> connections();
 
     /**
-     * Gets the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering
-     * for this circuit.
+     * Gets the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the peeredConnections value.
      */
     List<PeerExpressRouteCircuitConnection> peeredConnections();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringPropertiesFormatInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringPropertiesFormatInner object.
      * 
      * @return the inner object.
      */

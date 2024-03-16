@@ -51,16 +51,14 @@ public interface DiskAccess {
     Map<String, String> tags();
 
     /**
-     * Gets the extendedLocation property: The extended location where the disk access will be created. Extended
-     * location cannot be changed.
+     * Gets the extendedLocation property: The extended location where the disk access will be created. Extended location cannot be changed.
      * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
-     * Gets the privateEndpointConnections property: A readonly collection of private endpoint connections created on
-     * the disk. Currently only one endpoint connection is supported.
+     * Gets the privateEndpointConnections property: A readonly collection of private endpoint connections created on the disk. Currently only one endpoint connection is supported.
      * 
      * @return the privateEndpointConnections value.
      */
@@ -160,8 +158,7 @@ public interface DiskAccess {
         }
 
         /**
-         * The stage of the DiskAccess definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the DiskAccess definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation {
             /**
@@ -198,11 +195,9 @@ public interface DiskAccess {
          */
         interface WithExtendedLocation {
             /**
-             * Specifies the extendedLocation property: The extended location where the disk access will be created.
-             * Extended location cannot be changed..
+             * Specifies the extendedLocation property: The extended location where the disk access will be created. Extended location cannot be changed..
              * 
-             * @param extendedLocation The extended location where the disk access will be created. Extended location
-             * cannot be changed.
+             * @param extendedLocation The extended location where the disk access will be created. Extended location cannot be changed.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);

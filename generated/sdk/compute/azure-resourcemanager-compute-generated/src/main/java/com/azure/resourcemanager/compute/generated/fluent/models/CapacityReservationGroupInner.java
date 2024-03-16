@@ -14,9 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Specifies information about the capacity reservation group that the capacity reservations should be assigned to.
- * Currently, a capacity reservation can only be added to a capacity reservation group at creation time. An existing
- * capacity reservation cannot be added or moved to another capacity reservation group.
+ * Specifies information about the capacity reservation group that the capacity reservations should be assigned to. Currently, a capacity reservation can only be added to a capacity reservation group at creation time. An existing capacity reservation cannot be added or moved to another capacity reservation group.
  */
 @Fluent
 public final class CapacityReservationGroupInner extends Resource {
@@ -27,9 +25,7 @@ public final class CapacityReservationGroupInner extends Resource {
     private CapacityReservationGroupProperties innerProperties;
 
     /*
-     * Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If
-     * not provided, the group supports only regional resources in the region. If provided, enforces each capacity
-     * reservation in the group to be in one of the zones.
+     * Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones.
      */
     @JsonProperty(value = "zones")
     private List<String> zones;
@@ -50,9 +46,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Get the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned
-     * only during creation. If not provided, the group supports only regional resources in the region. If provided,
-     * enforces each capacity reservation in the group to be in one of the zones.
+     * Get the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones.
      * 
      * @return the zones value.
      */
@@ -61,9 +55,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Set the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned
-     * only during creation. If not provided, the group supports only regional resources in the region. If provided,
-     * enforces each capacity reservation in the group to be in one of the zones.
+     * Set the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones.
      * 
      * @param zones the zones value to set.
      * @return the CapacityReservationGroupInner object itself.
@@ -92,8 +84,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity
-     * reservation group.
+     * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity reservation group.
      * 
      * @return the capacityReservations value.
      */
@@ -102,8 +93,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the
-     * capacity reservation group.
+     * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the capacity reservation group.
      * 
      * @return the virtualMachinesAssociated value.
      */
@@ -112,8 +102,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Get the instanceView property: The capacity reservation group instance view which has the list of instance views
-     * for all the capacity reservations that belong to the capacity reservation group.
+     * Get the instanceView property: The capacity reservation group instance view which has the list of instance views for all the capacity reservations that belong to the capacity reservation group.
      * 
      * @return the instanceView value.
      */
@@ -122,11 +111,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
-     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
-     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
-     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
-     * https://aka.ms/computereservationsharing for more details.
+     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @return the sharingProfile value.
      */
@@ -135,11 +120,7 @@ public final class CapacityReservationGroupInner extends Resource {
     }
 
     /**
-     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
-     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
-     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
-     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
-     * https://aka.ms/computereservationsharing for more details.
+     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @param sharingProfile the sharingProfile value to set.
      * @return the CapacityReservationGroupInner object itself.

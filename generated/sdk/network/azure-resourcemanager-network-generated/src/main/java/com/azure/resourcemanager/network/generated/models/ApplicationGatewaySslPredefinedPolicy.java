@@ -40,8 +40,7 @@ public interface ApplicationGatewaySslPredefinedPolicy {
     ApplicationGatewaySslProtocol minProtocolVersion();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewaySslPredefinedPolicyInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewaySslPredefinedPolicyInner object.
      * 
      * @return the inner object.
      */

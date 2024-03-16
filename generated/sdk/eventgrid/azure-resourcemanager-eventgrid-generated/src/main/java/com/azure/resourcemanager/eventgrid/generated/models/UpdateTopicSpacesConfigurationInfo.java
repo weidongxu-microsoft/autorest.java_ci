@@ -19,8 +19,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     private TopicSpacesConfigurationState state;
 
     /*
-     * This property is used to specify custom topic to which events will be routed to from topic spaces configuration
-     * under namespace.
+     * This property is used to specify custom topic to which events will be routed to from topic spaces configuration under namespace.
      */
     @JsonProperty(value = "routeTopicResourceId")
     private String routeTopicResourceId;
@@ -84,8 +83,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Get the routeTopicResourceId property: This property is used to specify custom topic to which events will be
-     * routed to from topic spaces configuration under namespace.
+     * Get the routeTopicResourceId property: This property is used to specify custom topic to which events will be routed to from topic spaces configuration under namespace.
      * 
      * @return the routeTopicResourceId value.
      */
@@ -94,8 +92,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Set the routeTopicResourceId property: This property is used to specify custom topic to which events will be
-     * routed to from topic spaces configuration under namespace.
+     * Set the routeTopicResourceId property: This property is used to specify custom topic to which events will be routed to from topic spaces configuration under namespace.
      * 
      * @param routeTopicResourceId the routeTopicResourceId value to set.
      * @return the UpdateTopicSpacesConfigurationInfo object itself.
@@ -147,8 +144,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Get the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is
-     * 1 hour.
+     * Get the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is 1 hour.
      * Min allowed value is 1 hour and max allowed value is 8 hours.
      * 
      * @return the maximumSessionExpiryInHours value.
@@ -158,8 +154,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Set the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is
-     * 1 hour.
+     * Set the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is 1 hour.
      * Min allowed value is 1 hour and max allowed value is 8 hours.
      * 
      * @param maximumSessionExpiryInHours the maximumSessionExpiryInHours value to set.
@@ -171,8 +166,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Get the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication
-     * name. The property default value is 1.
+     * Get the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication name. The property default value is 1.
      * Min allowed value is 1 and max allowed value is 100.
      * 
      * @return the maximumClientSessionsPerAuthenticationName value.
@@ -182,8 +176,7 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
-     * Set the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication
-     * name. The property default value is 1.
+     * Set the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication name. The property default value is 1.
      * Min allowed value is 1 and max allowed value is 100.
      * 
      * @param maximumClientSessionsPerAuthenticationName the maximumClientSessionsPerAuthenticationName value to set.

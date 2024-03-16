@@ -32,8 +32,7 @@ public final class NextHopParameters {
     private String destinationIpAddress;
 
     /*
-     * The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of the nics, then this parameter must be
-     * specified. Otherwise optional).
+     * The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of the nics, then this parameter must be specified. Otherwise optional).
      */
     @JsonProperty(value = "targetNicResourceId")
     private String targetNicResourceId;
@@ -45,8 +44,7 @@ public final class NextHopParameters {
     }
 
     /**
-     * Get the targetResourceId property: The resource identifier of the target resource against which the action is to
-     * be performed.
+     * Get the targetResourceId property: The resource identifier of the target resource against which the action is to be performed.
      * 
      * @return the targetResourceId value.
      */
@@ -55,8 +53,7 @@ public final class NextHopParameters {
     }
 
     /**
-     * Set the targetResourceId property: The resource identifier of the target resource against which the action is to
-     * be performed.
+     * Set the targetResourceId property: The resource identifier of the target resource against which the action is to be performed.
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the NextHopParameters object itself.
@@ -107,8 +104,7 @@ public final class NextHopParameters {
     }
 
     /**
-     * Get the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of
-     * the nics, then this parameter must be specified. Otherwise optional).
+     * Get the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of the nics, then this parameter must be specified. Otherwise optional).
      * 
      * @return the targetNicResourceId value.
      */
@@ -117,8 +113,7 @@ public final class NextHopParameters {
     }
 
     /**
-     * Set the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of
-     * the nics, then this parameter must be specified. Otherwise optional).
+     * Set the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of the nics, then this parameter must be specified. Otherwise optional).
      * 
      * @param targetNicResourceId the targetNicResourceId value to set.
      * @return the NextHopParameters object itself.

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -14,11 +15,7 @@ import java.util.List;
 /**
  * Base class for defining an input. Use sub classes of this class to specify tracks selections and related metadata.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = InputDefinition.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = InputDefinition.class, visible = true)
 @JsonTypeName("InputDefinition")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.FromAllInputFile", value = FromAllInputFile.class),
@@ -26,6 +23,13 @@ import java.util.List;
     @JsonSubTypes.Type(name = "#Microsoft.Media.InputFile", value = InputFile.class) })
 @Fluent
 public class InputDefinition {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /*
      * The list of TrackDescriptors which define the metadata and selection of tracks in the input.
      */
@@ -36,11 +40,31 @@ public class InputDefinition {
      * Creates an instance of InputDefinition class.
      */
     public InputDefinition() {
+        this.odataType = "InputDefinition";
     }
 
     /**
-     * Get the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
-     * in the input.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the InputDefinition object itself.
+     */
+    protected InputDefinition withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
+    }
+
+    /**
+     * Get the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks in the input.
      * 
      * @return the includedTracks value.
      */
@@ -49,8 +73,7 @@ public class InputDefinition {
     }
 
     /**
-     * Set the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
-     * in the input.
+     * Set the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks in the input.
      * 
      * @param includedTracks the includedTracks value to set.
      * @return the InputDefinition object itself.

@@ -27,8 +27,7 @@ public final class RoleInstances {
     }
 
     /**
-     * Get the roleInstances property: List of cloud service role instance names. Value of '*' will signify all role
-     * instances of the cloud service.
+     * Get the roleInstances property: List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
      * 
      * @return the roleInstances value.
      */
@@ -37,8 +36,7 @@ public final class RoleInstances {
     }
 
     /**
-     * Set the roleInstances property: List of cloud service role instance names. Value of '*' will signify all role
-     * instances of the cloud service.
+     * Set the roleInstances property: List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
      * 
      * @param roleInstances the roleInstances value to set.
      * @return the RoleInstances object itself.

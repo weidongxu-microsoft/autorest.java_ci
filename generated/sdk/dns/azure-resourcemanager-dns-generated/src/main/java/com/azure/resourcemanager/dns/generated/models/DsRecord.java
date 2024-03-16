@@ -19,8 +19,7 @@ public final class DsRecord {
     private Integer keyTag;
 
     /*
-     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See:
-     * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
+     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
      */
     @JsonProperty(value = "algorithm")
     private Integer algorithm;
@@ -38,8 +37,7 @@ public final class DsRecord {
     }
 
     /**
-     * Get the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for
-     * signature verification.
+     * Get the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for signature verification.
      * 
      * @return the keyTag value.
      */
@@ -48,8 +46,7 @@ public final class DsRecord {
     }
 
     /**
-     * Set the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for
-     * signature verification.
+     * Set the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for signature verification.
      * 
      * @param keyTag the keyTag value to set.
      * @return the DsRecord object itself.
@@ -60,8 +57,7 @@ public final class DsRecord {
     }
 
     /**
-     * Get the algorithm property: The security algorithm type represents the standard security algorithm number of the
-     * DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
+     * Get the algorithm property: The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
      * 
      * @return the algorithm value.
      */
@@ -70,8 +66,7 @@ public final class DsRecord {
     }
 
     /**
-     * Set the algorithm property: The security algorithm type represents the standard security algorithm number of the
-     * DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
+     * Set the algorithm property: The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
      * 
      * @param algorithm the algorithm value to set.
      * @return the DsRecord object itself.

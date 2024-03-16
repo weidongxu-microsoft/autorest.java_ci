@@ -193,8 +193,7 @@ public final class UpdateDetails {
     }
 
     /**
-     * Get the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
-     * reboot.
+     * Get the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a reboot.
      * 
      * @return the rebootBehavior value.
      */
@@ -203,8 +202,7 @@ public final class UpdateDetails {
     }
 
     /**
-     * Set the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
-     * reboot.
+     * Set the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a reboot.
      * 
      * @param rebootBehavior the rebootBehavior value to set.
      * @return the UpdateDetails object itself.

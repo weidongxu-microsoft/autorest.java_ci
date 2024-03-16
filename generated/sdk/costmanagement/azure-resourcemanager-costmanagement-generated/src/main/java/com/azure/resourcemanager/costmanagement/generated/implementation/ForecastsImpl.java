@@ -51,8 +51,9 @@ public final class ForecastsImpl implements Forecasts {
     public Response<QueryResult> externalCloudProviderUsageWithResponse(
         ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId,
         ForecastDefinition parameters, String filter, Context context) {
-        Response<QueryResultInner> inner = this.serviceClient().externalCloudProviderUsageWithResponse(
-            externalCloudProviderType, externalCloudProviderId, parameters, filter, context);
+        Response<QueryResultInner> inner = this.serviceClient()
+            .externalCloudProviderUsageWithResponse(externalCloudProviderType, externalCloudProviderId, parameters,
+                filter, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueryResultImpl(inner.getValue(), this.manager()));
@@ -63,8 +64,8 @@ public final class ForecastsImpl implements Forecasts {
 
     public QueryResult externalCloudProviderUsage(ExternalCloudProviderType externalCloudProviderType,
         String externalCloudProviderId, ForecastDefinition parameters) {
-        QueryResultInner inner = this.serviceClient().externalCloudProviderUsage(externalCloudProviderType,
-            externalCloudProviderId, parameters);
+        QueryResultInner inner = this.serviceClient()
+            .externalCloudProviderUsage(externalCloudProviderType, externalCloudProviderId, parameters);
         if (inner != null) {
             return new QueryResultImpl(inner, this.manager());
         } else {

@@ -64,16 +64,14 @@ public interface Workbook {
     String namePropertiesName();
 
     /**
-     * Gets the serializedData property: Configuration of this particular workbook. Configuration data is a string
-     * containing valid JSON.
+     * Gets the serializedData property: Configuration of this particular workbook. Configuration data is a string containing valid JSON.
      * 
      * @return the serializedData value.
      */
     String serializedData();
 
     /**
-     * Gets the version property: This instance's version of the data model. This can change as new features are added
-     * that can be marked workbook.
+     * Gets the version property: This instance's version of the data model. This can change as new features are added that can be marked workbook.
      * 
      * @return the version value.
      */
@@ -87,16 +85,14 @@ public interface Workbook {
     String workbookId();
 
     /**
-     * Gets the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
-     * shared between all users with access to the Application Insights component.
+     * Gets the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
      * 
      * @return the sharedTypeKind value.
      */
     SharedTypeKind sharedTypeKind();
 
     /**
-     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this workbook
-     * definition.
+     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this workbook definition.
      * 
      * @return the timeModified value.
      */
@@ -210,8 +206,7 @@ public interface Workbook {
         }
 
         /**
-         * The stage of the Workbook definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the Workbook definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithKind, DefinitionStages.WithNamePropertiesName,
@@ -278,11 +273,9 @@ public interface Workbook {
          */
         interface WithSerializedData {
             /**
-             * Specifies the serializedData property: Configuration of this particular workbook. Configuration data is a
-             * string containing valid JSON.
+             * Specifies the serializedData property: Configuration of this particular workbook. Configuration data is a string containing valid JSON.
              * 
-             * @param serializedData Configuration of this particular workbook. Configuration data is a string
-             * containing valid JSON.
+             * @param serializedData Configuration of this particular workbook. Configuration data is a string containing valid JSON.
              * @return the next definition stage.
              */
             WithCreate withSerializedData(String serializedData);
@@ -293,11 +286,9 @@ public interface Workbook {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: This instance's version of the data model. This can change as new
-             * features are added that can be marked workbook..
+             * Specifies the version property: This instance's version of the data model. This can change as new features are added that can be marked workbook..
              * 
-             * @param version This instance's version of the data model. This can change as new features are added that
-             * can be marked workbook.
+             * @param version This instance's version of the data model. This can change as new features are added that can be marked workbook.
              * @return the next definition stage.
              */
             WithCreate withVersion(String version);
@@ -321,11 +312,9 @@ public interface Workbook {
          */
         interface WithSharedTypeKind {
             /**
-             * Specifies the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific
-             * user or is shared between all users with access to the Application Insights component..
+             * Specifies the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component..
              * 
-             * @param sharedTypeKind Enum indicating if this workbook definition is owned by a specific user or is
-             * shared between all users with access to the Application Insights component.
+             * @param sharedTypeKind Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
              * @return the next definition stage.
              */
             WithCreate withSharedTypeKind(SharedTypeKind sharedTypeKind);
@@ -349,8 +338,7 @@ public interface Workbook {
          */
         interface WithTagsPropertiesTags {
             /**
-             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this
-             * workbook definition.
+             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this workbook definition.
              * 
              * @param tagsPropertiesTags A list of 0 or more tags that are associated with this workbook definition.
              * @return the next definition stage.
@@ -463,11 +451,9 @@ public interface Workbook {
          */
         interface WithSerializedData {
             /**
-             * Specifies the serializedData property: Configuration of this particular workbook. Configuration data is a
-             * string containing valid JSON.
+             * Specifies the serializedData property: Configuration of this particular workbook. Configuration data is a string containing valid JSON.
              * 
-             * @param serializedData Configuration of this particular workbook. Configuration data is a string
-             * containing valid JSON.
+             * @param serializedData Configuration of this particular workbook. Configuration data is a string containing valid JSON.
              * @return the next definition stage.
              */
             Update withSerializedData(String serializedData);
@@ -478,11 +464,9 @@ public interface Workbook {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: This instance's version of the data model. This can change as new
-             * features are added that can be marked workbook..
+             * Specifies the version property: This instance's version of the data model. This can change as new features are added that can be marked workbook..
              * 
-             * @param version This instance's version of the data model. This can change as new features are added that
-             * can be marked workbook.
+             * @param version This instance's version of the data model. This can change as new features are added that can be marked workbook.
              * @return the next definition stage.
              */
             Update withVersion(String version);
@@ -506,11 +490,9 @@ public interface Workbook {
          */
         interface WithSharedTypeKind {
             /**
-             * Specifies the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific
-             * user or is shared between all users with access to the Application Insights component..
+             * Specifies the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component..
              * 
-             * @param sharedTypeKind Enum indicating if this workbook definition is owned by a specific user or is
-             * shared between all users with access to the Application Insights component.
+             * @param sharedTypeKind Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
              * @return the next definition stage.
              */
             Update withSharedTypeKind(SharedTypeKind sharedTypeKind);
@@ -534,8 +516,7 @@ public interface Workbook {
          */
         interface WithTagsPropertiesTags {
             /**
-             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this
-             * workbook definition.
+             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this workbook definition.
              * 
              * @param tagsPropertiesTags A list of 0 or more tags that are associated with this workbook definition.
              * @return the next definition stage.

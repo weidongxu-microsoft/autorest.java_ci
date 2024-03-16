@@ -16,30 +16,27 @@ import java.util.UUID;
  */
 public interface UsagesClient {
     /**
-     * Gets a list of all Search quota usages in the given subscription.
+     * Get a list of all Azure AI Search quota usages across the subscription.
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Search quota usages in the given subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure AI Search quota usages across the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<QuotaUsageResultInner> listBySubscription(String location);
 
     /**
-     * Gets a list of all Search quota usages in the given subscription.
+     * Get a list of all Azure AI Search quota usages across the subscription.
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Search quota usages in the given subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure AI Search quota usages across the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<QuotaUsageResultInner> listBySubscription(String location, UUID clientRequestId, Context context);

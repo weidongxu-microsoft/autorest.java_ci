@@ -81,8 +81,8 @@ public final class ActionGroupsImpl implements ActionGroups {
 
     public Response<Void> enableReceiverWithResponse(String resourceGroupName, String actionGroupName,
         EnableRequest enableRequest, Context context) {
-        return this.serviceClient().enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest,
-            context);
+        return this.serviceClient()
+            .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
     }
 
     public void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {

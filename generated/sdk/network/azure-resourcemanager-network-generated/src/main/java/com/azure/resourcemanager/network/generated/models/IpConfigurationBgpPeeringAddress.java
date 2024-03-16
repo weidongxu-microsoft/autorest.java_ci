@@ -64,8 +64,7 @@ public final class IpConfigurationBgpPeeringAddress {
     }
 
     /**
-     * Get the defaultBgpIpAddresses property: The list of default BGP peering addresses which belong to IP
-     * configuration.
+     * Get the defaultBgpIpAddresses property: The list of default BGP peering addresses which belong to IP configuration.
      * 
      * @return the defaultBgpIpAddresses value.
      */

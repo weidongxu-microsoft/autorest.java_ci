@@ -8,12 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The state of the last provisioning operation performed on the search service. Provisioning is an intermediate state
- * that occurs while service capacity is being established. After capacity is set up, provisioningState changes to
- * either 'succeeded' or 'failed'. Client applications can poll provisioning status (the recommended polling interval is
- * from 30 seconds to one minute) by using the Get Search Service operation to see when an operation is completed. If
- * you are using the free service, this value tends to come back as 'succeeded' directly in the call to Create search
- * service. This is because the free service uses capacity that is already set up.
+ * The state of the last provisioning operation performed on the search service. Provisioning is an intermediate state that occurs while service capacity is being established. After capacity is set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll provisioning status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search Service operation to see when an operation is completed. If you are using the free service, this value tends to come back as 'succeeded' directly in the call to Create search service. This is because the free service uses capacity that is already set up.
  */
 public enum ProvisioningState {
     /**

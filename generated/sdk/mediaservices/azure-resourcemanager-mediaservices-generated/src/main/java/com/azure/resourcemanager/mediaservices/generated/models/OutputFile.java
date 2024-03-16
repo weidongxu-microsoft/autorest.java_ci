@@ -15,10 +15,7 @@ import java.util.List;
 @Fluent
 public final class OutputFile {
     /*
-     * The list of labels that describe how the encoder should multiplex video and audio into an output file. For
-     * example, if the encoder is producing two video layers with labels v1 and v2, and one audio layer with label a1,
-     * then an array like '[v1, a1]' tells the encoder to produce an output file with the video track represented by v1
-     * and the audio track represented by a1.
+     * The list of labels that describe how the encoder should multiplex video and audio into an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video track represented by v1 and the audio track represented by a1.
      */
     @JsonProperty(value = "labels", required = true)
     private List<String> labels;
@@ -30,10 +27,7 @@ public final class OutputFile {
     }
 
     /**
-     * Get the labels property: The list of labels that describe how the encoder should multiplex video and audio into
-     * an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio
-     * layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video
-     * track represented by v1 and the audio track represented by a1.
+     * Get the labels property: The list of labels that describe how the encoder should multiplex video and audio into an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video track represented by v1 and the audio track represented by a1.
      * 
      * @return the labels value.
      */
@@ -42,10 +36,7 @@ public final class OutputFile {
     }
 
     /**
-     * Set the labels property: The list of labels that describe how the encoder should multiplex video and audio into
-     * an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio
-     * layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video
-     * track represented by v1 and the audio track represented by a1.
+     * Set the labels property: The list of labels that describe how the encoder should multiplex video and audio into an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video track represented by v1 and the audio track represented by a1.
      * 
      * @param labels the labels value to set.
      * @return the OutputFile object itself.

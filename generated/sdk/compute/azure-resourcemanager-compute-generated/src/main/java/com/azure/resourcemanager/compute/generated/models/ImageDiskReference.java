@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ImageDiskReference {
     /*
-     * A relative uri containing either a Platform Image Repository, user image, or Azure Compute Gallery image
-     * reference.
+     * A relative uri containing either a Platform Image Repository, user image, or Azure Compute Gallery image reference.
      */
     @JsonProperty(value = "id")
     private String id;
@@ -32,8 +31,7 @@ public final class ImageDiskReference {
     private String communityGalleryImageId;
 
     /*
-     * If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the
-     * image to use. For OS disks, this field is null.
+     * If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null.
      */
     @JsonProperty(value = "lun")
     private Integer lun;
@@ -45,8 +43,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Get the id property: A relative uri containing either a Platform Image Repository, user image, or Azure Compute
-     * Gallery image reference.
+     * Get the id property: A relative uri containing either a Platform Image Repository, user image, or Azure Compute Gallery image reference.
      * 
      * @return the id value.
      */
@@ -55,8 +52,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Set the id property: A relative uri containing either a Platform Image Repository, user image, or Azure Compute
-     * Gallery image reference.
+     * Set the id property: A relative uri containing either a Platform Image Repository, user image, or Azure Compute Gallery image reference.
      * 
      * @param id the id value to set.
      * @return the ImageDiskReference object itself.
@@ -67,8 +63,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Get the sharedGalleryImageId property: A relative uri containing a direct shared Azure Compute Gallery image
-     * reference.
+     * Get the sharedGalleryImageId property: A relative uri containing a direct shared Azure Compute Gallery image reference.
      * 
      * @return the sharedGalleryImageId value.
      */
@@ -77,8 +72,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Set the sharedGalleryImageId property: A relative uri containing a direct shared Azure Compute Gallery image
-     * reference.
+     * Set the sharedGalleryImageId property: A relative uri containing a direct shared Azure Compute Gallery image reference.
      * 
      * @param sharedGalleryImageId the sharedGalleryImageId value to set.
      * @return the ImageDiskReference object itself.
@@ -89,8 +83,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Get the communityGalleryImageId property: A relative uri containing a community Azure Compute Gallery image
-     * reference.
+     * Get the communityGalleryImageId property: A relative uri containing a community Azure Compute Gallery image reference.
      * 
      * @return the communityGalleryImageId value.
      */
@@ -99,8 +92,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Set the communityGalleryImageId property: A relative uri containing a community Azure Compute Gallery image
-     * reference.
+     * Set the communityGalleryImageId property: A relative uri containing a community Azure Compute Gallery image reference.
      * 
      * @param communityGalleryImageId the communityGalleryImageId value to set.
      * @return the ImageDiskReference object itself.
@@ -111,8 +103,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Get the lun property: If the disk is created from an image's data disk, this is an index that indicates which of
-     * the data disks in the image to use. For OS disks, this field is null.
+     * Get the lun property: If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null.
      * 
      * @return the lun value.
      */
@@ -121,8 +112,7 @@ public final class ImageDiskReference {
     }
 
     /**
-     * Set the lun property: If the disk is created from an image's data disk, this is an index that indicates which of
-     * the data disks in the image to use. For OS disks, this field is null.
+     * Set the lun property: If the disk is created from an image's data disk, this is an index that indicates which of the data disks in the image to use. For OS disks, this field is null.
      * 
      * @param lun the lun value to set.
      * @return the ImageDiskReference object itself.

@@ -51,8 +51,8 @@ public final class AdminKeysImpl implements AdminKeys {
 
     public Response<AdminKeyResult> regenerateWithResponse(String resourceGroupName, String searchServiceName,
         AdminKeyKind keyKind, UUID clientRequestId, Context context) {
-        Response<AdminKeyResultInner> inner = this.serviceClient().regenerateWithResponse(resourceGroupName,
-            searchServiceName, keyKind, clientRequestId, context);
+        Response<AdminKeyResultInner> inner = this.serviceClient()
+            .regenerateWithResponse(resourceGroupName, searchServiceName, keyKind, clientRequestId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AdminKeyResultImpl(inner.getValue(), this.manager()));

@@ -77,8 +77,7 @@ public interface SiteConfig {
     String windowsFxVersion();
 
     /**
-     * Gets the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the requestTracingEnabled value.
      */
@@ -92,8 +91,7 @@ public interface SiteConfig {
     OffsetDateTime requestTracingExpirationTime();
 
     /**
-     * Gets the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the remoteDebuggingEnabled value.
      */
@@ -107,8 +105,7 @@ public interface SiteConfig {
     String remoteDebuggingVersion();
 
     /**
-     * Gets the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the httpLoggingEnabled value.
      */
@@ -136,8 +133,7 @@ public interface SiteConfig {
     Integer logsDirectorySizeLimit();
 
     /**
-     * Gets the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is
-     * enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the detailedErrorLoggingEnabled value.
      */
@@ -158,8 +154,7 @@ public interface SiteConfig {
     List<NameValuePair> appSettings();
 
     /**
-     * Gets the metadata property: Application metadata. This property cannot be retrieved, since it may contain
-     * secrets.
+     * Gets the metadata property: Application metadata. This property cannot be retrieved, since it may contain secrets.
      * 
      * @return the metadata value.
      */
@@ -201,24 +196,21 @@ public interface SiteConfig {
     ScmType scmType();
 
     /**
-     * Gets the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the use32BitWorkerProcess value.
      */
     Boolean use32BitWorkerProcess();
 
     /**
-     * Gets the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the webSocketsEnabled value.
      */
     Boolean webSocketsEnabled();
 
     /**
-     * Gets the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the alwaysOn value.
      */
@@ -288,8 +280,7 @@ public interface SiteConfig {
     SiteLimits limits();
 
     /**
-     * Gets the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoHealEnabled value.
      */
@@ -317,16 +308,14 @@ public interface SiteConfig {
     String vnetName();
 
     /**
-     * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @return the vnetRouteAllEnabled value.
      */
     Boolean vnetRouteAllEnabled();
 
     /**
-     * Gets the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
-     * dynamically on runtime.
+     * Gets the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned dynamically on runtime.
      * 
      * @return the vnetPrivatePortsCount value.
      */
@@ -368,8 +357,7 @@ public interface SiteConfig {
     String autoSwapSlotName();
 
     /**
-     * Gets the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the localMySqlEnabled value.
      */
@@ -404,8 +392,7 @@ public interface SiteConfig {
     List<IpSecurityRestriction> ipSecurityRestrictions();
 
     /**
-     * Gets the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
-     * matched.
+     * Gets the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are matched.
      * 
      * @return the ipSecurityRestrictionsDefaultAction value.
      */
@@ -419,8 +406,7 @@ public interface SiteConfig {
     List<IpSecurityRestriction> scmIpSecurityRestrictions();
 
     /**
-     * Gets the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
-     * are matched.
+     * Gets the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules are matched.
      * 
      * @return the scmIpSecurityRestrictionsDefaultAction value.
      */
@@ -455,8 +441,7 @@ public interface SiteConfig {
     TlsCipherSuites minTlsCipherSuite();
 
     /**
-     * Gets the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
-     * requests for SCM site.
+     * Gets the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL requests for SCM site.
      * 
      * @return the scmMinTlsVersion value.
      */
@@ -501,8 +486,7 @@ public interface SiteConfig {
     String healthCheckPath();
 
     /**
-     * Gets the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
-     * runtime scale monitoring is enabled. When enabled,
+     * Gets the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions runtime scale monitoring is enabled. When enabled,
      * the ScaleController will not monitor event sources directly, but will instead call to the
      * runtime to get scale status.
      * 
@@ -511,11 +495,7 @@ public interface SiteConfig {
     Boolean functionsRuntimeScaleMonitoringEnabled();
 
     /**
-     * Gets the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with
-     * Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For
-     * Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see
-     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
-     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     * Gets the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
      * 
      * @return the websiteTimeZone value.
      */

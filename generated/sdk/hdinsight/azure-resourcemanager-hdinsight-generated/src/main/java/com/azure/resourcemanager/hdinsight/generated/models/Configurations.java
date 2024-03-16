@@ -38,8 +38,7 @@ public interface Configurations {
     ClusterConfigurations list(String resourceGroupName, String clusterName);
 
     /**
-     * Configures the HTTP settings on the specified cluster. This API is deprecated, please use UpdateGatewaySettings
-     * in cluster endpoint instead.
+     * Configures the HTTP settings on the specified cluster. This API is deprecated, please use UpdateGatewaySettings in cluster endpoint instead.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
@@ -52,8 +51,7 @@ public interface Configurations {
     void update(String resourceGroupName, String clusterName, String configurationName, Map<String, String> parameters);
 
     /**
-     * Configures the HTTP settings on the specified cluster. This API is deprecated, please use UpdateGatewaySettings
-     * in cluster endpoint instead.
+     * Configures the HTTP settings on the specified cluster. This API is deprecated, please use UpdateGatewaySettings in cluster endpoint instead.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
@@ -68,8 +66,7 @@ public interface Configurations {
         Context context);
 
     /**
-     * The configuration object for the specified cluster. This API is not recommended and might be removed in the
-     * future. Please consider using List configurations API instead.
+     * The configuration object for the specified cluster. This API is not recommended and might be removed in the future. Please consider using List configurations API instead.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
@@ -78,15 +75,13 @@ public interface Configurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the configuration object for the specified configuration for the specified cluster along with
-     * {@link Response}.
+     * @return the configuration object for the specified configuration for the specified cluster along with {@link Response}.
      */
     Response<Map<String, String>> getWithResponse(String resourceGroupName, String clusterName,
         String configurationName, Context context);
 
     /**
-     * The configuration object for the specified cluster. This API is not recommended and might be removed in the
-     * future. Please consider using List configurations API instead.
+     * The configuration object for the specified cluster. This API is not recommended and might be removed in the future. Please consider using List configurations API instead.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.

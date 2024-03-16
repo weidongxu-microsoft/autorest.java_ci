@@ -50,8 +50,7 @@ public interface SqlVirtualMachine {
     Map<String, String> tags();
 
     /**
-     * Gets the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory identity of the
-     * server.
+     * Gets the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server.
      * 
      * @return the identity value.
      */
@@ -65,8 +64,7 @@ public interface SqlVirtualMachine {
     SystemData systemData();
 
     /**
-     * Gets the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL
-     * marketplace image.
+     * Gets the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL marketplace image.
      * 
      * @return the virtualMachineResourceId value.
      */
@@ -94,8 +92,7 @@ public interface SqlVirtualMachine {
     SqlServerLicenseType sqlServerLicenseType();
 
     /**
-     * Gets the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will
-     * automatically detect the Sql Management, refrain from using it.
+     * Gets the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
      * 
      * @return the sqlManagement value.
      */
@@ -116,32 +113,28 @@ public interface SqlVirtualMachine {
     SqlImageSku sqlImageSku();
 
     /**
-     * Gets the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL
-     * virtual machine is or will be part of.
+     * Gets the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
      * 
      * @return the sqlVirtualMachineGroupResourceId value.
      */
     String sqlVirtualMachineGroupResourceId();
 
     /**
-     * Gets the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Gets the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @return the wsfcDomainCredentials value.
      */
     WsfcDomainCredentials wsfcDomainCredentials();
 
     /**
-     * Gets the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL
-     * availability group.
+     * Gets the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @return the wsfcStaticIp value.
      */
     String wsfcStaticIp();
 
     /**
-     * Gets the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL
-     * virtual machine.
+     * Gets the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL virtual machine.
      * 
      * @return the autoPatchingSettings value.
      */
@@ -269,16 +262,14 @@ public interface SqlVirtualMachine {
             /**
              * Specifies resourceGroupName.
              * 
-             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value
-             * from the Azure Resource Manager API or the portal.
+             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
 
         /**
-         * The stage of the SqlVirtualMachine definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SqlVirtualMachine definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithVirtualMachineResourceId, DefinitionStages.WithSqlImageOffer,
@@ -324,8 +315,7 @@ public interface SqlVirtualMachine {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory
-             * identity of the server..
+             * Specifies the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server..
              * 
              * @param identity DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server.
              * @return the next definition stage.
@@ -338,11 +328,9 @@ public interface SqlVirtualMachine {
          */
         interface WithVirtualMachineResourceId {
             /**
-             * Specifies the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created
-             * from SQL marketplace image..
+             * Specifies the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL marketplace image..
              * 
-             * @param virtualMachineResourceId ARM Resource id of underlying virtual machine created from SQL
-             * marketplace image.
+             * @param virtualMachineResourceId ARM Resource id of underlying virtual machine created from SQL marketplace image.
              * @return the next definition stage.
              */
             WithCreate withVirtualMachineResourceId(String virtualMachineResourceId);
@@ -379,11 +367,9 @@ public interface SqlVirtualMachine {
          */
         interface WithSqlManagement {
             /**
-             * Specifies the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used
-             * anymore. API will automatically detect the Sql Management, refrain from using it..
+             * Specifies the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it..
              * 
-             * @param sqlManagement SQL Server Management type. NOTE: This parameter is not used anymore. API will
-             * automatically detect the Sql Management, refrain from using it.
+             * @param sqlManagement SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
              * @return the next definition stage.
              */
             WithCreate withSqlManagement(SqlManagementMode sqlManagement);
@@ -420,11 +406,9 @@ public interface SqlVirtualMachine {
          */
         interface WithWsfcDomainCredentials {
             /**
-             * Specifies the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover
-             * Cluster for SQL availability group..
+             * Specifies the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group..
              * 
-             * @param wsfcDomainCredentials Domain credentials for setting up Windows Server Failover Cluster for SQL
-             * availability group.
+             * @param wsfcDomainCredentials Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
              * @return the next definition stage.
              */
             WithCreate withWsfcDomainCredentials(WsfcDomainCredentials wsfcDomainCredentials);
@@ -435,11 +419,9 @@ public interface SqlVirtualMachine {
          */
         interface WithWsfcStaticIp {
             /**
-             * Specifies the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster
-             * for SQL availability group..
+             * Specifies the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group..
              * 
-             * @param wsfcStaticIp Domain credentials for setting up Windows Server Failover Cluster for SQL
-             * availability group.
+             * @param wsfcStaticIp Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
              * @return the next definition stage.
              */
             WithCreate withWsfcStaticIp(String wsfcStaticIp);
@@ -450,11 +432,9 @@ public interface SqlVirtualMachine {
          */
         interface WithAutoPatchingSettings {
             /**
-             * Specifies the autoPatchingSettings property: Auto patching settings for applying critical security
-             * updates to SQL virtual machine..
+             * Specifies the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL virtual machine..
              * 
-             * @param autoPatchingSettings Auto patching settings for applying critical security updates to SQL virtual
-             * machine.
+             * @param autoPatchingSettings Auto patching settings for applying critical security updates to SQL virtual machine.
              * @return the next definition stage.
              */
             WithCreate withAutoPatchingSettings(AutoPatchingSettings autoPatchingSettings);
@@ -491,8 +471,7 @@ public interface SqlVirtualMachine {
          */
         interface WithServerConfigurationsManagementSettings {
             /**
-             * Specifies the serverConfigurationsManagementSettings property: SQL Server configuration management
-             * settings..
+             * Specifies the serverConfigurationsManagementSettings property: SQL Server configuration management settings..
              * 
              * @param serverConfigurationsManagementSettings SQL Server configuration management settings.
              * @return the next definition stage.

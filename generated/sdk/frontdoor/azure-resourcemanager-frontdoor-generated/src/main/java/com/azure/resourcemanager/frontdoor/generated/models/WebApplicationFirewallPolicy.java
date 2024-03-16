@@ -57,8 +57,7 @@ public interface WebApplicationFirewallPolicy {
     String etag();
 
     /**
-     * Gets the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
-     * not specified.
+     * Gets the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified.
      * 
      * @return the sku value.
      */
@@ -86,8 +85,7 @@ public interface WebApplicationFirewallPolicy {
     ManagedRuleSetList managedRules();
 
     /**
-     * Gets the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application
-     * Firewall policy.
+     * Gets the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application Firewall policy.
      * 
      * @return the frontendEndpointLinks value.
      */
@@ -101,8 +99,7 @@ public interface WebApplicationFirewallPolicy {
     List<RoutingRuleLink> routingRuleLinks();
 
     /**
-     * Gets the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall
-     * policy.
+     * Gets the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall policy.
      * 
      * @return the securityPolicyLinks value.
      */
@@ -144,8 +141,7 @@ public interface WebApplicationFirewallPolicy {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.WebApplicationFirewallPolicyInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.WebApplicationFirewallPolicyInner object.
      * 
      * @return the inner object.
      */
@@ -203,8 +199,7 @@ public interface WebApplicationFirewallPolicy {
         }
 
         /**
-         * The stage of the WebApplicationFirewallPolicy definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the WebApplicationFirewallPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithEtag, DefinitionStages.WithSku,
             DefinitionStages.WithPolicySettings, DefinitionStages.WithCustomRules, DefinitionStages.WithManagedRules {
@@ -242,8 +237,7 @@ public interface WebApplicationFirewallPolicy {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: Gets a unique read-only string that changes whenever the resource is
-             * updated..
+             * Specifies the etag property: Gets a unique read-only string that changes whenever the resource is updated..
              * 
              * @param etag Gets a unique read-only string that changes whenever the resource is updated.
              * @return the next definition stage.
@@ -256,11 +250,9 @@ public interface WebApplicationFirewallPolicy {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: The pricing tier of web application firewall policy. Defaults to
-             * Classic_AzureFrontDoor if not specified..
+             * Specifies the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified..
              * 
-             * @param sku The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not
-             * specified.
+             * @param sku The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);

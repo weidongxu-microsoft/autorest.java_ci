@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface ApplicationInsightsComponentApiKey {
     /**
-     * Gets the id property: The unique ID of the API key inside an Application Insights component. It is auto generated
-     * when the API key is created.
+     * Gets the id property: The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is created.
      * 
      * @return the id value.
      */
@@ -55,9 +54,7 @@ public interface ApplicationInsightsComponentApiKey {
     List<String> linkedWriteProperties();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentApiKeyInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentApiKeyInner object.
      * 
      * @return the inner object.
      */

@@ -15,8 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ArmDisasterRecoveryProperties {
     /*
-     * Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or
-     * 'Failed'
+     * Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or 'Failed'
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningStateDR provisioningState;
@@ -52,8 +51,7 @@ public final class ArmDisasterRecoveryProperties {
     }
 
     /**
-     * Get the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible
-     * values 'Accepted' or 'Succeeded' or 'Failed'.
+     * Get the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or 'Failed'.
      * 
      * @return the provisioningState value.
      */
@@ -62,8 +60,7 @@ public final class ArmDisasterRecoveryProperties {
     }
 
     /**
-     * Get the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO
-     * DR pairing.
+     * Get the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
      * 
      * @return the partnerNamespace value.
      */
@@ -72,8 +69,7 @@ public final class ArmDisasterRecoveryProperties {
     }
 
     /**
-     * Set the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO
-     * DR pairing.
+     * Set the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO DR pairing.
      * 
      * @param partnerNamespace the partnerNamespace value to set.
      * @return the ArmDisasterRecoveryProperties object itself.
@@ -104,8 +100,7 @@ public final class ArmDisasterRecoveryProperties {
     }
 
     /**
-     * Get the role property: role of namespace in GEO DR - possible values 'Primary' or 'PrimaryNotReplicating' or
-     * 'Secondary'.
+     * Get the role property: role of namespace in GEO DR - possible values 'Primary' or 'PrimaryNotReplicating' or 'Secondary'.
      * 
      * @return the role value.
      */

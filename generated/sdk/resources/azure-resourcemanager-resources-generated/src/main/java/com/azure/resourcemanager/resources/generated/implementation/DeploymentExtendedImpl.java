@@ -88,14 +88,16 @@ public final class DeploymentExtendedImpl
     }
 
     public DeploymentExtended create() {
-        this.innerObject = serviceManager.serviceClient().getDeployments().createOrUpdate(resourceGroupName,
-            deploymentName, createParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .createOrUpdate(resourceGroupName, deploymentName, createParameters, Context.NONE);
         return this;
     }
 
     public DeploymentExtended create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDeployments().createOrUpdate(resourceGroupName,
-            deploymentName, createParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .createOrUpdate(resourceGroupName, deploymentName, createParameters, context);
         return this;
     }
 
@@ -112,14 +114,16 @@ public final class DeploymentExtendedImpl
     }
 
     public DeploymentExtended apply() {
-        this.innerObject = serviceManager.serviceClient().getDeployments().createOrUpdate(resourceGroupName,
-            deploymentName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .createOrUpdate(resourceGroupName, deploymentName, updateParameters, Context.NONE);
         return this;
     }
 
     public DeploymentExtended apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDeployments().createOrUpdate(resourceGroupName,
-            deploymentName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .createOrUpdate(resourceGroupName, deploymentName, updateParameters, context);
         return this;
     }
 
@@ -132,14 +136,18 @@ public final class DeploymentExtendedImpl
     }
 
     public DeploymentExtended refresh() {
-        this.innerObject = serviceManager.serviceClient().getDeployments()
-            .getByResourceGroupWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .getByResourceGroupWithResponse(resourceGroupName, deploymentName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DeploymentExtended refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDeployments()
-            .getByResourceGroupWithResponse(resourceGroupName, deploymentName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDeployments()
+            .getByResourceGroupWithResponse(resourceGroupName, deploymentName, context)
+            .getValue();
         return this;
     }
 

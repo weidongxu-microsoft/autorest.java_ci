@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Used by the Application Insights system to determine what kind of flow this component was created by. This is to be
- * set to 'Bluefield' when creating/updating a component via the REST API.
+ * Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
  */
 public final class FlowType extends ExpandableStringEnum<FlowType> {
     /**

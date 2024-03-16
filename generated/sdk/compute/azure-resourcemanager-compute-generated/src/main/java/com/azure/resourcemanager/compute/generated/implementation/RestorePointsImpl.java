@@ -38,8 +38,8 @@ public final class RestorePointsImpl implements RestorePoints {
 
     public Response<RestorePoint> getWithResponse(String resourceGroupName, String restorePointCollectionName,
         String restorePointName, RestorePointExpandOptions expand, Context context) {
-        Response<RestorePointInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            restorePointCollectionName, restorePointName, expand, context);
+        Response<RestorePointInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RestorePointImpl(inner.getValue(), this.manager()));

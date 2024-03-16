@@ -12,16 +12,14 @@ import java.util.List;
  */
 public interface StorageAccountListKeysResult {
     /**
-     * Gets the keys property: Gets the list of storage account keys and their properties for the specified storage
-     * account.
+     * Gets the keys property: Gets the list of storage account keys and their properties for the specified storage account.
      * 
      * @return the keys value.
      */
     List<StorageAccountKey> keys();
 
     /**
-     * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner object.
      * 
      * @return the inner object.
      */

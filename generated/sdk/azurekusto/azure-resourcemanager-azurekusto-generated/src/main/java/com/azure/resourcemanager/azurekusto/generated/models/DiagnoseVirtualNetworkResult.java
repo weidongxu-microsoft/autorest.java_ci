@@ -19,8 +19,7 @@ public interface DiagnoseVirtualNetworkResult {
     List<String> findings();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DiagnoseVirtualNetworkResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DiagnoseVirtualNetworkResultInner object.
      * 
      * @return the inner object.
      */

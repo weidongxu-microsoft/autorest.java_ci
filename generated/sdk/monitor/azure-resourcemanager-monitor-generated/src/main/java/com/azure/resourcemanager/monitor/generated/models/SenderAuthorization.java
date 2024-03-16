@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * the authorization used by the user who has performed the operation that led to this event. This captures the RBAC
- * properties of the event. These usually include the 'action', 'role' and the 'scope'.
+ * the authorization used by the user who has performed the operation that led to this event. This captures the RBAC properties of the event. These usually include the 'action', 'role' and the 'scope'.
  */
 @Fluent
 public final class SenderAuthorization {

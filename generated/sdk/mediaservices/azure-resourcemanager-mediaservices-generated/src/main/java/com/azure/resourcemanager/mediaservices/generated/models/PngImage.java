@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Describes the properties for producing a series of PNG images from the input video.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = PngImage.class, visible = true)
 @JsonTypeName("#Microsoft.Media.PngImage")
 @Fluent
 public final class PngImage extends Image {
@@ -28,6 +28,7 @@ public final class PngImage extends Image {
      * Creates an instance of PngImage class.
      */
     public PngImage() {
+        withOdataType("#Microsoft.Media.PngImage");
     }
 
     /**

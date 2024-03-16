@@ -59,8 +59,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientDataSources to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientDataSources to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
@@ -532,8 +531,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the first page of data source instances in a workspace with the link to the next page along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceSinglePageAsync(String resourceGroupName,
@@ -577,8 +575,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the first page of data source instances in a workspace with the link to the next page along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceSinglePageAsync(String resourceGroupName,
@@ -621,8 +618,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedFlux}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataSourceInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName,
@@ -641,8 +637,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedFlux}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataSourceInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName,
@@ -664,8 +659,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedFlux}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataSourceInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName,
@@ -684,8 +678,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedIterable}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataSourceInner> listByWorkspace(String resourceGroupName, String workspaceName,
@@ -705,8 +698,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedIterable}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataSourceInner> listByWorkspace(String resourceGroupName, String workspaceName, String filter,
@@ -723,8 +715,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceNextSinglePageAsync(String nextLink) {
@@ -753,8 +744,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceNextSinglePageAsync(String nextLink, Context context) {

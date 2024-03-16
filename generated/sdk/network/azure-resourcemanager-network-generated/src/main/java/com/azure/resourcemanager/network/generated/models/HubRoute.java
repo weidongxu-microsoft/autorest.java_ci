@@ -51,8 +51,7 @@ public final class HubRoute {
     }
 
     /**
-     * Get the name property: The name of the Route that is unique within a RouteTable. This name can be used to access
-     * this route.
+     * Get the name property: The name of the Route that is unique within a RouteTable. This name can be used to access this route.
      * 
      * @return the name value.
      */
@@ -61,8 +60,7 @@ public final class HubRoute {
     }
 
     /**
-     * Set the name property: The name of the Route that is unique within a RouteTable. This name can be used to access
-     * this route.
+     * Set the name property: The name of the Route that is unique within a RouteTable. This name can be used to access this route.
      * 
      * @param name the name value to set.
      * @return the HubRoute object itself.

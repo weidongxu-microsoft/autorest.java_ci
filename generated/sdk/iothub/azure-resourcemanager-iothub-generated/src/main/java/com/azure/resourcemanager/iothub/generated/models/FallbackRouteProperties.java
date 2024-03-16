@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class FallbackRouteProperties {
     /*
-     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a
-     * maximum length of 64 characters, and must be unique.
+     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      */
     @JsonProperty(value = "name")
     private String name;
@@ -28,16 +27,13 @@ public final class FallbackRouteProperties {
     private RoutingSource source;
 
     /*
-     * The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will
-     * evaluate to true by default. For grammar, See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
+     * The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will evaluate to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
      */
     @JsonProperty(value = "condition")
     private String condition;
 
     /*
-     * The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint
-     * is allowed.
+     * The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint is allowed.
      */
     @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;
@@ -55,8 +51,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Get the name property: The name of the route. The name can only include alphanumeric characters, periods,
-     * underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * Get the name property: The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      * 
      * @return the name value.
      */
@@ -65,8 +60,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Set the name property: The name of the route. The name can only include alphanumeric characters, periods,
-     * underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * Set the name property: The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      * 
      * @param name the name value to set.
      * @return the FallbackRouteProperties object itself.
@@ -97,9 +91,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Get the condition property: The condition which is evaluated in order to apply the fallback route. If the
-     * condition is not provided it will evaluate to true by default. For grammar, See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+     * Get the condition property: The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will evaluate to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
      * 
      * @return the condition value.
      */
@@ -108,9 +100,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Set the condition property: The condition which is evaluated in order to apply the fallback route. If the
-     * condition is not provided it will evaluate to true by default. For grammar, See:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+     * Set the condition property: The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will evaluate to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
      * 
      * @param condition the condition value to set.
      * @return the FallbackRouteProperties object itself.
@@ -121,8 +111,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Get the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed
-     * to. Currently only 1 endpoint is allowed.
+     * Get the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint is allowed.
      * 
      * @return the endpointNames value.
      */
@@ -131,8 +120,7 @@ public final class FallbackRouteProperties {
     }
 
     /**
-     * Set the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed
-     * to. Currently only 1 endpoint is allowed.
+     * Set the endpointNames property: The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint is allowed.
      * 
      * @param endpointNames the endpointNames value to set.
      * @return the FallbackRouteProperties object itself.

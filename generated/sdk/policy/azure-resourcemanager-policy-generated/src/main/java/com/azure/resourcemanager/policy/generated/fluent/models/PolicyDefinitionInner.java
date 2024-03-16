@@ -38,8 +38,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
-     * and Static.
+     * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
      * 
      * @return the policyType value.
      */
@@ -48,8 +47,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
-     * and Static.
+     * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
      * 
      * @param policyType the policyType value to set.
      * @return the PolicyDefinitionInner object itself.
@@ -155,8 +153,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Get the metadata property: The policy definition metadata. Metadata is an open ended object and is typically a
-     * collection of key value pairs.
+     * Get the metadata property: The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -165,8 +162,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Set the metadata property: The policy definition metadata. Metadata is an open ended object and is typically a
-     * collection of key value pairs.
+     * Set the metadata property: The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @param metadata the metadata value to set.
      * @return the PolicyDefinitionInner object itself.
@@ -180,8 +176,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Get the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the
-     * parameter names.
+     * Get the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the parameter names.
      * 
      * @return the parameters value.
      */
@@ -190,8 +185,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     }
 
     /**
-     * Set the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the
-     * parameter names.
+     * Set the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the parameter names.
      * 
      * @param parameters the parameters value to set.
      * @return the PolicyDefinitionInner object itself.

@@ -33,8 +33,8 @@ public final class ServicesImpl implements Services {
 
     public Response<SearchService> getByResourceGroupWithResponse(String resourceGroupName, String searchServiceName,
         UUID clientRequestId, Context context) {
-        Response<SearchServiceInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            searchServiceName, clientRequestId, context);
+        Response<SearchServiceInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SearchServiceImpl(inner.getValue(), this.manager()));

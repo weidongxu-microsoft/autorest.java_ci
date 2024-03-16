@@ -86,8 +86,7 @@ public interface BastionHost {
     String dnsName();
 
     /**
-     * Gets the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
-     * only.
+     * Gets the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only.
      * 
      * @return the virtualNetwork value.
      */
@@ -236,8 +235,7 @@ public interface BastionHost {
         }
 
         /**
-         * The stage of the BastionHost definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BastionHost definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones, DefinitionStages.WithSku,
             DefinitionStages.WithIpConfigurations, DefinitionStages.WithDnsName, DefinitionStages.WithVirtualNetwork,
@@ -279,8 +277,7 @@ public interface BastionHost {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting where the resource needs to come
-             * from..
+             * Specifies the zones property: A list of availability zones denoting where the resource needs to come from..
              * 
              * @param zones A list of availability zones denoting where the resource needs to come from.
              * @return the next definition stage.
@@ -332,8 +329,7 @@ public interface BastionHost {
          */
         interface WithVirtualNetwork {
             /**
-             * Specifies the virtualNetwork property: Reference to an existing virtual network required for Developer
-             * Bastion Host only..
+             * Specifies the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only..
              * 
              * @param virtualNetwork Reference to an existing virtual network required for Developer Bastion Host only.
              * @return the next definition stage.

@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specifies a RSA key for token validation.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyRsaTokenKey.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyRsaTokenKey")
 @Fluent
 public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestrictionTokenKey {
@@ -34,6 +38,7 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
      * Creates an instance of ContentKeyPolicyRsaTokenKey class.
      */
     public ContentKeyPolicyRsaTokenKey() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyRsaTokenKey");
     }
 
     /**

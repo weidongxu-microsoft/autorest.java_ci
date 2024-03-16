@@ -26,8 +26,7 @@ public final class ManagementEventAggregationCondition {
     private Double threshold;
 
     /*
-     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
-     * If specified then it must be between 5 minutes and 1 day.
+     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      */
     @JsonProperty(value = "windowSize")
     private Duration windowSize;
@@ -79,8 +78,7 @@ public final class ManagementEventAggregationCondition {
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
-     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @return the windowSize value.
      */
@@ -89,8 +87,7 @@ public final class ManagementEventAggregationCondition {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
-     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @param windowSize the windowSize value to set.
      * @return the ManagementEventAggregationCondition object itself.

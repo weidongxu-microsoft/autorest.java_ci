@@ -90,7 +90,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         List<ServiceEndpointPolicyInner> inner = this.innerModel().serviceEndpointPolicies();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -100,7 +101,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         List<PrivateEndpointInner> inner = this.innerModel().privateEndpoints();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -110,7 +112,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         List<IpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new IpConfigurationImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new IpConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -120,7 +123,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         List<IpConfigurationProfileInner> inner = this.innerModel().ipConfigurationProfiles();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

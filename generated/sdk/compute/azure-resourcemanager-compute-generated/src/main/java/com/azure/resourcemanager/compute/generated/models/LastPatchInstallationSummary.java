@@ -14,15 +14,13 @@ import java.time.OffsetDateTime;
 @Immutable
 public final class LastPatchInstallationSummary {
     /*
-     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At
-     * that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private PatchOperationStatus status;
 
     /*
-     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension
-     * logs.
+     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
      */
     @JsonProperty(value = "installationActivityId", access = JsonProperty.Access.WRITE_ONLY)
     private String installationActivityId;
@@ -34,8 +32,7 @@ public final class LastPatchInstallationSummary {
     private Boolean maintenanceWindowExceeded;
 
     /*
-     * The number of all available patches but not going to be installed because it didn't match a classification or
-     * inclusion list entry.
+     * The number of all available patches but not going to be installed because it didn't match a classification or inclusion list entry.
      */
     @JsonProperty(value = "notSelectedPatchCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer notSelectedPatchCount;
@@ -89,9 +86,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until
-     * the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or
-     * "CompletedWithWarnings.".
+     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings.".
      * 
      * @return the status value.
      */
@@ -100,8 +95,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the installationActivityId property: The activity ID of the operation that produced this result. It is used
-     * to correlate across CRP and extension logs.
+     * Get the installationActivityId property: The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
      * 
      * @return the installationActivityId value.
      */
@@ -110,8 +104,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the maintenanceWindowExceeded property: Describes whether the operation ran out of time before it completed
-     * all its intended actions.
+     * Get the maintenanceWindowExceeded property: Describes whether the operation ran out of time before it completed all its intended actions.
      * 
      * @return the maintenanceWindowExceeded value.
      */
@@ -120,8 +113,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the notSelectedPatchCount property: The number of all available patches but not going to be installed because
-     * it didn't match a classification or inclusion list entry.
+     * Get the notSelectedPatchCount property: The number of all available patches but not going to be installed because it didn't match a classification or inclusion list entry.
      * 
      * @return the notSelectedPatchCount value.
      */
@@ -130,8 +122,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the excludedPatchCount property: The number of all available patches but excluded explicitly by a
-     * customer-specified exclusion list match.
+     * Get the excludedPatchCount property: The number of all available patches but excluded explicitly by a customer-specified exclusion list match.
      * 
      * @return the excludedPatchCount value.
      */
@@ -140,8 +131,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the pendingPatchCount property: The number of all available patches expected to be installed over the course
-     * of the patch installation operation.
+     * Get the pendingPatchCount property: The number of all available patches expected to be installed over the course of the patch installation operation.
      * 
      * @return the pendingPatchCount value.
      */
@@ -186,8 +176,7 @@ public final class LastPatchInstallationSummary {
     }
 
     /**
-     * Get the error property: The errors that were encountered during execution of the operation. The details array
-     * contains the list of them.
+     * Get the error property: The errors that were encountered during execution of the operation. The details array contains the list of them.
      * 
      * @return the error value.
      */

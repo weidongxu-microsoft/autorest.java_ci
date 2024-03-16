@@ -13,7 +13,7 @@ import java.time.Duration;
 /**
  * Describes the properties of a video overlay.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = VideoOverlay.class, visible = true)
 @JsonTypeName("#Microsoft.Media.VideoOverlay")
 @Fluent
 public final class VideoOverlay extends Overlay {
@@ -24,8 +24,7 @@ public final class VideoOverlay extends Overlay {
     private Rectangle position;
 
     /*
-     * The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is
-     * opaque.
+     * The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is opaque.
      */
     @JsonProperty(value = "opacity")
     private Double opacity;
@@ -40,6 +39,7 @@ public final class VideoOverlay extends Overlay {
      * Creates an instance of VideoOverlay class.
      */
     public VideoOverlay() {
+        withOdataType("#Microsoft.Media.VideoOverlay");
     }
 
     /**
@@ -63,8 +63,7 @@ public final class VideoOverlay extends Overlay {
     }
 
     /**
-     * Get the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
-     * which mean the overlay is opaque.
+     * Get the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is opaque.
      * 
      * @return the opacity value.
      */
@@ -73,8 +72,7 @@ public final class VideoOverlay extends Overlay {
     }
 
     /**
-     * Set the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
-     * which mean the overlay is opaque.
+     * Set the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is opaque.
      * 
      * @param opacity the opacity value to set.
      * @return the VideoOverlay object itself.

@@ -205,14 +205,16 @@ public final class StaticSiteArmResourceImpl
     }
 
     public StaticSiteArmResource create() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSite(resourceGroupName,
-            name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSite(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StaticSiteArmResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSite(resourceGroupName,
-            name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSite(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -229,14 +231,18 @@ public final class StaticSiteArmResourceImpl
     }
 
     public StaticSiteArmResource apply() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .updateStaticSiteWithResponse(resourceGroupName, name, updateStaticSiteEnvelope, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .updateStaticSiteWithResponse(resourceGroupName, name, updateStaticSiteEnvelope, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteArmResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .updateStaticSiteWithResponse(resourceGroupName, name, updateStaticSiteEnvelope, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .updateStaticSiteWithResponse(resourceGroupName, name, updateStaticSiteEnvelope, context)
+            .getValue();
         return this;
     }
 
@@ -249,27 +255,32 @@ public final class StaticSiteArmResourceImpl
     }
 
     public StaticSiteArmResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteArmResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 
     public Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context) {
-        return serviceManager.staticSites().createUserRolesInvitationLinkWithResponse(resourceGroupName, name,
-            staticSiteUserRolesInvitationEnvelope, context);
+        return serviceManager.staticSites()
+            .createUserRolesInvitationLinkWithResponse(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope,
+                context);
     }
 
     public StaticSiteUserInvitationResponseResource
         createUserRolesInvitationLink(StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
-        return serviceManager.staticSites().createUserRolesInvitationLink(resourceGroupName, name,
-            staticSiteUserRolesInvitationEnvelope);
+        return serviceManager.staticSites()
+            .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
     }
 
     public void detachStaticSite() {
@@ -297,8 +308,8 @@ public final class StaticSiteArmResourceImpl
     }
 
     public Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context) {
-        return serviceManager.staticSites().listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name,
-            context);
+        return serviceManager.staticSites()
+            .listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, context);
     }
 
     public StringDictionary listStaticSiteFunctionAppSettings() {
@@ -315,8 +326,8 @@ public final class StaticSiteArmResourceImpl
 
     public Response<Void> resetStaticSiteApiKeyWithResponse(
         StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context) {
-        return serviceManager.staticSites().resetStaticSiteApiKeyWithResponse(resourceGroupName, name,
-            resetPropertiesEnvelope, context);
+        return serviceManager.staticSites()
+            .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
     }
 
     public void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
@@ -332,14 +343,14 @@ public final class StaticSiteArmResourceImpl
     }
 
     public void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
-        serviceManager.staticSites().createZipDeploymentForStaticSite(resourceGroupName, name,
-            staticSiteZipDeploymentEnvelope);
+        serviceManager.staticSites()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope);
     }
 
     public void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
         Context context) {
-        serviceManager.staticSites().createZipDeploymentForStaticSite(resourceGroupName, name,
-            staticSiteZipDeploymentEnvelope, context);
+        serviceManager.staticSites()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
     }
 
     public StaticSiteArmResourceImpl withRegion(Region location) {

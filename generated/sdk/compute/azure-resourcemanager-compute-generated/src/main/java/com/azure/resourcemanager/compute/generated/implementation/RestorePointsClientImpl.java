@@ -60,8 +60,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientRestorePoints to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientRestorePoints to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -319,7 +318,8 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
     private Mono<RestorePointInner> createAsync(String resourceGroupName, String restorePointCollectionName,
         String restorePointName, RestorePointInner parameters, Context context) {
         return beginCreateAsync(resourceGroupName, restorePointCollectionName, restorePointName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -597,8 +597,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param restorePointName The name of the restore point.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
-     * run-time state of a restore point.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the run-time state of a restore point.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -641,8 +640,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param restorePointName The name of the restore point.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
-     * run-time state of a restore point.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -704,8 +702,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param restorePointName The name of the restore point.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
-     * run-time state of a restore point.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

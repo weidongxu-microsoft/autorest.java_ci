@@ -38,8 +38,8 @@ public final class DatabasesImpl implements Databases {
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         CheckNameRequest resourceName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, resourceName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, resourceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
@@ -105,8 +105,8 @@ public final class DatabasesImpl implements Databases {
 
     public Database createOrUpdate(String resourceGroupName, String clusterName, String databaseName,
         DatabaseInner parameters, CallerRole callerRole, Context context) {
-        DatabaseInner inner = this.serviceClient().createOrUpdate(resourceGroupName, clusterName, databaseName,
-            parameters, callerRole, context);
+        DatabaseInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, clusterName, databaseName, parameters, callerRole, context);
         if (inner != null) {
             return new DatabaseImpl(inner, this.manager());
         } else {
@@ -126,8 +126,8 @@ public final class DatabasesImpl implements Databases {
 
     public Database update(String resourceGroupName, String clusterName, String databaseName, DatabaseInner parameters,
         CallerRole callerRole, Context context) {
-        DatabaseInner inner = this.serviceClient().update(resourceGroupName, clusterName, databaseName, parameters,
-            callerRole, context);
+        DatabaseInner inner = this.serviceClient()
+            .update(resourceGroupName, clusterName, databaseName, parameters, callerRole, context);
         if (inner != null) {
             return new DatabaseImpl(inner, this.manager());
         } else {
@@ -183,8 +183,9 @@ public final class DatabasesImpl implements Databases {
     public Response<DatabasePrincipalListResult> removePrincipalsWithResponse(String resourceGroupName,
         String clusterName, String databaseName, DatabasePrincipalListRequest databasePrincipalsToRemove,
         Context context) {
-        Response<DatabasePrincipalListResultInner> inner = this.serviceClient().removePrincipalsWithResponse(
-            resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove, context);
+        Response<DatabasePrincipalListResultInner> inner = this.serviceClient()
+            .removePrincipalsWithResponse(resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabasePrincipalListResultImpl(inner.getValue(), this.manager()));
@@ -195,8 +196,8 @@ public final class DatabasesImpl implements Databases {
 
     public DatabasePrincipalListResult removePrincipals(String resourceGroupName, String clusterName,
         String databaseName, DatabasePrincipalListRequest databasePrincipalsToRemove) {
-        DatabasePrincipalListResultInner inner = this.serviceClient().removePrincipals(resourceGroupName, clusterName,
-            databaseName, databasePrincipalsToRemove);
+        DatabasePrincipalListResultInner inner = this.serviceClient()
+            .removePrincipals(resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove);
         if (inner != null) {
             return new DatabasePrincipalListResultImpl(inner, this.manager());
         } else {

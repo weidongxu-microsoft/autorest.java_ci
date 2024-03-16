@@ -154,8 +154,7 @@ public interface WorkflowRunActionRepetitionDefinition {
     Object error();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowRunActionRepetitionDefinitionInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowRunActionRepetitionDefinitionInner object.
      * 
      * @return the inner object.
      */

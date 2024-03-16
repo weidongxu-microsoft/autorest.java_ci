@@ -124,8 +124,7 @@ public final class ApplicationGatewayTrustedRootCertificate extends SubResource 
     }
 
     /**
-     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
-     * object stored in KeyVault.
+     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
      * 
      * @return the keyVaultSecretId value.
      */
@@ -134,8 +133,7 @@ public final class ApplicationGatewayTrustedRootCertificate extends SubResource 
     }
 
     /**
-     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
-     * object stored in KeyVault.
+     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
      * 
      * @param keyVaultSecretId the keyVaultSecretId value to set.
      * @return the ApplicationGatewayTrustedRootCertificate object itself.

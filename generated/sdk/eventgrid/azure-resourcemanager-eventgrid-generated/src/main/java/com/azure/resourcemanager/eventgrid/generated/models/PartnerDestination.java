@@ -74,8 +74,7 @@ public interface PartnerDestination {
     String endpointServiceContext();
 
     /**
-     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the partner destination. If this timer
-     * expires and the partner destination was never activated,
+     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the partner destination. If this timer expires and the partner destination was never activated,
      * the partner destination and corresponding channel are deleted.
      * 
      * @return the expirationTimeIfNotActivatedUtc value.
@@ -190,8 +189,7 @@ public interface PartnerDestination {
         }
 
         /**
-         * The stage of the PartnerDestination definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PartnerDestination definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPartnerRegistrationImmutableId,
             DefinitionStages.WithEndpointServiceContext, DefinitionStages.WithExpirationTimeIfNotActivatedUtc,
@@ -231,8 +229,7 @@ public interface PartnerDestination {
          */
         interface WithPartnerRegistrationImmutableId {
             /**
-             * Specifies the partnerRegistrationImmutableId property: The immutable Id of the corresponding partner
-             * registration..
+             * Specifies the partnerRegistrationImmutableId property: The immutable Id of the corresponding partner registration..
              * 
              * @param partnerRegistrationImmutableId The immutable Id of the corresponding partner registration.
              * @return the next definition stage.
@@ -245,8 +242,7 @@ public interface PartnerDestination {
          */
         interface WithEndpointServiceContext {
             /**
-             * Specifies the endpointServiceContext property: Endpoint context associated with this partner
-             * destination..
+             * Specifies the endpointServiceContext property: Endpoint context associated with this partner destination..
              * 
              * @param endpointServiceContext Endpoint context associated with this partner destination.
              * @return the next definition stage.
@@ -259,12 +255,10 @@ public interface PartnerDestination {
          */
         interface WithExpirationTimeIfNotActivatedUtc {
             /**
-             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the partner destination. If
-             * this timer expires and the partner destination was never activated,
+             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the partner destination. If this timer expires and the partner destination was never activated,
              * the partner destination and corresponding channel are deleted..
              * 
-             * @param expirationTimeIfNotActivatedUtc Expiration time of the partner destination. If this timer expires
-             * and the partner destination was never activated,
+             * @param expirationTimeIfNotActivatedUtc Expiration time of the partner destination. If this timer expires and the partner destination was never activated,
              * the partner destination and corresponding channel are deleted.
              * @return the next definition stage.
              */
@@ -302,8 +296,7 @@ public interface PartnerDestination {
          */
         interface WithMessageForActivation {
             /**
-             * Specifies the messageForActivation property: Context or helpful message that can be used during the
-             * approval process..
+             * Specifies the messageForActivation property: Context or helpful message that can be used during the approval process..
              * 
              * @param messageForActivation Context or helpful message that can be used during the approval process.
              * @return the next definition stage.

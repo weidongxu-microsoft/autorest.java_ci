@@ -82,7 +82,8 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
         List<VirtualMachineExtensionInner> inner = this.innerModel().resources();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

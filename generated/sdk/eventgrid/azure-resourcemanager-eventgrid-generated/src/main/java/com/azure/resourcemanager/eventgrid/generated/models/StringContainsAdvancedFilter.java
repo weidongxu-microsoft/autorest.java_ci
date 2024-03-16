@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * StringContains Advanced Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = StringContainsAdvancedFilter.class,
+    visible = true)
 @JsonTypeName("StringContains")
 @Fluent
 public final class StringContainsAdvancedFilter extends AdvancedFilter {
@@ -27,6 +31,7 @@ public final class StringContainsAdvancedFilter extends AdvancedFilter {
      * Creates an instance of StringContainsAdvancedFilter class.
      */
     public StringContainsAdvancedFilter() {
+        withOperatorType(AdvancedFilterOperatorType.STRING_CONTAINS);
     }
 
     /**

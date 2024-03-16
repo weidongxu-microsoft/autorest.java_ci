@@ -62,8 +62,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientDedicatedHostGroups to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientDedicatedHostGroups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -140,8 +139,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see
-     * [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
+     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -149,8 +147,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -184,8 +181,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see
-     * [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
+     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -194,8 +190,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -228,8 +223,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see
-     * [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
+     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -237,8 +231,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on
-     * successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DedicatedHostGroupInner> createOrUpdateAsync(String resourceGroupName, String hostGroupName,
@@ -248,8 +241,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see
-     * [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
+     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -258,8 +250,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DedicatedHostGroupInner> createOrUpdateWithResponse(String resourceGroupName, String hostGroupName,
@@ -268,8 +259,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see
-     * [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
+     * Create or update a dedicated host group. For details of Dedicated Host and Dedicated Host Groups please see [Dedicated Host Documentation] (https://go.microsoft.com/fwlink/?linkid=2082596).
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -294,8 +284,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> updateWithResponseAsync(String resourceGroupName,
@@ -338,8 +327,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> updateWithResponseAsync(String resourceGroupName,
@@ -380,8 +368,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on
-     * successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DedicatedHostGroupInner> updateAsync(String resourceGroupName, String hostGroupName,
@@ -400,8 +387,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DedicatedHostGroupInner> updateWithResponse(String resourceGroupName, String hostGroupName,
@@ -547,14 +533,11 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
-     * views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
-     * group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -587,15 +570,12 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
-     * views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
-     * group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DedicatedHostGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -630,8 +610,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on
-     * successful completion of {@link Mono}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DedicatedHostGroupInner> getByResourceGroupAsync(String resourceGroupName, String hostGroupName) {
@@ -645,15 +624,12 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
-     * views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
-     * group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
-     * with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DedicatedHostGroupInner> getByResourceGroupWithResponse(String resourceGroupName,
@@ -678,15 +654,13 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -713,16 +687,14 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -750,8 +722,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -766,8 +737,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
@@ -783,15 +753,13 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with
-     * {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DedicatedHostGroupInner> listByResourceGroup(String resourceGroupName) {
@@ -799,16 +767,14 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
-     * to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with
-     * {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DedicatedHostGroupInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -816,13 +782,11 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listSinglePageAsync() {
@@ -845,15 +809,13 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listSinglePageAsync(Context context) {
@@ -874,8 +836,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -888,8 +849,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -904,13 +864,11 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with
-     * {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DedicatedHostGroupInner> list() {
@@ -918,15 +876,13 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
     }
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
-     * next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with
-     * {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DedicatedHostGroupInner> list(Context context) {
@@ -942,8 +898,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -973,8 +928,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1002,8 +956,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1033,8 +986,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Dedicated Host Group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DedicatedHostGroupInner>> listBySubscriptionNextSinglePageAsync(String nextLink,

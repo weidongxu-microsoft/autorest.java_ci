@@ -32,8 +32,7 @@ public interface EntityNameAvailabilityCheckOutput {
     String message();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner object.
      * 
      * @return the inner object.
      */

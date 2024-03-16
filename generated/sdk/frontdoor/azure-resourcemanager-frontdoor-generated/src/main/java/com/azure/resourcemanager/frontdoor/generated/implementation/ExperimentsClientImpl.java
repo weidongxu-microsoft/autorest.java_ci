@@ -66,8 +66,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientExperiments to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientExperiments to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -412,8 +411,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -460,8 +458,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -667,8 +664,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String profileName,
@@ -717,8 +713,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String profileName,

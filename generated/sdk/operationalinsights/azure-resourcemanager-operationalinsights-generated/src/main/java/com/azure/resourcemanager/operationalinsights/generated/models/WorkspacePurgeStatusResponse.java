@@ -18,8 +18,7 @@ public interface WorkspacePurgeStatusResponse {
     PurgeState status();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeStatusResponseInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeStatusResponseInner object.
      * 
      * @return the inner object.
      */

@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Trigger details.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = PeriodicTimerEventTrigger.class,
+    visible = true)
 @JsonTypeName("PeriodicTimerEvent")
 @Fluent
 public final class PeriodicTimerEventTrigger extends TriggerInner {
@@ -29,6 +33,7 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
      * Creates an instance of PeriodicTimerEventTrigger class.
      */
     public PeriodicTimerEventTrigger() {
+        withKind(TriggerEventType.PERIODIC_TIMER_EVENT);
     }
 
     /**
@@ -87,9 +92,7 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     }
 
     /**
-     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its
-     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
-     * tag can be the name or the image URL of the module.
+     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
      * 
      * @return the customContextTag value.
      */
@@ -98,9 +101,7 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     }
 
     /**
-     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its
-     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
-     * tag can be the name or the image URL of the module.
+     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
      * 
      * @param customContextTag the customContextTag value to set.
      * @return the PeriodicTimerEventTrigger object itself.

@@ -54,8 +54,7 @@ public final class ReadWriteDatabaseProperties {
     private KeyVaultProperties keyVaultProperties;
 
     /*
-     * The database suspension details. If the database is suspended, this object contains information related to the
-     * database's suspension state.
+     * The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
      */
     @JsonProperty(value = "suspensionDetails", access = JsonProperty.Access.WRITE_ONLY)
     private SuspensionDetails suspensionDetails;
@@ -76,8 +75,7 @@ public final class ReadWriteDatabaseProperties {
     }
 
     /**
-     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
-     * in TimeSpan.
+     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
      * 
      * @return the softDeletePeriod value.
      */
@@ -86,8 +84,7 @@ public final class ReadWriteDatabaseProperties {
     }
 
     /**
-     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
-     * in TimeSpan.
+     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
      * 
      * @param softDeletePeriod the softDeletePeriod value to set.
      * @return the ReadWriteDatabaseProperties object itself.
@@ -156,8 +153,7 @@ public final class ReadWriteDatabaseProperties {
     }
 
     /**
-     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object
-     * contains information related to the database's suspension state.
+     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
      * 
      * @return the suspensionDetails value.
      */

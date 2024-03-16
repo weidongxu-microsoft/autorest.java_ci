@@ -13,7 +13,7 @@ import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStat
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Represents a Storage Account on the Data Box Edge/Gateway device.
+ * Represents a Storage Account on the  Data Box Edge/Gateway device.
  */
 @Fluent
 public final class StorageAccountInner extends ArmBaseModel {
@@ -155,8 +155,7 @@ public final class StorageAccountInner extends ArmBaseModel {
     }
 
     /**
-     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to
-     * Cloud.
+     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
      * 
      * @return the containerCount value.
      */

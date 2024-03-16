@@ -55,8 +55,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
     }
 
     /**
-     * The interface defining all the services for MonitorClientDiagnosticSettingsOperations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for MonitorClientDiagnosticSettingsOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientDiagnos")
@@ -106,8 +105,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings for the specified resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the active diagnostic settings for the specified resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsResourceInner>> getWithResponseAsync(String resourceUri, String name) {
@@ -138,8 +136,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings for the specified resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the active diagnostic settings for the specified resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsResourceInner>> getWithResponseAsync(String resourceUri, String name,
@@ -444,8 +441,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings list for the specified resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the active diagnostic settings list for the specified resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsResourceCollectionInner>> listWithResponseAsync(String resourceUri) {
@@ -471,8 +467,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings list for the specified resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the active diagnostic settings list for the specified resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsResourceCollectionInner>> listWithResponseAsync(String resourceUri,

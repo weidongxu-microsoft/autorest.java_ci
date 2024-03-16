@@ -12,8 +12,7 @@ import java.util.Map;
  */
 public interface ClusterConfigurations {
     /**
-     * Gets the configurations property: The configuration object for the specified configuration for the specified
-     * cluster.
+     * Gets the configurations property: The configuration object for the specified configuration for the specified cluster.
      * 
      * @return the configurations value.
      */

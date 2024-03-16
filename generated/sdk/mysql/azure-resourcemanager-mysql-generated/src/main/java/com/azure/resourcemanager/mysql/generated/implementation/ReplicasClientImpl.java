@@ -55,8 +55,7 @@ public final class ReplicasClientImpl implements ReplicasClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientReplicas to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MySqlManagementClientReplicas to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -106,7 +105,7 @@ public final class ReplicasClientImpl implements ReplicasClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByServer(this.client.getEndpoint(), apiVersion,
@@ -145,7 +144,7 @@ public final class ReplicasClientImpl implements ReplicasClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
+        final String apiVersion = "2023-12-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

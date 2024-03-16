@@ -31,8 +31,7 @@ public final class CmkKekIdentity {
     }
 
     /**
-     * Get the useSystemAssignedIdentity property: Indicate that system assigned identity should be used. Mutually
-     * exclusive with 'userAssignedIdentity' field.
+     * Get the useSystemAssignedIdentity property: Indicate that system assigned identity should be used. Mutually exclusive with 'userAssignedIdentity' field.
      * 
      * @return the useSystemAssignedIdentity value.
      */
@@ -41,8 +40,7 @@ public final class CmkKekIdentity {
     }
 
     /**
-     * Set the useSystemAssignedIdentity property: Indicate that system assigned identity should be used. Mutually
-     * exclusive with 'userAssignedIdentity' field.
+     * Set the useSystemAssignedIdentity property: Indicate that system assigned identity should be used. Mutually exclusive with 'userAssignedIdentity' field.
      * 
      * @param useSystemAssignedIdentity the useSystemAssignedIdentity value to set.
      * @return the CmkKekIdentity object itself.
@@ -53,8 +51,7 @@ public final class CmkKekIdentity {
     }
 
     /**
-     * Get the userAssignedIdentity property: The user assigned identity to be used to grant permissions in case the
-     * type of identity used is UserAssigned.
+     * Get the userAssignedIdentity property: The user assigned identity to be used to grant permissions in case the type of identity used is UserAssigned.
      * 
      * @return the userAssignedIdentity value.
      */
@@ -63,8 +60,7 @@ public final class CmkKekIdentity {
     }
 
     /**
-     * Set the userAssignedIdentity property: The user assigned identity to be used to grant permissions in case the
-     * type of identity used is UserAssigned.
+     * Set the userAssignedIdentity property: The user assigned identity to be used to grant permissions in case the type of identity used is UserAssigned.
      * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the CmkKekIdentity object itself.

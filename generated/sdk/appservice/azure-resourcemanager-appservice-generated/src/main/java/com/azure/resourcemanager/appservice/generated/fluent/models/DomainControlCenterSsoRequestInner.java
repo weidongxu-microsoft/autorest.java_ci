@@ -55,8 +55,7 @@ public final class DomainControlCenterSsoRequestInner {
     }
 
     /**
-     * Get the postParameterValue property: Post parameter value. Client should use 'application/x-www-form-urlencoded'
-     * encoding for this value.
+     * Get the postParameterValue property: Post parameter value. Client should use 'application/x-www-form-urlencoded' encoding for this value.
      * 
      * @return the postParameterValue value.
      */

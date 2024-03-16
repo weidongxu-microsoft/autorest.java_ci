@@ -81,8 +81,7 @@ public final class StreamingEndpointListResult {
     }
 
     /**
-     * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
-     * of streaming endpoints.
+     * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list of streaming endpoints.
      * 
      * @return the odataNextLink value.
      */
@@ -91,8 +90,7 @@ public final class StreamingEndpointListResult {
     }
 
     /**
-     * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
-     * of streaming endpoints.
+     * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list of streaming endpoints.
      * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the StreamingEndpointListResult object itself.

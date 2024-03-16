@@ -90,8 +90,7 @@ public final class RenewCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external
-     * private key and vice versa).
+     * Get the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external private key and vice versa).
      * 
      * @return the isPrivateKeyExternal value.
      */
@@ -100,8 +99,7 @@ public final class RenewCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external
-     * private key and vice versa).
+     * Set the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external private key and vice versa).
      * 
      * @param isPrivateKeyExternal the isPrivateKeyExternal value to set.
      * @return the RenewCertificateOrderRequest object itself.

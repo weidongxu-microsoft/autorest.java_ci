@@ -233,8 +233,7 @@ public final class VpnGatewayInner extends Resource {
     }
 
     /**
-     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
-     * the VpnGateway.
+     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway.
      * 
      * @return the isRoutingPreferenceInternet value.
      */
@@ -243,8 +242,7 @@ public final class VpnGatewayInner extends Resource {
     }
 
     /**
-     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
-     * the VpnGateway.
+     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway.
      * 
      * @param isRoutingPreferenceInternet the isRoutingPreferenceInternet value to set.
      * @return the VpnGatewayInner object itself.

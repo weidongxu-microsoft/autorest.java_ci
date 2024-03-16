@@ -22,11 +22,9 @@ public interface GalleryImageVersions {
      * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link Response}.
      */
     Response<GalleryImageVersion> getWithResponse(String resourceGroupName, String galleryName, String galleryImageName,
         String galleryImageVersionName, ReplicationStatusTypes expand, Context context);
@@ -39,8 +37,7 @@ public interface GalleryImageVersions {
      * @param galleryImageName The name of the gallery image definition in which the Image Version resides.
      * @param galleryImageVersionName The name of the gallery image version to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery image version that you want to create or update.
      */
@@ -55,8 +52,7 @@ public interface GalleryImageVersions {
      * @param galleryImageName The name of the gallery image definition in which the Image Version resides.
      * @param galleryImageVersionName The name of the gallery image version to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName);
@@ -70,8 +66,7 @@ public interface GalleryImageVersions {
      * @param galleryImageVersionName The name of the gallery image version to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName,
@@ -82,11 +77,9 @@ public interface GalleryImageVersions {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
-     * @param galleryImageName The name of the Shared Image Gallery Image Definition from which the Image Versions are
-     * to be listed.
+     * @param galleryImageName The name of the Shared Image Gallery Image Definition from which the Image Versions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Image version operation response as paginated response with {@link PagedIterable}.
      */
@@ -98,12 +91,10 @@ public interface GalleryImageVersions {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
-     * @param galleryImageName The name of the Shared Image Gallery Image Definition from which the Image Versions are
-     * to be listed.
+     * @param galleryImageName The name of the Shared Image Gallery Image Definition from which the Image Versions are to be listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Image version operation response as paginated response with {@link PagedIterable}.
      */
@@ -115,11 +106,9 @@ public interface GalleryImageVersions {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link Response}.
      */
     GalleryImageVersion getById(String id);
 
@@ -130,11 +119,9 @@ public interface GalleryImageVersions {
      * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link Response}.
      */
     Response<GalleryImageVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand, Context context);
 
@@ -143,8 +130,7 @@ public interface GalleryImageVersions {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -155,8 +141,7 @@ public interface GalleryImageVersions {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);

@@ -67,8 +67,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientDiskEncryptionSets to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientDiskEncryptionSets to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -172,11 +171,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -219,11 +215,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -266,11 +259,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -290,11 +280,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -316,11 +303,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -337,11 +321,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -360,11 +341,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -381,11 +359,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -403,11 +378,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -423,11 +395,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Creates or updates a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -444,11 +413,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -491,11 +457,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -538,11 +501,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -562,11 +522,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -588,11 +545,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -608,11 +562,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -630,11 +581,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -651,11 +599,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -673,11 +618,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -693,11 +635,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Updates (patches) a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
-     * operation.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -714,14 +653,11 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Gets information about a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information about a disk encryption set along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiskEncryptionSetInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -754,15 +690,12 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Gets information about a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information about a disk encryption set along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiskEncryptionSetInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -794,9 +727,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Gets information about a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -813,9 +744,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Gets information about a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -832,9 +761,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Gets information about a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -849,9 +776,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -888,9 +813,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -927,9 +850,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -947,9 +868,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -970,9 +889,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -987,9 +904,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1006,9 +921,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1024,9 +937,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1043,9 +954,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1059,9 +968,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Deletes a disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1079,8 +986,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1114,8 +1020,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1207,8 +1112,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listSinglePageAsync() {
@@ -1237,8 +1141,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listSinglePageAsync(Context context) {
@@ -1315,14 +1218,11 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listAssociatedResourcesSinglePageAsync(String resourceGroupName,
@@ -1357,15 +1257,12 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listAssociatedResourcesSinglePageAsync(String resourceGroupName,
@@ -1400,14 +1297,11 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set as paginated response with
-     * {@link PagedFlux}.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<String> listAssociatedResourcesAsync(String resourceGroupName, String diskEncryptionSetName) {
@@ -1419,15 +1313,12 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set as paginated response with
-     * {@link PagedFlux}.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<String> listAssociatedResourcesAsync(String resourceGroupName, String diskEncryptionSetName,
@@ -1441,14 +1332,11 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set as paginated response with
-     * {@link PagedIterable}.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<String> listAssociatedResources(String resourceGroupName, String diskEncryptionSetName) {
@@ -1459,15 +1347,12 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * Lists all resources that are encrypted with this disk encryption set.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     * after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     * maximum name length is 80 characters.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set as paginated response with
-     * {@link PagedIterable}.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<String> listAssociatedResources(String resourceGroupName, String diskEncryptionSetName,
@@ -1484,8 +1369,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1515,8 +1399,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1544,8 +1427,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listNextSinglePageAsync(String nextLink) {
@@ -1573,8 +1455,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the List disk encryption set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskEncryptionSetInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1601,8 +1482,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listAssociatedResourcesNextSinglePageAsync(String nextLink) {
@@ -1632,8 +1512,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return the List resources which are encrypted with the disk encryption set along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listAssociatedResourcesNextSinglePageAsync(String nextLink, Context context) {

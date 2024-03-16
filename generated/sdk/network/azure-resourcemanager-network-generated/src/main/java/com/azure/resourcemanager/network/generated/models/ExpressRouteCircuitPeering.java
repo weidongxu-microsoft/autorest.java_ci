@@ -23,8 +23,7 @@ public interface ExpressRouteCircuitPeering {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -171,16 +170,14 @@ public interface ExpressRouteCircuitPeering {
     ExpressRouteConnectionId expressRouteConnection();
 
     /**
-     * Gets the connections property: The list of circuit connections associated with Azure Private Peering for this
-     * circuit.
+     * Gets the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the connections value.
      */
     List<ExpressRouteCircuitConnection> connections();
 
     /**
-     * Gets the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering
-     * for this circuit.
+     * Gets the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the peeredConnections value.
      */
@@ -232,8 +229,7 @@ public interface ExpressRouteCircuitPeering {
         }
 
         /**
-         * The stage of the ExpressRouteCircuitPeering definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRouteCircuitPeering definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithPeeringType,
             DefinitionStages.WithState, DefinitionStages.WithAzureAsn, DefinitionStages.WithPeerAsn,
@@ -264,11 +260,9 @@ public interface ExpressRouteCircuitPeering {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -487,11 +481,9 @@ public interface ExpressRouteCircuitPeering {
          */
         interface WithConnections {
             /**
-             * Specifies the connections property: The list of circuit connections associated with Azure Private Peering
-             * for this circuit..
+             * Specifies the connections property: The list of circuit connections associated with Azure Private Peering for this circuit..
              * 
-             * @param connections The list of circuit connections associated with Azure Private Peering for this
-             * circuit.
+             * @param connections The list of circuit connections associated with Azure Private Peering for this circuit.
              * @return the next definition stage.
              */
             WithCreate withConnections(List<ExpressRouteCircuitConnectionInner> connections);
@@ -540,11 +532,9 @@ public interface ExpressRouteCircuitPeering {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -763,11 +753,9 @@ public interface ExpressRouteCircuitPeering {
          */
         interface WithConnections {
             /**
-             * Specifies the connections property: The list of circuit connections associated with Azure Private Peering
-             * for this circuit..
+             * Specifies the connections property: The list of circuit connections associated with Azure Private Peering for this circuit..
              * 
-             * @param connections The list of circuit connections associated with Azure Private Peering for this
-             * circuit.
+             * @param connections The list of circuit connections associated with Azure Private Peering for this circuit.
              * @return the next definition stage.
              */
             Update withConnections(List<ExpressRouteCircuitConnectionInner> connections);

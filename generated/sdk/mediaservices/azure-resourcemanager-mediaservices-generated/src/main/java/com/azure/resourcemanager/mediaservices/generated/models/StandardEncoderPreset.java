@@ -16,7 +16,11 @@ import java.util.Map;
 /**
  * Describes all the settings to be used when encoding the input video with the Standard Encoder.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = StandardEncoderPreset.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.StandardEncoderPreset")
 @Fluent
 public final class StandardEncoderPreset extends Preset {
@@ -49,11 +53,11 @@ public final class StandardEncoderPreset extends Preset {
      * Creates an instance of StandardEncoderPreset class.
      */
     public StandardEncoderPreset() {
+        withOdataType("#Microsoft.Media.StandardEncoderPreset");
     }
 
     /**
-     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
-     * preset itself.
+     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
      * 
      * @return the experimentalOptions value.
      */
@@ -62,8 +66,7 @@ public final class StandardEncoderPreset extends Preset {
     }
 
     /**
-     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
-     * preset itself.
+     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
      * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the StandardEncoderPreset object itself.

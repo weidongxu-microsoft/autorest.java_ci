@@ -14,9 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StorageAccount {
     /*
-     * The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the
-     * primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or
-     * Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
+     * The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
      */
     @JsonProperty(value = "id")
     private String id;
@@ -46,9 +44,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Get the id property: The ID of the storage account resource. Media Services relies on tables and queues as well
-     * as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or
-     * Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
+     * Get the id property: The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
      * 
      * @return the id value.
      */
@@ -57,9 +53,7 @@ public final class StorageAccount {
     }
 
     /**
-     * Set the id property: The ID of the storage account resource. Media Services relies on tables and queues as well
-     * as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or
-     * Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
+     * Set the id property: The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
      * 
      * @param id the id value to set.
      * @return the StorageAccount object itself.

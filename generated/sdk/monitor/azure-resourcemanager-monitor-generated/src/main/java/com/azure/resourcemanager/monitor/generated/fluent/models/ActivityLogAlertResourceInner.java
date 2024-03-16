@@ -57,8 +57,7 @@ public final class ActivityLogAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @return the scopes value.
      */
@@ -67,8 +66,7 @@ public final class ActivityLogAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @param scopes the scopes value to set.
      * @return the ActivityLogAlertResourceInner object itself.
@@ -82,8 +80,7 @@ public final class ActivityLogAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -92,8 +89,7 @@ public final class ActivityLogAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertResourceInner object itself.

@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The domain name label scope. If a domain name label and a domain name label scope are specified, an A DNS record is
- * created for the public IP in the Microsoft Azure DNS system with a hashed value includes in FQDN.
+ * The domain name label scope. If a domain name label and a domain name label scope are specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system with a hashed value includes in FQDN.
  */
 public enum PublicIpAddressDnsSettingsDomainNameLabelScope {
     /**

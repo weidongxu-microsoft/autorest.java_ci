@@ -68,14 +68,18 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
     }
 
     public Export create() {
-        this.innerObject = serviceManager.serviceClient().getExports()
-            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExports()
+            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Export create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExports()
-            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExports()
+            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -90,14 +94,18 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
     }
 
     public Export apply() {
-        this.innerObject = serviceManager.serviceClient().getExports()
-            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExports()
+            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Export apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExports()
-            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExports()
+            .createOrUpdateWithResponse(scope, exportName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 

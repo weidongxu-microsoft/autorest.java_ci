@@ -91,14 +91,16 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm create() {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedHsm create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -113,14 +115,16 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm apply() {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms().update(resourceGroupName, name,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .update(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedHsm apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms().update(resourceGroupName, name,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .update(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -133,14 +137,18 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm refresh() {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ManagedHsm refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getManagedHsms()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getManagedHsms()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 

@@ -64,8 +64,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientFrontendEndpoints to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientFrontendEndpoints to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -128,8 +127,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorSinglePageAsync(String resourceGroupName,
@@ -168,8 +166,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorSinglePageAsync(String resourceGroupName,
@@ -274,8 +271,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontendEndpointInner>> getWithResponseAsync(String resourceGroupName, String frontDoorName,
@@ -317,8 +313,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontendEndpointInner>> getWithResponseAsync(String resourceGroupName, String frontDoorName,
@@ -358,8 +353,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door on successful completion of
-     * {@link Mono}.
+     * @return a Frontend endpoint with the specified name within the specified Front Door on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontendEndpointInner> getAsync(String resourceGroupName, String frontDoorName,
@@ -580,8 +574,10 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginEnableHttps(String resourceGroupName, String frontDoorName,
         String frontendEndpointName, CustomHttpsConfiguration customHttpsConfiguration, Context context) {
-        return this.beginEnableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName,
-            customHttpsConfiguration, context).getSyncPoller();
+        return this
+            .beginEnableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -600,7 +596,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     private Mono<Void> enableHttpsAsync(String resourceGroupName, String frontDoorName, String frontendEndpointName,
         CustomHttpsConfiguration customHttpsConfiguration) {
         return beginEnableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -896,8 +893,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorNextSinglePageAsync(String nextLink) {
@@ -926,8 +922,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorNextSinglePageAsync(String nextLink,

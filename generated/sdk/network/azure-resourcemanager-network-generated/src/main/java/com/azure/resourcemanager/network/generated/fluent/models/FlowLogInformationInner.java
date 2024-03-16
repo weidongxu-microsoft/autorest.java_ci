@@ -41,8 +41,7 @@ public final class FlowLogInformationInner {
     }
 
     /**
-     * Get the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics
-     * (optional) .
+     * Get the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics (optional) .
      * 
      * @return the targetResourceId value.
      */
@@ -51,8 +50,7 @@ public final class FlowLogInformationInner {
     }
 
     /**
-     * Set the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics
-     * (optional) .
+     * Set the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics (optional) .
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the FlowLogInformationInner object itself.

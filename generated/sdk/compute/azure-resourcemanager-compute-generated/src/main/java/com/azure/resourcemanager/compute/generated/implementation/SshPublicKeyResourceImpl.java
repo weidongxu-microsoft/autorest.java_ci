@@ -82,14 +82,18 @@ public final class SshPublicKeyResourceImpl
     }
 
     public SshPublicKeyResource create() {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public SshPublicKeyResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -105,14 +109,18 @@ public final class SshPublicKeyResourceImpl
     }
 
     public SshPublicKeyResource apply() {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .updateWithResponse(resourceGroupName, sshPublicKeyName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .updateWithResponse(resourceGroupName, sshPublicKeyName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SshPublicKeyResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .updateWithResponse(resourceGroupName, sshPublicKeyName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .updateWithResponse(resourceGroupName, sshPublicKeyName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -125,21 +133,25 @@ public final class SshPublicKeyResourceImpl
     }
 
     public SshPublicKeyResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SshPublicKeyResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSshPublicKeys()
-            .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSshPublicKeys()
+            .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context)
+            .getValue();
         return this;
     }
 
     public Response<SshPublicKeyGenerateKeyPairResult>
         generateKeyPairWithResponse(SshGenerateKeyPairInputParameters parameters, Context context) {
-        return serviceManager.sshPublicKeys().generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName,
-            parameters, context);
+        return serviceManager.sshPublicKeys()
+            .generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName, parameters, context);
     }
 
     public SshPublicKeyGenerateKeyPairResult generateKeyPair() {

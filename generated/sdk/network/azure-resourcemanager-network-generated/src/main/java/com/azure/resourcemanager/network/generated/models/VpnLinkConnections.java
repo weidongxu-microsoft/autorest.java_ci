@@ -79,8 +79,7 @@ public interface VpnLinkConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
         String connectionName);
@@ -95,8 +94,7 @@ public interface VpnLinkConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
         String connectionName, Context context);

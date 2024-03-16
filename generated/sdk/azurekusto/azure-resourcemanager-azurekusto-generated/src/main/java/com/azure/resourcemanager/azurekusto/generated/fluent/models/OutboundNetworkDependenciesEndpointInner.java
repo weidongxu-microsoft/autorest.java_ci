@@ -53,8 +53,7 @@ public final class OutboundNetworkDependenciesEndpointInner extends ProxyResourc
     }
 
     /**
-     * Get the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Get the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @return the category value.
      */
@@ -63,8 +62,7 @@ public final class OutboundNetworkDependenciesEndpointInner extends ProxyResourc
     }
 
     /**
-     * Set the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Set the category property: The type of service accessed by the Kusto Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @param category the category value to set.
      * @return the OutboundNetworkDependenciesEndpointInner object itself.

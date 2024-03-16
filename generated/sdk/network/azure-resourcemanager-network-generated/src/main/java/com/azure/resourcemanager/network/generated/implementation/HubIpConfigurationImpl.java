@@ -91,13 +91,15 @@ public final class HubIpConfigurationImpl
     }
 
     public HubIpConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
             .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public HubIpConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
             .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), context);
         return this;
     }
@@ -113,13 +115,15 @@ public final class HubIpConfigurationImpl
     }
 
     public HubIpConfiguration apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
             .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public HubIpConfiguration apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
             .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), context);
         return this;
     }
@@ -134,14 +138,18 @@ public final class HubIpConfigurationImpl
     }
 
     public HubIpConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
-            .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
+            .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public HubIpConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualHubIpConfigurations()
-            .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualHubIpConfigurations()
+            .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context)
+            .getValue();
         return this;
     }
 

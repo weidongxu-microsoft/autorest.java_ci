@@ -59,8 +59,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesStreamingPolicies to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesStreamingPolicies to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesSt")
@@ -124,14 +123,12 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingPolicyInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -169,15 +166,13 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingPolicyInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -215,8 +210,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -259,8 +253,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -303,8 +296,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     * service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -329,8 +321,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Policy in the Media Services account along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the details of a Streaming Policy in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingPolicyInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -374,8 +365,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Policy in the Media Services account along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the details of a Streaming Policy in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingPolicyInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -777,8 +767,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingPolicyInner>> listNextSinglePageAsync(String nextLink) {
@@ -806,8 +795,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of StreamingPolicy items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingPolicyInner>> listNextSinglePageAsync(String nextLink, Context context) {

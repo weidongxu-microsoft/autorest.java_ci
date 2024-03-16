@@ -38,8 +38,8 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
 
     public Response<VirtualNetworkPeering> getWithResponse(String resourceGroupName, String virtualNetworkName,
         String virtualNetworkPeeringName, Context context) {
-        Response<VirtualNetworkPeeringInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            virtualNetworkName, virtualNetworkPeeringName, context);
+        Response<VirtualNetworkPeeringInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkPeeringImpl(inner.getValue(), this.manager()));

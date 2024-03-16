@@ -39,7 +39,8 @@ public final class AnalyticsItemsImpl implements AnalyticsItems {
             .listWithResponse(resourceGroupName, resourceName, scopePath, scope, type, includeContent, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream()
+                inner.getValue()
+                    .stream()
                     .map(inner1 -> new ApplicationInsightsComponentAnalyticsItemImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
@@ -52,9 +53,9 @@ public final class AnalyticsItemsImpl implements AnalyticsItems {
         List<ApplicationInsightsComponentAnalyticsItemInner> inner
             = this.serviceClient().list(resourceGroupName, resourceName, scopePath);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ApplicationInsightsComponentAnalyticsItemImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationInsightsComponentAnalyticsItemImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

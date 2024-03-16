@@ -15,7 +15,11 @@ import java.util.List;
 /**
  * Network admin rule.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = ActiveSecurityAdminRule.class,
+    visible = true)
 @JsonTypeName("Custom")
 @Fluent
 public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
@@ -29,6 +33,7 @@ public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
      * Creates an instance of ActiveSecurityAdminRule class.
      */
     public ActiveSecurityAdminRule() {
+        withKind(EffectiveAdminRuleKind.CUSTOM);
     }
 
     /**
@@ -266,9 +271,7 @@ public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @return the priority value.
      */
@@ -277,9 +280,7 @@ public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @param priority the priority value to set.
      * @return the ActiveSecurityAdminRule object itself.

@@ -86,7 +86,8 @@ public final class RelayNamespaceImpl implements RelayNamespace, RelayNamespace.
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -128,14 +129,16 @@ public final class RelayNamespaceImpl implements RelayNamespace, RelayNamespace.
     }
 
     public RelayNamespace create() {
-        this.innerObject = serviceManager.serviceClient().getNamespaces().createOrUpdate(resourceGroupName,
-            namespaceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RelayNamespace create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaces().createOrUpdate(resourceGroupName,
-            namespaceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), context);
         return this;
     }
 
@@ -151,14 +154,18 @@ public final class RelayNamespaceImpl implements RelayNamespace, RelayNamespace.
     }
 
     public RelayNamespace apply() {
-        this.innerObject = serviceManager.serviceClient().getNamespaces()
-            .updateWithResponse(resourceGroupName, namespaceName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .updateWithResponse(resourceGroupName, namespaceName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RelayNamespace apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaces()
-            .updateWithResponse(resourceGroupName, namespaceName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .updateWithResponse(resourceGroupName, namespaceName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -171,14 +178,18 @@ public final class RelayNamespaceImpl implements RelayNamespace, RelayNamespace.
     }
 
     public RelayNamespace refresh() {
-        this.innerObject = serviceManager.serviceClient().getNamespaces()
-            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RelayNamespace refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNamespaces()
-            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNamespaces()
+            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, context)
+            .getValue();
         return this;
     }
 

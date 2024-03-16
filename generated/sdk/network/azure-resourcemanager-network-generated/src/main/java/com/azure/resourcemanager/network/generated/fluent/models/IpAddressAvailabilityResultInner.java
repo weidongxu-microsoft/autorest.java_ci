@@ -58,8 +58,7 @@ public final class IpAddressAvailabilityResultInner {
     }
 
     /**
-     * Get the availableIpAddresses property: Contains other available private IP addresses if the asked for address is
-     * taken.
+     * Get the availableIpAddresses property: Contains other available private IP addresses if the asked for address is taken.
      * 
      * @return the availableIpAddresses value.
      */
@@ -68,8 +67,7 @@ public final class IpAddressAvailabilityResultInner {
     }
 
     /**
-     * Set the availableIpAddresses property: Contains other available private IP addresses if the asked for address is
-     * taken.
+     * Set the availableIpAddresses property: Contains other available private IP addresses if the asked for address is taken.
      * 
      * @param availableIpAddresses the availableIpAddresses value to set.
      * @return the IpAddressAvailabilityResultInner object itself.

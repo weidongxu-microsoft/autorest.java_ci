@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the azure function destination for an event subscription.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = AzureFunctionEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("AzureFunction")
 @Fluent
 public final class AzureFunctionEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -28,6 +32,7 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
      * Creates an instance of AzureFunctionEventSubscriptionDestination class.
      */
     public AzureFunctionEventSubscriptionDestination() {
+        withEndpointType(EndpointType.AZURE_FUNCTION);
     }
 
     /**
@@ -40,8 +45,7 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of the Azure Function destination
-     * of an event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of the Azure Function destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +54,7 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of the Azure Function destination
-     * of an event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of the Azure Function destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the AzureFunctionEventSubscriptionDestination object itself.

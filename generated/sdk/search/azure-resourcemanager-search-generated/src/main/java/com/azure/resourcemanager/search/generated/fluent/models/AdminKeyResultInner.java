@@ -8,7 +8,7 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Response containing the primary and secondary admin API keys for a given search service.
+ * Response containing the primary and secondary admin API keys for a given Azure AI Search service.
  */
 @Immutable
 public final class AdminKeyResultInner {

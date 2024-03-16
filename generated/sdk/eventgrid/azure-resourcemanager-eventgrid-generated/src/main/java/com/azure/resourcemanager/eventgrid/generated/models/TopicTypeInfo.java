@@ -89,16 +89,14 @@ public interface TopicTypeInfo {
     List<TopicTypeSourceScope> supportedScopesForSource();
 
     /**
-     * Gets the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both
-     * regional or global system topics.
+     * Gets the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both regional or global system topics.
      * 
      * @return the areRegionalAndGlobalSourcesSupported value.
      */
     Boolean areRegionalAndGlobalSourcesSupported();
 
     /**
-     * Gets the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system
-     * topics of this this topic type.
+     * Gets the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system topics of this this topic type.
      * 
      * @return the additionalEnforcedPermissions value.
      */

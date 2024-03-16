@@ -93,8 +93,7 @@ public final class PrivateLinkConfiguration {
     }
 
     /**
-     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link
-     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @return the groupId value.
      */
@@ -103,8 +102,7 @@ public final class PrivateLinkConfiguration {
     }
 
     /**
-     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link
-     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @param groupId the groupId value to set.
      * @return the PrivateLinkConfiguration object itself.
@@ -118,8 +116,7 @@ public final class PrivateLinkConfiguration {
     }
 
     /**
-     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
-     * response.
+     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the response.
      * 
      * @return the provisioningState value.
      */

@@ -64,8 +64,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualHubIpConfigurations to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualHubIpConfigurations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -254,8 +253,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -301,8 +299,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -348,8 +345,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -371,8 +367,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -396,8 +391,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -416,8 +410,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -438,8 +431,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -458,8 +450,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -479,8 +470,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -498,8 +488,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     }
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -749,8 +738,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubIpConfigurationInner>> listSinglePageAsync(String resourceGroupName,
@@ -789,8 +777,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubIpConfigurationInner>> listSinglePageAsync(String resourceGroupName,
@@ -895,8 +882,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubIpConfigurationInner>> listNextSinglePageAsync(String nextLink) {
@@ -924,8 +910,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return virtualHubIpConfigurations list along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubIpConfigurationInner>> listNextSinglePageAsync(String nextLink, Context context) {

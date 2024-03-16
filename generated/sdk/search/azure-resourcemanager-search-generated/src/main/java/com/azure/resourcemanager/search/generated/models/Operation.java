@@ -25,6 +25,27 @@ public interface Operation {
     OperationDisplay display();
 
     /**
+     * Gets the isDataAction property: Describes if the specified operation is a data plane API operation. Operations where this value is not true are supported directly by the resource provider.
+     * 
+     * @return the isDataAction value.
+     */
+    Boolean isDataAction();
+
+    /**
+     * Gets the origin property: Describes which originating entities are allowed to invoke this operation.
+     * 
+     * @return the origin value.
+     */
+    String origin();
+
+    /**
+     * Gets the properties property: Describes additional properties for this operation.
+     * 
+     * @return the properties value.
+     */
+    OperationProperties properties();
+
+    /**
      * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.OperationInner object.
      * 
      * @return the inner object.

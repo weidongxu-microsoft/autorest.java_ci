@@ -37,8 +37,7 @@ public final class SupportedCapabilities {
     }
 
     /**
-     * Get the diskControllerTypes property: The disk controllers that an OS disk supports. If set it can be SCSI or
-     * SCSI, NVME or NVME, SCSI.
+     * Get the diskControllerTypes property: The disk controllers that an OS disk supports. If set it can be SCSI or SCSI, NVME or NVME, SCSI.
      * 
      * @return the diskControllerTypes value.
      */
@@ -47,8 +46,7 @@ public final class SupportedCapabilities {
     }
 
     /**
-     * Set the diskControllerTypes property: The disk controllers that an OS disk supports. If set it can be SCSI or
-     * SCSI, NVME or NVME, SCSI.
+     * Set the diskControllerTypes property: The disk controllers that an OS disk supports. If set it can be SCSI or SCSI, NVME or NVME, SCSI.
      * 
      * @param diskControllerTypes the diskControllerTypes value to set.
      * @return the SupportedCapabilities object itself.
@@ -59,8 +57,7 @@ public final class SupportedCapabilities {
     }
 
     /**
-     * Get the acceleratedNetwork property: True if the image from which the OS disk is created supports accelerated
-     * networking.
+     * Get the acceleratedNetwork property: True if the image from which the OS disk is created supports accelerated networking.
      * 
      * @return the acceleratedNetwork value.
      */
@@ -69,8 +66,7 @@ public final class SupportedCapabilities {
     }
 
     /**
-     * Set the acceleratedNetwork property: True if the image from which the OS disk is created supports accelerated
-     * networking.
+     * Set the acceleratedNetwork property: True if the image from which the OS disk is created supports accelerated networking.
      * 
      * @param acceleratedNetwork the acceleratedNetwork value to set.
      * @return the SupportedCapabilities object itself.

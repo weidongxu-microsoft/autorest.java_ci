@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Dimension of a resource metric. For e.g. instance specific HTTP requests for a web app,
+ * Dimension of a resource metric. For e.g. instance specific HTTP requests for a web app, 
  * where instance name is dimension of the metric HTTP request.
  */
 @Fluent

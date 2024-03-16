@@ -91,13 +91,16 @@ public final class ExpressRouteCircuitConnectionImpl implements ExpressRouteCirc
     }
 
     public ExpressRouteCircuitConnection create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections().createOrUpdate(
-            resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
+            .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitConnection create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
         return this;
     }
@@ -114,13 +117,16 @@ public final class ExpressRouteCircuitConnectionImpl implements ExpressRouteCirc
     }
 
     public ExpressRouteCircuitConnection apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections().createOrUpdate(
-            resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
+            .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitConnection apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
         return this;
     }
@@ -136,14 +142,18 @@ public final class ExpressRouteCircuitConnectionImpl implements ExpressRouteCirc
     }
 
     public ExpressRouteCircuitConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
-            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRouteCircuitConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
-            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitConnections()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context)
+            .getValue();
         return this;
     }
 

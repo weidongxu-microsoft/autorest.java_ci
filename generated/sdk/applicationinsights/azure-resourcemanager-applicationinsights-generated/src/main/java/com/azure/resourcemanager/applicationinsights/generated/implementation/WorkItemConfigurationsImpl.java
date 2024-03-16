@@ -41,8 +41,8 @@ public final class WorkItemConfigurationsImpl implements WorkItemConfigurations 
 
     public Response<WorkItemConfiguration> createWithResponse(String resourceGroupName, String resourceName,
         WorkItemCreateConfiguration workItemConfigurationProperties, Context context) {
-        Response<WorkItemConfigurationInner> inner = this.serviceClient().createWithResponse(resourceGroupName,
-            resourceName, workItemConfigurationProperties, context);
+        Response<WorkItemConfigurationInner> inner = this.serviceClient()
+            .createWithResponse(resourceGroupName, resourceName, workItemConfigurationProperties, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkItemConfigurationImpl(inner.getValue(), this.manager()));
@@ -116,8 +116,9 @@ public final class WorkItemConfigurationsImpl implements WorkItemConfigurations 
 
     public Response<WorkItemConfiguration> updateItemWithResponse(String resourceGroupName, String resourceName,
         String workItemConfigId, WorkItemCreateConfiguration workItemConfigurationProperties, Context context) {
-        Response<WorkItemConfigurationInner> inner = this.serviceClient().updateItemWithResponse(resourceGroupName,
-            resourceName, workItemConfigId, workItemConfigurationProperties, context);
+        Response<WorkItemConfigurationInner> inner = this.serviceClient()
+            .updateItemWithResponse(resourceGroupName, resourceName, workItemConfigId, workItemConfigurationProperties,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkItemConfigurationImpl(inner.getValue(), this.manager()));
@@ -128,8 +129,8 @@ public final class WorkItemConfigurationsImpl implements WorkItemConfigurations 
 
     public WorkItemConfiguration updateItem(String resourceGroupName, String resourceName, String workItemConfigId,
         WorkItemCreateConfiguration workItemConfigurationProperties) {
-        WorkItemConfigurationInner inner = this.serviceClient().updateItem(resourceGroupName, resourceName,
-            workItemConfigId, workItemConfigurationProperties);
+        WorkItemConfigurationInner inner = this.serviceClient()
+            .updateItem(resourceGroupName, resourceName, workItemConfigId, workItemConfigurationProperties);
         if (inner != null) {
             return new WorkItemConfigurationImpl(inner, this.manager());
         } else {

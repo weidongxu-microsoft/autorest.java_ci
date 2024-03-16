@@ -75,8 +75,8 @@ public final class ScriptsImpl implements Scripts {
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         String databaseName, ScriptCheckNameRequest scriptName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, databaseName, scriptName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, databaseName, scriptName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));

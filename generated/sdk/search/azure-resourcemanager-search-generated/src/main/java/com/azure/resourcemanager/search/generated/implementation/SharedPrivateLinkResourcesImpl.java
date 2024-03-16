@@ -30,8 +30,9 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
 
     public Response<SharedPrivateLinkResource> getWithResponse(String resourceGroupName, String searchServiceName,
         String sharedPrivateLinkResourceName, UUID clientRequestId, Context context) {
-        Response<SharedPrivateLinkResourceInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);
+        Response<SharedPrivateLinkResourceInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SharedPrivateLinkResourceImpl(inner.getValue(), this.manager()));
@@ -57,8 +58,8 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
 
     public void delete(String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName,
         UUID clientRequestId, Context context) {
-        this.serviceClient().delete(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName,
-            clientRequestId, context);
+        this.serviceClient()
+            .delete(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);
     }
 
     public PagedIterable<SharedPrivateLinkResource> listByService(String resourceGroupName, String searchServiceName) {
@@ -92,8 +93,10 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
                 .format("The resource ID '%s' is not valid. Missing path segment 'sharedPrivateLinkResources'.", id)));
         }
         UUID localClientRequestId = null;
-        return this.getWithResponse(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName,
-            localClientRequestId, Context.NONE).getValue();
+        return this
+            .getWithResponse(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, localClientRequestId,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context) {

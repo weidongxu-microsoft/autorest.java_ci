@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * The database suspension details. If the database is suspended, this object contains information related to the
- * database's suspension state.
+ * The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
  */
 @Fluent
 public final class SuspensionDetails {

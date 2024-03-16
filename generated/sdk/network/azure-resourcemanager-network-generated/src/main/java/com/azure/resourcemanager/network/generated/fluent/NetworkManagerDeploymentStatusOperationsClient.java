@@ -12,8 +12,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerD
 import com.azure.resourcemanager.network.generated.models.NetworkManagerDeploymentStatusParameter;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * NetworkManagerDeploymentStatusOperationsClient.
+ * An instance of this class provides access to all the operations defined in NetworkManagerDeploymentStatusOperationsClient.
  */
 public interface NetworkManagerDeploymentStatusOperationsClient {
     /**
@@ -22,8 +21,7 @@ public interface NetworkManagerDeploymentStatusOperationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Parameters supplied to specify which Managed Network deployment status is.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

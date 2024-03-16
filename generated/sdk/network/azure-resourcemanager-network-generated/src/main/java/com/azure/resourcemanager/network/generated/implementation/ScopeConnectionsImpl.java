@@ -51,8 +51,8 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String networkManagerName,
         String scopeConnectionName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
     }
 
     public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {

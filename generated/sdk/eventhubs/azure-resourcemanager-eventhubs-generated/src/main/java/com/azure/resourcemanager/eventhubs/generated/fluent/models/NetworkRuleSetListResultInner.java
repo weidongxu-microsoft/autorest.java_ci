@@ -52,8 +52,7 @@ public final class NetworkRuleSetListResultInner {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * NetworkRuleSet.
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet.
      * 
      * @return the nextLink value.
      */
@@ -62,8 +61,7 @@ public final class NetworkRuleSetListResultInner {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * NetworkRuleSet.
+     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet.
      * 
      * @param nextLink the nextLink value to set.
      * @return the NetworkRuleSetListResultInner object itself.

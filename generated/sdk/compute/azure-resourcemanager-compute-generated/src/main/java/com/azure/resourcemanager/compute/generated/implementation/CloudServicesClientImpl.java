@@ -69,8 +69,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCloudServices to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCloudServices to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -1198,14 +1197,11 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceInner>> listSinglePageAsync() {
@@ -1228,16 +1224,13 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceInner>> listSinglePageAsync(Context context) {
@@ -1258,14 +1251,11 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
-     * paginated response with {@link PagedFlux}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CloudServiceInner> listAsync() {
@@ -1273,16 +1263,13 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
-     * paginated response with {@link PagedFlux}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CloudServiceInner> listAsync(Context context) {
@@ -1291,14 +1278,11 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
-     * paginated response with {@link PagedIterable}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CloudServiceInner> list() {
@@ -1306,16 +1290,13 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink
-     * property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the
-     * Cloud Services.
+     * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
-     * paginated response with {@link PagedIterable}.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CloudServiceInner> list(Context context) {
@@ -1323,15 +1304,13 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services under a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of all cloud services under a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1358,16 +1337,14 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services under a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of all cloud services under a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CloudServiceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1395,8 +1372,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1411,8 +1387,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param context The context to associate with this operation.
@@ -1428,8 +1403,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1443,8 +1417,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next
-     * page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
+     * Gets a list of all cloud services under a resource group. Use nextLink property in the response to get the next page of Cloud Services. Do this till nextLink is null to fetch all the Cloud Services.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param context The context to associate with this operation.
@@ -1663,8 +1636,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1701,8 +1673,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1739,8 +1710,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1757,8 +1727,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1778,8 +1747,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1794,8 +1762,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1812,8 +1779,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1829,8 +1795,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1847,8 +1812,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1862,8 +1826,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Power off the cloud service. Note that resources are still attached and you are getting charged for the
-     * resources.
+     * Power off the cloud service. Note that resources are still attached and you are getting charged for the resources.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2400,9 +2363,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2443,9 +2404,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2486,9 +2445,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2508,9 +2465,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2529,9 +2484,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2553,9 +2506,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2571,9 +2522,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2591,9 +2540,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2610,9 +2557,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2629,9 +2574,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2650,9 +2593,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -2667,9 +2608,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     }
 
     /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
+     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.

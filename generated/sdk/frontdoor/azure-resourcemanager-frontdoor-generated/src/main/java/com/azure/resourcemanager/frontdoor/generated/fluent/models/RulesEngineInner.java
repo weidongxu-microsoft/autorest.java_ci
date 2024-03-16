@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * A rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request
- * and response.
+ * A rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request and response.
  */
 @Fluent
 public final class RulesEngineInner extends ProxyResource {

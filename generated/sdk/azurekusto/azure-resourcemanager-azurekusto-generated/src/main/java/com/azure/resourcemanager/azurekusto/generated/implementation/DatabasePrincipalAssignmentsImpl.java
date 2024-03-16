@@ -32,8 +32,9 @@ public final class DatabasePrincipalAssignmentsImpl implements DatabasePrincipal
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         String databaseName, DatabasePrincipalAssignmentCheckNameRequest principalAssignmentName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, databaseName, principalAssignmentName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
@@ -44,8 +45,8 @@ public final class DatabasePrincipalAssignmentsImpl implements DatabasePrincipal
 
     public CheckNameResult checkNameAvailability(String resourceGroupName, String clusterName, String databaseName,
         DatabasePrincipalAssignmentCheckNameRequest principalAssignmentName) {
-        CheckNameResultInner inner = this.serviceClient().checkNameAvailability(resourceGroupName, clusterName,
-            databaseName, principalAssignmentName);
+        CheckNameResultInner inner = this.serviceClient()
+            .checkNameAvailability(resourceGroupName, clusterName, databaseName, principalAssignmentName);
         if (inner != null) {
             return new CheckNameResultImpl(inner, this.manager());
         } else {
@@ -55,8 +56,8 @@ public final class DatabasePrincipalAssignmentsImpl implements DatabasePrincipal
 
     public Response<DatabasePrincipalAssignment> getWithResponse(String resourceGroupName, String clusterName,
         String databaseName, String principalAssignmentName, Context context) {
-        Response<DatabasePrincipalAssignmentInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            clusterName, databaseName, principalAssignmentName, context);
+        Response<DatabasePrincipalAssignmentInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabasePrincipalAssignmentImpl(inner.getValue(), this.manager()));

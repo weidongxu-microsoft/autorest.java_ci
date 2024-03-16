@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class KeyVaultProperties {
     /*
-     * The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example
-     * https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
+     * The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
      */
     @JsonProperty(value = "keyIdentifier")
     private String keyIdentifier;
@@ -32,9 +31,7 @@ public final class KeyVaultProperties {
     }
 
     /**
-     * Get the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be
-     * versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example
-     * https://vault/keys/mykey).
+     * Get the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
      * 
      * @return the keyIdentifier value.
      */
@@ -43,9 +40,7 @@ public final class KeyVaultProperties {
     }
 
     /**
-     * Set the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be
-     * versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example
-     * https://vault/keys/mykey).
+     * Set the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
      * 
      * @param keyIdentifier the keyIdentifier value to set.
      * @return the KeyVaultProperties object itself.
@@ -56,8 +51,7 @@ public final class KeyVaultProperties {
     }
 
     /**
-     * Get the currentKeyIdentifier property: The current key used to encrypt the Media Services account, including the
-     * key version.
+     * Get the currentKeyIdentifier property: The current key used to encrypt the Media Services account, including the key version.
      * 
      * @return the currentKeyIdentifier value.
      */

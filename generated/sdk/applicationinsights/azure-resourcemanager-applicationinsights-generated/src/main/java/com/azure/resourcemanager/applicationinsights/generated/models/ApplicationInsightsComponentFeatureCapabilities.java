@@ -123,9 +123,7 @@ public interface ApplicationInsightsComponentFeatureCapabilities {
     Float throttleRate();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentFeatureCapabilitiesInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentFeatureCapabilitiesInner object.
      * 
      * @return the inner object.
      */

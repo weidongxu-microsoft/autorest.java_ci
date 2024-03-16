@@ -92,15 +92,18 @@ public final class ArmDisasterRecoveryImpl
     }
 
     public ArmDisasterRecovery create() {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public ArmDisasterRecovery create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
-            .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -116,15 +119,18 @@ public final class ArmDisasterRecoveryImpl
     }
 
     public ArmDisasterRecovery apply() {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public ArmDisasterRecovery apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
-            .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -138,20 +144,24 @@ public final class ArmDisasterRecoveryImpl
     }
 
     public ArmDisasterRecovery refresh() {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
-            .getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
+            .getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ArmDisasterRecovery refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDisasterRecoveryConfigs()
-            .getWithResponse(resourceGroupName, namespaceName, alias, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisasterRecoveryConfigs()
+            .getWithResponse(resourceGroupName, namespaceName, alias, context)
+            .getValue();
         return this;
     }
 
     public Response<Void> breakPairingWithResponse(Context context) {
-        return serviceManager.disasterRecoveryConfigs().breakPairingWithResponse(resourceGroupName, namespaceName,
-            alias, context);
+        return serviceManager.disasterRecoveryConfigs()
+            .breakPairingWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
     public void breakPairing() {
@@ -159,8 +169,8 @@ public final class ArmDisasterRecoveryImpl
     }
 
     public Response<Void> failOverWithResponse(Context context) {
-        return serviceManager.disasterRecoveryConfigs().failOverWithResponse(resourceGroupName, namespaceName, alias,
-            context);
+        return serviceManager.disasterRecoveryConfigs()
+            .failOverWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
     public void failOver() {

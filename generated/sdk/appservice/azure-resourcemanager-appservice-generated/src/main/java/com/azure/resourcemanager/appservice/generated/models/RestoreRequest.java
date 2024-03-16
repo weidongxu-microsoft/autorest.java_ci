@@ -54,9 +54,7 @@ public interface RestoreRequest {
     String blobName();
 
     /**
-     * Gets the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an
-     * existing app.
+     * Gets the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app; otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an existing app.
      * 
      * @return the overwrite value.
      */
@@ -70,17 +68,14 @@ public interface RestoreRequest {
     String siteName();
 
     /**
-     * Gets the databases property: Collection of databases which should be restored. This list has to match the list of
-     * databases included in the backup.
+     * Gets the databases property: Collection of databases which should be restored. This list has to match the list of databases included in the backup.
      * 
      * @return the databases value.
      */
     List<DatabaseBackupSetting> databases();
 
     /**
-     * Gets the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains.
-     * &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom
-     * domains are added to
+     * Gets the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains. &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom domains are added to 
      * the app's object when it is being restored, but that might fail due to conflicts during the operation.
      * 
      * @return the ignoreConflictingHostNames value.
@@ -109,16 +104,14 @@ public interface RestoreRequest {
     BackupRestoreOperationType operationType();
 
     /**
-     * Gets the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should
-     * be set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should be set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the adjustConnectionStrings value.
      */
     Boolean adjustConnectionStrings();
 
     /**
-     * Gets the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an
-     * App Service Environment).
+     * Gets the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an App Service Environment).
      * 
      * @return the hostingEnvironment value.
      */

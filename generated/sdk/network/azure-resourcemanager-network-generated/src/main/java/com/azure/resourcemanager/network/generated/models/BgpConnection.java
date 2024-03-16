@@ -121,8 +121,7 @@ public interface BgpConnection {
         }
 
         /**
-         * The stage of the BgpConnection definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BgpConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithPeerAsn,
             DefinitionStages.WithPeerIp, DefinitionStages.WithHubVirtualNetworkConnection {
@@ -186,8 +185,7 @@ public interface BgpConnection {
          */
         interface WithHubVirtualNetworkConnection {
             /**
-             * Specifies the hubVirtualNetworkConnection property: The reference to the HubVirtualNetworkConnection
-             * resource..
+             * Specifies the hubVirtualNetworkConnection property: The reference to the HubVirtualNetworkConnection resource..
              * 
              * @param hubVirtualNetworkConnection The reference to the HubVirtualNetworkConnection resource.
              * @return the next definition stage.
@@ -272,8 +270,7 @@ public interface BgpConnection {
          */
         interface WithHubVirtualNetworkConnection {
             /**
-             * Specifies the hubVirtualNetworkConnection property: The reference to the HubVirtualNetworkConnection
-             * resource..
+             * Specifies the hubVirtualNetworkConnection property: The reference to the HubVirtualNetworkConnection resource..
              * 
              * @param hubVirtualNetworkConnection The reference to the HubVirtualNetworkConnection resource.
              * @return the next definition stage.

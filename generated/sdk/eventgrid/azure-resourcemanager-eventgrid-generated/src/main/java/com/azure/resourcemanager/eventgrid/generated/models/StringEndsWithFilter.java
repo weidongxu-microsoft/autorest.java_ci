@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * StringEndsWith Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = StringEndsWithFilter.class,
+    visible = true)
 @JsonTypeName("StringEndsWith")
 @Fluent
 public final class StringEndsWithFilter extends Filter {
@@ -27,6 +31,7 @@ public final class StringEndsWithFilter extends Filter {
      * Creates an instance of StringEndsWithFilter class.
      */
     public StringEndsWithFilter() {
+        withOperatorType(FilterOperatorType.STRING_ENDS_WITH);
     }
 
     /**

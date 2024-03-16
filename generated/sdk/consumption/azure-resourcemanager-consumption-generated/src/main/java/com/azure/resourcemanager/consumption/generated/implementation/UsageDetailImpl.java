@@ -6,6 +6,7 @@ package com.azure.resourcemanager.consumption.generated.implementation;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.UsageDetailInner;
 import com.azure.resourcemanager.consumption.generated.models.UsageDetail;
+import com.azure.resourcemanager.consumption.generated.models.UsageDetailsKind;
 import java.util.Collections;
 import java.util.Map;
 
@@ -30,6 +31,10 @@ public final class UsageDetailImpl implements UsageDetail {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public UsageDetailsKind kind() {
+        return this.innerModel().kind();
     }
 
     public String etag() {

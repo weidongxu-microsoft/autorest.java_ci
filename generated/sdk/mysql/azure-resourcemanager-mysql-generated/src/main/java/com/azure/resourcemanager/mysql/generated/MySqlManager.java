@@ -38,7 +38,11 @@ import com.azure.resourcemanager.mysql.generated.implementation.GetPrivateDnsZon
 import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedCapabilitiesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedCapabilitySetsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.LogFilesImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.LongRunningBackupsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.LongRunningBackupsOperationsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.MaintenancesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.MySqlManagementClientBuilder;
+import com.azure.resourcemanager.mysql.generated.implementation.OperationProgressImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.OperationResultsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ReplicasImpl;
@@ -58,6 +62,10 @@ import com.azure.resourcemanager.mysql.generated.models.GetPrivateDnsZoneSuffixe
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedCapabilities;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedCapabilitySets;
 import com.azure.resourcemanager.mysql.generated.models.LogFiles;
+import com.azure.resourcemanager.mysql.generated.models.LongRunningBackups;
+import com.azure.resourcemanager.mysql.generated.models.LongRunningBackupsOperations;
+import com.azure.resourcemanager.mysql.generated.models.Maintenances;
+import com.azure.resourcemanager.mysql.generated.models.OperationProgress;
 import com.azure.resourcemanager.mysql.generated.models.OperationResults;
 import com.azure.resourcemanager.mysql.generated.models.Operations;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
@@ -72,8 +80,7 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to MySqlManager.
- * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure MySQL resources
- * including servers, databases, firewall rules, VNET rules, log files and configurations with new business model.
+ * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure MySQL resources including servers, databases, firewall rules, VNET rules, log files and configurations with new business model.
  */
 public final class MySqlManager {
     private AzureADAdministrators azureADAdministrators;
@@ -81,6 +88,10 @@ public final class MySqlManager {
     private Backups backups;
 
     private BackupAndExports backupAndExports;
+
+    private LongRunningBackups longRunningBackups;
+
+    private LongRunningBackupsOperations longRunningBackupsOperations;
 
     private Configurations configurations;
 
@@ -93,6 +104,8 @@ public final class MySqlManager {
     private Replicas replicas;
 
     private ServersMigrations serversMigrations;
+
+    private AdvancedThreatProtectionSettings advancedThreatProtectionSettings;
 
     private LogFiles logFiles;
 
@@ -108,11 +121,13 @@ public final class MySqlManager {
 
     private OperationResults operationResults;
 
+    private OperationProgress operationProgress;
+
     private GetPrivateDnsZoneSuffixes getPrivateDnsZoneSuffixes;
 
     private Operations operations;
 
-    private AdvancedThreatProtectionSettings advancedThreatProtectionSettings;
+    private Maintenances maintenances;
 
     private final MySqlManagementClient clientObject;
 
@@ -120,8 +135,10 @@ public final class MySqlManager {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject = new MySqlManagementClientBuilder().pipeline(httpPipeline)
-            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
-            .defaultPollInterval(defaultPollInterval).buildClient();
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
+            .subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval)
+            .buildClient();
     }
 
     /**
@@ -272,12 +289,19 @@ public final class MySqlManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.mysql.generated")
-                .append("/").append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java")
+                .append("-")
+                .append("com.azure.resourcemanager.mysql.generated")
+                .append("/")
+                .append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
+                userAgentBuilder.append(" (")
+                    .append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.name"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version"))
+                    .append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -296,18 +320,21 @@ public final class MySqlManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
                 .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
             policies.addAll(this.policies.stream()
-                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
             HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
-                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
+                .policies(policies.toArray(new HttpPipelinePolicy[0]))
+                .build();
             return new MySqlManager(httpPipeline, profile, defaultPollInterval);
         }
     }
@@ -346,6 +373,31 @@ public final class MySqlManager {
             this.backupAndExports = new BackupAndExportsImpl(clientObject.getBackupAndExports(), this);
         }
         return backupAndExports;
+    }
+
+    /**
+     * Gets the resource collection API of LongRunningBackups. It manages ServerBackupV2.
+     * 
+     * @return Resource collection API of LongRunningBackups.
+     */
+    public LongRunningBackups longRunningBackups() {
+        if (this.longRunningBackups == null) {
+            this.longRunningBackups = new LongRunningBackupsImpl(clientObject.getLongRunningBackups(), this);
+        }
+        return longRunningBackups;
+    }
+
+    /**
+     * Gets the resource collection API of LongRunningBackupsOperations.
+     * 
+     * @return Resource collection API of LongRunningBackupsOperations.
+     */
+    public LongRunningBackupsOperations longRunningBackupsOperations() {
+        if (this.longRunningBackupsOperations == null) {
+            this.longRunningBackupsOperations
+                = new LongRunningBackupsOperationsImpl(clientObject.getLongRunningBackupsOperations(), this);
+        }
+        return longRunningBackupsOperations;
     }
 
     /**
@@ -418,6 +470,19 @@ public final class MySqlManager {
             this.serversMigrations = new ServersMigrationsImpl(clientObject.getServersMigrations(), this);
         }
         return serversMigrations;
+    }
+
+    /**
+     * Gets the resource collection API of AdvancedThreatProtectionSettings.
+     * 
+     * @return Resource collection API of AdvancedThreatProtectionSettings.
+     */
+    public AdvancedThreatProtectionSettings advancedThreatProtectionSettings() {
+        if (this.advancedThreatProtectionSettings == null) {
+            this.advancedThreatProtectionSettings
+                = new AdvancedThreatProtectionSettingsImpl(clientObject.getAdvancedThreatProtectionSettings(), this);
+        }
+        return advancedThreatProtectionSettings;
     }
 
     /**
@@ -510,6 +575,18 @@ public final class MySqlManager {
     }
 
     /**
+     * Gets the resource collection API of OperationProgress.
+     * 
+     * @return Resource collection API of OperationProgress.
+     */
+    public OperationProgress operationProgress() {
+        if (this.operationProgress == null) {
+            this.operationProgress = new OperationProgressImpl(clientObject.getOperationProgress(), this);
+        }
+        return operationProgress;
+    }
+
+    /**
      * Gets the resource collection API of GetPrivateDnsZoneSuffixes.
      * 
      * @return Resource collection API of GetPrivateDnsZoneSuffixes.
@@ -535,21 +612,19 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of AdvancedThreatProtectionSettings.
+     * Gets the resource collection API of Maintenances.
      * 
-     * @return Resource collection API of AdvancedThreatProtectionSettings.
+     * @return Resource collection API of Maintenances.
      */
-    public AdvancedThreatProtectionSettings advancedThreatProtectionSettings() {
-        if (this.advancedThreatProtectionSettings == null) {
-            this.advancedThreatProtectionSettings
-                = new AdvancedThreatProtectionSettingsImpl(clientObject.getAdvancedThreatProtectionSettings(), this);
+    public Maintenances maintenances() {
+        if (this.maintenances == null) {
+            this.maintenances = new MaintenancesImpl(clientObject.getMaintenances(), this);
         }
-        return advancedThreatProtectionSettings;
+        return maintenances;
     }
 
     /**
-     * Gets wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API
-     * implementation, based on Azure REST API.
+     * Gets wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client MySqlManagementClient.
      */

@@ -107,8 +107,7 @@ public interface P2SVpnGateway {
     List<String> customDnsServers();
 
     /**
-     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
-     * the P2SVpnGateway.
+     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the P2SVpnGateway.
      * 
      * @return the isRoutingPreferenceInternet value.
      */
@@ -194,8 +193,7 @@ public interface P2SVpnGateway {
         }
 
         /**
-         * The stage of the P2SVpnGateway definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the P2SVpnGateway definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithVirtualHub,
             DefinitionStages.WithP2SConnectionConfigurations, DefinitionStages.WithVpnGatewayScaleUnit,
@@ -248,8 +246,7 @@ public interface P2SVpnGateway {
          */
         interface WithP2SConnectionConfigurations {
             /**
-             * Specifies the p2SConnectionConfigurations property: List of all p2s connection configurations of the
-             * gateway..
+             * Specifies the p2SConnectionConfigurations property: List of all p2s connection configurations of the gateway..
              * 
              * @param p2SConnectionConfigurations List of all p2s connection configurations of the gateway.
              * @return the next definition stage.
@@ -275,8 +272,7 @@ public interface P2SVpnGateway {
          */
         interface WithVpnServerConfiguration {
             /**
-             * Specifies the vpnServerConfiguration property: The VpnServerConfiguration to which the p2sVpnGateway is
-             * attached to..
+             * Specifies the vpnServerConfiguration property: The VpnServerConfiguration to which the p2sVpnGateway is attached to..
              * 
              * @param vpnServerConfiguration The VpnServerConfiguration to which the p2sVpnGateway is attached to.
              * @return the next definition stage.
@@ -302,11 +298,9 @@ public interface P2SVpnGateway {
          */
         interface WithIsRoutingPreferenceInternet {
             /**
-             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP
-             * Interface of the P2SVpnGateway..
+             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the P2SVpnGateway..
              * 
-             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the
-             * P2SVpnGateway.
+             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the P2SVpnGateway.
              * @return the next definition stage.
              */
             WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
@@ -437,29 +431,25 @@ public interface P2SVpnGateway {
     P2SVpnGateway getP2SVpnConnectionHealth(Context context);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request, Context context);
 }

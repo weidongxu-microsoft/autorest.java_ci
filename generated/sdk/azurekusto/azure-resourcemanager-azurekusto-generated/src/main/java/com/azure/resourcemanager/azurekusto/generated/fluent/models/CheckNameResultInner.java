@@ -84,8 +84,7 @@ public final class CheckNameResultInner {
     }
 
     /**
-     * Get the message property: Message indicating an unavailable name due to a conflict, or a description of the
-     * naming rules that are violated.
+     * Get the message property: Message indicating an unavailable name due to a conflict, or a description of the naming rules that are violated.
      * 
      * @return the message value.
      */
@@ -94,8 +93,7 @@ public final class CheckNameResultInner {
     }
 
     /**
-     * Set the message property: Message indicating an unavailable name due to a conflict, or a description of the
-     * naming rules that are violated.
+     * Set the message property: Message indicating an unavailable name due to a conflict, or a description of the naming rules that are violated.
      * 
      * @param message the message value to set.
      * @return the CheckNameResultInner object itself.

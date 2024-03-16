@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this
- * property.
+ * Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
  */
 public final class MinimumTlsVersion extends ExpandableStringEnum<MinimumTlsVersion> {
     /**

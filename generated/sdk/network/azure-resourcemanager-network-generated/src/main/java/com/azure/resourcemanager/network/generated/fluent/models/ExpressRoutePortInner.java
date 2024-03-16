@@ -133,8 +133,7 @@ public final class ExpressRoutePortInner extends Resource {
     }
 
     /**
-     * Get the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to
-     * physically.
+     * Get the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to physically.
      * 
      * @return the peeringLocation value.
      */
@@ -143,8 +142,7 @@ public final class ExpressRoutePortInner extends Resource {
     }
 
     /**
-     * Set the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to
-     * physically.
+     * Set the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to physically.
      * 
      * @param peeringLocation the peeringLocation value to set.
      * @return the ExpressRoutePortInner object itself.
@@ -267,8 +265,7 @@ public final class ExpressRoutePortInner extends Resource {
     }
 
     /**
-     * Get the circuits property: Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort
-     * resource.
+     * Get the circuits property: Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort resource.
      * 
      * @return the circuits value.
      */

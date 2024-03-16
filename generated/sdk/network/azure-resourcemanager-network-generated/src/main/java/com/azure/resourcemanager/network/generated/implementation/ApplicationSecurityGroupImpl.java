@@ -88,13 +88,15 @@ public final class ApplicationSecurityGroupImpl
     }
 
     public ApplicationSecurityGroup create() {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
             .createOrUpdate(resourceGroupName, applicationSecurityGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ApplicationSecurityGroup create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
             .createOrUpdate(resourceGroupName, applicationSecurityGroupName, this.innerModel(), context);
         return this;
     }
@@ -112,14 +114,16 @@ public final class ApplicationSecurityGroupImpl
     }
 
     public ApplicationSecurityGroup apply() {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
             .updateTagsWithResponse(resourceGroupName, applicationSecurityGroupName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public ApplicationSecurityGroup apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
             .updateTagsWithResponse(resourceGroupName, applicationSecurityGroupName, updateParameters, context)
             .getValue();
         return this;
@@ -135,14 +139,18 @@ public final class ApplicationSecurityGroupImpl
     }
 
     public ApplicationSecurityGroup refresh() {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
-            .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationSecurityGroup refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getApplicationSecurityGroups()
-            .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getApplicationSecurityGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, context)
+            .getValue();
         return this;
     }
 

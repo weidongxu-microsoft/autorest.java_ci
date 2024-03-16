@@ -27,7 +27,8 @@ public final class FileServiceItemsImpl implements FileServiceItems {
         List<FileServicePropertiesInner> inner = this.innerModel().value();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new FileServicePropertiesImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new FileServicePropertiesImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

@@ -135,8 +135,7 @@ public final class WebApplicationFirewallPolicyProperties {
     }
 
     /**
-     * Get the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application
-     * Firewall policy.
+     * Get the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application Firewall policy.
      * 
      * @return the frontendEndpointLinks value.
      */
@@ -154,8 +153,7 @@ public final class WebApplicationFirewallPolicyProperties {
     }
 
     /**
-     * Get the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall
-     * policy.
+     * Get the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall policy.
      * 
      * @return the securityPolicyLinks value.
      */

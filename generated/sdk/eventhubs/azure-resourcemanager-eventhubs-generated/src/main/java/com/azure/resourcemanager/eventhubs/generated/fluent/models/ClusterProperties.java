@@ -90,8 +90,7 @@ public final class ClusterProperties {
     }
 
     /**
-     * Get the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by
-     * the user.
+     * Get the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by the user.
      * 
      * @return the metricId value.
      */

@@ -60,8 +60,7 @@ public final class ExpressRouteCircuitPeeringInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -70,8 +69,7 @@ public final class ExpressRouteCircuitPeeringInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the ExpressRouteCircuitPeeringInner object itself.
@@ -497,8 +495,7 @@ public final class ExpressRouteCircuitPeeringInner extends SubResource {
     }
 
     /**
-     * Get the connections property: The list of circuit connections associated with Azure Private Peering for this
-     * circuit.
+     * Get the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the connections value.
      */
@@ -507,8 +504,7 @@ public final class ExpressRouteCircuitPeeringInner extends SubResource {
     }
 
     /**
-     * Set the connections property: The list of circuit connections associated with Azure Private Peering for this
-     * circuit.
+     * Set the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @param connections the connections value to set.
      * @return the ExpressRouteCircuitPeeringInner object itself.
@@ -522,8 +518,7 @@ public final class ExpressRouteCircuitPeeringInner extends SubResource {
     }
 
     /**
-     * Get the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering
-     * for this circuit.
+     * Get the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering for this circuit.
      * 
      * @return the peeredConnections value.
      */

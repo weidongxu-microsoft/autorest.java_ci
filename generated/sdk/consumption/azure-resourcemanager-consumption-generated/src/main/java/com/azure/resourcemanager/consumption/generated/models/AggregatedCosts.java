@@ -15,9 +15,7 @@ public interface AggregatedCosts {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      * 
      * @param managementGroupId Azure Management Group ID.
-     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
-     * time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
-     * 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

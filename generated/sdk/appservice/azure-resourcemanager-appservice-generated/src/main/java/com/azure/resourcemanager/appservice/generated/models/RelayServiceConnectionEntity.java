@@ -96,8 +96,7 @@ public interface RelayServiceConnectionEntity {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner object.
      * 
      * @return the inner object.
      */
@@ -135,8 +134,7 @@ public interface RelayServiceConnectionEntity {
         }
 
         /**
-         * The stage of the RelayServiceConnectionEntity definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RelayServiceConnectionEntity definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithEntityName,
             DefinitionStages.WithEntityConnectionString, DefinitionStages.WithResourceType,

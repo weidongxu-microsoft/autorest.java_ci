@@ -51,6 +51,12 @@ public final class CustomRule {
     private Integer rateLimitThreshold;
 
     /*
+     * Describes the list of variables to group the rate limit requests
+     */
+    @JsonProperty(value = "groupBy")
+    private List<GroupByVariable> groupBy;
+
+    /*
      * List of match conditions.
      */
     @JsonProperty(value = "matchConditions", required = true)
@@ -89,8 +95,7 @@ public final class CustomRule {
     }
 
     /**
-     * Get the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before
-     * rules with a higher value.
+     * Get the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
      * 
      * @return the priority value.
      */
@@ -99,8 +104,7 @@ public final class CustomRule {
     }
 
     /**
-     * Set the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before
-     * rules with a higher value.
+     * Set the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
      * 
      * @param priority the priority value to set.
      * @return the CustomRule object itself.
@@ -111,8 +115,7 @@ public final class CustomRule {
     }
 
     /**
-     * Get the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled
-     * if not specified.
+     * Get the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
      * 
      * @return the enabledState value.
      */
@@ -121,8 +124,7 @@ public final class CustomRule {
     }
 
     /**
-     * Set the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled
-     * if not specified.
+     * Set the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
      * 
      * @param enabledState the enabledState value to set.
      * @return the CustomRule object itself.
@@ -193,6 +195,26 @@ public final class CustomRule {
     }
 
     /**
+     * Get the groupBy property: Describes the list of variables to group the rate limit requests.
+     * 
+     * @return the groupBy value.
+     */
+    public List<GroupByVariable> groupBy() {
+        return this.groupBy;
+    }
+
+    /**
+     * Set the groupBy property: Describes the list of variables to group the rate limit requests.
+     * 
+     * @param groupBy the groupBy value to set.
+     * @return the CustomRule object itself.
+     */
+    public CustomRule withGroupBy(List<GroupByVariable> groupBy) {
+        this.groupBy = groupBy;
+        return this;
+    }
+
+    /**
      * Get the matchConditions property: List of match conditions.
      * 
      * @return the matchConditions value.
@@ -241,6 +263,9 @@ public final class CustomRule {
         if (ruleType() == null) {
             throw LOGGER.logExceptionAsError(
                 new IllegalArgumentException("Missing required property ruleType in model CustomRule"));
+        }
+        if (groupBy() != null) {
+            groupBy().forEach(e -> e.validate());
         }
         if (matchConditions() == null) {
             throw LOGGER.logExceptionAsError(

@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Modern reservation recommendation.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = ModernReservationRecommendation.class,
+    visible = true)
 @JsonTypeName("modern")
 @Fluent
 public final class ModernReservationRecommendation extends ReservationRecommendationInner {
@@ -28,6 +32,7 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
      * Creates an instance of ModernReservationRecommendation class.
      */
     public ModernReservationRecommendation() {
+        withKind(ReservationRecommendationKind.MODERN);
     }
 
     /**

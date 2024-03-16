@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies
- * to.
+ * Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies to.
  */
 public final class ManagedRuleExclusionSelectorMatchOperator
     extends ExpandableStringEnum<ManagedRuleExclusionSelectorMatchOperator> {

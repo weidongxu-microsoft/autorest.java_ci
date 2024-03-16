@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class RouteProperties {
     /*
-     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a
-     * maximum length of 64 characters, and must be unique.
+     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -28,15 +27,13 @@ public final class RouteProperties {
     private RoutingSource source;
 
     /*
-     * The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by
-     * default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
+     * The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
      */
     @JsonProperty(value = "condition")
     private String condition;
 
     /*
-     * The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is
-     * allowed.
+     * The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
      */
     @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;
@@ -54,8 +51,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Get the name property: The name of the route. The name can only include alphanumeric characters, periods,
-     * underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * Get the name property: The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      * 
      * @return the name value.
      */
@@ -64,8 +60,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Set the name property: The name of the route. The name can only include alphanumeric characters, periods,
-     * underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * Set the name property: The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
      * 
      * @param name the name value to set.
      * @return the RouteProperties object itself.
@@ -96,9 +91,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Get the condition property: The condition that is evaluated to apply the routing rule. If no condition is
-     * provided, it evaluates to true by default. For grammar, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+     * Get the condition property: The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
      * 
      * @return the condition value.
      */
@@ -107,9 +100,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Set the condition property: The condition that is evaluated to apply the routing rule. If no condition is
-     * provided, it evaluates to true by default. For grammar, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+     * Set the condition property: The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
      * 
      * @param condition the condition value to set.
      * @return the RouteProperties object itself.
@@ -120,8 +111,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Get the endpointNames property: The list of endpoints to which messages that satisfy the condition are routed.
-     * Currently only one endpoint is allowed.
+     * Get the endpointNames property: The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
      * 
      * @return the endpointNames value.
      */
@@ -130,8 +120,7 @@ public final class RouteProperties {
     }
 
     /**
-     * Set the endpointNames property: The list of endpoints to which messages that satisfy the condition are routed.
-     * Currently only one endpoint is allowed.
+     * Set the endpointNames property: The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
      * 
      * @param endpointNames the endpointNames value to set.
      * @return the RouteProperties object itself.

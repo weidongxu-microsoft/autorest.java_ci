@@ -132,8 +132,7 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Get the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property
-     * can not be modified after cluster creation. Default value is 'true'.
+     * Get the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
      * 
      * @return the isDoubleEncryptionEnabled value.
      */
@@ -142,8 +141,7 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Set the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property
-     * can not be modified after cluster creation. Default value is 'true'.
+     * Set the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
      * 
      * @param isDoubleEncryptionEnabled the isDoubleEncryptionEnabled value to set.
      * @return the ClusterInner object itself.
@@ -157,9 +155,7 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Get the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can
-     * be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be
-     * modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+     * Get the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      * 
      * @return the isAvailabilityZonesEnabled value.
      */
@@ -168,9 +164,7 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Set the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can
-     * be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be
-     * modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+     * Set the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      * 
      * @param isAvailabilityZonesEnabled the isAvailabilityZonesEnabled value to set.
      * @return the ClusterInner object itself.

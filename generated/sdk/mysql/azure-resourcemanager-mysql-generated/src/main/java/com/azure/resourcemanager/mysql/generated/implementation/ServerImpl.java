@@ -4,14 +4,17 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.Backup;
 import com.azure.resourcemanager.mysql.generated.models.CreateMode;
 import com.azure.resourcemanager.mysql.generated.models.DataEncryption;
 import com.azure.resourcemanager.mysql.generated.models.HighAvailability;
+import com.azure.resourcemanager.mysql.generated.models.HighAvailabilityValidationEstimation;
 import com.azure.resourcemanager.mysql.generated.models.ImportSourceProperties;
 import com.azure.resourcemanager.mysql.generated.models.MaintenanceWindow;
 import com.azure.resourcemanager.mysql.generated.models.MySqlServerIdentity;
@@ -186,14 +189,16 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
     }
 
     public Server create() {
-        this.innerObject = serviceManager.serviceClient().getServers().create(resourceGroupName, serverName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .create(resourceGroupName, serverName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Server create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServers().create(resourceGroupName, serverName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .create(resourceGroupName, serverName, this.innerModel(), context);
         return this;
     }
 
@@ -209,14 +214,16 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
     }
 
     public Server apply() {
-        this.innerObject = serviceManager.serviceClient().getServers().update(resourceGroupName, serverName,
-            updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .update(resourceGroupName, serverName, updateParameters, Context.NONE);
         return this;
     }
 
     public Server apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServers().update(resourceGroupName, serverName,
-            updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .update(resourceGroupName, serverName, updateParameters, context);
         return this;
     }
 
@@ -228,14 +235,18 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
     }
 
     public Server refresh() {
-        this.innerObject = serviceManager.serviceClient().getServers()
-            .getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Server refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServers()
-            .getByResourceGroupWithResponse(resourceGroupName, serverName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServers()
+            .getByResourceGroupWithResponse(resourceGroupName, serverName, context)
+            .getValue();
         return this;
     }
 
@@ -245,6 +256,17 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
 
     public void failover(Context context) {
         serviceManager.servers().failover(resourceGroupName, serverName, context);
+    }
+
+    public Response<HighAvailabilityValidationEstimation> validateEstimateHighAvailabilityWithResponse(
+        HighAvailabilityValidationEstimationInner parameters, Context context) {
+        return serviceManager.servers()
+            .validateEstimateHighAvailabilityWithResponse(resourceGroupName, serverName, parameters, context);
+    }
+
+    public HighAvailabilityValidationEstimation
+        validateEstimateHighAvailability(HighAvailabilityValidationEstimationInner parameters) {
+        return serviceManager.servers().validateEstimateHighAvailability(resourceGroupName, serverName, parameters);
     }
 
     public void restart(ServerRestartParameter parameters) {

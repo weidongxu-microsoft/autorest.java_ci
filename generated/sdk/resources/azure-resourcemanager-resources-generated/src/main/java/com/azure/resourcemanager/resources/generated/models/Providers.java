@@ -96,9 +96,7 @@ public interface Providers {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -120,9 +118,7 @@ public interface Providers {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -135,8 +131,7 @@ public interface Providers {
      * Gets the specified resource provider.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -160,8 +155,7 @@ public interface Providers {
      * Gets the specified resource provider at the tenant level.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

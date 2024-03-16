@@ -98,14 +98,16 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
     }
 
     public HubRouteTable create() {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables().createOrUpdate(resourceGroupName,
-            virtualHubName, routeTableName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public HubRouteTable create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables().createOrUpdate(resourceGroupName,
-            virtualHubName, routeTableName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), context);
         return this;
     }
 
@@ -120,14 +122,16 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
     }
 
     public HubRouteTable apply() {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables().createOrUpdate(resourceGroupName,
-            virtualHubName, routeTableName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public HubRouteTable apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables().createOrUpdate(resourceGroupName,
-            virtualHubName, routeTableName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), context);
         return this;
     }
 
@@ -141,14 +145,18 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
     }
 
     public HubRouteTable refresh() {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables()
-            .getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public HubRouteTable refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getHubRouteTables()
-            .getWithResponse(resourceGroupName, virtualHubName, routeTableName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getHubRouteTables()
+            .getWithResponse(resourceGroupName, virtualHubName, routeTableName, context)
+            .getValue();
         return this;
     }
 

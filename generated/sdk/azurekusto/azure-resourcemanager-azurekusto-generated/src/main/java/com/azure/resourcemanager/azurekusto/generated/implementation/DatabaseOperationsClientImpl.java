@@ -53,8 +53,7 @@ public final class DatabaseOperationsClientImpl implements DatabaseOperationsCli
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientDatabaseOperations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientDatabaseOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -81,8 +80,7 @@ public final class DatabaseOperationsClientImpl implements DatabaseOperationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a follower invitation generation request along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the result returned from a follower invitation generation request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabaseInviteFollowerResultInner>> inviteFollowerWithResponseAsync(String resourceGroupName,
@@ -128,8 +126,7 @@ public final class DatabaseOperationsClientImpl implements DatabaseOperationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a follower invitation generation request along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the result returned from a follower invitation generation request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabaseInviteFollowerResultInner>> inviteFollowerWithResponseAsync(String resourceGroupName,
@@ -173,8 +170,7 @@ public final class DatabaseOperationsClientImpl implements DatabaseOperationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a follower invitation generation request on successful completion of
-     * {@link Mono}.
+     * @return the result returned from a follower invitation generation request on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DatabaseInviteFollowerResultInner> inviteFollowerAsync(String resourceGroupName, String clusterName,

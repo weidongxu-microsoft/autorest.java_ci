@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the
- * Application Insights component.
+ * Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.
  */
 public final class ItemScope extends ExpandableStringEnum<ItemScope> {
     /**

@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VnetRouteProperties {
     /*
-     * The starting address for this route. This may also include a CIDR notation, in which case the end address must
-     * not be specified.
+     * The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      */
     @JsonProperty(value = "startAddress")
     private String startAddress;
@@ -44,8 +43,7 @@ public final class VnetRouteProperties {
     }
 
     /**
-     * Get the startAddress property: The starting address for this route. This may also include a CIDR notation, in
-     * which case the end address must not be specified.
+     * Get the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      * 
      * @return the startAddress value.
      */
@@ -54,8 +52,7 @@ public final class VnetRouteProperties {
     }
 
     /**
-     * Set the startAddress property: The starting address for this route. This may also include a CIDR notation, in
-     * which case the end address must not be specified.
+     * Set the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      * 
      * @param startAddress the startAddress value to set.
      * @return the VnetRouteProperties object itself.
@@ -66,8 +63,7 @@ public final class VnetRouteProperties {
     }
 
     /**
-     * Get the endAddress property: The ending address for this route. If the start address is specified in CIDR
-     * notation, this must be omitted.
+     * Get the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
      * 
      * @return the endAddress value.
      */
@@ -76,8 +72,7 @@ public final class VnetRouteProperties {
     }
 
     /**
-     * Set the endAddress property: The ending address for this route. If the start address is specified in CIDR
-     * notation, this must be omitted.
+     * Set the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
      * 
      * @param endAddress the endAddress value to set.
      * @return the VnetRouteProperties object itself.

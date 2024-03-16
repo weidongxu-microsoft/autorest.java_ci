@@ -11,8 +11,7 @@ import com.azure.resourcemanager.storage.generated.models.SkuName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The parameters or status associated with an ongoing or enqueued storage account migration in order to update its
- * current SKU or region.
+ * The parameters or status associated with an ongoing or enqueued storage account migration in order to update its current SKU or region.
  */
 @Fluent
 public final class StorageAccountMigrationInner {
@@ -97,8 +96,7 @@ public final class StorageAccountMigrationInner {
     }
 
     /**
-     * Get the innerStorageAccountMigrationDetails property: The properties of a storage account’s ongoing or enqueued
-     * migration.
+     * Get the innerStorageAccountMigrationDetails property: The properties of a storage account’s ongoing or enqueued migration.
      * 
      * @return the innerStorageAccountMigrationDetails value.
      */
@@ -112,7 +110,8 @@ public final class StorageAccountMigrationInner {
      * @return the targetSkuName value.
      */
     public SkuName targetSkuName() {
-        return this.innerStorageAccountMigrationDetails() == null ? null
+        return this.innerStorageAccountMigrationDetails() == null
+            ? null
             : this.innerStorageAccountMigrationDetails().targetSkuName();
     }
 
@@ -136,7 +135,8 @@ public final class StorageAccountMigrationInner {
      * @return the migrationStatus value.
      */
     public MigrationStatus migrationStatus() {
-        return this.innerStorageAccountMigrationDetails() == null ? null
+        return this.innerStorageAccountMigrationDetails() == null
+            ? null
             : this.innerStorageAccountMigrationDetails().migrationStatus();
     }
 
@@ -146,7 +146,8 @@ public final class StorageAccountMigrationInner {
      * @return the migrationFailedReason value.
      */
     public String migrationFailedReason() {
-        return this.innerStorageAccountMigrationDetails() == null ? null
+        return this.innerStorageAccountMigrationDetails() == null
+            ? null
             : this.innerStorageAccountMigrationDetails().migrationFailedReason();
     }
 
@@ -156,7 +157,8 @@ public final class StorageAccountMigrationInner {
      * @return the migrationFailedDetailedReason value.
      */
     public String migrationFailedDetailedReason() {
-        return this.innerStorageAccountMigrationDetails() == null ? null
+        return this.innerStorageAccountMigrationDetails() == null
+            ? null
             : this.innerStorageAccountMigrationDetails().migrationFailedDetailedReason();
     }
 

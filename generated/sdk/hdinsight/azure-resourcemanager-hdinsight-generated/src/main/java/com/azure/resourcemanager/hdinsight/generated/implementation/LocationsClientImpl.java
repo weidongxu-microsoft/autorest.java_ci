@@ -60,8 +60,7 @@ public final class LocationsClientImpl implements LocationsClient {
     }
 
     /**
-     * The interface defining all the services for HDInsightManagementClientLocations to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for HDInsightManagementClientLocations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
@@ -127,8 +126,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the capabilities for the specified location along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the capabilities for the specified location along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapabilitiesResultInner>> getCapabilitiesWithResponseAsync(String location) {
@@ -158,8 +156,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the capabilities for the specified location along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the capabilities for the specified location along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CapabilitiesResultInner>> getCapabilitiesWithResponseAsync(String location, Context context) {
@@ -230,8 +227,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the response for the operation to get regional usages for a subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UsagesListResultInner>> listUsagesWithResponseAsync(String location) {
@@ -261,8 +257,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the response for the operation to get regional usages for a subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UsagesListResultInner>> listUsagesWithResponseAsync(String location, Context context) {
@@ -290,8 +285,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription on successful completion of
-     * {@link Mono}.
+     * @return the response for the operation to get regional usages for a subscription on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UsagesListResultInner> listUsagesAsync(String location) {
@@ -334,8 +328,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BillingResponseListResultInner>> listBillingSpecsWithResponseAsync(String location) {
@@ -365,8 +358,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BillingResponseListResultInner>> listBillingSpecsWithResponseAsync(String location,
@@ -395,8 +387,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription on successful completion
-     * of {@link Mono}.
+     * @return the response for the operation to get regional billingSpecs for a subscription on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BillingResponseListResultInner> listBillingSpecsAsync(String location) {
@@ -411,8 +402,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription along with
-     * {@link Response}.
+     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BillingResponseListResultInner> listBillingSpecsWithResponse(String location, Context context) {
@@ -557,8 +547,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response spec of checking name availability along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the response spec of checking name availability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NameAvailabilityCheckResultInner>> checkNameAvailabilityWithResponseAsync(String location,
@@ -595,8 +584,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response spec of checking name availability along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the response spec of checking name availability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NameAvailabilityCheckResultInner>> checkNameAvailabilityWithResponseAsync(String location,
@@ -681,8 +669,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of cluster create request validation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the response of cluster create request validation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterCreateValidationResultInner>> validateClusterCreateRequestWithResponseAsync(
@@ -719,8 +706,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of cluster create request validation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the response of cluster create request validation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterCreateValidationResultInner>> validateClusterCreateRequestWithResponseAsync(

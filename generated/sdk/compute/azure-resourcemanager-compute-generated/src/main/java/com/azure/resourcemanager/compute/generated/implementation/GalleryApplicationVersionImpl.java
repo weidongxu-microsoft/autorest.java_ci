@@ -103,16 +103,18 @@ public final class GalleryApplicationVersionImpl
     }
 
     public GalleryApplicationVersion create() {
-        this.innerObject
-            = serviceManager.serviceClient().getGalleryApplicationVersions().createOrUpdate(resourceGroupName,
-                galleryName, galleryApplicationName, galleryApplicationVersionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
+            .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public GalleryApplicationVersion create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getGalleryApplicationVersions().createOrUpdate(resourceGroupName,
-                galleryName, galleryApplicationName, galleryApplicationVersionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
+            .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -129,16 +131,18 @@ public final class GalleryApplicationVersionImpl
     }
 
     public GalleryApplicationVersion apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getGalleryApplicationVersions().update(resourceGroupName, galleryName,
-                galleryApplicationName, galleryApplicationVersionName, updateGalleryApplicationVersion, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
+            .update(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                updateGalleryApplicationVersion, Context.NONE);
         return this;
     }
 
     public GalleryApplicationVersion apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getGalleryApplicationVersions().update(resourceGroupName, galleryName,
-                galleryApplicationName, galleryApplicationVersionName, updateGalleryApplicationVersion, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
+            .update(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                updateGalleryApplicationVersion, context);
         return this;
     }
 
@@ -154,7 +158,8 @@ public final class GalleryApplicationVersionImpl
 
     public GalleryApplicationVersion refresh() {
         ReplicationStatusTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getGalleryApplicationVersions()
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
             .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
                 localExpand, Context.NONE)
             .getValue();
@@ -163,9 +168,11 @@ public final class GalleryApplicationVersionImpl
 
     public GalleryApplicationVersion refresh(Context context) {
         ReplicationStatusTypes localExpand = null;
-        this.innerObject
-            = serviceManager.serviceClient().getGalleryApplicationVersions().getWithResponse(resourceGroupName,
-                galleryName, galleryApplicationName, galleryApplicationVersionName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getGalleryApplicationVersions()
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                localExpand, context)
+            .getValue();
         return this;
     }
 

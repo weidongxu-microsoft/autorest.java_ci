@@ -39,8 +39,7 @@ public interface IpConfigurationProfile {
     String etag();
 
     /**
-     * Gets the subnet property: The reference to the subnet resource to create a container network interface ip
-     * configuration.
+     * Gets the subnet property: The reference to the subnet resource to create a container network interface ip configuration.
      * 
      * @return the subnet value.
      */

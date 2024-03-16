@@ -69,14 +69,14 @@ public final class WorkflowRunActionRepetitionsImpl implements WorkflowRunAction
 
     public PagedIterable<ExpressionRoot> listExpressionTraces(String resourceGroupName, String name,
         String workflowName, String runName, String actionName, String repetitionName) {
-        return this.serviceClient().listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName,
-            repetitionName);
+        return this.serviceClient()
+            .listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName, repetitionName);
     }
 
     public PagedIterable<ExpressionRoot> listExpressionTraces(String resourceGroupName, String name,
         String workflowName, String runName, String actionName, String repetitionName, Context context) {
-        return this.serviceClient().listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName,
-            repetitionName, context);
+        return this.serviceClient()
+            .listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName, repetitionName, context);
     }
 
     private WorkflowRunActionRepetitionsClient serviceClient() {

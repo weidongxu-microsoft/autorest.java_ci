@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListPeeredConnections API service call retrieves all global reach peer circuit connections that belongs
- * to a Private Peering for an ExpressRouteCircuit.
+ * Response for ListPeeredConnections API service call retrieves all global reach peer circuit connections that belongs to a Private Peering for an ExpressRouteCircuit.
  */
 @Fluent
 public final class PeerExpressRouteCircuitConnectionListResult {
@@ -34,8 +33,7 @@ public final class PeerExpressRouteCircuitConnectionListResult {
     }
 
     /**
-     * Get the value property: The global reach peer circuit connection associated with Private Peering in an
-     * ExpressRoute Circuit.
+     * Get the value property: The global reach peer circuit connection associated with Private Peering in an ExpressRoute Circuit.
      * 
      * @return the value value.
      */
@@ -44,8 +42,7 @@ public final class PeerExpressRouteCircuitConnectionListResult {
     }
 
     /**
-     * Set the value property: The global reach peer circuit connection associated with Private Peering in an
-     * ExpressRoute Circuit.
+     * Set the value property: The global reach peer circuit connection associated with Private Peering in an ExpressRoute Circuit.
      * 
      * @param value the value value to set.
      * @return the PeerExpressRouteCircuitConnectionListResult object itself.

@@ -36,8 +36,11 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         Response<List<HostInfoInner>> inner
             = this.serviceClient().listHostsWithResponse(resourceGroupName, clusterName, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new HostInfoImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new HostInfoImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }

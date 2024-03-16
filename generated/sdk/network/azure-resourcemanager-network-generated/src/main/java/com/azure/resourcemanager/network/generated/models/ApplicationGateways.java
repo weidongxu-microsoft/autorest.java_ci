@@ -179,8 +179,7 @@ public interface ApplicationGateways {
         String expand, Context context);
 
     /**
-     * Gets the backend health for given combination of backend pool and http setting of the specified application
-     * gateway in a resource group.
+     * Gets the backend health for given combination of backend pool and http setting of the specified application gateway in a resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
@@ -188,15 +187,13 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the backend health for given combination of backend pool and http setting of the specified application
-     * gateway in a resource group.
+     * @return the backend health for given combination of backend pool and http setting of the specified application gateway in a resource group.
      */
     ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(String resourceGroupName,
         String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest);
 
     /**
-     * Gets the backend health for given combination of backend pool and http setting of the specified application
-     * gateway in a resource group.
+     * Gets the backend health for given combination of backend pool and http setting of the specified application gateway in a resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
@@ -206,8 +203,7 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the backend health for given combination of backend pool and http setting of the specified application
-     * gateway in a resource group.
+     * @return the backend health for given combination of backend pool and http setting of the specified application gateway in a resource group.
      */
     ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(String resourceGroupName,
         String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest, String expand, Context context);
@@ -217,8 +213,7 @@ public interface ApplicationGateways {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableServerVariables API service call along with {@link Response}.
      */
@@ -227,8 +222,7 @@ public interface ApplicationGateways {
     /**
      * Lists all available server variables.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableServerVariables API service call.
      */
@@ -239,8 +233,7 @@ public interface ApplicationGateways {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableRequestHeaders API service call along with {@link Response}.
      */
@@ -249,8 +242,7 @@ public interface ApplicationGateways {
     /**
      * Lists all available request headers.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
      */
@@ -261,8 +253,7 @@ public interface ApplicationGateways {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableResponseHeaders API service call along with {@link Response}.
      */
@@ -271,8 +262,7 @@ public interface ApplicationGateways {
     /**
      * Lists all available response headers.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
      */
@@ -323,8 +313,7 @@ public interface ApplicationGateways {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies();
 
@@ -335,8 +324,7 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies(Context context);
 

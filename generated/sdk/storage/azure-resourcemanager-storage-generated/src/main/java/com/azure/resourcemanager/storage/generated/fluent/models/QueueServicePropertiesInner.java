@@ -36,9 +36,7 @@ public final class QueueServicePropertiesInner extends ProxyResource {
     }
 
     /**
-     * Get the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements
-     * in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and
-     * CORS will be disabled for the Queue service.
+     * Get the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service.
      * 
      * @return the cors value.
      */
@@ -47,9 +45,7 @@ public final class QueueServicePropertiesInner extends ProxyResource {
     }
 
     /**
-     * Set the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements
-     * in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and
-     * CORS will be disabled for the Queue service.
+     * Set the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service.
      * 
      * @param cors the cors value to set.
      * @return the QueueServicePropertiesInner object itself.

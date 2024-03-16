@@ -14,7 +14,11 @@ import java.time.OffsetDateTime;
 /**
  * Certificate details representing the Vault credentials for ACS.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "authType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "authType",
+    defaultImpl = ResourceCertificateAndAcsDetails.class,
+    visible = true)
 @JsonTypeName("AccessControlService")
 @Fluent
 public final class ResourceCertificateAndAcsDetails extends ResourceCertificateDetails {
@@ -40,6 +44,7 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAcsDetails class.
      */
     public ResourceCertificateAndAcsDetails() {
+        withAuthType("AccessControlService");
     }
 
     /**

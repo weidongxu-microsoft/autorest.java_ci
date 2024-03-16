@@ -124,8 +124,7 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     }
 
     /**
-     * Get the connectionString property: Connection string for the storage account. Use this string if username and
-     * account key are not specified.
+     * Get the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
      * 
      * @return the connectionString value.
      */
@@ -134,8 +133,7 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     }
 
     /**
-     * Set the connectionString property: Connection string for the storage account. Use this string if username and
-     * account key are not specified.
+     * Set the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
      * 
      * @param connectionString the connectionString value to set.
      * @return the StorageAccountCredentialInner object itself.

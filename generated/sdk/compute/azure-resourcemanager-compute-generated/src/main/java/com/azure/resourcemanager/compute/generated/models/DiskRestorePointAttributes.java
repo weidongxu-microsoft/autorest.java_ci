@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DiskRestorePointAttributes extends SubResourceReadOnly {
     /*
-     * Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input
-     * while creating a restore point.
+     * Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
      */
     @JsonProperty(value = "encryption")
     private RestorePointEncryption encryption;
@@ -32,8 +31,7 @@ public final class DiskRestorePointAttributes extends SubResourceReadOnly {
     }
 
     /**
-     * Get the encryption property: Encryption at rest settings for disk restore point. It is an optional property that
-     * can be specified in the input while creating a restore point.
+     * Get the encryption property: Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
      * 
      * @return the encryption value.
      */
@@ -42,8 +40,7 @@ public final class DiskRestorePointAttributes extends SubResourceReadOnly {
     }
 
     /**
-     * Set the encryption property: Encryption at rest settings for disk restore point. It is an optional property that
-     * can be specified in the input while creating a restore point.
+     * Set the encryption property: Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
      * 
      * @param encryption the encryption value to set.
      * @return the DiskRestorePointAttributes object itself.

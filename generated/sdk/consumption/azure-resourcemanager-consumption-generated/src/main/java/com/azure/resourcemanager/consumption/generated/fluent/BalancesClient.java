@@ -15,8 +15,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.BalanceInne
  */
 public interface BalancesClient {
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
@@ -29,8 +28,7 @@ public interface BalancesClient {
     Response<BalanceInner> getByBillingAccountWithResponse(String billingAccountId, Context context);
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -42,8 +40,7 @@ public interface BalancesClient {
     BalanceInner getByBillingAccount(String billingAccountId);
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
@@ -58,8 +55,7 @@ public interface BalancesClient {
         String billingPeriodName, Context context);
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.

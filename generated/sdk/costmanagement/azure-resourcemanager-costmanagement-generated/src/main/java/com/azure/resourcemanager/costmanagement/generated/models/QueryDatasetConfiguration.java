@@ -14,8 +14,7 @@ import java.util.List;
 @Fluent
 public final class QueryDatasetConfiguration {
     /*
-     * Array of column names to be included in the query. Any valid query column name is allowed. If not provided, then
-     * query includes all columns.
+     * Array of column names to be included in the query. Any valid query column name is allowed. If not provided, then query includes all columns.
      */
     @JsonProperty(value = "columns")
     private List<String> columns;
@@ -27,8 +26,7 @@ public final class QueryDatasetConfiguration {
     }
 
     /**
-     * Get the columns property: Array of column names to be included in the query. Any valid query column name is
-     * allowed. If not provided, then query includes all columns.
+     * Get the columns property: Array of column names to be included in the query. Any valid query column name is allowed. If not provided, then query includes all columns.
      * 
      * @return the columns value.
      */
@@ -37,8 +35,7 @@ public final class QueryDatasetConfiguration {
     }
 
     /**
-     * Set the columns property: Array of column names to be included in the query. Any valid query column name is
-     * allowed. If not provided, then query includes all columns.
+     * Set the columns property: Array of column names to be included in the query. Any valid query column name is allowed. If not provided, then query includes all columns.
      * 
      * @param columns the columns value to set.
      * @return the QueryDatasetConfiguration object itself.

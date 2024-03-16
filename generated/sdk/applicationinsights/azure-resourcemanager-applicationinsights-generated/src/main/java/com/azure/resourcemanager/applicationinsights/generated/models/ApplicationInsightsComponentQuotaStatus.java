@@ -25,17 +25,14 @@ public interface ApplicationInsightsComponentQuotaStatus {
     Boolean shouldBeThrottled();
 
     /**
-     * Gets the expirationTime property: Date and time when the daily data volume cap will be reset, and data ingestion
-     * will resume.
+     * Gets the expirationTime property: Date and time when the daily data volume cap will be reset, and data ingestion will resume.
      * 
      * @return the expirationTime value.
      */
     String expirationTime();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentQuotaStatusInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentQuotaStatusInner object.
      * 
      * @return the inner object.
      */

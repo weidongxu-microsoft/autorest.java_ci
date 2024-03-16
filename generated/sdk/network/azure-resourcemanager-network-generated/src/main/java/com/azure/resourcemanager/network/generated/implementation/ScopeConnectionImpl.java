@@ -76,16 +76,20 @@ public final class ScopeConnectionImpl implements ScopeConnection, ScopeConnecti
     }
 
     public ScopeConnection create() {
-        this.innerObject
-            = serviceManager.serviceClient().getScopeConnections().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, scopeConnectionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ScopeConnection create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getScopeConnections().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, scopeConnectionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -100,16 +104,20 @@ public final class ScopeConnectionImpl implements ScopeConnection, ScopeConnecti
     }
 
     public ScopeConnection apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getScopeConnections().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, scopeConnectionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ScopeConnection apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getScopeConnections().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, scopeConnectionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -123,14 +131,18 @@ public final class ScopeConnectionImpl implements ScopeConnection, ScopeConnecti
     }
 
     public ScopeConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getScopeConnections()
-            .getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ScopeConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getScopeConnections()
-            .getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getScopeConnections()
+            .getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context)
+            .getValue();
         return this;
     }
 

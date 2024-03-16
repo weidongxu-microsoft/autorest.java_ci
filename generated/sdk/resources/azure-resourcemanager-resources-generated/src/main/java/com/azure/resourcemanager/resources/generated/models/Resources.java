@@ -28,20 +28,8 @@ public interface Resources {
      * Get all the resources for a resource group.
      * 
      * @param resourceGroupName The resource group with the resources to get.
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals)
-     * or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
-     * plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to
-     * filter by a resource type, use: $filter=resourceType eq
-     * 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter.
-     * The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all
-     * resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can
-     * link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag
-     * names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq
-     * 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the
-     * results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use
-     * are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
-     * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
-     * `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals) or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan, plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to filter by a resource type, use: $filter=resourceType eq 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter. The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
+     * @param expand Comma-separated list of additional properties to be included in the response. Valid values include `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
      * @param top The number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -55,9 +43,7 @@ public interface Resources {
     /**
      * Moves resources from one resource group to another resource group.
      * 
-     * The resources to move must be in the same source resource group. The target resource group may be in a different
-     * subscription. When moving resources, both the source group and the target group are locked for the duration of
-     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * The resources to move must be in the same source resource group. The target resource group may be in a different subscription. When moving resources, both the source group and the target group are locked for the duration of the operation. Write and delete operations are blocked on the groups until the move completes.
      * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
@@ -70,9 +56,7 @@ public interface Resources {
     /**
      * Moves resources from one resource group to another resource group.
      * 
-     * The resources to move must be in the same source resource group. The target resource group may be in a different
-     * subscription. When moving resources, both the source group and the target group are locked for the duration of
-     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * The resources to move must be in the same source resource group. The target resource group may be in a different subscription. When moving resources, both the source group and the target group are locked for the duration of the operation. Write and delete operations are blocked on the groups until the move completes.
      * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
@@ -86,11 +70,7 @@ public interface Resources {
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
      * 
-     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
-     * in the same source resource group. The target resource group may be in a different subscription. If validation
-     * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
-     * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
-     * long-running operation.
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be in the same source resource group. The target resource group may be in a different subscription. If validation succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409 (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the long-running operation.
      * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
@@ -103,11 +83,7 @@ public interface Resources {
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
      * 
-     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
-     * in the same source resource group. The target resource group may be in a different subscription. If validation
-     * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
-     * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
-     * long-running operation.
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be in the same source resource group. The target resource group may be in a different subscription. If validation succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409 (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the long-running operation.
      * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
@@ -130,20 +106,8 @@ public interface Resources {
     /**
      * Get all the resources in a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals)
-     * or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
-     * plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to
-     * filter by a resource type, use: $filter=resourceType eq
-     * 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter.
-     * The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all
-     * resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can
-     * link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag
-     * names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq
-     * 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the
-     * results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use
-     * are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
-     * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
-     * `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals) or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan, plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to filter by a resource type, use: $filter=resourceType eq 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter. The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
+     * @param expand Comma-separated list of additional properties to be included in the response. Valid values include `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
      * @param top The number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -156,8 +120,7 @@ public interface Resources {
     /**
      * Checks whether a resource exists.
      * 
-     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case insensitive.
      * @param resourceProviderNamespace The resource provider of the resource to check.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -175,8 +138,7 @@ public interface Resources {
     /**
      * Checks whether a resource exists.
      * 
-     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case insensitive.
      * @param resourceProviderNamespace The resource provider of the resource to check.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -193,8 +155,7 @@ public interface Resources {
     /**
      * Deletes a resource.
      * 
-     * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -210,8 +171,7 @@ public interface Resources {
     /**
      * Deletes a resource.
      * 
-     * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -304,8 +264,7 @@ public interface Resources {
     /**
      * Gets a resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -323,8 +282,7 @@ public interface Resources {
     /**
      * Gets a resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -341,9 +299,7 @@ public interface Resources {
     /**
      * Checks by ID whether a resource exists.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -356,9 +312,7 @@ public interface Resources {
     /**
      * Checks by ID whether a resource exists.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -370,9 +324,7 @@ public interface Resources {
     /**
      * Deletes a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -383,9 +335,7 @@ public interface Resources {
     /**
      * Deletes a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -397,9 +347,7 @@ public interface Resources {
     /**
      * Create a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -412,9 +360,7 @@ public interface Resources {
     /**
      * Create a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
@@ -429,9 +375,7 @@ public interface Resources {
     /**
      * Updates a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -444,9 +388,7 @@ public interface Resources {
     /**
      * Updates a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
@@ -460,9 +402,7 @@ public interface Resources {
     /**
      * Gets a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -475,9 +415,7 @@ public interface Resources {
     /**
      * Gets a resource by ID.
      * 
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     * format,
-     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

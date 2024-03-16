@@ -58,8 +58,7 @@ public interface ActionGroupResource {
     String groupShortName();
 
     /**
-     * Gets the enabled property: Indicates whether this action group is enabled. If an action group is not enabled,
-     * then none of its receivers will receive communications.
+     * Gets the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
      * 
      * @return the enabled value.
      */
@@ -101,8 +100,7 @@ public interface ActionGroupResource {
     List<AzureAppPushReceiver> azureAppPushReceivers();
 
     /**
-     * Gets the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this
-     * action group.
+     * Gets the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group.
      * 
      * @return the automationRunbookReceivers value.
      */
@@ -123,16 +121,14 @@ public interface ActionGroupResource {
     List<LogicAppReceiver> logicAppReceivers();
 
     /**
-     * Gets the azureFunctionReceivers property: The list of azure function receivers that are part of this action
-     * group.
+     * Gets the azureFunctionReceivers property: The list of azure function receivers that are part of this action group.
      * 
      * @return the azureFunctionReceivers value.
      */
     List<AzureFunctionReceiver> azureFunctionReceivers();
 
     /**
-     * Gets the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are
-     * Azure RBAC roles and only built-in roles are supported.
+     * Gets the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
      * 
      * @return the armRoleReceivers value.
      */
@@ -218,8 +214,7 @@ public interface ActionGroupResource {
         }
 
         /**
-         * The stage of the ActionGroupResource definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ActionGroupResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithGroupShortName,
             DefinitionStages.WithEnabled, DefinitionStages.WithEmailReceivers, DefinitionStages.WithSmsReceivers,
@@ -261,8 +256,7 @@ public interface ActionGroupResource {
          */
         interface WithGroupShortName {
             /**
-             * Specifies the groupShortName property: The short name of the action group. This will be used in SMS
-             * messages..
+             * Specifies the groupShortName property: The short name of the action group. This will be used in SMS messages..
              * 
              * @param groupShortName The short name of the action group. This will be used in SMS messages.
              * @return the next definition stage.
@@ -275,11 +269,9 @@ public interface ActionGroupResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: Indicates whether this action group is enabled. If an action group is not
-             * enabled, then none of its receivers will receive communications..
+             * Specifies the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications..
              * 
-             * @param enabled Indicates whether this action group is enabled. If an action group is not enabled, then
-             * none of its receivers will receive communications.
+             * @param enabled Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
              * @return the next definition stage.
              */
             WithCreate withEnabled(boolean enabled);
@@ -316,8 +308,7 @@ public interface ActionGroupResource {
          */
         interface WithWebhookReceivers {
             /**
-             * Specifies the webhookReceivers property: The list of webhook receivers that are part of this action
-             * group..
+             * Specifies the webhookReceivers property: The list of webhook receivers that are part of this action group..
              * 
              * @param webhookReceivers The list of webhook receivers that are part of this action group.
              * @return the next definition stage.
@@ -343,8 +334,7 @@ public interface ActionGroupResource {
          */
         interface WithAzureAppPushReceivers {
             /**
-             * Specifies the azureAppPushReceivers property: The list of AzureAppPush receivers that are part of this
-             * action group..
+             * Specifies the azureAppPushReceivers property: The list of AzureAppPush receivers that are part of this action group..
              * 
              * @param azureAppPushReceivers The list of AzureAppPush receivers that are part of this action group.
              * @return the next definition stage.
@@ -357,11 +347,9 @@ public interface ActionGroupResource {
          */
         interface WithAutomationRunbookReceivers {
             /**
-             * Specifies the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part
-             * of this action group..
+             * Specifies the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group..
              * 
-             * @param automationRunbookReceivers The list of AutomationRunbook receivers that are part of this action
-             * group.
+             * @param automationRunbookReceivers The list of AutomationRunbook receivers that are part of this action group.
              * @return the next definition stage.
              */
             WithCreate withAutomationRunbookReceivers(List<AutomationRunbookReceiver> automationRunbookReceivers);
@@ -385,8 +373,7 @@ public interface ActionGroupResource {
          */
         interface WithLogicAppReceivers {
             /**
-             * Specifies the logicAppReceivers property: The list of logic app receivers that are part of this action
-             * group..
+             * Specifies the logicAppReceivers property: The list of logic app receivers that are part of this action group..
              * 
              * @param logicAppReceivers The list of logic app receivers that are part of this action group.
              * @return the next definition stage.
@@ -399,8 +386,7 @@ public interface ActionGroupResource {
          */
         interface WithAzureFunctionReceivers {
             /**
-             * Specifies the azureFunctionReceivers property: The list of azure function receivers that are part of this
-             * action group..
+             * Specifies the azureFunctionReceivers property: The list of azure function receivers that are part of this action group..
              * 
              * @param azureFunctionReceivers The list of azure function receivers that are part of this action group.
              * @return the next definition stage.
@@ -413,11 +399,9 @@ public interface ActionGroupResource {
          */
         interface WithArmRoleReceivers {
             /**
-             * Specifies the armRoleReceivers property: The list of ARM role receivers that are part of this action
-             * group. Roles are Azure RBAC roles and only built-in roles are supported..
+             * Specifies the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported..
              * 
-             * @param armRoleReceivers The list of ARM role receivers that are part of this action group. Roles are
-             * Azure RBAC roles and only built-in roles are supported.
+             * @param armRoleReceivers The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
              * @return the next definition stage.
              */
             WithCreate withArmRoleReceivers(List<ArmRoleReceiver> armRoleReceivers);
@@ -473,11 +457,9 @@ public interface ActionGroupResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: Indicates whether this action group is enabled. If an action group is not
-             * enabled, then none of its actions will be activated..
+             * Specifies the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will be activated..
              * 
-             * @param enabled Indicates whether this action group is enabled. If an action group is not enabled, then
-             * none of its actions will be activated.
+             * @param enabled Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will be activated.
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);
@@ -500,8 +482,7 @@ public interface ActionGroupResource {
     ActionGroupResource refresh(Context context);
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.
@@ -513,8 +494,7 @@ public interface ActionGroupResource {
     Response<Void> enableReceiverWithResponse(EnableRequest enableRequest, Context context);
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
      * 
      * @param enableRequest The receiver to re-enable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

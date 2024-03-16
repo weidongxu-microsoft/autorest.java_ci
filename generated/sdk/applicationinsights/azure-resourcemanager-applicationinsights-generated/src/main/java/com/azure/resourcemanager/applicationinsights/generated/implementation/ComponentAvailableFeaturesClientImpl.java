@@ -51,8 +51,7 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientComponentAvailableFeatures to be
-     * used by the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientComponentAvailableFeatures to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
@@ -75,8 +74,7 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component available features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component available features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentAvailableFeaturesInner>>
@@ -113,8 +111,7 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component available features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component available features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentAvailableFeaturesInner>>

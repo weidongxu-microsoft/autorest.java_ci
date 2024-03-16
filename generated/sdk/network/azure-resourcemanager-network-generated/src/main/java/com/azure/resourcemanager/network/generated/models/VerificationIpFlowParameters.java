@@ -32,15 +32,13 @@ public final class VerificationIpFlowParameters {
     private IpFlowProtocol protocol;
 
     /*
-     * The local port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port,
-     * which depends on the direction.
+     * The local port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      */
     @JsonProperty(value = "localPort", required = true)
     private String localPort;
 
     /*
-     * The remote port. Acceptable values are a single integer in the range (0-65535). Support for * for the source
-     * port, which depends on the direction.
+     * The remote port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      */
     @JsonProperty(value = "remotePort", required = true)
     private String remotePort;
@@ -58,8 +56,7 @@ public final class VerificationIpFlowParameters {
     private String remoteIpAddress;
 
     /*
-     * The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of them, then this parameter must be
-     * specified. Otherwise optional).
+     * The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of them, then this parameter must be specified. Otherwise optional).
      */
     @JsonProperty(value = "targetNicResourceId")
     private String targetNicResourceId;
@@ -131,8 +128,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Get the localPort property: The local port. Acceptable values are a single integer in the range (0-65535).
-     * Support for * for the source port, which depends on the direction.
+     * Get the localPort property: The local port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      * 
      * @return the localPort value.
      */
@@ -141,8 +137,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Set the localPort property: The local port. Acceptable values are a single integer in the range (0-65535).
-     * Support for * for the source port, which depends on the direction.
+     * Set the localPort property: The local port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      * 
      * @param localPort the localPort value to set.
      * @return the VerificationIpFlowParameters object itself.
@@ -153,8 +148,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Get the remotePort property: The remote port. Acceptable values are a single integer in the range (0-65535).
-     * Support for * for the source port, which depends on the direction.
+     * Get the remotePort property: The remote port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      * 
      * @return the remotePort value.
      */
@@ -163,8 +157,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Set the remotePort property: The remote port. Acceptable values are a single integer in the range (0-65535).
-     * Support for * for the source port, which depends on the direction.
+     * Set the remotePort property: The remote port. Acceptable values are a single integer in the range (0-65535). Support for * for the source port, which depends on the direction.
      * 
      * @param remotePort the remotePort value to set.
      * @return the VerificationIpFlowParameters object itself.
@@ -215,8 +208,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Get the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of
-     * them, then this parameter must be specified. Otherwise optional).
+     * Get the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of them, then this parameter must be specified. Otherwise optional).
      * 
      * @return the targetNicResourceId value.
      */
@@ -225,8 +217,7 @@ public final class VerificationIpFlowParameters {
     }
 
     /**
-     * Set the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of
-     * them, then this parameter must be specified. Otherwise optional).
+     * Set the targetNicResourceId property: The NIC ID. (If VM has multiple NICs and IP forwarding is enabled on any of them, then this parameter must be specified. Otherwise optional).
      * 
      * @param targetNicResourceId the targetNicResourceId value to set.
      * @return the VerificationIpFlowParameters object itself.

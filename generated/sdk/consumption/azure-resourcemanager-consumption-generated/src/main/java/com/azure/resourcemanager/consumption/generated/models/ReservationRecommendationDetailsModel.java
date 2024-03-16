@@ -103,8 +103,7 @@ public interface ReservationRecommendationDetailsModel {
     ReservationRecommendationDetailsUsageProperties usage();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationDetailsModelInner object.
+     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationDetailsModelInner object.
      * 
      * @return the inner object.
      */

@@ -89,8 +89,7 @@ public final class DataEncryption {
     }
 
     /**
-     * Get the geoBackupUserAssignedIdentityId property: Geo backup user identity resource id as identity can't cross
-     * region, need identity in same region as geo backup.
+     * Get the geoBackupUserAssignedIdentityId property: Geo backup user identity resource id as identity can't cross region, need identity in same region as geo backup.
      * 
      * @return the geoBackupUserAssignedIdentityId value.
      */
@@ -99,8 +98,7 @@ public final class DataEncryption {
     }
 
     /**
-     * Set the geoBackupUserAssignedIdentityId property: Geo backup user identity resource id as identity can't cross
-     * region, need identity in same region as geo backup.
+     * Set the geoBackupUserAssignedIdentityId property: Geo backup user identity resource id as identity can't cross region, need identity in same region as geo backup.
      * 
      * @param geoBackupUserAssignedIdentityId the geoBackupUserAssignedIdentityId value to set.
      * @return the DataEncryption object itself.
@@ -111,8 +109,7 @@ public final class DataEncryption {
     }
 
     /**
-     * Get the geoBackupKeyUri property: Geo backup key uri as key vault can't cross region, need cmk in same region as
-     * geo backup.
+     * Get the geoBackupKeyUri property: Geo backup key uri as key vault can't cross region, need cmk in same region as geo backup.
      * 
      * @return the geoBackupKeyUri value.
      */
@@ -121,8 +118,7 @@ public final class DataEncryption {
     }
 
     /**
-     * Set the geoBackupKeyUri property: Geo backup key uri as key vault can't cross region, need cmk in same region as
-     * geo backup.
+     * Set the geoBackupKeyUri property: Geo backup key uri as key vault can't cross region, need cmk in same region as geo backup.
      * 
      * @param geoBackupKeyUri the geoBackupKeyUri value to set.
      * @return the DataEncryption object itself.

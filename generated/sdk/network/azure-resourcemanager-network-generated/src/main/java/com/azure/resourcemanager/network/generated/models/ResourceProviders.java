@@ -183,8 +183,7 @@ public interface ResourceProviders {
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -198,8 +197,7 @@ public interface ResourceProviders {
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -236,8 +234,7 @@ public interface ResourceProviders {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -268,8 +265,7 @@ public interface ResourceProviders {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -299,14 +295,12 @@ public interface ResourceProviders {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with
-     * {@link Response}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link Response}.
      */
     Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
         listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(String resourceGroupName,
@@ -332,8 +326,7 @@ public interface ResourceProviders {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -385,8 +378,7 @@ public interface ResourceProviders {
     VirtualWanSecurityProviders supportedSecurityProviders(String resourceGroupName, String virtualWanName);
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -400,8 +392,7 @@ public interface ResourceProviders {
         String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams);
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.

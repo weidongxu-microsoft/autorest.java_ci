@@ -43,8 +43,7 @@ public final class SiteConfigPropertiesDictionary {
     }
 
     /**
-     * Get the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; if use32BitWorkerProcess should be set to
-     * true for the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; if use32BitWorkerProcess should be set to true for the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the use32BitWorkerProcess value.
      */

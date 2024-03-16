@@ -67,8 +67,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientScripts to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for KustoManagementClientScripts to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -146,8 +145,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database script operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto database script operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScriptInner>> listByDatabaseSinglePageAsync(String resourceGroupName, String clusterName,
@@ -189,8 +187,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database script operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto database script operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScriptInner>> listByDatabaseSinglePageAsync(String resourceGroupName, String clusterName,
@@ -445,8 +442,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database script along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a database script along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -497,8 +493,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database script along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a database script along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -661,7 +656,8 @@ public final class ScriptsClientImpl implements ScriptsClient {
     private Mono<ScriptInner> createOrUpdateAsync(String resourceGroupName, String clusterName, String databaseName,
         String scriptName, ScriptInner parameters, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -715,8 +711,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database script along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a database script along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -767,8 +762,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a database script along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a database script along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -1222,8 +1216,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -1270,8 +1263,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,

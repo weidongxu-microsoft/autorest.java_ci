@@ -9,8 +9,7 @@ import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * App Service billing entity that contains information about meter which the Azure billing system utilizes to charge
- * users for services.
+ * App Service billing entity that contains information about meter which the Azure billing system utilizes to charge users for services.
  */
 @Fluent
 public final class BillingMeterInner extends ProxyOnlyResource {

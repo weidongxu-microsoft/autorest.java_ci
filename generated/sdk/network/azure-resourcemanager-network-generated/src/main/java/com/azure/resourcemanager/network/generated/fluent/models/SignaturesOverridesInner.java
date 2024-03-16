@@ -85,8 +85,7 @@ public final class SignaturesOverridesInner extends ProxyResource {
     }
 
     /**
-     * Get the type property: Will contain the type of the resource:
-     * Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
+     * Get the type property: Will contain the type of the resource: Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
      * 
      * @return the type value.
      */
@@ -95,8 +94,7 @@ public final class SignaturesOverridesInner extends ProxyResource {
     }
 
     /**
-     * Set the type property: Will contain the type of the resource:
-     * Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
+     * Set the type property: Will contain the type of the resource: Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
      * 
      * @param type the type value to set.
      * @return the SignaturesOverridesInner object itself.

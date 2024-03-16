@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specifies that the content key ID is in the PlayReady header.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader")
 @Immutable
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
@@ -20,6 +24,7 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader");
     }
 
     /**

@@ -124,16 +124,14 @@ public interface NetworkInterface {
     Boolean primary();
 
     /**
-     * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
-     * encryption.
+     * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports encryption.
      * 
      * @return the vnetEncryptionSupported value.
      */
     Boolean vnetEncryptionSupported();
 
     /**
-     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
-     * Not applicable to VM sizes which require accelerated networking.
+     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -161,8 +159,7 @@ public interface NetworkInterface {
     List<String> hostedWorkloads();
 
     /**
-     * Gets the dscpConfiguration property: A reference to the dscp configuration to which the network interface is
-     * linked.
+     * Gets the dscpConfiguration property: A reference to the dscp configuration to which the network interface is linked.
      * 
      * @return the dscpConfiguration value.
      */
@@ -304,8 +301,7 @@ public interface NetworkInterface {
         }
 
         /**
-         * The stage of the NetworkInterface definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkInterface definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithNetworkSecurityGroup, DefinitionStages.WithIpConfigurations,
@@ -399,11 +395,9 @@ public interface NetworkInterface {
          */
         interface WithEnableAcceleratedNetworking {
             /**
-             * Specifies the enableAcceleratedNetworking property: If the network interface is configured for
-             * accelerated networking. Not applicable to VM sizes which require accelerated networking..
+             * Specifies the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking..
              * 
-             * @param enableAcceleratedNetworking If the network interface is configured for accelerated networking. Not
-             * applicable to VM sizes which require accelerated networking.
+             * @param enableAcceleratedNetworking If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking.
              * @return the next definition stage.
              */
             WithCreate withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking);
@@ -427,8 +421,7 @@ public interface NetworkInterface {
          */
         interface WithEnableIpForwarding {
             /**
-             * Specifies the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network
-             * interface..
+             * Specifies the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network interface..
              * 
              * @param enableIpForwarding Indicates whether IP forwarding is enabled on this network interface.
              * @return the next definition stage.

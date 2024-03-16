@@ -83,8 +83,7 @@ public interface ListContainerItem {
     Boolean denyEncryptionScopeOverride();
 
     /**
-     * Gets the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of
-     * access.
+     * Gets the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access.
      * 
      * @return the publicAccess value.
      */
@@ -112,8 +111,7 @@ public interface ListContainerItem {
     LeaseState leaseState();
 
     /**
-     * Gets the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration,
-     * only when the container is leased.
+     * Gets the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration, only when the container is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -141,27 +139,21 @@ public interface ListContainerItem {
     LegalHoldProperties legalHold();
 
     /**
-     * Gets the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one
-     * existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared
-     * out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * Gets the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      * 
      * @return the hasLegalHold value.
      */
     Boolean hasLegalHold();
 
     /**
-     * Gets the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if
-     * ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false
-     * by SRP if ImmutabilityPolicy has not been created for this container.
+     * Gets the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false by SRP if ImmutabilityPolicy has not been created for this container.
      * 
      * @return the hasImmutabilityPolicy value.
      */
     Boolean hasImmutabilityPolicy();
 
     /**
-     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The
-     * property is immutable and can only be set to true at the container creation time. Existing containers must
-     * undergo a migration process.
+     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
      * 
      * @return the immutableStorageWithVersioning value.
      */

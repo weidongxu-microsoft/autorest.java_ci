@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of the What-If operation. Contains a list of predicted changes and a URL link to get to the next set of
- * results.
+ * Result of the What-If operation. Contains a list of predicted changes and a URL link to get to the next set of results.
  */
 @Fluent
 public final class WhatIfOperationResultInner {

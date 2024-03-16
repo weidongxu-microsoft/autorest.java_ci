@@ -50,8 +50,8 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
 
     public VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters) {
-        VirtualHubRouteTableV2Inner inner = this.serviceClient().createOrUpdate(resourceGroupName, virtualHubName,
-            routeTableName, virtualHubRouteTableV2Parameters);
+        VirtualHubRouteTableV2Inner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters);
         if (inner != null) {
             return new VirtualHubRouteTableV2Impl(inner, this.manager());
         } else {
@@ -61,8 +61,9 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
 
     public VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters, Context context) {
-        VirtualHubRouteTableV2Inner inner = this.serviceClient().createOrUpdate(resourceGroupName, virtualHubName,
-            routeTableName, virtualHubRouteTableV2Parameters, context);
+        VirtualHubRouteTableV2Inner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters,
+                context);
         if (inner != null) {
             return new VirtualHubRouteTableV2Impl(inner, this.manager());
         } else {

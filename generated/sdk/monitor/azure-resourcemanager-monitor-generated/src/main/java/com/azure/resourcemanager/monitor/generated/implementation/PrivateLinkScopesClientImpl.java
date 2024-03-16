@@ -66,8 +66,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * The interface defining all the services for MonitorClientPrivateLinkScopes to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MonitorClientPrivateLinkScopes to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
@@ -148,8 +147,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>> listSinglePageAsync() {
@@ -178,8 +176,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>> listSinglePageAsync(Context context) {
@@ -204,8 +201,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AzureMonitorPrivateLinkScopeInner> listAsync() {
@@ -219,8 +215,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AzureMonitorPrivateLinkScopeInner> listAsync(Context context) {
@@ -233,8 +228,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AzureMonitorPrivateLinkScopeInner> list() {
@@ -248,8 +242,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AzureMonitorPrivateLinkScopeInner> list(Context context) {
@@ -263,8 +256,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>>
@@ -299,8 +291,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>>
@@ -334,8 +325,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AzureMonitorPrivateLinkScopeInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -351,8 +341,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AzureMonitorPrivateLinkScopeInner> listByResourceGroupAsync(String resourceGroupName,
@@ -368,8 +357,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName) {
@@ -384,8 +372,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName,
@@ -599,8 +586,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>>
@@ -637,8 +623,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>>
@@ -715,18 +700,15 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -761,19 +743,16 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -807,13 +786,11 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -827,13 +804,11 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -848,13 +823,11 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     }
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -876,8 +849,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -921,8 +893,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorPrivateLinkScopeInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -1017,8 +988,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>> listNextSinglePageAsync(String nextLink) {
@@ -1046,8 +1016,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>> listNextSinglePageAsync(String nextLink,
@@ -1075,8 +1044,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>>
@@ -1107,8 +1075,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return describes the list of Azure Monitor PrivateLinkScope resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureMonitorPrivateLinkScopeInner>>

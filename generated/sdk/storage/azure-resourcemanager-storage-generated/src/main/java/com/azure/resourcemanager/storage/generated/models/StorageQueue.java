@@ -41,8 +41,7 @@ public interface StorageQueue {
     Map<String, String> metadata();
 
     /**
-     * Gets the approximateMessageCount property: Integer indicating an approximate number of messages in the queue.
-     * This number is not lower than the actual number of messages in the queue, but could be higher.
+     * Gets the approximateMessageCount property: Integer indicating an approximate number of messages in the queue. This number is not lower than the actual number of messages in the queue, but could be higher.
      * 
      * @return the approximateMessageCount value.
      */
@@ -86,18 +85,15 @@ public interface StorageQueue {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account
-             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the StorageQueue definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StorageQueue definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithMetadata {
             /**

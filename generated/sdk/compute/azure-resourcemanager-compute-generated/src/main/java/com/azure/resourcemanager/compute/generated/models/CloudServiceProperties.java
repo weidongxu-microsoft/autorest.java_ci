@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CloudServiceProperties {
     /*
-     * Specifies a URL that refers to the location of the service package in the Blob service. The service package URL
-     * can be Shared Access Signature (SAS) URI from any storage account.
+     * Specifies a URL that refers to the location of the service package in the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      */
     @JsonProperty(value = "packageUrl")
@@ -27,37 +26,30 @@ public final class CloudServiceProperties {
     private String configuration;
 
     /*
-     * Specifies a URL that refers to the location of the service configuration in the Blob service. The service package
-     * URL can be Shared Access Signature (SAS) URI from any storage account.
+     * Specifies a URL that refers to the location of the service configuration in the Blob service. The service package URL  can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      */
     @JsonProperty(value = "configurationUrl")
     private String configurationUrl;
 
     /*
-     * (Optional) Indicates whether to start the cloud service immediately after it is created. The default value is
-     * `true`.
-     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is
-     * PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs
-     * charges, even if it is poweredoff.
+     * (Optional) Indicates whether to start the cloud service immediately after it is created. The default value is `true`.
+     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs charges, even if it is poweredoff.
      */
     @JsonProperty(value = "startCloudService")
     private Boolean startCloudService;
 
     /*
-     * (Optional) Indicates whether the role sku properties (roleProfile.roles.sku) specified in the model/template
-     * should override the role instance count and vm size specified in the .cscfg and .csdef respectively.
+     * (Optional) Indicates whether the role sku properties (roleProfile.roles.sku) specified in the model/template should override the role instance count and vm size specified in the .cscfg and .csdef respectively.
      * The default value is `false`.
      */
     @JsonProperty(value = "allowModelOverride")
     private Boolean allowModelOverride;
 
     /*
-     * Update mode for the cloud service. Role instances are allocated to update domains when the service is deployed.
-     * Updates can be initiated manually in each update domain or initiated automatically in all update domains.
+     * Update mode for the cloud service. Role instances are allocated to update domains when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically in all update domains.
      * Possible Values are <br /><br />**Auto**<br /><br />**Manual** <br /><br />**Simultaneous**<br /><br />
-     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the
-     * update. If set to Auto, the update is automatically applied to each update domain in sequence.
+     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the update. If set to Auto, the update is automatically applied to each update domain in sequence.
      */
     @JsonProperty(value = "upgradeMode")
     private CloudServiceUpgradeMode upgradeMode;
@@ -105,8 +97,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Get the packageUrl property: Specifies a URL that refers to the location of the service package in the Blob
-     * service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
+     * Get the packageUrl property: Specifies a URL that refers to the location of the service package in the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      * 
      * @return the packageUrl value.
@@ -116,8 +107,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Set the packageUrl property: Specifies a URL that refers to the location of the service package in the Blob
-     * service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
+     * Set the packageUrl property: Specifies a URL that refers to the location of the service package in the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      * 
      * @param packageUrl the packageUrl value to set.
@@ -149,8 +139,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Get the configurationUrl property: Specifies a URL that refers to the location of the service configuration in
-     * the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
+     * Get the configurationUrl property: Specifies a URL that refers to the location of the service configuration in the Blob service. The service package URL  can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      * 
      * @return the configurationUrl value.
@@ -160,8 +149,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Set the configurationUrl property: Specifies a URL that refers to the location of the service configuration in
-     * the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
+     * Set the configurationUrl property: Specifies a URL that refers to the location of the service configuration in the Blob service. The service package URL  can be Shared Access Signature (SAS) URI from any storage account.
      * This is a write-only property and is not returned in GET calls.
      * 
      * @param configurationUrl the configurationUrl value to set.
@@ -173,11 +161,8 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Get the startCloudService property: (Optional) Indicates whether to start the cloud service immediately after it
-     * is created. The default value is `true`.
-     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is
-     * PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs
-     * charges, even if it is poweredoff.
+     * Get the startCloudService property: (Optional) Indicates whether to start the cloud service immediately after it is created. The default value is `true`.
+     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs charges, even if it is poweredoff.
      * 
      * @return the startCloudService value.
      */
@@ -186,11 +171,8 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Set the startCloudService property: (Optional) Indicates whether to start the cloud service immediately after it
-     * is created. The default value is `true`.
-     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is
-     * PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs
-     * charges, even if it is poweredoff.
+     * Set the startCloudService property: (Optional) Indicates whether to start the cloud service immediately after it is created. The default value is `true`.
+     * If false, the service model is still deployed, but the code is not run immediately. Instead, the service is PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs charges, even if it is poweredoff.
      * 
      * @param startCloudService the startCloudService value to set.
      * @return the CloudServiceProperties object itself.
@@ -201,9 +183,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Get the allowModelOverride property: (Optional) Indicates whether the role sku properties (roleProfile.roles.sku)
-     * specified in the model/template should override the role instance count and vm size specified in the .cscfg and
-     * .csdef respectively.
+     * Get the allowModelOverride property: (Optional) Indicates whether the role sku properties (roleProfile.roles.sku) specified in the model/template should override the role instance count and vm size specified in the .cscfg and .csdef respectively.
      * The default value is `false`.
      * 
      * @return the allowModelOverride value.
@@ -213,9 +193,7 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Set the allowModelOverride property: (Optional) Indicates whether the role sku properties (roleProfile.roles.sku)
-     * specified in the model/template should override the role instance count and vm size specified in the .cscfg and
-     * .csdef respectively.
+     * Set the allowModelOverride property: (Optional) Indicates whether the role sku properties (roleProfile.roles.sku) specified in the model/template should override the role instance count and vm size specified in the .cscfg and .csdef respectively.
      * The default value is `false`.
      * 
      * @param allowModelOverride the allowModelOverride value to set.
@@ -227,13 +205,9 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Get the upgradeMode property: Update mode for the cloud service. Role instances are allocated to update domains
-     * when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically
-     * in all update domains.
-     * Possible Values are &lt;br /&gt;&lt;br /&gt;**Auto**&lt;br /&gt;&lt;br /&gt;**Manual** &lt;br /&gt;&lt;br
-     * /&gt;**Simultaneous**&lt;br /&gt;&lt;br /&gt;
-     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the
-     * update. If set to Auto, the update is automatically applied to each update domain in sequence.
+     * Get the upgradeMode property: Update mode for the cloud service. Role instances are allocated to update domains when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically in all update domains.
+     * Possible Values are &lt;br /&gt;&lt;br /&gt;**Auto**&lt;br /&gt;&lt;br /&gt;**Manual** &lt;br /&gt;&lt;br /&gt;**Simultaneous**&lt;br /&gt;&lt;br /&gt;
+     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the update. If set to Auto, the update is automatically applied to each update domain in sequence.
      * 
      * @return the upgradeMode value.
      */
@@ -242,13 +216,9 @@ public final class CloudServiceProperties {
     }
 
     /**
-     * Set the upgradeMode property: Update mode for the cloud service. Role instances are allocated to update domains
-     * when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically
-     * in all update domains.
-     * Possible Values are &lt;br /&gt;&lt;br /&gt;**Auto**&lt;br /&gt;&lt;br /&gt;**Manual** &lt;br /&gt;&lt;br
-     * /&gt;**Simultaneous**&lt;br /&gt;&lt;br /&gt;
-     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the
-     * update. If set to Auto, the update is automatically applied to each update domain in sequence.
+     * Set the upgradeMode property: Update mode for the cloud service. Role instances are allocated to update domains when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically in all update domains.
+     * Possible Values are &lt;br /&gt;&lt;br /&gt;**Auto**&lt;br /&gt;&lt;br /&gt;**Manual** &lt;br /&gt;&lt;br /&gt;**Simultaneous**&lt;br /&gt;&lt;br /&gt;
+     * If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the update. If set to Auto, the update is automatically applied to each update domain in sequence.
      * 
      * @param upgradeMode the upgradeMode value to set.
      * @return the CloudServiceProperties object itself.

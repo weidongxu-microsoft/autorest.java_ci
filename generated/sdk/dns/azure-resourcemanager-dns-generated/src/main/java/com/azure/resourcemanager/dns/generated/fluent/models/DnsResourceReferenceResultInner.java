@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class DnsResourceReferenceResultInner {
     /*
-     * The result of dns resource reference request. Returns a list of dns resource references for each of the azure
-     * resource in the request.
+     * The result of dns resource reference request. Returns a list of dns resource references for each of the azure resource in the request.
      */
     @JsonProperty(value = "properties")
     private DnsResourceReferenceResultProperties innerProperties;
@@ -28,8 +27,7 @@ public final class DnsResourceReferenceResultInner {
     }
 
     /**
-     * Get the innerProperties property: The result of dns resource reference request. Returns a list of dns resource
-     * references for each of the azure resource in the request.
+     * Get the innerProperties property: The result of dns resource reference request. Returns a list of dns resource references for each of the azure resource in the request.
      * 
      * @return the innerProperties value.
      */
@@ -38,8 +36,7 @@ public final class DnsResourceReferenceResultInner {
     }
 
     /**
-     * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
-     * references for each of the azure resource in the request.
+     * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request.
      * 
      * @return the dnsResourceReferences value.
      */
@@ -48,8 +45,7 @@ public final class DnsResourceReferenceResultInner {
     }
 
     /**
-     * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
-     * references for each of the azure resource in the request.
+     * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request.
      * 
      * @param dnsResourceReferences the dnsResourceReferences value to set.
      * @return the DnsResourceReferenceResultInner object itself.

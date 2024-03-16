@@ -88,13 +88,15 @@ public final class WorkerPoolResourceImpl
     }
 
     public WorkerPoolResource create() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
             .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public WorkerPoolResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
             .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, this.innerModel(), context);
         return this;
     }
@@ -111,14 +113,16 @@ public final class WorkerPoolResourceImpl
     }
 
     public WorkerPoolResource apply() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
             .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public WorkerPoolResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
             .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, this.innerModel(), context)
             .getValue();
         return this;
@@ -134,14 +138,18 @@ public final class WorkerPoolResourceImpl
     }
 
     public WorkerPoolResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public WorkerPoolResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
-            .getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context)
+            .getValue();
         return this;
     }
 

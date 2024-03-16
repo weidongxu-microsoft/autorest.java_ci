@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The properties of the modern reservation recommendation for shared scope.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "scope")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "scope",
+    defaultImpl = ModernSharedScopeReservationRecommendationProperties.class,
+    visible = true)
 @JsonTypeName("Shared")
 @Immutable
 public final class ModernSharedScopeReservationRecommendationProperties
@@ -20,6 +24,7 @@ public final class ModernSharedScopeReservationRecommendationProperties
      * Creates an instance of ModernSharedScopeReservationRecommendationProperties class.
      */
     public ModernSharedScopeReservationRecommendationProperties() {
+        withScope("Shared");
     }
 
     /**

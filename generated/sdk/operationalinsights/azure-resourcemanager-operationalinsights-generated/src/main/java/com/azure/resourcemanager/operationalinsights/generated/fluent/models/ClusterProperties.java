@@ -31,16 +31,13 @@ public final class ClusterProperties {
     private ClusterEntityStatus provisioningState;
 
     /*
-     * Configures whether cluster will use double encryption. This Property can not be modified after cluster creation.
-     * Default value is 'true'
+     * Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'
      */
     @JsonProperty(value = "isDoubleEncryptionEnabled")
     private Boolean isDoubleEncryptionEnabled;
 
     /*
-     * Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure
-     * Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value
-     * is 'true' if region supports Availability Zones.
+     * Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      */
     @JsonProperty(value = "isAvailabilityZonesEnabled")
     private Boolean isAvailabilityZonesEnabled;
@@ -106,8 +103,7 @@ public final class ClusterProperties {
     }
 
     /**
-     * Get the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property
-     * can not be modified after cluster creation. Default value is 'true'.
+     * Get the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
      * 
      * @return the isDoubleEncryptionEnabled value.
      */
@@ -116,8 +112,7 @@ public final class ClusterProperties {
     }
 
     /**
-     * Set the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property
-     * can not be modified after cluster creation. Default value is 'true'.
+     * Set the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
      * 
      * @param isDoubleEncryptionEnabled the isDoubleEncryptionEnabled value to set.
      * @return the ClusterProperties object itself.
@@ -128,9 +123,7 @@ public final class ClusterProperties {
     }
 
     /**
-     * Get the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can
-     * be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be
-     * modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+     * Get the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      * 
      * @return the isAvailabilityZonesEnabled value.
      */
@@ -139,9 +132,7 @@ public final class ClusterProperties {
     }
 
     /**
-     * Set the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can
-     * be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be
-     * modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+     * Set the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      * 
      * @param isAvailabilityZonesEnabled the isAvailabilityZonesEnabled value to set.
      * @return the ClusterProperties object itself.

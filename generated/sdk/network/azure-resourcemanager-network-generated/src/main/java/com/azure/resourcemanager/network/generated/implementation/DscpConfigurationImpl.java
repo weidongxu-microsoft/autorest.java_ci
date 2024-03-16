@@ -121,7 +121,8 @@ public final class DscpConfigurationImpl
         List<NetworkInterfaceInner> inner = this.innerModel().associatedNetworkInterfaces();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -165,14 +166,16 @@ public final class DscpConfigurationImpl
     }
 
     public DscpConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations().createOrUpdate(resourceGroupName,
-            dscpConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DscpConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations().createOrUpdate(resourceGroupName,
-            dscpConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), context);
         return this;
     }
 
@@ -187,14 +190,16 @@ public final class DscpConfigurationImpl
     }
 
     public DscpConfiguration apply() {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations().createOrUpdate(resourceGroupName,
-            dscpConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DscpConfiguration apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations().createOrUpdate(resourceGroupName,
-            dscpConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), context);
         return this;
     }
 
@@ -207,14 +212,18 @@ public final class DscpConfigurationImpl
     }
 
     public DscpConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations()
-            .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DscpConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDscpConfigurations()
-            .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDscpConfigurations()
+            .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context)
+            .getValue();
         return this;
     }
 

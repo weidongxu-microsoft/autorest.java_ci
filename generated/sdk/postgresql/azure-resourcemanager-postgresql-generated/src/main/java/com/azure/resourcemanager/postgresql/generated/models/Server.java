@@ -65,8 +65,7 @@ public interface Server {
     Sku sku();
 
     /**
-     * Gets the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Gets the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @return the administratorLogin value.
      */
@@ -94,8 +93,7 @@ public interface Server {
     MinimalTlsVersionEnum minimalTlsVersion();
 
     /**
-     * Gets the byokEnforcement property: Status showing whether the server data encryption is enabled with
-     * customer-managed keys.
+     * Gets the byokEnforcement property: Status showing whether the server data encryption is enabled with customer-managed keys.
      * 
      * @return the byokEnforcement value.
      */
@@ -158,8 +156,7 @@ public interface Server {
     Integer replicaCapacity();
 
     /**
-     * Gets the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Gets the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -265,8 +262,7 @@ public interface Server {
         }
 
         /**
-         * The stage of the Server definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Server definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithSku {
@@ -469,11 +465,9 @@ public interface Server {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for this
-             * server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * 
-             * @param publicNetworkAccess Whether or not public network access is allowed for this server. Value is
-             * optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * @param publicNetworkAccess Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess);

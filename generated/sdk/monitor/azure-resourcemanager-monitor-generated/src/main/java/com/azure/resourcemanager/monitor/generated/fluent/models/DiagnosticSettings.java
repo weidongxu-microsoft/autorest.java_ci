@@ -52,17 +52,13 @@ public final class DiagnosticSettings {
     private List<LogSettings> logs;
 
     /*
-     * The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example:
-     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.
-     * OperationalInsights/workspaces/viruela2
+     * The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2
      */
     @JsonProperty(value = "workspaceId")
     private String workspaceId;
 
     /*
-     * A string indicating whether the export to Log Analytics should use the default destination type, i.e.
-     * AzureDiagnostics, or use a destination type constructed as follows: <normalized service identity>_<normalized
-     * category name>. Possible values are: Dedicated and null (null is default.)
+     * A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: <normalized service identity>_<normalized category name>. Possible values are: Dedicated and null (null is default.)
      */
     @JsonProperty(value = "logAnalyticsDestinationType")
     private String logAnalyticsDestinationType;
@@ -74,8 +70,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Get the storageAccountId property: The resource ID of the storage account to which you would like to send
-     * Diagnostic Logs.
+     * Get the storageAccountId property: The resource ID of the storage account to which you would like to send Diagnostic Logs.
      * 
      * @return the storageAccountId value.
      */
@@ -84,8 +79,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Set the storageAccountId property: The resource ID of the storage account to which you would like to send
-     * Diagnostic Logs.
+     * Set the storageAccountId property: The resource ID of the storage account to which you would like to send Diagnostic Logs.
      * 
      * @param storageAccountId the storageAccountId value to set.
      * @return the DiagnosticSettings object itself.
@@ -96,8 +90,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Get the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain
-     * backwards compatibility.
+     * Get the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
      * 
      * @return the serviceBusRuleId value.
      */
@@ -106,8 +99,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Set the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain
-     * backwards compatibility.
+     * Set the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
      * 
      * @param serviceBusRuleId the serviceBusRuleId value to set.
      * @return the DiagnosticSettings object itself.
@@ -138,8 +130,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Get the eventHubName property: The name of the event hub. If none is specified, the default event hub will be
-     * selected.
+     * Get the eventHubName property: The name of the event hub. If none is specified, the default event hub will be selected.
      * 
      * @return the eventHubName value.
      */
@@ -148,8 +139,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Set the eventHubName property: The name of the event hub. If none is specified, the default event hub will be
-     * selected.
+     * Set the eventHubName property: The name of the event hub. If none is specified, the default event hub will be selected.
      * 
      * @param eventHubName the eventHubName value to set.
      * @return the DiagnosticSettings object itself.
@@ -200,9 +190,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Get the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to
-     * send Diagnostic Logs. Example:
-     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+     * Get the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
      * 
      * @return the workspaceId value.
      */
@@ -211,9 +199,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Set the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to
-     * send Diagnostic Logs. Example:
-     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+     * Set the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
      * 
      * @param workspaceId the workspaceId value to set.
      * @return the DiagnosticSettings object itself.
@@ -224,10 +210,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Get the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use
-     * the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
-     * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null
-     * (null is default.).
+     * Get the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
      * 
      * @return the logAnalyticsDestinationType value.
      */
@@ -236,10 +219,7 @@ public final class DiagnosticSettings {
     }
 
     /**
-     * Set the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use
-     * the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
-     * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null
-     * (null is default.).
+     * Set the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
      * 
      * @param logAnalyticsDestinationType the logAnalyticsDestinationType value to set.
      * @return the DiagnosticSettings object itself.

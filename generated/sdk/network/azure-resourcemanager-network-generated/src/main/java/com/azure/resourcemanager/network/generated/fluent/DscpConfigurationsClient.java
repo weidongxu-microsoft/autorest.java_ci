@@ -26,8 +26,7 @@ public interface DscpConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(String resourceGroupName,
@@ -43,8 +42,7 @@ public interface DscpConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(String resourceGroupName,

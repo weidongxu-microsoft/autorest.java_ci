@@ -13,12 +13,16 @@ import java.util.List;
 /**
  * Specifies the metric alert criteria for multiple resource that has multiple metric criteria.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "odata.type",
+    defaultImpl = MetricAlertMultipleResourceMultipleMetricCriteria.class,
+    visible = true)
 @JsonTypeName("Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria")
 @Fluent
 public final class MetricAlertMultipleResourceMultipleMetricCriteria extends MetricAlertCriteria {
     /*
-     * the list of multiple metric criteria for this 'all of' operation.
+     * the list of multiple metric criteria for this 'all of' operation. 
      */
     @JsonProperty(value = "allOf")
     private List<MultiMetricCriteria> allOf;
@@ -27,6 +31,7 @@ public final class MetricAlertMultipleResourceMultipleMetricCriteria extends Met
      * Creates an instance of MetricAlertMultipleResourceMultipleMetricCriteria class.
      */
     public MetricAlertMultipleResourceMultipleMetricCriteria() {
+        withOdataType(Odatatype.MICROSOFT_AZURE_MONITOR_MULTIPLE_RESOURCE_MULTIPLE_METRIC_CRITERIA);
     }
 
     /**

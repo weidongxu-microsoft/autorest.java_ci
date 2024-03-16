@@ -9,9 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * An object that defines the blob inventory rule filter conditions. For 'Blob' definition.objectType all filter
- * properties are applicable, 'blobTypes' is required and others are optional. For 'Container' definition.objectType
- * only prefixMatch is applicable and is optional.
+ * An object that defines the blob inventory rule filter conditions. For 'Blob' definition.objectType all filter properties are applicable, 'blobTypes' is required and others are optional. For 'Container' definition.objectType only prefixMatch is applicable and is optional.
  */
 @Fluent
 public final class BlobInventoryPolicyFilter {
@@ -28,32 +26,25 @@ public final class BlobInventoryPolicyFilter {
     private List<String> excludePrefix;
 
     /*
-     * An array of predefined enum values. Valid values include blockBlob, appendBlob, pageBlob. Hns accounts does not
-     * support pageBlobs. This field is required when definition.objectType property is set to 'Blob'.
+     * An array of predefined enum values. Valid values include blockBlob, appendBlob, pageBlob. Hns accounts does not support pageBlobs. This field is required when definition.objectType property is set to 'Blob'.
      */
     @JsonProperty(value = "blobTypes")
     private List<String> blobTypes;
 
     /*
-     * Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values 'VersionId
-     * and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
+     * Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values 'VersionId and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
      */
     @JsonProperty(value = "includeBlobVersions")
     private Boolean includeBlobVersions;
 
     /*
-     * Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value 'Snapshot'
-     * is required if this property is set to true, else it must be excluded.
+     * Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value 'Snapshot' is required if this property is set to true, else it must be excluded.
      */
     @JsonProperty(value = "includeSnapshots")
     private Boolean includeSnapshots;
 
     /*
-     * For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime and
-     * RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the
-     * definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and RemainingRetentionDays' and for Hns
-     * disabled accounts the definition.schemaFields must include 'Deleted and RemainingRetentionDays', else it must be
-     * excluded.
+     * For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and RemainingRetentionDays' and for Hns disabled accounts the definition.schemaFields must include 'Deleted and RemainingRetentionDays', else it must be excluded.
      */
     @JsonProperty(value = "includeDeleted")
     private Boolean includeDeleted;
@@ -91,8 +82,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Get the excludePrefix property: An array of strings with maximum 10 blob prefixes to be excluded from the
-     * inventory.
+     * Get the excludePrefix property: An array of strings with maximum 10 blob prefixes to be excluded from the inventory.
      * 
      * @return the excludePrefix value.
      */
@@ -101,8 +91,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Set the excludePrefix property: An array of strings with maximum 10 blob prefixes to be excluded from the
-     * inventory.
+     * Set the excludePrefix property: An array of strings with maximum 10 blob prefixes to be excluded from the inventory.
      * 
      * @param excludePrefix the excludePrefix value to set.
      * @return the BlobInventoryPolicyFilter object itself.
@@ -113,9 +102,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Get the blobTypes property: An array of predefined enum values. Valid values include blockBlob, appendBlob,
-     * pageBlob. Hns accounts does not support pageBlobs. This field is required when definition.objectType property is
-     * set to 'Blob'.
+     * Get the blobTypes property: An array of predefined enum values. Valid values include blockBlob, appendBlob, pageBlob. Hns accounts does not support pageBlobs. This field is required when definition.objectType property is set to 'Blob'.
      * 
      * @return the blobTypes value.
      */
@@ -124,9 +111,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Set the blobTypes property: An array of predefined enum values. Valid values include blockBlob, appendBlob,
-     * pageBlob. Hns accounts does not support pageBlobs. This field is required when definition.objectType property is
-     * set to 'Blob'.
+     * Set the blobTypes property: An array of predefined enum values. Valid values include blockBlob, appendBlob, pageBlob. Hns accounts does not support pageBlobs. This field is required when definition.objectType property is set to 'Blob'.
      * 
      * @param blobTypes the blobTypes value to set.
      * @return the BlobInventoryPolicyFilter object itself.
@@ -137,9 +122,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Get the includeBlobVersions property: Includes blob versions in blob inventory when value is set to true. The
-     * definition.schemaFields values 'VersionId and IsCurrentVersion' are required if this property is set to true,
-     * else they must be excluded.
+     * Get the includeBlobVersions property: Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values 'VersionId and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
      * 
      * @return the includeBlobVersions value.
      */
@@ -148,9 +131,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Set the includeBlobVersions property: Includes blob versions in blob inventory when value is set to true. The
-     * definition.schemaFields values 'VersionId and IsCurrentVersion' are required if this property is set to true,
-     * else they must be excluded.
+     * Set the includeBlobVersions property: Includes blob versions in blob inventory when value is set to true. The definition.schemaFields values 'VersionId and IsCurrentVersion' are required if this property is set to true, else they must be excluded.
      * 
      * @param includeBlobVersions the includeBlobVersions value to set.
      * @return the BlobInventoryPolicyFilter object itself.
@@ -161,8 +142,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Get the includeSnapshots property: Includes blob snapshots in blob inventory when value is set to true. The
-     * definition.schemaFields value 'Snapshot' is required if this property is set to true, else it must be excluded.
+     * Get the includeSnapshots property: Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value 'Snapshot' is required if this property is set to true, else it must be excluded.
      * 
      * @return the includeSnapshots value.
      */
@@ -171,8 +151,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Set the includeSnapshots property: Includes blob snapshots in blob inventory when value is set to true. The
-     * definition.schemaFields value 'Snapshot' is required if this property is set to true, else it must be excluded.
+     * Set the includeSnapshots property: Includes blob snapshots in blob inventory when value is set to true. The definition.schemaFields value 'Snapshot' is required if this property is set to true, else it must be excluded.
      * 
      * @param includeSnapshots the includeSnapshots value to set.
      * @return the BlobInventoryPolicyFilter object itself.
@@ -183,11 +162,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Get the includeDeleted property: For 'Container' definition.objectType the definition.schemaFields must include
-     * 'Deleted, Version, DeletedTime and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled
-     * storage accounts the definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and
-     * RemainingRetentionDays' and for Hns disabled accounts the definition.schemaFields must include 'Deleted and
-     * RemainingRetentionDays', else it must be excluded.
+     * Get the includeDeleted property: For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and RemainingRetentionDays' and for Hns disabled accounts the definition.schemaFields must include 'Deleted and RemainingRetentionDays', else it must be excluded.
      * 
      * @return the includeDeleted value.
      */
@@ -196,11 +171,7 @@ public final class BlobInventoryPolicyFilter {
     }
 
     /**
-     * Set the includeDeleted property: For 'Container' definition.objectType the definition.schemaFields must include
-     * 'Deleted, Version, DeletedTime and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled
-     * storage accounts the definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and
-     * RemainingRetentionDays' and for Hns disabled accounts the definition.schemaFields must include 'Deleted and
-     * RemainingRetentionDays', else it must be excluded.
+     * Set the includeDeleted property: For 'Container' definition.objectType the definition.schemaFields must include 'Deleted, Version, DeletedTime and RemainingRetentionDays'. For 'Blob' definition.objectType and HNS enabled storage accounts the definition.schemaFields must include 'DeletionId, Deleted, DeletedTime and RemainingRetentionDays' and for Hns disabled accounts the definition.schemaFields must include 'Deleted and RemainingRetentionDays', else it must be excluded.
      * 
      * @param includeDeleted the includeDeleted value to set.
      * @return the BlobInventoryPolicyFilter object itself.

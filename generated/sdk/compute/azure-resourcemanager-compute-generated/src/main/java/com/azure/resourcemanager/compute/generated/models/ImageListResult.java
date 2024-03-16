@@ -54,8 +54,7 @@ public final class ImageListResult {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Images. Call ListNext() with this to fetch the next
-     * page of Images.
+     * Get the nextLink property: The uri to fetch the next page of Images. Call ListNext() with this to fetch the next page of Images.
      * 
      * @return the nextLink value.
      */
@@ -64,8 +63,7 @@ public final class ImageListResult {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Images. Call ListNext() with this to fetch the next
-     * page of Images.
+     * Set the nextLink property: The uri to fetch the next page of Images. Call ListNext() with this to fetch the next page of Images.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ImageListResult object itself.

@@ -20,8 +20,7 @@ public final class ResourceSkuRestrictions {
     private ResourceSkuRestrictionsType type;
 
     /*
-     * The value of restrictions. If the restriction type is set to location. This would be different locations where
-     * the SKU is restricted.
+     * The value of restrictions. If the restriction type is set to location. This would be different locations where the SKU is restricted.
      */
     @JsonProperty(value = "values", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> values;
@@ -54,8 +53,7 @@ public final class ResourceSkuRestrictions {
     }
 
     /**
-     * Get the values property: The value of restrictions. If the restriction type is set to location. This would be
-     * different locations where the SKU is restricted.
+     * Get the values property: The value of restrictions. If the restriction type is set to location. This would be different locations where the SKU is restricted.
      * 
      * @return the values value.
      */

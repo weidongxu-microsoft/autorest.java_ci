@@ -37,8 +37,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     private ApplicationGatewayCookieBasedAffinity cookieBasedAffinity;
 
     /*
-     * Request timeout in seconds. Application Gateway will fail the request if response is not received within
-     * RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
+     * Request timeout in seconds. Application Gateway will fail the request if response is not received within RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
      */
     @JsonProperty(value = "requestTimeout")
     private Integer requestTimeout;
@@ -92,8 +91,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     private Boolean probeEnabled;
 
     /*
-     * Path which should be used as a prefix for all HTTP requests. Null means no path will be prefixed. Default value
-     * is null.
+     * Path which should be used as a prefix for all HTTP requests. Null means no path will be prefixed. Default value is null.
      */
     @JsonProperty(value = "path")
     private String path;
@@ -172,8 +170,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Get the requestTimeout property: Request timeout in seconds. Application Gateway will fail the request if
-     * response is not received within RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
+     * Get the requestTimeout property: Request timeout in seconds. Application Gateway will fail the request if response is not received within RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @return the requestTimeout value.
      */
@@ -182,8 +179,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Set the requestTimeout property: Request timeout in seconds. Application Gateway will fail the request if
-     * response is not received within RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
+     * Set the requestTimeout property: Request timeout in seconds. Application Gateway will fail the request if response is not received within RequestTimeout. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @param requestTimeout the requestTimeout value to set.
      * @return the ApplicationGatewayBackendHttpSettingsPropertiesFormat object itself.
@@ -214,8 +210,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Get the authenticationCertificates property: Array of references to application gateway authentication
-     * certificates.
+     * Get the authenticationCertificates property: Array of references to application gateway authentication certificates.
      * 
      * @return the authenticationCertificates value.
      */
@@ -224,8 +219,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Set the authenticationCertificates property: Array of references to application gateway authentication
-     * certificates.
+     * Set the authenticationCertificates property: Array of references to application gateway authentication certificates.
      * 
      * @param authenticationCertificates the authenticationCertificates value to set.
      * @return the ApplicationGatewayBackendHttpSettingsPropertiesFormat object itself.
@@ -299,8 +293,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Get the pickHostnameFromBackendAddress property: Whether to pick host header should be picked from the host name
-     * of the backend server. Default value is false.
+     * Get the pickHostnameFromBackendAddress property: Whether to pick host header should be picked from the host name of the backend server. Default value is false.
      * 
      * @return the pickHostnameFromBackendAddress value.
      */
@@ -309,8 +302,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Set the pickHostnameFromBackendAddress property: Whether to pick host header should be picked from the host name
-     * of the backend server. Default value is false.
+     * Set the pickHostnameFromBackendAddress property: Whether to pick host header should be picked from the host name of the backend server. Default value is false.
      * 
      * @param pickHostnameFromBackendAddress the pickHostnameFromBackendAddress value to set.
      * @return the ApplicationGatewayBackendHttpSettingsPropertiesFormat object itself.
@@ -362,8 +354,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Get the path property: Path which should be used as a prefix for all HTTP requests. Null means no path will be
-     * prefixed. Default value is null.
+     * Get the path property: Path which should be used as a prefix for all HTTP requests. Null means no path will be prefixed. Default value is null.
      * 
      * @return the path value.
      */
@@ -372,8 +363,7 @@ public final class ApplicationGatewayBackendHttpSettingsPropertiesFormat {
     }
 
     /**
-     * Set the path property: Path which should be used as a prefix for all HTTP requests. Null means no path will be
-     * prefixed. Default value is null.
+     * Set the path property: Path which should be used as a prefix for all HTTP requests. Null means no path will be prefixed. Default value is null.
      * 
      * @param path the path value to set.
      * @return the ApplicationGatewayBackendHttpSettingsPropertiesFormat object itself.

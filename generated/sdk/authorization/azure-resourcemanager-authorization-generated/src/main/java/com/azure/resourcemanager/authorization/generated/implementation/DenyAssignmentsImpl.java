@@ -29,15 +29,17 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
 
     public PagedIterable<DenyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
-        PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        PagedIterable<DenyAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String filter, Context context) {
-        PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
+        PagedIterable<DenyAssignmentInner> inner = this.serviceClient()
+            .listForResource(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, filter, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 

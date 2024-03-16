@@ -150,14 +150,16 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
     }
 
     public BastionHost create() {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts().createOrUpdate(resourceGroupName,
-            bastionHostname, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), Context.NONE);
         return this;
     }
 
     public BastionHost create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts().createOrUpdate(resourceGroupName,
-            bastionHostname, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), context);
         return this;
     }
 
@@ -173,14 +175,16 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
     }
 
     public BastionHost apply() {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts().updateTags(resourceGroupName,
-            bastionHostname, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .updateTags(resourceGroupName, bastionHostname, updateParameters, Context.NONE);
         return this;
     }
 
     public BastionHost apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts().updateTags(resourceGroupName,
-            bastionHostname, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .updateTags(resourceGroupName, bastionHostname, updateParameters, context);
         return this;
     }
 
@@ -193,14 +197,18 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
     }
 
     public BastionHost refresh() {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts()
-            .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE)
+            .getValue();
         return this;
     }
 
     public BastionHost refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBastionHosts()
-            .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBastionHosts()
+            .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, context)
+            .getValue();
         return this;
     }
 

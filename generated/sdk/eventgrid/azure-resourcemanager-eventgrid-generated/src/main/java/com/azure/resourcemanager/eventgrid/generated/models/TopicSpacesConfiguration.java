@@ -19,10 +19,8 @@ public final class TopicSpacesConfiguration {
     private TopicSpacesConfigurationState state;
 
     /*
-     * Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces
-     * under a namespace.
-     * This property should be in the following format
-     * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
+     * Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces under a namespace.
+     * This property should be in the following format '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.
      */
     @JsonProperty(value = "routeTopicResourceId")
@@ -93,10 +91,8 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Get the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events
-     * will be routed to from TopicSpaces under a namespace.
-     * This property should be in the following format
-     * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
+     * Get the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces under a namespace.
+     * This property should be in the following format '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.
      * 
      * @return the routeTopicResourceId value.
@@ -106,10 +102,8 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Set the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events
-     * will be routed to from TopicSpaces under a namespace.
-     * This property should be in the following format
-     * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
+     * Set the routeTopicResourceId property: Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces under a namespace.
+     * This property should be in the following format '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.
      * 
      * @param routeTopicResourceId the routeTopicResourceId value to set.
@@ -170,8 +164,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Get the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is
-     * 1 hour.
+     * Get the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is 1 hour.
      * Min allowed value is 1 hour and max allowed value is 8 hours.
      * 
      * @return the maximumSessionExpiryInHours value.
@@ -181,8 +174,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Set the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is
-     * 1 hour.
+     * Set the maximumSessionExpiryInHours property: The maximum session expiry in hours. The property default value is 1 hour.
      * Min allowed value is 1 hour and max allowed value is 8 hours.
      * 
      * @param maximumSessionExpiryInHours the maximumSessionExpiryInHours value to set.
@@ -194,8 +186,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Get the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication
-     * name. The property default value is 1.
+     * Get the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication name. The property default value is 1.
      * Min allowed value is 1 and max allowed value is 100.
      * 
      * @return the maximumClientSessionsPerAuthenticationName value.
@@ -205,8 +196,7 @@ public final class TopicSpacesConfiguration {
     }
 
     /**
-     * Set the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication
-     * name. The property default value is 1.
+     * Set the maximumClientSessionsPerAuthenticationName property: The maximum number of sessions per authentication name. The property default value is 1.
      * Min allowed value is 1 and max allowed value is 100.
      * 
      * @param maximumClientSessionsPerAuthenticationName the maximumClientSessionsPerAuthenticationName value to set.

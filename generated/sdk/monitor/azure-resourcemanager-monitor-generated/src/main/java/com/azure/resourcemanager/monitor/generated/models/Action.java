@@ -5,18 +5,16 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Action descriptor.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "odata.type",
-    defaultImpl = Action.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "odata.type", defaultImpl = Action.class, visible = true)
 @JsonTypeName("Action")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -27,10 +25,38 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = LogToMetricAction.class) })
 @Immutable
 public class Action {
+    /*
+     * Specifies the action. Supported values - AlertingAction, LogToMetricAction
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of Action class.
      */
     public Action() {
+        this.odataType = "Action";
+    }
+
+    /**
+     * Get the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the Action object itself.
+     */
+    protected Action withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

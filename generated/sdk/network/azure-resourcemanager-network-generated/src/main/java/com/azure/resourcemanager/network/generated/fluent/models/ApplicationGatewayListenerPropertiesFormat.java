@@ -174,8 +174,7 @@ public final class ApplicationGatewayListenerPropertiesFormat {
     }
 
     /**
-     * Get the hostNames property: List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special
-     * wildcard characters as well.
+     * Get the hostNames property: List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special wildcard characters as well.
      * 
      * @return the hostNames value.
      */
@@ -184,8 +183,7 @@ public final class ApplicationGatewayListenerPropertiesFormat {
     }
 
     /**
-     * Set the hostNames property: List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special
-     * wildcard characters as well.
+     * Set the hostNames property: List of Server Name Indications(SNI) for TLS Multi-site Listener that allows special wildcard characters as well.
      * 
      * @param hostNames the hostNames value to set.
      * @return the ApplicationGatewayListenerPropertiesFormat object itself.

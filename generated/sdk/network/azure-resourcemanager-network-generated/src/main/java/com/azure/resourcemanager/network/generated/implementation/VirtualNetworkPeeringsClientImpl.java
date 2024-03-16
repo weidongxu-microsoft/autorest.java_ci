@@ -65,8 +65,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualNetworkPeerings to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualNetworkPeerings to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -364,8 +363,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified virtual network peering along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -408,8 +406,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified virtual network peering along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -501,15 +498,12 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peerings in a virtual network resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return peerings in a virtual network resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -556,16 +550,13 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peerings in a virtual network resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return peerings in a virtual network resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -612,10 +603,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -638,8 +627,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -663,10 +651,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -691,8 +677,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -703,8 +688,10 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName,
         VirtualNetworkPeeringInner virtualNetworkPeeringParameters) {
         final SyncRemoteAddressSpace syncRemoteAddressSpace = null;
-        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
-            virtualNetworkPeeringParameters, syncRemoteAddressSpace).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
+                virtualNetworkPeeringParameters, syncRemoteAddressSpace)
+            .getSyncPoller();
     }
 
     /**
@@ -713,10 +700,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -728,8 +713,10 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName,
         VirtualNetworkPeeringInner virtualNetworkPeeringParameters, SyncRemoteAddressSpace syncRemoteAddressSpace,
         Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
-            virtualNetworkPeeringParameters, syncRemoteAddressSpace, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
+                virtualNetworkPeeringParameters, syncRemoteAddressSpace, context)
+            .getSyncPoller();
     }
 
     /**
@@ -738,10 +725,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -762,8 +747,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -784,10 +768,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -809,8 +791,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -830,10 +811,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the peering.
-     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering
-     * operation.
-     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address
-     * space on the remote vNet after it's updated.
+     * @param virtualNetworkPeeringParameters Parameters supplied to the create or update virtual network peering operation.
+     * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -856,8 +835,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network peerings in a virtual network along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all virtual network peerings in a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -897,8 +875,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network peerings in a virtual network along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all virtual network peerings in a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -1004,8 +981,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSubnets API service call along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for ListSubnets API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkPeeringInner>> listNextSinglePageAsync(String nextLink) {
@@ -1033,8 +1009,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSubnets API service call along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for ListSubnets API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkPeeringInner>> listNextSinglePageAsync(String nextLink, Context context) {

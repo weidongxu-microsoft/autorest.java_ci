@@ -36,15 +36,15 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
 
     public PagedIterable<AdminRuleCollection> list(String resourceGroupName, String networkManagerName,
         String configurationName, Integer top, String skipToken, Context context) {
-        PagedIterable<AdminRuleCollectionInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
-            configurationName, top, skipToken, context);
+        PagedIterable<AdminRuleCollectionInner> inner = this.serviceClient()
+            .list(resourceGroupName, networkManagerName, configurationName, top, skipToken, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
     }
 
     public Response<AdminRuleCollection> getWithResponse(String resourceGroupName, String networkManagerName,
         String configurationName, String ruleCollectionName, Context context) {
-        Response<AdminRuleCollectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkManagerName, configurationName, ruleCollectionName, context);
+        Response<AdminRuleCollectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AdminRuleCollectionImpl(inner.getValue(), this.manager()));
@@ -71,8 +71,8 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
 
     public void delete(String resourceGroupName, String networkManagerName, String configurationName,
         String ruleCollectionName, Boolean force, Context context) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force,
-            context);
+        this.serviceClient()
+            .delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force, context);
     }
 
     public AdminRuleCollection getById(String id) {

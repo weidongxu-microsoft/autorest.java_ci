@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Network admin rule.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = EffectiveSecurityAdminRule.class,
+    visible = true)
 @JsonTypeName("Custom")
 @Fluent
 public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdminRule {
@@ -28,6 +32,7 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
      * Creates an instance of EffectiveSecurityAdminRule class.
      */
     public EffectiveSecurityAdminRule() {
+        withKind(EffectiveAdminRuleKind.CUSTOM);
     }
 
     /**
@@ -247,9 +252,7 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @return the priority value.
      */
@@ -258,9 +261,7 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @param priority the priority value to set.
      * @return the EffectiveSecurityAdminRule object itself.

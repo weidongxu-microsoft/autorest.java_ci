@@ -43,8 +43,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Get the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M
-     * , PT5H.
+     * Get the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      * 
      * @return the dataCollectionFrequency value.
      */
@@ -53,8 +52,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Set the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M
-     * , PT5H.
+     * Set the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      * 
      * @param dataCollectionFrequency the dataCollectionFrequency value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
@@ -65,8 +63,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Get the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M ,
-     * PT5H.
+     * Get the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      * 
      * @return the dataReportingFrequency value.
      */
@@ -75,8 +72,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Set the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M ,
-     * PT5H.
+     * Set the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      * 
      * @param dataReportingFrequency the dataReportingFrequency value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
@@ -87,8 +83,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Get the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will
-     * not be hampered for not reporting the usage data.
+     * Get the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will not be hampered for not reporting the usage data.
      * 
      * @return the maxAllowedUnreportedUsageDuration value.
      */
@@ -97,8 +92,7 @@ public final class EdgeUsageDataCollectionPolicy {
     }
 
     /**
-     * Set the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will
-     * not be hampered for not reporting the usage data.
+     * Set the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will not be hampered for not reporting the usage data.
      * 
      * @param maxAllowedUnreportedUsageDuration the maxAllowedUnreportedUsageDuration value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.

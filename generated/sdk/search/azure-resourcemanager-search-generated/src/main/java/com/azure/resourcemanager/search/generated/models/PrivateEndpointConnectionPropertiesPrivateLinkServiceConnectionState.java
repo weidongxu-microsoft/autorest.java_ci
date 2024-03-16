@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes the current state of an existing Private Link Service connection to the Azure Private Endpoint.
+ * Describes the current state of an existing Azure Private Link service connection to the private endpoint.
  */
 @Fluent
 public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState {
@@ -37,8 +37,7 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     }
 
     /**
-     * Get the status property: Status of the the private link service connection. Valid values are Pending, Approved,
-     * Rejected, or Disconnected.
+     * Get the status property: Status of the the private link service connection. Valid values are Pending, Approved, Rejected, or Disconnected.
      * 
      * @return the status value.
      */
@@ -47,8 +46,7 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     }
 
     /**
-     * Set the status property: Status of the the private link service connection. Valid values are Pending, Approved,
-     * Rejected, or Disconnected.
+     * Set the status property: Status of the the private link service connection. Valid values are Pending, Approved, Rejected, or Disconnected.
      * 
      * @param status the status value to set.
      * @return the PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState object itself.

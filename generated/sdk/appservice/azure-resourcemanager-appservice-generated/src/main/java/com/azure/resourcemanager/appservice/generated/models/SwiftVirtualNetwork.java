@@ -39,16 +39,14 @@ public interface SwiftVirtualNetwork {
     String kind();
 
     /**
-     * Gets the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web
-     * App will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
+     * Gets the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
      * 
      * @return the subnetResourceId value.
      */
     String subnetResourceId();
 
     /**
-     * Gets the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift
-     * integration.
+     * Gets the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift integration.
      * 
      * @return the swiftSupported value.
      */

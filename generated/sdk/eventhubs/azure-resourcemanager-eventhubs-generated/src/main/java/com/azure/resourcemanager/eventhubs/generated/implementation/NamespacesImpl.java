@@ -168,8 +168,8 @@ public final class NamespacesImpl implements Namespaces {
 
     public Response<Void> deleteAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
         String authorizationRuleName, Context context) {
-        return this.serviceClient().deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName,
-            authorizationRuleName, context);
+        return this.serviceClient()
+            .deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
     }
 
     public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String authorizationRuleName) {
@@ -201,8 +201,8 @@ public final class NamespacesImpl implements Namespaces {
 
     public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName,
         String authorizationRuleName, Context context) {
-        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
-            authorizationRuleName, context);
+        Response<AccessKeysInner> inner = this.serviceClient()
+            .listKeysWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
@@ -222,8 +222,8 @@ public final class NamespacesImpl implements Namespaces {
 
     public Response<AccessKeys> regenerateKeysWithResponse(String resourceGroupName, String namespaceName,
         String authorizationRuleName, RegenerateAccessKeyParameters parameters, Context context) {
-        Response<AccessKeysInner> inner = this.serviceClient().regenerateKeysWithResponse(resourceGroupName,
-            namespaceName, authorizationRuleName, parameters, context);
+        Response<AccessKeysInner> inner = this.serviceClient()
+            .regenerateKeysWithResponse(resourceGroupName, namespaceName, authorizationRuleName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));

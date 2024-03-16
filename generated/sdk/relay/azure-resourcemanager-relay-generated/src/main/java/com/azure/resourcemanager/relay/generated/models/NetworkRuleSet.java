@@ -41,6 +41,13 @@ public interface NetworkRuleSet {
     SystemData systemData();
 
     /**
+     * Gets the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or not.
+     * 
+     * @return the trustedServiceAccessEnabled value.
+     */
+    Boolean trustedServiceAccessEnabled();
+
+    /**
      * Gets the defaultAction property: Default Action for Network Rule Set.
      * 
      * @return the defaultAction value.
@@ -48,8 +55,7 @@ public interface NetworkRuleSet {
     DefaultAction defaultAction();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @return the publicNetworkAccess value.
      */

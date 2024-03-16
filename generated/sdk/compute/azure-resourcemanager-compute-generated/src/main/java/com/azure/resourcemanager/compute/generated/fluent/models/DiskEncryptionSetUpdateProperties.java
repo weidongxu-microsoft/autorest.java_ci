@@ -33,8 +33,7 @@ public final class DiskEncryptionSetUpdateProperties {
     private Boolean rotationToLatestKeyVersionEnabled;
 
     /*
-     * Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will
-     * clear the property.
+     * Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
      */
     @JsonProperty(value = "federatedClientId")
     private String federatedClientId;
@@ -66,8 +65,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Get the activeKey property: Key Vault Key Url to be used for server side encryption of Managed Disks and
-     * Snapshots.
+     * Get the activeKey property: Key Vault Key Url to be used for server side encryption of Managed Disks and Snapshots.
      * 
      * @return the activeKey value.
      */
@@ -76,8 +74,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Set the activeKey property: Key Vault Key Url to be used for server side encryption of Managed Disks and
-     * Snapshots.
+     * Set the activeKey property: Key Vault Key Url to be used for server side encryption of Managed Disks and Snapshots.
      * 
      * @param activeKey the activeKey value to set.
      * @return the DiskEncryptionSetUpdateProperties object itself.
@@ -88,8 +85,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Get the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
-     * encryption set to the latest key version.
+     * Get the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
      * 
      * @return the rotationToLatestKeyVersionEnabled value.
      */
@@ -98,8 +94,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Set the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
-     * encryption set to the latest key version.
+     * Set the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
      * 
      * @param rotationToLatestKeyVersionEnabled the rotationToLatestKeyVersionEnabled value to set.
      * @return the DiskEncryptionSetUpdateProperties object itself.
@@ -111,8 +106,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Get the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant.
-     * Setting the value to 'None' will clear the property.
+     * Get the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
      * 
      * @return the federatedClientId value.
      */
@@ -121,8 +115,7 @@ public final class DiskEncryptionSetUpdateProperties {
     }
 
     /**
-     * Set the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant.
-     * Setting the value to 'None' will clear the property.
+     * Set the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
      * 
      * @param federatedClientId the federatedClientId value to set.
      * @return the DiskEncryptionSetUpdateProperties object itself.

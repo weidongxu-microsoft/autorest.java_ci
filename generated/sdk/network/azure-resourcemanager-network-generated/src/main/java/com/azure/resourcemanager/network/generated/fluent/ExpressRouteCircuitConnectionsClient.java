@@ -91,8 +91,7 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Express Route Circuit Connection from the specified express route circuit along with
-     * {@link Response}.
+     * @return the specified Express Route Circuit Connection from the specified express route circuit along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteCircuitConnectionInner> getWithResponse(String resourceGroupName, String circuitName,
@@ -121,13 +120,11 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
-     * connection operation.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of express Route Circuit Connection in an ExpressRouteCircuitPeering
-     * resource.
+     * @return the {@link SyncPoller} for polling of express Route Circuit Connection in an ExpressRouteCircuitPeering resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitConnectionInner>, ExpressRouteCircuitConnectionInner> beginCreateOrUpdate(
@@ -141,14 +138,12 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
-     * connection operation.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of express Route Circuit Connection in an ExpressRouteCircuitPeering
-     * resource.
+     * @return the {@link SyncPoller} for polling of express Route Circuit Connection in an ExpressRouteCircuitPeering resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitConnectionInner>, ExpressRouteCircuitConnectionInner> beginCreateOrUpdate(
@@ -162,8 +157,7 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
-     * connection operation.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -180,8 +174,7 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
-     * connection operation.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -202,8 +195,7 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all global reach connections associated with a private peering in an express route circuit as paginated
-     * response with {@link PagedIterable}.
+     * @return all global reach connections associated with a private peering in an express route circuit as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ExpressRouteCircuitConnectionInner> list(String resourceGroupName, String circuitName,
@@ -219,8 +211,7 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all global reach connections associated with a private peering in an express route circuit as paginated
-     * response with {@link PagedIterable}.
+     * @return all global reach connections associated with a private peering in an express route circuit as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ExpressRouteCircuitConnectionInner> list(String resourceGroupName, String circuitName,

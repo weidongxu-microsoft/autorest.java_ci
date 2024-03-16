@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ActivityLogAlertPatch {
     /*
-     * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its
-     * actions will be activated.
+     * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -26,8 +25,7 @@ public final class ActivityLogAlertPatch {
     }
 
     /**
-     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -36,8 +34,7 @@ public final class ActivityLogAlertPatch {
     }
 
     /**
-     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertPatch object itself.

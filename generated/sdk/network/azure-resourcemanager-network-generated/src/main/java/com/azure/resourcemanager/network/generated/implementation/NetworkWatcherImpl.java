@@ -106,15 +106,18 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public NetworkWatcher create() {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
             .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public NetworkWatcher create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
-            .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
+            .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -130,14 +133,18 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public NetworkWatcher apply() {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
-            .updateTagsWithResponse(resourceGroupName, networkWatcherName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
+            .updateTagsWithResponse(resourceGroupName, networkWatcherName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkWatcher apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
-            .updateTagsWithResponse(resourceGroupName, networkWatcherName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
+            .updateTagsWithResponse(resourceGroupName, networkWatcherName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -150,20 +157,24 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public NetworkWatcher refresh() {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
-            .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
+            .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkWatcher refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkWatchers()
-            .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkWatchers()
+            .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context)
+            .getValue();
         return this;
     }
 
     public Response<Topology> getTopologyWithResponse(TopologyParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getTopologyWithResponse(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .getTopologyWithResponse(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public Topology getTopology(TopologyParameters parameters) {
@@ -175,8 +186,8 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public VerificationIpFlowResult verifyIpFlow(VerificationIpFlowParameters parameters, Context context) {
-        return serviceManager.networkWatchers().verifyIpFlow(resourceGroupName, networkWatcherName, parameters,
-            context);
+        return serviceManager.networkWatchers()
+            .verifyIpFlow(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public NextHopResult getNextHop(NextHopParameters parameters) {
@@ -192,8 +203,8 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public SecurityGroupViewResult getVMSecurityRules(SecurityGroupViewParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getVMSecurityRules(resourceGroupName, networkWatcherName, parameters,
-            context);
+        return serviceManager.networkWatchers()
+            .getVMSecurityRules(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public TroubleshootingResult getTroubleshooting(TroubleshootingParameters parameters) {
@@ -201,28 +212,28 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public TroubleshootingResult getTroubleshooting(TroubleshootingParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getTroubleshooting(resourceGroupName, networkWatcherName, parameters,
-            context);
+        return serviceManager.networkWatchers()
+            .getTroubleshooting(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public TroubleshootingResult getTroubleshootingResult(QueryTroubleshootingParameters parameters) {
-        return serviceManager.networkWatchers().getTroubleshootingResult(resourceGroupName, networkWatcherName,
-            parameters);
+        return serviceManager.networkWatchers()
+            .getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters);
     }
 
     public TroubleshootingResult getTroubleshootingResult(QueryTroubleshootingParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getTroubleshootingResult(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public FlowLogInformation setFlowLogConfiguration(FlowLogInformationInner parameters) {
-        return serviceManager.networkWatchers().setFlowLogConfiguration(resourceGroupName, networkWatcherName,
-            parameters);
+        return serviceManager.networkWatchers()
+            .setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters);
     }
 
     public FlowLogInformation setFlowLogConfiguration(FlowLogInformationInner parameters, Context context) {
-        return serviceManager.networkWatchers().setFlowLogConfiguration(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public FlowLogInformation getFlowLogStatus(FlowLogStatusParameters parameters) {
@@ -230,8 +241,8 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public FlowLogInformation getFlowLogStatus(FlowLogStatusParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getFlowLogStatus(resourceGroupName, networkWatcherName, parameters,
-            context);
+        return serviceManager.networkWatchers()
+            .getFlowLogStatus(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public ConnectivityInformation checkConnectivity(ConnectivityParameters parameters) {
@@ -239,41 +250,41 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
     }
 
     public ConnectivityInformation checkConnectivity(ConnectivityParameters parameters, Context context) {
-        return serviceManager.networkWatchers().checkConnectivity(resourceGroupName, networkWatcherName, parameters,
-            context);
+        return serviceManager.networkWatchers()
+            .checkConnectivity(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public AzureReachabilityReport getAzureReachabilityReport(AzureReachabilityReportParameters parameters) {
-        return serviceManager.networkWatchers().getAzureReachabilityReport(resourceGroupName, networkWatcherName,
-            parameters);
+        return serviceManager.networkWatchers()
+            .getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters);
     }
 
     public AzureReachabilityReport getAzureReachabilityReport(AzureReachabilityReportParameters parameters,
         Context context) {
-        return serviceManager.networkWatchers().getAzureReachabilityReport(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public AvailableProvidersList listAvailableProviders(AvailableProvidersListParameters parameters) {
-        return serviceManager.networkWatchers().listAvailableProviders(resourceGroupName, networkWatcherName,
-            parameters);
+        return serviceManager.networkWatchers()
+            .listAvailableProviders(resourceGroupName, networkWatcherName, parameters);
     }
 
     public AvailableProvidersList listAvailableProviders(AvailableProvidersListParameters parameters, Context context) {
-        return serviceManager.networkWatchers().listAvailableProviders(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .listAvailableProviders(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public NetworkConfigurationDiagnosticResponse
         getNetworkConfigurationDiagnostic(NetworkConfigurationDiagnosticParameters parameters) {
-        return serviceManager.networkWatchers().getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName,
-            parameters);
+        return serviceManager.networkWatchers()
+            .getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters);
     }
 
     public NetworkConfigurationDiagnosticResponse
         getNetworkConfigurationDiagnostic(NetworkConfigurationDiagnosticParameters parameters, Context context) {
-        return serviceManager.networkWatchers().getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName,
-            parameters, context);
+        return serviceManager.networkWatchers()
+            .getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters, context);
     }
 
     public NetworkWatcherImpl withRegion(Region location) {

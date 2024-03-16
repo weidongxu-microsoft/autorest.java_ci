@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input
- * while creating a restore point.
+ * Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
  */
 @Fluent
 public final class RestorePointEncryption {
     /*
-     * Describes the parameter of customer managed disk encryption set resource id that can be specified for disk.
-     * **Note:** The disk encryption set resource id can only be specified for managed disk. Please refer
-     * https://aka.ms/mdssewithcmkoverview for more details.
+     * Describes the parameter of customer managed disk encryption set resource id that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
      */
     @JsonProperty(value = "diskEncryptionSet")
     private DiskEncryptionSetParameters diskEncryptionSet;
@@ -34,9 +31,7 @@ public final class RestorePointEncryption {
     }
 
     /**
-     * Get the diskEncryptionSet property: Describes the parameter of customer managed disk encryption set resource id
-     * that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed
-     * disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
+     * Get the diskEncryptionSet property: Describes the parameter of customer managed disk encryption set resource id that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -45,9 +40,7 @@ public final class RestorePointEncryption {
     }
 
     /**
-     * Set the diskEncryptionSet property: Describes the parameter of customer managed disk encryption set resource id
-     * that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed
-     * disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
+     * Set the diskEncryptionSet property: Describes the parameter of customer managed disk encryption set resource id that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the RestorePointEncryption object itself.

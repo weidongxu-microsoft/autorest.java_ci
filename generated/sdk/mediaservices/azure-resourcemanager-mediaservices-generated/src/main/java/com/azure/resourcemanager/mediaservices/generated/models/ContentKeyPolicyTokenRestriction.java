@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Represents a token restriction. Provided token must match these requirements for successful license or key delivery.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyTokenRestriction.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyTokenRestriction")
 @Fluent
 public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRestriction {
@@ -64,6 +68,7 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
      * Creates an instance of ContentKeyPolicyTokenRestriction class.
      */
     public ContentKeyPolicyTokenRestriction() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyTokenRestriction");
     }
 
     /**

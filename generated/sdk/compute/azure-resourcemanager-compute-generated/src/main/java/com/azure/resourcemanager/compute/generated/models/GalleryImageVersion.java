@@ -167,16 +167,14 @@ public interface GalleryImageVersion {
              * 
              * @param resourceGroupName The name of the resource group.
              * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
-             * @param galleryImageName The name of the gallery image definition in which the Image Version is to be
-             * created.
+             * @param galleryImageName The name of the gallery image definition in which the Image Version is to be created.
              * @return the next definition stage.
              */
             WithCreate withExistingImage(String resourceGroupName, String galleryName, String galleryImageName);
         }
 
         /**
-         * The stage of the GalleryImageVersion definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the GalleryImageVersion definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPublishingProfile,
             DefinitionStages.WithStorageProfile, DefinitionStages.WithSafetyProfile,

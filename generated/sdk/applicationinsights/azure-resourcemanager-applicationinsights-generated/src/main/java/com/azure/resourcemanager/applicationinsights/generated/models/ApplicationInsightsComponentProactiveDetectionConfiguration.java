@@ -26,8 +26,7 @@ public interface ApplicationInsightsComponentProactiveDetectionConfiguration {
     Boolean enabled();
 
     /**
-     * Gets the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should
-     * be sent to subscription owners.
+     * Gets the sendEmailsToSubscriptionOwners property: A flag that indicated whether notifications on this rule should be sent to subscription owners.
      * 
      * @return the sendEmailsToSubscriptionOwners value.
      */
@@ -48,17 +47,14 @@ public interface ApplicationInsightsComponentProactiveDetectionConfiguration {
     String lastUpdatedTime();
 
     /**
-     * Gets the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values
-     * for all components).
+     * Gets the ruleDefinitions property: Static definitions of the ProactiveDetection configuration rule (same values for all components).
      * 
      * @return the ruleDefinitions value.
      */
     ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions ruleDefinitions();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentProactiveDetectionConfigurationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentProactiveDetectionConfigurationInner object.
      * 
      * @return the inner object.
      */

@@ -40,8 +40,8 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
 
     public Response<BackendAddressPool> getWithResponse(String resourceGroupName, String loadBalancerName,
         String backendAddressPoolName, Context context) {
-        Response<BackendAddressPoolInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            loadBalancerName, backendAddressPoolName, context);
+        Response<BackendAddressPoolInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BackendAddressPoolImpl(inner.getValue(), this.manager()));

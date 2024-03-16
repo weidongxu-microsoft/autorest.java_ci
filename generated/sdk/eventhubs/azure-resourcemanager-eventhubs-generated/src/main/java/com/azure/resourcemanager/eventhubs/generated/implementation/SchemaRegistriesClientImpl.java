@@ -59,8 +59,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientSchemaRegistries to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for EventHubManagementClientSchemaRegistries to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -118,15 +117,12 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     * point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Schema Groups in a Namespace along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Schema Groups in a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SchemaGroupInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -160,16 +156,13 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     * point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Schema Groups in a Namespace along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Schema Groups in a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SchemaGroupInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -203,9 +196,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     * point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -242,9 +233,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     * point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -282,9 +271,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     * point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -308,8 +295,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -357,8 +343,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -590,8 +575,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the details of an EventHub schema group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -632,8 +616,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the details of an EventHub schema group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -723,8 +706,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List SchemaGroup operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the result of the List SchemaGroup operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SchemaGroupInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
@@ -753,8 +735,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List SchemaGroup operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the result of the List SchemaGroup operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SchemaGroupInner>> listByNamespaceNextSinglePageAsync(String nextLink, Context context) {

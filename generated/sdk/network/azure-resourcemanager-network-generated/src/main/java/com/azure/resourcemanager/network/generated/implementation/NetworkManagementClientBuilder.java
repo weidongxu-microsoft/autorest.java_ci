@@ -20,14 +20,12 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = { NetworkManagementClientImpl.class })
 public final class NetworkManagementClientBuilder {
     /*
-     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
-     * part of the URI for every service call.
+     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      */
     private String subscriptionId;
 
     /**
-     * Sets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
-     * forms part of the URI for every service call.
+     * Sets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the NetworkManagementClientBuilder.
@@ -125,11 +123,13 @@ public final class NetworkManagementClientBuilder {
     public NetworkManagementClientImpl buildClient() {
         String localEndpoint = (endpoint != null) ? endpoint : "https://management.azure.com";
         AzureEnvironment localEnvironment = (environment != null) ? environment : AzureEnvironment.AZURE;
-        HttpPipeline localPipeline = (pipeline != null) ? pipeline
+        HttpPipeline localPipeline = (pipeline != null)
+            ? pipeline
             : new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
         Duration localDefaultPollInterval
             = (defaultPollInterval != null) ? defaultPollInterval : Duration.ofSeconds(30);
-        SerializerAdapter localSerializerAdapter = (serializerAdapter != null) ? serializerAdapter
+        SerializerAdapter localSerializerAdapter = (serializerAdapter != null)
+            ? serializerAdapter
             : SerializerFactory.createDefaultManagementSerializerAdapter();
         NetworkManagementClientImpl client = new NetworkManagementClientImpl(localPipeline, localSerializerAdapter,
             localDefaultPollInterval, localEnvironment, this.subscriptionId, localEndpoint);

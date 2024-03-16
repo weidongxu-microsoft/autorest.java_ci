@@ -26,8 +26,7 @@ public final class FrontDoorCertificateSourceParameters {
     }
 
     /**
-     * Get the certificateType property: Defines the type of the certificate used for secure connections to a
-     * frontendEndpoint.
+     * Get the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
      * 
      * @return the certificateType value.
      */
@@ -36,8 +35,7 @@ public final class FrontDoorCertificateSourceParameters {
     }
 
     /**
-     * Set the certificateType property: Defines the type of the certificate used for secure connections to a
-     * frontendEndpoint.
+     * Set the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
      * 
      * @param certificateType the certificateType value to set.
      * @return the FrontDoorCertificateSourceParameters object itself.

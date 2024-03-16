@@ -65,8 +65,7 @@ public interface FirewallPolicy {
     String id();
 
     /**
-     * Gets the size property: A read-only string that represents the size of the FirewallPolicyPropertiesFormat in MB.
-     * (ex 0.5MB).
+     * Gets the size property: A read-only string that represents the size of the FirewallPolicyPropertiesFormat in MB. (ex 0.5MB).
      * 
      * @return the size value.
      */
@@ -257,8 +256,7 @@ public interface FirewallPolicy {
         }
 
         /**
-         * The stage of the FirewallPolicy definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FirewallPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithBasePolicy, DefinitionStages.WithThreatIntelMode,

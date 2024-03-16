@@ -41,8 +41,8 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
 
     public Response<RoleInstance> getWithResponse(String roleInstanceName, String resourceGroupName,
         String cloudServiceName, InstanceViewTypes expand, Context context) {
-        Response<RoleInstanceInner> inner = this.serviceClient().getWithResponse(roleInstanceName, resourceGroupName,
-            cloudServiceName, expand, context);
+        Response<RoleInstanceInner> inner = this.serviceClient()
+            .getWithResponse(roleInstanceName, resourceGroupName, cloudServiceName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleInstanceImpl(inner.getValue(), this.manager()));
@@ -62,8 +62,8 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
 
     public Response<RoleInstanceView> getInstanceViewWithResponse(String roleInstanceName, String resourceGroupName,
         String cloudServiceName, Context context) {
-        Response<RoleInstanceViewInner> inner = this.serviceClient().getInstanceViewWithResponse(roleInstanceName,
-            resourceGroupName, cloudServiceName, context);
+        Response<RoleInstanceViewInner> inner = this.serviceClient()
+            .getInstanceViewWithResponse(roleInstanceName, resourceGroupName, cloudServiceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleInstanceViewImpl(inner.getValue(), this.manager()));
@@ -121,8 +121,8 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
 
     public Response<BinaryData> getRemoteDesktopFileWithResponse(String roleInstanceName, String resourceGroupName,
         String cloudServiceName, Context context) {
-        return this.serviceClient().getRemoteDesktopFileWithResponse(roleInstanceName, resourceGroupName,
-            cloudServiceName, context);
+        return this.serviceClient()
+            .getRemoteDesktopFileWithResponse(roleInstanceName, resourceGroupName, cloudServiceName, context);
     }
 
     public BinaryData getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName) {

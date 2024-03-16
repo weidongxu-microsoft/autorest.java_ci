@@ -94,8 +94,7 @@ public final class AvailabilityGroupListenerProperties {
     }
 
     /**
-     * Get the loadBalancerConfigurations property: List of load balancer configurations for an availability group
-     * listener.
+     * Get the loadBalancerConfigurations property: List of load balancer configurations for an availability group listener.
      * 
      * @return the loadBalancerConfigurations value.
      */
@@ -104,8 +103,7 @@ public final class AvailabilityGroupListenerProperties {
     }
 
     /**
-     * Set the loadBalancerConfigurations property: List of load balancer configurations for an availability group
-     * listener.
+     * Set the loadBalancerConfigurations property: List of load balancer configurations for an availability group listener.
      * 
      * @param loadBalancerConfigurations the loadBalancerConfigurations value to set.
      * @return the AvailabilityGroupListenerProperties object itself.
@@ -138,8 +136,7 @@ public final class AvailabilityGroupListenerProperties {
     }
 
     /**
-     * Get the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not
-     * exist.
+     * Get the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not exist.
      * 
      * @return the createDefaultAvailabilityGroupIfNotExist value.
      */
@@ -148,8 +145,7 @@ public final class AvailabilityGroupListenerProperties {
     }
 
     /**
-     * Set the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not
-     * exist.
+     * Set the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not exist.
      * 
      * @param createDefaultAvailabilityGroupIfNotExist the createDefaultAvailabilityGroupIfNotExist value to set.
      * @return the AvailabilityGroupListenerProperties object itself.

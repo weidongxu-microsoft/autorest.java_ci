@@ -54,8 +54,7 @@ public final class VirtualMachineListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of VMs. Call ListNext() with this URI to fetch the next
-     * page of Virtual Machines.
+     * Get the nextLink property: The URI to fetch the next page of VMs. Call ListNext() with this URI to fetch the next page of Virtual Machines.
      * 
      * @return the nextLink value.
      */
@@ -64,8 +63,7 @@ public final class VirtualMachineListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of VMs. Call ListNext() with this URI to fetch the next
-     * page of Virtual Machines.
+     * Set the nextLink property: The URI to fetch the next page of VMs. Call ListNext() with this URI to fetch the next page of Virtual Machines.
      * 
      * @param nextLink the nextLink value to set.
      * @return the VirtualMachineListResult object itself.

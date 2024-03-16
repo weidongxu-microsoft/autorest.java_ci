@@ -58,8 +58,7 @@ public interface AttachedDatabaseConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list attached database configurations operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AttachedDatabaseConfigurationInner> listByCluster(String resourceGroupName, String clusterName);
@@ -73,8 +72,7 @@ public interface AttachedDatabaseConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with
-     * {@link PagedIterable}.
+     * @return the list attached database configurations operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AttachedDatabaseConfigurationInner> listByCluster(String resourceGroupName, String clusterName,

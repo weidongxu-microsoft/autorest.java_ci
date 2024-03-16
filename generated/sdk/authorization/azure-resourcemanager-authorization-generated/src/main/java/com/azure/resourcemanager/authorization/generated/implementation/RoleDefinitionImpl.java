@@ -79,14 +79,18 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     }
 
     public RoleDefinition create() {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoleDefinition create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -102,14 +106,18 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     }
 
     public RoleDefinition apply() {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoleDefinition apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -124,14 +132,18 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     }
 
     public RoleDefinition refresh() {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .getWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .getWithResponse(scope, roleDefinitionId, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoleDefinition refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
-            .getWithResponse(scope, roleDefinitionId, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleDefinitions()
+            .getWithResponse(scope, roleDefinitionId, context)
+            .getValue();
         return this;
     }
 

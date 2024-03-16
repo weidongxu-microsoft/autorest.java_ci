@@ -27,8 +27,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host .
      * @param parameters Parameters supplied to the Create Dedicated Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of specifies information about the Dedicated host.
      */
@@ -45,8 +44,7 @@ public interface DedicatedHostsClient {
      * @param parameters Parameters supplied to the Create Dedicated Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of specifies information about the Dedicated host.
      */
@@ -62,8 +60,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host .
      * @param parameters Parameters supplied to the Create Dedicated Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host.
      */
@@ -80,8 +77,7 @@ public interface DedicatedHostsClient {
      * @param parameters Parameters supplied to the Create Dedicated Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host.
      */
@@ -97,8 +93,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host .
      * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of specifies information about the Dedicated host.
      */
@@ -115,8 +110,7 @@ public interface DedicatedHostsClient {
      * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of specifies information about the Dedicated host.
      */
@@ -132,8 +126,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host .
      * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host.
      */
@@ -150,8 +143,7 @@ public interface DedicatedHostsClient {
      * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host.
      */
@@ -166,8 +158,7 @@ public interface DedicatedHostsClient {
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -182,8 +173,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -198,8 +188,7 @@ public interface DedicatedHostsClient {
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -213,8 +202,7 @@ public interface DedicatedHostsClient {
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -226,12 +214,10 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
-     * views of the dedicated host. 'UserData' is not supported for dedicated host.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated host. 'UserData' is not supported for dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host along with {@link Response}.
      */
@@ -246,8 +232,7 @@ public interface DedicatedHostsClient {
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Dedicated host.
      */
@@ -255,14 +240,12 @@ public interface DedicatedHostsClient {
     DedicatedHostInner get(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Lists all of the dedicated hosts in the specified dedicated host group. Use the nextLink property in the response
-     * to get the next page of dedicated hosts.
+     * Lists all of the dedicated hosts in the specified dedicated host group. Use the nextLink property in the response to get the next page of dedicated hosts.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list dedicated host operation response as paginated response with {@link PagedIterable}.
      */
@@ -270,15 +253,13 @@ public interface DedicatedHostsClient {
     PagedIterable<DedicatedHostInner> listByHostGroup(String resourceGroupName, String hostGroupName);
 
     /**
-     * Lists all of the dedicated hosts in the specified dedicated host group. Use the nextLink property in the response
-     * to get the next page of dedicated hosts.
+     * Lists all of the dedicated hosts in the specified dedicated host group. Use the nextLink property in the response to get the next page of dedicated hosts.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list dedicated host operation response as paginated response with {@link PagedIterable}.
      */
@@ -286,17 +267,13 @@ public interface DedicatedHostsClient {
     PagedIterable<DedicatedHostInner> listByHostGroup(String resourceGroupName, String hostGroupName, Context context);
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
-     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
-     * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -304,18 +281,14 @@ public interface DedicatedHostsClient {
     SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
-     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
-     * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -324,52 +297,40 @@ public interface DedicatedHostsClient {
         Context context);
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
-     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
-     * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void restart(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
-     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
-     * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void restart(String resourceGroupName, String hostGroupName, String hostname, Context context);
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
-     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
-     * the Resource Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -377,18 +338,14 @@ public interface DedicatedHostsClient {
     SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
-     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
-     * the Resource Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -397,50 +354,40 @@ public interface DedicatedHostsClient {
         Context context);
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
-     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
-     * the Resource Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void redeploy(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
-     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
-     * the Resource Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void redeploy(String resourceGroupName, String hostGroupName, String hostname, Context context);
 
     /**
-     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The
-     * dedicated host sizes provided can be used to only scale up the existing dedicated host.
+     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The dedicated host sizes provided can be used to only scale up the existing dedicated host.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Dedicated Host sizes operation response as paginated response with {@link PagedIterable}.
      */
@@ -448,16 +395,14 @@ public interface DedicatedHostsClient {
     PagedIterable<String> listAvailableSizes(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
-     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The
-     * dedicated host sizes provided can be used to only scale up the existing dedicated host.
+     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The dedicated host sizes provided can be used to only scale up the existing dedicated host.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Dedicated Host sizes operation response as paginated response with {@link PagedIterable}.
      */

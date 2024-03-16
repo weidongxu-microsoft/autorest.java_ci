@@ -47,6 +47,48 @@ public interface StorageManagementClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the BlobServicesClient object to access its operations.
+     * 
+     * @return the BlobServicesClient object.
+     */
+    BlobServicesClient getBlobServices();
+
+    /**
+     * Gets the BlobContainersClient object to access its operations.
+     * 
+     * @return the BlobContainersClient object.
+     */
+    BlobContainersClient getBlobContainers();
+
+    /**
+     * Gets the FileServicesClient object to access its operations.
+     * 
+     * @return the FileServicesClient object.
+     */
+    FileServicesClient getFileServices();
+
+    /**
+     * Gets the FileSharesClient object to access its operations.
+     * 
+     * @return the FileSharesClient object.
+     */
+    FileSharesClient getFileShares();
+
+    /**
+     * Gets the QueueServicesClient object to access its operations.
+     * 
+     * @return the QueueServicesClient object.
+     */
+    QueueServicesClient getQueueServices();
+
+    /**
+     * Gets the QueuesClient object to access its operations.
+     * 
+     * @return the QueuesClient object.
+     */
+    QueuesClient getQueues();
+
+    /**
      * Gets the OperationsClient object to access its operations.
      * 
      * @return the OperationsClient object.
@@ -131,48 +173,6 @@ public interface StorageManagementClient {
     EncryptionScopesClient getEncryptionScopes();
 
     /**
-     * Gets the BlobServicesClient object to access its operations.
-     * 
-     * @return the BlobServicesClient object.
-     */
-    BlobServicesClient getBlobServices();
-
-    /**
-     * Gets the BlobContainersClient object to access its operations.
-     * 
-     * @return the BlobContainersClient object.
-     */
-    BlobContainersClient getBlobContainers();
-
-    /**
-     * Gets the FileServicesClient object to access its operations.
-     * 
-     * @return the FileServicesClient object.
-     */
-    FileServicesClient getFileServices();
-
-    /**
-     * Gets the FileSharesClient object to access its operations.
-     * 
-     * @return the FileSharesClient object.
-     */
-    FileSharesClient getFileShares();
-
-    /**
-     * Gets the QueueServicesClient object to access its operations.
-     * 
-     * @return the QueueServicesClient object.
-     */
-    QueueServicesClient getQueueServices();
-
-    /**
-     * Gets the QueuesClient object to access its operations.
-     * 
-     * @return the QueuesClient object.
-     */
-    QueuesClient getQueues();
-
-    /**
      * Gets the TableServicesClient object to access its operations.
      * 
      * @return the TableServicesClient object.
@@ -185,4 +185,11 @@ public interface StorageManagementClient {
      * @return the TablesClient object.
      */
     TablesClient getTables();
+
+    /**
+     * Gets the NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     * 
+     * @return the NetworkSecurityPerimeterConfigurationsClient object.
+     */
+    NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations();
 }

@@ -80,19 +80,14 @@ public interface StreamingLocator {
     UUID streamingLocatorId();
 
     /**
-     * Gets the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either
-     * specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
-     * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
-     * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
-     * 'Predefined_MultiDrmStreaming'.
+     * Gets the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
      * 
      * @return the streamingPolicyName value.
      */
     String streamingPolicyName();
 
     /**
-     * Gets the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
-     * Locator.
+     * Gets the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
      * 
      * @return the defaultContentKeyPolicyName value.
      */
@@ -158,8 +153,7 @@ public interface StreamingLocator {
         }
 
         /**
-         * The stage of the StreamingLocator definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StreamingLocator definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithAssetName, DefinitionStages.WithStartTime,
             DefinitionStages.WithEndTime, DefinitionStages.WithStreamingLocatorId,
@@ -238,17 +232,9 @@ public interface StreamingLocator {
          */
         interface WithStreamingPolicyName {
             /**
-             * Specifies the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator.
-             * Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies.
-             * The predefined Streaming Policies available are: 'Predefined_DownloadOnly',
-             * 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey',
-             * 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
+             * Specifies the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
              * 
-             * @param streamingPolicyName Name of the Streaming Policy used by this Streaming Locator. Either specify
-             * the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
-             * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
-             * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
-             * 'Predefined_MultiDrmStreaming'.
+             * @param streamingPolicyName Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
              * @return the next definition stage.
              */
             WithCreate withStreamingPolicyName(String streamingPolicyName);
@@ -259,8 +245,7 @@ public interface StreamingLocator {
          */
         interface WithDefaultContentKeyPolicyName {
             /**
-             * Specifies the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this
-             * Streaming Locator..
+             * Specifies the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator..
              * 
              * @param defaultContentKeyPolicyName Name of the default ContentKeyPolicy used by this Streaming Locator.
              * @return the next definition stage.

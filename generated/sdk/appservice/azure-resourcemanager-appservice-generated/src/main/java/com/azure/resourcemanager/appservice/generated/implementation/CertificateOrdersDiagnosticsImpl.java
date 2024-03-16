@@ -45,9 +45,9 @@ public final class CertificateOrdersDiagnosticsImpl implements CertificateOrders
     public Response<DetectorResponse> getAppServiceCertificateOrderDetectorResponseWithResponse(
         String resourceGroupName, String certificateOrderName, String detectorName, OffsetDateTime startTime,
         OffsetDateTime endTime, String timeGrain, Context context) {
-        Response<DetectorResponseInner> inner
-            = this.serviceClient().getAppServiceCertificateOrderDetectorResponseWithResponse(resourceGroupName,
-                certificateOrderName, detectorName, startTime, endTime, timeGrain, context);
+        Response<DetectorResponseInner> inner = this.serviceClient()
+            .getAppServiceCertificateOrderDetectorResponseWithResponse(resourceGroupName, certificateOrderName,
+                detectorName, startTime, endTime, timeGrain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));

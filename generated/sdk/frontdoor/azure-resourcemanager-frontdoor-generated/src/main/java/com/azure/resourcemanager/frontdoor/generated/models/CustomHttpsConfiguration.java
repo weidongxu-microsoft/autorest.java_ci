@@ -92,8 +92,7 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL
-     * handshake with Front Door.
+     * Get the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
      * 
      * @return the minimumTlsVersion value.
      */
@@ -102,8 +101,7 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Set the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL
-     * handshake with Front Door.
+     * Set the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
      * 
      * @param minimumTlsVersion the minimumTlsVersion value to set.
      * @return the CustomHttpsConfiguration object itself.
@@ -114,8 +112,7 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the innerKeyVaultCertificateSourceParameters property: KeyVault certificate source parameters (if
-     * certificateSource=AzureKeyVault).
+     * Get the innerKeyVaultCertificateSourceParameters property: KeyVault certificate source parameters (if certificateSource=AzureKeyVault).
      * 
      * @return the innerKeyVaultCertificateSourceParameters value.
      */
@@ -124,8 +121,7 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the innerFrontDoorCertificateSourceParameters property: Parameters required for enabling SSL with Front
-     * Door-managed certificates (if certificateSource=FrontDoor).
+     * Get the innerFrontDoorCertificateSourceParameters property: Parameters required for enabling SSL with Front Door-managed certificates (if certificateSource=FrontDoor).
      * 
      * @return the innerFrontDoorCertificateSourceParameters value.
      */
@@ -139,7 +135,8 @@ public final class CustomHttpsConfiguration {
      * @return the vault value.
      */
     public KeyVaultCertificateSourceParametersVault vault() {
-        return this.innerKeyVaultCertificateSourceParameters() == null ? null
+        return this.innerKeyVaultCertificateSourceParameters() == null
+            ? null
             : this.innerKeyVaultCertificateSourceParameters().vault();
     }
 
@@ -163,7 +160,8 @@ public final class CustomHttpsConfiguration {
      * @return the secretName value.
      */
     public String secretName() {
-        return this.innerKeyVaultCertificateSourceParameters() == null ? null
+        return this.innerKeyVaultCertificateSourceParameters() == null
+            ? null
             : this.innerKeyVaultCertificateSourceParameters().secretName();
     }
 
@@ -187,7 +185,8 @@ public final class CustomHttpsConfiguration {
      * @return the secretVersion value.
      */
     public String secretVersion() {
-        return this.innerKeyVaultCertificateSourceParameters() == null ? null
+        return this.innerKeyVaultCertificateSourceParameters() == null
+            ? null
             : this.innerKeyVaultCertificateSourceParameters().secretVersion();
     }
 
@@ -206,19 +205,18 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the certificateType property: Defines the type of the certificate used for secure connections to a
-     * frontendEndpoint.
+     * Get the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
      * 
      * @return the certificateType value.
      */
     public FrontDoorCertificateType certificateType() {
-        return this.innerFrontDoorCertificateSourceParameters() == null ? null
+        return this.innerFrontDoorCertificateSourceParameters() == null
+            ? null
             : this.innerFrontDoorCertificateSourceParameters().certificateType();
     }
 
     /**
-     * Set the certificateType property: Defines the type of the certificate used for secure connections to a
-     * frontendEndpoint.
+     * Set the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
      * 
      * @param certificateType the certificateType value to set.
      * @return the CustomHttpsConfiguration object itself.

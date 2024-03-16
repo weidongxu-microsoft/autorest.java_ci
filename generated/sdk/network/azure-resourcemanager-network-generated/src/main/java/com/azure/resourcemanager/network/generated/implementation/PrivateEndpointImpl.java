@@ -75,7 +75,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         List<NetworkInterfaceInner> inner = this.innerModel().networkInterfaces();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -116,7 +117,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         List<ApplicationSecurityGroupInner> inner = this.innerModel().applicationSecurityGroups();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -165,14 +167,16 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
     }
 
     public PrivateEndpoint create() {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints().createOrUpdate(resourceGroupName,
-            privateEndpointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
+            .createOrUpdate(resourceGroupName, privateEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PrivateEndpoint create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints().createOrUpdate(resourceGroupName,
-            privateEndpointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
+            .createOrUpdate(resourceGroupName, privateEndpointName, this.innerModel(), context);
         return this;
     }
 
@@ -187,14 +191,16 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
     }
 
     public PrivateEndpoint apply() {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints().createOrUpdate(resourceGroupName,
-            privateEndpointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
+            .createOrUpdate(resourceGroupName, privateEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PrivateEndpoint apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints().createOrUpdate(resourceGroupName,
-            privateEndpointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
+            .createOrUpdate(resourceGroupName, privateEndpointName, this.innerModel(), context);
         return this;
     }
 
@@ -208,7 +214,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
 
     public PrivateEndpoint refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
             .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -216,8 +223,10 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
 
     public PrivateEndpoint refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpoints()
-            .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpoints()
+            .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, context)
+            .getValue();
         return this;
     }
 

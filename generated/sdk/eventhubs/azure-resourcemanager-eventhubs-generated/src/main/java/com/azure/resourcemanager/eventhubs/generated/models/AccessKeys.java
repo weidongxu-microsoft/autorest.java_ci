@@ -18,8 +18,7 @@ public interface AccessKeys {
     String primaryConnectionString();
 
     /**
-     * Gets the secondaryConnectionString property: Secondary connection string of the created namespace
-     * AuthorizationRule.
+     * Gets the secondaryConnectionString property: Secondary connection string of the created namespace AuthorizationRule.
      * 
      * @return the secondaryConnectionString value.
      */
@@ -33,7 +32,7 @@ public interface AccessKeys {
     String aliasPrimaryConnectionString();
 
     /**
-     * Gets the aliasSecondaryConnectionString property: Secondary connection string of the alias if GEO DR is enabled.
+     * Gets the aliasSecondaryConnectionString property: Secondary  connection string of the alias if GEO DR is enabled.
      * 
      * @return the aliasSecondaryConnectionString value.
      */

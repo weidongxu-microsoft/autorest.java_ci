@@ -106,8 +106,7 @@ public interface ApplicationGatewayPrivateEndpointConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(String resourceGroupName,
         String applicationGatewayName);
@@ -121,8 +120,7 @@ public interface ApplicationGatewayPrivateEndpointConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(String resourceGroupName,
         String applicationGatewayName, Context context);

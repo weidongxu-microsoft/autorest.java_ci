@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to
- * the Application Insights component.
+ * Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to the Application Insights component.
  */
 public enum FavoriteType {
     /**

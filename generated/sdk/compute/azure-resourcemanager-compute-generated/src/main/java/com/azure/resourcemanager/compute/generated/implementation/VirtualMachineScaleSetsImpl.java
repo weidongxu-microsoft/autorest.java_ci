@@ -264,9 +264,9 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
         String resourceGroupName, String vmScaleSetName, int platformUpdateDomain, String zone, String placementGroupId,
         Context context) {
-        Response<RecoveryWalkResponseInner> inner
-            = this.serviceClient().forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(resourceGroupName,
-                vmScaleSetName, platformUpdateDomain, zone, placementGroupId, context);
+        Response<RecoveryWalkResponseInner> inner = this.serviceClient()
+            .forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(resourceGroupName, vmScaleSetName,
+                platformUpdateDomain, zone, placementGroupId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecoveryWalkResponseImpl(inner.getValue(), this.manager()));
@@ -277,8 +277,9 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public RecoveryWalkResponse forceRecoveryServiceFabricPlatformUpdateDomainWalk(String resourceGroupName,
         String vmScaleSetName, int platformUpdateDomain) {
-        RecoveryWalkResponseInner inner = this.serviceClient().forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-            resourceGroupName, vmScaleSetName, platformUpdateDomain);
+        RecoveryWalkResponseInner inner = this.serviceClient()
+            .forceRecoveryServiceFabricPlatformUpdateDomainWalk(resourceGroupName, vmScaleSetName,
+                platformUpdateDomain);
         if (inner != null) {
             return new RecoveryWalkResponseImpl(inner, this.manager());
         } else {
@@ -288,8 +289,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public Response<Void> convertToSinglePlacementGroupWithResponse(String resourceGroupName, String vmScaleSetName,
         VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context) {
-        return this.serviceClient().convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName,
-            parameters, context);
+        return this.serviceClient()
+            .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
     }
 
     public void convertToSinglePlacementGroup(String resourceGroupName, String vmScaleSetName,

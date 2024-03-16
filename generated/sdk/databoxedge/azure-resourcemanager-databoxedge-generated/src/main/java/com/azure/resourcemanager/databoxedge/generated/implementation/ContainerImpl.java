@@ -79,14 +79,18 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     }
 
     public Container create() {
-        this.innerObject = serviceManager.serviceClient().getContainers().createOrUpdate(deviceName, storageAccountName,
-            containerName, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public Container create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainers().createOrUpdate(deviceName, storageAccountName,
-            containerName, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -101,14 +105,18 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     }
 
     public Container apply() {
-        this.innerObject = serviceManager.serviceClient().getContainers().createOrUpdate(deviceName, storageAccountName,
-            containerName, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public Container apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainers().createOrUpdate(deviceName, storageAccountName,
-            containerName, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -123,14 +131,18 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     }
 
     public Container refresh() {
-        this.innerObject = serviceManager.serviceClient().getContainers()
-            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Container refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainers()
-            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getContainers()
+            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, context)
+            .getValue();
         return this;
     }
 

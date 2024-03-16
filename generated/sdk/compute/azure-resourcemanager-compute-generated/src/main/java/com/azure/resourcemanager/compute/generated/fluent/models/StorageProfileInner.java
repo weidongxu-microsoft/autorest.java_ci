@@ -18,35 +18,25 @@ import java.util.List;
 @Fluent
 public final class StorageProfileInner {
     /*
-     * Specifies information about the image to use. You can specify information about platform images, marketplace
-     * images, or virtual machine images. This element is required when you want to use a platform image, marketplace
-     * image, or virtual machine image, but is not used in other creation operations.
+     * Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
      */
     @JsonProperty(value = "imageReference")
     private ImageReference imageReference;
 
     /*
-     * Specifies information about the operating system disk used by the virtual machine. For more information about
-     * disks, see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Specifies information about the operating system disk used by the virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      */
     @JsonProperty(value = "osDisk")
     private OSDisk osDisk;
 
     /*
-     * Specifies the parameters that are used to add a data disk to a virtual machine. For more information about disks,
-     * see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Specifies the parameters that are used to add a data disk to a virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      */
     @JsonProperty(value = "dataDisks")
     private List<DataDisk> dataDisks;
 
     /*
-     * Specifies the disk controller type configured for the VM. **Note:** This property will be set to the default disk
-     * controller type if not specified provided virtual machine is being created with 'hyperVGeneration' set to V2
-     * based on the capabilities of the operating system disk and VM size from the the specified minimum api version.
-     * You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the
-     * VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01.
+     * Specifies the disk controller type configured for the VM. **Note:** This property will be set to the default disk controller type if not specified provided virtual machine is being created with 'hyperVGeneration' set to V2 based on the capabilities of the operating system disk and VM size from the the specified minimum api version. You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01.
      */
     @JsonProperty(value = "diskControllerType")
     private DiskControllerTypes diskControllerType;
@@ -58,9 +48,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Get the imageReference property: Specifies information about the image to use. You can specify information about
-     * platform images, marketplace images, or virtual machine images. This element is required when you want to use a
-     * platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
+     * Get the imageReference property: Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
      * 
      * @return the imageReference value.
      */
@@ -69,9 +57,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Set the imageReference property: Specifies information about the image to use. You can specify information about
-     * platform images, marketplace images, or virtual machine images. This element is required when you want to use a
-     * platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
+     * Set the imageReference property: Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
      * 
      * @param imageReference the imageReference value to set.
      * @return the StorageProfileInner object itself.
@@ -82,9 +68,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Get the osDisk property: Specifies information about the operating system disk used by the virtual machine. For
-     * more information about disks, see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Get the osDisk property: Specifies information about the operating system disk used by the virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      * 
      * @return the osDisk value.
      */
@@ -93,9 +77,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Set the osDisk property: Specifies information about the operating system disk used by the virtual machine. For
-     * more information about disks, see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Set the osDisk property: Specifies information about the operating system disk used by the virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      * 
      * @param osDisk the osDisk value to set.
      * @return the StorageProfileInner object itself.
@@ -106,9 +88,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Get the dataDisks property: Specifies the parameters that are used to add a data disk to a virtual machine. For
-     * more information about disks, see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Get the dataDisks property: Specifies the parameters that are used to add a data disk to a virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      * 
      * @return the dataDisks value.
      */
@@ -117,9 +97,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Set the dataDisks property: Specifies the parameters that are used to add a data disk to a virtual machine. For
-     * more information about disks, see [About disks and VHDs for Azure virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+     * Set the dataDisks property: Specifies the parameters that are used to add a data disk to a virtual machine. For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      * 
      * @param dataDisks the dataDisks value to set.
      * @return the StorageProfileInner object itself.
@@ -130,12 +108,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Get the diskControllerType property: Specifies the disk controller type configured for the VM. **Note:** This
-     * property will be set to the default disk controller type if not specified provided virtual machine is being
-     * created with 'hyperVGeneration' set to V2 based on the capabilities of the operating system disk and VM size from
-     * the the specified minimum api version. You need to deallocate the VM before updating its disk controller type
-     * unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM.
-     * Minimum api-version: 2022-08-01.
+     * Get the diskControllerType property: Specifies the disk controller type configured for the VM. **Note:** This property will be set to the default disk controller type if not specified provided virtual machine is being created with 'hyperVGeneration' set to V2 based on the capabilities of the operating system disk and VM size from the the specified minimum api version. You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01.
      * 
      * @return the diskControllerType value.
      */
@@ -144,12 +117,7 @@ public final class StorageProfileInner {
     }
 
     /**
-     * Set the diskControllerType property: Specifies the disk controller type configured for the VM. **Note:** This
-     * property will be set to the default disk controller type if not specified provided virtual machine is being
-     * created with 'hyperVGeneration' set to V2 based on the capabilities of the operating system disk and VM size from
-     * the the specified minimum api version. You need to deallocate the VM before updating its disk controller type
-     * unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM.
-     * Minimum api-version: 2022-08-01.
+     * Set the diskControllerType property: Specifies the disk controller type configured for the VM. **Note:** This property will be set to the default disk controller type if not specified provided virtual machine is being created with 'hyperVGeneration' set to V2 based on the capabilities of the operating system disk and VM size from the the specified minimum api version. You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01.
      * 
      * @param diskControllerType the diskControllerType value to set.
      * @return the StorageProfileInner object itself.

@@ -38,17 +38,14 @@ public interface DataBoxEdgeDevice {
     String type();
 
     /**
-     * Gets the location property: The location of the device. This is a supported and registered Azure geographical
-     * region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed
-     * once it is created, but if an identical geographical region is specified on update, the request will succeed.
+     * Gets the location property: The location of the device. This is a supported and registered Azure geographical region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an identical geographical region is specified on update, the request will succeed.
      * 
      * @return the location value.
      */
     String location();
 
     /**
-     * Gets the tags property: The list of tags that describe the device. These tags can be used to view and group this
-     * device (across resource groups).
+     * Gets the tags property: The list of tags that describe the device. These tags can be used to view and group this device (across resource groups).
      * 
      * @return the tags value.
      */
@@ -274,10 +271,7 @@ public interface DataBoxEdgeDevice {
             /**
              * Specifies the region for the resource.
              * 
-             * @param location The location of the device. This is a supported and registered Azure geographical region
-             * (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed
-             * once it is created, but if an identical geographical region is specified on update, the request will
-             * succeed.
+             * @param location The location of the device. This is a supported and registered Azure geographical region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an identical geographical region is specified on update, the request will succeed.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(Region location);
@@ -285,10 +279,7 @@ public interface DataBoxEdgeDevice {
             /**
              * Specifies the region for the resource.
              * 
-             * @param location The location of the device. This is a supported and registered Azure geographical region
-             * (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed
-             * once it is created, but if an identical geographical region is specified on update, the request will
-             * succeed.
+             * @param location The location of the device. This is a supported and registered Azure geographical region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an identical geographical region is specified on update, the request will succeed.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
@@ -308,8 +299,7 @@ public interface DataBoxEdgeDevice {
         }
 
         /**
-         * The stage of the DataBoxEdgeDevice definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DataBoxEdgeDevice definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithEtag,
             DefinitionStages.WithIdentity, DefinitionStages.WithDataResidency {
@@ -334,11 +324,9 @@ public interface DataBoxEdgeDevice {
          */
         interface WithTags {
             /**
-             * Specifies the tags property: The list of tags that describe the device. These tags can be used to view
-             * and group this device (across resource groups)..
+             * Specifies the tags property: The list of tags that describe the device. These tags can be used to view and group this device (across resource groups)..
              * 
-             * @param tags The list of tags that describe the device. These tags can be used to view and group this
-             * device (across resource groups).
+             * @param tags The list of tags that describe the device. These tags can be used to view and group this device (across resource groups).
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
@@ -528,8 +516,7 @@ public interface DataBoxEdgeDevice {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with
-     * {@link Response}.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link Response}.
      */
     Response<DataBoxEdgeDeviceExtendedInfo> getExtendedInformationWithResponse(Context context);
 
@@ -586,8 +573,7 @@ public interface DataBoxEdgeDevice {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with
-     * {@link Response}.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     Response<DataBoxEdgeDeviceExtendedInfo>
         updateExtendedInformationWithResponse(DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context);

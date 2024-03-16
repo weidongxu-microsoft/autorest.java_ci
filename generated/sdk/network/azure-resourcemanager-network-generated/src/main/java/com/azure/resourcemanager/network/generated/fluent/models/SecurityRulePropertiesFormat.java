@@ -37,16 +37,13 @@ public final class SecurityRulePropertiesFormat {
     private String sourcePortRange;
 
     /*
-     * The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all
-     * ports.
+     * The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
      */
     @JsonProperty(value = "destinationPortRange")
     private String destinationPortRange;
 
     /*
-     * The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as
-     * 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies
-     * where network traffic originates from.
+     * The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
      */
     @JsonProperty(value = "sourceAddressPrefix")
     private String sourceAddressPrefix;
@@ -64,8 +61,7 @@ public final class SecurityRulePropertiesFormat {
     private List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups;
 
     /*
-     * The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source
-     * IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
+     * The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
      */
     @JsonProperty(value = "destinationAddressPrefix")
     private String destinationAddressPrefix;
@@ -101,8 +97,7 @@ public final class SecurityRulePropertiesFormat {
     private SecurityRuleAccess access;
 
     /*
-     * The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule
-     * in the collection. The lower the priority number, the higher the priority of the rule.
+     * The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      */
     @JsonProperty(value = "priority", required = true)
     private int priority;
@@ -166,8 +161,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*'
-     * can also be used to match all ports.
+     * Get the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
      * 
      * @return the sourcePortRange value.
      */
@@ -176,8 +170,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*'
-     * can also be used to match all ports.
+     * Set the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
      * 
      * @param sourcePortRange the sourcePortRange value to set.
      * @return the SecurityRulePropertiesFormat object itself.
@@ -188,8 +181,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535.
-     * Asterisk '*' can also be used to match all ports.
+     * Get the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
      * 
      * @return the destinationPortRange value.
      */
@@ -198,8 +190,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535.
-     * Asterisk '*' can also be used to match all ports.
+     * Set the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
      * 
      * @param destinationPortRange the destinationPortRange value to set.
      * @return the SecurityRulePropertiesFormat object itself.
@@ -210,9 +201,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all
-     * source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
-     * is an ingress rule, specifies where network traffic originates from.
+     * Get the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
      * 
      * @return the sourceAddressPrefix value.
      */
@@ -221,9 +210,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all
-     * source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
-     * is an ingress rule, specifies where network traffic originates from.
+     * Set the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
      * 
      * @param sourceAddressPrefix the sourceAddressPrefix value to set.
      * @return the SecurityRulePropertiesFormat object itself.
@@ -275,9 +262,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk
-     * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and
-     * 'Internet' can also be used.
+     * Get the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
      * 
      * @return the destinationAddressPrefix value.
      */
@@ -286,9 +271,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk
-     * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and
-     * 'Internet' can also be used.
+     * Set the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
      * 
      * @param destinationAddressPrefix the destinationAddressPrefix value to set.
      * @return the SecurityRulePropertiesFormat object itself.
@@ -400,9 +383,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Get the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @return the priority value.
      */
@@ -411,9 +392,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Set the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @param priority the priority value to set.
      * @return the SecurityRulePropertiesFormat object itself.
@@ -424,8 +403,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Get the direction property: The direction of the rule. The direction specifies if rule will be evaluated on
-     * incoming or outgoing traffic.
+     * Get the direction property: The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic.
      * 
      * @return the direction value.
      */
@@ -434,8 +412,7 @@ public final class SecurityRulePropertiesFormat {
     }
 
     /**
-     * Set the direction property: The direction of the rule. The direction specifies if rule will be evaluated on
-     * incoming or outgoing traffic.
+     * Set the direction property: The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic.
      * 
      * @param direction the direction value to set.
      * @return the SecurityRulePropertiesFormat object itself.

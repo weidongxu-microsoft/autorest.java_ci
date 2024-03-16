@@ -54,8 +54,7 @@ public interface WorkflowTriggerCallbackUrl {
     WorkflowTriggerListCallbackUrlQueries queries();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowTriggerCallbackUrlInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowTriggerCallbackUrlInner object.
      * 
      * @return the inner object.
      */

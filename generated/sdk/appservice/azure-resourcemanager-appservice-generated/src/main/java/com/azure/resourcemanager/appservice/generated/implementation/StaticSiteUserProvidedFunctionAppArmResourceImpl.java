@@ -77,16 +77,18 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource create() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
             .registerUserProvidedFunctionAppWithStaticSiteBuild(resourceGroupName, name, environmentName,
                 functionAppName, this.innerModel(), createIsForced, Context.NONE);
         return this;
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().registerUserProvidedFunctionAppWithStaticSiteBuild(
-                resourceGroupName, name, environmentName, functionAppName, this.innerModel(), createIsForced, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .registerUserProvidedFunctionAppWithStaticSiteBuild(resourceGroupName, name, environmentName,
+                functionAppName, this.innerModel(), createIsForced, context);
         return this;
     }
 
@@ -104,16 +106,18 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource apply() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
             .registerUserProvidedFunctionAppWithStaticSiteBuild(resourceGroupName, name, environmentName,
                 functionAppName, this.innerModel(), updateIsForced, Context.NONE);
         return this;
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().registerUserProvidedFunctionAppWithStaticSiteBuild(
-                resourceGroupName, name, environmentName, functionAppName, this.innerModel(), updateIsForced, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .registerUserProvidedFunctionAppWithStaticSiteBuild(resourceGroupName, name, environmentName,
+                functionAppName, this.innerModel(), updateIsForced, context);
         return this;
     }
 
@@ -128,16 +132,20 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource refresh() {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-                resourceGroupName, name, environmentName, functionAppName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+                functionAppName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource refresh(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticSites().getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-                resourceGroupName, name, environmentName, functionAppName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+                functionAppName, context)
+            .getValue();
         return this;
     }
 

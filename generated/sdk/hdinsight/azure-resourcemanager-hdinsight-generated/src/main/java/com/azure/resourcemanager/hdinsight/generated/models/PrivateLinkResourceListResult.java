@@ -19,8 +19,7 @@ public interface PrivateLinkResourceListResult {
     List<PrivateLinkResource> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.PrivateLinkResourceListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.PrivateLinkResourceListResultInner object.
      * 
      * @return the inner object.
      */

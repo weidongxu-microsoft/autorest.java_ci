@@ -114,14 +114,18 @@ public final class DedicatedHostGroupImpl
     }
 
     public DedicatedHostGroup create() {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public DedicatedHostGroup create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -137,14 +141,18 @@ public final class DedicatedHostGroupImpl
     }
 
     public DedicatedHostGroup apply() {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .updateWithResponse(resourceGroupName, hostGroupName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .updateWithResponse(resourceGroupName, hostGroupName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DedicatedHostGroup apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .updateWithResponse(resourceGroupName, hostGroupName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .updateWithResponse(resourceGroupName, hostGroupName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -158,15 +166,19 @@ public final class DedicatedHostGroupImpl
 
     public DedicatedHostGroup refresh() {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DedicatedHostGroup refresh(Context context) {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getDedicatedHostGroups()
-            .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHostGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, context)
+            .getValue();
         return this;
     }
 

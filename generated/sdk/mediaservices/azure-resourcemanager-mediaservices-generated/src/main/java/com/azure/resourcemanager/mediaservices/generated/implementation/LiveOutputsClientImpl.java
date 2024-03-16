@@ -65,8 +65,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesLiveOutputs to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for AzureMediaServicesLiveOutputs to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLi")
@@ -703,7 +702,8 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
     private Mono<LiveOutputInner> createAsync(String resourceGroupName, String accountName, String liveEventName,
         String liveOutputName, LiveOutputInner parameters, Context context) {
         return beginCreateAsync(resourceGroupName, accountName, liveEventName, liveOutputName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

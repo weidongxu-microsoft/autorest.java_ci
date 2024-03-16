@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the
- * cluster is allowed.
+ * Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
  */
 public final class PublicNetworkAccess extends ExpandableStringEnum<PublicNetworkAccess> {
     /**

@@ -13,41 +13,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class RollingUpgradePolicy {
     /*
-     * The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling
-     * upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the
-     * percentage of instances in a batch to decrease to ensure higher reliability. The default value for this parameter
-     * is 20%.
+     * The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability. The default value for this parameter is 20%.
      */
     @JsonProperty(value = "maxBatchInstancePercent")
     private Integer maxBatchInstancePercent;
 
     /*
-     * The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously
-     * unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine
-     * health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. The
-     * default value for this parameter is 20%.
+     * The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. The default value for this parameter is 20%.
      */
     @JsonProperty(value = "maxUnhealthyInstancePercent")
     private Integer maxUnhealthyInstancePercent;
 
     /*
-     * The maximum percentage of upgraded virtual machine instances that can be found to be in an unhealthy state. This
-     * check will happen after each batch is upgraded. If this percentage is ever exceeded, the rolling update aborts.
-     * The default value for this parameter is 20%.
+     * The maximum percentage of upgraded virtual machine instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If this percentage is ever exceeded, the rolling update aborts. The default value for this parameter is 20%.
      */
     @JsonProperty(value = "maxUnhealthyUpgradedInstancePercent")
     private Integer maxUnhealthyUpgradedInstancePercent;
 
     /*
-     * The wait time between completing the update for all virtual machines in one batch and starting the next batch.
-     * The time duration should be specified in ISO 8601 format. The default value is 0 seconds (PT0S).
+     * The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format. The default value is 0 seconds (PT0S).
      */
     @JsonProperty(value = "pauseTimeBetweenBatches")
     private String pauseTimeBetweenBatches;
 
     /*
-     * Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain
-     * and maxBatchInstancePercent to determine the batch size.
+     * Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
      */
     @JsonProperty(value = "enableCrossZoneUpgrade")
     private Boolean enableCrossZoneUpgrade;
@@ -65,8 +55,7 @@ public final class RollingUpgradePolicy {
     private Boolean rollbackFailedInstancesOnPolicyBreach;
 
     /*
-     * Create new virtual machines to upgrade the scale set, rather than updating the existing virtual machines.
-     * Existing virtual machines will be deleted once the new virtual machines are created for each batch.
+     * Create new virtual machines to upgrade the scale set, rather than updating the existing virtual machines. Existing virtual machines will be deleted once the new virtual machines are created for each batch.
      */
     @JsonProperty(value = "maxSurge")
     private Boolean maxSurge;
@@ -78,10 +67,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the maxBatchInstancePercent property: The maximum percent of total virtual machine instances that will be
-     * upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in
-     * previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher
-     * reliability. The default value for this parameter is 20%.
+     * Get the maxBatchInstancePercent property: The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability. The default value for this parameter is 20%.
      * 
      * @return the maxBatchInstancePercent value.
      */
@@ -90,10 +76,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the maxBatchInstancePercent property: The maximum percent of total virtual machine instances that will be
-     * upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in
-     * previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher
-     * reliability. The default value for this parameter is 20%.
+     * Set the maxBatchInstancePercent property: The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability. The default value for this parameter is 20%.
      * 
      * @param maxBatchInstancePercent the maxBatchInstancePercent value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -104,10 +87,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the maxUnhealthyInstancePercent property: The maximum percentage of the total virtual machine instances in
-     * the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an
-     * unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be
-     * checked prior to starting any batch. The default value for this parameter is 20%.
+     * Get the maxUnhealthyInstancePercent property: The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. The default value for this parameter is 20%.
      * 
      * @return the maxUnhealthyInstancePercent value.
      */
@@ -116,10 +96,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the maxUnhealthyInstancePercent property: The maximum percentage of the total virtual machine instances in
-     * the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an
-     * unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be
-     * checked prior to starting any batch. The default value for this parameter is 20%.
+     * Set the maxUnhealthyInstancePercent property: The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. The default value for this parameter is 20%.
      * 
      * @param maxUnhealthyInstancePercent the maxUnhealthyInstancePercent value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -130,9 +107,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the maxUnhealthyUpgradedInstancePercent property: The maximum percentage of upgraded virtual machine
-     * instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If
-     * this percentage is ever exceeded, the rolling update aborts. The default value for this parameter is 20%.
+     * Get the maxUnhealthyUpgradedInstancePercent property: The maximum percentage of upgraded virtual machine instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If this percentage is ever exceeded, the rolling update aborts. The default value for this parameter is 20%.
      * 
      * @return the maxUnhealthyUpgradedInstancePercent value.
      */
@@ -141,9 +116,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the maxUnhealthyUpgradedInstancePercent property: The maximum percentage of upgraded virtual machine
-     * instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If
-     * this percentage is ever exceeded, the rolling update aborts. The default value for this parameter is 20%.
+     * Set the maxUnhealthyUpgradedInstancePercent property: The maximum percentage of upgraded virtual machine instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If this percentage is ever exceeded, the rolling update aborts. The default value for this parameter is 20%.
      * 
      * @param maxUnhealthyUpgradedInstancePercent the maxUnhealthyUpgradedInstancePercent value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -154,9 +127,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the pauseTimeBetweenBatches property: The wait time between completing the update for all virtual machines in
-     * one batch and starting the next batch. The time duration should be specified in ISO 8601 format. The default
-     * value is 0 seconds (PT0S).
+     * Get the pauseTimeBetweenBatches property: The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format. The default value is 0 seconds (PT0S).
      * 
      * @return the pauseTimeBetweenBatches value.
      */
@@ -165,9 +136,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the pauseTimeBetweenBatches property: The wait time between completing the update for all virtual machines in
-     * one batch and starting the next batch. The time duration should be specified in ISO 8601 format. The default
-     * value is 0 seconds (PT0S).
+     * Set the pauseTimeBetweenBatches property: The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format. The default value is 0 seconds (PT0S).
      * 
      * @param pauseTimeBetweenBatches the pauseTimeBetweenBatches value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -178,8 +147,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the enableCrossZoneUpgrade property: Allow VMSS to ignore AZ boundaries when constructing upgrade batches.
-     * Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
+     * Get the enableCrossZoneUpgrade property: Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
      * 
      * @return the enableCrossZoneUpgrade value.
      */
@@ -188,8 +156,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the enableCrossZoneUpgrade property: Allow VMSS to ignore AZ boundaries when constructing upgrade batches.
-     * Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
+     * Set the enableCrossZoneUpgrade property: Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
      * 
      * @param enableCrossZoneUpgrade the enableCrossZoneUpgrade value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -200,8 +167,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the prioritizeUnhealthyInstances property: Upgrade all unhealthy instances in a scale set before any healthy
-     * instances.
+     * Get the prioritizeUnhealthyInstances property: Upgrade all unhealthy instances in a scale set before any healthy instances.
      * 
      * @return the prioritizeUnhealthyInstances value.
      */
@@ -210,8 +176,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the prioritizeUnhealthyInstances property: Upgrade all unhealthy instances in a scale set before any healthy
-     * instances.
+     * Set the prioritizeUnhealthyInstances property: Upgrade all unhealthy instances in a scale set before any healthy instances.
      * 
      * @param prioritizeUnhealthyInstances the prioritizeUnhealthyInstances value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -222,8 +187,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the rollbackFailedInstancesOnPolicyBreach property: Rollback failed instances to previous model if the
-     * Rolling Upgrade policy is violated.
+     * Get the rollbackFailedInstancesOnPolicyBreach property: Rollback failed instances to previous model if the Rolling Upgrade policy is violated.
      * 
      * @return the rollbackFailedInstancesOnPolicyBreach value.
      */
@@ -232,8 +196,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the rollbackFailedInstancesOnPolicyBreach property: Rollback failed instances to previous model if the
-     * Rolling Upgrade policy is violated.
+     * Set the rollbackFailedInstancesOnPolicyBreach property: Rollback failed instances to previous model if the Rolling Upgrade policy is violated.
      * 
      * @param rollbackFailedInstancesOnPolicyBreach the rollbackFailedInstancesOnPolicyBreach value to set.
      * @return the RollingUpgradePolicy object itself.
@@ -245,9 +208,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Get the maxSurge property: Create new virtual machines to upgrade the scale set, rather than updating the
-     * existing virtual machines. Existing virtual machines will be deleted once the new virtual machines are created
-     * for each batch.
+     * Get the maxSurge property: Create new virtual machines to upgrade the scale set, rather than updating the existing virtual machines. Existing virtual machines will be deleted once the new virtual machines are created for each batch.
      * 
      * @return the maxSurge value.
      */
@@ -256,9 +217,7 @@ public final class RollingUpgradePolicy {
     }
 
     /**
-     * Set the maxSurge property: Create new virtual machines to upgrade the scale set, rather than updating the
-     * existing virtual machines. Existing virtual machines will be deleted once the new virtual machines are created
-     * for each batch.
+     * Set the maxSurge property: Create new virtual machines to upgrade the scale set, rather than updating the existing virtual machines. Existing virtual machines will be deleted once the new virtual machines are created for each batch.
      * 
      * @param maxSurge the maxSurge value to set.
      * @return the RollingUpgradePolicy object itself.

@@ -66,8 +66,7 @@ public interface PublicIpPrefix {
     String etag();
 
     /**
-     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
-     * from.
+     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
      * 
      * @return the zones value.
      */
@@ -116,8 +115,7 @@ public interface PublicIpPrefix {
     List<ReferencedPublicIpAddress> publicIpAddresses();
 
     /**
-     * Gets the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration
-     * associated with the public IP prefix.
+     * Gets the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration associated with the public IP prefix.
      * 
      * @return the loadBalancerFrontendIpConfiguration value.
      */
@@ -231,8 +229,7 @@ public interface PublicIpPrefix {
         }
 
         /**
-         * The stage of the PublicIpPrefix definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PublicIpPrefix definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithSku,
@@ -298,8 +295,7 @@ public interface PublicIpPrefix {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource
-             * needs to come from..
+             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from..
              * 
              * @param zones A list of availability zones denoting the IP allocated for the resource needs to come from.
              * @return the next definition stage.

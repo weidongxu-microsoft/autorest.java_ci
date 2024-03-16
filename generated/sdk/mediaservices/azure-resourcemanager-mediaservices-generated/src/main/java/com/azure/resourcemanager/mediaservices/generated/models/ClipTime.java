@@ -5,28 +5,54 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base class for specifying a clip time. Use sub classes of this class to specify the time position in the media.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = ClipTime.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = ClipTime.class, visible = true)
 @JsonTypeName("ClipTime")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AbsoluteClipTime", value = AbsoluteClipTime.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.UtcClipTime", value = UtcClipTime.class) })
 @Immutable
 public class ClipTime {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of ClipTime class.
      */
     public ClipTime() {
+        this.odataType = "ClipTime";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the ClipTime object itself.
+     */
+    protected ClipTime withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

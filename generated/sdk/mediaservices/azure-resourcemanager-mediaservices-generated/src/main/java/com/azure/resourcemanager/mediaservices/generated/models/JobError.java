@@ -32,8 +32,7 @@ public final class JobError {
     private JobErrorCategory category;
 
     /*
-     * Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via
-     * Azure Portal.
+     * Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via Azure Portal.
      */
     @JsonProperty(value = "retry", access = JsonProperty.Access.WRITE_ONLY)
     private JobRetry retry;
@@ -78,8 +77,7 @@ public final class JobError {
     }
 
     /**
-     * Get the retry property: Indicates that it may be possible to retry the Job. If retry is unsuccessful, please
-     * contact Azure support via Azure Portal.
+     * Get the retry property: Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via Azure Portal.
      * 
      * @return the retry value.
      */

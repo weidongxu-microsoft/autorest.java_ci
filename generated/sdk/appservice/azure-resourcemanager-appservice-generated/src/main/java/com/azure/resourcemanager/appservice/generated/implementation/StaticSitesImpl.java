@@ -151,8 +151,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> deleteStaticSiteUserWithResponse(String resourceGroupName, String name, String authprovider,
         String userid, Context context) {
-        return this.serviceClient().deleteStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid,
-            context);
+        return this.serviceClient()
+            .deleteStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid, context);
     }
 
     public void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid) {
@@ -161,8 +161,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<StaticSiteUserArmResource> updateStaticSiteUserWithResponse(String resourceGroupName, String name,
         String authprovider, String userid, StaticSiteUserArmResourceInner staticSiteUserEnvelope, Context context) {
-        Response<StaticSiteUserArmResourceInner> inner = this.serviceClient().updateStaticSiteUserWithResponse(
-            resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope, context);
+        Response<StaticSiteUserArmResourceInner> inner = this.serviceClient()
+            .updateStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserArmResourceImpl(inner.getValue(), this.manager()));
@@ -173,8 +174,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StaticSiteUserArmResource updateStaticSiteUser(String resourceGroupName, String name, String authprovider,
         String userid, StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
-        StaticSiteUserArmResourceInner inner = this.serviceClient().updateStaticSiteUser(resourceGroupName, name,
-            authprovider, userid, staticSiteUserEnvelope);
+        StaticSiteUserArmResourceInner inner = this.serviceClient()
+            .updateStaticSiteUser(resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope);
         if (inner != null) {
             return new StaticSiteUserArmResourceImpl(inner, this.manager());
         } else {
@@ -230,9 +231,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(String resourceGroupName,
         String name, String environmentName, StringDictionaryInner appSettings, Context context) {
-        Response<StringDictionaryInner> inner
-            = this.serviceClient().createOrUpdateStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name,
-                environmentName, appSettings, context);
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .createOrUpdateStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name, environmentName, appSettings,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
@@ -243,8 +244,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StringDictionary createOrUpdateStaticSiteBuildAppSettings(String resourceGroupName, String name,
         String environmentName, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner = this.serviceClient().createOrUpdateStaticSiteBuildAppSettings(resourceGroupName,
-            name, environmentName, appSettings);
+        StringDictionaryInner inner = this.serviceClient()
+            .createOrUpdateStaticSiteBuildAppSettings(resourceGroupName, name, environmentName, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -255,9 +256,9 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StringDictionary> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings,
         Context context) {
-        Response<StringDictionaryInner> inner
-            = this.serviceClient().createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name,
-                environmentName, appSettings, context);
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name, environmentName,
+                appSettings, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
@@ -293,8 +294,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<DatabaseConnection> getBuildDatabaseConnectionWithResponse(String resourceGroupName, String name,
         String environmentName, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner = this.serviceClient().getBuildDatabaseConnectionWithResponse(
-            resourceGroupName, name, environmentName, databaseConnectionName, context);
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .getBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName, databaseConnectionName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
@@ -305,8 +307,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public DatabaseConnection getBuildDatabaseConnection(String resourceGroupName, String name, String environmentName,
         String databaseConnectionName) {
-        DatabaseConnectionInner inner = this.serviceClient().getBuildDatabaseConnection(resourceGroupName, name,
-            environmentName, databaseConnectionName);
+        DatabaseConnectionInner inner = this.serviceClient()
+            .getBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -316,21 +318,22 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> deleteBuildDatabaseConnectionWithResponse(String resourceGroupName, String name,
         String environmentName, String databaseConnectionName, Context context) {
-        return this.serviceClient().deleteBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
-            databaseConnectionName, context);
+        return this.serviceClient()
+            .deleteBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName, databaseConnectionName,
+                context);
     }
 
     public void deleteBuildDatabaseConnection(String resourceGroupName, String name, String environmentName,
         String databaseConnectionName) {
-        this.serviceClient().deleteBuildDatabaseConnection(resourceGroupName, name, environmentName,
-            databaseConnectionName);
+        this.serviceClient()
+            .deleteBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
     }
 
     public Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(String resourceGroupName,
         String name, String environmentName, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner
-            = this.serviceClient().getBuildDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name,
-                environmentName, databaseConnectionName, context);
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .getBuildDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name, environmentName,
+                databaseConnectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
@@ -341,8 +344,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public DatabaseConnection getBuildDatabaseConnectionWithDetails(String resourceGroupName, String name,
         String environmentName, String databaseConnectionName) {
-        DatabaseConnectionInner inner = this.serviceClient().getBuildDatabaseConnectionWithDetails(resourceGroupName,
-            name, environmentName, databaseConnectionName);
+        DatabaseConnectionInner inner = this.serviceClient()
+            .getBuildDatabaseConnectionWithDetails(resourceGroupName, name, environmentName, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -445,9 +448,9 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteUserProvidedFunctionAppArmResource>
         getUserProvidedFunctionAppForStaticSiteBuildWithResponse(String resourceGroupName, String name,
             String environmentName, String functionAppName, Context context) {
-        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner
-            = this.serviceClient().getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name,
-                environmentName, functionAppName, context);
+        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner = this.serviceClient()
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+                functionAppName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
@@ -469,26 +472,30 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(String resourceGroupName,
         String name, String environmentName, String functionAppName, Context context) {
-        return this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(resourceGroupName,
-            name, environmentName, functionAppName, context);
+        return this.serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+                functionAppName, context);
     }
 
     public void detachUserProvidedFunctionAppFromStaticSiteBuild(String resourceGroupName, String name,
         String environmentName, String functionAppName) {
-        this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteBuild(resourceGroupName, name, environmentName,
-            functionAppName);
+        this.serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteBuild(resourceGroupName, name, environmentName,
+                functionAppName);
     }
 
     public void createZipDeploymentForStaticSiteBuild(String resourceGroupName, String name, String environmentName,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
-        this.serviceClient().createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
-            staticSiteZipDeploymentEnvelope);
+        this.serviceClient()
+            .createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
+                staticSiteZipDeploymentEnvelope);
     }
 
     public void createZipDeploymentForStaticSiteBuild(String resourceGroupName, String name, String environmentName,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope, Context context) {
-        this.serviceClient().createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
-            staticSiteZipDeploymentEnvelope, context);
+        this.serviceClient()
+            .createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
+                staticSiteZipDeploymentEnvelope, context);
     }
 
     public Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(String resourceGroupName,
@@ -579,9 +586,9 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
         String resourceGroupName, String name,
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context) {
-        Response<StaticSiteUserInvitationResponseResourceInner> inner
-            = this.serviceClient().createUserRolesInvitationLinkWithResponse(resourceGroupName, name,
-                staticSiteUserRolesInvitationEnvelope, context);
+        Response<StaticSiteUserInvitationResponseResourceInner> inner = this.serviceClient()
+            .createUserRolesInvitationLinkWithResponse(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserInvitationResponseResourceImpl(inner.getValue(), this.manager()));
@@ -651,15 +658,17 @@ public final class StaticSitesImpl implements StaticSites {
 
     public void validateCustomDomainCanBeAddedToStaticSite(String resourceGroupName, String name, String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        this.serviceClient().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
-            staticSiteCustomDomainRequestPropertiesEnvelope);
+        this.serviceClient()
+            .validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+                staticSiteCustomDomainRequestPropertiesEnvelope);
     }
 
     public void validateCustomDomainCanBeAddedToStaticSite(String resourceGroupName, String name, String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context) {
-        this.serviceClient().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
-            staticSiteCustomDomainRequestPropertiesEnvelope, context);
+        this.serviceClient()
+            .validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+                staticSiteCustomDomainRequestPropertiesEnvelope, context);
     }
 
     public PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name) {
@@ -701,8 +710,9 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<DatabaseConnection> createOrUpdateDatabaseConnectionWithResponse(String resourceGroupName,
         String name, String databaseConnectionName, DatabaseConnectionInner databaseConnectionRequestEnvelope,
         Context context) {
-        Response<DatabaseConnectionInner> inner = this.serviceClient().createOrUpdateDatabaseConnectionWithResponse(
-            resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .createOrUpdateDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName,
+                databaseConnectionRequestEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
@@ -713,8 +723,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public DatabaseConnection createOrUpdateDatabaseConnection(String resourceGroupName, String name,
         String databaseConnectionName, DatabaseConnectionInner databaseConnectionRequestEnvelope) {
-        DatabaseConnectionInner inner = this.serviceClient().createOrUpdateDatabaseConnection(resourceGroupName, name,
-            databaseConnectionName, databaseConnectionRequestEnvelope);
+        DatabaseConnectionInner inner = this.serviceClient()
+            .createOrUpdateDatabaseConnection(resourceGroupName, name, databaseConnectionName,
+                databaseConnectionRequestEnvelope);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -724,8 +735,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> deleteDatabaseConnectionWithResponse(String resourceGroupName, String name,
         String databaseConnectionName, Context context) {
-        return this.serviceClient().deleteDatabaseConnectionWithResponse(resourceGroupName, name,
-            databaseConnectionName, context);
+        return this.serviceClient()
+            .deleteDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
     }
 
     public void deleteDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName) {
@@ -735,8 +746,9 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<DatabaseConnection> updateDatabaseConnectionWithResponse(String resourceGroupName, String name,
         String databaseConnectionName, DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
         Context context) {
-        Response<DatabaseConnectionInner> inner = this.serviceClient().updateDatabaseConnectionWithResponse(
-            resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .updateDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName,
+                databaseConnectionRequestEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
@@ -747,8 +759,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public DatabaseConnection updateDatabaseConnection(String resourceGroupName, String name,
         String databaseConnectionName, DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
-        DatabaseConnectionInner inner = this.serviceClient().updateDatabaseConnection(resourceGroupName, name,
-            databaseConnectionName, databaseConnectionRequestEnvelope);
+        DatabaseConnectionInner inner = this.serviceClient()
+            .updateDatabaseConnection(resourceGroupName, name, databaseConnectionName,
+                databaseConnectionRequestEnvelope);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -929,9 +942,9 @@ public final class StaticSitesImpl implements StaticSites {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
-                privateEndpointConnectionName, privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -942,9 +955,9 @@ public final class StaticSitesImpl implements StaticSites {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
-                privateEndpointConnectionName, privateEndpointWrapper, context);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper, context);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -954,14 +967,14 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
     }
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName, Context context) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName, context);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(String resourceGroupName,
@@ -987,8 +1000,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> resetStaticSiteApiKeyWithResponse(String resourceGroupName, String name,
         StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context) {
-        return this.serviceClient().resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope,
-            context);
+        return this.serviceClient()
+            .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
     }
 
     public void resetStaticSiteApiKey(String resourceGroupName, String name,
@@ -1051,9 +1064,9 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
         String resourceGroupName, String name, String functionAppName,
         StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner
-            = this.serviceClient().registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name,
-                functionAppName, staticSiteUserProvidedFunctionEnvelope);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner = this.serviceClient()
+            .registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name, functionAppName,
+                staticSiteUserProvidedFunctionEnvelope);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -1065,9 +1078,9 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName, String name, String functionAppName,
         StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope, Boolean isForced,
         Context context) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner
-            = this.serviceClient().registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name,
-                functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced, context);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner = this.serviceClient()
+            .registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name, functionAppName,
+                staticSiteUserProvidedFunctionEnvelope, isForced, context);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -1077,8 +1090,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(String resourceGroupName, String name,
         String functionAppName, Context context) {
-        return this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name,
-            functionAppName, context);
+        return this.serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
     }
 
     public void detachUserProvidedFunctionAppFromStaticSite(String resourceGroupName, String name,
@@ -1093,33 +1106,35 @@ public final class StaticSitesImpl implements StaticSites {
 
     public void createZipDeploymentForStaticSite(String resourceGroupName, String name,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope, Context context) {
-        this.serviceClient().createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope,
-            context);
+        this.serviceClient()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
     }
 
     public void validateBackend(String resourceGroupName, String name, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        this.serviceClient().validateBackend(resourceGroupName, name, linkedBackendName,
-            staticSiteLinkedBackendEnvelope);
+        this.serviceClient()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope);
     }
 
     public void validateBackend(String resourceGroupName, String name, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context) {
-        this.serviceClient().validateBackend(resourceGroupName, name, linkedBackendName,
-            staticSiteLinkedBackendEnvelope, context);
+        this.serviceClient()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
     }
 
     public void validateBackendForBuild(String resourceGroupName, String name, String environmentName,
         String linkedBackendName, StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        this.serviceClient().validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
-            staticSiteLinkedBackendEnvelope);
+        this.serviceClient()
+            .validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
+                staticSiteLinkedBackendEnvelope);
     }
 
     public void validateBackendForBuild(String resourceGroupName, String name, String environmentName,
         String linkedBackendName, StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
         Context context) {
-        this.serviceClient().validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
-            staticSiteLinkedBackendEnvelope, context);
+        this.serviceClient()
+            .validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
+                staticSiteLinkedBackendEnvelope, context);
     }
 
     public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(String resourceGroupName, String name) {
@@ -1178,8 +1193,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> unlinkBackendWithResponse(String resourceGroupName, String name, String linkedBackendName,
         Boolean isCleaningAuthConfig, Context context) {
-        return this.serviceClient().unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName,
-            isCleaningAuthConfig, context);
+        return this.serviceClient()
+            .unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName, isCleaningAuthConfig, context);
     }
 
     public void unlinkBackend(String resourceGroupName, String name, String linkedBackendName) {
@@ -1200,8 +1215,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(String resourceGroupName, String name,
         String environmentName, String linkedBackendName) {
-        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().getLinkedBackendForBuild(resourceGroupName,
-            name, environmentName, linkedBackendName);
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient()
+            .getLinkedBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1212,8 +1227,9 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteLinkedBackendArmResource linkBackendToBuild(String resourceGroupName, String name,
         String environmentName, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().linkBackendToBuild(resourceGroupName, name,
-            environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient()
+            .linkBackendToBuild(resourceGroupName, name, environmentName, linkedBackendName,
+                staticSiteLinkedBackendEnvelope);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1224,8 +1240,9 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteLinkedBackendArmResource linkBackendToBuild(String resourceGroupName, String name,
         String environmentName, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context) {
-        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().linkBackendToBuild(resourceGroupName, name,
-            environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient()
+            .linkBackendToBuild(resourceGroupName, name, environmentName, linkedBackendName,
+                staticSiteLinkedBackendEnvelope, context);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1235,8 +1252,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public Response<Void> unlinkBackendFromBuildWithResponse(String resourceGroupName, String name,
         String environmentName, String linkedBackendName, Boolean isCleaningAuthConfig, Context context) {
-        return this.serviceClient().unlinkBackendFromBuildWithResponse(resourceGroupName, name, environmentName,
-            linkedBackendName, isCleaningAuthConfig, context);
+        return this.serviceClient()
+            .unlinkBackendFromBuildWithResponse(resourceGroupName, name, environmentName, linkedBackendName,
+                isCleaningAuthConfig, context);
     }
 
     public void unlinkBackendFromBuild(String resourceGroupName, String name, String environmentName,
@@ -1293,8 +1311,10 @@ public final class StaticSitesImpl implements StaticSites {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
         }
-        return this.getBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
-            databaseConnectionName, Context.NONE).getValue();
+        return this
+            .getBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName, databaseConnectionName,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<DatabaseConnection> getBuildDatabaseConnectionByIdWithResponse(String id, Context context) {
@@ -1343,8 +1363,10 @@ public final class StaticSitesImpl implements StaticSites {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.", id)));
         }
-        return this.getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
-            functionAppName, Context.NONE).getValue();
+        return this
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+                functionAppName, Context.NONE)
+            .getValue();
     }
 
     public Response<StaticSiteUserProvidedFunctionAppArmResource>

@@ -77,8 +77,7 @@ public final class DimensionProperties {
     }
 
     /**
-     * Get the toBeExportedForShoebox property: Property to specify whether the dimension should be exported for
-     * Shoebox.
+     * Get the toBeExportedForShoebox property: Property to specify whether the dimension should be exported for Shoebox.
      * 
      * @return the toBeExportedForShoebox value.
      */
@@ -87,8 +86,7 @@ public final class DimensionProperties {
     }
 
     /**
-     * Set the toBeExportedForShoebox property: Property to specify whether the dimension should be exported for
-     * Shoebox.
+     * Set the toBeExportedForShoebox property: Property to specify whether the dimension should be exported for Shoebox.
      * 
      * @param toBeExportedForShoebox the toBeExportedForShoebox value to set.
      * @return the DimensionProperties object itself.

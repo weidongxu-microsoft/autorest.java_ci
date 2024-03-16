@@ -34,8 +34,7 @@ public interface SharedPrivateLinkResource {
     String type();
 
     /**
-     * Gets the properties property: Describes the properties of a Shared Private Link Resource managed by the search
-     * service.
+     * Gets the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service.
      * 
      * @return the properties value.
      */
@@ -79,17 +78,15 @@ public interface SharedPrivateLinkResource {
             /**
              * Specifies resourceGroupName, searchServiceName.
              * 
-             * @param resourceGroupName The name of the resource group within the current subscription. You can obtain
-             * this value from the Azure Resource Manager API or the portal.
-             * @param searchServiceName The name of the search service associated with the specified resource group.
+             * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+             * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
              * @return the next definition stage.
              */
             WithCreate withExistingSearchService(String resourceGroupName, String searchServiceName);
         }
 
         /**
-         * The stage of the SharedPrivateLinkResource definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SharedPrivateLinkResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithProperties, DefinitionStages.WithClientRequestId {
             /**
@@ -113,11 +110,9 @@ public interface SharedPrivateLinkResource {
          */
         interface WithProperties {
             /**
-             * Specifies the properties property: Describes the properties of a Shared Private Link Resource managed by
-             * the search service..
+             * Specifies the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service..
              * 
-             * @param properties Describes the properties of a Shared Private Link Resource managed by the search
-             * service.
+             * @param properties Describes the properties of a shared private link resource managed by the Azure AI Search service.
              * @return the next definition stage.
              */
             WithCreate withProperties(SharedPrivateLinkResourceProperties properties);
@@ -128,11 +123,9 @@ public interface SharedPrivateLinkResource {
          */
         interface WithClientRequestId {
             /**
-             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
-             * specified, this will be included in response information as a way to track the request..
+             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request..
              * 
-             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this
-             * will be included in response information as a way to track the request.
+             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
             WithCreate withClientRequestId(UUID clientRequestId);
@@ -175,11 +168,9 @@ public interface SharedPrivateLinkResource {
          */
         interface WithProperties {
             /**
-             * Specifies the properties property: Describes the properties of a Shared Private Link Resource managed by
-             * the search service..
+             * Specifies the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service..
              * 
-             * @param properties Describes the properties of a Shared Private Link Resource managed by the search
-             * service.
+             * @param properties Describes the properties of a shared private link resource managed by the Azure AI Search service.
              * @return the next definition stage.
              */
             Update withProperties(SharedPrivateLinkResourceProperties properties);
@@ -190,11 +181,9 @@ public interface SharedPrivateLinkResource {
          */
         interface WithClientRequestId {
             /**
-             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
-             * specified, this will be included in response information as a way to track the request..
+             * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request..
              * 
-             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this
-             * will be included in response information as a way to track the request.
+             * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
             Update withClientRequestId(UUID clientRequestId);

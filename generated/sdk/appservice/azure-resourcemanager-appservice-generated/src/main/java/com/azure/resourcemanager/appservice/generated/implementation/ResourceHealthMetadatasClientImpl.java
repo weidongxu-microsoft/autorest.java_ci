@@ -56,8 +56,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientResourceHealthMetadatas to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientResourceHealthMetadatas to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -155,8 +154,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listSinglePageAsync() {
@@ -186,8 +184,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listSinglePageAsync(Context context) {
@@ -278,8 +275,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>>
@@ -315,8 +311,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>>
@@ -420,8 +415,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSinglePageAsync(String resourceGroupName,
@@ -461,8 +455,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSinglePageAsync(String resourceGroupName,
@@ -575,8 +568,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteWithResponseAsync(String resourceGroupName,
@@ -614,8 +606,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteWithResponseAsync(String resourceGroupName,
@@ -705,8 +696,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotSinglePageAsync(String resourceGroupName,
@@ -750,8 +740,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotSinglePageAsync(String resourceGroupName,
@@ -874,8 +863,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteSlotWithResponseAsync(String resourceGroupName,
@@ -917,8 +905,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteSlotWithResponseAsync(String resourceGroupName,
@@ -1013,8 +1000,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listNextSinglePageAsync(String nextLink) {
@@ -1042,8 +1028,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1070,8 +1055,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1101,8 +1085,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1130,8 +1113,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteNextSinglePageAsync(String nextLink) {
@@ -1160,8 +1142,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteNextSinglePageAsync(String nextLink,
@@ -1189,8 +1170,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotNextSinglePageAsync(String nextLink) {
@@ -1219,8 +1199,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotNextSinglePageAsync(String nextLink,

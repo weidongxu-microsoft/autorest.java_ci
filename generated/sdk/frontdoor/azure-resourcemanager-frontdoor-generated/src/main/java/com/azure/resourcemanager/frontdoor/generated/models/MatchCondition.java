@@ -77,8 +77,7 @@ public final class MatchCondition {
     }
 
     /**
-     * Get the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
-     * variables. Default is null.
+     * Get the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is null.
      * 
      * @return the selector value.
      */
@@ -87,8 +86,7 @@ public final class MatchCondition {
     }
 
     /**
-     * Set the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
-     * variables. Default is null.
+     * Set the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is null.
      * 
      * @param selector the selector value to set.
      * @return the MatchCondition object itself.

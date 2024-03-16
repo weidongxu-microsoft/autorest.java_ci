@@ -43,8 +43,8 @@ public final class ContainersImpl implements Containers {
 
     public Response<Container> getWithResponse(String deviceName, String storageAccountName, String containerName,
         String resourceGroupName, Context context) {
-        Response<ContainerInner> inner = this.serviceClient().getWithResponse(deviceName, storageAccountName,
-            containerName, resourceGroupName, context);
+        Response<ContainerInner> inner = this.serviceClient()
+            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ContainerImpl(inner.getValue(), this.manager()));

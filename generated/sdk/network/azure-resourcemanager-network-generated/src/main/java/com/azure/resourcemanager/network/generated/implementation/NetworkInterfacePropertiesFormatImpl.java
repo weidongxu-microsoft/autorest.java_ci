@@ -63,9 +63,9 @@ public final class NetworkInterfacePropertiesFormatImpl implements NetworkInterf
     public List<NetworkInterfaceIpConfiguration> ipConfigurations() {
         List<NetworkInterfaceIpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -74,9 +74,9 @@ public final class NetworkInterfacePropertiesFormatImpl implements NetworkInterf
     public List<NetworkInterfaceTapConfiguration> tapConfigurations() {
         List<NetworkInterfaceTapConfigurationInner> inner = this.innerModel().tapConfigurations();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

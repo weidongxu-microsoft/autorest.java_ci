@@ -34,14 +34,15 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
 
     public void delete(String resourceGroupName, String serviceEndpointPolicyName,
         String serviceEndpointPolicyDefinitionName, Context context) {
-        this.serviceClient().delete(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
-            context);
+        this.serviceClient()
+            .delete(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context);
     }
 
     public Response<ServiceEndpointPolicyDefinition> getWithResponse(String resourceGroupName,
         String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName, Context context) {
-        Response<ServiceEndpointPolicyDefinitionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context);
+        Response<ServiceEndpointPolicyDefinitionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ServiceEndpointPolicyDefinitionImpl(inner.getValue(), this.manager()));
@@ -52,8 +53,8 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
 
     public ServiceEndpointPolicyDefinition get(String resourceGroupName, String serviceEndpointPolicyName,
         String serviceEndpointPolicyDefinitionName) {
-        ServiceEndpointPolicyDefinitionInner inner = this.serviceClient().get(resourceGroupName,
-            serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName);
+        ServiceEndpointPolicyDefinitionInner inner = this.serviceClient()
+            .get(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName);
         if (inner != null) {
             return new ServiceEndpointPolicyDefinitionImpl(inner, this.manager());
         } else {
@@ -94,8 +95,10 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicyDefinitions'.", id)));
         }
-        return this.getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
-            Context.NONE).getValue();
+        return this
+            .getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<ServiceEndpointPolicyDefinition> getByIdWithResponse(String id, Context context) {

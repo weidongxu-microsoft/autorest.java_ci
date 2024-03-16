@@ -50,9 +50,7 @@ public interface AzureMonitorPrivateLinkScope {
     Map<String, String> tags();
 
     /**
-     * Gets the provisioningState property: Current state of this PrivateLinkScope: whether or not is has been
-     * provisioned within the resource group it is defined. Users cannot change this value but are able to read from it.
-     * Values will include Provisioning ,Succeeded, Canceled and Failed.
+     * Gets the provisioningState property: Current state of this PrivateLinkScope: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Provisioning ,Succeeded, Canceled and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -87,8 +85,7 @@ public interface AzureMonitorPrivateLinkScope {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.AzureMonitorPrivateLinkScopeInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.AzureMonitorPrivateLinkScopeInner object.
      * 
      * @return the inner object.
      */
@@ -146,8 +143,7 @@ public interface AzureMonitorPrivateLinkScope {
         }
 
         /**
-         * The stage of the AzureMonitorPrivateLinkScope definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AzureMonitorPrivateLinkScope definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

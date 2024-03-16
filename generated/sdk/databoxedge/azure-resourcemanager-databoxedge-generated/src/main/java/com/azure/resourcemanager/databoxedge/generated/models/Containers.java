@@ -21,8 +21,7 @@ public interface Containers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Container> listByStorageAccount(String deviceName, String storageAccountName,
         String resourceGroupName);
@@ -37,8 +36,7 @@ public interface Containers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Container> listByStorageAccount(String deviceName, String storageAccountName,
         String resourceGroupName, Context context);

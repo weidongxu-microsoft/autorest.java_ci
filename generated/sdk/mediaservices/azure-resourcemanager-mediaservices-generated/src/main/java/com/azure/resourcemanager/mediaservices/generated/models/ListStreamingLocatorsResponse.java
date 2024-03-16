@@ -19,8 +19,7 @@ public interface ListStreamingLocatorsResponse {
     List<AssetStreamingLocator> streamingLocators();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ListStreamingLocatorsResponseInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ListStreamingLocatorsResponseInner object.
      * 
      * @return the inner object.
      */

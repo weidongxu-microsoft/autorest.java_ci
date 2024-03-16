@@ -20,8 +20,7 @@ import java.util.Map;
 @Fluent
 public final class IotHubDescriptionInner extends Resource {
     /*
-     * The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header
-     * per the normal ETag convention.
+     * The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
      */
     @JsonProperty(value = "etag")
     private String etag;
@@ -57,8 +56,7 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     /**
-     * Get the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
-     * provided as a header per the normal ETag convention.
+     * Get the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
      * 
      * @return the etag value.
      */
@@ -67,8 +65,7 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     /**
-     * Set the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
-     * provided as a header per the normal ETag convention.
+     * Set the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
      * 
      * @param etag the etag value to set.
      * @return the IotHubDescriptionInner object itself.

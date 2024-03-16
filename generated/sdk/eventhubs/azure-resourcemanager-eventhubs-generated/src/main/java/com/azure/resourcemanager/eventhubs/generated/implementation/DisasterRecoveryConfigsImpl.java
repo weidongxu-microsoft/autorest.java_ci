@@ -73,8 +73,8 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
 
     public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName, String alias,
         String authorizationRuleName, Context context) {
-        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
-            alias, authorizationRuleName, context);
+        Response<AccessKeysInner> inner = this.serviceClient()
+            .listKeysWithResponse(resourceGroupName, namespaceName, alias, authorizationRuleName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));

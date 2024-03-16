@@ -14,7 +14,11 @@ import java.util.UUID;
 /**
  * Specifies that the content key ID is specified in the PlayReady configuration.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier")
 @Fluent
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier
@@ -29,6 +33,7 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier");
     }
 
     /**

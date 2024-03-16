@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Rule of type nat.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "ruleType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "ruleType", defaultImpl = NatRule.class, visible = true)
 @JsonTypeName("NatRule")
 @Fluent
 public final class NatRule extends FirewallPolicyRule {
@@ -69,6 +69,7 @@ public final class NatRule extends FirewallPolicyRule {
      * Creates an instance of NatRule class.
      */
     public NatRule() {
+        withRuleType(FirewallPolicyRuleType.NAT_RULE);
     }
 
     /**

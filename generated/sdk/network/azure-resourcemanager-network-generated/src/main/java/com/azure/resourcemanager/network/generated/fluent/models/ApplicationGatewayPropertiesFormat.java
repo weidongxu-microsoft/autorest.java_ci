@@ -63,50 +63,43 @@ public final class ApplicationGatewayPropertiesFormat {
     private ApplicationGatewayOperationalState operationalState;
 
     /*
-     * Subnets of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Subnets of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "gatewayIPConfigurations")
     private List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations;
 
     /*
-     * Authentication certificates of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Authentication certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "authenticationCertificates")
     private List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates;
 
     /*
-     * Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "trustedRootCertificates")
     private List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates;
 
     /*
-     * Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "trustedClientCertificates")
     private List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates;
 
     /*
-     * SSL certificates of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * SSL certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "sslCertificates")
     private List<ApplicationGatewaySslCertificate> sslCertificates;
 
     /*
-     * Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "frontendIPConfigurations")
     private List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations;
 
     /*
-     * Frontend ports of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Frontend ports of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "frontendPorts")
     private List<ApplicationGatewayFrontendPort> frontendPorts;
@@ -118,50 +111,43 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayProbe> probes;
 
     /*
-     * Backend address pool of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Backend address pool of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendAddressPools")
     private List<ApplicationGatewayBackendAddressPool> backendAddressPools;
 
     /*
-     * Backend http settings of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Backend http settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendHttpSettingsCollection")
     private List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection;
 
     /*
-     * Backend settings of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Backend settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendSettingsCollection")
     private List<ApplicationGatewayBackendSettings> backendSettingsCollection;
 
     /*
-     * Http listeners of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Http listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "httpListeners")
     private List<ApplicationGatewayHttpListener> httpListeners;
 
     /*
-     * Listeners of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "listeners")
     private List<ApplicationGatewayListener> listeners;
 
     /*
-     * SSL profiles of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * SSL profiles of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "sslProfiles")
     private List<ApplicationGatewaySslProfile> sslProfiles;
 
     /*
-     * URL path map of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * URL path map of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "urlPathMaps")
     private List<ApplicationGatewayUrlPathMap> urlPathMaps;
@@ -185,8 +171,7 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets;
 
     /*
-     * Redirect configurations of the application gateway resource. For default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Redirect configurations of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "redirectConfigurations")
     private List<ApplicationGatewayRedirectConfiguration> redirectConfigurations;
@@ -252,8 +237,7 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayCustomError> customErrorConfigurations;
 
     /*
-     * If true, associates a firewall policy with an application gateway regardless whether the policy differs from the
-     * WAF Config.
+     * If true, associates a firewall policy with an application gateway regardless whether the policy differs from the WAF Config.
      */
     @JsonProperty(value = "forceFirewallPolicyAssociation")
     private Boolean forceFirewallPolicyAssociation;
@@ -332,9 +316,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the gatewayIpConfigurations value.
      */
@@ -343,9 +325,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the gatewayIpConfigurations property: Subnets of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param gatewayIpConfigurations the gatewayIpConfigurations value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -357,9 +337,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the authenticationCertificates property: Authentication certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the authenticationCertificates value.
      */
@@ -368,9 +346,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the authenticationCertificates property: Authentication certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param authenticationCertificates the authenticationCertificates value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -382,9 +358,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the trustedRootCertificates value.
      */
@@ -393,9 +367,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the trustedRootCertificates property: Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param trustedRootCertificates the trustedRootCertificates value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -407,9 +379,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the trustedClientCertificates value.
      */
@@ -418,9 +388,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the trustedClientCertificates property: Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param trustedClientCertificates the trustedClientCertificates value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -432,9 +400,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the sslCertificates value.
      */
@@ -443,9 +409,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the sslCertificates property: SSL certificates of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param sslCertificates the sslCertificates value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -457,9 +421,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the frontendIpConfigurations value.
      */
@@ -468,9 +430,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the frontendIpConfigurations property: Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param frontendIpConfigurations the frontendIpConfigurations value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -482,9 +442,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the frontendPorts value.
      */
@@ -493,9 +451,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the frontendPorts property: Frontend ports of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param frontendPorts the frontendPorts value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -526,9 +482,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the backendAddressPools property: Backend address pool of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendAddressPools property: Backend address pool of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendAddressPools value.
      */
@@ -537,9 +491,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the backendAddressPools property: Backend address pool of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendAddressPools property: Backend address pool of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendAddressPools the backendAddressPools value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -551,9 +503,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendHttpSettingsCollection value.
      */
@@ -562,9 +512,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For
-     * default limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendHttpSettingsCollection property: Backend http settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendHttpSettingsCollection the backendHttpSettingsCollection value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -576,9 +524,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the backendSettingsCollection value.
      */
@@ -587,9 +533,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param backendSettingsCollection the backendSettingsCollection value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -601,9 +545,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the httpListeners value.
      */
@@ -612,9 +554,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the httpListeners property: Http listeners of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the httpListeners property: Http listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param httpListeners the httpListeners value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -625,8 +565,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application
-     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the listeners value.
      */
@@ -635,8 +574,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application
-     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param listeners the listeners value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -647,9 +585,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the sslProfiles value.
      */
@@ -658,9 +594,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param sslProfiles the sslProfiles value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -671,9 +605,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the urlPathMaps property: URL path map of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the urlPathMaps property: URL path map of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the urlPathMaps value.
      */
@@ -682,9 +614,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the urlPathMaps property: URL path map of the application gateway resource. For default limits, see
-     * [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the urlPathMaps property: URL path map of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param urlPathMaps the urlPathMaps value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -757,9 +687,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Get the redirectConfigurations property: Redirect configurations of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @return the redirectConfigurations value.
      */
@@ -768,9 +696,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For default
-     * limits, see [Application Gateway
-     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     * Set the redirectConfigurations property: Redirect configurations of the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      * 
      * @param redirectConfigurations the redirectConfigurations value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -953,8 +879,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application
-     * gateway regardless whether the policy differs from the WAF Config.
+     * Get the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application gateway regardless whether the policy differs from the WAF Config.
      * 
      * @return the forceFirewallPolicyAssociation value.
      */
@@ -963,8 +888,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Set the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application
-     * gateway regardless whether the policy differs from the WAF Config.
+     * Set the forceFirewallPolicyAssociation property: If true, associates a firewall policy with an application gateway regardless whether the policy differs from the WAF Config.
      * 
      * @param forceFirewallPolicyAssociation the forceFirewallPolicyAssociation value to set.
      * @return the ApplicationGatewayPropertiesFormat object itself.
@@ -1018,8 +942,7 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
-     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway
-     * resource.
+     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway resource.
      * 
      * @return the defaultPredefinedSslPolicy value.
      */

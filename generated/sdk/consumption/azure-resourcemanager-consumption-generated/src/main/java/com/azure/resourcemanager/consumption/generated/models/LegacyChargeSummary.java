@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 /**
  * Legacy charge summary.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = LegacyChargeSummary.class, visible = true)
 @JsonTypeName("legacy")
 @Fluent
 public final class LegacyChargeSummary extends ChargeSummary {
@@ -29,6 +29,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
      * Creates an instance of LegacyChargeSummary class.
      */
     public LegacyChargeSummary() {
+        withKind(ChargeSummaryKind.LEGACY);
     }
 
     /**

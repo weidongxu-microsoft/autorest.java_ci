@@ -20,8 +20,7 @@ public interface VpnConnection {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -161,8 +160,7 @@ public interface VpnConnection {
     List<VpnSiteLinkConnection> vpnLinkConnections();
 
     /**
-     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @return the routingConfiguration value.
      */

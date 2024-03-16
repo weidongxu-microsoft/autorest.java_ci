@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of listing cost management operations. It contains a list of operations and a URL link to get the next set of
- * results.
+ * Result of listing cost management operations. It contains a list of operations and a URL link to get the next set of results.
  */
 @Immutable
 public final class OperationListResult {
@@ -34,8 +33,7 @@ public final class OperationListResult {
     }
 
     /**
-     * Get the value property: List of cost management operations supported by the Microsoft.CostManagement resource
-     * provider.
+     * Get the value property: List of cost management operations supported by the Microsoft.CostManagement resource provider.
      * 
      * @return the value value.
      */

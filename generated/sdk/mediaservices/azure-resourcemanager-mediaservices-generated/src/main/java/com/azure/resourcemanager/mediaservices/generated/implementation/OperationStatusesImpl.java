@@ -28,8 +28,8 @@ public final class OperationStatusesImpl implements OperationStatuses {
 
     public Response<AssetTrackOperationStatus> getWithResponse(String resourceGroupName, String accountName,
         String assetName, String trackName, String operationId, Context context) {
-        Response<AssetTrackOperationStatusInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            accountName, assetName, trackName, operationId, context);
+        Response<AssetTrackOperationStatusInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, accountName, assetName, trackName, operationId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AssetTrackOperationStatusImpl(inner.getValue(), this.manager()));

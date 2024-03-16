@@ -40,16 +40,14 @@ public interface VnetRoute {
     String kind();
 
     /**
-     * Gets the startAddress property: The starting address for this route. This may also include a CIDR notation, in
-     * which case the end address must not be specified.
+     * Gets the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
      * 
      * @return the startAddress value.
      */
     String startAddress();
 
     /**
-     * Gets the endAddress property: The ending address for this route. If the start address is specified in CIDR
-     * notation, this must be omitted.
+     * Gets the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
      * 
      * @return the endAddress value.
      */
@@ -114,8 +112,7 @@ public interface VnetRoute {
         }
 
         /**
-         * The stage of the VnetRoute definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the VnetRoute definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithStartAddress,
             DefinitionStages.WithEndAddress, DefinitionStages.WithRouteType {
@@ -153,11 +150,9 @@ public interface VnetRoute {
          */
         interface WithStartAddress {
             /**
-             * Specifies the startAddress property: The starting address for this route. This may also include a CIDR
-             * notation, in which case the end address must not be specified..
+             * Specifies the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified..
              * 
-             * @param startAddress The starting address for this route. This may also include a CIDR notation, in which
-             * case the end address must not be specified.
+             * @param startAddress The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
              * @return the next definition stage.
              */
             WithCreate withStartAddress(String startAddress);
@@ -168,11 +163,9 @@ public interface VnetRoute {
          */
         interface WithEndAddress {
             /**
-             * Specifies the endAddress property: The ending address for this route. If the start address is specified
-             * in CIDR notation, this must be omitted..
+             * Specifies the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted..
              * 
-             * @param endAddress The ending address for this route. If the start address is specified in CIDR notation,
-             * this must be omitted.
+             * @param endAddress The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
              * @return the next definition stage.
              */
             WithCreate withEndAddress(String endAddress);
@@ -252,11 +245,9 @@ public interface VnetRoute {
          */
         interface WithStartAddress {
             /**
-             * Specifies the startAddress property: The starting address for this route. This may also include a CIDR
-             * notation, in which case the end address must not be specified..
+             * Specifies the startAddress property: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified..
              * 
-             * @param startAddress The starting address for this route. This may also include a CIDR notation, in which
-             * case the end address must not be specified.
+             * @param startAddress The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
              * @return the next definition stage.
              */
             Update withStartAddress(String startAddress);
@@ -267,11 +258,9 @@ public interface VnetRoute {
          */
         interface WithEndAddress {
             /**
-             * Specifies the endAddress property: The ending address for this route. If the start address is specified
-             * in CIDR notation, this must be omitted..
+             * Specifies the endAddress property: The ending address for this route. If the start address is specified in CIDR notation, this must be omitted..
              * 
-             * @param endAddress The ending address for this route. If the start address is specified in CIDR notation,
-             * this must be omitted.
+             * @param endAddress The ending address for this route. If the start address is specified in CIDR notation, this must be omitted.
              * @return the next definition stage.
              */
             Update withEndAddress(String endAddress);

@@ -150,8 +150,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the networkInterfaces property: An array of references to the network interfaces created for this private
-     * endpoint.
+     * Get the networkInterfaces property: An array of references to the network interfaces created for this private endpoint.
      * 
      * @return the networkInterfaces value.
      */
@@ -169,8 +168,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the privateLinkServiceConnections property: A grouping of information about the connection to the remote
-     * resource.
+     * Get the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource.
      * 
      * @return the privateLinkServiceConnections value.
      */
@@ -179,8 +177,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Set the privateLinkServiceConnections property: A grouping of information about the connection to the remote
-     * resource.
+     * Set the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource.
      * 
      * @param privateLinkServiceConnections the privateLinkServiceConnections value to set.
      * @return the PrivateEndpointInner object itself.
@@ -195,8 +192,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the
-     * remote resource. Used when the network admin does not have access to approve connections to the remote resource.
+     * Get the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
      * 
      * @return the manualPrivateLinkServiceConnections value.
      */
@@ -205,8 +201,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Set the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the
-     * remote resource. Used when the network admin does not have access to approve connections to the remote resource.
+     * Set the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
      * 
      * @param manualPrivateLinkServiceConnections the manualPrivateLinkServiceConnections value to set.
      * @return the PrivateEndpointInner object itself.
@@ -244,8 +239,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the applicationSecurityGroups property: Application security groups in which the private endpoint IP
-     * configuration is included.
+     * Get the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included.
      * 
      * @return the applicationSecurityGroups value.
      */
@@ -254,8 +248,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Set the applicationSecurityGroups property: Application security groups in which the private endpoint IP
-     * configuration is included.
+     * Set the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included.
      * 
      * @param applicationSecurityGroups the applicationSecurityGroups value to set.
      * @return the PrivateEndpointInner object itself.
@@ -270,8 +263,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map
-     * to the First Party Service's endpoints.
+     * Get the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
      * 
      * @return the ipConfigurations value.
      */
@@ -280,8 +272,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Set the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map
-     * to the First Party Service's endpoints.
+     * Set the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
      * 
      * @param ipConfigurations the ipConfigurations value to set.
      * @return the PrivateEndpointInner object itself.
@@ -295,8 +286,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Get the customNetworkInterfaceName property: The custom name of the network interface attached to the private
-     * endpoint.
+     * Get the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint.
      * 
      * @return the customNetworkInterfaceName value.
      */
@@ -305,8 +295,7 @@ public final class PrivateEndpointInner extends Resource {
     }
 
     /**
-     * Set the customNetworkInterfaceName property: The custom name of the network interface attached to the private
-     * endpoint.
+     * Set the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint.
      * 
      * @param customNetworkInterfaceName the customNetworkInterfaceName value to set.
      * @return the PrivateEndpointInner object itself.

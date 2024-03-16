@@ -65,9 +65,9 @@ public final class StackMajorVersion {
 
     /*
      * <appSettings>
-     * <appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" />
+     *  <appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" />
      * </appSettings>
-     * Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name
+     *  Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name
      */
     @JsonProperty(value = "appSettingsDictionary")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -75,9 +75,9 @@ public final class StackMajorVersion {
 
     /*
      * <siteConfigProperties>
-     * <siteConfigProperty name="Use32BitWorkerProcess" value="false" />
+     *  <siteConfigProperty name="Use32BitWorkerProcess" value="false" />
      * </siteConfigProperties>
-     * Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0
+     *  Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0
      */
     @JsonProperty(value = "siteConfigPropertiesDictionary")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -130,8 +130,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Get the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default major version; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default major version; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDefault value.
      */
@@ -140,8 +139,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Set the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default major version; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Set the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default major version; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isDefault the isDefault value to set.
      * @return the StackMajorVersion object itself.
@@ -172,8 +170,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Get the applicationInsights property: &lt;code&gt;true&lt;/code&gt; if this supports Application Insights;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the applicationInsights property: &lt;code&gt;true&lt;/code&gt; if this supports Application Insights; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the applicationInsights value.
      */
@@ -182,8 +179,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Set the applicationInsights property: &lt;code&gt;true&lt;/code&gt; if this supports Application Insights;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the applicationInsights property: &lt;code&gt;true&lt;/code&gt; if this supports Application Insights; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param applicationInsights the applicationInsights value to set.
      * @return the StackMajorVersion object itself.
@@ -194,8 +190,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Get the isPreview property: &lt;code&gt;true&lt;/code&gt; if this stack is in Preview, otherwise
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the isPreview property: &lt;code&gt;true&lt;/code&gt; if this stack is in Preview, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isPreview value.
      */
@@ -204,8 +199,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Set the isPreview property: &lt;code&gt;true&lt;/code&gt; if this stack is in Preview, otherwise
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Set the isPreview property: &lt;code&gt;true&lt;/code&gt; if this stack is in Preview, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isPreview the isPreview value to set.
      * @return the StackMajorVersion object itself.
@@ -216,8 +210,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this stack has been deprecated, otherwise
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this stack has been deprecated, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDeprecated value.
      */
@@ -226,8 +219,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Set the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this stack has been deprecated, otherwise
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Set the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this stack has been deprecated, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isDeprecated the isDeprecated value to set.
      * @return the StackMajorVersion object itself.
@@ -238,8 +230,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Get the isHidden property: &lt;code&gt;true&lt;/code&gt; if this stack should be hidden for new customers on
-     * portal, otherwise &lt;code&gt;false&lt;/code&gt;.
+     * Get the isHidden property: &lt;code&gt;true&lt;/code&gt; if this stack should be hidden for new customers on portal, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isHidden value.
      */
@@ -248,8 +239,7 @@ public final class StackMajorVersion {
     }
 
     /**
-     * Set the isHidden property: &lt;code&gt;true&lt;/code&gt; if this stack should be hidden for new customers on
-     * portal, otherwise &lt;code&gt;false&lt;/code&gt;.
+     * Set the isHidden property: &lt;code&gt;true&lt;/code&gt; if this stack should be hidden for new customers on portal, otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isHidden the isHidden value to set.
      * @return the StackMajorVersion object itself.
@@ -261,9 +251,9 @@ public final class StackMajorVersion {
 
     /**
      * Get the appSettingsDictionary property: &lt;appSettings&gt;
-     * &lt;appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" /&gt;
+     *  &lt;appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" /&gt;
      * &lt;/appSettings&gt;
-     * Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name.
+     *  Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name.
      * 
      * @return the appSettingsDictionary value.
      */
@@ -273,9 +263,9 @@ public final class StackMajorVersion {
 
     /**
      * Set the appSettingsDictionary property: &lt;appSettings&gt;
-     * &lt;appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" /&gt;
+     *  &lt;appSetting name="FUNCTIONS_WORKER_RUNTIME" value="dotnet" /&gt;
      * &lt;/appSettings&gt;
-     * Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name.
+     *  Example: All the function apps need AppSetting: "FUNCTIONS_WORKER_RUNTIME" to be set stack name.
      * 
      * @param appSettingsDictionary the appSettingsDictionary value to set.
      * @return the StackMajorVersion object itself.
@@ -287,9 +277,9 @@ public final class StackMajorVersion {
 
     /**
      * Get the siteConfigPropertiesDictionary property: &lt;siteConfigProperties&gt;
-     * &lt;siteConfigProperty name="Use32BitWorkerProcess" value="false" /&gt;
+     *  &lt;siteConfigProperty name="Use32BitWorkerProcess" value="false" /&gt;
      * &lt;/siteConfigProperties&gt;
-     * Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0.
+     *  Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0.
      * 
      * @return the siteConfigPropertiesDictionary value.
      */
@@ -299,9 +289,9 @@ public final class StackMajorVersion {
 
     /**
      * Set the siteConfigPropertiesDictionary property: &lt;siteConfigProperties&gt;
-     * &lt;siteConfigProperty name="Use32BitWorkerProcess" value="false" /&gt;
+     *  &lt;siteConfigProperty name="Use32BitWorkerProcess" value="false" /&gt;
      * &lt;/siteConfigProperties&gt;
-     * Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0.
+     *  Example: All Linux Function Apps, need Use32BitWorkerProcess to be set to 0.
      * 
      * @param siteConfigPropertiesDictionary the siteConfigPropertiesDictionary value to set.
      * @return the StackMajorVersion object itself.

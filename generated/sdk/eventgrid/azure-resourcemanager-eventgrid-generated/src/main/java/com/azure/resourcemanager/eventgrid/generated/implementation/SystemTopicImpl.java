@@ -101,14 +101,16 @@ public final class SystemTopicImpl implements SystemTopic, SystemTopic.Definitio
     }
 
     public SystemTopic create() {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics().createOrUpdate(resourceGroupName,
-            systemTopicName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .createOrUpdate(resourceGroupName, systemTopicName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SystemTopic create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics().createOrUpdate(resourceGroupName,
-            systemTopicName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .createOrUpdate(resourceGroupName, systemTopicName, this.innerModel(), context);
         return this;
     }
 
@@ -124,14 +126,16 @@ public final class SystemTopicImpl implements SystemTopic, SystemTopic.Definitio
     }
 
     public SystemTopic apply() {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics().update(resourceGroupName, systemTopicName,
-            updateSystemTopicUpdateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .update(resourceGroupName, systemTopicName, updateSystemTopicUpdateParameters, Context.NONE);
         return this;
     }
 
     public SystemTopic apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics().update(resourceGroupName, systemTopicName,
-            updateSystemTopicUpdateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .update(resourceGroupName, systemTopicName, updateSystemTopicUpdateParameters, context);
         return this;
     }
 
@@ -144,14 +148,18 @@ public final class SystemTopicImpl implements SystemTopic, SystemTopic.Definitio
     }
 
     public SystemTopic refresh() {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics()
-            .getByResourceGroupWithResponse(resourceGroupName, systemTopicName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .getByResourceGroupWithResponse(resourceGroupName, systemTopicName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SystemTopic refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSystemTopics()
-            .getByResourceGroupWithResponse(resourceGroupName, systemTopicName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSystemTopics()
+            .getByResourceGroupWithResponse(resourceGroupName, systemTopicName, context)
+            .getValue();
         return this;
     }
 

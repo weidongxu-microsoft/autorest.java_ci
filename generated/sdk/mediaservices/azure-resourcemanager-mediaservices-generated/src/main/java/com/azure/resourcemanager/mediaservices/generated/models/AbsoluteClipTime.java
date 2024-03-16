@@ -12,16 +12,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 
 /**
- * Specifies the clip time as an absolute time position in the media file. The absolute time can point to a different
- * position depending on whether the media file starts from a timestamp of zero or not.
+ * Specifies the clip time as an absolute time position in the media file.  The absolute time can point to a different position depending on whether the media file starts from a timestamp of zero or not.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = AbsoluteClipTime.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.AbsoluteClipTime")
 @Fluent
 public final class AbsoluteClipTime extends ClipTime {
     /*
-     * The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for
-     * 30 seconds.
+     * The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
      */
     @JsonProperty(value = "time", required = true)
     private Duration time;
@@ -30,11 +32,11 @@ public final class AbsoluteClipTime extends ClipTime {
      * Creates an instance of AbsoluteClipTime class.
      */
     public AbsoluteClipTime() {
+        withOdataType("#Microsoft.Media.AbsoluteClipTime");
     }
 
     /**
-     * Get the time property: The time position on the timeline of the input media. It is usually specified as an
-     * ISO8601 period. e.g PT30S for 30 seconds.
+     * Get the time property: The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
      * 
      * @return the time value.
      */
@@ -43,8 +45,7 @@ public final class AbsoluteClipTime extends ClipTime {
     }
 
     /**
-     * Set the time property: The time position on the timeline of the input media. It is usually specified as an
-     * ISO8601 period. e.g PT30S for 30 seconds.
+     * Set the time property: The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
      * 
      * @param time the time value to set.
      * @return the AbsoluteClipTime object itself.

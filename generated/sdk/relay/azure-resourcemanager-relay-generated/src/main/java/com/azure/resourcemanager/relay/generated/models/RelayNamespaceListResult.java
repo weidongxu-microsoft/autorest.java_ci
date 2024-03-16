@@ -53,8 +53,7 @@ public final class RelayNamespaceListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
-     * namespaces.
+     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of namespaces.
      * 
      * @return the nextLink value.
      */
@@ -63,8 +62,7 @@ public final class RelayNamespaceListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
-     * namespaces.
+     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of namespaces.
      * 
      * @param nextLink the nextLink value to set.
      * @return the RelayNamespaceListResult object itself.

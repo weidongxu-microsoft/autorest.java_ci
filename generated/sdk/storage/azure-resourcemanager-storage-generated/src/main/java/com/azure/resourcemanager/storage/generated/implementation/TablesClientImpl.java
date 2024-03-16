@@ -59,8 +59,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientTables to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for StorageManagementClientTables to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -123,18 +122,14 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> createWithResponseAsync(String resourceGroupName, String accountName,
@@ -170,19 +165,15 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> createWithResponseAsync(String resourceGroupName, String accountName,
@@ -217,17 +208,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type on successful completion of
-     * {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TableInner> createAsync(String resourceGroupName, String accountName, String tableName) {
@@ -239,12 +226,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -261,12 +245,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -281,18 +262,14 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -328,19 +305,15 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -375,17 +348,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type on successful completion of
-     * {@link Mono}.
+     * @return properties of the table, including Id, resource name, resource type on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TableInner> updateAsync(String resourceGroupName, String accountName, String tableName) {
@@ -397,12 +366,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -419,12 +385,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Creates a new table with the specified table name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -439,17 +402,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -482,18 +441,14 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -525,17 +480,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists on successful
-     * completion of {@link Mono}.
+     * @return the table with the specified table name, under the specified account if it exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TableInner> getAsync(String resourceGroupName, String accountName, String tableName) {
@@ -546,18 +497,14 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with
-     * {@link Response}.
+     * @return the table with the specified table name, under the specified account if it exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TableInner> getWithResponse(String resourceGroupName, String accountName, String tableName,
@@ -568,12 +515,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -587,12 +531,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -629,12 +570,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -671,12 +609,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -690,12 +625,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -711,12 +643,9 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Deletes the table with the specified table name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     * name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -729,15 +658,12 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of all the tables under the specified storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TableInner>> listSinglePageAsync(String resourceGroupName, String accountName) {
@@ -768,16 +694,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return a list of all the tables under the specified storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TableInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -809,15 +732,12 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<TableInner> listAsync(String resourceGroupName, String accountName) {
@@ -828,16 +748,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedFlux}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<TableInner> listAsync(String resourceGroupName, String accountName, Context context) {
@@ -848,15 +765,12 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TableInner> list(String resourceGroupName, String accountName) {
@@ -866,16 +780,13 @@ public final class TablesClientImpl implements TablesClient {
     /**
      * Gets a list of all the tables under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the tables under the specified storage account as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all the tables under the specified storage account as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TableInner> list(String resourceGroupName, String accountName, Context context) {

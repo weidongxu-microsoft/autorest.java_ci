@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LiveEventActionInput {
     /*
-     * The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live
-     * outputs do not delete the underlying assets.
+     * The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
      */
     @JsonProperty(value = "removeOutputsOnStop")
     private Boolean removeOutputsOnStop;
@@ -26,8 +25,7 @@ public final class LiveEventActionInput {
     }
 
     /**
-     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
-     * event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
      * 
      * @return the removeOutputsOnStop value.
      */
@@ -36,8 +34,7 @@ public final class LiveEventActionInput {
     }
 
     /**
-     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
-     * event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
      * 
      * @param removeOutputsOnStop the removeOutputsOnStop value to set.
      * @return the LiveEventActionInput object itself.

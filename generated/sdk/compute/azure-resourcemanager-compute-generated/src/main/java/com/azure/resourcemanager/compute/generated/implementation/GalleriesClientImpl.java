@@ -68,8 +68,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientGalleries to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for ComputeManagementClientGalleries to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -150,14 +149,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -194,15 +191,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -238,14 +233,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdateAsync(String resourceGroupName,
@@ -260,15 +253,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdateAsync(String resourceGroupName,
@@ -284,14 +275,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdate(String resourceGroupName,
@@ -303,15 +292,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdate(String resourceGroupName,
@@ -323,14 +310,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> createOrUpdateAsync(String resourceGroupName, String galleryName, GalleryInner gallery) {
@@ -342,15 +327,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> createOrUpdateAsync(String resourceGroupName, String galleryName, GalleryInner gallery,
@@ -363,8 +346,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -380,8 +362,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Create or update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the create or update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -399,14 +380,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -443,15 +422,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -487,14 +464,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryInner>, GalleryInner> beginUpdateAsync(String resourceGroupName,
@@ -508,15 +483,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryInner>, GalleryInner> beginUpdateAsync(String resourceGroupName,
@@ -532,14 +505,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginUpdate(String resourceGroupName, String galleryName,
@@ -551,15 +522,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want
-     * to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the Shared Image Gallery that you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginUpdate(String resourceGroupName, String galleryName,
@@ -571,14 +540,12 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> updateAsync(String resourceGroupName, String galleryName, GalleryUpdate gallery) {
@@ -590,15 +557,13 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> updateAsync(String resourceGroupName, String galleryName, GalleryUpdate gallery,
@@ -611,8 +576,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -628,8 +592,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * Update a Shared Image Gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with
-     * dots and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
      * @param gallery Parameters supplied to the update Shared Image Gallery operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -652,8 +615,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -693,8 +655,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -729,8 +690,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> getByResourceGroupAsync(String resourceGroupName, String galleryName) {
@@ -751,8 +711,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with
-     * {@link Response}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GalleryInner> getByResourceGroupWithResponse(String resourceGroupName, String galleryName,
@@ -985,8 +944,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1020,8 +978,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1113,8 +1070,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listSinglePageAsync() {
@@ -1143,8 +1099,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listSinglePageAsync(Context context) {
@@ -1226,8 +1181,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1257,8 +1211,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -1285,8 +1238,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listNextSinglePageAsync(String nextLink) {
@@ -1314,8 +1266,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List Galleries operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryInner>> listNextSinglePageAsync(String nextLink, Context context) {

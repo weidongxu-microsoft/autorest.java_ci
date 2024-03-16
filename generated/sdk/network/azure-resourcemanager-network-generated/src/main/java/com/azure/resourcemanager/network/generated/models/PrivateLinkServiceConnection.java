@@ -55,8 +55,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,8 +64,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the PrivateLinkServiceConnection object itself.
@@ -136,8 +134,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Get the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint
-     * should connect to.
+     * Get the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint should connect to.
      * 
      * @return the groupIds value.
      */
@@ -146,8 +143,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Set the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint
-     * should connect to.
+     * Set the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint should connect to.
      * 
      * @param groupIds the groupIds value to set.
      * @return the PrivateLinkServiceConnection object itself.
@@ -161,8 +157,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Get the requestMessage property: A message passed to the owner of the remote resource with this connection
-     * request. Restricted to 140 chars.
+     * Get the requestMessage property: A message passed to the owner of the remote resource with this connection request. Restricted to 140 chars.
      * 
      * @return the requestMessage value.
      */
@@ -171,8 +166,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Set the requestMessage property: A message passed to the owner of the remote resource with this connection
-     * request. Restricted to 140 chars.
+     * Set the requestMessage property: A message passed to the owner of the remote resource with this connection request. Restricted to 140 chars.
      * 
      * @param requestMessage the requestMessage value to set.
      * @return the PrivateLinkServiceConnection object itself.
@@ -186,8 +180,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: A collection of read-only information about the state of the
-     * connection to the remote resource.
+     * Get the privateLinkServiceConnectionState property: A collection of read-only information about the state of the connection to the remote resource.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -196,8 +189,7 @@ public final class PrivateLinkServiceConnection extends SubResource {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of read-only information about the state of the
-     * connection to the remote resource.
+     * Set the privateLinkServiceConnectionState property: A collection of read-only information about the state of the connection to the remote resource.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateLinkServiceConnection object itself.

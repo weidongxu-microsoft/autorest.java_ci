@@ -33,8 +33,7 @@ public interface ClusterPrincipalAssignment {
     String type();
 
     /**
-     * Gets the principalId property: The principal ID assigned to the cluster principal. It can be a user email,
-     * application ID, or security group name.
+     * Gets the principalId property: The principal ID assigned to the cluster principal. It can be a user email, application ID, or security group name.
      * 
      * @return the principalId value.
      */
@@ -97,8 +96,7 @@ public interface ClusterPrincipalAssignment {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.ClusterPrincipalAssignmentInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.ClusterPrincipalAssignmentInner object.
      * 
      * @return the inner object.
      */
@@ -136,8 +134,7 @@ public interface ClusterPrincipalAssignment {
         }
 
         /**
-         * The stage of the ClusterPrincipalAssignment definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ClusterPrincipalAssignment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPrincipalId, DefinitionStages.WithRole,
             DefinitionStages.WithTenantId, DefinitionStages.WithPrincipalType {
@@ -162,11 +159,9 @@ public interface ClusterPrincipalAssignment {
          */
         interface WithPrincipalId {
             /**
-             * Specifies the principalId property: The principal ID assigned to the cluster principal. It can be a user
-             * email, application ID, or security group name..
+             * Specifies the principalId property: The principal ID assigned to the cluster principal. It can be a user email, application ID, or security group name..
              * 
-             * @param principalId The principal ID assigned to the cluster principal. It can be a user email,
-             * application ID, or security group name.
+             * @param principalId The principal ID assigned to the cluster principal. It can be a user email, application ID, or security group name.
              * @return the next definition stage.
              */
             WithCreate withPrincipalId(String principalId);
@@ -249,11 +244,9 @@ public interface ClusterPrincipalAssignment {
          */
         interface WithPrincipalId {
             /**
-             * Specifies the principalId property: The principal ID assigned to the cluster principal. It can be a user
-             * email, application ID, or security group name..
+             * Specifies the principalId property: The principal ID assigned to the cluster principal. It can be a user email, application ID, or security group name..
              * 
-             * @param principalId The principal ID assigned to the cluster principal. It can be a user email,
-             * application ID, or security group name.
+             * @param principalId The principal ID assigned to the cluster principal. It can be a user email, application ID, or security group name.
              * @return the next definition stage.
              */
             Update withPrincipalId(String principalId);

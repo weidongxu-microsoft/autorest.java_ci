@@ -14,8 +14,7 @@ import java.util.List;
 @Fluent
 public final class ApplicationInsightsComponentApiKeyInner {
     /*
-     * The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is
-     * created.
+     * The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is created.
      */
     @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
@@ -57,8 +56,7 @@ public final class ApplicationInsightsComponentApiKeyInner {
     }
 
     /**
-     * Get the id property: The unique ID of the API key inside an Application Insights component. It is auto generated
-     * when the API key is created.
+     * Get the id property: The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is created.
      * 
      * @return the id value.
      */

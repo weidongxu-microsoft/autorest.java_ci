@@ -32,9 +32,7 @@ public final class VirtualMachineExtensionImageProperties {
     private String handlerSchema;
 
     /*
-     * Whether the extension can be used on xRP VMScaleSets. By default existing extensions are usable on scalesets, but
-     * there might be cases where a publisher wants to explicitly indicate the extension is only enabled for CRP VMs but
-     * not VMSS.
+     * Whether the extension can be used on xRP VMScaleSets. By default existing extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the extension is only enabled for CRP VMs but not VMSS.
      */
     @JsonProperty(value = "vmScaleSetEnabled")
     private Boolean vmScaleSetEnabled;
@@ -92,8 +90,7 @@ public final class VirtualMachineExtensionImageProperties {
     }
 
     /**
-     * Get the handlerSchema property: The schema defined by publisher, where extension consumers should provide
-     * settings in a matching schema.
+     * Get the handlerSchema property: The schema defined by publisher, where extension consumers should provide settings in a matching schema.
      * 
      * @return the handlerSchema value.
      */
@@ -102,8 +99,7 @@ public final class VirtualMachineExtensionImageProperties {
     }
 
     /**
-     * Set the handlerSchema property: The schema defined by publisher, where extension consumers should provide
-     * settings in a matching schema.
+     * Set the handlerSchema property: The schema defined by publisher, where extension consumers should provide settings in a matching schema.
      * 
      * @param handlerSchema the handlerSchema value to set.
      * @return the VirtualMachineExtensionImageProperties object itself.
@@ -114,9 +110,7 @@ public final class VirtualMachineExtensionImageProperties {
     }
 
     /**
-     * Get the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing
-     * extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the
-     * extension is only enabled for CRP VMs but not VMSS.
+     * Get the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the extension is only enabled for CRP VMs but not VMSS.
      * 
      * @return the vmScaleSetEnabled value.
      */
@@ -125,9 +119,7 @@ public final class VirtualMachineExtensionImageProperties {
     }
 
     /**
-     * Set the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing
-     * extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the
-     * extension is only enabled for CRP VMs but not VMSS.
+     * Set the vmScaleSetEnabled property: Whether the extension can be used on xRP VMScaleSets. By default existing extensions are usable on scalesets, but there might be cases where a publisher wants to explicitly indicate the extension is only enabled for CRP VMs but not VMSS.
      * 
      * @param vmScaleSetEnabled the vmScaleSetEnabled value to set.
      * @return the VirtualMachineExtensionImageProperties object itself.

@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At
- * that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings.".
+ * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings.".
  */
 public final class PatchOperationStatus extends ExpandableStringEnum<PatchOperationStatus> {
     /**

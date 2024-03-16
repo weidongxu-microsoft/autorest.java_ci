@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure
- * default value will be used.
+ * The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
  */
 public final class MinimumTlsVersion extends ExpandableStringEnum<MinimumTlsVersion> {
     /**

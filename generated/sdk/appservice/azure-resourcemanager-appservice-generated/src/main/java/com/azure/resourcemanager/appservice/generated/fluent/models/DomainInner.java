@@ -208,8 +208,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the privacy value.
      */
@@ -218,8 +217,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Set the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Set the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param privacy the privacy value to set.
      * @return the DomainInner object itself.
@@ -260,8 +258,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
@@ -270,8 +267,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param autoRenew the autoRenew value to set.
      * @return the DomainInner object itself.
@@ -285,10 +281,8 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to
-     * App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if
-     * domain registration status is active and
-     * it is hosted on name servers Azure has programmatic access to.
+     * Get the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if domain registration status is active and 
+     *  it is hosted on name servers Azure has programmatic access to.
      * 
      * @return the readyForDnsRecordManagement value.
      */

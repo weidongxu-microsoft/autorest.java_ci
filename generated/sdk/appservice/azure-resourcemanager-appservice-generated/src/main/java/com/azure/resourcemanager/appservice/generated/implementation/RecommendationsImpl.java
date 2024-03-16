@@ -78,39 +78,43 @@ public final class RecommendationsImpl implements Recommendations {
 
     public PagedIterable<Recommendation> listRecommendedRulesForHostingEnvironment(String resourceGroupName,
         String hostingEnvironmentName, Boolean featured, String filter, Context context) {
-        PagedIterable<RecommendationInner> inner = this.serviceClient().listRecommendedRulesForHostingEnvironment(
-            resourceGroupName, hostingEnvironmentName, featured, filter, context);
+        PagedIterable<RecommendationInner> inner = this.serviceClient()
+            .listRecommendedRulesForHostingEnvironment(resourceGroupName, hostingEnvironmentName, featured, filter,
+                context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public Response<Void> disableAllForHostingEnvironmentWithResponse(String resourceGroupName, String environmentName,
         String hostingEnvironmentName, Context context) {
-        return this.serviceClient().disableAllForHostingEnvironmentWithResponse(resourceGroupName, environmentName,
-            hostingEnvironmentName, context);
+        return this.serviceClient()
+            .disableAllForHostingEnvironmentWithResponse(resourceGroupName, environmentName, hostingEnvironmentName,
+                context);
     }
 
     public void disableAllForHostingEnvironment(String resourceGroupName, String environmentName,
         String hostingEnvironmentName) {
-        this.serviceClient().disableAllForHostingEnvironment(resourceGroupName, environmentName,
-            hostingEnvironmentName);
+        this.serviceClient()
+            .disableAllForHostingEnvironment(resourceGroupName, environmentName, hostingEnvironmentName);
     }
 
     public Response<Void> resetAllFiltersForHostingEnvironmentWithResponse(String resourceGroupName,
         String environmentName, String hostingEnvironmentName, Context context) {
-        return this.serviceClient().resetAllFiltersForHostingEnvironmentWithResponse(resourceGroupName, environmentName,
-            hostingEnvironmentName, context);
+        return this.serviceClient()
+            .resetAllFiltersForHostingEnvironmentWithResponse(resourceGroupName, environmentName,
+                hostingEnvironmentName, context);
     }
 
     public void resetAllFiltersForHostingEnvironment(String resourceGroupName, String environmentName,
         String hostingEnvironmentName) {
-        this.serviceClient().resetAllFiltersForHostingEnvironment(resourceGroupName, environmentName,
-            hostingEnvironmentName);
+        this.serviceClient()
+            .resetAllFiltersForHostingEnvironment(resourceGroupName, environmentName, hostingEnvironmentName);
     }
 
     public Response<RecommendationRule> getRuleDetailsByHostingEnvironmentWithResponse(String resourceGroupName,
         String hostingEnvironmentName, String name, Boolean updateSeen, String recommendationId, Context context) {
-        Response<RecommendationRuleInner> inner = this.serviceClient().getRuleDetailsByHostingEnvironmentWithResponse(
-            resourceGroupName, hostingEnvironmentName, name, updateSeen, recommendationId, context);
+        Response<RecommendationRuleInner> inner = this.serviceClient()
+            .getRuleDetailsByHostingEnvironmentWithResponse(resourceGroupName, hostingEnvironmentName, name, updateSeen,
+                recommendationId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecommendationRuleImpl(inner.getValue(), this.manager()));
@@ -132,14 +136,16 @@ public final class RecommendationsImpl implements Recommendations {
 
     public Response<Void> disableRecommendationForHostingEnvironmentWithResponse(String resourceGroupName,
         String environmentName, String name, String hostingEnvironmentName, Context context) {
-        return this.serviceClient().disableRecommendationForHostingEnvironmentWithResponse(resourceGroupName,
-            environmentName, name, hostingEnvironmentName, context);
+        return this.serviceClient()
+            .disableRecommendationForHostingEnvironmentWithResponse(resourceGroupName, environmentName, name,
+                hostingEnvironmentName, context);
     }
 
     public void disableRecommendationForHostingEnvironment(String resourceGroupName, String environmentName,
         String name, String hostingEnvironmentName) {
-        this.serviceClient().disableRecommendationForHostingEnvironment(resourceGroupName, environmentName, name,
-            hostingEnvironmentName);
+        this.serviceClient()
+            .disableRecommendationForHostingEnvironment(resourceGroupName, environmentName, name,
+                hostingEnvironmentName);
     }
 
     public PagedIterable<Recommendation> listHistoryForWebApp(String resourceGroupName, String siteName) {
@@ -163,8 +169,8 @@ public final class RecommendationsImpl implements Recommendations {
 
     public PagedIterable<Recommendation> listRecommendedRulesForWebApp(String resourceGroupName, String siteName,
         Boolean featured, String filter, Context context) {
-        PagedIterable<RecommendationInner> inner = this.serviceClient().listRecommendedRulesForWebApp(resourceGroupName,
-            siteName, featured, filter, context);
+        PagedIterable<RecommendationInner> inner = this.serviceClient()
+            .listRecommendedRulesForWebApp(resourceGroupName, siteName, featured, filter, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
@@ -187,8 +193,9 @@ public final class RecommendationsImpl implements Recommendations {
 
     public Response<RecommendationRule> getRuleDetailsByWebAppWithResponse(String resourceGroupName, String siteName,
         String name, Boolean updateSeen, String recommendationId, Context context) {
-        Response<RecommendationRuleInner> inner = this.serviceClient().getRuleDetailsByWebAppWithResponse(
-            resourceGroupName, siteName, name, updateSeen, recommendationId, context);
+        Response<RecommendationRuleInner> inner = this.serviceClient()
+            .getRuleDetailsByWebAppWithResponse(resourceGroupName, siteName, name, updateSeen, recommendationId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecommendationRuleImpl(inner.getValue(), this.manager()));
@@ -208,8 +215,8 @@ public final class RecommendationsImpl implements Recommendations {
 
     public Response<Void> disableRecommendationForSiteWithResponse(String resourceGroupName, String siteName,
         String name, Context context) {
-        return this.serviceClient().disableRecommendationForSiteWithResponse(resourceGroupName, siteName, name,
-            context);
+        return this.serviceClient()
+            .disableRecommendationForSiteWithResponse(resourceGroupName, siteName, name, context);
     }
 
     public void disableRecommendationForSite(String resourceGroupName, String siteName, String name) {

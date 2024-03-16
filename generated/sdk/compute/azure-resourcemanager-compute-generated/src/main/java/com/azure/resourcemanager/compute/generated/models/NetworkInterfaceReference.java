@@ -45,8 +45,7 @@ public final class NetworkInterfaceReference extends SubResource {
     }
 
     /**
-     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1
-     * network interface.
+     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
      * 
      * @return the primary value.
      */
@@ -55,8 +54,7 @@ public final class NetworkInterfaceReference extends SubResource {
     }
 
     /**
-     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1
-     * network interface.
+     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
      * 
      * @param primary the primary value to set.
      * @return the NetworkInterfaceReference object itself.

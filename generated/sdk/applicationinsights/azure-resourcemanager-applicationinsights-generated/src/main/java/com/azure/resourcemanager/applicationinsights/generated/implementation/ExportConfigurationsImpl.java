@@ -36,7 +36,8 @@ public final class ExportConfigurationsImpl implements ExportConfigurations {
             = this.serviceClient().listWithResponse(resourceGroupName, resourceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream()
+                inner.getValue()
+                    .stream()
                     .map(inner1 -> new ApplicationInsightsComponentExportConfigurationImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
@@ -62,7 +63,8 @@ public final class ExportConfigurationsImpl implements ExportConfigurations {
             = this.serviceClient().createWithResponse(resourceGroupName, resourceName, exportProperties, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream()
+                inner.getValue()
+                    .stream()
                     .map(inner1 -> new ApplicationInsightsComponentExportConfigurationImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {

@@ -86,8 +86,7 @@ public interface Cluster {
     String updatedAt();
 
     /**
-     * Gets the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by
-     * the user.
+     * Gets the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by the user.
      * 
      * @return the metricId value.
      */
@@ -194,8 +193,7 @@ public interface Cluster {
         }
 
         /**
-         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithSupportsScaling, DefinitionStages.WithUpgradePreferences {

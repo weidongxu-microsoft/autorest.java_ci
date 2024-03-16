@@ -202,8 +202,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String name, Boolean deleteMetrics,
         Boolean deleteEmptyServerFarm, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, name, deleteMetrics, deleteEmptyServerFarm,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, name, deleteMetrics, deleteEmptyServerFarm, context);
     }
 
     public void delete(String resourceGroupName, String name) {
@@ -233,8 +233,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> applySlotConfigToProductionWithResponse(String resourceGroupName, String name,
         CsmSlotEntity slotSwapEntity, Context context) {
-        return this.serviceClient().applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity,
-            context);
+        return this.serviceClient()
+            .applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity, context);
     }
 
     public void applySlotConfigToProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
@@ -304,8 +304,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<BackupItem> listBackupStatusSecretsWithResponse(String resourceGroupName, String name,
         String backupId, BackupRequestInner request, Context context) {
-        Response<BackupItemInner> inner = this.serviceClient().listBackupStatusSecretsWithResponse(resourceGroupName,
-            name, backupId, request, context);
+        Response<BackupItemInner> inner = this.serviceClient()
+            .listBackupStatusSecretsWithResponse(resourceGroupName, name, backupId, request, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BackupItemImpl(inner.getValue(), this.manager()));
@@ -750,8 +750,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceWithResponse(String resourceGroupName,
         String name, String connectionStringKey, Context context) {
-        Response<ApiKVReferenceInner> inner = this.serviceClient().getSiteConnectionStringKeyVaultReferenceWithResponse(
-            resourceGroupName, name, connectionStringKey, context);
+        Response<ApiKVReferenceInner> inner = this.serviceClient()
+            .getSiteConnectionStringKeyVaultReferenceWithResponse(resourceGroupName, name, connectionStringKey,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApiKVReferenceImpl(inner.getValue(), this.manager()));
@@ -762,8 +763,8 @@ public final class WebAppsImpl implements WebApps {
 
     public ApiKVReference getSiteConnectionStringKeyVaultReference(String resourceGroupName, String name,
         String connectionStringKey) {
-        ApiKVReferenceInner inner = this.serviceClient().getSiteConnectionStringKeyVaultReference(resourceGroupName,
-            name, connectionStringKey);
+        ApiKVReferenceInner inner = this.serviceClient()
+            .getSiteConnectionStringKeyVaultReference(resourceGroupName, name, connectionStringKey);
         if (inner != null) {
             return new ApiKVReferenceImpl(inner, this.manager());
         } else {
@@ -1109,8 +1110,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> recoverSiteConfigurationSnapshotWithResponse(String resourceGroupName, String name,
         String snapshotId, Context context) {
-        return this.serviceClient().recoverSiteConfigurationSnapshotWithResponse(resourceGroupName, name, snapshotId,
-            context);
+        return this.serviceClient()
+            .recoverSiteConfigurationSnapshotWithResponse(resourceGroupName, name, snapshotId, context);
     }
 
     public void recoverSiteConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
@@ -1223,8 +1224,8 @@ public final class WebAppsImpl implements WebApps {
 
     public CsmDeploymentStatus getProductionSiteDeploymentStatus(String resourceGroupName, String name,
         String deploymentStatusId, Context context) {
-        CsmDeploymentStatusInner inner = this.serviceClient().getProductionSiteDeploymentStatus(resourceGroupName, name,
-            deploymentStatusId, context);
+        CsmDeploymentStatusInner inner = this.serviceClient()
+            .getProductionSiteDeploymentStatus(resourceGroupName, name, deploymentStatusId, context);
         if (inner != null) {
             return new CsmDeploymentStatusImpl(inner, this.manager());
         } else {
@@ -1352,8 +1353,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteDomainOwnershipIdentifierWithResponse(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, Context context) {
-        return this.serviceClient().deleteDomainOwnershipIdentifierWithResponse(resourceGroupName, name,
-            domainOwnershipIdentifierName, context);
+        return this.serviceClient()
+            .deleteDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName,
+                context);
     }
 
     public void deleteDomainOwnershipIdentifier(String resourceGroupName, String name,
@@ -1490,8 +1492,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<KeyInfo> createOrUpdateFunctionSecretWithResponse(String resourceGroupName, String name,
         String functionName, String keyName, KeyInfoInner key, Context context) {
-        Response<KeyInfoInner> inner = this.serviceClient().createOrUpdateFunctionSecretWithResponse(resourceGroupName,
-            name, functionName, keyName, key, context);
+        Response<KeyInfoInner> inner = this.serviceClient()
+            .createOrUpdateFunctionSecretWithResponse(resourceGroupName, name, functionName, keyName, key, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyInfoImpl(inner.getValue(), this.manager()));
@@ -1513,8 +1515,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteFunctionSecretWithResponse(String resourceGroupName, String name, String functionName,
         String keyName, Context context) {
-        return this.serviceClient().deleteFunctionSecretWithResponse(resourceGroupName, name, functionName, keyName,
-            context);
+        return this.serviceClient()
+            .deleteFunctionSecretWithResponse(resourceGroupName, name, functionName, keyName, context);
     }
 
     public void deleteFunctionSecret(String resourceGroupName, String name, String functionName, String keyName) {
@@ -1600,8 +1602,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<KeyInfo> createOrUpdateHostSecretWithResponse(String resourceGroupName, String name, String keyType,
         String keyName, KeyInfoInner key, Context context) {
-        Response<KeyInfoInner> inner = this.serviceClient().createOrUpdateHostSecretWithResponse(resourceGroupName,
-            name, keyType, keyName, key, context);
+        Response<KeyInfoInner> inner = this.serviceClient()
+            .createOrUpdateHostSecretWithResponse(resourceGroupName, name, keyType, keyName, key, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyInfoImpl(inner.getValue(), this.manager()));
@@ -1673,8 +1675,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<HybridConnection> getHybridConnectionWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, Context context) {
-        Response<HybridConnectionInner> inner = this.serviceClient().getHybridConnectionWithResponse(resourceGroupName,
-            name, namespaceName, relayName, context);
+        Response<HybridConnectionInner> inner = this.serviceClient()
+            .getHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HybridConnectionImpl(inner.getValue(), this.manager()));
@@ -1696,8 +1698,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteHybridConnectionWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, Context context) {
-        return this.serviceClient().deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName,
-            relayName, context);
+        return this.serviceClient()
+            .deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
     }
 
     public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
@@ -1772,8 +1774,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteRelayServiceConnectionWithResponse(String resourceGroupName, String name,
         String entityName, Context context) {
-        return this.serviceClient().deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName,
-            context);
+        return this.serviceClient()
+            .deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
     }
 
     public void deleteRelayServiceConnection(String resourceGroupName, String name, String entityName) {
@@ -1848,8 +1850,8 @@ public final class WebAppsImpl implements WebApps {
 
     public MSDeployStatus createInstanceMSDeployOperation(String resourceGroupName, String name, String instanceId,
         MSDeploy mSDeploy, Context context) {
-        MSDeployStatusInner inner = this.serviceClient().createInstanceMSDeployOperation(resourceGroupName, name,
-            instanceId, mSDeploy, context);
+        MSDeployStatusInner inner = this.serviceClient()
+            .createInstanceMSDeployOperation(resourceGroupName, name, instanceId, mSDeploy, context);
         if (inner != null) {
             return new MSDeployStatusImpl(inner, this.manager());
         } else {
@@ -1893,8 +1895,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ProcessInfo> getInstanceProcessWithResponse(String resourceGroupName, String name, String processId,
         String instanceId, Context context) {
-        Response<ProcessInfoInner> inner = this.serviceClient().getInstanceProcessWithResponse(resourceGroupName, name,
-            processId, instanceId, context);
+        Response<ProcessInfoInner> inner = this.serviceClient()
+            .getInstanceProcessWithResponse(resourceGroupName, name, processId, instanceId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProcessInfoImpl(inner.getValue(), this.manager()));
@@ -1915,8 +1917,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteInstanceProcessWithResponse(String resourceGroupName, String name, String processId,
         String instanceId, Context context) {
-        return this.serviceClient().deleteInstanceProcessWithResponse(resourceGroupName, name, processId, instanceId,
-            context);
+        return this.serviceClient()
+            .deleteInstanceProcessWithResponse(resourceGroupName, name, processId, instanceId, context);
     }
 
     public void deleteInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
@@ -1925,8 +1927,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<BinaryData> getInstanceProcessDumpWithResponse(String resourceGroupName, String name,
         String processId, String instanceId, Context context) {
-        return this.serviceClient().getInstanceProcessDumpWithResponse(resourceGroupName, name, processId, instanceId,
-            context);
+        return this.serviceClient()
+            .getInstanceProcessDumpWithResponse(resourceGroupName, name, processId, instanceId, context);
     }
 
     public BinaryData getInstanceProcessDump(String resourceGroupName, String name, String processId,
@@ -1962,8 +1964,8 @@ public final class WebAppsImpl implements WebApps {
 
     public ProcessModuleInfo getInstanceProcessModule(String resourceGroupName, String name, String processId,
         String baseAddress, String instanceId) {
-        ProcessModuleInfoInner inner = this.serviceClient().getInstanceProcessModule(resourceGroupName, name, processId,
-            baseAddress, instanceId);
+        ProcessModuleInfoInner inner = this.serviceClient()
+            .getInstanceProcessModule(resourceGroupName, name, processId, baseAddress, instanceId);
         if (inner != null) {
             return new ProcessModuleInfoImpl(inner, this.manager());
         } else {
@@ -2122,9 +2124,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
-        Response<SwiftVirtualNetworkInner> inner
-            = this.serviceClient().createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(resourceGroupName,
-                name, connectionEnvelope, context);
+        Response<SwiftVirtualNetworkInner> inner = this.serviceClient()
+            .createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(resourceGroupName, name,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
@@ -2155,9 +2157,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckWithResponse(
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
-        Response<SwiftVirtualNetworkInner> inner
-            = this.serviceClient().updateSwiftVirtualNetworkConnectionWithCheckWithResponse(resourceGroupName, name,
-                connectionEnvelope, context);
+        Response<SwiftVirtualNetworkInner> inner = this.serviceClient()
+            .updateSwiftVirtualNetworkConnectionWithCheckWithResponse(resourceGroupName, name, connectionEnvelope,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
@@ -2209,8 +2211,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<String> startWebSiteNetworkTraceWithResponse(String resourceGroupName, String name,
         Integer durationInSeconds, Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startWebSiteNetworkTraceWithResponse(resourceGroupName, name, durationInSeconds,
-            maxFrameLength, sasUrl, context);
+        return this.serviceClient()
+            .startWebSiteNetworkTraceWithResponse(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl,
+                context);
     }
 
     public String startWebSiteNetworkTrace(String resourceGroupName, String name) {
@@ -2223,8 +2226,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Object startWebSiteNetworkTraceOperation(String resourceGroupName, String name, Integer durationInSeconds,
         Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startWebSiteNetworkTraceOperation(resourceGroupName, name, durationInSeconds,
-            maxFrameLength, sasUrl, context);
+        return this.serviceClient()
+            .startWebSiteNetworkTraceOperation(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl,
+                context);
     }
 
     public Response<Void> stopWebSiteNetworkTraceWithResponse(String resourceGroupName, String name, Context context) {
@@ -2240,8 +2244,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<NetworkTraceInner>> inner
             = this.serviceClient().getNetworkTracesWithResponse(resourceGroupName, name, operationId, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -2251,7 +2258,8 @@ public final class WebAppsImpl implements WebApps {
         List<NetworkTraceInner> inner = this.serviceClient().getNetworkTraces(resourceGroupName, name, operationId);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -2259,8 +2267,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Object> getNetworkTraceOperationV2WithResponse(String resourceGroupName, String name,
         String operationId, Context context) {
-        return this.serviceClient().getNetworkTraceOperationV2WithResponse(resourceGroupName, name, operationId,
-            context);
+        return this.serviceClient()
+            .getNetworkTraceOperationV2WithResponse(resourceGroupName, name, operationId, context);
     }
 
     public Object getNetworkTraceOperationV2(String resourceGroupName, String name, String operationId) {
@@ -2272,8 +2280,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<NetworkTraceInner>> inner
             = this.serviceClient().getNetworkTracesV2WithResponse(resourceGroupName, name, operationId, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -2283,7 +2294,8 @@ public final class WebAppsImpl implements WebApps {
         List<NetworkTraceInner> inner = this.serviceClient().getNetworkTracesV2(resourceGroupName, name, operationId);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -2466,9 +2478,9 @@ public final class WebAppsImpl implements WebApps {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
-                privateEndpointConnectionName, privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -2479,9 +2491,9 @@ public final class WebAppsImpl implements WebApps {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
-                privateEndpointConnectionName, privateEndpointWrapper, context);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper, context);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -2491,14 +2503,14 @@ public final class WebAppsImpl implements WebApps {
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
     }
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName, Context context) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName, context);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(String resourceGroupName,
@@ -2587,8 +2599,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ProcessModuleInfo> getProcessModuleWithResponse(String resourceGroupName, String name,
         String processId, String baseAddress, Context context) {
-        Response<ProcessModuleInfoInner> inner = this.serviceClient().getProcessModuleWithResponse(resourceGroupName,
-            name, processId, baseAddress, context);
+        Response<ProcessModuleInfoInner> inner = this.serviceClient()
+            .getProcessModuleWithResponse(resourceGroupName, name, processId, baseAddress, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProcessModuleInfoImpl(inner.getValue(), this.manager()));
@@ -2659,8 +2671,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deletePublicCertificateWithResponse(String resourceGroupName, String name,
         String publicCertificateName, Context context) {
-        return this.serviceClient().deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName,
-            context);
+        return this.serviceClient()
+            .deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
     }
 
     public void deletePublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
@@ -2669,14 +2681,15 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(String resourceGroupName, String name,
         CsmPublishingProfileOptions publishingProfileOptions, Context context) {
-        return this.serviceClient().listPublishingProfileXmlWithSecretsWithResponse(resourceGroupName, name,
-            publishingProfileOptions, context);
+        return this.serviceClient()
+            .listPublishingProfileXmlWithSecretsWithResponse(resourceGroupName, name, publishingProfileOptions,
+                context);
     }
 
     public BinaryData listPublishingProfileXmlWithSecrets(String resourceGroupName, String name,
         CsmPublishingProfileOptions publishingProfileOptions) {
-        return this.serviceClient().listPublishingProfileXmlWithSecrets(resourceGroupName, name,
-            publishingProfileOptions);
+        return this.serviceClient()
+            .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
     }
 
     public Response<Void> resetProductionSlotConfigWithResponse(String resourceGroupName, String name,
@@ -2836,8 +2849,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteSlotWithResponse(String resourceGroupName, String name, String slot,
         Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context) {
-        return this.serviceClient().deleteSlotWithResponse(resourceGroupName, name, slot, deleteMetrics,
-            deleteEmptyServerFarm, context);
+        return this.serviceClient()
+            .deleteSlotWithResponse(resourceGroupName, name, slot, deleteMetrics, deleteEmptyServerFarm, context);
     }
 
     public void deleteSlot(String resourceGroupName, String name, String slot) {
@@ -2889,8 +2902,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> applySlotConfigurationSlotWithResponse(String resourceGroupName, String name, String slot,
         CsmSlotEntity slotSwapEntity, Context context) {
-        return this.serviceClient().applySlotConfigurationSlotWithResponse(resourceGroupName, name, slot,
-            slotSwapEntity, context);
+        return this.serviceClient()
+            .applySlotConfigurationSlotWithResponse(resourceGroupName, name, slot, slotSwapEntity, context);
     }
 
     public void applySlotConfigurationSlot(String resourceGroupName, String name, String slot,
@@ -3036,9 +3049,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<CsmPublishingCredentialsPoliciesEntity> updateFtpAllowedSlotWithResponse(String resourceGroupName,
         String name, String slot, CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity,
         Context context) {
-        Response<CsmPublishingCredentialsPoliciesEntityInner> inner
-            = this.serviceClient().updateFtpAllowedSlotWithResponse(resourceGroupName, name, slot,
-                csmPublishingAccessPoliciesEntity, context);
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner = this.serviceClient()
+            .updateFtpAllowedSlotWithResponse(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
@@ -3049,8 +3062,8 @@ public final class WebAppsImpl implements WebApps {
 
     public CsmPublishingCredentialsPoliciesEntity updateFtpAllowedSlot(String resourceGroupName, String name,
         String slot, CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
-        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().updateFtpAllowedSlot(resourceGroupName,
-            name, slot, csmPublishingAccessPoliciesEntity);
+        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient()
+            .updateFtpAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -3084,9 +3097,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<CsmPublishingCredentialsPoliciesEntity> updateScmAllowedSlotWithResponse(String resourceGroupName,
         String name, String slot, CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity,
         Context context) {
-        Response<CsmPublishingCredentialsPoliciesEntityInner> inner
-            = this.serviceClient().updateScmAllowedSlotWithResponse(resourceGroupName, name, slot,
-                csmPublishingAccessPoliciesEntity, context);
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner = this.serviceClient()
+            .updateScmAllowedSlotWithResponse(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
@@ -3097,8 +3110,8 @@ public final class WebAppsImpl implements WebApps {
 
     public CsmPublishingCredentialsPoliciesEntity updateScmAllowedSlot(String resourceGroupName, String name,
         String slot, CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
-        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().updateScmAllowedSlot(resourceGroupName,
-            name, slot, csmPublishingAccessPoliciesEntity);
+        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient()
+            .updateScmAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -3427,9 +3440,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceSlotWithResponse(String resourceGroupName,
         String name, String connectionStringKey, String slot, Context context) {
-        Response<ApiKVReferenceInner> inner
-            = this.serviceClient().getSiteConnectionStringKeyVaultReferenceSlotWithResponse(resourceGroupName, name,
-                connectionStringKey, slot, context);
+        Response<ApiKVReferenceInner> inner = this.serviceClient()
+            .getSiteConnectionStringKeyVaultReferenceSlotWithResponse(resourceGroupName, name, connectionStringKey,
+                slot, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApiKVReferenceImpl(inner.getValue(), this.manager()));
@@ -3440,8 +3453,8 @@ public final class WebAppsImpl implements WebApps {
 
     public ApiKVReference getSiteConnectionStringKeyVaultReferenceSlot(String resourceGroupName, String name,
         String connectionStringKey, String slot) {
-        ApiKVReferenceInner inner = this.serviceClient().getSiteConnectionStringKeyVaultReferenceSlot(resourceGroupName,
-            name, connectionStringKey, slot);
+        ApiKVReferenceInner inner = this.serviceClient()
+            .getSiteConnectionStringKeyVaultReferenceSlot(resourceGroupName, name, connectionStringKey, slot);
         if (inner != null) {
             return new ApiKVReferenceImpl(inner, this.manager());
         } else {
@@ -3752,8 +3765,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> recoverSiteConfigurationSnapshotSlotWithResponse(String resourceGroupName, String name,
         String snapshotId, String slot, Context context) {
-        return this.serviceClient().recoverSiteConfigurationSnapshotSlotWithResponse(resourceGroupName, name,
-            snapshotId, slot, context);
+        return this.serviceClient()
+            .recoverSiteConfigurationSnapshotSlotWithResponse(resourceGroupName, name, snapshotId, slot, context);
     }
 
     public void recoverSiteConfigurationSnapshotSlot(String resourceGroupName, String name, String snapshotId,
@@ -3818,8 +3831,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteContinuousWebJobSlotWithResponse(String resourceGroupName, String name,
         String webJobName, String slot, Context context) {
-        return this.serviceClient().deleteContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot,
-            context);
+        return this.serviceClient()
+            .deleteContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
     public void deleteContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -3828,8 +3841,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> startContinuousWebJobSlotWithResponse(String resourceGroupName, String name,
         String webJobName, String slot, Context context) {
-        return this.serviceClient().startContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot,
-            context);
+        return this.serviceClient()
+            .startContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
     public void startContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -3838,8 +3851,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> stopContinuousWebJobSlotWithResponse(String resourceGroupName, String name, String webJobName,
         String slot, Context context) {
-        return this.serviceClient().stopContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot,
-            context);
+        return this.serviceClient()
+            .stopContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
     public void stopContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -3873,8 +3886,8 @@ public final class WebAppsImpl implements WebApps {
 
     public CsmDeploymentStatus getSlotSiteDeploymentStatusSlot(String resourceGroupName, String name, String slot,
         String deploymentStatusId, Context context) {
-        CsmDeploymentStatusInner inner = this.serviceClient().getSlotSiteDeploymentStatusSlot(resourceGroupName, name,
-            slot, deploymentStatusId, context);
+        CsmDeploymentStatusInner inner = this.serviceClient()
+            .getSlotSiteDeploymentStatusSlot(resourceGroupName, name, slot, deploymentStatusId, context);
         if (inner != null) {
             return new CsmDeploymentStatusImpl(inner, this.manager());
         } else {
@@ -3917,8 +3930,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Deployment> createDeploymentSlotWithResponse(String resourceGroupName, String name, String id,
         String slot, DeploymentInner deployment, Context context) {
-        Response<DeploymentInner> inner = this.serviceClient().createDeploymentSlotWithResponse(resourceGroupName, name,
-            id, slot, deployment, context);
+        Response<DeploymentInner> inner = this.serviceClient()
+            .createDeploymentSlotWithResponse(resourceGroupName, name, id, slot, deployment, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentImpl(inner.getValue(), this.manager()));
@@ -4006,8 +4019,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Identifier> getDomainOwnershipIdentifierSlotWithResponse(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot, Context context) {
-        Response<IdentifierInner> inner = this.serviceClient().getDomainOwnershipIdentifierSlotWithResponse(
-            resourceGroupName, name, domainOwnershipIdentifierName, slot, context);
+        Response<IdentifierInner> inner = this.serviceClient()
+            .getDomainOwnershipIdentifierSlotWithResponse(resourceGroupName, name, domainOwnershipIdentifierName, slot,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IdentifierImpl(inner.getValue(), this.manager()));
@@ -4018,8 +4032,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Identifier getDomainOwnershipIdentifierSlot(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot) {
-        IdentifierInner inner = this.serviceClient().getDomainOwnershipIdentifierSlot(resourceGroupName, name,
-            domainOwnershipIdentifierName, slot);
+        IdentifierInner inner = this.serviceClient()
+            .getDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
         if (inner != null) {
             return new IdentifierImpl(inner, this.manager());
         } else {
@@ -4030,8 +4044,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<Identifier> createOrUpdateDomainOwnershipIdentifierSlotWithResponse(String resourceGroupName,
         String name, String domainOwnershipIdentifierName, String slot, IdentifierInner domainOwnershipIdentifier,
         Context context) {
-        Response<IdentifierInner> inner = this.serviceClient().createOrUpdateDomainOwnershipIdentifierSlotWithResponse(
-            resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier, context);
+        Response<IdentifierInner> inner = this.serviceClient()
+            .createOrUpdateDomainOwnershipIdentifierSlotWithResponse(resourceGroupName, name,
+                domainOwnershipIdentifierName, slot, domainOwnershipIdentifier, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IdentifierImpl(inner.getValue(), this.manager()));
@@ -4042,8 +4057,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Identifier createOrUpdateDomainOwnershipIdentifierSlot(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot, IdentifierInner domainOwnershipIdentifier) {
-        IdentifierInner inner = this.serviceClient().createOrUpdateDomainOwnershipIdentifierSlot(resourceGroupName,
-            name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
+        IdentifierInner inner = this.serviceClient()
+            .createOrUpdateDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot,
+                domainOwnershipIdentifier);
         if (inner != null) {
             return new IdentifierImpl(inner, this.manager());
         } else {
@@ -4053,20 +4069,22 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteDomainOwnershipIdentifierSlotWithResponse(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot, Context context) {
-        return this.serviceClient().deleteDomainOwnershipIdentifierSlotWithResponse(resourceGroupName, name,
-            domainOwnershipIdentifierName, slot, context);
+        return this.serviceClient()
+            .deleteDomainOwnershipIdentifierSlotWithResponse(resourceGroupName, name, domainOwnershipIdentifierName,
+                slot, context);
     }
 
     public void deleteDomainOwnershipIdentifierSlot(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot) {
-        this.serviceClient().deleteDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName,
-            slot);
+        this.serviceClient()
+            .deleteDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
     }
 
     public Response<Identifier> updateDomainOwnershipIdentifierSlotWithResponse(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot, IdentifierInner domainOwnershipIdentifier, Context context) {
-        Response<IdentifierInner> inner = this.serviceClient().updateDomainOwnershipIdentifierSlotWithResponse(
-            resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier, context);
+        Response<IdentifierInner> inner = this.serviceClient()
+            .updateDomainOwnershipIdentifierSlotWithResponse(resourceGroupName, name, domainOwnershipIdentifierName,
+                slot, domainOwnershipIdentifier, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IdentifierImpl(inner.getValue(), this.manager()));
@@ -4077,8 +4095,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Identifier updateDomainOwnershipIdentifierSlot(String resourceGroupName, String name,
         String domainOwnershipIdentifierName, String slot, IdentifierInner domainOwnershipIdentifier) {
-        IdentifierInner inner = this.serviceClient().updateDomainOwnershipIdentifierSlot(resourceGroupName, name,
-            domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
+        IdentifierInner inner = this.serviceClient()
+            .updateDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot,
+                domainOwnershipIdentifier);
         if (inner != null) {
             return new IdentifierImpl(inner, this.manager());
         } else {
@@ -4198,8 +4217,8 @@ public final class WebAppsImpl implements WebApps {
 
     public FunctionEnvelope createInstanceFunctionSlot(String resourceGroupName, String name, String functionName,
         String slot, FunctionEnvelopeInner functionEnvelope) {
-        FunctionEnvelopeInner inner = this.serviceClient().createInstanceFunctionSlot(resourceGroupName, name,
-            functionName, slot, functionEnvelope);
+        FunctionEnvelopeInner inner = this.serviceClient()
+            .createInstanceFunctionSlot(resourceGroupName, name, functionName, slot, functionEnvelope);
         if (inner != null) {
             return new FunctionEnvelopeImpl(inner, this.manager());
         } else {
@@ -4209,8 +4228,8 @@ public final class WebAppsImpl implements WebApps {
 
     public FunctionEnvelope createInstanceFunctionSlot(String resourceGroupName, String name, String functionName,
         String slot, FunctionEnvelopeInner functionEnvelope, Context context) {
-        FunctionEnvelopeInner inner = this.serviceClient().createInstanceFunctionSlot(resourceGroupName, name,
-            functionName, slot, functionEnvelope, context);
+        FunctionEnvelopeInner inner = this.serviceClient()
+            .createInstanceFunctionSlot(resourceGroupName, name, functionName, slot, functionEnvelope, context);
         if (inner != null) {
             return new FunctionEnvelopeImpl(inner, this.manager());
         } else {
@@ -4220,8 +4239,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteInstanceFunctionSlotWithResponse(String resourceGroupName, String name,
         String functionName, String slot, Context context) {
-        return this.serviceClient().deleteInstanceFunctionSlotWithResponse(resourceGroupName, name, functionName, slot,
-            context);
+        return this.serviceClient()
+            .deleteInstanceFunctionSlotWithResponse(resourceGroupName, name, functionName, slot, context);
     }
 
     public void deleteInstanceFunctionSlot(String resourceGroupName, String name, String functionName, String slot) {
@@ -4230,8 +4249,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<KeyInfo> createOrUpdateFunctionSecretSlotWithResponse(String resourceGroupName, String name,
         String functionName, String keyName, String slot, KeyInfoInner key, Context context) {
-        Response<KeyInfoInner> inner = this.serviceClient().createOrUpdateFunctionSecretSlotWithResponse(
-            resourceGroupName, name, functionName, keyName, slot, key, context);
+        Response<KeyInfoInner> inner = this.serviceClient()
+            .createOrUpdateFunctionSecretSlotWithResponse(resourceGroupName, name, functionName, keyName, slot, key,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyInfoImpl(inner.getValue(), this.manager()));
@@ -4242,8 +4262,8 @@ public final class WebAppsImpl implements WebApps {
 
     public KeyInfo createOrUpdateFunctionSecretSlot(String resourceGroupName, String name, String functionName,
         String keyName, String slot, KeyInfoInner key) {
-        KeyInfoInner inner = this.serviceClient().createOrUpdateFunctionSecretSlot(resourceGroupName, name,
-            functionName, keyName, slot, key);
+        KeyInfoInner inner = this.serviceClient()
+            .createOrUpdateFunctionSecretSlot(resourceGroupName, name, functionName, keyName, slot, key);
         if (inner != null) {
             return new KeyInfoImpl(inner, this.manager());
         } else {
@@ -4253,8 +4273,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteFunctionSecretSlotWithResponse(String resourceGroupName, String name,
         String functionName, String keyName, String slot, Context context) {
-        return this.serviceClient().deleteFunctionSecretSlotWithResponse(resourceGroupName, name, functionName, keyName,
-            slot, context);
+        return this.serviceClient()
+            .deleteFunctionSecretSlotWithResponse(resourceGroupName, name, functionName, keyName, slot, context);
     }
 
     public void deleteFunctionSecretSlot(String resourceGroupName, String name, String functionName, String keyName,
@@ -4264,8 +4284,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<StringDictionary> listFunctionKeysSlotWithResponse(String resourceGroupName, String name,
         String functionName, String slot, Context context) {
-        Response<StringDictionaryInner> inner = this.serviceClient().listFunctionKeysSlotWithResponse(resourceGroupName,
-            name, functionName, slot, context);
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .listFunctionKeysSlotWithResponse(resourceGroupName, name, functionName, slot, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
@@ -4349,8 +4369,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<KeyInfo> createOrUpdateHostSecretSlotWithResponse(String resourceGroupName, String name,
         String keyType, String keyName, String slot, KeyInfoInner key, Context context) {
-        Response<KeyInfoInner> inner = this.serviceClient().createOrUpdateHostSecretSlotWithResponse(resourceGroupName,
-            name, keyType, keyName, slot, key, context);
+        Response<KeyInfoInner> inner = this.serviceClient()
+            .createOrUpdateHostSecretSlotWithResponse(resourceGroupName, name, keyType, keyName, slot, key, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyInfoImpl(inner.getValue(), this.manager()));
@@ -4372,8 +4392,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteHostSecretSlotWithResponse(String resourceGroupName, String name, String keyType,
         String keyName, String slot, Context context) {
-        return this.serviceClient().deleteHostSecretSlotWithResponse(resourceGroupName, name, keyType, keyName, slot,
-            context);
+        return this.serviceClient()
+            .deleteHostSecretSlotWithResponse(resourceGroupName, name, keyType, keyName, slot, context);
     }
 
     public void deleteHostSecretSlot(String resourceGroupName, String name, String keyType, String keyName,
@@ -4418,8 +4438,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<HostnameBinding> createOrUpdateHostnameBindingSlotWithResponse(String resourceGroupName,
         String name, String hostname, String slot, HostnameBindingInner hostnameBinding, Context context) {
-        Response<HostnameBindingInner> inner = this.serviceClient().createOrUpdateHostnameBindingSlotWithResponse(
-            resourceGroupName, name, hostname, slot, hostnameBinding, context);
+        Response<HostnameBindingInner> inner = this.serviceClient()
+            .createOrUpdateHostnameBindingSlotWithResponse(resourceGroupName, name, hostname, slot, hostnameBinding,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HostnameBindingImpl(inner.getValue(), this.manager()));
@@ -4430,8 +4451,8 @@ public final class WebAppsImpl implements WebApps {
 
     public HostnameBinding createOrUpdateHostnameBindingSlot(String resourceGroupName, String name, String hostname,
         String slot, HostnameBindingInner hostnameBinding) {
-        HostnameBindingInner inner = this.serviceClient().createOrUpdateHostnameBindingSlot(resourceGroupName, name,
-            hostname, slot, hostnameBinding);
+        HostnameBindingInner inner = this.serviceClient()
+            .createOrUpdateHostnameBindingSlot(resourceGroupName, name, hostname, slot, hostnameBinding);
         if (inner != null) {
             return new HostnameBindingImpl(inner, this.manager());
         } else {
@@ -4441,8 +4462,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteHostnameBindingSlotWithResponse(String resourceGroupName, String name, String slot,
         String hostname, Context context) {
-        return this.serviceClient().deleteHostnameBindingSlotWithResponse(resourceGroupName, name, slot, hostname,
-            context);
+        return this.serviceClient()
+            .deleteHostnameBindingSlotWithResponse(resourceGroupName, name, slot, hostname, context);
     }
 
     public void deleteHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
@@ -4475,8 +4496,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<HybridConnection> createOrUpdateHybridConnectionSlotWithResponse(String resourceGroupName,
         String name, String namespaceName, String relayName, String slot, HybridConnectionInner connectionEnvelope,
         Context context) {
-        Response<HybridConnectionInner> inner = this.serviceClient().createOrUpdateHybridConnectionSlotWithResponse(
-            resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope, context);
+        Response<HybridConnectionInner> inner = this.serviceClient()
+            .createOrUpdateHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName, relayName, slot,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HybridConnectionImpl(inner.getValue(), this.manager()));
@@ -4487,8 +4509,9 @@ public final class WebAppsImpl implements WebApps {
 
     public HybridConnection createOrUpdateHybridConnectionSlot(String resourceGroupName, String name,
         String namespaceName, String relayName, String slot, HybridConnectionInner connectionEnvelope) {
-        HybridConnectionInner inner = this.serviceClient().createOrUpdateHybridConnectionSlot(resourceGroupName, name,
-            namespaceName, relayName, slot, connectionEnvelope);
+        HybridConnectionInner inner = this.serviceClient()
+            .createOrUpdateHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot,
+                connectionEnvelope);
         if (inner != null) {
             return new HybridConnectionImpl(inner, this.manager());
         } else {
@@ -4498,8 +4521,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteHybridConnectionSlotWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, String slot, Context context) {
-        return this.serviceClient().deleteHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName,
-            relayName, slot, context);
+        return this.serviceClient()
+            .deleteHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName, relayName, slot, context);
     }
 
     public void deleteHybridConnectionSlot(String resourceGroupName, String name, String namespaceName,
@@ -4510,8 +4533,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<HybridConnection> updateHybridConnectionSlotWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, String slot, HybridConnectionInner connectionEnvelope,
         Context context) {
-        Response<HybridConnectionInner> inner = this.serviceClient().updateHybridConnectionSlotWithResponse(
-            resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope, context);
+        Response<HybridConnectionInner> inner = this.serviceClient()
+            .updateHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName, relayName, slot,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HybridConnectionImpl(inner.getValue(), this.manager()));
@@ -4522,8 +4546,8 @@ public final class WebAppsImpl implements WebApps {
 
     public HybridConnection updateHybridConnectionSlot(String resourceGroupName, String name, String namespaceName,
         String relayName, String slot, HybridConnectionInner connectionEnvelope) {
-        HybridConnectionInner inner = this.serviceClient().updateHybridConnectionSlot(resourceGroupName, name,
-            namespaceName, relayName, slot, connectionEnvelope);
+        HybridConnectionInner inner = this.serviceClient()
+            .updateHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope);
         if (inner != null) {
             return new HybridConnectionImpl(inner, this.manager());
         } else {
@@ -4601,9 +4625,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<RelayServiceConnectionEntity> createOrUpdateRelayServiceConnectionSlotWithResponse(
         String resourceGroupName, String name, String entityName, String slot,
         RelayServiceConnectionEntityInner connectionEnvelope, Context context) {
-        Response<RelayServiceConnectionEntityInner> inner
-            = this.serviceClient().createOrUpdateRelayServiceConnectionSlotWithResponse(resourceGroupName, name,
-                entityName, slot, connectionEnvelope, context);
+        Response<RelayServiceConnectionEntityInner> inner = this.serviceClient()
+            .createOrUpdateRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName, slot,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RelayServiceConnectionEntityImpl(inner.getValue(), this.manager()));
@@ -4625,8 +4649,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteRelayServiceConnectionSlotWithResponse(String resourceGroupName, String name,
         String entityName, String slot, Context context) {
-        return this.serviceClient().deleteRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName,
-            slot, context);
+        return this.serviceClient()
+            .deleteRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName, slot, context);
     }
 
     public void deleteRelayServiceConnectionSlot(String resourceGroupName, String name, String entityName,
@@ -4637,9 +4661,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<RelayServiceConnectionEntity> updateRelayServiceConnectionSlotWithResponse(String resourceGroupName,
         String name, String entityName, String slot, RelayServiceConnectionEntityInner connectionEnvelope,
         Context context) {
-        Response<RelayServiceConnectionEntityInner> inner
-            = this.serviceClient().updateRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName,
-                slot, connectionEnvelope, context);
+        Response<RelayServiceConnectionEntityInner> inner = this.serviceClient()
+            .updateRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName, slot, connectionEnvelope,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RelayServiceConnectionEntityImpl(inner.getValue(), this.manager()));
@@ -4721,8 +4745,8 @@ public final class WebAppsImpl implements WebApps {
 
     public MSDeployStatus createInstanceMSDeployOperationSlot(String resourceGroupName, String name, String slot,
         String instanceId, MSDeploy mSDeploy) {
-        MSDeployStatusInner inner = this.serviceClient().createInstanceMSDeployOperationSlot(resourceGroupName, name,
-            slot, instanceId, mSDeploy);
+        MSDeployStatusInner inner = this.serviceClient()
+            .createInstanceMSDeployOperationSlot(resourceGroupName, name, slot, instanceId, mSDeploy);
         if (inner != null) {
             return new MSDeployStatusImpl(inner, this.manager());
         } else {
@@ -4732,8 +4756,8 @@ public final class WebAppsImpl implements WebApps {
 
     public MSDeployStatus createInstanceMSDeployOperationSlot(String resourceGroupName, String name, String slot,
         String instanceId, MSDeploy mSDeploy, Context context) {
-        MSDeployStatusInner inner = this.serviceClient().createInstanceMSDeployOperationSlot(resourceGroupName, name,
-            slot, instanceId, mSDeploy, context);
+        MSDeployStatusInner inner = this.serviceClient()
+            .createInstanceMSDeployOperationSlot(resourceGroupName, name, slot, instanceId, mSDeploy, context);
         if (inner != null) {
             return new MSDeployStatusImpl(inner, this.manager());
         } else {
@@ -4780,8 +4804,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ProcessInfo> getInstanceProcessSlotWithResponse(String resourceGroupName, String name,
         String processId, String slot, String instanceId, Context context) {
-        Response<ProcessInfoInner> inner = this.serviceClient().getInstanceProcessSlotWithResponse(resourceGroupName,
-            name, processId, slot, instanceId, context);
+        Response<ProcessInfoInner> inner = this.serviceClient()
+            .getInstanceProcessSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProcessInfoImpl(inner.getValue(), this.manager()));
@@ -4803,8 +4827,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteInstanceProcessSlotWithResponse(String resourceGroupName, String name, String processId,
         String slot, String instanceId, Context context) {
-        return this.serviceClient().deleteInstanceProcessSlotWithResponse(resourceGroupName, name, processId, slot,
-            instanceId, context);
+        return this.serviceClient()
+            .deleteInstanceProcessSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
     }
 
     public void deleteInstanceProcessSlot(String resourceGroupName, String name, String processId, String slot,
@@ -4814,8 +4838,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<BinaryData> getInstanceProcessDumpSlotWithResponse(String resourceGroupName, String name,
         String processId, String slot, String instanceId, Context context) {
-        return this.serviceClient().getInstanceProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot,
-            instanceId, context);
+        return this.serviceClient()
+            .getInstanceProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
     }
 
     public BinaryData getInstanceProcessDumpSlot(String resourceGroupName, String name, String processId, String slot,
@@ -4839,8 +4863,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<ProcessModuleInfo> getInstanceProcessModuleSlotWithResponse(String resourceGroupName, String name,
         String processId, String baseAddress, String slot, String instanceId, Context context) {
-        Response<ProcessModuleInfoInner> inner = this.serviceClient().getInstanceProcessModuleSlotWithResponse(
-            resourceGroupName, name, processId, baseAddress, slot, instanceId, context);
+        Response<ProcessModuleInfoInner> inner = this.serviceClient()
+            .getInstanceProcessModuleSlotWithResponse(resourceGroupName, name, processId, baseAddress, slot, instanceId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProcessModuleInfoImpl(inner.getValue(), this.manager()));
@@ -4851,8 +4876,8 @@ public final class WebAppsImpl implements WebApps {
 
     public ProcessModuleInfo getInstanceProcessModuleSlot(String resourceGroupName, String name, String processId,
         String baseAddress, String slot, String instanceId) {
-        ProcessModuleInfoInner inner = this.serviceClient().getInstanceProcessModuleSlot(resourceGroupName, name,
-            processId, baseAddress, slot, instanceId);
+        ProcessModuleInfoInner inner = this.serviceClient()
+            .getInstanceProcessModuleSlot(resourceGroupName, name, processId, baseAddress, slot, instanceId);
         if (inner != null) {
             return new ProcessModuleInfoImpl(inner, this.manager());
         } else {
@@ -4975,9 +5000,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
         String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope,
         Context context) {
-        Response<SwiftVirtualNetworkInner> inner
-            = this.serviceClient().createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
-                resourceGroupName, name, slot, connectionEnvelope, context);
+        Response<SwiftVirtualNetworkInner> inner = this.serviceClient()
+            .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(resourceGroupName, name, slot,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
@@ -4988,8 +5013,9 @@ public final class WebAppsImpl implements WebApps {
 
     public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(String resourceGroupName,
         String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner = this.serviceClient().createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
-            resourceGroupName, name, slot, connectionEnvelope);
+        SwiftVirtualNetworkInner inner = this.serviceClient()
+            .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(resourceGroupName, name, slot,
+                connectionEnvelope);
         if (inner != null) {
             return new SwiftVirtualNetworkImpl(inner, this.manager());
         } else {
@@ -5009,9 +5035,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
         String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope,
         Context context) {
-        Response<SwiftVirtualNetworkInner> inner
-            = this.serviceClient().updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(resourceGroupName, name,
-                slot, connectionEnvelope, context);
+        Response<SwiftVirtualNetworkInner> inner = this.serviceClient()
+            .updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(resourceGroupName, name, slot,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
@@ -5054,8 +5080,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Object> getNetworkTraceOperationSlotWithResponse(String resourceGroupName, String name,
         String operationId, String slot, Context context) {
-        return this.serviceClient().getNetworkTraceOperationSlotWithResponse(resourceGroupName, name, operationId, slot,
-            context);
+        return this.serviceClient()
+            .getNetworkTraceOperationSlotWithResponse(resourceGroupName, name, operationId, slot, context);
     }
 
     public Object getNetworkTraceOperationSlot(String resourceGroupName, String name, String operationId, String slot) {
@@ -5064,8 +5090,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<String> startWebSiteNetworkTraceSlotWithResponse(String resourceGroupName, String name, String slot,
         Integer durationInSeconds, Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startWebSiteNetworkTraceSlotWithResponse(resourceGroupName, name, slot,
-            durationInSeconds, maxFrameLength, sasUrl, context);
+        return this.serviceClient()
+            .startWebSiteNetworkTraceSlotWithResponse(resourceGroupName, name, slot, durationInSeconds, maxFrameLength,
+                sasUrl, context);
     }
 
     public String startWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot) {
@@ -5078,8 +5105,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Object startWebSiteNetworkTraceOperationSlot(String resourceGroupName, String name, String slot,
         Integer durationInSeconds, Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startWebSiteNetworkTraceOperationSlot(resourceGroupName, name, slot,
-            durationInSeconds, maxFrameLength, sasUrl, context);
+        return this.serviceClient()
+            .startWebSiteNetworkTraceOperationSlot(resourceGroupName, name, slot, durationInSeconds, maxFrameLength,
+                sasUrl, context);
     }
 
     public Response<Void> stopWebSiteNetworkTraceSlotWithResponse(String resourceGroupName, String name, String slot,
@@ -5096,8 +5124,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<NetworkTraceInner>> inner = this.serviceClient()
             .getNetworkTracesSlotWithResponse(resourceGroupName, name, operationId, slot, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -5109,7 +5140,8 @@ public final class WebAppsImpl implements WebApps {
             = this.serviceClient().getNetworkTracesSlot(resourceGroupName, name, operationId, slot);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -5117,8 +5149,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Object> getNetworkTraceOperationSlotV2WithResponse(String resourceGroupName, String name,
         String operationId, String slot, Context context) {
-        return this.serviceClient().getNetworkTraceOperationSlotV2WithResponse(resourceGroupName, name, operationId,
-            slot, context);
+        return this.serviceClient()
+            .getNetworkTraceOperationSlotV2WithResponse(resourceGroupName, name, operationId, slot, context);
     }
 
     public Object getNetworkTraceOperationSlotV2(String resourceGroupName, String name, String operationId,
@@ -5131,8 +5163,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<NetworkTraceInner>> inner = this.serviceClient()
             .getNetworkTracesSlotV2WithResponse(resourceGroupName, name, operationId, slot, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -5144,7 +5179,8 @@ public final class WebAppsImpl implements WebApps {
             = this.serviceClient().getNetworkTracesSlotV2(resourceGroupName, name, operationId, slot);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -5152,8 +5188,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> generateNewSitePublishingPasswordSlotWithResponse(String resourceGroupName, String name,
         String slot, Context context) {
-        return this.serviceClient().generateNewSitePublishingPasswordSlotWithResponse(resourceGroupName, name, slot,
-            context);
+        return this.serviceClient()
+            .generateNewSitePublishingPasswordSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
     public void generateNewSitePublishingPasswordSlot(String resourceGroupName, String name, String slot) {
@@ -5217,8 +5253,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<PremierAddOn> getPremierAddOnSlotWithResponse(String resourceGroupName, String name,
         String premierAddOnName, String slot, Context context) {
-        Response<PremierAddOnInner> inner = this.serviceClient().getPremierAddOnSlotWithResponse(resourceGroupName,
-            name, premierAddOnName, slot, context);
+        Response<PremierAddOnInner> inner = this.serviceClient()
+            .getPremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PremierAddOnImpl(inner.getValue(), this.manager()));
@@ -5240,8 +5276,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<PremierAddOn> addPremierAddOnSlotWithResponse(String resourceGroupName, String name,
         String premierAddOnName, String slot, PremierAddOnInner premierAddOn, Context context) {
-        Response<PremierAddOnInner> inner = this.serviceClient().addPremierAddOnSlotWithResponse(resourceGroupName,
-            name, premierAddOnName, slot, premierAddOn, context);
+        Response<PremierAddOnInner> inner = this.serviceClient()
+            .addPremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot, premierAddOn, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PremierAddOnImpl(inner.getValue(), this.manager()));
@@ -5263,8 +5299,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deletePremierAddOnSlotWithResponse(String resourceGroupName, String name,
         String premierAddOnName, String slot, Context context) {
-        return this.serviceClient().deletePremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot,
-            context);
+        return this.serviceClient()
+            .deletePremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot, context);
     }
 
     public void deletePremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName, String slot) {
@@ -5273,8 +5309,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<PremierAddOn> updatePremierAddOnSlotWithResponse(String resourceGroupName, String name,
         String premierAddOnName, String slot, PremierAddOnPatchResource premierAddOn, Context context) {
-        Response<PremierAddOnInner> inner = this.serviceClient().updatePremierAddOnSlotWithResponse(resourceGroupName,
-            name, premierAddOnName, slot, premierAddOn, context);
+        Response<PremierAddOnInner> inner = this.serviceClient()
+            .updatePremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot, premierAddOn, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PremierAddOnImpl(inner.getValue(), this.manager()));
@@ -5285,8 +5321,8 @@ public final class WebAppsImpl implements WebApps {
 
     public PremierAddOn updatePremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName,
         String slot, PremierAddOnPatchResource premierAddOn) {
-        PremierAddOnInner inner = this.serviceClient().updatePremierAddOnSlot(resourceGroupName, name, premierAddOnName,
-            slot, premierAddOn);
+        PremierAddOnInner inner = this.serviceClient()
+            .updatePremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot, premierAddOn);
         if (inner != null) {
             return new PremierAddOnImpl(inner, this.manager());
         } else {
@@ -5355,9 +5391,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionSlotWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context) {
-        Response<RemotePrivateEndpointConnectionArmResourceInner> inner
-            = this.serviceClient().getPrivateEndpointConnectionSlotWithResponse(resourceGroupName, name,
-                privateEndpointConnectionName, slot, context);
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner = this.serviceClient()
+            .getPrivateEndpointConnectionSlotWithResponse(resourceGroupName, name, privateEndpointConnectionName, slot,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
@@ -5380,9 +5416,9 @@ public final class WebAppsImpl implements WebApps {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name,
-                privateEndpointConnectionName, slot, privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot,
+                privateEndpointWrapper);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -5393,9 +5429,9 @@ public final class WebAppsImpl implements WebApps {
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
         RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
-        RemotePrivateEndpointConnectionArmResourceInner inner
-            = this.serviceClient().approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name,
-                privateEndpointConnectionName, slot, privateEndpointWrapper, context);
+        RemotePrivateEndpointConnectionArmResourceInner inner = this.serviceClient()
+            .approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot,
+                privateEndpointWrapper, context);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -5405,14 +5441,14 @@ public final class WebAppsImpl implements WebApps {
 
     public Object deletePrivateEndpointConnectionSlot(String resourceGroupName, String name,
         String privateEndpointConnectionName, String slot) {
-        return this.serviceClient().deletePrivateEndpointConnectionSlot(resourceGroupName, name,
-            privateEndpointConnectionName, slot);
+        return this.serviceClient()
+            .deletePrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot);
     }
 
     public Object deletePrivateEndpointConnectionSlot(String resourceGroupName, String name,
         String privateEndpointConnectionName, String slot, Context context) {
-        return this.serviceClient().deletePrivateEndpointConnectionSlot(resourceGroupName, name,
-            privateEndpointConnectionName, slot, context);
+        return this.serviceClient()
+            .deletePrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot, context);
     }
 
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesSlotWithResponse(String resourceGroupName,
@@ -5579,8 +5615,9 @@ public final class WebAppsImpl implements WebApps {
     public Response<PublicCertificate> createOrUpdatePublicCertificateSlotWithResponse(String resourceGroupName,
         String name, String publicCertificateName, String slot, PublicCertificateInner publicCertificate,
         Context context) {
-        Response<PublicCertificateInner> inner = this.serviceClient().createOrUpdatePublicCertificateSlotWithResponse(
-            resourceGroupName, name, publicCertificateName, slot, publicCertificate, context);
+        Response<PublicCertificateInner> inner = this.serviceClient()
+            .createOrUpdatePublicCertificateSlotWithResponse(resourceGroupName, name, publicCertificateName, slot,
+                publicCertificate, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PublicCertificateImpl(inner.getValue(), this.manager()));
@@ -5591,8 +5628,9 @@ public final class WebAppsImpl implements WebApps {
 
     public PublicCertificate createOrUpdatePublicCertificateSlot(String resourceGroupName, String name,
         String publicCertificateName, String slot, PublicCertificateInner publicCertificate) {
-        PublicCertificateInner inner = this.serviceClient().createOrUpdatePublicCertificateSlot(resourceGroupName, name,
-            publicCertificateName, slot, publicCertificate);
+        PublicCertificateInner inner = this.serviceClient()
+            .createOrUpdatePublicCertificateSlot(resourceGroupName, name, publicCertificateName, slot,
+                publicCertificate);
         if (inner != null) {
             return new PublicCertificateImpl(inner, this.manager());
         } else {
@@ -5602,8 +5640,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deletePublicCertificateSlotWithResponse(String resourceGroupName, String name, String slot,
         String publicCertificateName, Context context) {
-        return this.serviceClient().deletePublicCertificateSlotWithResponse(resourceGroupName, name, slot,
-            publicCertificateName, context);
+        return this.serviceClient()
+            .deletePublicCertificateSlotWithResponse(resourceGroupName, name, slot, publicCertificateName, context);
     }
 
     public void deletePublicCertificateSlot(String resourceGroupName, String name, String slot,
@@ -5613,14 +5651,15 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<BinaryData> listPublishingProfileXmlWithSecretsSlotWithResponse(String resourceGroupName,
         String name, String slot, CsmPublishingProfileOptions publishingProfileOptions, Context context) {
-        return this.serviceClient().listPublishingProfileXmlWithSecretsSlotWithResponse(resourceGroupName, name, slot,
-            publishingProfileOptions, context);
+        return this.serviceClient()
+            .listPublishingProfileXmlWithSecretsSlotWithResponse(resourceGroupName, name, slot,
+                publishingProfileOptions, context);
     }
 
     public BinaryData listPublishingProfileXmlWithSecretsSlot(String resourceGroupName, String name, String slot,
         CsmPublishingProfileOptions publishingProfileOptions) {
-        return this.serviceClient().listPublishingProfileXmlWithSecretsSlot(resourceGroupName, name, slot,
-            publishingProfileOptions);
+        return this.serviceClient()
+            .listPublishingProfileXmlWithSecretsSlot(resourceGroupName, name, slot, publishingProfileOptions);
     }
 
     public Response<Void> resetSlotConfigurationSlotWithResponse(String resourceGroupName, String name, String slot,
@@ -5634,8 +5673,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> restartSlotWithResponse(String resourceGroupName, String name, String slot,
         Boolean softRestart, Boolean synchronous, Context context) {
-        return this.serviceClient().restartSlotWithResponse(resourceGroupName, name, slot, softRestart, synchronous,
-            context);
+        return this.serviceClient()
+            .restartSlotWithResponse(resourceGroupName, name, slot, softRestart, synchronous, context);
     }
 
     public void restartSlot(String resourceGroupName, String name, String slot) {
@@ -5732,8 +5771,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteSiteExtensionSlotWithResponse(String resourceGroupName, String name,
         String siteExtensionId, String slot, Context context) {
-        return this.serviceClient().deleteSiteExtensionSlotWithResponse(resourceGroupName, name, siteExtensionId, slot,
-            context);
+        return this.serviceClient()
+            .deleteSiteExtensionSlotWithResponse(resourceGroupName, name, siteExtensionId, slot, context);
     }
 
     public void deleteSiteExtensionSlot(String resourceGroupName, String name, String siteExtensionId, String slot) {
@@ -5823,8 +5862,8 @@ public final class WebAppsImpl implements WebApps {
 
     public SiteSourceControl createOrUpdateSourceControlSlot(String resourceGroupName, String name, String slot,
         SiteSourceControlInner siteSourceControl, Context context) {
-        SiteSourceControlInner inner = this.serviceClient().createOrUpdateSourceControlSlot(resourceGroupName, name,
-            slot, siteSourceControl, context);
+        SiteSourceControlInner inner = this.serviceClient()
+            .createOrUpdateSourceControlSlot(resourceGroupName, name, slot, siteSourceControl, context);
         if (inner != null) {
             return new SiteSourceControlImpl(inner, this.manager());
         } else {
@@ -5834,8 +5873,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteSourceControlSlotWithResponse(String resourceGroupName, String name, String slot,
         String additionalFlags, Context context) {
-        return this.serviceClient().deleteSourceControlSlotWithResponse(resourceGroupName, name, slot, additionalFlags,
-            context);
+        return this.serviceClient()
+            .deleteSourceControlSlotWithResponse(resourceGroupName, name, slot, additionalFlags, context);
     }
 
     public void deleteSourceControlSlot(String resourceGroupName, String name, String slot) {
@@ -5879,8 +5918,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Object startNetworkTraceSlot(String resourceGroupName, String name, String slot, Integer durationInSeconds,
         Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startNetworkTraceSlot(resourceGroupName, name, slot, durationInSeconds,
-            maxFrameLength, sasUrl, context);
+        return this.serviceClient()
+            .startNetworkTraceSlot(resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
     public Response<Void> stopSlotWithResponse(String resourceGroupName, String name, String slot, Context context) {
@@ -5956,8 +5995,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteTriggeredWebJobSlotWithResponse(String resourceGroupName, String name,
         String webJobName, String slot, Context context) {
-        return this.serviceClient().deleteTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot,
-            context);
+        return this.serviceClient()
+            .deleteTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
     public void deleteTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -6003,8 +6042,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> runTriggeredWebJobSlotWithResponse(String resourceGroupName, String name, String webJobName,
         String slot, Context context) {
-        return this.serviceClient().runTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot,
-            context);
+        return this.serviceClient()
+            .runTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
     public void runTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -6028,8 +6067,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<VnetInfoResourceInner>> inner
             = this.serviceClient().listVnetConnectionsSlotWithResponse(resourceGroupName, name, slot, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -6039,7 +6081,8 @@ public final class WebAppsImpl implements WebApps {
         List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnectionsSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -6069,8 +6112,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteVnetConnectionSlotWithResponse(String resourceGroupName, String name, String vnetName,
         String slot, Context context) {
-        return this.serviceClient().deleteVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot,
-            context);
+        return this.serviceClient()
+            .deleteVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
     }
 
     public void deleteVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot) {
@@ -6265,8 +6308,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Object startNetworkTrace(String resourceGroupName, String name, Integer durationInSeconds,
         Integer maxFrameLength, String sasUrl, Context context) {
-        return this.serviceClient().startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength,
-            sasUrl, context);
+        return this.serviceClient()
+            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
     public Response<Void> stopWithResponse(String resourceGroupName, String name, Context context) {
@@ -6405,8 +6448,11 @@ public final class WebAppsImpl implements WebApps {
         Response<List<VnetInfoResourceInner>> inner
             = this.serviceClient().listVnetConnectionsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -6416,7 +6462,8 @@ public final class WebAppsImpl implements WebApps {
         List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnections(resourceGroupName, name);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -6477,8 +6524,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<VnetInfoResource> updateVnetConnectionWithResponse(String resourceGroupName, String name,
         String vnetName, VnetInfoResourceInner connectionEnvelope, Context context) {
-        Response<VnetInfoResourceInner> inner = this.serviceClient().updateVnetConnectionWithResponse(resourceGroupName,
-            name, vnetName, connectionEnvelope, context);
+        Response<VnetInfoResourceInner> inner = this.serviceClient()
+            .updateVnetConnectionWithResponse(resourceGroupName, name, vnetName, connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetInfoResourceImpl(inner.getValue(), this.manager()));
@@ -6500,8 +6547,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<VnetGateway> getVnetConnectionGatewayWithResponse(String resourceGroupName, String name,
         String vnetName, String gatewayName, Context context) {
-        Response<VnetGatewayInner> inner = this.serviceClient().getVnetConnectionGatewayWithResponse(resourceGroupName,
-            name, vnetName, gatewayName, context);
+        Response<VnetGatewayInner> inner = this.serviceClient()
+            .getVnetConnectionGatewayWithResponse(resourceGroupName, name, vnetName, gatewayName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetGatewayImpl(inner.getValue(), this.manager()));
@@ -6523,8 +6570,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<VnetGateway> createOrUpdateVnetConnectionGatewayWithResponse(String resourceGroupName, String name,
         String vnetName, String gatewayName, VnetGatewayInner connectionEnvelope, Context context) {
-        Response<VnetGatewayInner> inner = this.serviceClient().createOrUpdateVnetConnectionGatewayWithResponse(
-            resourceGroupName, name, vnetName, gatewayName, connectionEnvelope, context);
+        Response<VnetGatewayInner> inner = this.serviceClient()
+            .createOrUpdateVnetConnectionGatewayWithResponse(resourceGroupName, name, vnetName, gatewayName,
+                connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetGatewayImpl(inner.getValue(), this.manager()));
@@ -6535,8 +6583,8 @@ public final class WebAppsImpl implements WebApps {
 
     public VnetGateway createOrUpdateVnetConnectionGateway(String resourceGroupName, String name, String vnetName,
         String gatewayName, VnetGatewayInner connectionEnvelope) {
-        VnetGatewayInner inner = this.serviceClient().createOrUpdateVnetConnectionGateway(resourceGroupName, name,
-            vnetName, gatewayName, connectionEnvelope);
+        VnetGatewayInner inner = this.serviceClient()
+            .createOrUpdateVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -6546,8 +6594,9 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<VnetGateway> updateVnetConnectionGatewayWithResponse(String resourceGroupName, String name,
         String vnetName, String gatewayName, VnetGatewayInner connectionEnvelope, Context context) {
-        Response<VnetGatewayInner> inner = this.serviceClient().updateVnetConnectionGatewayWithResponse(
-            resourceGroupName, name, vnetName, gatewayName, connectionEnvelope, context);
+        Response<VnetGatewayInner> inner = this.serviceClient()
+            .updateVnetConnectionGatewayWithResponse(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetGatewayImpl(inner.getValue(), this.manager()));
@@ -6558,8 +6607,8 @@ public final class WebAppsImpl implements WebApps {
 
     public VnetGateway updateVnetConnectionGateway(String resourceGroupName, String name, String vnetName,
         String gatewayName, VnetGatewayInner connectionEnvelope) {
-        VnetGatewayInner inner = this.serviceClient().updateVnetConnectionGateway(resourceGroupName, name, vnetName,
-            gatewayName, connectionEnvelope);
+        VnetGatewayInner inner = this.serviceClient()
+            .updateVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -6600,8 +6649,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deployWorkflowArtifactsWithResponse(String resourceGroupName, String name,
         WorkflowArtifacts workflowArtifacts, Context context) {
-        return this.serviceClient().deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts,
-            context);
+        return this.serviceClient()
+            .deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts, context);
     }
 
     public void deployWorkflowArtifacts(String resourceGroupName, String name) {
@@ -6610,8 +6659,8 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deployWorkflowArtifactsSlotWithResponse(String resourceGroupName, String name, String slot,
         WorkflowArtifacts workflowArtifacts, Context context) {
-        return this.serviceClient().deployWorkflowArtifactsSlotWithResponse(resourceGroupName, name, slot,
-            workflowArtifacts, context);
+        return this.serviceClient()
+            .deployWorkflowArtifactsSlotWithResponse(resourceGroupName, name, slot, workflowArtifacts, context);
     }
 
     public void deployWorkflowArtifactsSlot(String resourceGroupName, String name, String slot) {
@@ -6812,8 +6861,10 @@ public final class WebAppsImpl implements WebApps {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
         }
-        return this.getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName,
-            Context.NONE).getValue();
+        return this
+            .getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
@@ -7152,8 +7203,10 @@ public final class WebAppsImpl implements WebApps {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
         }
-        return this.getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot,
-            Context.NONE).getValue();
+        return this
+            .getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context) {

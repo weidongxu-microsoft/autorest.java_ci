@@ -108,8 +108,8 @@ public final class NamespaceTopicsImpl implements NamespaceTopics {
 
     public TopicSharedAccessKeys regenerateKey(String resourceGroupName, String namespaceName, String topicName,
         TopicRegenerateKeyRequest regenerateKeyRequest, Context context) {
-        TopicSharedAccessKeysInner inner = this.serviceClient().regenerateKey(resourceGroupName, namespaceName,
-            topicName, regenerateKeyRequest, context);
+        TopicSharedAccessKeysInner inner = this.serviceClient()
+            .regenerateKey(resourceGroupName, namespaceName, topicName, regenerateKeyRequest, context);
         if (inner != null) {
             return new TopicSharedAccessKeysImpl(inner, this.manager());
         } else {

@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * MEC role.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = MecRole.class, visible = true)
 @JsonTypeName("MEC")
 @Fluent
 public final class MecRole extends RoleInner {
@@ -28,6 +28,7 @@ public final class MecRole extends RoleInner {
      * Creates an instance of MecRole class.
      */
     public MecRole() {
+        withKind(RoleTypes.MEC);
     }
 
     /**

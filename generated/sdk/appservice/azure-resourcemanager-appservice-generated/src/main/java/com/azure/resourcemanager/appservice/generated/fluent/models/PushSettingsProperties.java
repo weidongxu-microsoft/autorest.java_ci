@@ -19,25 +19,22 @@ public final class PushSettingsProperties {
     private boolean isPushEnabled;
 
     /*
-     * Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration
-     * endpoint.
+     * Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.
      */
     @JsonProperty(value = "tagWhitelistJson")
     private String tagWhitelistJson;
 
     /*
-     * Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push
-     * registration endpoint.
+     * Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.
      * Tags can consist of alphanumeric characters and the following:
-     * '_', '@', '#', '.', ':', '-'.
+     * '_', '@', '#', '.', ':', '-'. 
      * Validation should be performed at the PushRequestHandler.
      */
     @JsonProperty(value = "tagsRequiringAuth")
     private String tagsRequiringAuth;
 
     /*
-     * Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push
-     * registration endpoint.
+     * Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.
      */
     @JsonProperty(value = "dynamicTagsJson")
     private String dynamicTagsJson;
@@ -69,8 +66,7 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.
      * 
      * @return the tagWhitelistJson value.
      */
@@ -79,8 +75,7 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.
      * 
      * @param tagWhitelistJson the tagWhitelistJson value to set.
      * @return the PushSettingsProperties object itself.
@@ -91,10 +86,9 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Get the tagsRequiringAuth property: Gets or sets a JSON string containing a list of tags that require user
-     * authentication to be used in the push registration endpoint.
+     * Get the tagsRequiringAuth property: Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.
      * Tags can consist of alphanumeric characters and the following:
-     * '_', '@', '#', '.', ':', '-'.
+     * '_', '&#064;', '#', '.', ':', '-'. 
      * Validation should be performed at the PushRequestHandler.
      * 
      * @return the tagsRequiringAuth value.
@@ -104,10 +98,9 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Set the tagsRequiringAuth property: Gets or sets a JSON string containing a list of tags that require user
-     * authentication to be used in the push registration endpoint.
+     * Set the tagsRequiringAuth property: Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.
      * Tags can consist of alphanumeric characters and the following:
-     * '_', '@', '#', '.', ':', '-'.
+     * '_', '&#064;', '#', '.', ':', '-'. 
      * Validation should be performed at the PushRequestHandler.
      * 
      * @param tagsRequiringAuth the tagsRequiringAuth value to set.
@@ -119,8 +112,7 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Get the dynamicTagsJson property: Gets or sets a JSON string containing a list of dynamic tags that will be
-     * evaluated from user claims in the push registration endpoint.
+     * Get the dynamicTagsJson property: Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.
      * 
      * @return the dynamicTagsJson value.
      */
@@ -129,8 +121,7 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Set the dynamicTagsJson property: Gets or sets a JSON string containing a list of dynamic tags that will be
-     * evaluated from user claims in the push registration endpoint.
+     * Set the dynamicTagsJson property: Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.
      * 
      * @param dynamicTagsJson the dynamicTagsJson value to set.
      * @return the PushSettingsProperties object itself.

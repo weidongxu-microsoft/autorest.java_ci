@@ -49,7 +49,8 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatImpl
         List<VirtualNetworkTapInner> inner = this.innerModel().virtualNetworkTaps();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -68,7 +69,8 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatImpl
         List<BackendAddressPoolInner> inner = this.innerModel().loadBalancerBackendAddressPools();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -78,7 +80,8 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatImpl
         List<InboundNatRuleInner> inner = this.innerModel().loadBalancerInboundNatRules();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -122,7 +125,8 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatImpl
         List<ApplicationSecurityGroupInner> inner = this.innerModel().applicationSecurityGroups();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

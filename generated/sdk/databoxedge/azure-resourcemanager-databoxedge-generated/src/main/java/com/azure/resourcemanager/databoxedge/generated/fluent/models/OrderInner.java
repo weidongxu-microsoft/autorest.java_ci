@@ -154,8 +154,7 @@ public final class OrderInner extends ArmBaseModel {
     }
 
     /**
-     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it
-     * has an original or a replacement device.
+     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it has an original or a replacement device.
      * 
      * @return the deliveryTrackingInfo value.
      */
@@ -164,8 +163,7 @@ public final class OrderInner extends ArmBaseModel {
     }
 
     /**
-     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it
-     * has an original or a replacement device.
+     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it has an original or a replacement device.
      * 
      * @return the returnTrackingInfo value.
      */

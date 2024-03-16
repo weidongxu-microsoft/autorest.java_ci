@@ -72,8 +72,7 @@ public interface PrivateLinkScopedResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope as paginated response with
-     * {@link PagedIterable}.
+     * @return all private endpoint connections on a private link scope as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ScopedResource> listByPrivateLinkScope(String resourceGroupName, String scopeName);
 
@@ -86,8 +85,7 @@ public interface PrivateLinkScopedResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope as paginated response with
-     * {@link PagedIterable}.
+     * @return all private endpoint connections on a private link scope as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ScopedResource> listByPrivateLinkScope(String resourceGroupName, String scopeName, Context context);
 

@@ -56,8 +56,7 @@ public final class OperationsClientImpl implements OperationsClient {
     }
 
     /**
-     * The interface defining all the services for RecoveryServicesManagementClientOperations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for RecoveryServicesManagementClientOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
@@ -82,8 +81,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClientDiscoveryValueForSingleApiInner>> listSinglePageAsync() {
@@ -107,8 +105,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClientDiscoveryValueForSingleApiInner>> listSinglePageAsync(Context context) {
@@ -128,8 +125,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs as paginated response with
-     * {@link PagedFlux}.
+     * @return operations List response which contains list of available APIs as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClientDiscoveryValueForSingleApiInner> listAsync() {
@@ -143,8 +139,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs as paginated response with
-     * {@link PagedFlux}.
+     * @return operations List response which contains list of available APIs as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClientDiscoveryValueForSingleApiInner> listAsync(Context context) {
@@ -157,8 +152,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs as paginated response with
-     * {@link PagedIterable}.
+     * @return operations List response which contains list of available APIs as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClientDiscoveryValueForSingleApiInner> list() {
@@ -172,8 +166,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs as paginated response with
-     * {@link PagedIterable}.
+     * @return operations List response which contains list of available APIs as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClientDiscoveryValueForSingleApiInner> list(Context context) {
@@ -189,8 +182,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClientDiscoveryValueForSingleApiInner>> listNextSinglePageAsync(String nextLink) {
@@ -218,8 +210,7 @@ public final class OperationsClientImpl implements OperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return operations List response which contains list of available APIs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClientDiscoveryValueForSingleApiInner>> listNextSinglePageAsync(String nextLink,

@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be
- * disabled if there is a single enabled backend in single enabled backend pool.
+ * Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend pool.
  */
 public final class HealthProbeEnabled extends ExpandableStringEnum<HealthProbeEnabled> {
     /**

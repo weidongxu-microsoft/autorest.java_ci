@@ -22,8 +22,7 @@ public final class AvailabilitySetListResult {
     private List<AvailabilitySetInner> value;
 
     /*
-     * The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to fetch the next page of
-     * AvailabilitySets.
+     * The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to fetch the next page of AvailabilitySets.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class AvailabilitySetListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to
-     * fetch the next page of AvailabilitySets.
+     * Get the nextLink property: The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to fetch the next page of AvailabilitySets.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class AvailabilitySetListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to
-     * fetch the next page of AvailabilitySets.
+     * Set the nextLink property: The URI to fetch the next page of AvailabilitySets. Call ListNext() with this URI to fetch the next page of AvailabilitySets.
      * 
      * @param nextLink the nextLink value to set.
      * @return the AvailabilitySetListResult object itself.

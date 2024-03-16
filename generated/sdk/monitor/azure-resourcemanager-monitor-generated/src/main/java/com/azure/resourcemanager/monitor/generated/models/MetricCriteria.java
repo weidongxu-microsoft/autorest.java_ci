@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Criterion to filter metrics.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "criterionType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "criterionType",
+    defaultImpl = MetricCriteria.class,
+    visible = true)
 @JsonTypeName("StaticThresholdCriterion")
 @Fluent
 public final class MetricCriteria extends MultiMetricCriteria {
@@ -34,6 +38,7 @@ public final class MetricCriteria extends MultiMetricCriteria {
      * Creates an instance of MetricCriteria class.
      */
     public MetricCriteria() {
+        withCriterionType(CriterionType.STATIC_THRESHOLD_CRITERION);
     }
 
     /**

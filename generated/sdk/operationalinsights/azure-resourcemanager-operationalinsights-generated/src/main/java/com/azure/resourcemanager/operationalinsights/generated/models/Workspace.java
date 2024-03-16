@@ -93,8 +93,7 @@ public interface Workspace {
     WorkspaceSku sku();
 
     /**
-     * Gets the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See
-     * pricing tiers documentation for details.
+     * Gets the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
      * 
      * @return the retentionInDays value.
      */
@@ -157,9 +156,7 @@ public interface Workspace {
     WorkspaceFeatures features();
 
     /**
-     * Gets the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
-     * for this workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     * Gets the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
      * 
      * @return the defaultDataCollectionRuleResourceId value.
      */
@@ -245,8 +242,7 @@ public interface Workspace {
         }
 
         /**
-         * The stage of the Workspace definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the Workspace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithEtag, DefinitionStages.WithSku, DefinitionStages.WithRetentionInDays,
@@ -326,11 +322,9 @@ public interface Workspace {
          */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The workspace data retention in days. Allowed values are per
-             * pricing plan. See pricing tiers documentation for details..
+             * Specifies the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details..
              * 
-             * @param retentionInDays The workspace data retention in days. Allowed values are per pricing plan. See
-             * pricing tiers documentation for details.
+             * @param retentionInDays The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
              * @return the next definition stage.
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
@@ -354,8 +348,7 @@ public interface Workspace {
          */
         interface WithPublicNetworkAccessForIngestion {
             /**
-             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Log
-             * Analytics ingestion..
+             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Log Analytics ingestion..
              * 
              * @param publicNetworkAccessForIngestion The network access type for accessing Log Analytics ingestion.
              * @return the next definition stage.
@@ -368,8 +361,7 @@ public interface Workspace {
          */
         interface WithPublicNetworkAccessForQuery {
             /**
-             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Log Analytics
-             * query..
+             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Log Analytics query..
              * 
              * @param publicNetworkAccessForQuery The network access type for accessing Log Analytics query.
              * @return the next definition stage.
@@ -382,8 +374,7 @@ public interface Workspace {
          */
         interface WithForceCmkForQuery {
             /**
-             * Specifies the forceCmkForQuery property: Indicates whether customer managed storage is mandatory for
-             * query management..
+             * Specifies the forceCmkForQuery property: Indicates whether customer managed storage is mandatory for query management..
              * 
              * @param forceCmkForQuery Indicates whether customer managed storage is mandatory for query management.
              * @return the next definition stage.
@@ -409,13 +400,9 @@ public interface Workspace {
          */
         interface WithDefaultDataCollectionRuleResourceId {
             /**
-             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data
-             * Collection Rule to use for this workspace. Expected format is -
-             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
+             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
              * 
-             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for
-             * this workspace. Expected format is -
-             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
              * @return the next definition stage.
              */
             WithCreate withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);
@@ -501,11 +488,9 @@ public interface Workspace {
          */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The workspace data retention in days. Allowed values are per
-             * pricing plan. See pricing tiers documentation for details..
+             * Specifies the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details..
              * 
-             * @param retentionInDays The workspace data retention in days. Allowed values are per pricing plan. See
-             * pricing tiers documentation for details.
+             * @param retentionInDays The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
              * @return the next definition stage.
              */
             Update withRetentionInDays(Integer retentionInDays);
@@ -529,8 +514,7 @@ public interface Workspace {
          */
         interface WithPublicNetworkAccessForIngestion {
             /**
-             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Log
-             * Analytics ingestion..
+             * Specifies the publicNetworkAccessForIngestion property: The network access type for accessing Log Analytics ingestion..
              * 
              * @param publicNetworkAccessForIngestion The network access type for accessing Log Analytics ingestion.
              * @return the next definition stage.
@@ -543,8 +527,7 @@ public interface Workspace {
          */
         interface WithPublicNetworkAccessForQuery {
             /**
-             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Log Analytics
-             * query..
+             * Specifies the publicNetworkAccessForQuery property: The network access type for accessing Log Analytics query..
              * 
              * @param publicNetworkAccessForQuery The network access type for accessing Log Analytics query.
              * @return the next definition stage.
@@ -557,8 +540,7 @@ public interface Workspace {
          */
         interface WithForceCmkForQuery {
             /**
-             * Specifies the forceCmkForQuery property: Indicates whether customer managed storage is mandatory for
-             * query management..
+             * Specifies the forceCmkForQuery property: Indicates whether customer managed storage is mandatory for query management..
              * 
              * @param forceCmkForQuery Indicates whether customer managed storage is mandatory for query management.
              * @return the next definition stage.
@@ -584,13 +566,9 @@ public interface Workspace {
          */
         interface WithDefaultDataCollectionRuleResourceId {
             /**
-             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data
-             * Collection Rule to use for this workspace. Expected format is -
-             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
+             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
              * 
-             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for
-             * this workspace. Expected format is -
-             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
              * @return the next definition stage.
              */
             Update withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);

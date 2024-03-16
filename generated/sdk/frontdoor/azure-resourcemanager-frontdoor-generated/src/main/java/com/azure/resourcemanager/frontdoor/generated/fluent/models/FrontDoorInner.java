@@ -18,8 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic
- * is sent there.
+ * Front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
  */
 @Fluent
 public final class FrontDoorInner extends Resource {
@@ -280,8 +279,7 @@ public final class FrontDoorInner extends Resource {
     }
 
     /**
-     * Get the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled'
-     * or 'Disabled'.
+     * Get the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
      * 
      * @return the enabledState value.
      */
@@ -290,8 +288,7 @@ public final class FrontDoorInner extends Resource {
     }
 
     /**
-     * Set the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled'
-     * or 'Disabled'.
+     * Set the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
      * 
      * @param enabledState the enabledState value to set.
      * @return the FrontDoorInner object itself.

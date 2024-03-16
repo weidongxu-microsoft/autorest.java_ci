@@ -74,8 +74,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesLiveEvents to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for AzureMediaServicesLiveEvents to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLi")
@@ -2099,9 +2098,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2143,9 +2140,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2187,9 +2182,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2210,9 +2203,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2236,9 +2227,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2257,9 +2246,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2279,9 +2266,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2300,9 +2285,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2322,9 +2305,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2341,9 +2322,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2369,8 +2348,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStatusInner>> listGetStatusSinglePageAsync(String resourceGroupName,
@@ -2397,14 +2375,18 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
             Mono<Response<Flux<ByteBuffer>>> mono
-                = service.listGetStatus(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
-                    accountName, liveEventName, apiVersion, accept, context).cache();
+                = service
+                    .listGetStatus(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                        accountName, liveEventName, apiVersion, accept, context)
+                    .cache();
             return Mono.zip(mono, this.client
                 .<LiveEventGetStatusResult, LiveEventGetStatusResult>getLroResult(mono, this.client.getHttpPipeline(),
                     LiveEventGetStatusResult.class, LiveEventGetStatusResult.class, this.client.getContext())
-                .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<LiveEventStatusInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
+                .last()
+                .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<LiveEventStatusInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
+                res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2420,8 +2402,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStatusInner>> listGetStatusSinglePageAsync(String resourceGroupName,
@@ -2448,13 +2429,16 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono
-            = service.listGetStatus(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
-                accountName, liveEventName, apiVersion, accept, context).cache();
+            = service
+                .listGetStatus(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                    accountName, liveEventName, apiVersion, accept, context)
+                .cache();
         return Mono
             .zip(mono, this.client
                 .<LiveEventGetStatusResult, LiveEventGetStatusResult>getLroResult(mono, this.client.getHttpPipeline(),
                     LiveEventGetStatusResult.class, LiveEventGetStatusResult.class, context)
-                .last().flatMap(this.client::getLroFinalResultOrError))
+                .last()
+                .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), null, null));
     }
@@ -2549,8 +2533,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStreamEventInner>> listGetStreamEventsSinglePageAsync(String resourceGroupName,
@@ -2576,17 +2559,20 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
-            Mono<Response<Flux<ByteBuffer>>> mono
-                = service.listGetStreamEvents(this.client.getEndpoint(), this.client.getSubscriptionId(),
-                    resourceGroupName, accountName, liveEventName, apiVersion, accept, context).cache();
+            Mono<Response<Flux<ByteBuffer>>> mono = service
+                .listGetStreamEvents(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                    accountName, liveEventName, apiVersion, accept, context)
+                .cache();
             return Mono.zip(mono,
                 this.client
                     .<LiveEventGetStreamEventsResult, LiveEventGetStreamEventsResult>getLroResult(mono,
                         this.client.getHttpPipeline(), LiveEventGetStreamEventsResult.class,
                         LiveEventGetStreamEventsResult.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<LiveEventStreamEventInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<LiveEventStreamEventInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
+                res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2602,8 +2588,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStreamEventInner>> listGetStreamEventsSinglePageAsync(String resourceGroupName,
@@ -2630,15 +2615,18 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono
-            = service.listGetStreamEvents(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
-                accountName, liveEventName, apiVersion, accept, context).cache();
+            = service
+                .listGetStreamEvents(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                    accountName, liveEventName, apiVersion, accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<LiveEventGetStreamEventsResult, LiveEventGetStreamEventsResult>getLroResult(mono,
                         this.client.getHttpPipeline(), LiveEventGetStreamEventsResult.class,
                         LiveEventGetStreamEventsResult.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), null, null));
     }
@@ -2733,8 +2721,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventTrackEventInner>> listGetTrackIngestHeartbeatsSinglePageAsync(
@@ -2761,16 +2748,20 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
             Mono<Response<Flux<ByteBuffer>>> mono
-                = service.listGetTrackIngestHeartbeats(this.client.getEndpoint(), this.client.getSubscriptionId(),
-                    resourceGroupName, accountName, liveEventName, apiVersion, accept, context).cache();
+                = service
+                    .listGetTrackIngestHeartbeats(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                        resourceGroupName, accountName, liveEventName, apiVersion, accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<LiveEventGetTrackIngestHeartbeatsResult, LiveEventGetTrackIngestHeartbeatsResult>getLroResult(
                         mono, this.client.getHttpPipeline(), LiveEventGetTrackIngestHeartbeatsResult.class,
                         LiveEventGetTrackIngestHeartbeatsResult.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<LiveEventTrackEventInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<LiveEventTrackEventInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
+                res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2786,8 +2777,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventTrackEventInner>> listGetTrackIngestHeartbeatsSinglePageAsync(
@@ -2813,16 +2803,18 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono
-            = service.listGetTrackIngestHeartbeats(this.client.getEndpoint(), this.client.getSubscriptionId(),
-                resourceGroupName, accountName, liveEventName, apiVersion, accept, context).cache();
+        Mono<Response<Flux<ByteBuffer>>> mono = service
+            .listGetTrackIngestHeartbeats(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                accountName, liveEventName, apiVersion, accept, context)
+            .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<LiveEventGetTrackIngestHeartbeatsResult, LiveEventGetTrackIngestHeartbeatsResult>getLroResult(
                         mono, this.client.getHttpPipeline(), LiveEventGetTrackIngestHeartbeatsResult.class,
                         LiveEventGetTrackIngestHeartbeatsResult.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), null, null));
     }

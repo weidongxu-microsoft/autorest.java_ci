@@ -66,8 +66,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNatGateways to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNatGateways to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -354,8 +353,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified nat gateway in a specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NatGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -393,8 +391,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified nat gateway in a specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NatGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -845,8 +842,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Nat Gateways in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Nat Gateways in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listSinglePageAsync() {
@@ -875,8 +871,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Nat Gateways in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Nat Gateways in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listSinglePageAsync(Context context) {
@@ -956,8 +951,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all nat gateways in a resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all nat gateways in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -991,8 +985,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all nat gateways in a resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all nat gateways in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1088,8 +1081,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1118,8 +1110,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listAllNextSinglePageAsync(String nextLink, Context context) {
@@ -1146,8 +1137,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -1175,8 +1165,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return response for ListNatGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NatGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

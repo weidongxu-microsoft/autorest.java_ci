@@ -23,8 +23,7 @@ public interface PeerExpressRouteCircuitConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Peer Express Route Circuit Connection from the specified express route circuit along with
-     * {@link Response}.
+     * @return the specified Peer Express Route Circuit Connection from the specified express route circuit along with {@link Response}.
      */
     Response<PeerExpressRouteCircuitConnection> getWithResponse(String resourceGroupName, String circuitName,
         String peeringName, String connectionName, Context context);
@@ -53,8 +52,7 @@ public interface PeerExpressRouteCircuitConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all global reach peer connections associated with a private peering in an express route circuit as
-     * paginated response with {@link PagedIterable}.
+     * @return all global reach peer connections associated with a private peering in an express route circuit as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PeerExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName,
         String peeringName);
@@ -69,8 +67,7 @@ public interface PeerExpressRouteCircuitConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all global reach peer connections associated with a private peering in an express route circuit as
-     * paginated response with {@link PagedIterable}.
+     * @return all global reach peer connections associated with a private peering in an express route circuit as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PeerExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName,
         String peeringName, Context context);

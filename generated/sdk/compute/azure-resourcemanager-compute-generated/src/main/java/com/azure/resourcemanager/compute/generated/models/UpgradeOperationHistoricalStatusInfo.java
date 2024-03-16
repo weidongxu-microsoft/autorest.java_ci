@@ -32,8 +32,7 @@ public interface UpgradeOperationHistoricalStatusInfo {
     String location();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner object.
      * 
      * @return the inner object.
      */

@@ -14,9 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Recurrence {
     /*
-     * the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning
-     * each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day
-     * of the week. The frequency property specifies that the schedule is repeated weekly.
+     * the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
      */
     @JsonProperty(value = "frequency", required = true)
     private RecurrenceFrequency frequency;
@@ -34,9 +32,7 @@ public final class Recurrence {
     }
 
     /**
-     * Get the frequency property: the recurrence frequency. How often the schedule profile should take effect. This
-     * value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule,
-     * set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
+     * Get the frequency property: the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
      * 
      * @return the frequency value.
      */
@@ -45,9 +41,7 @@ public final class Recurrence {
     }
 
     /**
-     * Set the frequency property: the recurrence frequency. How often the schedule profile should take effect. This
-     * value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule,
-     * set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
+     * Set the frequency property: the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
      * 
      * @param frequency the frequency value to set.
      * @return the Recurrence object itself.

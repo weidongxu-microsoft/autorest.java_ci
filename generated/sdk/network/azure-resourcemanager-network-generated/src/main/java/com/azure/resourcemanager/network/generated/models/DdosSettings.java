@@ -52,8 +52,7 @@ public final class DdosSettings {
     }
 
     /**
-     * Get the ddosProtectionPlan property: The DDoS protection plan associated with the public IP. Can only be set if
-     * ProtectionMode is Enabled.
+     * Get the ddosProtectionPlan property: The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled.
      * 
      * @return the ddosProtectionPlan value.
      */
@@ -62,8 +61,7 @@ public final class DdosSettings {
     }
 
     /**
-     * Set the ddosProtectionPlan property: The DDoS protection plan associated with the public IP. Can only be set if
-     * ProtectionMode is Enabled.
+     * Set the ddosProtectionPlan property: The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled.
      * 
      * @param ddosProtectionPlan the ddosProtectionPlan value to set.
      * @return the DdosSettings object itself.

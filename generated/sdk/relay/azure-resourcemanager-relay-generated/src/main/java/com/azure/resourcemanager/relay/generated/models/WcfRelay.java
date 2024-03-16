@@ -71,8 +71,7 @@ public interface WcfRelay {
     OffsetDateTime updatedAt();
 
     /**
-     * Gets the listenerCount property: The number of listeners for this relay. Note that min :1 and max:25 are
-     * supported.
+     * Gets the listenerCount property: The number of listeners for this relay. Note that min :1 and max:25 are supported.
      * 
      * @return the listenerCount value.
      */
@@ -86,25 +85,21 @@ public interface WcfRelay {
     Relaytype relayType();
 
     /**
-     * Gets the requiresClientAuthorization property: Returns true if client authorization is needed for this relay;
-     * otherwise, false.
+     * Gets the requiresClientAuthorization property: Returns true if client authorization is needed for this relay; otherwise, false.
      * 
      * @return the requiresClientAuthorization value.
      */
     Boolean requiresClientAuthorization();
 
     /**
-     * Gets the requiresTransportSecurity property: Returns true if transport security is needed for this relay;
-     * otherwise, false.
+     * Gets the requiresTransportSecurity property: Returns true if transport security is needed for this relay; otherwise, false.
      * 
      * @return the requiresTransportSecurity value.
      */
     Boolean requiresTransportSecurity();
 
     /**
-     * Gets the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the WCF
-     * Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact
-     * information. Also, user-defined configuration settings can be stored.
+     * Gets the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored.
      * 
      * @return the userMetadata value.
      */
@@ -170,8 +165,7 @@ public interface WcfRelay {
         }
 
         /**
-         * The stage of the WcfRelay definition which contains all the minimum required properties for the resource to
-         * be created, but also allows for any other optional properties to be specified.
+         * The stage of the WcfRelay definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithRelayType, DefinitionStages.WithRequiresClientAuthorization,
             DefinitionStages.WithRequiresTransportSecurity, DefinitionStages.WithUserMetadata {
@@ -209,11 +203,9 @@ public interface WcfRelay {
          */
         interface WithRequiresClientAuthorization {
             /**
-             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for
-             * this relay; otherwise, false..
+             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for this relay; otherwise, false..
              * 
-             * @param requiresClientAuthorization Returns true if client authorization is needed for this relay;
-             * otherwise, false.
+             * @param requiresClientAuthorization Returns true if client authorization is needed for this relay; otherwise, false.
              * @return the next definition stage.
              */
             WithCreate withRequiresClientAuthorization(Boolean requiresClientAuthorization);
@@ -224,11 +216,9 @@ public interface WcfRelay {
          */
         interface WithRequiresTransportSecurity {
             /**
-             * Specifies the requiresTransportSecurity property: Returns true if transport security is needed for this
-             * relay; otherwise, false..
+             * Specifies the requiresTransportSecurity property: Returns true if transport security is needed for this relay; otherwise, false..
              * 
-             * @param requiresTransportSecurity Returns true if transport security is needed for this relay; otherwise,
-             * false.
+             * @param requiresTransportSecurity Returns true if transport security is needed for this relay; otherwise, false.
              * @return the next definition stage.
              */
             WithCreate withRequiresTransportSecurity(Boolean requiresTransportSecurity);
@@ -239,13 +229,9 @@ public interface WcfRelay {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data
-             * for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams
-             * and their contact information. Also, user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored..
              * 
-             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the WCF Relay
-             * endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact
-             * information. Also, user-defined configuration settings can be stored.
+             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             WithCreate withUserMetadata(String userMetadata);
@@ -302,11 +288,9 @@ public interface WcfRelay {
          */
         interface WithRequiresClientAuthorization {
             /**
-             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for
-             * this relay; otherwise, false..
+             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for this relay; otherwise, false..
              * 
-             * @param requiresClientAuthorization Returns true if client authorization is needed for this relay;
-             * otherwise, false.
+             * @param requiresClientAuthorization Returns true if client authorization is needed for this relay; otherwise, false.
              * @return the next definition stage.
              */
             Update withRequiresClientAuthorization(Boolean requiresClientAuthorization);
@@ -317,11 +301,9 @@ public interface WcfRelay {
          */
         interface WithRequiresTransportSecurity {
             /**
-             * Specifies the requiresTransportSecurity property: Returns true if transport security is needed for this
-             * relay; otherwise, false..
+             * Specifies the requiresTransportSecurity property: Returns true if transport security is needed for this relay; otherwise, false..
              * 
-             * @param requiresTransportSecurity Returns true if transport security is needed for this relay; otherwise,
-             * false.
+             * @param requiresTransportSecurity Returns true if transport security is needed for this relay; otherwise, false.
              * @return the next definition stage.
              */
             Update withRequiresTransportSecurity(Boolean requiresTransportSecurity);
@@ -332,13 +314,9 @@ public interface WcfRelay {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data
-             * for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams
-             * and their contact information. Also, user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored..
              * 
-             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the WCF Relay
-             * endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact
-             * information. Also, user-defined configuration settings can be stored.
+             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             Update withUserMetadata(String userMetadata);

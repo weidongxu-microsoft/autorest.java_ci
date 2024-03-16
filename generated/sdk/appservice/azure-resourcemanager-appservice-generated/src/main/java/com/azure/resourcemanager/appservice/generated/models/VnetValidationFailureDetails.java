@@ -68,8 +68,7 @@ public interface VnetValidationFailureDetails {
     List<VnetValidationTestFailure> warnings();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner object.
      * 
      * @return the inner object.
      */

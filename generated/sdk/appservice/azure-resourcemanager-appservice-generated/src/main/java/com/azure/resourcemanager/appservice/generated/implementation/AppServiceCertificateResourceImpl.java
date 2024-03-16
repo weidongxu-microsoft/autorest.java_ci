@@ -96,13 +96,15 @@ public final class AppServiceCertificateResourceImpl implements AppServiceCertif
     }
 
     public AppServiceCertificateResource create() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
             .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServiceCertificateResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
             .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), context);
         return this;
     }
@@ -120,16 +122,20 @@ public final class AppServiceCertificateResourceImpl implements AppServiceCertif
     }
 
     public AppServiceCertificateResource apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceCertificateOrders().updateCertificateWithResponse(
-                resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
+            .updateCertificateWithResponse(resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public AppServiceCertificateResource apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceCertificateOrders().updateCertificateWithResponse(
-                resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
+            .updateCertificateWithResponse(resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate,
+                context)
+            .getValue();
         return this;
     }
 
@@ -143,14 +149,18 @@ public final class AppServiceCertificateResourceImpl implements AppServiceCertif
     }
 
     public AppServiceCertificateResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
-            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
+            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AppServiceCertificateResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
-            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceCertificateOrders()
+            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context)
+            .getValue();
         return this;
     }
 

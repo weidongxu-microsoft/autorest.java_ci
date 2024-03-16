@@ -37,8 +37,7 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Get the status property: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the
-     * service.
+     * Get the status property: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
      * 
      * @return the status value.
      */
@@ -47,8 +46,7 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Set the status property: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the
-     * service.
+     * Set the status property: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
      * 
      * @param status the status value to set.
      * @return the PrivateLinkServiceConnectionState object itself.
@@ -79,8 +77,7 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Get the actionsRequired property: A message indicating if changes on the service provider require any updates on
-     * the consumer.
+     * Get the actionsRequired property: A message indicating if changes on the service provider require any updates on the consumer.
      * 
      * @return the actionsRequired value.
      */
@@ -89,8 +86,7 @@ public final class PrivateLinkServiceConnectionState {
     }
 
     /**
-     * Set the actionsRequired property: A message indicating if changes on the service provider require any updates on
-     * the consumer.
+     * Set the actionsRequired property: A message indicating if changes on the service provider require any updates on the consumer.
      * 
      * @param actionsRequired the actionsRequired value to set.
      * @return the PrivateLinkServiceConnectionState object itself.

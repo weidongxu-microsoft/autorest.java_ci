@@ -50,44 +50,35 @@ public interface CapacityReservationGroup {
     Map<String, String> tags();
 
     /**
-     * Gets the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned
-     * only during creation. If not provided, the group supports only regional resources in the region. If provided,
-     * enforces each capacity reservation in the group to be in one of the zones.
+     * Gets the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones.
      * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
-     * Gets the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity
-     * reservation group.
+     * Gets the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity reservation group.
      * 
      * @return the capacityReservations value.
      */
     List<SubResourceReadOnly> capacityReservations();
 
     /**
-     * Gets the virtualMachinesAssociated property: A list of references to all virtual machines associated to the
-     * capacity reservation group.
+     * Gets the virtualMachinesAssociated property: A list of references to all virtual machines associated to the capacity reservation group.
      * 
      * @return the virtualMachinesAssociated value.
      */
     List<SubResourceReadOnly> virtualMachinesAssociated();
 
     /**
-     * Gets the instanceView property: The capacity reservation group instance view which has the list of instance views
-     * for all the capacity reservations that belong to the capacity reservation group.
+     * Gets the instanceView property: The capacity reservation group instance view which has the list of instance views for all the capacity reservations that belong to the capacity reservation group.
      * 
      * @return the instanceView value.
      */
     CapacityReservationGroupInstanceView instanceView();
 
     /**
-     * Gets the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
-     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
-     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
-     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
-     * https://aka.ms/computereservationsharing for more details.
+     * Gets the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @return the sharingProfile value.
      */
@@ -173,8 +164,7 @@ public interface CapacityReservationGroup {
         }
 
         /**
-         * The stage of the CapacityReservationGroup definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CapacityReservationGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithZones, DefinitionStages.WithSharingProfile {
@@ -212,13 +202,9 @@ public interface CapacityReservationGroup {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: Availability Zones to use for this capacity reservation group. The zones
-             * can be assigned only during creation. If not provided, the group supports only regional resources in the
-             * region. If provided, enforces each capacity reservation in the group to be in one of the zones..
+             * Specifies the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones..
              * 
-             * @param zones Availability Zones to use for this capacity reservation group. The zones can be assigned
-             * only during creation. If not provided, the group supports only regional resources in the region. If
-             * provided, enforces each capacity reservation in the group to be in one of the zones.
+             * @param zones Availability Zones to use for this capacity reservation group. The zones can be assigned only during creation. If not provided, the group supports only regional resources in the region. If provided, enforces each capacity reservation in the group to be in one of the zones.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -229,17 +215,9 @@ public interface CapacityReservationGroup {
          */
         interface WithSharingProfile {
             /**
-             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for
-             * the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource
-             * generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant
-             * if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version:
-             * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
+             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
              * 
-             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity
-             * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be
-             * shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a
-             * trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please
-             * refer to https://aka.ms/computereservationsharing for more details.
+             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
              * @return the next definition stage.
              */
             WithCreate withSharingProfile(ResourceSharingProfile sharingProfile);
@@ -295,17 +273,9 @@ public interface CapacityReservationGroup {
          */
         interface WithSharingProfile {
             /**
-             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for
-             * the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource
-             * generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant
-             * if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version:
-             * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
+             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
              * 
-             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity
-             * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be
-             * shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a
-             * trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please
-             * refer to https://aka.ms/computereservationsharing for more details.
+             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
              * @return the next definition stage.
              */
             Update withSharingProfile(ResourceSharingProfile sharingProfile);

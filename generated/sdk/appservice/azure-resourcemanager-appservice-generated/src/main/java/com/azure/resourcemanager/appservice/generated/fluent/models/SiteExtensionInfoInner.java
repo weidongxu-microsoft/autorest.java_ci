@@ -392,8 +392,7 @@ public final class SiteExtensionInfoInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version;
-     * &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Get the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version; &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the localIsLatestVersion value.
      */
@@ -402,8 +401,7 @@ public final class SiteExtensionInfoInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version;
-     * &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Set the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version; &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @param localIsLatestVersion the localIsLatestVersion value to set.
      * @return the SiteExtensionInfoInner object itself.

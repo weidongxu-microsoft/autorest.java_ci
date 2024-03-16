@@ -20,8 +20,7 @@ public final class ApplicationGatewayRewriteRule {
     private String name;
 
     /*
-     * Rule Sequence of the rewrite rule that determines the order of execution of a particular rule in a
-     * RewriteRuleSet.
+     * Rule Sequence of the rewrite rule that determines the order of execution of a particular rule in a RewriteRuleSet.
      */
     @JsonProperty(value = "ruleSequence")
     private Integer ruleSequence;
@@ -65,8 +64,7 @@ public final class ApplicationGatewayRewriteRule {
     }
 
     /**
-     * Get the ruleSequence property: Rule Sequence of the rewrite rule that determines the order of execution of a
-     * particular rule in a RewriteRuleSet.
+     * Get the ruleSequence property: Rule Sequence of the rewrite rule that determines the order of execution of a particular rule in a RewriteRuleSet.
      * 
      * @return the ruleSequence value.
      */
@@ -75,8 +73,7 @@ public final class ApplicationGatewayRewriteRule {
     }
 
     /**
-     * Set the ruleSequence property: Rule Sequence of the rewrite rule that determines the order of execution of a
-     * particular rule in a RewriteRuleSet.
+     * Set the ruleSequence property: Rule Sequence of the rewrite rule that determines the order of execution of a particular rule in a RewriteRuleSet.
      * 
      * @param ruleSequence the ruleSequence value to set.
      * @return the ApplicationGatewayRewriteRule object itself.

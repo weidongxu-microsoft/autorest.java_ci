@@ -18,8 +18,7 @@ public interface ResourceProviderCommons {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
-     * by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the number of free and paid iot hubs in the subscription along with {@link Response}.
      */
@@ -30,8 +29,7 @@ public interface ResourceProviderCommons {
      * 
      * Get the number of free and paid iot hubs in the subscription.
      * 
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
-     * by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the number of free and paid iot hubs in the subscription.
      */

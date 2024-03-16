@@ -56,8 +56,7 @@ public final class BackupsClientImpl implements BackupsClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientBackups to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for MySqlManagementClientBackups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -130,7 +129,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (backupName == null) {
             return Mono.error(new IllegalArgumentException("Parameter backupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.put(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -171,7 +170,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (backupName == null) {
             return Mono.error(new IllegalArgumentException("Parameter backupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.put(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -261,7 +260,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (backupName == null) {
             return Mono.error(new IllegalArgumentException("Parameter backupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.get(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -302,7 +301,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (backupName == null) {
             return Mono.error(new IllegalArgumentException("Parameter backupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.get(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -388,7 +387,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByServer(this.client.getEndpoint(), apiVersion,
@@ -427,7 +426,7 @@ public final class BackupsClientImpl implements BackupsClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

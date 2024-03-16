@@ -85,8 +85,8 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<LegalHold> setLegalHoldWithResponse(String resourceGroupName, String accountName,
         String containerName, LegalHoldInner legalHold, Context context) {
-        Response<LegalHoldInner> inner = this.serviceClient().setLegalHoldWithResponse(resourceGroupName, accountName,
-            containerName, legalHold, context);
+        Response<LegalHoldInner> inner = this.serviceClient()
+            .setLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LegalHoldImpl(inner.getValue(), this.manager()));
@@ -108,8 +108,8 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<LegalHold> clearLegalHoldWithResponse(String resourceGroupName, String accountName,
         String containerName, LegalHoldInner legalHold, Context context) {
-        Response<LegalHoldInner> inner = this.serviceClient().clearLegalHoldWithResponse(resourceGroupName, accountName,
-            containerName, legalHold, context);
+        Response<LegalHoldInner> inner = this.serviceClient()
+            .clearLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LegalHoldImpl(inner.getValue(), this.manager()));
@@ -200,9 +200,9 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<ImmutabilityPolicy> extendImmutabilityPolicyWithResponse(String resourceGroupName,
         String accountName, String containerName, String ifMatch, ImmutabilityPolicyInner parameters, Context context) {
-        BlobContainersExtendImmutabilityPolicyResponse inner
-            = this.serviceClient().extendImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName,
-                ifMatch, parameters, context);
+        BlobContainersExtendImmutabilityPolicyResponse inner = this.serviceClient()
+            .extendImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, parameters,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ImmutabilityPolicyImpl(inner.getValue(), this.manager()));
@@ -224,8 +224,8 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<LeaseContainerResponse> leaseWithResponse(String resourceGroupName, String accountName,
         String containerName, LeaseContainerRequest parameters, Context context) {
-        Response<LeaseContainerResponseInner> inner = this.serviceClient().leaseWithResponse(resourceGroupName,
-            accountName, containerName, parameters, context);
+        Response<LeaseContainerResponseInner> inner = this.serviceClient()
+            .leaseWithResponse(resourceGroupName, accountName, containerName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LeaseContainerResponseImpl(inner.getValue(), this.manager()));
@@ -306,8 +306,10 @@ public final class BlobContainersImpl implements BlobContainers {
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String localIfMatch = null;
-        return this.getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, localIfMatch,
-            Context.NONE).getValue();
+        return this
+            .getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, localIfMatch,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<ImmutabilityPolicy> getImmutabilityPolicyByIdWithResponse(String id, String ifMatch,
@@ -385,8 +387,10 @@ public final class BlobContainersImpl implements BlobContainers {
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String localIfMatch = null;
-        return this.deleteImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, localIfMatch,
-            Context.NONE).getValue();
+        return this
+            .deleteImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, localIfMatch,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<ImmutabilityPolicy> deleteImmutabilityPolicyByIdWithResponse(String id, String ifMatch,

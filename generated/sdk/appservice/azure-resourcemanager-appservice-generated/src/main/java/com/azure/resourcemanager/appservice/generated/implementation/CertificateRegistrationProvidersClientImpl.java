@@ -56,8 +56,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientCertificateRegistrationProviders to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientCertificateRegistrationProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -81,13 +80,11 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync() {
@@ -106,15 +103,13 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync(Context context) {
@@ -132,8 +127,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -148,8 +142,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -166,8 +159,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -181,8 +173,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
     /**
      * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider
      * 
-     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
-     * provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -204,8 +195,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsNextSinglePageAsync(String nextLink) {
@@ -234,8 +224,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsNextSinglePageAsync(String nextLink,

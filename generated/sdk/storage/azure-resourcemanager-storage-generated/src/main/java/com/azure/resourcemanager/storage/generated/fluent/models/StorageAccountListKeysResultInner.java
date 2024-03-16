@@ -27,8 +27,7 @@ public final class StorageAccountListKeysResultInner {
     }
 
     /**
-     * Get the keys property: Gets the list of storage account keys and their properties for the specified storage
-     * account.
+     * Get the keys property: Gets the list of storage account keys and their properties for the specified storage account.
      * 
      * @return the keys value.
      */

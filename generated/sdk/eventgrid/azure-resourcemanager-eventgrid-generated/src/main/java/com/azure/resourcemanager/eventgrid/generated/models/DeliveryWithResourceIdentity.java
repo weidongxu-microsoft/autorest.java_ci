@@ -20,8 +20,7 @@ public final class DeliveryWithResourceIdentity {
 
     /*
      * Information about the destination where events have to be delivered for the event subscription.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
-     * dead-lettering.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
      */
     @JsonProperty(value = "destination")
     private EventSubscriptionDestination destination;
@@ -53,10 +52,8 @@ public final class DeliveryWithResourceIdentity {
     }
 
     /**
-     * Get the destination property: Information about the destination where events have to be delivered for the event
-     * subscription.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
-     * dead-lettering.
+     * Get the destination property: Information about the destination where events have to be delivered for the event subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
      * 
      * @return the destination value.
      */
@@ -65,10 +62,8 @@ public final class DeliveryWithResourceIdentity {
     }
 
     /**
-     * Set the destination property: Information about the destination where events have to be delivered for the event
-     * subscription.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
-     * dead-lettering.
+     * Set the destination property: Information about the destination where events have to be delivered for the event subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
      * 
      * @param destination the destination value to set.
      * @return the DeliveryWithResourceIdentity object itself.

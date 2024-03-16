@@ -54,15 +54,18 @@ public final class TableServicePropertiesImpl
     }
 
     public TableServiceProperties create() {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public TableServiceProperties create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -76,15 +79,18 @@ public final class TableServicePropertiesImpl
     }
 
     public TableServiceProperties apply() {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public TableServiceProperties apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -97,14 +103,18 @@ public final class TableServicePropertiesImpl
     }
 
     public TableServiceProperties refresh() {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public TableServiceProperties refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getTableServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getTableServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, context)
+            .getValue();
         return this;
     }
 

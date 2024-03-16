@@ -76,8 +76,7 @@ public interface DataSources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedIterable}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DataSource> listByWorkspace(String resourceGroupName, String workspaceName, String filter);
 
@@ -92,8 +91,7 @@ public interface DataSources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page as paginated
-     * response with {@link PagedIterable}.
+     * @return the first page of data source instances in a workspace with the link to the next page as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DataSource> listByWorkspace(String resourceGroupName, String workspaceName, String filter,
         String skiptoken, Context context);

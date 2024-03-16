@@ -110,9 +110,9 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public Response<ManagementLockObject> createOrUpdateAtResourceLevelWithResponse(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String lockName, ManagementLockObjectInner parameters, Context context) {
-        Response<ManagementLockObjectInner> inner = this.serviceClient().createOrUpdateAtResourceLevelWithResponse(
-            resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName,
-            parameters, context);
+        Response<ManagementLockObjectInner> inner = this.serviceClient()
+            .createOrUpdateAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+                resourceType, resourceName, lockName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
@@ -124,8 +124,9 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public ManagementLockObject createOrUpdateAtResourceLevel(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String lockName, ManagementLockObjectInner parameters) {
-        ManagementLockObjectInner inner = this.serviceClient().createOrUpdateAtResourceLevel(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName, parameters);
+        ManagementLockObjectInner inner = this.serviceClient()
+            .createOrUpdateAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+                resourceType, resourceName, lockName, parameters);
         if (inner != null) {
             return new ManagementLockObjectImpl(inner, this.manager());
         } else {
@@ -135,22 +136,24 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public Response<Void> deleteAtResourceLevelWithResponse(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String lockName, Context context) {
-        return this.serviceClient().deleteAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace,
-            parentResourcePath, resourceType, resourceName, lockName, context);
+        return this.serviceClient()
+            .deleteAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+                resourceType, resourceName, lockName, context);
     }
 
     public void deleteAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String lockName) {
-        this.serviceClient().deleteAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath,
-            resourceType, resourceName, lockName);
+        this.serviceClient()
+            .deleteAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, lockName);
     }
 
     public Response<ManagementLockObject> getAtResourceLevelWithResponse(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String lockName, Context context) {
-        Response<ManagementLockObjectInner> inner
-            = this.serviceClient().getAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace,
-                parentResourcePath, resourceType, resourceName, lockName, context);
+        Response<ManagementLockObjectInner> inner = this.serviceClient()
+            .getAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+                resourceType, resourceName, lockName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
@@ -161,8 +164,9 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public ManagementLockObject getAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String lockName) {
-        ManagementLockObjectInner inner = this.serviceClient().getAtResourceLevel(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName);
+        ManagementLockObjectInner inner = this.serviceClient()
+            .getAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, lockName);
         if (inner != null) {
             return new ManagementLockObjectImpl(inner, this.manager());
         } else {
@@ -234,16 +238,18 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName) {
-        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient()
+            .listAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String filter, Context context) {
-        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
-            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
+        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient()
+            .listAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+                resourceName, filter, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 

@@ -40,8 +40,7 @@ public interface VirtualMachineScaleSetInstanceView {
     List<OrchestrationServiceSummary> orchestrationServices();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInstanceViewInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInstanceViewInner object.
      * 
      * @return the inner object.
      */

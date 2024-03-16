@@ -149,8 +149,7 @@ public interface Profile {
         }
 
         /**
-         * The stage of the Profile definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Profile definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithEtag, DefinitionStages.WithEnabledState {
@@ -188,8 +187,7 @@ public interface Profile {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: Gets a unique read-only string that changes whenever the resource is
-             * updated..
+             * Specifies the etag property: Gets a unique read-only string that changes whenever the resource is updated..
              * 
              * @param etag Gets a unique read-only string that changes whenever the resource is updated.
              * @return the next definition stage.

@@ -28,9 +28,7 @@ public final class VaultProperties {
     private Sku sku;
 
     /*
-     * An array of 0 to 1024 identities that have access to the key vault. All identities in the array must use the same
-     * tenant ID as the key vault's tenant ID. When `createMode` is set to `recover`, access policies are not required.
-     * Otherwise, access policies are required.
+     * An array of 0 to 1024 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID. When `createMode` is set to `recover`, access policies are not required. Otherwise, access policies are required.
      */
     @JsonProperty(value = "accessPolicies")
     private List<AccessPolicyEntry> accessPolicies;
@@ -48,15 +46,13 @@ public final class VaultProperties {
     private String hsmPoolResourceId;
 
     /*
-     * Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from
-     * the key vault.
+     * Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
      */
     @JsonProperty(value = "enabledForDeployment")
     private Boolean enabledForDeployment;
 
     /*
-     * Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap
-     * keys.
+     * Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
      */
     @JsonProperty(value = "enabledForDiskEncryption")
     private Boolean enabledForDiskEncryption;
@@ -68,9 +64,7 @@ public final class VaultProperties {
     private Boolean enabledForTemplateDeployment;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled for this key vault. If it's not set to any
-     * value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot
-     * be reverted to false.
+     * Property to specify whether the 'soft delete' functionality is enabled for this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot be reverted to false.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
@@ -82,11 +76,7 @@ public final class VaultProperties {
     private Integer softDeleteRetentionInDays;
 
     /*
-     * Property that controls how data actions are authorized. When true, the key vault will use Role Based Access
-     * Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be
-     * ignored. When false, the key vault will use the access policies specified in vault properties, and any policy
-     * stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default
-     * value of false. Note that management actions are always authorized with RBAC.
+     * Property that controls how data actions are authorized. When true, the key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be  ignored. When false, the key vault will use the access policies specified in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default value of false. Note that management actions are always authorized with RBAC.
      */
     @JsonProperty(value = "enableRbacAuthorization")
     private Boolean enableRbacAuthorization;
@@ -98,10 +88,7 @@ public final class VaultProperties {
     private CreateMode createMode;
 
     /*
-     * Property specifying whether protection against purge is enabled for this vault. Setting this property to true
-     * activates protection against purge for this vault and its content - only the Key Vault service may initiate a
-     * hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this
-     * functionality is irreversible - that is, the property does not accept false as its value.
+     * Property specifying whether protection against purge is enabled for this vault. Setting this property to true activates protection against purge for this vault and its content - only the Key Vault service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this functionality is irreversible - that is, the property does not accept false as its value.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
@@ -125,9 +112,7 @@ public final class VaultProperties {
     private List<PrivateEndpointConnectionItem> privateEndpointConnections;
 
     /*
-     * Property to specify whether the vault will accept traffic from public internet. If set to 'disabled' all traffic
-     * except private endpoint traffic and that that originates from trusted services will be blocked. This will
-     * override the set firewall rules, meaning that even if the firewall rules are present we will not honor the rules.
+     * Property to specify whether the vault will accept traffic from public internet. If set to 'disabled' all traffic except private endpoint traffic and that that originates from trusted services will be blocked. This will override the set firewall rules, meaning that even if the firewall rules are present we will not honor the rules.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
@@ -139,8 +124,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
-     * to the key vault.
+     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      * 
      * @return the tenantId value.
      */
@@ -149,8 +133,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
-     * to the key vault.
+     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      * 
      * @param tenantId the tenantId value to set.
      * @return the VaultProperties object itself.
@@ -181,9 +164,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the accessPolicies property: An array of 0 to 1024 identities that have access to the key vault. All
-     * identities in the array must use the same tenant ID as the key vault's tenant ID. When `createMode` is set to
-     * `recover`, access policies are not required. Otherwise, access policies are required.
+     * Get the accessPolicies property: An array of 0 to 1024 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID. When `createMode` is set to `recover`, access policies are not required. Otherwise, access policies are required.
      * 
      * @return the accessPolicies value.
      */
@@ -192,9 +173,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the accessPolicies property: An array of 0 to 1024 identities that have access to the key vault. All
-     * identities in the array must use the same tenant ID as the key vault's tenant ID. When `createMode` is set to
-     * `recover`, access policies are not required. Otherwise, access policies are required.
+     * Set the accessPolicies property: An array of 0 to 1024 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID. When `createMode` is set to `recover`, access policies are not required. Otherwise, access policies are required.
      * 
      * @param accessPolicies the accessPolicies value to set.
      * @return the VaultProperties object itself.
@@ -234,8 +213,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enabledForDeployment property: Property to specify whether Azure Virtual Machines are permitted to
-     * retrieve certificates stored as secrets from the key vault.
+     * Get the enabledForDeployment property: Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
      * 
      * @return the enabledForDeployment value.
      */
@@ -244,8 +222,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enabledForDeployment property: Property to specify whether Azure Virtual Machines are permitted to
-     * retrieve certificates stored as secrets from the key vault.
+     * Set the enabledForDeployment property: Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
      * 
      * @param enabledForDeployment the enabledForDeployment value to set.
      * @return the VaultProperties object itself.
@@ -256,8 +233,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enabledForDiskEncryption property: Property to specify whether Azure Disk Encryption is permitted to
-     * retrieve secrets from the vault and unwrap keys.
+     * Get the enabledForDiskEncryption property: Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
      * 
      * @return the enabledForDiskEncryption value.
      */
@@ -266,8 +242,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enabledForDiskEncryption property: Property to specify whether Azure Disk Encryption is permitted to
-     * retrieve secrets from the vault and unwrap keys.
+     * Set the enabledForDiskEncryption property: Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
      * 
      * @param enabledForDiskEncryption the enabledForDiskEncryption value to set.
      * @return the VaultProperties object itself.
@@ -278,8 +253,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enabledForTemplateDeployment property: Property to specify whether Azure Resource Manager is permitted to
-     * retrieve secrets from the key vault.
+     * Get the enabledForTemplateDeployment property: Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
      * 
      * @return the enabledForTemplateDeployment value.
      */
@@ -288,8 +262,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enabledForTemplateDeployment property: Property to specify whether Azure Resource Manager is permitted to
-     * retrieve secrets from the key vault.
+     * Set the enabledForTemplateDeployment property: Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
      * 
      * @param enabledForTemplateDeployment the enabledForTemplateDeployment value to set.
      * @return the VaultProperties object itself.
@@ -300,9 +273,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true
-     * by default. Once set to true, it cannot be reverted to false.
+     * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot be reverted to false.
      * 
      * @return the enableSoftDelete value.
      */
@@ -311,9 +282,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true
-     * by default. Once set to true, it cannot be reverted to false.
+     * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot be reverted to false.
      * 
      * @param enableSoftDelete the enableSoftDelete value to set.
      * @return the VaultProperties object itself.
@@ -344,12 +313,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enableRbacAuthorization property: Property that controls how data actions are authorized. When true, the
-     * key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies
-     * specified in vault properties will be ignored. When false, the key vault will use the access policies specified
-     * in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified,
-     * the vault is created with the default value of false. Note that management actions are always authorized with
-     * RBAC.
+     * Get the enableRbacAuthorization property: Property that controls how data actions are authorized. When true, the key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be  ignored. When false, the key vault will use the access policies specified in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default value of false. Note that management actions are always authorized with RBAC.
      * 
      * @return the enableRbacAuthorization value.
      */
@@ -358,12 +322,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enableRbacAuthorization property: Property that controls how data actions are authorized. When true, the
-     * key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies
-     * specified in vault properties will be ignored. When false, the key vault will use the access policies specified
-     * in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified,
-     * the vault is created with the default value of false. Note that management actions are always authorized with
-     * RBAC.
+     * Set the enableRbacAuthorization property: Property that controls how data actions are authorized. When true, the key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be  ignored. When false, the key vault will use the access policies specified in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default value of false. Note that management actions are always authorized with RBAC.
      * 
      * @param enableRbacAuthorization the enableRbacAuthorization value to set.
      * @return the VaultProperties object itself.
@@ -394,11 +353,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
-     * vault. Setting this property to true activates protection against purge for this vault and its content - only the
-     * Key Vault service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is
-     * also enabled. Enabling this functionality is irreversible - that is, the property does not accept false as its
-     * value.
+     * Get the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this vault. Setting this property to true activates protection against purge for this vault and its content - only the Key Vault service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this functionality is irreversible - that is, the property does not accept false as its value.
      * 
      * @return the enablePurgeProtection value.
      */
@@ -407,11 +362,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
-     * vault. Setting this property to true activates protection against purge for this vault and its content - only the
-     * Key Vault service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is
-     * also enabled. Enabling this functionality is irreversible - that is, the property does not accept false as its
-     * value.
+     * Set the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this vault. Setting this property to true activates protection against purge for this vault and its content - only the Key Vault service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this functionality is irreversible - that is, the property does not accept false as its value.
      * 
      * @param enablePurgeProtection the enablePurgeProtection value to set.
      * @return the VaultProperties object itself.
@@ -471,10 +422,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: Property to specify whether the vault will accept traffic from public
-     * internet. If set to 'disabled' all traffic except private endpoint traffic and that that originates from trusted
-     * services will be blocked. This will override the set firewall rules, meaning that even if the firewall rules are
-     * present we will not honor the rules.
+     * Get the publicNetworkAccess property: Property to specify whether the vault will accept traffic from public internet. If set to 'disabled' all traffic except private endpoint traffic and that that originates from trusted services will be blocked. This will override the set firewall rules, meaning that even if the firewall rules are present we will not honor the rules.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -483,10 +431,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: Property to specify whether the vault will accept traffic from public
-     * internet. If set to 'disabled' all traffic except private endpoint traffic and that that originates from trusted
-     * services will be blocked. This will override the set firewall rules, meaning that even if the firewall rules are
-     * present we will not honor the rules.
+     * Set the publicNetworkAccess property: Property to specify whether the vault will accept traffic from public internet. If set to 'disabled' all traffic except private endpoint traffic and that that originates from trusted services will be blocked. This will override the set firewall rules, meaning that even if the firewall rules are present we will not honor the rules.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the VaultProperties object itself.

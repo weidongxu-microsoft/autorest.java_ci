@@ -33,6 +33,13 @@ public interface ReservationRecommendation {
     String type();
 
     /**
+     * Gets the kind property: Specifies the kind of reservation recommendation.
+     * 
+     * @return the kind value.
+     */
+    ReservationRecommendationKind kind();
+
+    /**
      * Gets the etag property: The etag for the resource.
      * 
      * @return the etag value.
@@ -61,8 +68,7 @@ public interface ReservationRecommendation {
     String sku();
 
     /**
-     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner object.
      * 
      * @return the inner object.
      */

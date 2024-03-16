@@ -50,17 +50,14 @@ public interface ProximityPlacementGroup {
     Map<String, String> tags();
 
     /**
-     * Gets the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or
-     * availability set associated with the proximity placement group can be created.
+     * Gets the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
      * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
-     * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
-     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-     * future use.
+     * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
      * 
      * @return the proximityPlacementGroupType value.
      */
@@ -74,16 +71,14 @@ public interface ProximityPlacementGroup {
     List<SubResourceWithColocationStatus> virtualMachines();
 
     /**
-     * Gets the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the
-     * proximity placement group.
+     * Gets the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the proximity placement group.
      * 
      * @return the virtualMachineScaleSets value.
      */
     List<SubResourceWithColocationStatus> virtualMachineScaleSets();
 
     /**
-     * Gets the availabilitySets property: A list of references to all availability sets in the proximity placement
-     * group.
+     * Gets the availabilitySets property: A list of references to all availability sets in the proximity placement group.
      * 
      * @return the availabilitySets value.
      */
@@ -183,8 +178,7 @@ public interface ProximityPlacementGroup {
         }
 
         /**
-         * The stage of the ProximityPlacementGroup definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ProximityPlacementGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones,
             DefinitionStages.WithProximityPlacementGroupType, DefinitionStages.WithColocationStatus,
@@ -223,11 +217,9 @@ public interface ProximityPlacementGroup {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: Specifies the Availability Zone where virtual machine, virtual machine
-             * scale set or availability set associated with the proximity placement group can be created..
+             * Specifies the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created..
              * 
-             * @param zones Specifies the Availability Zone where virtual machine, virtual machine scale set or
-             * availability set associated with the proximity placement group can be created.
+             * @param zones Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -238,13 +230,9 @@ public interface ProximityPlacementGroup {
          */
         interface WithProximityPlacementGroupType {
             /**
-             * Specifies the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
-             * Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone.
-             * **Ultra** : For future use..
+             * Specifies the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use..
              * 
-             * @param proximityPlacementGroupType Specifies the type of the proximity placement group. Possible values
-             * are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-             * future use.
+             * @param proximityPlacementGroupType Specifies the type of the proximity placement group. Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For future use.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroupType(ProximityPlacementGroupType proximityPlacementGroupType);

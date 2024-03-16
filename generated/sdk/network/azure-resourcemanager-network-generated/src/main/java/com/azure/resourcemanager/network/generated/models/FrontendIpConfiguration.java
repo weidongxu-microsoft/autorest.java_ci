@@ -20,8 +20,7 @@ public interface FrontendIpConfiguration {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within the set of frontend IP configurations used
-     * by the load balancer. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within the set of frontend IP configurations used by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -42,8 +41,7 @@ public interface FrontendIpConfiguration {
     String type();
 
     /**
-     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
-     * from.
+     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
      * 
      * @return the zones value.
      */
@@ -92,8 +90,7 @@ public interface FrontendIpConfiguration {
     IpAllocationMethod privateIpAllocationMethod();
 
     /**
-     * Gets the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
-     * as IPv4.
+     * Gets the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */

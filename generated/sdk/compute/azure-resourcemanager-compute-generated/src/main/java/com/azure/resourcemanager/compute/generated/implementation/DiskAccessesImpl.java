@@ -104,8 +104,9 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public PrivateEndpointConnection updateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
         String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection) {
-        PrivateEndpointConnectionInner inner = this.serviceClient().updateAPrivateEndpointConnection(resourceGroupName,
-            diskAccessName, privateEndpointConnectionName, privateEndpointConnection);
+        PrivateEndpointConnectionInner inner = this.serviceClient()
+            .updateAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName,
+                privateEndpointConnection);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -116,8 +117,9 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public PrivateEndpointConnection updateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
         String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection,
         Context context) {
-        PrivateEndpointConnectionInner inner = this.serviceClient().updateAPrivateEndpointConnection(resourceGroupName,
-            diskAccessName, privateEndpointConnectionName, privateEndpointConnection, context);
+        PrivateEndpointConnectionInner inner = this.serviceClient()
+            .updateAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName,
+                privateEndpointConnection, context);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -127,8 +129,9 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(String resourceGroupName,
         String diskAccessName, String privateEndpointConnectionName, Context context) {
-        Response<PrivateEndpointConnectionInner> inner = this.serviceClient().getAPrivateEndpointConnectionWithResponse(
-            resourceGroupName, diskAccessName, privateEndpointConnectionName, context);
+        Response<PrivateEndpointConnectionInner> inner = this.serviceClient()
+            .getAPrivateEndpointConnectionWithResponse(resourceGroupName, diskAccessName, privateEndpointConnectionName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
@@ -139,8 +142,8 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public PrivateEndpointConnection getAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
         String privateEndpointConnectionName) {
-        PrivateEndpointConnectionInner inner = this.serviceClient().getAPrivateEndpointConnection(resourceGroupName,
-            diskAccessName, privateEndpointConnectionName);
+        PrivateEndpointConnectionInner inner = this.serviceClient()
+            .getAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -150,14 +153,15 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public void deleteAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
         String privateEndpointConnectionName) {
-        this.serviceClient().deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName);
+        this.serviceClient()
+            .deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
     }
 
     public void deleteAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
         String privateEndpointConnectionName, Context context) {
-        this.serviceClient().deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName, context);
+        this.serviceClient()
+            .deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName,
+                context);
     }
 
     public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,

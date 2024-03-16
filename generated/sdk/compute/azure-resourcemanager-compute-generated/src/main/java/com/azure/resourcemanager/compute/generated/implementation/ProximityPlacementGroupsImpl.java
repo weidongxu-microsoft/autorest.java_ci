@@ -38,8 +38,9 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
 
     public Response<ProximityPlacementGroup> getByResourceGroupWithResponse(String resourceGroupName,
         String proximityPlacementGroupName, String includeColocationStatus, Context context) {
-        Response<ProximityPlacementGroupInner> inner = this.serviceClient().getByResourceGroupWithResponse(
-            resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
+        Response<ProximityPlacementGroupInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName, includeColocationStatus,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProximityPlacementGroupImpl(inner.getValue(), this.manager()));
@@ -91,8 +92,10 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
                 .format("The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.", id)));
         }
         String localIncludeColocationStatus = null;
-        return this.getByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName,
-            localIncludeColocationStatus, Context.NONE).getValue();
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName,
+                localIncludeColocationStatus, Context.NONE)
+            .getValue();
     }
 
     public Response<ProximityPlacementGroup> getByIdWithResponse(String id, String includeColocationStatus,

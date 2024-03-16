@@ -90,24 +90,21 @@ public interface GenericResourceExpanded {
     Identity identity();
 
     /**
-     * Gets the createdTime property: The created time of the resource. This is only present if requested via the
-     * $expand query parameter.
+     * Gets the createdTime property: The created time of the resource. This is only present if requested via the $expand query parameter.
      * 
      * @return the createdTime value.
      */
     OffsetDateTime createdTime();
 
     /**
-     * Gets the changedTime property: The changed time of the resource. This is only present if requested via the
-     * $expand query parameter.
+     * Gets the changedTime property: The changed time of the resource. This is only present if requested via the $expand query parameter.
      * 
      * @return the changedTime value.
      */
     OffsetDateTime changedTime();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the resource. This is only present if requested
-     * via the $expand query parameter.
+     * Gets the provisioningState property: The provisioning state of the resource. This is only present if requested via the $expand query parameter.
      * 
      * @return the provisioningState value.
      */

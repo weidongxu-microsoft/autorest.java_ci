@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS
- * type.
+ * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS type.
  */
 public final class ClusterManagerType extends ExpandableStringEnum<ClusterManagerType> {
     /**

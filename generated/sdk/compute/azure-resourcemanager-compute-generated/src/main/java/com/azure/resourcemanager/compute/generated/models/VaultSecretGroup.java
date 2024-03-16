@@ -33,8 +33,7 @@ public final class VaultSecretGroup {
     }
 
     /**
-     * Get the sourceVault property: The relative URL of the Key Vault containing all of the certificates in
-     * VaultCertificates.
+     * Get the sourceVault property: The relative URL of the Key Vault containing all of the certificates in VaultCertificates.
      * 
      * @return the sourceVault value.
      */
@@ -43,8 +42,7 @@ public final class VaultSecretGroup {
     }
 
     /**
-     * Set the sourceVault property: The relative URL of the Key Vault containing all of the certificates in
-     * VaultCertificates.
+     * Set the sourceVault property: The relative URL of the Key Vault containing all of the certificates in VaultCertificates.
      * 
      * @param sourceVault the sourceVault value to set.
      * @return the VaultSecretGroup object itself.

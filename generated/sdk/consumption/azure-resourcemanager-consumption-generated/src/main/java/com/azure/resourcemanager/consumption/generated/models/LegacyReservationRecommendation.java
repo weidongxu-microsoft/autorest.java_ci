@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Legacy reservation recommendation.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "kind",
+    defaultImpl = LegacyReservationRecommendation.class,
+    visible = true)
 @JsonTypeName("legacy")
 @Fluent
 public final class LegacyReservationRecommendation extends ReservationRecommendationInner {
@@ -28,6 +32,7 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
      * Creates an instance of LegacyReservationRecommendation class.
      */
     public LegacyReservationRecommendation() {
+        withKind(ReservationRecommendationKind.LEGACY);
     }
 
     /**

@@ -145,14 +145,20 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     }
 
     public Zone create() {
-        this.innerObject = serviceManager.serviceClient().getZones().createOrUpdateWithResponse(resourceGroupName,
-            zoneName, this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .createOrUpdateWithResponse(resourceGroupName, zoneName, this.innerModel(), createIfMatch,
+                createIfNoneMatch, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Zone create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getZones().createOrUpdateWithResponse(resourceGroupName,
-            zoneName, this.innerModel(), createIfMatch, createIfNoneMatch, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .createOrUpdateWithResponse(resourceGroupName, zoneName, this.innerModel(), createIfMatch,
+                createIfNoneMatch, context)
+            .getValue();
         return this;
     }
 
@@ -171,14 +177,18 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     }
 
     public Zone apply() {
-        this.innerObject = serviceManager.serviceClient().getZones()
-            .updateWithResponse(resourceGroupName, zoneName, updateParameters, updateIfMatch, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .updateWithResponse(resourceGroupName, zoneName, updateParameters, updateIfMatch, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Zone apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getZones()
-            .updateWithResponse(resourceGroupName, zoneName, updateParameters, updateIfMatch, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .updateWithResponse(resourceGroupName, zoneName, updateParameters, updateIfMatch, context)
+            .getValue();
         return this;
     }
 
@@ -190,14 +200,18 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     }
 
     public Zone refresh() {
-        this.innerObject = serviceManager.serviceClient().getZones()
-            .getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Zone refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getZones()
-            .getByResourceGroupWithResponse(resourceGroupName, zoneName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getZones()
+            .getByResourceGroupWithResponse(resourceGroupName, zoneName, context)
+            .getValue();
         return this;
     }
 

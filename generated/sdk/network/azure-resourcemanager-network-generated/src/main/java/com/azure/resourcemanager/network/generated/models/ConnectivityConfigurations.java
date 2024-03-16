@@ -13,8 +13,7 @@ import com.azure.core.util.Context;
  */
 public interface ConnectivityConfigurations {
     /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
@@ -23,15 +22,13 @@ public interface ConnectivityConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name along with {@link Response}.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name along with {@link Response}.
      */
     Response<ConnectivityConfiguration> getWithResponse(String resourceGroupName, String networkManagerName,
         String configurationName, Context context);
 
     /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
@@ -39,14 +36,12 @@ public interface ConnectivityConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name.
      */
     ConnectivityConfiguration get(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
-     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and
-     * connectivity configuration name.
+     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and connectivity configuration name.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
@@ -58,14 +53,12 @@ public interface ConnectivityConfigurations {
     void delete(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
-     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and
-     * connectivity configuration name.
+     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and connectivity configuration name.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager connectivity configuration.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
-     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,8 +75,7 @@ public interface ConnectivityConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list network manager connectivity configurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list network manager connectivity configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ConnectivityConfiguration> list(String resourceGroupName, String networkManagerName);
 
@@ -92,51 +84,42 @@ public interface ConnectivityConfigurations {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
-     * a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list network manager connectivity configurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list network manager connectivity configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ConnectivityConfiguration> list(String resourceGroupName, String networkManagerName, Integer top,
         String skipToken, Context context);
 
     /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name along with {@link Response}.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name along with {@link Response}.
      */
     ConnectivityConfiguration getById(String id);
 
     /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name along with {@link Response}.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and connectivity Configuration name along with {@link Response}.
      */
     Response<ConnectivityConfiguration> getByIdWithResponse(String id, Context context);
 
     /**
-     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and
-     * connectivity configuration name.
+     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and connectivity configuration name.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -146,12 +129,10 @@ public interface ConnectivityConfigurations {
     void deleteById(String id);
 
     /**
-     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and
-     * connectivity configuration name.
+     * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and connectivity configuration name.
      * 
      * @param id the resource ID.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
-     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

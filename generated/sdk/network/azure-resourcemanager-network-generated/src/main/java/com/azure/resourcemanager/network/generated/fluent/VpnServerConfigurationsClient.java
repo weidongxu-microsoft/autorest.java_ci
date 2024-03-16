@@ -201,8 +201,7 @@ public interface VpnServerConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VpnServerConfigurationInner> listByResourceGroup(String resourceGroupName);
@@ -215,8 +214,7 @@ public interface VpnServerConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VpnServerConfigurationInner> listByResourceGroup(String resourceGroupName, Context context);
@@ -226,8 +224,7 @@ public interface VpnServerConfigurationsClient {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VpnServerConfigurationInner> list();
@@ -239,8 +236,7 @@ public interface VpnServerConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VpnServerConfigurationInner> list(Context context);

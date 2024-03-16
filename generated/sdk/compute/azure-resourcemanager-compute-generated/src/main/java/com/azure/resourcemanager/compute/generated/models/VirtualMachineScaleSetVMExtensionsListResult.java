@@ -19,9 +19,7 @@ public interface VirtualMachineScaleSetVMExtensionsListResult {
     List<VirtualMachineScaleSetVMExtension> value();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner object.
      * 
      * @return the inner object.
      */

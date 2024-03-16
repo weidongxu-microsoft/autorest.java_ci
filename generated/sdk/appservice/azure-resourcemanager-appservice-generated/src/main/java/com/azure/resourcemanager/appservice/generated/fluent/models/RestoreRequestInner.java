@@ -93,9 +93,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an
-     * existing app.
+     * Get the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app; otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an existing app.
      * 
      * @return the overwrite value.
      */
@@ -104,9 +102,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an
-     * existing app.
+     * Set the overwrite property: &lt;code&gt;true&lt;/code&gt; if the restore operation can overwrite target app; otherwise, &lt;code&gt;false&lt;/code&gt;. &lt;code&gt;true&lt;/code&gt; is needed if trying to restore over an existing app.
      * 
      * @param overwrite the overwrite value to set.
      * @return the RestoreRequestInner object itself.
@@ -143,8 +139,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the databases property: Collection of databases which should be restored. This list has to match the list of
-     * databases included in the backup.
+     * Get the databases property: Collection of databases which should be restored. This list has to match the list of databases included in the backup.
      * 
      * @return the databases value.
      */
@@ -153,8 +148,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the databases property: Collection of databases which should be restored. This list has to match the list of
-     * databases included in the backup.
+     * Set the databases property: Collection of databases which should be restored. This list has to match the list of databases included in the backup.
      * 
      * @param databases the databases value to set.
      * @return the RestoreRequestInner object itself.
@@ -168,9 +162,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains.
-     * &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom
-     * domains are added to
+     * Get the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains. &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom domains are added to 
      * the app's object when it is being restored, but that might fail due to conflicts during the operation.
      * 
      * @return the ignoreConflictingHostNames value.
@@ -180,9 +172,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains.
-     * &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom
-     * domains are added to
+     * Set the ignoreConflictingHostNames property: Changes a logic when restoring an app with custom domains. &lt;code&gt;true&lt;/code&gt; to remove custom domains automatically. If &lt;code&gt;false&lt;/code&gt;, custom domains are added to 
      * the app's object when it is being restored, but that might fail due to conflicts during the operation.
      * 
      * @param ignoreConflictingHostNames the ignoreConflictingHostNames value to set.
@@ -266,8 +256,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should be
-     * set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should be set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the adjustConnectionStrings value.
      */
@@ -276,8 +265,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should be
-     * set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the adjustConnectionStrings property: &lt;code&gt;true&lt;/code&gt; if SiteConfig.ConnectionStrings should be set in new app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param adjustConnectionStrings the adjustConnectionStrings value to set.
      * @return the RestoreRequestInner object itself.
@@ -291,8 +279,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an
-     * App Service Environment).
+     * Get the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an App Service Environment).
      * 
      * @return the hostingEnvironment value.
      */
@@ -301,8 +288,7 @@ public final class RestoreRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an
-     * App Service Environment).
+     * Set the hostingEnvironment property: App Service Environment name, if needed (only when restoring an app to an App Service Environment).
      * 
      * @param hostingEnvironment the hostingEnvironment value to set.
      * @return the RestoreRequestInner object itself.

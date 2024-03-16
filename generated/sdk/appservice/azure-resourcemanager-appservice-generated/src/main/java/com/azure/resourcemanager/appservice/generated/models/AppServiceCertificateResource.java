@@ -98,8 +98,7 @@ public interface AppServiceCertificateResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner object.
      * 
      * @return the inner object.
      */
@@ -158,8 +157,7 @@ public interface AppServiceCertificateResource {
         }
 
         /**
-         * The stage of the AppServiceCertificateResource definition which contains all the minimum required properties
-         * for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AppServiceCertificateResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithKind,
             DefinitionStages.WithKeyVaultId, DefinitionStages.WithKeyVaultSecretName {

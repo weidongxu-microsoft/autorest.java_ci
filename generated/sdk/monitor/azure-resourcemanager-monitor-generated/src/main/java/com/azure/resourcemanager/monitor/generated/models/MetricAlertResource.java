@@ -80,32 +80,28 @@ public interface MetricAlertResource {
     List<String> scopes();
 
     /**
-     * Gets the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration
-     * format.
+     * Gets the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format.
      * 
      * @return the evaluationFrequency value.
      */
     Duration evaluationFrequency();
 
     /**
-     * Gets the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
-     * activity based on the threshold.
+     * Gets the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
      * 
      * @return the windowSize value.
      */
     Duration windowSize();
 
     /**
-     * Gets the targetResourceType property: the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Gets the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @return the targetResourceType value.
      */
     String targetResourceType();
 
     /**
-     * Gets the targetResourceRegion property: the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Gets the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @return the targetResourceRegion value.
      */
@@ -119,16 +115,14 @@ public interface MetricAlertResource {
     MetricAlertCriteria criteria();
 
     /**
-     * Gets the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The
-     * default is true.
+     * Gets the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true.
      * 
      * @return the autoMitigate value.
      */
     Boolean autoMitigate();
 
     /**
-     * Gets the actions property: the array of actions that are performed when the alert rule becomes active, and when
-     * an alert condition is resolved.
+     * Gets the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -273,11 +267,9 @@ public interface MetricAlertResource {
          */
         interface WithEvaluationFrequency {
             /**
-             * Specifies the evaluationFrequency property: how often the metric alert is evaluated represented in ISO
-             * 8601 duration format..
+             * Specifies the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format..
              * 
-             * @param evaluationFrequency how often the metric alert is evaluated represented in ISO 8601 duration
-             * format.
+             * @param evaluationFrequency how often the metric alert is evaluated represented in ISO 8601 duration format.
              * @return the next definition stage.
              */
             WithWindowSize withEvaluationFrequency(Duration evaluationFrequency);
@@ -288,11 +280,9 @@ public interface MetricAlertResource {
          */
         interface WithWindowSize {
             /**
-             * Specifies the windowSize property: the period of time (in ISO 8601 duration format) that is used to
-             * monitor alert activity based on the threshold..
+             * Specifies the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold..
              * 
-             * @param windowSize the period of time (in ISO 8601 duration format) that is used to monitor alert activity
-             * based on the threshold.
+             * @param windowSize the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
              * @return the next definition stage.
              */
             WithCriteria withWindowSize(Duration windowSize);
@@ -312,8 +302,7 @@ public interface MetricAlertResource {
         }
 
         /**
-         * The stage of the MetricAlertResource definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the MetricAlertResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithDescription,
             DefinitionStages.WithTargetResourceType, DefinitionStages.WithTargetResourceRegion,
@@ -352,8 +341,7 @@ public interface MetricAlertResource {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: the description of the metric alert that will be included in the
-             * alert email..
+             * Specifies the description property: the description of the metric alert that will be included in the alert email..
              * 
              * @param description the description of the metric alert that will be included in the alert email.
              * @return the next definition stage.
@@ -366,13 +354,9 @@ public interface MetricAlertResource {
          */
         interface WithTargetResourceType {
             /**
-             * Specifies the targetResourceType property: the resource type of the target resource(s) on which the alert
-             * is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
-             * resource..
+             * Specifies the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource..
              * 
-             * @param targetResourceType the resource type of the target resource(s) on which the alert is
-             * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
-             * resource.
+             * @param targetResourceType the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
              * @return the next definition stage.
              */
             WithCreate withTargetResourceType(String targetResourceType);
@@ -383,12 +367,9 @@ public interface MetricAlertResource {
          */
         interface WithTargetResourceRegion {
             /**
-             * Specifies the targetResourceRegion property: the region of the target resource(s) on which the alert is
-             * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
-             * resource..
+             * Specifies the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource..
              * 
-             * @param targetResourceRegion the region of the target resource(s) on which the alert is created/updated.
-             * Mandatory if the scope contains a subscription, resource group, or more than one resource.
+             * @param targetResourceRegion the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
              * @return the next definition stage.
              */
             WithCreate withTargetResourceRegion(String targetResourceRegion);
@@ -399,11 +380,9 @@ public interface MetricAlertResource {
          */
         interface WithAutoMitigate {
             /**
-             * Specifies the autoMitigate property: the flag that indicates whether the alert should be auto resolved or
-             * not. The default is true..
+             * Specifies the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true..
              * 
-             * @param autoMitigate the flag that indicates whether the alert should be auto resolved or not. The default
-             * is true.
+             * @param autoMitigate the flag that indicates whether the alert should be auto resolved or not. The default is true.
              * @return the next definition stage.
              */
             WithCreate withAutoMitigate(Boolean autoMitigate);
@@ -414,11 +393,9 @@ public interface MetricAlertResource {
          */
         interface WithActions {
             /**
-             * Specifies the actions property: the array of actions that are performed when the alert rule becomes
-             * active, and when an alert condition is resolved..
+             * Specifies the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved..
              * 
-             * @param actions the array of actions that are performed when the alert rule becomes active, and when an
-             * alert condition is resolved.
+             * @param actions the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
              * @return the next definition stage.
              */
             WithCreate withActions(List<MetricAlertAction> actions);
@@ -477,8 +454,7 @@ public interface MetricAlertResource {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: the description of the metric alert that will be included in the
-             * alert email..
+             * Specifies the description property: the description of the metric alert that will be included in the alert email..
              * 
              * @param description the description of the metric alert that will be included in the alert email.
              * @return the next definition stage.
@@ -530,11 +506,9 @@ public interface MetricAlertResource {
          */
         interface WithEvaluationFrequency {
             /**
-             * Specifies the evaluationFrequency property: how often the metric alert is evaluated represented in ISO
-             * 8601 duration format..
+             * Specifies the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format..
              * 
-             * @param evaluationFrequency how often the metric alert is evaluated represented in ISO 8601 duration
-             * format.
+             * @param evaluationFrequency how often the metric alert is evaluated represented in ISO 8601 duration format.
              * @return the next definition stage.
              */
             Update withEvaluationFrequency(Duration evaluationFrequency);
@@ -545,11 +519,9 @@ public interface MetricAlertResource {
          */
         interface WithWindowSize {
             /**
-             * Specifies the windowSize property: the period of time (in ISO 8601 duration format) that is used to
-             * monitor alert activity based on the threshold..
+             * Specifies the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold..
              * 
-             * @param windowSize the period of time (in ISO 8601 duration format) that is used to monitor alert activity
-             * based on the threshold.
+             * @param windowSize the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
              * @return the next definition stage.
              */
             Update withWindowSize(Duration windowSize);
@@ -560,11 +532,9 @@ public interface MetricAlertResource {
          */
         interface WithTargetResourceType {
             /**
-             * Specifies the targetResourceType property: the resource type of the target resource(s) on which the alert
-             * is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
+             * Specifies the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
              * 
-             * @param targetResourceType the resource type of the target resource(s) on which the alert is
-             * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+             * @param targetResourceType the resource type of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
              * @return the next definition stage.
              */
             Update withTargetResourceType(String targetResourceType);
@@ -575,11 +545,9 @@ public interface MetricAlertResource {
          */
         interface WithTargetResourceRegion {
             /**
-             * Specifies the targetResourceRegion property: the region of the target resource(s) on which the alert is
-             * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
+             * Specifies the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
              * 
-             * @param targetResourceRegion the region of the target resource(s) on which the alert is created/updated.
-             * Mandatory for MultipleResourceMultipleMetricCriteria.
+             * @param targetResourceRegion the region of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
              * @return the next definition stage.
              */
             Update withTargetResourceRegion(String targetResourceRegion);
@@ -603,11 +571,9 @@ public interface MetricAlertResource {
          */
         interface WithAutoMitigate {
             /**
-             * Specifies the autoMitigate property: the flag that indicates whether the alert should be auto resolved or
-             * not. The default is true..
+             * Specifies the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true..
              * 
-             * @param autoMitigate the flag that indicates whether the alert should be auto resolved or not. The default
-             * is true.
+             * @param autoMitigate the flag that indicates whether the alert should be auto resolved or not. The default is true.
              * @return the next definition stage.
              */
             Update withAutoMitigate(Boolean autoMitigate);
@@ -618,11 +584,9 @@ public interface MetricAlertResource {
          */
         interface WithActions {
             /**
-             * Specifies the actions property: the array of actions that are performed when the alert rule becomes
-             * active, and when an alert condition is resolved..
+             * Specifies the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved..
              * 
-             * @param actions the array of actions that are performed when the alert rule becomes active, and when an
-             * alert condition is resolved.
+             * @param actions the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
              * @return the next definition stage.
              */
             Update withActions(List<MetricAlertAction> actions);

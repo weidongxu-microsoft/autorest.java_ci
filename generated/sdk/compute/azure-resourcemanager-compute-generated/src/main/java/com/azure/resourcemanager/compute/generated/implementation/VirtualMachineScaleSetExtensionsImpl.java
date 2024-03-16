@@ -37,8 +37,8 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
 
     public Response<VirtualMachineScaleSetExtension> getWithResponse(String resourceGroupName, String vmScaleSetName,
         String vmssExtensionName, String expand, Context context) {
-        Response<VirtualMachineScaleSetExtensionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            vmScaleSetName, vmssExtensionName, expand, context);
+        Response<VirtualMachineScaleSetExtensionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualMachineScaleSetExtensionImpl(inner.getValue(), this.manager()));

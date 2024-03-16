@@ -62,8 +62,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineExtensions to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineExtensions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -129,8 +128,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
@@ -179,8 +177,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
@@ -392,8 +389,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
@@ -442,8 +438,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
@@ -878,8 +873,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineExtensionInner>> getWithResponseAsync(String resourceGroupName, String vmName,
@@ -922,8 +916,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine Extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineExtensionInner>> getWithResponseAsync(String resourceGroupName, String vmName,
@@ -1018,8 +1011,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the List Extension operation response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineExtensionsListResultInner>> listWithResponseAsync(String resourceGroupName,
@@ -1057,8 +1049,7 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the List Extension operation response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineExtensionsListResultInner>> listWithResponseAsync(String resourceGroupName,

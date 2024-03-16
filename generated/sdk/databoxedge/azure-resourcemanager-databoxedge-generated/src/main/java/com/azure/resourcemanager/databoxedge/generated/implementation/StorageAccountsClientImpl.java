@@ -64,8 +64,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientStorageAccounts to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientStorageAccounts to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -127,8 +126,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -166,8 +164,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -204,8 +201,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StorageAccountInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName) {
@@ -222,8 +218,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StorageAccountInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName,
@@ -240,8 +235,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StorageAccountInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
@@ -257,8 +251,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StorageAccountInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName,
@@ -407,8 +400,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName,
@@ -456,8 +448,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName,
@@ -503,7 +494,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateOrUpdateAsync(String deviceName,
@@ -525,7 +516,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateOrUpdateAsync(String deviceName,
@@ -547,7 +538,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateOrUpdate(String deviceName,
@@ -567,7 +558,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateOrUpdate(String deviceName,
@@ -586,8 +577,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device on successful completion of
-     * {@link Mono}.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> createOrUpdateAsync(String deviceName, String storageAccountName,
@@ -607,14 +597,14 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device on successful completion of
-     * {@link Mono}.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> createOrUpdateAsync(String deviceName, String storageAccountName,
         String resourceGroupName, StorageAccountInner storageAccount, Context context) {
         return beginCreateOrUpdateAsync(deviceName, storageAccountName, resourceGroupName, storageAccount, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -627,7 +617,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StorageAccountInner createOrUpdate(String deviceName, String storageAccountName, String resourceGroupName,
@@ -646,7 +636,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Storage Account on the Data Box Edge/Gateway device.
+     * @return represents a Storage Account on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StorageAccountInner createOrUpdate(String deviceName, String storageAccountName, String resourceGroupName,
@@ -887,8 +877,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -918,8 +907,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of all the Storage Accounts on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink,

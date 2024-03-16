@@ -108,14 +108,16 @@ public final class DdosProtectionPlanImpl
     }
 
     public DdosProtectionPlan create() {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans().createOrUpdate(resourceGroupName,
-            ddosProtectionPlanName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
+            .createOrUpdate(resourceGroupName, ddosProtectionPlanName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DdosProtectionPlan create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans().createOrUpdate(resourceGroupName,
-            ddosProtectionPlanName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
+            .createOrUpdate(resourceGroupName, ddosProtectionPlanName, this.innerModel(), context);
         return this;
     }
 
@@ -131,15 +133,18 @@ public final class DdosProtectionPlanImpl
     }
 
     public DdosProtectionPlan apply() {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans()
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
             .updateTagsWithResponse(resourceGroupName, ddosProtectionPlanName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public DdosProtectionPlan apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans()
-            .updateTagsWithResponse(resourceGroupName, ddosProtectionPlanName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
+            .updateTagsWithResponse(resourceGroupName, ddosProtectionPlanName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -153,14 +158,18 @@ public final class DdosProtectionPlanImpl
     }
 
     public DdosProtectionPlan refresh() {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans()
-            .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
+            .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DdosProtectionPlan refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDdosProtectionPlans()
-            .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDdosProtectionPlans()
+            .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context)
+            .getValue();
         return this;
     }
 

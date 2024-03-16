@@ -122,14 +122,18 @@ public final class WorkbookImpl implements Workbook, Workbook.Definition, Workbo
     }
 
     public Workbook create() {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Workbook create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -145,14 +149,18 @@ public final class WorkbookImpl implements Workbook, Workbook.Definition, Workbo
     }
 
     public Workbook apply() {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .updateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .updateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Workbook apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .updateWithResponse(resourceGroupName, resourceName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .updateWithResponse(resourceGroupName, resourceName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -165,14 +173,18 @@ public final class WorkbookImpl implements Workbook, Workbook.Definition, Workbo
     }
 
     public Workbook refresh() {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Workbook refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWorkbooks()
-            .getByResourceGroupWithResponse(resourceGroupName, resourceName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWorkbooks()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, context)
+            .getValue();
         return this;
     }
 

@@ -44,9 +44,7 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to SqlVirtualMachineManager.
- * The SQL virtual machine management API provides a RESTful set of web APIs that interact with Azure Compute, Network
- * &amp; Storage services to manage your SQL Server virtual machine. The API enables users to create, delete and
- * retrieve a SQL virtual machine, SQL virtual machine group or availability group listener.
+ * The SQL virtual machine management API provides a RESTful set of web APIs that interact with Azure Compute, Network &amp; Storage services to manage your SQL Server virtual machine. The API enables users to create, delete and retrieve a SQL virtual machine, SQL virtual machine group or availability group listener.
  */
 public final class SqlVirtualMachineManager {
     private AvailabilityGroupListeners availabilityGroupListeners;
@@ -65,8 +63,10 @@ public final class SqlVirtualMachineManager {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject = new SqlVirtualMachineManagementClientBuilder().pipeline(httpPipeline)
-            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
-            .defaultPollInterval(defaultPollInterval).buildClient();
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
+            .subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval)
+            .buildClient();
     }
 
     /**
@@ -217,12 +217,19 @@ public final class SqlVirtualMachineManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder.append("azsdk-java").append("-")
-                .append("com.azure.resourcemanager.sqlvirtualmachine.generated").append("/").append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java")
+                .append("-")
+                .append("com.azure.resourcemanager.sqlvirtualmachine.generated")
+                .append("/")
+                .append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
+                userAgentBuilder.append(" (")
+                    .append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.name"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version"))
+                    .append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -241,18 +248,21 @@ public final class SqlVirtualMachineManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
                 .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
             policies.addAll(this.policies.stream()
-                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
             HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
-                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
+                .policies(policies.toArray(new HttpPipelinePolicy[0]))
+                .build();
             return new SqlVirtualMachineManager(httpPipeline, profile, defaultPollInterval);
         }
     }
@@ -321,8 +331,7 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * Gets wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying
-     * auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client SqlVirtualMachineManagementClient.
      */

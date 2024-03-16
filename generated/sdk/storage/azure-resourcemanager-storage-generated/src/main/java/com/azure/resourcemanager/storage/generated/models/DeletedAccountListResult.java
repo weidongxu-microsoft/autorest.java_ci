@@ -21,8 +21,7 @@ public final class DeletedAccountListResult {
     private List<DeletedAccountInner> value;
 
     /*
-     * Request URL that can be used to query next page of deleted accounts. Returned when total number of requested
-     * deleted accounts exceed maximum page size.
+     * Request URL that can be used to query next page of deleted accounts. Returned when total number of requested deleted accounts exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
@@ -43,8 +42,7 @@ public final class DeletedAccountListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of deleted accounts. Returned when
-     * total number of requested deleted accounts exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of deleted accounts. Returned when total number of requested deleted accounts exceed maximum page size.
      * 
      * @return the nextLink value.
      */

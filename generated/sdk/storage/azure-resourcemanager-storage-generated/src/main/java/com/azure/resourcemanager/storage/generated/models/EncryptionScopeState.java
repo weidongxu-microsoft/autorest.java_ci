@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
+ * The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
  */
 public final class EncryptionScopeState extends ExpandableStringEnum<EncryptionScopeState> {
     /**

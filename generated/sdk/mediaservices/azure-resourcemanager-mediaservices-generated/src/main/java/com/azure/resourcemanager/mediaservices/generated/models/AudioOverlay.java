@@ -12,7 +12,7 @@ import java.time.Duration;
 /**
  * Describes the properties of an audio overlay.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = AudioOverlay.class, visible = true)
 @JsonTypeName("#Microsoft.Media.AudioOverlay")
 @Fluent
 public final class AudioOverlay extends Overlay {
@@ -20,6 +20,7 @@ public final class AudioOverlay extends Overlay {
      * Creates an instance of AudioOverlay class.
      */
     public AudioOverlay() {
+        withOdataType("#Microsoft.Media.AudioOverlay");
     }
 
     /**

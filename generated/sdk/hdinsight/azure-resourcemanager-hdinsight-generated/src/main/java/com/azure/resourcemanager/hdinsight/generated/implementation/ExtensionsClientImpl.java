@@ -64,8 +64,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     }
 
     /**
-     * The interface defining all the services for HDInsightManagementClientExtensions to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for HDInsightManagementClientExtensions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
@@ -404,8 +403,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterMonitoringResponseInner>>
@@ -442,8 +440,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterMonitoringResponseInner>>
@@ -477,8 +474,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster on successful completion of
-     * {@link Mono}.
+     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterMonitoringResponseInner> getMonitoringStatusAsync(String resourceGroupName,
@@ -960,8 +956,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Azure Monitor on the HDInsight cluster along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the status of Azure Monitor on the HDInsight cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorResponseInner>> getAzureMonitorStatusWithResponseAsync(String resourceGroupName,
@@ -998,8 +993,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Azure Monitor on the HDInsight cluster along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the status of Azure Monitor on the HDInsight cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureMonitorResponseInner>> getAzureMonitorStatusWithResponseAsync(String resourceGroupName,
@@ -1532,8 +1526,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the extension properties for the specified HDInsight cluster extension along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the extension properties for the specified HDInsight cluster extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterMonitoringResponseInner>> getWithResponseAsync(String resourceGroupName,
@@ -1573,8 +1566,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the extension properties for the specified HDInsight cluster extension along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return the extension properties for the specified HDInsight cluster extension along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterMonitoringResponseInner>> getWithResponseAsync(String resourceGroupName,
@@ -1612,8 +1604,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the extension properties for the specified HDInsight cluster extension on successful completion of
-     * {@link Mono}.
+     * @return the extension properties for the specified HDInsight cluster extension on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterMonitoringResponseInner> getAsync(String resourceGroupName, String clusterName,

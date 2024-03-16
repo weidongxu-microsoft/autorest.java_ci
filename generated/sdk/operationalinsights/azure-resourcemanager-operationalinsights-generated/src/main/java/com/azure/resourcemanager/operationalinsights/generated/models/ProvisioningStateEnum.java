@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation,
- * forbidding any update to the table until the ongoing operation is concluded.
+ * Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is concluded.
  */
 public final class ProvisioningStateEnum extends ExpandableStringEnum<ProvisioningStateEnum> {
     /**

@@ -32,8 +32,8 @@ public final class ClusterPrincipalAssignmentsImpl implements ClusterPrincipalAs
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         ClusterPrincipalAssignmentCheckNameRequest principalAssignmentName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, principalAssignmentName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, principalAssignmentName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));

@@ -75,8 +75,8 @@ public final class CertificatesImpl implements Certificates {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, String certificateName,
         String ifMatch, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, resourceName, certificateName, ifMatch,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, resourceName, certificateName, ifMatch, context);
     }
 
     public void delete(String resourceGroupName, String resourceName, String certificateName, String ifMatch) {
@@ -109,8 +109,9 @@ public final class CertificatesImpl implements Certificates {
     public Response<CertificateDescription> verifyWithResponse(String resourceGroupName, String resourceName,
         String certificateName, String ifMatch, CertificateVerificationDescription certificateVerificationBody,
         Context context) {
-        Response<CertificateDescriptionInner> inner = this.serviceClient().verifyWithResponse(resourceGroupName,
-            resourceName, certificateName, ifMatch, certificateVerificationBody, context);
+        Response<CertificateDescriptionInner> inner = this.serviceClient()
+            .verifyWithResponse(resourceGroupName, resourceName, certificateName, ifMatch, certificateVerificationBody,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CertificateDescriptionImpl(inner.getValue(), this.manager()));
@@ -121,8 +122,8 @@ public final class CertificatesImpl implements Certificates {
 
     public CertificateDescription verify(String resourceGroupName, String resourceName, String certificateName,
         String ifMatch, CertificateVerificationDescription certificateVerificationBody) {
-        CertificateDescriptionInner inner = this.serviceClient().verify(resourceGroupName, resourceName,
-            certificateName, ifMatch, certificateVerificationBody);
+        CertificateDescriptionInner inner = this.serviceClient()
+            .verify(resourceGroupName, resourceName, certificateName, ifMatch, certificateVerificationBody);
         if (inner != null) {
             return new CertificateDescriptionImpl(inner, this.manager());
         } else {

@@ -94,8 +94,8 @@ public final class ClustersImpl implements Clusters {
 
     public void updateAutoScaleConfiguration(String resourceGroupName, String clusterName, RoleName roleName,
         AutoscaleConfigurationUpdateParameter parameters, Context context) {
-        this.serviceClient().updateAutoScaleConfiguration(resourceGroupName, clusterName, roleName, parameters,
-            context);
+        this.serviceClient()
+            .updateAutoScaleConfiguration(resourceGroupName, clusterName, roleName, parameters, context);
     }
 
     public PagedIterable<Cluster> list() {

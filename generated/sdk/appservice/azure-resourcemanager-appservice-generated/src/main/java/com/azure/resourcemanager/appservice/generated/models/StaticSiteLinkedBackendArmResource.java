@@ -76,8 +76,7 @@ public interface StaticSiteLinkedBackendArmResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner object.
      * 
      * @return the inner object.
      */
@@ -115,8 +114,7 @@ public interface StaticSiteLinkedBackendArmResource {
         }
 
         /**
-         * The stage of the StaticSiteLinkedBackendArmResource definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StaticSiteLinkedBackendArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithKind, DefinitionStages.WithBackendResourceId, DefinitionStages.WithRegion {
@@ -267,8 +265,7 @@ public interface StaticSiteLinkedBackendArmResource {
      * 
      * @param staticSiteLinkedBackendEnvelope A JSON representation of the linked backend request properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope);
@@ -279,8 +276,7 @@ public interface StaticSiteLinkedBackendArmResource {
      * @param staticSiteLinkedBackendEnvelope A JSON representation of the linked backend request properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context);

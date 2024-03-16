@@ -10,8 +10,7 @@ import java.util.Collection;
 
 /**
  * This determines if traffic is allowed over public network. By default it is enabled.
- * You can further restrict to specific IPs by configuring &lt;seealso
- * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
+ * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
  */
 public final class PublicNetworkAccess extends ExpandableStringEnum<PublicNetworkAccess> {
     /**

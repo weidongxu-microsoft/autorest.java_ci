@@ -162,14 +162,17 @@ public final class StreamingEndpointImpl
     }
 
     public StreamingEndpoint create() {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints().create(resourceGroupName, accountName,
-            streamingEndpointName, this.innerModel(), createAutoStart, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .create(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), createAutoStart,
+                Context.NONE);
         return this;
     }
 
     public StreamingEndpoint create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints().create(resourceGroupName, accountName,
-            streamingEndpointName, this.innerModel(), createAutoStart, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .create(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), createAutoStart, context);
         return this;
     }
 
@@ -186,14 +189,16 @@ public final class StreamingEndpointImpl
     }
 
     public StreamingEndpoint apply() {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints().update(resourceGroupName, accountName,
-            streamingEndpointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .update(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StreamingEndpoint apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints().update(resourceGroupName, accountName,
-            streamingEndpointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .update(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), context);
         return this;
     }
 
@@ -207,14 +212,18 @@ public final class StreamingEndpointImpl
     }
 
     public StreamingEndpoint refresh() {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints()
-            .getWithResponse(resourceGroupName, accountName, streamingEndpointName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .getWithResponse(resourceGroupName, accountName, streamingEndpointName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StreamingEndpoint refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStreamingEndpoints()
-            .getWithResponse(resourceGroupName, accountName, streamingEndpointName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingEndpoints()
+            .getWithResponse(resourceGroupName, accountName, streamingEndpointName, context)
+            .getValue();
         return this;
     }
 
@@ -239,8 +248,8 @@ public final class StreamingEndpointImpl
     }
 
     public void scale(StreamingEntityScaleUnit parameters, Context context) {
-        serviceManager.streamingEndpoints().scale(resourceGroupName, accountName, streamingEndpointName, parameters,
-            context);
+        serviceManager.streamingEndpoints()
+            .scale(resourceGroupName, accountName, streamingEndpointName, parameters, context);
     }
 
     public StreamingEndpointImpl withRegion(Region location) {

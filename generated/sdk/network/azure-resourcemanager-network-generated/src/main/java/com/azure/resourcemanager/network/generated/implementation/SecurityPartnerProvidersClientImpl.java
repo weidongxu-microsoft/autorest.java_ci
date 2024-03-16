@@ -66,8 +66,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientSecurityPartnerProviders to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientSecurityPartnerProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -363,8 +362,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Security Partner Provider along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified Security Partner Provider along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecurityPartnerProviderInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -402,8 +400,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Security Partner Provider along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the specified Security Partner Provider along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecurityPartnerProviderInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -869,8 +866,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>>
@@ -905,8 +901,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>>
@@ -972,8 +967,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SecurityPartnerProviderInner> listByResourceGroup(String resourceGroupName) {
@@ -988,8 +982,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with
-     * {@link PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SecurityPartnerProviderInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1001,8 +994,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Security Partner Providers in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the Security Partner Providers in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listSinglePageAsync() {
@@ -1031,8 +1023,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Security Partner Providers in a subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the Security Partner Providers in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listSinglePageAsync(Context context) {
@@ -1114,8 +1105,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1145,8 +1135,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1174,8 +1163,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listNextSinglePageAsync(String nextLink) {
@@ -1203,8 +1191,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListSecurityPartnerProviders API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityPartnerProviderInner>> listNextSinglePageAsync(String nextLink,

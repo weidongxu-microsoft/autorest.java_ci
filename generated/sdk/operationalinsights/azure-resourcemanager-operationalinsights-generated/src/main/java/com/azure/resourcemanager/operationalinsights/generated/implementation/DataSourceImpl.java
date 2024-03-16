@@ -74,13 +74,17 @@ public final class DataSourceImpl implements DataSource, DataSource.Definition, 
     }
 
     public DataSource create() {
-        this.innerObject = serviceManager.serviceClient().getDataSources().createOrUpdateWithResponse(resourceGroupName,
-            workspaceName, dataSourceName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public DataSource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDataSources()
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
             .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceName, this.innerModel(), context)
             .getValue();
         return this;
@@ -98,13 +102,17 @@ public final class DataSourceImpl implements DataSource, DataSource.Definition, 
     }
 
     public DataSource apply() {
-        this.innerObject = serviceManager.serviceClient().getDataSources().createOrUpdateWithResponse(resourceGroupName,
-            workspaceName, dataSourceName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public DataSource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDataSources()
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
             .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataSourceName, this.innerModel(), context)
             .getValue();
         return this;
@@ -120,14 +128,18 @@ public final class DataSourceImpl implements DataSource, DataSource.Definition, 
     }
 
     public DataSource refresh() {
-        this.innerObject = serviceManager.serviceClient().getDataSources()
-            .getWithResponse(resourceGroupName, workspaceName, dataSourceName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
+            .getWithResponse(resourceGroupName, workspaceName, dataSourceName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DataSource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDataSources()
-            .getWithResponse(resourceGroupName, workspaceName, dataSourceName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDataSources()
+            .getWithResponse(resourceGroupName, workspaceName, dataSourceName, context)
+            .getValue();
         return this;
     }
 

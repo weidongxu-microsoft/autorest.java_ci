@@ -129,14 +129,16 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
     }
 
     public DedicatedHost create() {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts().createOrUpdate(resourceGroupName,
-            hostGroupName, hostname, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .createOrUpdate(resourceGroupName, hostGroupName, hostname, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DedicatedHost create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts().createOrUpdate(resourceGroupName,
-            hostGroupName, hostname, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .createOrUpdate(resourceGroupName, hostGroupName, hostname, this.innerModel(), context);
         return this;
     }
 
@@ -152,14 +154,16 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
     }
 
     public DedicatedHost apply() {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts().update(resourceGroupName, hostGroupName,
-            hostname, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .update(resourceGroupName, hostGroupName, hostname, updateParameters, Context.NONE);
         return this;
     }
 
     public DedicatedHost apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts().update(resourceGroupName, hostGroupName,
-            hostname, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .update(resourceGroupName, hostGroupName, hostname, updateParameters, context);
         return this;
     }
 
@@ -174,15 +178,19 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
 
     public DedicatedHost refresh() {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts()
-            .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DedicatedHost refresh(Context context) {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getDedicatedHosts()
-            .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDedicatedHosts()
+            .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, context)
+            .getValue();
         return this;
     }
 

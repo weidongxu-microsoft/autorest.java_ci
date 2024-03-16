@@ -24,15 +24,13 @@ public final class SiteAuthSettingsV2Properties {
     private AuthPlatform platform;
 
     /*
-     * The configuration settings that determines the validation flow of users using App Service
-     * Authentication/Authorization.
+     * The configuration settings that determines the validation flow of users using App Service Authentication/Authorization.
      */
     @JsonProperty(value = "globalValidation")
     private GlobalValidation globalValidation;
 
     /*
-     * The configuration settings of each of the identity providers used to configure App Service
-     * Authentication/Authorization.
+     * The configuration settings of each of the identity providers used to configure App Service Authentication/Authorization.
      */
     @JsonProperty(value = "identityProviders")
     private IdentityProviders identityProviders;
@@ -44,8 +42,7 @@ public final class SiteAuthSettingsV2Properties {
     private Login login;
 
     /*
-     * The configuration settings of the HTTP requests for authentication and authorization requests made against App
-     * Service Authentication/Authorization.
+     * The configuration settings of the HTTP requests for authentication and authorization requests made against App Service Authentication/Authorization.
      */
     @JsonProperty(value = "httpSettings")
     private HttpSettings httpSettings;
@@ -57,8 +54,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Get the platform property: The configuration settings of the platform of App Service
-     * Authentication/Authorization.
+     * Get the platform property: The configuration settings of the platform of App Service Authentication/Authorization.
      * 
      * @return the platform value.
      */
@@ -67,8 +63,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Set the platform property: The configuration settings of the platform of App Service
-     * Authentication/Authorization.
+     * Set the platform property: The configuration settings of the platform of App Service Authentication/Authorization.
      * 
      * @param platform the platform value to set.
      * @return the SiteAuthSettingsV2Properties object itself.
@@ -79,8 +74,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Get the globalValidation property: The configuration settings that determines the validation flow of users using
-     * App Service Authentication/Authorization.
+     * Get the globalValidation property: The configuration settings that determines the validation flow of users using App Service Authentication/Authorization.
      * 
      * @return the globalValidation value.
      */
@@ -89,8 +83,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Set the globalValidation property: The configuration settings that determines the validation flow of users using
-     * App Service Authentication/Authorization.
+     * Set the globalValidation property: The configuration settings that determines the validation flow of users using App Service Authentication/Authorization.
      * 
      * @param globalValidation the globalValidation value to set.
      * @return the SiteAuthSettingsV2Properties object itself.
@@ -101,8 +94,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Get the identityProviders property: The configuration settings of each of the identity providers used to
-     * configure App Service Authentication/Authorization.
+     * Get the identityProviders property: The configuration settings of each of the identity providers used to configure App Service Authentication/Authorization.
      * 
      * @return the identityProviders value.
      */
@@ -111,8 +103,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Set the identityProviders property: The configuration settings of each of the identity providers used to
-     * configure App Service Authentication/Authorization.
+     * Set the identityProviders property: The configuration settings of each of the identity providers used to configure App Service Authentication/Authorization.
      * 
      * @param identityProviders the identityProviders value to set.
      * @return the SiteAuthSettingsV2Properties object itself.
@@ -123,8 +114,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Get the login property: The configuration settings of the login flow of users using App Service
-     * Authentication/Authorization.
+     * Get the login property: The configuration settings of the login flow of users using App Service Authentication/Authorization.
      * 
      * @return the login value.
      */
@@ -133,8 +123,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Set the login property: The configuration settings of the login flow of users using App Service
-     * Authentication/Authorization.
+     * Set the login property: The configuration settings of the login flow of users using App Service Authentication/Authorization.
      * 
      * @param login the login value to set.
      * @return the SiteAuthSettingsV2Properties object itself.
@@ -145,8 +134,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Get the httpSettings property: The configuration settings of the HTTP requests for authentication and
-     * authorization requests made against App Service Authentication/Authorization.
+     * Get the httpSettings property: The configuration settings of the HTTP requests for authentication and authorization requests made against App Service Authentication/Authorization.
      * 
      * @return the httpSettings value.
      */
@@ -155,8 +143,7 @@ public final class SiteAuthSettingsV2Properties {
     }
 
     /**
-     * Set the httpSettings property: The configuration settings of the HTTP requests for authentication and
-     * authorization requests made against App Service Authentication/Authorization.
+     * Set the httpSettings property: The configuration settings of the HTTP requests for authentication and authorization requests made against App Service Authentication/Authorization.
      * 
      * @param httpSettings the httpSettings value to set.
      * @return the SiteAuthSettingsV2Properties object itself.

@@ -7,17 +7,14 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * The resource from which the rule collects its data.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "odata.type",
-    defaultImpl = RuleDataSource.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "odata.type", defaultImpl = RuleDataSource.class, visible = true)
 @JsonTypeName("RuleDataSource")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -29,15 +26,20 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleDataSource {
     /*
-     * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an
-     * existing rule.
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType;
+
+    /*
+     * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      */
     @JsonProperty(value = "resourceUri")
     private String resourceUri;
 
     /*
-     * the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for
-     * an existing rule.
+     * the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      */
     @JsonProperty(value = "legacyResourceId")
     private String legacyResourceId;
@@ -58,11 +60,31 @@ public class RuleDataSource {
      * Creates an instance of RuleDataSource class.
      */
     public RuleDataSource() {
+        this.odataType = "RuleDataSource";
     }
 
     /**
-     * Get the resourceUri property: the resource identifier of the resource the rule monitors. **NOTE**: this property
-     * cannot be updated for an existing rule.
+     * Get the odataType property: specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the RuleDataSource object itself.
+     */
+    protected RuleDataSource withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
+    }
+
+    /**
+     * Get the resourceUri property: the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      * 
      * @return the resourceUri value.
      */
@@ -71,8 +93,7 @@ public class RuleDataSource {
     }
 
     /**
-     * Set the resourceUri property: the resource identifier of the resource the rule monitors. **NOTE**: this property
-     * cannot be updated for an existing rule.
+     * Set the resourceUri property: the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      * 
      * @param resourceUri the resourceUri value to set.
      * @return the RuleDataSource object itself.
@@ -83,8 +104,7 @@ public class RuleDataSource {
     }
 
     /**
-     * Get the legacyResourceId property: the legacy resource identifier of the resource the rule monitors. **NOTE**:
-     * this property cannot be updated for an existing rule.
+     * Get the legacyResourceId property: the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      * 
      * @return the legacyResourceId value.
      */
@@ -93,8 +113,7 @@ public class RuleDataSource {
     }
 
     /**
-     * Set the legacyResourceId property: the legacy resource identifier of the resource the rule monitors. **NOTE**:
-     * this property cannot be updated for an existing rule.
+     * Set the legacyResourceId property: the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
      * 
      * @param legacyResourceId the legacyResourceId value to set.
      * @return the RuleDataSource object itself.

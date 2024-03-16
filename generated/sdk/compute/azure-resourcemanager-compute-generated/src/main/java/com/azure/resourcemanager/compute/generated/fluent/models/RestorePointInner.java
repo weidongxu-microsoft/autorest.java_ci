@@ -41,8 +41,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Get the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore
-     * point. If no disks are specified, all disks will be included.
+     * Get the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore point. If no disks are specified, all disks will be included.
      * 
      * @return the excludeDisks value.
      */
@@ -51,8 +50,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Set the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore
-     * point. If no disks are specified, all disks will be included.
+     * Set the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore point. If no disks are specified, all disks will be included.
      * 
      * @param excludeDisks the excludeDisks value to set.
      * @return the RestorePointInner object itself.
@@ -98,9 +96,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Get the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while
-     * creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
-     * https://aka.ms/RestorePoints for more details.
+     * Get the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
      * 
      * @return the consistencyMode value.
      */
@@ -109,9 +105,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Set the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while
-     * creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
-     * https://aka.ms/RestorePoints for more details.
+     * Set the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
      * 
      * @param consistencyMode the consistencyMode value to set.
      * @return the RestorePointInner object itself.
@@ -148,8 +142,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Get the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be
-     * created.
+     * Get the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be created.
      * 
      * @return the sourceRestorePoint value.
      */
@@ -158,8 +151,7 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Set the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be
-     * created.
+     * Set the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be created.
      * 
      * @param sourceRestorePoint the sourceRestorePoint value to set.
      * @return the RestorePointInner object itself.

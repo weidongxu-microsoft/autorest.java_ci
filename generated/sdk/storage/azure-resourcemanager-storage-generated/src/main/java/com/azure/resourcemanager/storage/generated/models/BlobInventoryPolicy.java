@@ -93,18 +93,15 @@ public interface BlobInventoryPolicy {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account
-             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the BlobInventoryPolicy definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BlobInventoryPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPolicy {
             /**
@@ -128,8 +125,7 @@ public interface BlobInventoryPolicy {
          */
         interface WithPolicy {
             /**
-             * Specifies the policy property: The storage account blob inventory policy object. It is composed of policy
-             * rules..
+             * Specifies the policy property: The storage account blob inventory policy object. It is composed of policy rules..
              * 
              * @param policy The storage account blob inventory policy object. It is composed of policy rules.
              * @return the next definition stage.
@@ -174,8 +170,7 @@ public interface BlobInventoryPolicy {
          */
         interface WithPolicy {
             /**
-             * Specifies the policy property: The storage account blob inventory policy object. It is composed of policy
-             * rules..
+             * Specifies the policy property: The storage account blob inventory policy object. It is composed of policy rules..
              * 
              * @param policy The storage account blob inventory policy object. It is composed of policy rules.
              * @return the next definition stage.

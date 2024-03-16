@@ -19,8 +19,7 @@ public final class EncryptionSettingsElement {
     private KeyVaultAndSecretReference diskEncryptionKey;
 
     /*
-     * Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is optional and when provided is used
-     * to unwrap the disk encryption key.
+     * Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is optional and when provided is used to unwrap the disk encryption key.
      */
     @JsonProperty(value = "keyEncryptionKey")
     private KeyVaultAndKeyReference keyEncryptionKey;
@@ -52,8 +51,7 @@ public final class EncryptionSettingsElement {
     }
 
     /**
-     * Get the keyEncryptionKey property: Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is
-     * optional and when provided is used to unwrap the disk encryption key.
+     * Get the keyEncryptionKey property: Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is optional and when provided is used to unwrap the disk encryption key.
      * 
      * @return the keyEncryptionKey value.
      */
@@ -62,8 +60,7 @@ public final class EncryptionSettingsElement {
     }
 
     /**
-     * Set the keyEncryptionKey property: Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is
-     * optional and when provided is used to unwrap the disk encryption key.
+     * Set the keyEncryptionKey property: Key Vault Key Url and vault id of the key encryption key. KeyEncryptionKey is optional and when provided is used to unwrap the disk encryption key.
      * 
      * @param keyEncryptionKey the keyEncryptionKey value to set.
      * @return the EncryptionSettingsElement object itself.

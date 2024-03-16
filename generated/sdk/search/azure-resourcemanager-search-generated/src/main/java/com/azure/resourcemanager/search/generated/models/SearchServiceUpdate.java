@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The parameters used to update a search service.
+ * The parameters used to update an Azure AI Search service.
  */
 @Fluent
 public final class SearchServiceUpdate extends ProxyResource {
@@ -26,15 +26,13 @@ public final class SearchServiceUpdate extends ProxyResource {
     private SearchServiceProperties innerProperties;
 
     /*
-     * The SKU of the search service, which determines the billing rate and capacity limits. This property is required
-     * when creating a new search service.
+     * The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
      */
     @JsonProperty(value = "sku")
     private Sku sku;
 
     /*
-     * The geographic location of the resource. This must be one of the supported and registered Azure geo regions (for
-     * example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new resource.
+     * The geographic location of the resource. This must be one of the supported and registered Azure geo regions (for example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new resource.
      */
     @JsonProperty(value = "location")
     private String location;
@@ -47,7 +45,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     private Map<String, String> tags;
 
     /*
-     * The identity of the resource.
+     * Details about the search service identity. A null value indicates that the search service has no identity assigned.
      */
     @JsonProperty(value = "identity")
     private Identity identity;
@@ -68,8 +66,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the sku property: The SKU of the search service, which determines the billing rate and capacity limits. This
-     * property is required when creating a new search service.
+     * Get the sku property: The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
      * 
      * @return the sku value.
      */
@@ -78,8 +75,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the sku property: The SKU of the search service, which determines the billing rate and capacity limits. This
-     * property is required when creating a new search service.
+     * Set the sku property: The SKU of the search service, which determines price tier and capacity limits. This property is required when creating a new search service.
      * 
      * @param sku the sku value to set.
      * @return the SearchServiceUpdate object itself.
@@ -90,9 +86,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the location property: The geographic location of the resource. This must be one of the supported and
-     * registered Azure geo regions (for example, West US, East US, Southeast Asia, and so forth). This property is
-     * required when creating a new resource.
+     * Get the location property: The geographic location of the resource. This must be one of the supported and registered Azure geo regions (for example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new resource.
      * 
      * @return the location value.
      */
@@ -101,9 +95,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the location property: The geographic location of the resource. This must be one of the supported and
-     * registered Azure geo regions (for example, West US, East US, Southeast Asia, and so forth). This property is
-     * required when creating a new resource.
+     * Set the location property: The geographic location of the resource. This must be one of the supported and registered Azure geo regions (for example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new resource.
      * 
      * @param location the location value to set.
      * @return the SearchServiceUpdate object itself.
@@ -134,7 +126,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the identity property: The identity of the resource.
+     * Get the identity property: Details about the search service identity. A null value indicates that the search service has no identity assigned.
      * 
      * @return the identity value.
      */
@@ -143,7 +135,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the identity property: The identity of the resource.
+     * Set the identity property: Details about the search service identity. A null value indicates that the search service has no identity assigned.
      * 
      * @param identity the identity value to set.
      * @return the SearchServiceUpdate object itself.
@@ -154,8 +146,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the replicaCount property: The number of replicas in the search service. If specified, it must be a value
-     * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
+     * Get the replicaCount property: The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
      * 
      * @return the replicaCount value.
      */
@@ -164,8 +155,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the replicaCount property: The number of replicas in the search service. If specified, it must be a value
-     * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
+     * Set the replicaCount property: The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.
      * 
      * @param replicaCount the replicaCount value to set.
      * @return the SearchServiceUpdate object itself.
@@ -179,9 +169,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3,
-     * 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode
-     * set to 'highDensity', the allowed values are between 1 and 3.
+     * Get the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3.
      * 
      * @return the partitionCount value.
      */
@@ -190,9 +178,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3,
-     * 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode
-     * set to 'highDensity', the allowed values are between 1 and 3.
+     * Set the partitionCount property: The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the allowed values are between 1 and 3.
      * 
      * @param partitionCount the partitionCount value to set.
      * @return the SearchServiceUpdate object itself.
@@ -206,10 +192,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3
-     * high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for
-     * any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this
-     * value must be 'default'.
+     * Get the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
      * 
      * @return the hostingMode value.
      */
@@ -218,10 +201,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3
-     * high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for
-     * any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this
-     * value must be 'default'.
+     * Set the hostingMode property: Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
      * 
      * @param hostingMode the hostingMode value to set.
      * @return the SearchServiceUpdate object itself.
@@ -235,9 +215,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private
-     * endpoint connections would be the exclusive access method.
+     * Get the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -246,9 +224,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private
-     * endpoint connections would be the exclusive access method.
+     * Set the publicNetworkAccess property: This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive access method.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the SearchServiceUpdate object itself.
@@ -262,15 +238,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the status property: The status of the search service. Possible values include: 'running': The search service
-     * is running and no provisioning operations are underway. 'provisioning': The search service is being provisioned
-     * or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search service is
-     * degraded. This can occur when the underlying search units are not healthy. The search service is most likely
-     * operational, but performance might be slow and some requests might be dropped. 'disabled': The search service is
-     * disabled. In this state, the service will reject all API requests. 'error': The search service is in an error
-     * state. If your service is in the degraded, disabled, or error states, Microsoft is actively investigating the
-     * underlying issue. Dedicated services in these states are still chargeable based on the number of search units
-     * provisioned.
+     * Get the status property: The status of the search service. Possible values include: 'running': The search service is running and no provisioning operations are underway. 'provisioning': The search service is being provisioned or scaled up or down. 'deleting': The search service is being deleted. 'degraded': The search service is degraded. This can occur when the underlying search units are not healthy. The search service is most likely operational, but performance might be slow and some requests might be dropped. 'disabled': The search service is disabled. In this state, the service will reject all API requests. 'error': The search service is in an error state. 'stopped': The search service is in a subscription that's disabled. If your service is in the degraded, disabled, or error states, it means the Azure AI Search team is actively investigating the underlying issue. Dedicated services in these states are still chargeable based on the number of search units provisioned.
      * 
      * @return the status value.
      */
@@ -288,13 +256,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the provisioningState property: The state of the last provisioning operation performed on the search service.
-     * Provisioning is an intermediate state that occurs while service capacity is being established. After capacity is
-     * set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll provisioning
-     * status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search Service
-     * operation to see when an operation is completed. If you are using the free service, this value tends to come back
-     * as 'succeeded' directly in the call to Create search service. This is because the free service uses capacity that
-     * is already set up.
+     * Get the provisioningState property: The state of the last provisioning operation performed on the search service. Provisioning is an intermediate state that occurs while service capacity is being established. After capacity is set up, provisioningState changes to either 'succeeded' or 'failed'. Client applications can poll provisioning status (the recommended polling interval is from 30 seconds to one minute) by using the Get Search Service operation to see when an operation is completed. If you are using the free service, this value tends to come back as 'succeeded' directly in the call to Create search service. This is because the free service uses capacity that is already set up.
      * 
      * @return the provisioningState value.
      */
@@ -303,7 +265,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the networkRuleSet property: Network-specific rules that determine how the search service may be reached.
+     * Get the networkRuleSet property: Network specific rules that determine how the Azure AI Search service may be reached.
      * 
      * @return the networkRuleSet value.
      */
@@ -312,7 +274,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the networkRuleSet property: Network-specific rules that determine how the search service may be reached.
+     * Set the networkRuleSet property: Network specific rules that determine how the Azure AI Search service may be reached.
      * 
      * @param networkRuleSet the networkRuleSet value to set.
      * @return the SearchServiceUpdate object itself.
@@ -326,8 +288,31 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
-     * using customer manager keys within a search service.
+     * Get the disabledDataExfiltrationOptions property: A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future.
+     * 
+     * @return the disabledDataExfiltrationOptions value.
+     */
+    public List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions() {
+        return this.innerProperties() == null ? null : this.innerProperties().disabledDataExfiltrationOptions();
+    }
+
+    /**
+     * Set the disabledDataExfiltrationOptions property: A list of data exfiltration scenarios that are explicitly disallowed for the search service. Currently, the only supported value is 'All' to disable all possible data export scenarios with more fine grained controls planned for the future.
+     * 
+     * @param disabledDataExfiltrationOptions the disabledDataExfiltrationOptions value to set.
+     * @return the SearchServiceUpdate object itself.
+     */
+    public SearchServiceUpdate withDisabledDataExfiltrationOptions(
+        List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withDisabledDataExfiltrationOptions(disabledDataExfiltrationOptions);
+        return this;
+    }
+
+    /**
+     * Get the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service.
      * 
      * @return the encryptionWithCmk value.
      */
@@ -336,8 +321,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
-     * using customer manager keys within a search service.
+     * Set the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a search service.
      * 
      * @param encryptionWithCmk the encryptionWithCmk value to set.
      * @return the SearchServiceUpdate object itself.
@@ -351,8 +335,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
-     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
      * 
      * @return the disableLocalAuth value.
      */
@@ -361,8 +344,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
-     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
      * 
      * @param disableLocalAuth the disableLocalAuth value to set.
      * @return the SearchServiceUpdate object itself.
@@ -376,8 +358,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the authOptions property: Defines the options for how the data plane API of a search service authenticates
-     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     * Get the authOptions property: Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true.
      * 
      * @return the authOptions value.
      */
@@ -386,8 +367,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the authOptions property: Defines the options for how the data plane API of a search service authenticates
-     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     * Set the authOptions property: Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if 'disableLocalAuth' is set to true.
      * 
      * @param authOptions the authOptions value to set.
      * @return the SearchServiceUpdate object itself.
@@ -401,17 +381,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the privateEndpointConnections property: The list of private endpoint connections to the search service.
-     * 
-     * @return the privateEndpointConnections value.
-     */
-    public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
-        return this.innerProperties() == null ? null : this.innerProperties().privateEndpointConnections();
-    }
-
-    /**
-     * Get the semanticSearch property: Sets options that control the availability of semantic search. This
-     * configuration is only possible for certain search SKUs in certain locations.
+     * Get the semanticSearch property: Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations.
      * 
      * @return the semanticSearch value.
      */
@@ -420,8 +390,7 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Set the semanticSearch property: Sets options that control the availability of semantic search. This
-     * configuration is only possible for certain search SKUs in certain locations.
+     * Set the semanticSearch property: Sets options that control the availability of semantic search. This configuration is only possible for certain Azure AI Search SKUs in certain locations.
      * 
      * @param semanticSearch the semanticSearch value to set.
      * @return the SearchServiceUpdate object itself.
@@ -435,13 +404,30 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
-     * Get the sharedPrivateLinkResources property: The list of shared private link resources managed by the search
-     * service.
+     * Get the privateEndpointConnections property: The list of private endpoint connections to the Azure AI Search service.
+     * 
+     * @return the privateEndpointConnections value.
+     */
+    public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
+        return this.innerProperties() == null ? null : this.innerProperties().privateEndpointConnections();
+    }
+
+    /**
+     * Get the sharedPrivateLinkResources property: The list of shared private link resources managed by the Azure AI Search service.
      * 
      * @return the sharedPrivateLinkResources value.
      */
     public List<SharedPrivateLinkResourceInner> sharedPrivateLinkResources() {
         return this.innerProperties() == null ? null : this.innerProperties().sharedPrivateLinkResources();
+    }
+
+    /**
+     * Get the etag property: A system generated property representing the service's etag that can be for optimistic concurrency control during updates.
+     * 
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.innerProperties() == null ? null : this.innerProperties().etag();
     }
 
     /**

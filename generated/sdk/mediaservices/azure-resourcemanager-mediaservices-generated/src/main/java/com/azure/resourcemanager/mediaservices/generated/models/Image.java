@@ -15,11 +15,7 @@ import java.time.Duration;
 /**
  * Describes the basic properties for generating thumbnails from the input video.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Image.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Image.class, visible = true)
 @JsonTypeName("#Microsoft.Media.Image")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JpgImage", value = JpgImage.class),
@@ -27,37 +23,19 @@ import java.time.Duration;
 @Fluent
 public class Image extends Video {
     /*
-     * The position in the input video from where to start generating thumbnails. The value can be in ISO 8601 format
-     * (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a
-     * relative value to stream duration (For example, 10% to start at 10% of stream duration). Also supports a macro
-     * {Best}, which tells the encoder to select the best thumbnail from the first few seconds of the video and will
-     * only produce one thumbnail, no matter what other settings are for Step and Range. The default value is macro
-     * {Best}.
+     * The position in the input video from where to start generating thumbnails. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default value is macro {Best}.
      */
     @JsonProperty(value = "start", required = true)
     private String start;
 
     /*
-     * The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For example, PT05S for one
-     * image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames), or a relative value to
-     * stream duration (For example, 10% for one image every 10% of stream duration). Note: Step value will affect the
-     * first generated thumbnail, which may not be exactly the one specified at transform preset start time. This is due
-     * to the encoder, which tries to select the best thumbnail between start time and Step position from start time as
-     * the first output. As the default value is 10%, it means if stream has long duration, the first generated
-     * thumbnail might be far away from the one specified at start time. Try to select reasonable value for Step if the
-     * first thumbnail is expected close to start time, or set Range value at 1 if only one thumbnail is needed at start
-     * time.
+     * The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For example, PT05S for one image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames), or a relative value to stream duration (For example, 10% for one image every 10% of stream duration). Note: Step value will affect the first generated thumbnail, which may not be exactly the one specified at transform preset start time. This is due to the encoder, which tries to select the best thumbnail between start time and Step position from start time as the first output. As the default value is 10%, it means if stream has long duration, the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one thumbnail is needed at start time.
      */
     @JsonProperty(value = "step")
     private String step;
 
     /*
-     * The position relative to transform preset start time in the input video at which to stop generating thumbnails.
-     * The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30 seconds from start time),
-     * or a frame count (For example, 300 to stop at the 300th frame from the frame at start time. If this value is 1,
-     * it means only producing one thumbnail at start time), or a relative value to the stream duration (For example,
-     * 50% to stop at half of stream duration from start time). The default value is 100%, which means to stop at the
-     * end of the stream.
+     * The position relative to transform preset start time in the input video at which to stop generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30 seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which means to stop at the end of the stream.
      */
     @JsonProperty(value = "range")
     private String range;
@@ -66,15 +44,11 @@ public class Image extends Video {
      * Creates an instance of Image class.
      */
     public Image() {
+        withOdataType("#Microsoft.Media.Image");
     }
 
     /**
-     * Get the start property: The position in the input video from where to start generating thumbnails. The value can
-     * be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at
-     * the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration).
-     * Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of
-     * the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default
-     * value is macro {Best}.
+     * Get the start property: The position in the input video from where to start generating thumbnails. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default value is macro {Best}.
      * 
      * @return the start value.
      */
@@ -83,12 +57,7 @@ public class Image extends Video {
     }
 
     /**
-     * Set the start property: The position in the input video from where to start generating thumbnails. The value can
-     * be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at
-     * the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration).
-     * Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of
-     * the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default
-     * value is macro {Best}.
+     * Set the start property: The position in the input video from where to start generating thumbnails. The value can be in ISO 8601 format (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a relative value to stream duration (For example, 10% to start at 10% of stream duration). Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default value is macro {Best}.
      * 
      * @param start the start value to set.
      * @return the Image object itself.
@@ -99,15 +68,7 @@ public class Image extends Video {
     }
 
     /**
-     * Get the step property: The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For
-     * example, PT05S for one image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames),
-     * or a relative value to stream duration (For example, 10% for one image every 10% of stream duration). Note: Step
-     * value will affect the first generated thumbnail, which may not be exactly the one specified at transform preset
-     * start time. This is due to the encoder, which tries to select the best thumbnail between start time and Step
-     * position from start time as the first output. As the default value is 10%, it means if stream has long duration,
-     * the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable
-     * value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one
-     * thumbnail is needed at start time.
+     * Get the step property: The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For example, PT05S for one image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames), or a relative value to stream duration (For example, 10% for one image every 10% of stream duration). Note: Step value will affect the first generated thumbnail, which may not be exactly the one specified at transform preset start time. This is due to the encoder, which tries to select the best thumbnail between start time and Step position from start time as the first output. As the default value is 10%, it means if stream has long duration, the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one thumbnail is needed at start time.
      * 
      * @return the step value.
      */
@@ -116,15 +77,7 @@ public class Image extends Video {
     }
 
     /**
-     * Set the step property: The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For
-     * example, PT05S for one image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames),
-     * or a relative value to stream duration (For example, 10% for one image every 10% of stream duration). Note: Step
-     * value will affect the first generated thumbnail, which may not be exactly the one specified at transform preset
-     * start time. This is due to the encoder, which tries to select the best thumbnail between start time and Step
-     * position from start time as the first output. As the default value is 10%, it means if stream has long duration,
-     * the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable
-     * value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one
-     * thumbnail is needed at start time.
+     * Set the step property: The intervals at which thumbnails are generated. The value can be in ISO 8601 format (For example, PT05S for one image every 5 seconds), or a frame count (For example, 30 for one image every 30 frames), or a relative value to stream duration (For example, 10% for one image every 10% of stream duration). Note: Step value will affect the first generated thumbnail, which may not be exactly the one specified at transform preset start time. This is due to the encoder, which tries to select the best thumbnail between start time and Step position from start time as the first output. As the default value is 10%, it means if stream has long duration, the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one thumbnail is needed at start time.
      * 
      * @param step the step value to set.
      * @return the Image object itself.
@@ -135,12 +88,7 @@ public class Image extends Video {
     }
 
     /**
-     * Get the range property: The position relative to transform preset start time in the input video at which to stop
-     * generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30
-     * seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start
-     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream
-     * duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which
-     * means to stop at the end of the stream.
+     * Get the range property: The position relative to transform preset start time in the input video at which to stop generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30 seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which means to stop at the end of the stream.
      * 
      * @return the range value.
      */
@@ -149,12 +97,7 @@ public class Image extends Video {
     }
 
     /**
-     * Set the range property: The position relative to transform preset start time in the input video at which to stop
-     * generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30
-     * seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start
-     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream
-     * duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which
-     * means to stop at the end of the stream.
+     * Set the range property: The position relative to transform preset start time in the input video at which to stop generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30 seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which means to stop at the end of the stream.
      * 
      * @param range the range value to set.
      * @return the Image object itself.

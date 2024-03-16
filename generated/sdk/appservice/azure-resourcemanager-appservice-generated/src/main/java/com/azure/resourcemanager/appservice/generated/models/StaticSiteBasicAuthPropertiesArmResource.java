@@ -55,16 +55,14 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
     String secretUrl();
 
     /**
-     * Gets the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments
-     * it is active.
+     * Gets the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments it is active.
      * 
      * @return the applicableEnvironmentsMode value.
      */
     String applicableEnvironmentsMode();
 
     /**
-     * Gets the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is
-     * set to SpecifiedEnvironments.
+     * Gets the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments.
      * 
      * @return the environments value.
      */
@@ -85,9 +83,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner object.
      * 
      * @return the inner object.
      */
@@ -125,8 +121,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
         }
 
         /**
-         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithKind, DefinitionStages.WithPassword, DefinitionStages.WithSecretUrl,
@@ -187,16 +182,13 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
         }
 
         /**
-         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify
-         * applicableEnvironmentsMode.
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify applicableEnvironmentsMode.
          */
         interface WithApplicableEnvironmentsMode {
             /**
-             * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what
-             * environments it is active..
+             * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments it is active..
              * 
-             * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it
-             * is active.
+             * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it is active.
              * @return the next definition stage.
              */
             WithCreate withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
@@ -207,11 +199,9 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
          */
         interface WithEnvironments {
             /**
-             * Specifies the environments property: The list of enabled environments for Basic Auth if
-             * ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
+             * Specifies the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
              * 
-             * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set
-             * to SpecifiedEnvironments.
+             * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments.
              * @return the next definition stage.
              */
             WithCreate withEnvironments(List<String> environments);
@@ -290,16 +280,13 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
         }
 
         /**
-         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify
-         * applicableEnvironmentsMode.
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify applicableEnvironmentsMode.
          */
         interface WithApplicableEnvironmentsMode {
             /**
-             * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what
-             * environments it is active..
+             * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments it is active..
              * 
-             * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it
-             * is active.
+             * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it is active.
              * @return the next definition stage.
              */
             Update withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
@@ -310,11 +297,9 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
          */
         interface WithEnvironments {
             /**
-             * Specifies the environments property: The list of enabled environments for Basic Auth if
-             * ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
+             * Specifies the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
              * 
-             * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set
-             * to SpecifiedEnvironments.
+             * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set to SpecifiedEnvironments.
              * @return the next definition stage.
              */
             Update withEnvironments(List<String> environments);

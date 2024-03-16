@@ -56,8 +56,7 @@ public final class PreconfiguredEndpointsClientImpl implements PreconfiguredEndp
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientPreconfiguredEndpoints to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientPreconfiguredEndpoints to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -88,8 +87,7 @@ public final class PreconfiguredEndpointsClientImpl implements PreconfiguredEndp
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Preconfigured Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of Preconfigured Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PreconfiguredEndpointInner>> listSinglePageAsync(String resourceGroupName,
@@ -128,8 +126,7 @@ public final class PreconfiguredEndpointsClientImpl implements PreconfiguredEndp
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Preconfigured Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of Preconfigured Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PreconfiguredEndpointInner>> listSinglePageAsync(String resourceGroupName,
@@ -234,8 +231,7 @@ public final class PreconfiguredEndpointsClientImpl implements PreconfiguredEndp
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of preconfigured endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return defines a list of preconfigured endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PreconfiguredEndpointInner>> listNextSinglePageAsync(String nextLink) {
@@ -263,8 +259,7 @@ public final class PreconfiguredEndpointsClientImpl implements PreconfiguredEndp
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of preconfigured endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return defines a list of preconfigured endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PreconfiguredEndpointInner>> listNextSinglePageAsync(String nextLink, Context context) {

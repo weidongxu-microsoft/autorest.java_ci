@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SshGenerateKeyPairInputParameters {
     /*
-     * The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not
-     * provided, will default to RSA
+     * The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not provided, will default to RSA
      */
     @JsonProperty(value = "encryptionType")
     private SshEncryptionTypes encryptionType;
@@ -26,8 +25,7 @@ public final class SshGenerateKeyPairInputParameters {
     }
 
     /**
-     * Get the encryptionType property: The encryption type of the SSH keys to be generated. See SshEncryptionTypes for
-     * possible set of values. If not provided, will default to RSA.
+     * Get the encryptionType property: The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not provided, will default to RSA.
      * 
      * @return the encryptionType value.
      */
@@ -36,8 +34,7 @@ public final class SshGenerateKeyPairInputParameters {
     }
 
     /**
-     * Set the encryptionType property: The encryption type of the SSH keys to be generated. See SshEncryptionTypes for
-     * possible set of values. If not provided, will default to RSA.
+     * Set the encryptionType property: The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not provided, will default to RSA.
      * 
      * @param encryptionType the encryptionType value to set.
      * @return the SshGenerateKeyPairInputParameters object itself.

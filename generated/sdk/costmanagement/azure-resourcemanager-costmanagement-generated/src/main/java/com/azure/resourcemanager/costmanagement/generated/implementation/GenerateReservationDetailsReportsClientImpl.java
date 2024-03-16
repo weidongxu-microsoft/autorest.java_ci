@@ -56,8 +56,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
     }
 
     /**
-     * The interface defining all the services for CostManagementClientGenerateReservationDetailsReports to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for CostManagementClientGenerateReservationDetailsReports to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
@@ -91,8 +90,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingAccountIdWithResponseAsync(String billingAccountId,
@@ -128,8 +126,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingAccountIdWithResponseAsync(String billingAccountId,
@@ -312,8 +309,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingProfileIdWithResponseAsync(String billingAccountId,
@@ -354,8 +350,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingProfileIdWithResponseAsync(String billingAccountId,

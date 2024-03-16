@@ -116,8 +116,7 @@ public interface RelayNamespace {
     List<PrivateEndpointConnection> privateEndpointConnections();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -203,8 +202,7 @@ public interface RelayNamespace {
         }
 
         /**
-         * The stage of the RelayNamespace definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RelayNamespace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithPrivateEndpointConnections, DefinitionStages.WithPublicNetworkAccess {
@@ -268,11 +266,9 @@ public interface RelayNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
-             * default it is enabled..
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled..
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
-             * enabled.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -355,11 +351,9 @@ public interface RelayNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
-             * default it is enabled..
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled..
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
-             * enabled.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);

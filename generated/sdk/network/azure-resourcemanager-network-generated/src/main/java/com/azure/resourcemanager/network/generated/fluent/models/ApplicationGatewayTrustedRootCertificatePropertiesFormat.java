@@ -58,8 +58,7 @@ public final class ApplicationGatewayTrustedRootCertificatePropertiesFormat {
     }
 
     /**
-     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
-     * object stored in KeyVault.
+     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
      * 
      * @return the keyVaultSecretId value.
      */
@@ -68,8 +67,7 @@ public final class ApplicationGatewayTrustedRootCertificatePropertiesFormat {
     }
 
     /**
-     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
-     * object stored in KeyVault.
+     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
      * 
      * @param keyVaultSecretId the keyVaultSecretId value to set.
      * @return the ApplicationGatewayTrustedRootCertificatePropertiesFormat object itself.

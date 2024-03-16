@@ -47,8 +47,7 @@ public final class RestorePointCollectionUpdate extends UpdateResource {
     }
 
     /**
-     * Get the source property: The properties of the source resource that this restore point collection is created
-     * from.
+     * Get the source property: The properties of the source resource that this restore point collection is created from.
      * 
      * @return the source value.
      */
@@ -57,8 +56,7 @@ public final class RestorePointCollectionUpdate extends UpdateResource {
     }
 
     /**
-     * Set the source property: The properties of the source resource that this restore point collection is created
-     * from.
+     * Set the source property: The properties of the source resource that this restore point collection is created from.
      * 
      * @param source the source value to set.
      * @return the RestorePointCollectionUpdate object itself.

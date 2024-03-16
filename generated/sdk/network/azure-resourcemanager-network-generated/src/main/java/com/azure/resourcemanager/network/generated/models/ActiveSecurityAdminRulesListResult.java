@@ -19,16 +19,14 @@ public interface ActiveSecurityAdminRulesListResult {
     List<ActiveBaseSecurityAdminRule> value();
 
     /**
-     * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the
-     * same query and scopes used in the current request) to retrieve the next page of data.
+     * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @return the skipToken value.
      */
     String skipToken();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ActiveSecurityAdminRulesListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ActiveSecurityAdminRulesListResultInner object.
      * 
      * @return the inner object.
      */

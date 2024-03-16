@@ -52,8 +52,7 @@ public final class UserArtifactSource {
     }
 
     /**
-     * Get the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a
-     * readable storage page blob.
+     * Get the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
      * 
      * @return the defaultConfigurationLink value.
      */
@@ -62,8 +61,7 @@ public final class UserArtifactSource {
     }
 
     /**
-     * Set the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a
-     * readable storage page blob.
+     * Set the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
      * 
      * @param defaultConfigurationLink the defaultConfigurationLink value to set.
      * @return the UserArtifactSource object itself.

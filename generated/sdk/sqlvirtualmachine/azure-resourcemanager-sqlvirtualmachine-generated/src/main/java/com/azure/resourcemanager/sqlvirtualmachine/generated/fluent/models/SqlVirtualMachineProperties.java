@@ -49,8 +49,7 @@ public final class SqlVirtualMachineProperties {
     private SqlServerLicenseType sqlServerLicenseType;
 
     /*
-     * SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql
-     * Management, refrain from using it.
+     * SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
      */
     @JsonProperty(value = "sqlManagement")
     private SqlManagementMode sqlManagement;
@@ -140,8 +139,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL
-     * marketplace image.
+     * Get the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL marketplace image.
      * 
      * @return the virtualMachineResourceId value.
      */
@@ -150,8 +148,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL
-     * marketplace image.
+     * Set the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL marketplace image.
      * 
      * @param virtualMachineResourceId the virtualMachineResourceId value to set.
      * @return the SqlVirtualMachineProperties object itself.
@@ -211,8 +208,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will
-     * automatically detect the Sql Management, refrain from using it.
+     * Get the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
      * 
      * @return the sqlManagement value.
      */
@@ -221,8 +217,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will
-     * automatically detect the Sql Management, refrain from using it.
+     * Set the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it.
      * 
      * @param sqlManagement the sqlManagement value to set.
      * @return the SqlVirtualMachineProperties object itself.
@@ -273,8 +268,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL
-     * virtual machine is or will be part of.
+     * Get the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
      * 
      * @return the sqlVirtualMachineGroupResourceId value.
      */
@@ -283,8 +277,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL
-     * virtual machine is or will be part of.
+     * Set the sqlVirtualMachineGroupResourceId property: ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
      * 
      * @param sqlVirtualMachineGroupResourceId the sqlVirtualMachineGroupResourceId value to set.
      * @return the SqlVirtualMachineProperties object itself.
@@ -295,8 +288,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
-     * availability group.
+     * Get the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @return the wsfcDomainCredentials value.
      */
@@ -305,8 +297,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL
-     * availability group.
+     * Set the wsfcDomainCredentials property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @param wsfcDomainCredentials the wsfcDomainCredentials value to set.
      * @return the SqlVirtualMachineProperties object itself.
@@ -317,8 +308,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL
-     * availability group.
+     * Get the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @return the wsfcStaticIp value.
      */
@@ -327,8 +317,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL
-     * availability group.
+     * Set the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      * 
      * @param wsfcStaticIp the wsfcStaticIp value to set.
      * @return the SqlVirtualMachineProperties object itself.
@@ -339,8 +328,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Get the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL
-     * virtual machine.
+     * Get the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL virtual machine.
      * 
      * @return the autoPatchingSettings value.
      */
@@ -349,8 +337,7 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
-     * Set the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL
-     * virtual machine.
+     * Set the autoPatchingSettings property: Auto patching settings for applying critical security updates to SQL virtual machine.
      * 
      * @param autoPatchingSettings the autoPatchingSettings value to set.
      * @return the SqlVirtualMachineProperties object itself.

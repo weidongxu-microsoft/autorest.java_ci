@@ -26,15 +26,13 @@ public final class LeaseContainerRequest {
     private String leaseId;
 
     /*
-     * Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds,
-     * between 0 and 60.
+     * Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
      */
     @JsonProperty(value = "breakPeriod")
     private Integer breakPeriod;
 
     /*
-     * Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that
-     * never expires.
+     * Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
      */
     @JsonProperty(value = "leaseDuration")
     private Integer leaseDuration;
@@ -92,8 +90,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
-     * is broken, in seconds, between 0 and 60.
+     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
      * 
      * @return the breakPeriod value.
      */
@@ -102,8 +99,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
-     * is broken, in seconds, between 0 and 60.
+     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
      * 
      * @param breakPeriod the breakPeriod value to set.
      * @return the LeaseContainerRequest object itself.
@@ -114,8 +110,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Get the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
-     * negative one (-1) for a lease that never expires.
+     * Get the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
      * 
      * @return the leaseDuration value.
      */
@@ -124,8 +119,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Set the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
-     * negative one (-1) for a lease that never expires.
+     * Set the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
      * 
      * @param leaseDuration the leaseDuration value to set.
      * @return the LeaseContainerRequest object itself.
@@ -136,8 +130,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Get the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
-     * format.
+     * Get the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
      * 
      * @return the proposedLeaseId value.
      */
@@ -146,8 +139,7 @@ public final class LeaseContainerRequest {
     }
 
     /**
-     * Set the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
-     * format.
+     * Set the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
      * 
      * @param proposedLeaseId the proposedLeaseId value to set.
      * @return the LeaseContainerRequest object itself.

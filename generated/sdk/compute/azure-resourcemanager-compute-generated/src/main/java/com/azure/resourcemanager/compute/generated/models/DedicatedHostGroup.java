@@ -50,9 +50,7 @@ public interface DedicatedHostGroup {
     Map<String, String> tags();
 
     /**
-     * Gets the zones property: Availability Zone to use for this host group. Only single zone is supported. The zone
-     * can be assigned only during creation. If not provided, the group supports all zones in the region. If provided,
-     * enforces each host in the group to be in the same zone.
+     * Gets the zones property: Availability Zone to use for this host group. Only single zone is supported. The zone can be assigned only during creation. If not provided, the group supports all zones in the region. If provided, enforces each host in the group to be in the same zone.
      * 
      * @return the zones value.
      */
@@ -73,26 +71,21 @@ public interface DedicatedHostGroup {
     List<SubResourceReadOnly> hosts();
 
     /**
-     * Gets the instanceView property: The dedicated host group instance view, which has the list of instance view of
-     * the dedicated hosts under the dedicated host group.
+     * Gets the instanceView property: The dedicated host group instance view, which has the list of instance view of the dedicated hosts under the dedicated host group.
      * 
      * @return the instanceView value.
      */
     DedicatedHostGroupInstanceView instanceView();
 
     /**
-     * Gets the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can
-     * be placed automatically on the dedicated host group. Automatic placement means resources are allocated on
-     * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when
-     * not provided. Minimum api-version: 2020-06-01.
+     * Gets the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01.
      * 
      * @return the supportAutomaticPlacement value.
      */
     Boolean supportAutomaticPlacement();
 
     /**
-     * Gets the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum
-     * api-version: 2022-03-01.
+     * Gets the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01.
      * 
      * @return the additionalCapabilities value.
      */
@@ -178,8 +171,7 @@ public interface DedicatedHostGroup {
         }
 
         /**
-         * The stage of the DedicatedHostGroup definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DedicatedHostGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones,
             DefinitionStages.WithPlatformFaultDomainCount, DefinitionStages.WithSupportAutomaticPlacement,
@@ -218,13 +210,9 @@ public interface DedicatedHostGroup {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: Availability Zone to use for this host group. Only single zone is
-             * supported. The zone can be assigned only during creation. If not provided, the group supports all zones
-             * in the region. If provided, enforces each host in the group to be in the same zone..
+             * Specifies the zones property: Availability Zone to use for this host group. Only single zone is supported. The zone can be assigned only during creation. If not provided, the group supports all zones in the region. If provided, enforces each host in the group to be in the same zone..
              * 
-             * @param zones Availability Zone to use for this host group. Only single zone is supported. The zone can be
-             * assigned only during creation. If not provided, the group supports all zones in the region. If provided,
-             * enforces each host in the group to be in the same zone.
+             * @param zones Availability Zone to use for this host group. Only single zone is supported. The zone can be assigned only during creation. If not provided, the group supports all zones in the region. If provided, enforces each host in the group to be in the same zone.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -248,15 +236,9 @@ public interface DedicatedHostGroup {
          */
         interface WithSupportAutomaticPlacement {
             /**
-             * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine
-             * scale sets can be placed automatically on the dedicated host group. Automatic placement means resources
-             * are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is
-             * defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
+             * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
              * 
-             * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be
-             * placed automatically on the dedicated host group. Automatic placement means resources are allocated on
-             * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to
-             * 'false' when not provided. Minimum api-version: 2020-06-01.
+             * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
@@ -267,11 +249,9 @@ public interface DedicatedHostGroup {
          */
         interface WithAdditionalCapabilities {
             /**
-             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
-             * group. Minimum api-version: 2022-03-01..
+             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01..
              * 
-             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum
-             * api-version: 2022-03-01.
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01.
              * @return the next definition stage.
              */
             WithCreate
@@ -329,13 +309,9 @@ public interface DedicatedHostGroup {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: Availability Zone to use for this host group. Only single zone is
-             * supported. The zone can be assigned only during creation. If not provided, the group supports all zones
-             * in the region. If provided, enforces each host in the group to be in the same zone..
+             * Specifies the zones property: Availability Zone to use for this host group. Only single zone is supported. The zone can be assigned only during creation. If not provided, the group supports all zones in the region. If provided, enforces each host in the group to be in the same zone..
              * 
-             * @param zones Availability Zone to use for this host group. Only single zone is supported. The zone can be
-             * assigned only during creation. If not provided, the group supports all zones in the region. If provided,
-             * enforces each host in the group to be in the same zone.
+             * @param zones Availability Zone to use for this host group. Only single zone is supported. The zone can be assigned only during creation. If not provided, the group supports all zones in the region. If provided, enforces each host in the group to be in the same zone.
              * @return the next definition stage.
              */
             Update withZones(List<String> zones);
@@ -359,15 +335,9 @@ public interface DedicatedHostGroup {
          */
         interface WithSupportAutomaticPlacement {
             /**
-             * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine
-             * scale sets can be placed automatically on the dedicated host group. Automatic placement means resources
-             * are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is
-             * defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
+             * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
              * 
-             * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be
-             * placed automatically on the dedicated host group. Automatic placement means resources are allocated on
-             * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to
-             * 'false' when not provided. Minimum api-version: 2020-06-01.
+             * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             Update withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
@@ -378,11 +348,9 @@ public interface DedicatedHostGroup {
          */
         interface WithAdditionalCapabilities {
             /**
-             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
-             * group. Minimum api-version: 2022-03-01..
+             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01..
              * 
-             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum
-             * api-version: 2022-03-01.
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01.
              * @return the next definition stage.
              */
             Update

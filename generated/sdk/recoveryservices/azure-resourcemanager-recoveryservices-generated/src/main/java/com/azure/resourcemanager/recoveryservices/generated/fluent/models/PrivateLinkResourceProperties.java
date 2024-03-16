@@ -38,8 +38,7 @@ public final class PrivateLinkResourceProperties {
     }
 
     /**
-     * Get the groupId property: e.g. f9ad6492-33d4-4690-9999-6bfd52a0d081 (Backup) or
-     * f9ad6492-33d4-4690-9999-6bfd52a0d082 (SiteRecovery).
+     * Get the groupId property: e.g. f9ad6492-33d4-4690-9999-6bfd52a0d081 (Backup) or f9ad6492-33d4-4690-9999-6bfd52a0d082 (SiteRecovery).
      * 
      * @return the groupId value.
      */

@@ -59,8 +59,7 @@ public final class RoleAssignmentCreateParameters {
     }
 
     /**
-     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
-     * Directory. It can point to a user, service principal, or security group.
+     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
      * 
      * @return the principalId value.
      */
@@ -69,8 +68,7 @@ public final class RoleAssignmentCreateParameters {
     }
 
     /**
-     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
-     * Directory. It can point to a user, service principal, or security group.
+     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
      * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentCreateParameters object itself.

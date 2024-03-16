@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Rule of type network.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "ruleType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "ruleType", defaultImpl = NetworkRule.class, visible = true)
 @JsonTypeName("NetworkRule")
 @Fluent
 public final class NetworkRule extends FirewallPolicyRule {
@@ -63,6 +63,7 @@ public final class NetworkRule extends FirewallPolicyRule {
      * Creates an instance of NetworkRule class.
      */
     public NetworkRule() {
+        withRuleType(FirewallPolicyRuleType.NETWORK_RULE);
     }
 
     /**

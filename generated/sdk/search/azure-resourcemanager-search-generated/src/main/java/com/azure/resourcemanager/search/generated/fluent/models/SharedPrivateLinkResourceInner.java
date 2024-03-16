@@ -10,12 +10,12 @@ import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResour
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a Shared Private Link Resource managed by the search service.
+ * Describes a shared private link resource managed by the Azure AI Search service.
  */
 @Fluent
 public final class SharedPrivateLinkResourceInner extends ProxyResource {
     /*
-     * Describes the properties of a Shared Private Link Resource managed by the search service.
+     * Describes the properties of a shared private link resource managed by the Azure AI Search service.
      */
     @JsonProperty(value = "properties")
     private SharedPrivateLinkResourceProperties properties;
@@ -27,8 +27,7 @@ public final class SharedPrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of a Shared Private Link Resource managed by the search
-     * service.
+     * Get the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service.
      * 
      * @return the properties value.
      */
@@ -37,8 +36,7 @@ public final class SharedPrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: Describes the properties of a Shared Private Link Resource managed by the search
-     * service.
+     * Set the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service.
      * 
      * @param properties the properties value to set.
      * @return the SharedPrivateLinkResourceInner object itself.

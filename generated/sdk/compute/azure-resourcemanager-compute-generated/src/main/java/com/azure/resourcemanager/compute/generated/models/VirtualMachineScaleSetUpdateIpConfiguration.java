@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Describes a virtual machine scale set network profile's IP configuration. NOTE: The subnet of a scale set may be
- * modified as long as the original subnet and the new subnet are in the same virtual network.
+ * Describes a virtual machine scale set network profile's IP configuration. NOTE: The subnet of a scale set may be modified as long as the original subnet and the new subnet are in the same virtual network.
  */
 @Fluent
 public final class VirtualMachineScaleSetUpdateIpConfiguration {
@@ -55,8 +54,7 @@ public final class VirtualMachineScaleSetUpdateIpConfiguration {
     }
 
     /**
-     * Get the innerProperties property: Describes a virtual machine scale set network profile's IP configuration
-     * properties.
+     * Get the innerProperties property: Describes a virtual machine scale set network profile's IP configuration properties.
      * 
      * @return the innerProperties value.
      */
@@ -88,8 +86,7 @@ public final class VirtualMachineScaleSetUpdateIpConfiguration {
     }
 
     /**
-     * Get the primary property: Specifies the primary IP Configuration in case the network interface has more than one
-     * IP Configuration.
+     * Get the primary property: Specifies the primary IP Configuration in case the network interface has more than one IP Configuration.
      * 
      * @return the primary value.
      */
@@ -98,8 +95,7 @@ public final class VirtualMachineScaleSetUpdateIpConfiguration {
     }
 
     /**
-     * Set the primary property: Specifies the primary IP Configuration in case the network interface has more than one
-     * IP Configuration.
+     * Set the primary property: Specifies the primary IP Configuration in case the network interface has more than one IP Configuration.
      * 
      * @param primary the primary value to set.
      * @return the VirtualMachineScaleSetUpdateIpConfiguration object itself.
@@ -137,8 +133,7 @@ public final class VirtualMachineScaleSetUpdateIpConfiguration {
     }
 
     /**
-     * Get the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether
-     * the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
+     * Get the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.  Possible values are: 'IPv4' and 'IPv6'.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -147,8 +142,7 @@ public final class VirtualMachineScaleSetUpdateIpConfiguration {
     }
 
     /**
-     * Set the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether
-     * the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
+     * Set the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.  Possible values are: 'IPv4' and 'IPv6'.
      * 
      * @param privateIpAddressVersion the privateIpAddressVersion value to set.
      * @return the VirtualMachineScaleSetUpdateIpConfiguration object itself.

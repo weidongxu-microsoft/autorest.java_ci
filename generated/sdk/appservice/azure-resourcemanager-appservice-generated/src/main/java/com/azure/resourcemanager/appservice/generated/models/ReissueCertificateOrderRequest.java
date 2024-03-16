@@ -67,8 +67,7 @@ public final class ReissueCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the delayExistingRevokeInHours property: Delay in hours to revoke existing certificate after the new
-     * certificate is issued.
+     * Get the delayExistingRevokeInHours property: Delay in hours to revoke existing certificate after the new certificate is issued.
      * 
      * @return the delayExistingRevokeInHours value.
      */
@@ -77,8 +76,7 @@ public final class ReissueCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the delayExistingRevokeInHours property: Delay in hours to revoke existing certificate after the new
-     * certificate is issued.
+     * Set the delayExistingRevokeInHours property: Delay in hours to revoke existing certificate after the new certificate is issued.
      * 
      * @param delayExistingRevokeInHours the delayExistingRevokeInHours value to set.
      * @return the ReissueCertificateOrderRequest object itself.
@@ -115,8 +113,7 @@ public final class ReissueCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external
-     * private key and vice versa).
+     * Get the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external private key and vice versa).
      * 
      * @return the isPrivateKeyExternal value.
      */
@@ -125,8 +122,7 @@ public final class ReissueCertificateOrderRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external
-     * private key and vice versa).
+     * Set the isPrivateKeyExternal property: Should we change the ASC type (from managed private key to external private key and vice versa).
      * 
      * @param isPrivateKeyExternal the isPrivateKeyExternal value to set.
      * @return the ReissueCertificateOrderRequest object itself.

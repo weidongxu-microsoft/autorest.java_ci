@@ -12,7 +12,11 @@ import java.util.List;
 /**
  * Describes the properties for generating an MPEG-2 Transport Stream (ISO/IEC 13818-1) output video file(s).
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = TransportStreamFormat.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.TransportStreamFormat")
 @Fluent
 public final class TransportStreamFormat extends MultiBitrateFormat {
@@ -20,6 +24,7 @@ public final class TransportStreamFormat extends MultiBitrateFormat {
      * Creates an instance of TransportStreamFormat class.
      */
     public TransportStreamFormat() {
+        withOdataType("#Microsoft.Media.TransportStreamFormat");
     }
 
     /**

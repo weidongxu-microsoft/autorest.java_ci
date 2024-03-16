@@ -174,8 +174,7 @@ public final class DenyAssignmentInner {
     }
 
     /**
-     * Get the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
-     * value is false.
+     * Get the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default value is false.
      * 
      * @return the doNotApplyToChildScopes value.
      */
@@ -184,8 +183,7 @@ public final class DenyAssignmentInner {
     }
 
     /**
-     * Set the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
-     * value is false.
+     * Set the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default value is false.
      * 
      * @param doNotApplyToChildScopes the doNotApplyToChildScopes value to set.
      * @return the DenyAssignmentInner object itself.
@@ -245,8 +243,7 @@ public final class DenyAssignmentInner {
     }
 
     /**
-     * Get the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
-     * edited or deleted.
+     * Get the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
      * 
      * @return the isSystemProtected value.
      */
@@ -255,8 +252,7 @@ public final class DenyAssignmentInner {
     }
 
     /**
-     * Set the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
-     * edited or deleted.
+     * Set the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
      * 
      * @param isSystemProtected the isSystemProtected value to set.
      * @return the DenyAssignmentInner object itself.

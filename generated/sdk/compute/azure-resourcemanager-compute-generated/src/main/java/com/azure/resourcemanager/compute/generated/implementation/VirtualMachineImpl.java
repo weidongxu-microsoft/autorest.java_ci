@@ -87,7 +87,8 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         List<VirtualMachineExtensionInner> inner = this.innerModel().resources();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -272,14 +273,17 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     }
 
     public VirtualMachine create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
-            this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .createOrUpdate(resourceGroupName, vmName, this.innerModel(), createIfMatch, createIfNoneMatch,
+                Context.NONE);
         return this;
     }
 
     public VirtualMachine create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
-            this.innerModel(), createIfMatch, createIfNoneMatch, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .createOrUpdate(resourceGroupName, vmName, this.innerModel(), createIfMatch, createIfNoneMatch, context);
         return this;
     }
 
@@ -299,14 +303,16 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     }
 
     public VirtualMachine apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
-            updateParameters, updateIfMatch, updateIfNoneMatch, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .update(resourceGroupName, vmName, updateParameters, updateIfMatch, updateIfNoneMatch, Context.NONE);
         return this;
     }
 
     public VirtualMachine apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
-            updateParameters, updateIfMatch, updateIfNoneMatch, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .update(resourceGroupName, vmName, updateParameters, updateIfMatch, updateIfNoneMatch, context);
         return this;
     }
 
@@ -320,15 +326,19 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public VirtualMachine refresh() {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines()
-            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualMachine refresh(Context context) {
         InstanceViewTypes localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachines()
-            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -414,8 +424,8 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public Response<RetrieveBootDiagnosticsDataResult>
         retrieveBootDiagnosticsDataWithResponse(Integer sasUriExpirationTimeInMinutes, Context context) {
-        return serviceManager.virtualMachines().retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName,
-            sasUriExpirationTimeInMinutes, context);
+        return serviceManager.virtualMachines()
+            .retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName, sasUriExpirationTimeInMinutes, context);
     }
 
     public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData() {

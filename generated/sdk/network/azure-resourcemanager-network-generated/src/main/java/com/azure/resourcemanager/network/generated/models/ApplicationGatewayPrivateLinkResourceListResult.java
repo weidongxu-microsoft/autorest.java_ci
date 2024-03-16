@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListApplicationGatewayPrivateLinkResources API service call. Gets all private link resources for an
- * application gateway.
+ * Response for ListApplicationGatewayPrivateLinkResources API service call. Gets all private link resources for an application gateway.
  */
 @Fluent
 public final class ApplicationGatewayPrivateLinkResourceListResult {

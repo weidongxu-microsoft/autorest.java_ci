@@ -5,28 +5,56 @@
 package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Information about the dead letter destination for an event subscription. To configure a deadletter destination, do
- * not directly instantiate an object of this class. Instead, instantiate an object of a derived class. Currently,
- * StorageBlobDeadLetterDestination is the only class that derives from this class.
+ * Information about the dead letter destination for an event subscription. To configure a deadletter destination, do not directly instantiate an object of this class. Instead, instantiate an object of a derived class. Currently, StorageBlobDeadLetterDestination is the only class that derives from this class.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "endpointType",
-    defaultImpl = DeadLetterDestination.class)
+    defaultImpl = DeadLetterDestination.class,
+    visible = true)
 @JsonTypeName("DeadLetterDestination")
 @JsonSubTypes({ @JsonSubTypes.Type(name = "StorageBlob", value = StorageBlobDeadLetterDestination.class) })
 @Immutable
 public class DeadLetterDestination {
+    /*
+     * Type of the endpoint for the dead letter destination
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private DeadLetterEndPointType endpointType;
+
     /**
      * Creates an instance of DeadLetterDestination class.
      */
     public DeadLetterDestination() {
+        this.endpointType = DeadLetterEndPointType.fromString("DeadLetterDestination");
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the dead letter destination.
+     * 
+     * @return the endpointType value.
+     */
+    public DeadLetterEndPointType endpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * Set the endpointType property: Type of the endpoint for the dead letter destination.
+     * 
+     * @param endpointType the endpointType value to set.
+     * @return the DeadLetterDestination object itself.
+     */
+    protected DeadLetterDestination withEndpointType(DeadLetterEndPointType endpointType) {
+        this.endpointType = endpointType;
+        return this;
     }
 
     /**

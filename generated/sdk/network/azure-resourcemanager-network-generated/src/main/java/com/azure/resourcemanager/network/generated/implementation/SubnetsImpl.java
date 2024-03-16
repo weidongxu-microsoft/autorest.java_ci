@@ -60,26 +60,30 @@ public final class SubnetsImpl implements Subnets {
 
     public void prepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters) {
-        this.serviceClient().prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            prepareNetworkPoliciesRequestParameters);
+        this.serviceClient()
+            .prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                prepareNetworkPoliciesRequestParameters);
     }
 
     public void prepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters, Context context) {
-        this.serviceClient().prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            prepareNetworkPoliciesRequestParameters, context);
+        this.serviceClient()
+            .prepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                prepareNetworkPoliciesRequestParameters, context);
     }
 
     public void unprepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters) {
-        this.serviceClient().unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            unprepareNetworkPoliciesRequestParameters);
+        this.serviceClient()
+            .unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                unprepareNetworkPoliciesRequestParameters);
     }
 
     public void unprepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters, Context context) {
-        this.serviceClient().unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
-            unprepareNetworkPoliciesRequestParameters, context);
+        this.serviceClient()
+            .unprepareNetworkPolicies(resourceGroupName, virtualNetworkName, subnetName,
+                unprepareNetworkPoliciesRequestParameters, context);
     }
 
     public PagedIterable<Subnet> list(String resourceGroupName, String virtualNetworkName) {

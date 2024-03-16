@@ -20,8 +20,7 @@ public final class AccessControl {
     private DefaultAction defaultAction;
 
     /*
-     * The IP allow list for access control in Key Delivery. If the default action is set to 'Allow', the IP allow list
-     * must be empty.
+     * The IP allow list for access control in Key Delivery. If the default action is set to 'Allow', the IP allow list must be empty.
      */
     @JsonProperty(value = "ipAllowList")
     private List<String> ipAllowList;
@@ -53,8 +52,7 @@ public final class AccessControl {
     }
 
     /**
-     * Get the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set
-     * to 'Allow', the IP allow list must be empty.
+     * Get the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set to 'Allow', the IP allow list must be empty.
      * 
      * @return the ipAllowList value.
      */
@@ -63,8 +61,7 @@ public final class AccessControl {
     }
 
     /**
-     * Set the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set
-     * to 'Allow', the IP allow list must be empty.
+     * Set the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set to 'Allow', the IP allow list must be empty.
      * 
      * @param ipAllowList the ipAllowList value to set.
      * @return the AccessControl object itself.

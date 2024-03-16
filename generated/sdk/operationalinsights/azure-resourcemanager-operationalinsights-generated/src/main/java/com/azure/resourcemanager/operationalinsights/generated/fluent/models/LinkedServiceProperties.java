@@ -14,15 +14,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LinkedServiceProperties {
     /*
-     * The resource id of the resource that will be linked to the workspace. This should be used for linking resources
-     * which require read access
+     * The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access
      */
     @JsonProperty(value = "resourceId")
     private String resourceId;
 
     /*
-     * The resource id of the resource that will be linked to the workspace. This should be used for linking resources
-     * which require write access
+     * The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access
      */
     @JsonProperty(value = "writeAccessResourceId")
     private String writeAccessResourceId;
@@ -40,8 +38,7 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
-     * used for linking resources which require read access.
+     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +47,7 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
-     * used for linking resources which require read access.
+     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
      * 
      * @param resourceId the resourceId value to set.
      * @return the LinkedServiceProperties object itself.
@@ -62,8 +58,7 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
-     * This should be used for linking resources which require write access.
+     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
      * 
      * @return the writeAccessResourceId value.
      */
@@ -72,8 +67,7 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
-     * This should be used for linking resources which require write access.
+     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
      * 
      * @param writeAccessResourceId the writeAccessResourceId value to set.
      * @return the LinkedServiceProperties object itself.

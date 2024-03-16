@@ -19,9 +19,7 @@ public final class IotHubLocationDescription {
     private String location;
 
     /*
-     * The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently
-     * provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the
-     * IoT hub can failover to.
+     * The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT hub can failover to.
      */
     @JsonProperty(value = "role")
     private IotHubReplicaRoleType role;
@@ -53,9 +51,7 @@ public final class IotHubLocationDescription {
     }
 
     /**
-     * Get the role property: The role of the region, can be either primary or secondary. The primary region is where
-     * the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and
-     * also the region where the IoT hub can failover to.
+     * Get the role property: The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT hub can failover to.
      * 
      * @return the role value.
      */
@@ -64,9 +60,7 @@ public final class IotHubLocationDescription {
     }
 
     /**
-     * Set the role property: The role of the region, can be either primary or secondary. The primary region is where
-     * the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and
-     * also the region where the IoT hub can failover to.
+     * Set the role property: The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT hub can failover to.
      * 
      * @param role the role value to set.
      * @return the IotHubLocationDescription object itself.

@@ -14,29 +14,25 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class RefreshDetails {
     /*
-     * If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID of
-     * that job. The field is empty if no job is in progress.
+     * If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.
      */
     @JsonProperty(value = "inProgressRefreshJobId")
     private String inProgressRefreshJobId;
 
     /*
-     * Indicates the completed time for the last refresh job on this particular share or container, if any.This could be
-     * a failed job or a successful job.
+     * Indicates the completed time for the last refresh job on this particular share or container, if any.This could be a failed job or a successful job.
      */
     @JsonProperty(value = "lastCompletedRefreshJobTimeInUTC")
     private OffsetDateTime lastCompletedRefreshJobTimeInUtc;
 
     /*
-     * Indicates the relative path of the error xml for the last refresh job on this particular share or container, if
-     * any. This could be a failed job or a successful job.
+     * Indicates the relative path of the error xml for the last refresh job on this particular share or container, if any. This could be a failed job or a successful job.
      */
     @JsonProperty(value = "errorManifestFile")
     private String errorManifestFile;
 
     /*
-     * Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed job
-     * or a successful job.
+     * Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed job or a successful job.
      */
     @JsonProperty(value = "lastJob")
     private String lastJob;
@@ -48,8 +44,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Get the inProgressRefreshJobId property: If a refresh job is currently in progress on this share or container,
-     * this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.
+     * Get the inProgressRefreshJobId property: If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.
      * 
      * @return the inProgressRefreshJobId value.
      */
@@ -58,8 +53,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Set the inProgressRefreshJobId property: If a refresh job is currently in progress on this share or container,
-     * this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.
+     * Set the inProgressRefreshJobId property: If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.
      * 
      * @param inProgressRefreshJobId the inProgressRefreshJobId value to set.
      * @return the RefreshDetails object itself.
@@ -70,8 +64,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Get the lastCompletedRefreshJobTimeInUtc property: Indicates the completed time for the last refresh job on this
-     * particular share or container, if any.This could be a failed job or a successful job.
+     * Get the lastCompletedRefreshJobTimeInUtc property: Indicates the completed time for the last refresh job on this particular share or container, if any.This could be a failed job or a successful job.
      * 
      * @return the lastCompletedRefreshJobTimeInUtc value.
      */
@@ -80,8 +73,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Set the lastCompletedRefreshJobTimeInUtc property: Indicates the completed time for the last refresh job on this
-     * particular share or container, if any.This could be a failed job or a successful job.
+     * Set the lastCompletedRefreshJobTimeInUtc property: Indicates the completed time for the last refresh job on this particular share or container, if any.This could be a failed job or a successful job.
      * 
      * @param lastCompletedRefreshJobTimeInUtc the lastCompletedRefreshJobTimeInUtc value to set.
      * @return the RefreshDetails object itself.
@@ -92,8 +84,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Get the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this
-     * particular share or container, if any. This could be a failed job or a successful job.
+     * Get the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this particular share or container, if any. This could be a failed job or a successful job.
      * 
      * @return the errorManifestFile value.
      */
@@ -102,8 +93,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Set the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this
-     * particular share or container, if any. This could be a failed job or a successful job.
+     * Set the errorManifestFile property: Indicates the relative path of the error xml for the last refresh job on this particular share or container, if any. This could be a failed job or a successful job.
      * 
      * @param errorManifestFile the errorManifestFile value to set.
      * @return the RefreshDetails object itself.
@@ -114,8 +104,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Get the lastJob property: Indicates the id of the last refresh job on this particular share or container,if any.
-     * This could be a failed job or a successful job.
+     * Get the lastJob property: Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed job or a successful job.
      * 
      * @return the lastJob value.
      */
@@ -124,8 +113,7 @@ public final class RefreshDetails {
     }
 
     /**
-     * Set the lastJob property: Indicates the id of the last refresh job on this particular share or container,if any.
-     * This could be a failed job or a successful job.
+     * Set the lastJob property: Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed job or a successful job.
      * 
      * @param lastJob the lastJob value to set.
      * @return the RefreshDetails object itself.

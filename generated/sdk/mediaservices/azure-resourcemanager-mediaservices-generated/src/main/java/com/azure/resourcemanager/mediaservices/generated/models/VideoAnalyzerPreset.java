@@ -11,20 +11,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
 /**
- * A video analyzer preset that extracts insights (rich metadata) from both audio and video, and outputs a JSON format
- * file.
+ * A video analyzer preset that extracts insights (rich metadata) from both audio and video, and outputs a JSON format file.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = VideoAnalyzerPreset.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.VideoAnalyzerPreset")
 @Fluent
 public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     /*
-     * Defines the type of insights that you want the service to generate. The allowed values are 'AudioInsightsOnly',
-     * 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If you set this to AllInsights and the input
-     * is audio only, then only audio insights are generated. Similarly if the input is video only, then only video
-     * insights are generated. It is recommended that you not use AudioInsightsOnly if you expect some of your inputs to
-     * be video only; or use VideoInsightsOnly if you expect some of your inputs to be audio only. Your Jobs in such
-     * conditions would error out.
+     * Defines the type of insights that you want the service to generate. The allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to be audio only. Your Jobs in such conditions would error out.
      */
     @JsonProperty(value = "insightsToExtract")
     private InsightsType insightsToExtract;
@@ -33,15 +31,11 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
      * Creates an instance of VideoAnalyzerPreset class.
      */
     public VideoAnalyzerPreset() {
+        withOdataType("#Microsoft.Media.VideoAnalyzerPreset");
     }
 
     /**
-     * Get the insightsToExtract property: Defines the type of insights that you want the service to generate. The
-     * allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If
-     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the
-     * input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly
-     * if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to
-     * be audio only. Your Jobs in such conditions would error out.
+     * Get the insightsToExtract property: Defines the type of insights that you want the service to generate. The allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to be audio only. Your Jobs in such conditions would error out.
      * 
      * @return the insightsToExtract value.
      */
@@ -50,12 +44,7 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     }
 
     /**
-     * Set the insightsToExtract property: Defines the type of insights that you want the service to generate. The
-     * allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If
-     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the
-     * input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly
-     * if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to
-     * be audio only. Your Jobs in such conditions would error out.
+     * Set the insightsToExtract property: Defines the type of insights that you want the service to generate. The allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to be audio only. Your Jobs in such conditions would error out.
      * 
      * @param insightsToExtract the insightsToExtract value to set.
      * @return the VideoAnalyzerPreset object itself.

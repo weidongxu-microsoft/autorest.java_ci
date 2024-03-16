@@ -77,8 +77,7 @@ public interface RecordSet {
     SubResource targetResource();
 
     /**
-     * Gets the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
-     * the dns resource value is taken.
+     * Gets the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where the dns resource value is taken.
      * 
      * @return the trafficManagementProfile value.
      */
@@ -134,7 +133,7 @@ public interface RecordSet {
     List<TxtRecord> txtRecords();
 
     /**
-     * Gets the cnameRecord property: The CNAME record in the record set.
+     * Gets the cnameRecord property: The CNAME record in the  record set.
      * 
      * @return the cnameRecord value.
      */

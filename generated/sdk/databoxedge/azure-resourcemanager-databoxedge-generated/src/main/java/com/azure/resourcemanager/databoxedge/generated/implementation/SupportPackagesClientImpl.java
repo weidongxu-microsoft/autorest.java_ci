@@ -57,8 +57,7 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientSupportPackages to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientSupportPackages to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -273,7 +272,8 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
     private Mono<Void> triggerSupportPackageAsync(String deviceName, String resourceGroupName,
         TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

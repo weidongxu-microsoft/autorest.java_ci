@@ -44,8 +44,8 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
 
     public Response<NetworkInterfaceIpConfiguration> getWithResponse(String resourceGroupName,
         String networkInterfaceName, String ipConfigurationName, Context context) {
-        Response<NetworkInterfaceIpConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkInterfaceName, ipConfigurationName, context);
+        Response<NetworkInterfaceIpConfigurationInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkInterfaceName, ipConfigurationName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));

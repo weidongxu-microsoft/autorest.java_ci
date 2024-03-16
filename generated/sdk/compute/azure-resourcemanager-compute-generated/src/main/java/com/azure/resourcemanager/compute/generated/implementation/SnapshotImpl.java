@@ -196,14 +196,16 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
     }
 
     public Snapshot create() {
-        this.innerObject = serviceManager.serviceClient().getSnapshots().createOrUpdate(resourceGroupName, snapshotName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .createOrUpdate(resourceGroupName, snapshotName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Snapshot create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSnapshots().createOrUpdate(resourceGroupName, snapshotName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .createOrUpdate(resourceGroupName, snapshotName, this.innerModel(), context);
         return this;
     }
 
@@ -219,14 +221,16 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
     }
 
     public Snapshot apply() {
-        this.innerObject = serviceManager.serviceClient().getSnapshots().update(resourceGroupName, snapshotName,
-            updateSnapshot, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .update(resourceGroupName, snapshotName, updateSnapshot, Context.NONE);
         return this;
     }
 
     public Snapshot apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSnapshots().update(resourceGroupName, snapshotName,
-            updateSnapshot, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .update(resourceGroupName, snapshotName, updateSnapshot, context);
         return this;
     }
 
@@ -238,14 +242,18 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
     }
 
     public Snapshot refresh() {
-        this.innerObject = serviceManager.serviceClient().getSnapshots()
-            .getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Snapshot refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSnapshots()
-            .getByResourceGroupWithResponse(resourceGroupName, snapshotName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSnapshots()
+            .getByResourceGroupWithResponse(resourceGroupName, snapshotName, context)
+            .getValue();
         return this;
     }
 

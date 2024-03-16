@@ -64,8 +64,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNetworkInterfaceTapConfigurations to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNetworkInterfaceTapConfigurations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -362,8 +361,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified tap configuration on a network interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceTapConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -406,8 +404,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified tap configuration on a network interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceTapConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -502,8 +499,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tap configuration in a Network Interface along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return tap configuration in a Network Interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -555,8 +551,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tap configuration in a Network Interface along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return tap configuration in a Network Interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -660,8 +655,10 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     public SyncPoller<PollResult<NetworkInterfaceTapConfigurationInner>, NetworkInterfaceTapConfigurationInner>
         beginCreateOrUpdate(String resourceGroupName, String networkInterfaceName, String tapConfigurationName,
             NetworkInterfaceTapConfigurationInner tapConfigurationParameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, networkInterfaceName, tapConfigurationName,
-            tapConfigurationParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkInterfaceName, tapConfigurationName,
+                tapConfigurationParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -681,8 +678,10 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     public SyncPoller<PollResult<NetworkInterfaceTapConfigurationInner>, NetworkInterfaceTapConfigurationInner>
         beginCreateOrUpdate(String resourceGroupName, String networkInterfaceName, String tapConfigurationName,
             NetworkInterfaceTapConfigurationInner tapConfigurationParameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, networkInterfaceName, tapConfigurationName,
-            tapConfigurationParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkInterfaceName, tapConfigurationName,
+                tapConfigurationParameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -774,8 +773,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Tap configurations in a network interface along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all Tap configurations in a network interface along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceTapConfigurationInner>> listSinglePageAsync(String resourceGroupName,
@@ -815,8 +813,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Tap configurations in a network interface along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all Tap configurations in a network interface along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceTapConfigurationInner>> listSinglePageAsync(String resourceGroupName,
@@ -924,8 +921,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list tap configurations API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for list tap configurations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceTapConfigurationInner>> listNextSinglePageAsync(String nextLink) {
@@ -953,8 +949,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list tap configurations API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for list tap configurations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceTapConfigurationInner>> listNextSinglePageAsync(String nextLink,

@@ -13,28 +13,25 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CaptureDescription {
     /*
-     * A value that indicates whether capture description is enabled.
+     * A value that indicates whether capture description is enabled. 
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
-     * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be
-     * deprecated in New API Version
+     * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated in New API Version
      */
     @JsonProperty(value = "encoding")
     private EncodingCaptureDescription encoding;
 
     /*
-     * The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should
-     * between 60 to 900 seconds
+     * The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should between 60 to 900 seconds
      */
     @JsonProperty(value = "intervalInSeconds")
     private Integer intervalInSeconds;
 
     /*
-     * The size window defines the amount of data built up in your Event Hub before an capture operation, value should
-     * be between 10485760 to 524288000 bytes
+     * The size window defines the amount of data built up in your Event Hub before an capture operation, value should be between 10485760 to 524288000 bytes
      */
     @JsonProperty(value = "sizeLimitInBytes")
     private Integer sizeLimitInBytes;
@@ -78,8 +75,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Get the encoding property: Enumerates the possible values for the encoding format of capture description. Note:
-     * 'AvroDeflate' will be deprecated in New API Version.
+     * Get the encoding property: Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated in New API Version.
      * 
      * @return the encoding value.
      */
@@ -88,8 +84,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Set the encoding property: Enumerates the possible values for the encoding format of capture description. Note:
-     * 'AvroDeflate' will be deprecated in New API Version.
+     * Set the encoding property: Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated in New API Version.
      * 
      * @param encoding the encoding value to set.
      * @return the CaptureDescription object itself.
@@ -100,8 +95,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Get the intervalInSeconds property: The time window allows you to set the frequency with which the capture to
-     * Azure Blobs will happen, value should between 60 to 900 seconds.
+     * Get the intervalInSeconds property: The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should between 60 to 900 seconds.
      * 
      * @return the intervalInSeconds value.
      */
@@ -110,8 +104,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Set the intervalInSeconds property: The time window allows you to set the frequency with which the capture to
-     * Azure Blobs will happen, value should between 60 to 900 seconds.
+     * Set the intervalInSeconds property: The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should between 60 to 900 seconds.
      * 
      * @param intervalInSeconds the intervalInSeconds value to set.
      * @return the CaptureDescription object itself.
@@ -122,8 +115,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Get the sizeLimitInBytes property: The size window defines the amount of data built up in your Event Hub before
-     * an capture operation, value should be between 10485760 to 524288000 bytes.
+     * Get the sizeLimitInBytes property: The size window defines the amount of data built up in your Event Hub before an capture operation, value should be between 10485760 to 524288000 bytes.
      * 
      * @return the sizeLimitInBytes value.
      */
@@ -132,8 +124,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Set the sizeLimitInBytes property: The size window defines the amount of data built up in your Event Hub before
-     * an capture operation, value should be between 10485760 to 524288000 bytes.
+     * Set the sizeLimitInBytes property: The size window defines the amount of data built up in your Event Hub before an capture operation, value should be between 10485760 to 524288000 bytes.
      * 
      * @param sizeLimitInBytes the sizeLimitInBytes value to set.
      * @return the CaptureDescription object itself.
@@ -144,8 +135,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Get the destination property: Properties of Destination where capture will be stored. (Storage Account, Blob
-     * Names).
+     * Get the destination property: Properties of Destination where capture will be stored. (Storage Account, Blob Names).
      * 
      * @return the destination value.
      */
@@ -154,8 +144,7 @@ public final class CaptureDescription {
     }
 
     /**
-     * Set the destination property: Properties of Destination where capture will be stored. (Storage Account, Blob
-     * Names).
+     * Set the destination property: Properties of Destination where capture will be stored. (Storage Account, Blob Names).
      * 
      * @param destination the destination value to set.
      * @return the CaptureDescription object itself.

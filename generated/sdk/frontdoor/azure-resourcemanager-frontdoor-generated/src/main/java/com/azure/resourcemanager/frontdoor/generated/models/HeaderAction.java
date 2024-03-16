@@ -78,8 +78,7 @@ public final class HeaderAction {
     }
 
     /**
-     * Get the value property: The value to update the given header name with. This value is not used if the actionType
-     * is Delete.
+     * Get the value property: The value to update the given header name with. This value is not used if the actionType is Delete.
      * 
      * @return the value value.
      */
@@ -88,8 +87,7 @@ public final class HeaderAction {
     }
 
     /**
-     * Set the value property: The value to update the given header name with. This value is not used if the actionType
-     * is Delete.
+     * Set the value property: The value to update the given header name with. This value is not used if the actionType is Delete.
      * 
      * @param value the value value to set.
      * @return the HeaderAction object itself.

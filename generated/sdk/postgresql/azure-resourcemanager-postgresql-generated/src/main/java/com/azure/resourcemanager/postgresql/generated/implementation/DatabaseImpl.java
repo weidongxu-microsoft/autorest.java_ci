@@ -58,14 +58,16 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
     }
 
     public Database create() {
-        this.innerObject = serviceManager.serviceClient().getDatabases().createOrUpdate(resourceGroupName, serverName,
-            databaseName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Database create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDatabases().createOrUpdate(resourceGroupName, serverName,
-            databaseName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), context);
         return this;
     }
 
@@ -80,14 +82,16 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
     }
 
     public Database apply() {
-        this.innerObject = serviceManager.serviceClient().getDatabases().createOrUpdate(resourceGroupName, serverName,
-            databaseName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Database apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDatabases().createOrUpdate(resourceGroupName, serverName,
-            databaseName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), context);
         return this;
     }
 
@@ -101,14 +105,18 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
     }
 
     public Database refresh() {
-        this.innerObject = serviceManager.serviceClient().getDatabases()
-            .getWithResponse(resourceGroupName, serverName, databaseName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .getWithResponse(resourceGroupName, serverName, databaseName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Database refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDatabases()
-            .getWithResponse(resourceGroupName, serverName, databaseName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDatabases()
+            .getWithResponse(resourceGroupName, serverName, databaseName, context)
+            .getValue();
         return this;
     }
 

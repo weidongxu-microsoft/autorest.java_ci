@@ -19,9 +19,7 @@ public interface NetworkSecurityPerimeterConfigurationList {
     List<NetworkSecurityPerimeterConfiguration> value();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationListInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationListInner object.
      * 
      * @return the inner object.
      */

@@ -186,9 +186,9 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Response<CustomDnsSuffixConfiguration> updateAseCustomDnsSuffixConfigurationWithResponse(
         String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
         Context context) {
-        Response<CustomDnsSuffixConfigurationInner> inner
-            = this.serviceClient().updateAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name,
-                customDnsSuffixConfiguration, context);
+        Response<CustomDnsSuffixConfigurationInner> inner = this.serviceClient()
+            .updateAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, customDnsSuffixConfiguration,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CustomDnsSuffixConfigurationImpl(inner.getValue(), this.manager()));
@@ -268,7 +268,9 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
             = this.serviceClient().listDiagnosticsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -278,9 +280,9 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public List<HostingEnvironmentDiagnostics> listDiagnostics(String resourceGroupName, String name) {
         List<HostingEnvironmentDiagnosticsInner> inner = this.serviceClient().listDiagnostics(resourceGroupName, name);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -474,8 +476,11 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         Response<List<OperationInner>> inner
             = this.serviceClient().listOperationsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new OperationImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new OperationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -548,14 +553,14 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
     }
 
     public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
         String privateEndpointConnectionName, Context context) {
-        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
-            privateEndpointConnectionName, context);
+        return this.serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(String resourceGroupName,
@@ -773,8 +778,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
         }
-        return this.getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName,
-            Context.NONE).getValue();
+        return this
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(String id,

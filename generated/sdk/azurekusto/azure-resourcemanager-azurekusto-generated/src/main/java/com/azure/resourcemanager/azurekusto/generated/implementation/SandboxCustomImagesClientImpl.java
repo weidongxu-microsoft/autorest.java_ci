@@ -68,8 +68,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientSandboxCustomImages to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientSandboxCustomImages to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -146,8 +145,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto sandbox custom images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto sandbox custom images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SandboxCustomImageInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -185,8 +183,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto sandbox custom images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto sandbox custom images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SandboxCustomImageInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -288,8 +285,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SandboxCustomImageInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -330,8 +326,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SandboxCustomImageInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -423,8 +418,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -472,8 +466,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -633,7 +626,8 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
     private Mono<SandboxCustomImageInner> createOrUpdateAsync(String resourceGroupName, String clusterName,
         String sandboxCustomImageName, SandboxCustomImageInner parameters, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, clusterName, sandboxCustomImageName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -683,8 +677,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -732,8 +725,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing a Kusto sandbox custom image along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -1165,8 +1157,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -1209,8 +1200,7 @@ public final class SandboxCustomImagesClientImpl implements SandboxCustomImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,

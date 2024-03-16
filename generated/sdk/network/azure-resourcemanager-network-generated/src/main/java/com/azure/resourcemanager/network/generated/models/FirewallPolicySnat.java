@@ -52,8 +52,7 @@ public final class FirewallPolicySnat {
     }
 
     /**
-     * Get the autoLearnPrivateRanges property: The operation mode for automatically learning private ranges to not be
-     * SNAT.
+     * Get the autoLearnPrivateRanges property: The operation mode for automatically learning private ranges to not be SNAT.
      * 
      * @return the autoLearnPrivateRanges value.
      */
@@ -62,8 +61,7 @@ public final class FirewallPolicySnat {
     }
 
     /**
-     * Set the autoLearnPrivateRanges property: The operation mode for automatically learning private ranges to not be
-     * SNAT.
+     * Set the autoLearnPrivateRanges property: The operation mode for automatically learning private ranges to not be SNAT.
      * 
      * @param autoLearnPrivateRanges the autoLearnPrivateRanges value to set.
      * @return the FirewallPolicySnat object itself.

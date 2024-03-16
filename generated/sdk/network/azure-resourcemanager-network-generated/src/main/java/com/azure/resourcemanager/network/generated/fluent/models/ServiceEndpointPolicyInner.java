@@ -112,8 +112,7 @@ public final class ServiceEndpointPolicyInner extends Resource {
     }
 
     /**
-     * Get the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
-     * service endpoint policy.
+     * Get the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy.
      * 
      * @return the serviceEndpointPolicyDefinitions value.
      */
@@ -122,8 +121,7 @@ public final class ServiceEndpointPolicyInner extends Resource {
     }
 
     /**
-     * Set the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
-     * service endpoint policy.
+     * Set the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy.
      * 
      * @param serviceEndpointPolicyDefinitions the serviceEndpointPolicyDefinitions value to set.
      * @return the ServiceEndpointPolicyInner object itself.

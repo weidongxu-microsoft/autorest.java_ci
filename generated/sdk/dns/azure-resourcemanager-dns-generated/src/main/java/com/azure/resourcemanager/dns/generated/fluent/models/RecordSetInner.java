@@ -164,8 +164,7 @@ public final class RecordSetInner extends ProxyResource {
     }
 
     /**
-     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
-     * the dns resource value is taken.
+     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where the dns resource value is taken.
      * 
      * @return the trafficManagementProfile value.
      */
@@ -174,8 +173,7 @@ public final class RecordSetInner extends ProxyResource {
     }
 
     /**
-     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
-     * the dns resource value is taken.
+     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where the dns resource value is taken.
      * 
      * @param trafficManagementProfile the trafficManagementProfile value to set.
      * @return the RecordSetInner object itself.
@@ -350,7 +348,7 @@ public final class RecordSetInner extends ProxyResource {
     }
 
     /**
-     * Get the cnameRecord property: The CNAME record in the record set.
+     * Get the cnameRecord property: The CNAME record in the  record set.
      * 
      * @return the cnameRecord value.
      */
@@ -359,7 +357,7 @@ public final class RecordSetInner extends ProxyResource {
     }
 
     /**
-     * Set the cnameRecord property: The CNAME record in the record set.
+     * Set the cnameRecord property: The CNAME record in the  record set.
      * 
      * @param cnameRecord the cnameRecord value to set.
      * @return the RecordSetInner object itself.

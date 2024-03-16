@@ -62,8 +62,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVpnLinkConnections to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnLinkConnections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -319,7 +318,8 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
     private Mono<Void> resetConnectionAsync(String resourceGroupName, String gatewayName, String connectionName,
         String linkConnectionName, Context context) {
         return beginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -615,8 +615,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteLinkConnectionInner>> listByVpnConnectionSinglePageAsync(String resourceGroupName,
@@ -660,8 +659,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteLinkConnectionInner>> listByVpnConnectionSinglePageAsync(String resourceGroupName,
@@ -703,8 +701,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnSiteLinkConnectionInner> listByVpnConnectionAsync(String resourceGroupName, String gatewayName,
@@ -723,8 +720,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedFlux}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnSiteLinkConnectionInner> listByVpnConnectionAsync(String resourceGroupName, String gatewayName,
@@ -743,8 +739,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnSiteLinkConnectionInner> listByVpnConnection(String resourceGroupName, String gatewayName,
@@ -762,8 +757,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnSiteLinkConnectionInner> listByVpnConnection(String resourceGroupName, String gatewayName,
@@ -780,8 +774,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteLinkConnectionInner>> listByVpnConnectionNextSinglePageAsync(String nextLink) {
@@ -811,8 +804,7 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all vpn connections to a virtual wan vpn gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteLinkConnectionInner>> listByVpnConnectionNextSinglePageAsync(String nextLink,

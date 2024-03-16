@@ -30,8 +30,9 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
     public NetworkVirtualApplianceConnection createOrUpdate(String resourceGroupName,
         String networkVirtualApplianceName, String connectionName,
         NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters) {
-        NetworkVirtualApplianceConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, connectionName, networkVirtualApplianceConnectionParameters);
+        NetworkVirtualApplianceConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, connectionName,
+                networkVirtualApplianceConnectionParameters);
         if (inner != null) {
             return new NetworkVirtualApplianceConnectionImpl(inner, this.manager());
         } else {
@@ -42,8 +43,9 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
     public NetworkVirtualApplianceConnection createOrUpdate(String resourceGroupName,
         String networkVirtualApplianceName, String connectionName,
         NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters, Context context) {
-        NetworkVirtualApplianceConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            networkVirtualApplianceName, connectionName, networkVirtualApplianceConnectionParameters, context);
+        NetworkVirtualApplianceConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, connectionName,
+                networkVirtualApplianceConnectionParameters, context);
         if (inner != null) {
             return new NetworkVirtualApplianceConnectionImpl(inner, this.manager());
         } else {
@@ -53,8 +55,8 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
 
     public Response<NetworkVirtualApplianceConnection> getWithResponse(String resourceGroupName,
         String networkVirtualApplianceName, String connectionName, Context context) {
-        Response<NetworkVirtualApplianceConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            networkVirtualApplianceName, connectionName, context);
+        Response<NetworkVirtualApplianceConnectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, connectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkVirtualApplianceConnectionImpl(inner.getValue(), this.manager()));

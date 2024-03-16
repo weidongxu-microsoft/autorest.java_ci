@@ -169,14 +169,16 @@ public final class SqlVirtualMachineImpl
     }
 
     public SqlVirtualMachine create() {
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().createOrUpdate(resourceGroupName,
-            sqlVirtualMachineName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
+            .createOrUpdate(resourceGroupName, sqlVirtualMachineName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SqlVirtualMachine create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().createOrUpdate(resourceGroupName,
-            sqlVirtualMachineName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
+            .createOrUpdate(resourceGroupName, sqlVirtualMachineName, this.innerModel(), context);
         return this;
     }
 
@@ -193,14 +195,16 @@ public final class SqlVirtualMachineImpl
     }
 
     public SqlVirtualMachine apply() {
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().update(resourceGroupName,
-            sqlVirtualMachineName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
+            .update(resourceGroupName, sqlVirtualMachineName, updateParameters, Context.NONE);
         return this;
     }
 
     public SqlVirtualMachine apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().update(resourceGroupName,
-            sqlVirtualMachineName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
+            .update(resourceGroupName, sqlVirtualMachineName, updateParameters, context);
         return this;
     }
 
@@ -214,7 +218,8 @@ public final class SqlVirtualMachineImpl
 
     public SqlVirtualMachine refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines()
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
             .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -222,8 +227,10 @@ public final class SqlVirtualMachineImpl
 
     public SqlVirtualMachine refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines()
-            .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSqlVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, context)
+            .getValue();
         return this;
     }
 

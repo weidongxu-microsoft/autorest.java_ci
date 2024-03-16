@@ -57,8 +57,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientReservationsSummaries to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientReservationsSummaries to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -120,19 +119,15 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>>
@@ -158,20 +153,16 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderSinglePageAsync(
@@ -197,14 +188,11 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -218,9 +206,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -237,14 +223,11 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -259,9 +242,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -277,14 +258,11 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -298,20 +276,16 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -340,21 +314,17 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -383,15 +353,12 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -406,9 +373,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -428,15 +393,12 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -452,9 +414,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -473,15 +433,12 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
-     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
-     * with smaller date ranges.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -496,28 +453,19 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     * reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     * reservation order.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(String resourceScope, Datagrain grain,
@@ -542,29 +490,20 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     * reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     * reservation order.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(String resourceScope, Datagrain grain,
@@ -590,23 +529,15 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     * reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     * reservation order.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -620,14 +551,9 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -646,23 +572,15 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     * reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     * reservation order.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -677,14 +595,9 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -703,23 +616,15 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     }
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
-     * should be made with smaller date ranges.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
-     * @param resourceScope The scope associated with reservations summaries operations. This includes
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations summaries operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     * reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     * reservation order.
+     * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -742,8 +647,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderNextSinglePageAsync(String nextLink) {
@@ -773,8 +677,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderNextSinglePageAsync(String nextLink,
@@ -802,8 +705,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>>
@@ -834,8 +736,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>>
@@ -863,8 +764,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listNextSinglePageAsync(String nextLink) {
@@ -892,8 +792,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listNextSinglePageAsync(String nextLink, Context context) {

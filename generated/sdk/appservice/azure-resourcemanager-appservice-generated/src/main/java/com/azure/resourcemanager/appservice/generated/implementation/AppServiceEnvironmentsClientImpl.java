@@ -97,8 +97,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientAppServiceEnvironments to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientAppServiceEnvironments to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -737,8 +736,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listSinglePageAsync() {
@@ -768,8 +766,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listSinglePageAsync(Context context) {
@@ -860,8 +857,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>>
@@ -897,8 +893,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>>
@@ -1004,8 +999,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>>
@@ -1043,8 +1037,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>>
@@ -1135,8 +1128,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -1182,8 +1174,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -1394,8 +1385,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1433,8 +1423,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1472,8 +1461,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1514,8 +1502,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1556,8 +1543,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1577,8 +1563,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1616,8 +1601,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1654,8 +1638,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
-     * Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1677,8 +1660,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>> updateWithResponseAsync(String resourceGroupName,
@@ -1722,8 +1704,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>> updateWithResponseAsync(String resourceGroupName,
@@ -1975,8 +1956,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AddressResponseInner>> getVipInfoWithResponseAsync(String resourceGroupName, String name) {
@@ -2013,8 +1993,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AddressResponseInner>> getVipInfoWithResponseAsync(String resourceGroupName, String name,
@@ -2131,15 +2110,21 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
-            Mono<Response<Flux<ByteBuffer>>> mono = service.changeVnet(this.client.getEndpoint(), resourceGroupName,
-                name, this.client.getSubscriptionId(), this.client.getApiVersion(), vnetInfo, accept, context).cache();
+            Mono<Response<Flux<ByteBuffer>>> mono
+                = service
+                    .changeVnet(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                        this.client.getApiVersion(), vnetInfo, accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<SiteInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<SiteInner>>map(
+                res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
+                    res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2182,14 +2167,18 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = service.changeVnet(this.client.getEndpoint(), resourceGroupName, name,
-            this.client.getSubscriptionId(), this.client.getApiVersion(), vnetInfo, accept, context).cache();
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = service
+                .changeVnet(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                    this.client.getApiVersion(), vnetInfo, accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null));
     }
@@ -2281,8 +2270,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CustomDnsSuffixConfigurationInner>>
@@ -2318,8 +2306,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CustomDnsSuffixConfigurationInner>>
@@ -2403,8 +2390,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CustomDnsSuffixConfigurationInner>> updateAseCustomDnsSuffixConfigurationWithResponseAsync(
@@ -2448,8 +2434,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CustomDnsSuffixConfigurationInner>> updateAseCustomDnsSuffixConfigurationWithResponseAsync(
@@ -2667,8 +2652,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>>
@@ -2706,8 +2690,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>>
@@ -2799,8 +2782,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>> updateAseNetworkingConfigurationWithResponseAsync(
@@ -2846,8 +2828,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>> updateAseNetworkingConfigurationWithResponseAsync(
@@ -2952,8 +2933,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<HostingEnvironmentDiagnosticsInner>>>
@@ -2991,8 +2971,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<HostingEnvironmentDiagnosticsInner>>>
@@ -3083,8 +3062,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HostingEnvironmentDiagnosticsInner>>
@@ -3127,8 +3105,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HostingEnvironmentDiagnosticsInner>> getDiagnosticsItemWithResponseAsync(
@@ -3227,8 +3204,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>>
@@ -3268,8 +3244,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>>
@@ -3538,8 +3513,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -3577,8 +3551,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -3669,8 +3642,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -3716,8 +3688,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -3930,8 +3901,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> updateMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -3976,8 +3946,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> updateMultiRolePoolWithResponseAsync(String resourceGroupName,
@@ -4071,8 +4040,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4080,8 +4048,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -4118,8 +4085,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4128,8 +4094,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -4165,8 +4130,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4187,8 +4151,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4210,8 +4173,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4230,8 +4192,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     /**
      * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
-     * Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4259,8 +4220,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -4300,8 +4260,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -5180,8 +5139,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -5221,8 +5179,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -5495,8 +5452,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5541,8 +5497,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5647,8 +5602,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
@@ -5700,8 +5654,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
@@ -5817,8 +5770,10 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
             String privateEndpointConnectionName,
             RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
-        return this.beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
-            privateEndpointConnectionName, privateEndpointWrapper).getSyncPoller();
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper)
+            .getSyncPoller();
     }
 
     /**
@@ -5842,8 +5797,10 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
             String privateEndpointConnectionName,
             RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
-        return this.beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
-            privateEndpointConnectionName, privateEndpointWrapper, context).getSyncPoller();
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName,
+                privateEndpointWrapper, context)
+            .getSyncPoller();
     }
 
     /**
@@ -6203,8 +6160,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>>
@@ -6242,8 +6198,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>>
@@ -6477,15 +6432,21 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
-            Mono<Response<Flux<ByteBuffer>>> mono = service.resume(this.client.getEndpoint(), resourceGroupName, name,
-                this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context).cache();
+            Mono<Response<Flux<ByteBuffer>>> mono
+                = service
+                    .resume(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                        this.client.getApiVersion(), accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<SiteInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<SiteInner>>map(
+                res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
+                    res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -6522,14 +6483,18 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = service.resume(this.client.getEndpoint(), resourceGroupName, name,
-            this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context).cache();
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = service
+                .resume(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                    this.client.getApiVersion(), accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null));
     }
@@ -6616,8 +6581,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansSinglePageAsync(String resourceGroupName,
@@ -6657,8 +6621,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansSinglePageAsync(String resourceGroupName,
@@ -6970,15 +6933,21 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
-            Mono<Response<Flux<ByteBuffer>>> mono = service.suspend(this.client.getEndpoint(), resourceGroupName, name,
-                this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context).cache();
+            Mono<Response<Flux<ByteBuffer>>> mono
+                = service
+                    .suspend(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                        this.client.getApiVersion(), accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<SiteInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<SiteInner>>map(
+                res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
+                    res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -7015,14 +6984,18 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = service.suspend(this.client.getEndpoint(), resourceGroupName, name,
-            this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context).cache();
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = service
+                .suspend(this.client.getEndpoint(), resourceGroupName, name, this.client.getSubscriptionId(),
+                    this.client.getApiVersion(), accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<WebAppCollection, WebAppCollection>getLroResult(mono, this.client.getHttpPipeline(),
                         WebAppCollection.class, WebAppCollection.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null));
     }
@@ -7106,9 +7079,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
-     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq
-     * 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7148,9 +7119,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
-     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq
-     * 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7191,9 +7160,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
-     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq
-     * 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7231,9 +7198,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
-     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq
-     * 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7272,9 +7237,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
-     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq
-     * 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7451,8 +7414,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -7494,8 +7456,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -7594,8 +7555,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -7645,8 +7605,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -7816,7 +7775,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     private Mono<WorkerPoolResourceInner> createOrUpdateWorkerPoolAsync(String resourceGroupName, String name,
         String workerPoolName, WorkerPoolResourceInner workerPoolEnvelope, Context context) {
         return beginCreateOrUpdateWorkerPoolAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -7873,8 +7833,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> updateWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -7924,8 +7883,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> updateWorkerPoolWithResponseAsync(String resourceGroupName,
@@ -8036,8 +7994,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWorkerPoolInstanceMetricDefinitionsSinglePageAsync(
@@ -8086,8 +8043,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWorkerPoolInstanceMetricDefinitionsSinglePageAsync(
@@ -8222,8 +8178,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -8267,8 +8222,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWebWorkerMetricDefinitionsSinglePageAsync(
@@ -8727,8 +8681,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listNextSinglePageAsync(String nextLink) {
@@ -8756,8 +8709,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listNextSinglePageAsync(String nextLink,
@@ -8785,8 +8737,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>>
@@ -8817,8 +8768,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>>
@@ -8959,8 +8909,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>>
@@ -8991,8 +8940,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>>
@@ -9078,8 +9026,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9110,8 +9057,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9140,8 +9086,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9171,8 +9116,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9315,8 +9259,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -9347,8 +9290,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -9491,8 +9433,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansNextSinglePageAsync(String nextLink) {
@@ -9522,8 +9463,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansNextSinglePageAsync(String nextLink,
@@ -9776,8 +9716,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9808,8 +9747,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9837,8 +9775,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -9868,8 +9805,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>

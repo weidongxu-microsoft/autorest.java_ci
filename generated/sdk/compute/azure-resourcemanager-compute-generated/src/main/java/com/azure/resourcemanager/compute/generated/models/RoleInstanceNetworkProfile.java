@@ -27,8 +27,7 @@ public final class RoleInstanceNetworkProfile {
     }
 
     /**
-     * Get the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with
-     * the role instance.
+     * Get the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with the role instance.
      * 
      * @return the networkInterfaces value.
      */

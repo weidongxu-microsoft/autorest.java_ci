@@ -72,8 +72,8 @@ public final class WorkflowRunActionsImpl implements WorkflowRunActions {
 
     public PagedIterable<ExpressionRoot> listExpressionTraces(String resourceGroupName, String name,
         String workflowName, String runName, String actionName, Context context) {
-        return this.serviceClient().listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName,
-            context);
+        return this.serviceClient()
+            .listExpressionTraces(resourceGroupName, name, workflowName, runName, actionName, context);
     }
 
     private WorkflowRunActionsClient serviceClient() {

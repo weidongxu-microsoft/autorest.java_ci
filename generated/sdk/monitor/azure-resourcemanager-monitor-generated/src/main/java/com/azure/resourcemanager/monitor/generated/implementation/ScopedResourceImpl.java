@@ -58,13 +58,15 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
     }
 
     public ScopedResource create() {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
             .createOrUpdate(resourceGroupName, scopeName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ScopedResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
             .createOrUpdate(resourceGroupName, scopeName, name, this.innerModel(), context);
         return this;
     }
@@ -80,13 +82,15 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
     }
 
     public ScopedResource apply() {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
             .createOrUpdate(resourceGroupName, scopeName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ScopedResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
             .createOrUpdate(resourceGroupName, scopeName, name, this.innerModel(), context);
         return this;
     }
@@ -101,14 +105,18 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
     }
 
     public ScopedResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
-            .getWithResponse(resourceGroupName, scopeName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
+            .getWithResponse(resourceGroupName, scopeName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ScopedResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopedResources()
-            .getWithResponse(resourceGroupName, scopeName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateLinkScopedResources()
+            .getWithResponse(resourceGroupName, scopeName, name, context)
+            .getValue();
         return this;
     }
 

@@ -90,8 +90,7 @@ public final class CommonEncryptionCenc {
     }
 
     /**
-     * Get the contentKeys property: Representing default content key for each encryption scheme and separate content
-     * keys for specific tracks.
+     * Get the contentKeys property: Representing default content key for each encryption scheme and separate content keys for specific tracks.
      * 
      * @return the contentKeys value.
      */
@@ -100,8 +99,7 @@ public final class CommonEncryptionCenc {
     }
 
     /**
-     * Set the contentKeys property: Representing default content key for each encryption scheme and separate content
-     * keys for specific tracks.
+     * Set the contentKeys property: Representing default content key for each encryption scheme and separate content keys for specific tracks.
      * 
      * @param contentKeys the contentKeys value to set.
      * @return the CommonEncryptionCenc object itself.
@@ -132,8 +130,7 @@ public final class CommonEncryptionCenc {
     }
 
     /**
-     * Get the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in
-     * CommonEncryptionCenc encryption scheme.
+     * Get the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in CommonEncryptionCenc encryption scheme.
      * 
      * @return the clearKeyEncryptionConfiguration value.
      */
@@ -142,8 +139,7 @@ public final class CommonEncryptionCenc {
     }
 
     /**
-     * Set the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in
-     * CommonEncryptionCenc encryption scheme.
+     * Set the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in CommonEncryptionCenc encryption scheme.
      * 
      * @param clearKeyEncryptionConfiguration the clearKeyEncryptionConfiguration value to set.
      * @return the CommonEncryptionCenc object itself.

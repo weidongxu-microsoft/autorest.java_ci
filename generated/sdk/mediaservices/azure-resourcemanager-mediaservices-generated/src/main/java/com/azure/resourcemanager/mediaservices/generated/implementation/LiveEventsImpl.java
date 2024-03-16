@@ -175,8 +175,8 @@ public final class LiveEventsImpl implements LiveEvents {
 
     public Response<LiveEvent> operationLocationWithResponse(String resourceGroupName, String accountName,
         String liveEventName, String operationId, Context context) {
-        Response<LiveEventInner> inner = this.serviceClient().operationLocationWithResponse(resourceGroupName,
-            accountName, liveEventName, operationId, context);
+        Response<LiveEventInner> inner = this.serviceClient()
+            .operationLocationWithResponse(resourceGroupName, accountName, liveEventName, operationId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LiveEventImpl(inner.getValue(), this.manager()));

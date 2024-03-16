@@ -12,8 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Specifies information about the availability set that the virtual machine should be assigned to. Only tags may be
- * updated.
+ * Specifies information about the availability set that the virtual machine should be assigned to. Only tags may be updated.
  */
 @Fluent
 public final class AvailabilitySetUpdate extends UpdateResource {
@@ -143,8 +142,7 @@ public final class AvailabilitySetUpdate extends UpdateResource {
     }
 
     /**
-     * Get the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * availability set should be assigned to. Minimum api-version: 2018-04-01.
+     * Get the proximityPlacementGroup property: Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01.
      * 
      * @return the proximityPlacementGroup value.
      */
@@ -153,8 +151,7 @@ public final class AvailabilitySetUpdate extends UpdateResource {
     }
 
     /**
-     * Set the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * availability set should be assigned to. Minimum api-version: 2018-04-01.
+     * Set the proximityPlacementGroup property: Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01.
      * 
      * @param proximityPlacementGroup the proximityPlacementGroup value to set.
      * @return the AvailabilitySetUpdate object itself.

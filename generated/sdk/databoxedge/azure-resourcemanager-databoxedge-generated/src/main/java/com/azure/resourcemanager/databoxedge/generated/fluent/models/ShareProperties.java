@@ -190,8 +190,7 @@ public final class ShareProperties {
     }
 
     /**
-     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
-     * SMB protocol).
+     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
      * 
      * @return the userAccessRights value.
      */
@@ -200,8 +199,7 @@ public final class ShareProperties {
     }
 
     /**
-     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
-     * SMB protocol).
+     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
      * 
      * @param userAccessRights the userAccessRights value to set.
      * @return the ShareProperties object itself.
@@ -212,8 +210,7 @@ public final class ShareProperties {
     }
 
     /**
-     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
-     * for NFS protocol).
+     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      * 
      * @return the clientAccessRights value.
      */
@@ -222,8 +219,7 @@ public final class ShareProperties {
     }
 
     /**
-     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
-     * for NFS protocol).
+     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      * 
      * @param clientAccessRights the clientAccessRights value to set.
      * @return the ShareProperties object itself.

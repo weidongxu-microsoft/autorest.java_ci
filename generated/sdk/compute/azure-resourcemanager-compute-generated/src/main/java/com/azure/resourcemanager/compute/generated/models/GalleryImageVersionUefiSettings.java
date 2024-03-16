@@ -32,8 +32,7 @@ public final class GalleryImageVersionUefiSettings {
     }
 
     /**
-     * Get the signatureTemplateNames property: The name of the template(s) that contains default UEFI key signatures
-     * that will be added to the image.
+     * Get the signatureTemplateNames property: The name of the template(s) that contains default UEFI key signatures that will be added to the image.
      * 
      * @return the signatureTemplateNames value.
      */
@@ -42,8 +41,7 @@ public final class GalleryImageVersionUefiSettings {
     }
 
     /**
-     * Set the signatureTemplateNames property: The name of the template(s) that contains default UEFI key signatures
-     * that will be added to the image.
+     * Set the signatureTemplateNames property: The name of the template(s) that contains default UEFI key signatures that will be added to the image.
      * 
      * @param signatureTemplateNames the signatureTemplateNames value to set.
      * @return the GalleryImageVersionUefiSettings object itself.
@@ -55,8 +53,7 @@ public final class GalleryImageVersionUefiSettings {
     }
 
     /**
-     * Get the additionalSignatures property: Additional UEFI key signatures that will be added to the image in addition
-     * to the signature templates.
+     * Get the additionalSignatures property: Additional UEFI key signatures that will be added to the image in addition to the signature templates.
      * 
      * @return the additionalSignatures value.
      */
@@ -65,8 +62,7 @@ public final class GalleryImageVersionUefiSettings {
     }
 
     /**
-     * Set the additionalSignatures property: Additional UEFI key signatures that will be added to the image in addition
-     * to the signature templates.
+     * Set the additionalSignatures property: Additional UEFI key signatures that will be added to the image in addition to the signature templates.
      * 
      * @param additionalSignatures the additionalSignatures value to set.
      * @return the GalleryImageVersionUefiSettings object itself.

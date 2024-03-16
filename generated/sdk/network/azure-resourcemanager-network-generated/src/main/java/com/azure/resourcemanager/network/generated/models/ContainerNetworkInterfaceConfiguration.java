@@ -127,8 +127,7 @@ public final class ContainerNetworkInterfaceConfiguration extends SubResource {
     }
 
     /**
-     * Get the containerNetworkInterfaces property: A list of container network interfaces created from this container
-     * network interface configuration.
+     * Get the containerNetworkInterfaces property: A list of container network interfaces created from this container network interface configuration.
      * 
      * @return the containerNetworkInterfaces value.
      */
@@ -137,8 +136,7 @@ public final class ContainerNetworkInterfaceConfiguration extends SubResource {
     }
 
     /**
-     * Set the containerNetworkInterfaces property: A list of container network interfaces created from this container
-     * network interface configuration.
+     * Set the containerNetworkInterfaces property: A list of container network interfaces created from this container network interface configuration.
      * 
      * @param containerNetworkInterfaces the containerNetworkInterfaces value to set.
      * @return the ContainerNetworkInterfaceConfiguration object itself.
@@ -153,8 +151,7 @@ public final class ContainerNetworkInterfaceConfiguration extends SubResource {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the container network interface configuration
-     * resource.
+     * Get the provisioningState property: The provisioning state of the container network interface configuration resource.
      * 
      * @return the provisioningState value.
      */

@@ -56,8 +56,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientMhsmRegions to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientMhsmRegions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -88,8 +87,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmGeoReplicatedRegionInner>> listByResourceSinglePageAsync(String resourceGroupName,
@@ -127,8 +125,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmGeoReplicatedRegionInner>> listByResourceSinglePageAsync(String resourceGroupName,
@@ -232,8 +229,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmGeoReplicatedRegionInner>> listByResourceNextSinglePageAsync(String nextLink) {
@@ -262,8 +258,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return list of regions associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmGeoReplicatedRegionInner>> listByResourceNextSinglePageAsync(String nextLink,

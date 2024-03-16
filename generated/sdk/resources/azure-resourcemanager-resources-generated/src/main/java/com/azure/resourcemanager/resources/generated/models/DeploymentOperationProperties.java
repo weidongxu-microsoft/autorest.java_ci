@@ -44,15 +44,13 @@ public final class DeploymentOperationProperties {
     private String serviceRequestId;
 
     /*
-     * Operation status code from the resource provider. This property may not be set if a response has not yet been
-     * received.
+     * Operation status code from the resource provider. This property may not be set if a response has not yet been received.
      */
     @JsonProperty(value = "statusCode", access = JsonProperty.Access.WRITE_ONLY)
     private String statusCode;
 
     /*
-     * Operation status message from the resource provider. This property is optional. It will only be provided if an
-     * error was received from the resource provider.
+     * Operation status message from the resource provider. This property is optional.  It will only be provided if an error was received from the resource provider.
      */
     @JsonProperty(value = "statusMessage", access = JsonProperty.Access.WRITE_ONLY)
     private StatusMessage statusMessage;
@@ -127,8 +125,7 @@ public final class DeploymentOperationProperties {
     }
 
     /**
-     * Get the statusCode property: Operation status code from the resource provider. This property may not be set if a
-     * response has not yet been received.
+     * Get the statusCode property: Operation status code from the resource provider. This property may not be set if a response has not yet been received.
      * 
      * @return the statusCode value.
      */
@@ -137,8 +134,7 @@ public final class DeploymentOperationProperties {
     }
 
     /**
-     * Get the statusMessage property: Operation status message from the resource provider. This property is optional.
-     * It will only be provided if an error was received from the resource provider.
+     * Get the statusMessage property: Operation status message from the resource provider. This property is optional.  It will only be provided if an error was received from the resource provider.
      * 
      * @return the statusMessage value.
      */

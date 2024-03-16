@@ -32,16 +32,14 @@ public interface PublicIpDdosProtectionStatusResult {
     IsWorkloadProtected isWorkloadProtected();
 
     /**
-     * Gets the ddosProtectionPlanId property: DDoS protection plan Resource Id of a if IP address is protected through
-     * a plan.
+     * Gets the ddosProtectionPlanId property:  DDoS protection plan Resource Id of a if IP address is protected through a plan.
      * 
      * @return the ddosProtectionPlanId value.
      */
     String ddosProtectionPlanId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpDdosProtectionStatusResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpDdosProtectionStatusResultInner object.
      * 
      * @return the inner object.
      */

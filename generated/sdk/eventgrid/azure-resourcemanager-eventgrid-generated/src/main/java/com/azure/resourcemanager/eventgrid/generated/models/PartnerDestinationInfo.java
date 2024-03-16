@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -16,13 +17,20 @@ import java.util.List;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "endpointType",
-    defaultImpl = PartnerDestinationInfo.class)
+    defaultImpl = PartnerDestinationInfo.class,
+    visible = true)
 @JsonTypeName("PartnerDestinationInfo")
 @JsonSubTypes({ @JsonSubTypes.Type(name = "WebHook", value = WebhookPartnerDestinationInfo.class) })
 @Fluent
 public class PartnerDestinationInfo {
+    /*
+     * Type of the endpoint for the partner destination
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private PartnerEndpointType endpointType;
+
     /*
      * Azure subscription ID of the subscriber. The partner destination associated with the channel will be
      * created under this Azure subscription.
@@ -59,11 +67,31 @@ public class PartnerDestinationInfo {
      * Creates an instance of PartnerDestinationInfo class.
      */
     public PartnerDestinationInfo() {
+        this.endpointType = PartnerEndpointType.fromString("PartnerDestinationInfo");
     }
 
     /**
-     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
-     * with the channel will be
+     * Get the endpointType property: Type of the endpoint for the partner destination.
+     * 
+     * @return the endpointType value.
+     */
+    public PartnerEndpointType endpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * Set the endpointType property: Type of the endpoint for the partner destination.
+     * 
+     * @param endpointType the endpointType value to set.
+     * @return the PartnerDestinationInfo object itself.
+     */
+    protected PartnerDestinationInfo withEndpointType(PartnerEndpointType endpointType) {
+        this.endpointType = endpointType;
+        return this;
+    }
+
+    /**
+     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated with the channel will be
      * created under this Azure subscription.
      * 
      * @return the azureSubscriptionId value.
@@ -73,8 +101,7 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
-     * with the channel will be
+     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated with the channel will be
      * created under this Azure subscription.
      * 
      * @param azureSubscriptionId the azureSubscriptionId value to set.
@@ -86,8 +113,7 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated
-     * with the channel will be
+     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated with the channel will be
      * created under this resource group.
      * 
      * @return the resourceGroupName value.
@@ -97,8 +123,7 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated
-     * with the channel will be
+     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated with the channel will be
      * created under this resource group.
      * 
      * @param resourceGroupName the resourceGroupName value to set.

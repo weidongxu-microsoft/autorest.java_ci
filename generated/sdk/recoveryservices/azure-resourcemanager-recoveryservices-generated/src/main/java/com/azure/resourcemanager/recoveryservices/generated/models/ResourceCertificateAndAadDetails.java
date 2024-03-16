@@ -14,7 +14,11 @@ import java.time.OffsetDateTime;
 /**
  * Certificate details representing the Vault credentials for AAD.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "authType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "authType",
+    defaultImpl = ResourceCertificateAndAadDetails.class,
+    visible = true)
 @JsonTypeName("AzureActiveDirectory")
 @Fluent
 public final class ResourceCertificateAndAadDetails extends ResourceCertificateDetails {
@@ -64,6 +68,7 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAadDetails class.
      */
     public ResourceCertificateAndAadDetails() {
+        withAuthType("AzureActiveDirectory");
     }
 
     /**

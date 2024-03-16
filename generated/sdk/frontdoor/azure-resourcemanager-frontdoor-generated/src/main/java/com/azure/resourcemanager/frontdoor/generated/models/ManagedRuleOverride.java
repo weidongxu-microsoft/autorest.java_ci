@@ -65,8 +65,7 @@ public final class ManagedRuleOverride {
     }
 
     /**
-     * Get the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to
-     * Disabled if not specified.
+     * Get the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to Disabled if not specified.
      * 
      * @return the enabledState value.
      */
@@ -75,8 +74,7 @@ public final class ManagedRuleOverride {
     }
 
     /**
-     * Set the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to
-     * Disabled if not specified.
+     * Set the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to Disabled if not specified.
      * 
      * @param enabledState the enabledState value to set.
      * @return the ManagedRuleOverride object itself.

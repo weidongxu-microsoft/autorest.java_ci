@@ -58,8 +58,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
     }
 
     /**
-     * The interface defining all the services for EventGridManagementClientTopicTypes to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for EventGridManagementClientTopicTypes to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
@@ -95,8 +94,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Topic Types operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the List Topic Types operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopicTypeInfoInner>> listSinglePageAsync() {
@@ -122,8 +120,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Topic Types operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the List Topic Types operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopicTypeInfoInner>> listSinglePageAsync(Context context) {
@@ -309,8 +306,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Event Types operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the List Event Types operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventTypeInner>> listEventTypesSinglePageAsync(String topicTypeName) {
@@ -340,8 +336,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Event Types operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the List Event Types operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventTypeInner>> listEventTypesSinglePageAsync(String topicTypeName, Context context) {

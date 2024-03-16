@@ -47,8 +47,7 @@ public interface SqlVmTroubleshooting {
     String virtualMachineResourceId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVmTroubleshootingInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVmTroubleshootingInner object.
      * 
      * @return the inner object.
      */

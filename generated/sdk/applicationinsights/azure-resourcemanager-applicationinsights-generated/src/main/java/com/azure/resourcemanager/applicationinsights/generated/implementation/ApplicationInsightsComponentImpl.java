@@ -175,14 +175,18 @@ public final class ApplicationInsightsComponentImpl implements ApplicationInsigh
     }
 
     public ApplicationInsightsComponent create() {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationInsightsComponent create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -199,14 +203,18 @@ public final class ApplicationInsightsComponentImpl implements ApplicationInsigh
     }
 
     public ApplicationInsightsComponent apply() {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationInsightsComponent apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, context)
+            .getValue();
         return this;
     }
 
@@ -219,14 +227,18 @@ public final class ApplicationInsightsComponentImpl implements ApplicationInsigh
     }
 
     public ApplicationInsightsComponent refresh() {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationInsightsComponent refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getComponents()
-            .getByResourceGroupWithResponse(resourceGroupName, resourceName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getComponents()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, context)
+            .getValue();
         return this;
     }
 

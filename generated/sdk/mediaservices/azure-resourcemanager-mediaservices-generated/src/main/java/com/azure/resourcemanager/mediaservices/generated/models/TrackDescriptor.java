@@ -5,29 +5,54 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Base type for all TrackDescriptor types, which define the metadata and selection for tracks that should be processed
- * by a Job.
+ * Base type for all TrackDescriptor types, which define the metadata and selection for tracks that should be processed by a Job.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = TrackDescriptor.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = TrackDescriptor.class, visible = true)
 @JsonTypeName("TrackDescriptor")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AudioTrackDescriptor", value = AudioTrackDescriptor.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.VideoTrackDescriptor", value = VideoTrackDescriptor.class) })
 @Immutable
 public class TrackDescriptor {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /**
      * Creates an instance of TrackDescriptor class.
      */
     public TrackDescriptor() {
+        this.odataType = "TrackDescriptor";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the TrackDescriptor object itself.
+     */
+    protected TrackDescriptor withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

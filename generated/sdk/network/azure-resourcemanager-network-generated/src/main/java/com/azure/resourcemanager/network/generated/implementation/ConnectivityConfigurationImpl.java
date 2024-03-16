@@ -111,14 +111,20 @@ public final class ConnectivityConfigurationImpl
     }
 
     public ConnectivityConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations().createOrUpdateWithResponse(
-            resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, configurationName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ConnectivityConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations().createOrUpdateWithResponse(
-            resourceGroupName, networkManagerName, configurationName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, configurationName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -134,14 +140,20 @@ public final class ConnectivityConfigurationImpl
     }
 
     public ConnectivityConfiguration apply() {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations().createOrUpdateWithResponse(
-            resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, configurationName, this.innerModel(),
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public ConnectivityConfiguration apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations().createOrUpdateWithResponse(
-            resourceGroupName, networkManagerName, configurationName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, configurationName, this.innerModel(),
+                context)
+            .getValue();
         return this;
     }
 
@@ -156,14 +168,18 @@ public final class ConnectivityConfigurationImpl
     }
 
     public ConnectivityConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations()
-            .getWithResponse(resourceGroupName, networkManagerName, configurationName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ConnectivityConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConnectivityConfigurations()
-            .getWithResponse(resourceGroupName, networkManagerName, configurationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getConnectivityConfigurations()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, context)
+            .getValue();
         return this;
     }
 

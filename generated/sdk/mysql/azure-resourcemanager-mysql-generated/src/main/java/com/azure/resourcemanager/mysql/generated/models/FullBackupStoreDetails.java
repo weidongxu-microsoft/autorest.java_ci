@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * FullBackupStoreDetails is used for scenarios where backup data is streamed/copied over to a storage destination.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "objectType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "objectType",
+    defaultImpl = FullBackupStoreDetails.class,
+    visible = true)
 @JsonTypeName("FullBackupStoreDetails")
 @Fluent
 public final class FullBackupStoreDetails extends BackupStoreDetails {
@@ -28,6 +32,7 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
      * Creates an instance of FullBackupStoreDetails class.
      */
     public FullBackupStoreDetails() {
+        withObjectType("FullBackupStoreDetails");
     }
 
     /**

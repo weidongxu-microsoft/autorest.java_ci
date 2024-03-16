@@ -13,15 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public class VirtualMachineReimageParameters {
     /*
-     * Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only
-     * supported for VM/VMSS with Ephemeral OS disk.
+     * Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
      */
     @JsonProperty(value = "tempDisk")
     private Boolean tempDisk;
 
     /*
-     * Specifies in decimal number, the version the OS disk should be reimaged to. If exact version is not provided, the
-     * OS disk is reimaged to the existing version of OS Disk.
+     * Specifies in decimal number, the version the OS disk should be reimaged to. If exact version is not provided, the OS disk is reimaged to the existing version of OS Disk.
      */
     @JsonProperty(value = "exactVersion")
     private String exactVersion;
@@ -39,8 +37,7 @@ public class VirtualMachineReimageParameters {
     }
 
     /**
-     * Get the tempDisk property: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk
-     * reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+     * Get the tempDisk property: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
      * 
      * @return the tempDisk value.
      */
@@ -49,8 +46,7 @@ public class VirtualMachineReimageParameters {
     }
 
     /**
-     * Set the tempDisk property: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk
-     * reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+     * Set the tempDisk property: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
      * 
      * @param tempDisk the tempDisk value to set.
      * @return the VirtualMachineReimageParameters object itself.
@@ -61,8 +57,7 @@ public class VirtualMachineReimageParameters {
     }
 
     /**
-     * Get the exactVersion property: Specifies in decimal number, the version the OS disk should be reimaged to. If
-     * exact version is not provided, the OS disk is reimaged to the existing version of OS Disk.
+     * Get the exactVersion property: Specifies in decimal number, the version the OS disk should be reimaged to. If exact version is not provided, the OS disk is reimaged to the existing version of OS Disk.
      * 
      * @return the exactVersion value.
      */
@@ -71,8 +66,7 @@ public class VirtualMachineReimageParameters {
     }
 
     /**
-     * Set the exactVersion property: Specifies in decimal number, the version the OS disk should be reimaged to. If
-     * exact version is not provided, the OS disk is reimaged to the existing version of OS Disk.
+     * Set the exactVersion property: Specifies in decimal number, the version the OS disk should be reimaged to. If exact version is not provided, the OS disk is reimaged to the existing version of OS Disk.
      * 
      * @param exactVersion the exactVersion value to set.
      * @return the VirtualMachineReimageParameters object itself.

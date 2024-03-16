@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * NumberLessThanOrEquals Advanced Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = NumberLessThanOrEqualsAdvancedFilter.class,
+    visible = true)
 @JsonTypeName("NumberLessThanOrEquals")
 @Fluent
 public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
@@ -26,6 +30,7 @@ public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
      * Creates an instance of NumberLessThanOrEqualsAdvancedFilter class.
      */
     public NumberLessThanOrEqualsAdvancedFilter() {
+        withOperatorType(AdvancedFilterOperatorType.NUMBER_LESS_THAN_OR_EQUALS);
     }
 
     /**

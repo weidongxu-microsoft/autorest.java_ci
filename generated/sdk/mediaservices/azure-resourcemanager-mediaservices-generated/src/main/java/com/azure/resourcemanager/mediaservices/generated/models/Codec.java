@@ -7,17 +7,14 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Describes the basic properties of all codecs.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Codec.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Codec.class, visible = true)
 @JsonTypeName("Codec")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.Audio", value = Audio.class),
@@ -26,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "#Microsoft.Media.CopyAudio", value = CopyAudio.class) })
 @Fluent
 public class Codec {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
     /*
      * An optional label for the codec. The label can be used to control muxing behavior.
      */
@@ -36,6 +40,27 @@ public class Codec {
      * Creates an instance of Codec class.
      */
     public Codec() {
+        this.odataType = "Codec";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the Codec object itself.
+     */
+    protected Codec withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

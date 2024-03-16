@@ -6,6 +6,7 @@ package com.azure.resourcemanager.consumption.generated.implementation;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendation;
+import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationKind;
 import java.util.Collections;
 import java.util.Map;
 
@@ -30,6 +31,10 @@ public final class ReservationRecommendationImpl implements ReservationRecommend
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public ReservationRecommendationKind kind() {
+        return this.innerModel().kind();
     }
 
     public String etag() {

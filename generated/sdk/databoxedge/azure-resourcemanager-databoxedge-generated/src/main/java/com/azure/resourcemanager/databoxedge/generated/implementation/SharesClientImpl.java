@@ -64,8 +64,7 @@ public final class SharesClientImpl implements SharesClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientShares to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientShares to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -135,8 +134,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ShareInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -174,8 +172,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ShareInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -212,8 +209,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ShareInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName) {
@@ -230,8 +226,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ShareInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName,
@@ -248,8 +243,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ShareInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
@@ -265,8 +259,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ShareInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName,
@@ -412,8 +405,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents a share on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String name,
@@ -458,8 +450,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents a share on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String name,
@@ -503,7 +494,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a share on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ShareInner>, ShareInner> beginCreateOrUpdateAsync(String deviceName, String name,
@@ -525,7 +516,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a share on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ShareInner>, ShareInner> beginCreateOrUpdateAsync(String deviceName, String name,
@@ -547,7 +538,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a share on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(String deviceName, String name,
@@ -566,7 +557,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a share on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(String deviceName, String name,
@@ -584,7 +575,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device on successful completion of {@link Mono}.
+     * @return represents a share on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ShareInner> createOrUpdateAsync(String deviceName, String name, String resourceGroupName,
@@ -604,7 +595,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device on successful completion of {@link Mono}.
+     * @return represents a share on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ShareInner> createOrUpdateAsync(String deviceName, String name, String resourceGroupName,
@@ -623,7 +614,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device.
+     * @return represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ShareInner createOrUpdate(String deviceName, String name, String resourceGroupName, ShareInner share) {
@@ -641,7 +632,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the Data Box Edge/Gateway device.
+     * @return represents a share on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ShareInner createOrUpdate(String deviceName, String name, String resourceGroupName, ShareInner share,
@@ -1094,8 +1085,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ShareInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -1125,8 +1115,7 @@ public final class SharesClientImpl implements SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ShareInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink,

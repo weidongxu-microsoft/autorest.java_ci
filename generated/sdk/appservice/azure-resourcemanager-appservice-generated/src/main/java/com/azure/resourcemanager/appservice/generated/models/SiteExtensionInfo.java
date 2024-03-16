@@ -146,8 +146,7 @@ public interface SiteExtensionInfo {
     Integer downloadCount();
 
     /**
-     * Gets the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version;
-     * &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Gets the localIsLatestVersion property: &lt;code&gt;true&lt;/code&gt; if the local version is the latest version; &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the localIsLatestVersion value.
      */

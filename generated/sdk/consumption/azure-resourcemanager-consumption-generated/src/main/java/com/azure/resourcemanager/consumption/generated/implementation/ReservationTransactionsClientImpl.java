@@ -59,8 +59,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientReservationTransactions to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientReservationTransactions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -104,24 +103,16 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(String billingAccountId, String filter,
@@ -144,25 +135,17 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(String billingAccountId, String filter,
@@ -185,17 +168,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -212,11 +188,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -235,17 +207,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -263,11 +228,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -284,17 +245,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
-     * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
-     * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -311,23 +265,15 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ModernReservationTransactionInner>>
@@ -354,24 +300,16 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ModernReservationTransactionInner>> listByBillingProfileSinglePageAsync(
@@ -398,18 +336,11 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -423,11 +354,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -445,18 +372,11 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -472,11 +392,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -493,18 +409,11 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     }
 
     /**
-     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
-     * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
-     * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
-     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
+     * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
-     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end date. The filter supports 'le' and  'ge'. Note: API returns data for the entire start date's and end date's billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -526,8 +435,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listNextSinglePageAsync(String nextLink) {
@@ -555,8 +463,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -583,8 +490,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ModernReservationTransactionInner>>
@@ -615,8 +521,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ModernReservationTransactionInner>>

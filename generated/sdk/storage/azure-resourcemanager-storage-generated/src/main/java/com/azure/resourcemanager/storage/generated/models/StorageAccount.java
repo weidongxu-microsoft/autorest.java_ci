@@ -88,8 +88,7 @@ public interface StorageAccount {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the primaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
-     * or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.
+     * Gets the primaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue, or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.
      * 
      * @return the primaryEndpoints value.
      */
@@ -103,33 +102,28 @@ public interface StorageAccount {
     String primaryLocation();
 
     /**
-     * Gets the statusOfPrimary property: Gets the status indicating whether the primary location of the storage account
-     * is available or unavailable.
+     * Gets the statusOfPrimary property: Gets the status indicating whether the primary location of the storage account is available or unavailable.
      * 
      * @return the statusOfPrimary value.
      */
     AccountStatus statusOfPrimary();
 
     /**
-     * Gets the lastGeoFailoverTime property: Gets the timestamp of the most recent instance of a failover to the
-     * secondary location. Only the most recent timestamp is retained. This element is not returned if there has never
-     * been a failover instance. Only available if the accountType is Standard_GRS or Standard_RAGRS.
+     * Gets the lastGeoFailoverTime property: Gets the timestamp of the most recent instance of a failover to the secondary location. Only the most recent timestamp is retained. This element is not returned if there has never been a failover instance. Only available if the accountType is Standard_GRS or Standard_RAGRS.
      * 
      * @return the lastGeoFailoverTime value.
      */
     OffsetDateTime lastGeoFailoverTime();
 
     /**
-     * Gets the secondaryLocation property: Gets the location of the geo-replicated secondary for the storage account.
-     * Only available if the accountType is Standard_GRS or Standard_RAGRS.
+     * Gets the secondaryLocation property: Gets the location of the geo-replicated secondary for the storage account. Only available if the accountType is Standard_GRS or Standard_RAGRS.
      * 
      * @return the secondaryLocation value.
      */
     String secondaryLocation();
 
     /**
-     * Gets the statusOfSecondary property: Gets the status indicating whether the secondary location of the storage
-     * account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
+     * Gets the statusOfSecondary property: Gets the status indicating whether the secondary location of the storage account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
      * 
      * @return the statusOfSecondary value.
      */
@@ -171,9 +165,7 @@ public interface StorageAccount {
     KeyCreationTime keyCreationTime();
 
     /**
-     * Gets the secondaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
-     * or table object from the secondary location of the storage account. Only available if the SKU name is
-     * Standard_RAGRS.
+     * Gets the secondaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue, or table object from the secondary location of the storage account. Only available if the SKU name is Standard_RAGRS.
      * 
      * @return the secondaryEndpoints value.
      */
@@ -187,17 +179,14 @@ public interface StorageAccount {
     Encryption encryption();
 
     /**
-     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
-     * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
-     * cannot be changed for the premium block blobs storage account type.
+     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
      * 
      * @return the accessTier value.
      */
     AccessTier accessTier();
 
     /**
-     * Gets the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for
-     * Azure Files.
+     * Gets the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for Azure Files.
      * 
      * @return the azureFilesIdentityBasedAuthentication value.
      */
@@ -246,32 +235,28 @@ public interface StorageAccount {
     GeoReplicationStats geoReplicationStats();
 
     /**
-     * Gets the failoverInProgress property: If the failover is in progress, the value will be true, otherwise, it will
-     * be null.
+     * Gets the failoverInProgress property: If the failover is in progress, the value will be true, otherwise, it will be null.
      * 
      * @return the failoverInProgress value.
      */
     Boolean failoverInProgress();
 
     /**
-     * Gets the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it
-     * is enabled.
+     * Gets the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled.
      * 
      * @return the largeFileSharesState value.
      */
     LargeFileSharesState largeFileSharesState();
 
     /**
-     * Gets the privateEndpointConnections property: List of private endpoint connection associated with the specified
-     * storage account.
+     * Gets the privateEndpointConnections property: List of private endpoint connection associated with the specified storage account.
      * 
      * @return the privateEndpointConnections value.
      */
     List<PrivateEndpointConnection> privateEndpointConnections();
 
     /**
-     * Gets the routingPreference property: Maintains information about the network routing choice opted by the user for
-     * data transfer.
+     * Gets the routingPreference property: Maintains information about the network routing choice opted by the user for data transfer.
      * 
      * @return the routingPreference value.
      */
@@ -285,25 +270,21 @@ public interface StorageAccount {
     BlobRestoreStatus blobRestoreStatus();
 
     /**
-     * Gets the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is false for this property.
+     * Gets the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
     Boolean allowBlobPublicAccess();
 
     /**
-     * Gets the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The
-     * default interpretation is TLS 1.0 for this property.
+     * Gets the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
      * 
      * @return the minimumTlsVersion value.
      */
     MinimumTlsVersion minimumTlsVersion();
 
     /**
-     * Gets the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
-     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
-     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     * Gets the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -317,76 +298,63 @@ public interface StorageAccount {
     Boolean enableNfsV3();
 
     /**
-     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this
-     * property to true for new or existing accounts only if object replication policies will involve storage accounts
-     * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
-     * by default.
+     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default.
      * 
      * @return the allowCrossTenantReplication value.
      */
     Boolean allowCrossTenantReplication();
 
     /**
-     * Gets the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
-     * is OAuth or not. The default interpretation is false for this property.
+     * Gets the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property.
      * 
      * @return the defaultToOAuthAuthentication value.
      */
     Boolean defaultToOAuthAuthentication();
 
     /**
-     * Gets the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Gets the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
-     * account creation time. When set to true, it enables object level immutability for all the containers in the
-     * account by default.
+     * Gets the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the containers in the account by default.
      * 
      * @return the immutableStorageWithVersioning value.
      */
     ImmutableStorageAccount immutableStorageWithVersioning();
 
     /**
-     * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
-     * Private Links to the same VNet.
+     * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet.
      * 
      * @return the allowedCopyScope value.
      */
     AllowedCopyScope allowedCopyScope();
 
     /**
-     * Gets the storageAccountSkuConversionStatus property: This property is readOnly and is set by server during
-     * asynchronous storage account sku conversion operations.
+     * Gets the storageAccountSkuConversionStatus property: This property is readOnly and is set by server during asynchronous storage account sku conversion operations.
      * 
      * @return the storageAccountSkuConversionStatus value.
      */
     StorageAccountSkuConversionStatus storageAccountSkuConversionStatus();
 
     /**
-     * Gets the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
-     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
-     * URL will have an alphanumeric DNS Zone identifier.
+     * Gets the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
     DnsEndpointType dnsEndpointType();
 
     /**
-     * Gets the isSkuConversionBlocked property: This property will be set to true or false on an event of ongoing
-     * migration. Default value is null.
+     * Gets the isSkuConversionBlocked property: This property will be set to true or false on an event of ongoing migration. Default value is null.
      * 
      * @return the isSkuConversionBlocked value.
      */
     Boolean isSkuConversionBlocked();
 
     /**
-     * Gets the accountMigrationInProgress property: If customer initiated account migration is in progress, the value
-     * will be true else it will be null.
+     * Gets the accountMigrationInProgress property: If customer initiated account migration is in progress, the value will be true else it will be null.
      * 
      * @return the accountMigrationInProgress value.
      */
@@ -445,10 +413,7 @@ public interface StorageAccount {
             /**
              * Specifies the region for the resource.
              * 
-             * @param location Required. Gets or sets the location of the resource. This will be one of the supported
-             * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a
-             * resource cannot be changed once it is created, but if an identical geo region is specified on update, the
-             * request will succeed.
+             * @param location Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(Region location);
@@ -456,10 +421,7 @@ public interface StorageAccount {
             /**
              * Specifies the region for the resource.
              * 
-             * @param location Required. Gets or sets the location of the resource. This will be one of the supported
-             * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a
-             * resource cannot be changed once it is created, but if an identical geo region is specified on update, the
-             * request will succeed.
+             * @param location Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
@@ -472,8 +434,7 @@ public interface StorageAccount {
             /**
              * Specifies resourceGroupName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
              * @return the next definition stage.
              */
             WithSku withExistingResourceGroup(String resourceGroupName);
@@ -506,8 +467,7 @@ public interface StorageAccount {
         }
 
         /**
-         * The stage of the StorageAccount definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StorageAccount definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithIdentity, DefinitionStages.WithAllowedCopyScope,
@@ -542,15 +502,9 @@ public interface StorageAccount {
          */
         interface WithTags {
             /**
-             * Specifies the tags property: Gets or sets a list of key value pairs that describe the resource. These
-             * tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags
-             * can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and
-             * a value with a length no greater than 256 characters..
+             * Specifies the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters..
              * 
-             * @param tags Gets or sets a list of key value pairs that describe the resource. These tags can be used for
-             * viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
-             * resource. Each tag must have a key with a length no greater than 128 characters and a value with a length
-             * no greater than 256 characters.
+             * @param tags Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
@@ -561,13 +515,9 @@ public interface StorageAccount {
          */
         interface WithExtendedLocation {
             /**
-             * Specifies the extendedLocation property: Optional. Set the extended location of the resource. If not set,
-             * the storage account will be created in Azure main region. Otherwise it will be created in the specified
-             * extended location.
+             * Specifies the extendedLocation property: Optional. Set the extended location of the resource. If not set, the storage account will be created in Azure main region. Otherwise it will be created in the specified extended location.
              * 
-             * @param extendedLocation Optional. Set the extended location of the resource. If not set, the storage
-             * account will be created in Azure main region. Otherwise it will be created in the specified extended
-             * location.
+             * @param extendedLocation Optional. Set the extended location of the resource. If not set, the storage account will be created in Azure main region. Otherwise it will be created in the specified extended location.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
@@ -591,11 +541,9 @@ public interface StorageAccount {
          */
         interface WithAllowedCopyScope {
             /**
-             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant
-             * or with Private Links to the same VNet..
+             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet..
              * 
-             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private
-             * Links to the same VNet.
+             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet.
              * @return the next definition stage.
              */
             WithCreate withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
@@ -606,11 +554,9 @@ public interface StorageAccount {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Allow or disallow public network access to Storage Account.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'..
+             * Specifies the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'..
              * 
-             * @param publicNetworkAccess Allow or disallow public network access to Storage Account. Value is optional
-             * but if passed in, must be 'Enabled' or 'Disabled'.
+             * @param publicNetworkAccess Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -647,13 +593,9 @@ public interface StorageAccount {
          */
         interface WithCustomDomain {
             /**
-             * Specifies the customDomain property: User domain assigned to the storage account. Name is the CNAME
-             * source. Only one custom domain is supported per storage account at this time. To clear the existing
-             * custom domain, use an empty string for the custom domain name property..
+             * Specifies the customDomain property: User domain assigned to the storage account. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property..
              * 
-             * @param customDomain User domain assigned to the storage account. Name is the CNAME source. Only one
-             * custom domain is supported per storage account at this time. To clear the existing custom domain, use an
-             * empty string for the custom domain name property.
+             * @param customDomain User domain assigned to the storage account. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property.
              * @return the next definition stage.
              */
             WithCreate withCustomDomain(CustomDomain customDomain);
@@ -664,8 +606,7 @@ public interface StorageAccount {
          */
         interface WithEncryption {
             /**
-             * Specifies the encryption property: Encryption settings to be used for server-side encryption for the
-             * storage account..
+             * Specifies the encryption property: Encryption settings to be used for server-side encryption for the storage account..
              * 
              * @param encryption Encryption settings to be used for server-side encryption for the storage account.
              * @return the next definition stage.
@@ -691,13 +632,9 @@ public interface StorageAccount {
          */
         interface WithAccessTier {
             /**
-             * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access
-             * tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage
-             * account type and it cannot be changed for the premium block blobs storage account type..
+             * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type..
              * 
-             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for
-             * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and
-             * it cannot be changed for the premium block blobs storage account type.
+             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
              * @return the next definition stage.
              */
             WithCreate withAccessTier(AccessTier accessTier);
@@ -708,11 +645,9 @@ public interface StorageAccount {
          */
         interface WithAzureFilesIdentityBasedAuthentication {
             /**
-             * Specifies the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication
-             * settings for Azure Files..
+             * Specifies the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for Azure Files..
              * 
-             * @param azureFilesIdentityBasedAuthentication Provides the identity based authentication settings for
-             * Azure Files.
+             * @param azureFilesIdentityBasedAuthentication Provides the identity based authentication settings for Azure Files.
              * @return the next definition stage.
              */
             WithCreate withAzureFilesIdentityBasedAuthentication(
@@ -724,11 +659,9 @@ public interface StorageAccount {
          */
         interface WithEnableHttpsTrafficOnly {
             /**
-             * Specifies the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to
-             * true. The default value is true since API version 2019-04-01..
+             * Specifies the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01..
              * 
-             * @param enableHttpsTrafficOnly Allows https traffic only to storage service if sets to true. The default
-             * value is true since API version 2019-04-01.
+             * @param enableHttpsTrafficOnly Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01.
              * @return the next definition stage.
              */
             WithCreate withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly);
@@ -778,11 +711,9 @@ public interface StorageAccount {
          */
         interface WithLargeFileSharesState {
             /**
-             * Specifies the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be
-             * disabled once it is enabled..
+             * Specifies the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled..
              * 
-             * @param largeFileSharesState Allow large file shares if sets to Enabled. It cannot be disabled once it is
-             * enabled.
+             * @param largeFileSharesState Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled.
              * @return the next definition stage.
              */
             WithCreate withLargeFileSharesState(LargeFileSharesState largeFileSharesState);
@@ -793,11 +724,9 @@ public interface StorageAccount {
          */
         interface WithRoutingPreference {
             /**
-             * Specifies the routingPreference property: Maintains information about the network routing choice opted by
-             * the user for data transfer.
+             * Specifies the routingPreference property: Maintains information about the network routing choice opted by the user for data transfer.
              * 
-             * @param routingPreference Maintains information about the network routing choice opted by the user for
-             * data transfer.
+             * @param routingPreference Maintains information about the network routing choice opted by the user for data transfer.
              * @return the next definition stage.
              */
             WithCreate withRoutingPreference(RoutingPreference routingPreference);
@@ -808,11 +737,9 @@ public interface StorageAccount {
          */
         interface WithAllowBlobPublicAccess {
             /**
-             * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers
-             * in the storage account. The default interpretation is false for this property..
+             * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property..
              * 
-             * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage
-             * account. The default interpretation is false for this property.
+             * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             WithCreate withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
@@ -823,11 +750,9 @@ public interface StorageAccount {
          */
         interface WithMinimumTlsVersion {
             /**
-             * Specifies the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to
-             * storage. The default interpretation is TLS 1.0 for this property..
+             * Specifies the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property..
              * 
-             * @param minimumTlsVersion Set the minimum TLS version to be permitted on requests to storage. The default
-             * interpretation is TLS 1.0 for this property.
+             * @param minimumTlsVersion Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
              * @return the next definition stage.
              */
             WithCreate withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
@@ -838,15 +763,9 @@ public interface StorageAccount {
          */
         interface WithAllowSharedKeyAccess {
             /**
-             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be
-             * authorized with the account access key via Shared Key. If false, then all requests, including shared
-             * access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
-             * which is equivalent to true..
+             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true..
              * 
-             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with
-             * the account access key via Shared Key. If false, then all requests, including shared access signatures,
-             * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent
-             * to true.
+             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
              * @return the next definition stage.
              */
             WithCreate withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
@@ -870,15 +789,9 @@ public interface StorageAccount {
          */
         interface WithAllowCrossTenantReplication {
             /**
-             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
-             * replication. Set this property to true for new or existing accounts only if object replication policies
-             * will involve storage accounts in different AAD tenants. The default interpretation is false for new
-             * accounts to follow best security practices by default..
+             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default..
              * 
-             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this
-             * property to true for new or existing accounts only if object replication policies will involve storage
-             * accounts in different AAD tenants. The default interpretation is false for new accounts to follow best
-             * security practices by default.
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default.
              * @return the next definition stage.
              */
             WithCreate withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
@@ -889,11 +802,9 @@ public interface StorageAccount {
          */
         interface WithDefaultToOAuthAuthentication {
             /**
-             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default
-             * authentication is OAuth or not. The default interpretation is false for this property..
+             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property..
              * 
-             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is
-             * OAuth or not. The default interpretation is false for this property.
+             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             WithCreate withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
@@ -904,13 +815,9 @@ public interface StorageAccount {
          */
         interface WithImmutableStorageWithVersioning {
             /**
-             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to
-             * true at the account creation time. When set to true, it enables object level immutability for all the new
-             * containers in the account by default..
+             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the new containers in the account by default..
              * 
-             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the
-             * account creation time. When set to true, it enables object level immutability for all the new containers
-             * in the account by default.
+             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the new containers in the account by default.
              * @return the next definition stage.
              */
             WithCreate withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
@@ -921,13 +828,9 @@ public interface StorageAccount {
          */
         interface WithDnsEndpointType {
             /**
-             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to
-             * AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an
-             * Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
+             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
              * 
-             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a
-             * large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-             * endpoint URL will have an alphanumeric DNS Zone identifier.
+             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
              * @return the next definition stage.
              */
             WithCreate withDnsEndpointType(DnsEndpointType dnsEndpointType);
@@ -979,15 +882,9 @@ public interface StorageAccount {
          */
         interface WithTags {
             /**
-             * Specifies the tags property: Gets or sets a list of key value pairs that describe the resource. These
-             * tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can
-             * be provided for a resource. Each tag must have a key no greater in length than 128 characters and a value
-             * no greater in length than 256 characters..
+             * Specifies the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length than 256 characters..
              * 
-             * @param tags Gets or sets a list of key value pairs that describe the resource. These tags can be used in
-             * viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
-             * resource. Each tag must have a key no greater in length than 128 characters and a value no greater in
-             * length than 256 characters.
+             * @param tags Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater in length than 128 characters and a value no greater in length than 256 characters.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
@@ -998,12 +895,9 @@ public interface StorageAccount {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: Gets or sets the SKU name. Note that the SKU name cannot be updated to
-             * Standard_ZRS, Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other
-             * value..
+             * Specifies the sku property: Gets or sets the SKU name. Note that the SKU name cannot be updated to Standard_ZRS, Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other value..
              * 
-             * @param sku Gets or sets the SKU name. Note that the SKU name cannot be updated to Standard_ZRS,
-             * Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other value.
+             * @param sku Gets or sets the SKU name. Note that the SKU name cannot be updated to Standard_ZRS, Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other value.
              * @return the next definition stage.
              */
             Update withSku(Sku sku);
@@ -1027,11 +921,9 @@ public interface StorageAccount {
          */
         interface WithKind {
             /**
-             * Specifies the kind property: Optional. Indicates the type of storage account. Currently only StorageV2
-             * value supported by server..
+             * Specifies the kind property: Optional. Indicates the type of storage account. Currently only StorageV2 value supported by server..
              * 
-             * @param kind Optional. Indicates the type of storage account. Currently only StorageV2 value supported by
-             * server.
+             * @param kind Optional. Indicates the type of storage account. Currently only StorageV2 value supported by server.
              * @return the next definition stage.
              */
             Update withKind(Kind kind);
@@ -1042,13 +934,9 @@ public interface StorageAccount {
          */
         interface WithCustomDomain {
             /**
-             * Specifies the customDomain property: Custom domain assigned to the storage account by the user. Name is
-             * the CNAME source. Only one custom domain is supported per storage account at this time. To clear the
-             * existing custom domain, use an empty string for the custom domain name property..
+             * Specifies the customDomain property: Custom domain assigned to the storage account by the user. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property..
              * 
-             * @param customDomain Custom domain assigned to the storage account by the user. Name is the CNAME source.
-             * Only one custom domain is supported per storage account at this time. To clear the existing custom
-             * domain, use an empty string for the custom domain name property.
+             * @param customDomain Custom domain assigned to the storage account by the user. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property.
              * @return the next definition stage.
              */
             Update withCustomDomain(CustomDomain customDomain);
@@ -1059,11 +947,9 @@ public interface StorageAccount {
          */
         interface WithEncryption {
             /**
-             * Specifies the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default
-             * for all storage accounts and cannot be disabled..
+             * Specifies the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default for all storage accounts and cannot be disabled..
              * 
-             * @param encryption Not applicable. Azure Storage encryption at rest is enabled by default for all storage
-             * accounts and cannot be disabled.
+             * @param encryption Not applicable. Azure Storage encryption at rest is enabled by default for all storage accounts and cannot be disabled.
              * @return the next definition stage.
              */
             Update withEncryption(Encryption encryption);
@@ -1100,13 +986,9 @@ public interface StorageAccount {
          */
         interface WithAccessTier {
             /**
-             * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access
-             * tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage
-             * account type and it cannot be changed for the premium block blobs storage account type..
+             * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type..
              * 
-             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for
-             * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and
-             * it cannot be changed for the premium block blobs storage account type.
+             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
              * @return the next definition stage.
              */
             Update withAccessTier(AccessTier accessTier);
@@ -1117,11 +999,9 @@ public interface StorageAccount {
          */
         interface WithAzureFilesIdentityBasedAuthentication {
             /**
-             * Specifies the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication
-             * settings for Azure Files..
+             * Specifies the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for Azure Files..
              * 
-             * @param azureFilesIdentityBasedAuthentication Provides the identity based authentication settings for
-             * Azure Files.
+             * @param azureFilesIdentityBasedAuthentication Provides the identity based authentication settings for Azure Files.
              * @return the next definition stage.
              */
             Update withAzureFilesIdentityBasedAuthentication(
@@ -1133,8 +1013,7 @@ public interface StorageAccount {
          */
         interface WithEnableHttpsTrafficOnly {
             /**
-             * Specifies the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to
-             * true..
+             * Specifies the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true..
              * 
              * @param enableHttpsTrafficOnly Allows https traffic only to storage service if sets to true.
              * @return the next definition stage.
@@ -1186,11 +1065,9 @@ public interface StorageAccount {
          */
         interface WithLargeFileSharesState {
             /**
-             * Specifies the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be
-             * disabled once it is enabled..
+             * Specifies the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled..
              * 
-             * @param largeFileSharesState Allow large file shares if sets to Enabled. It cannot be disabled once it is
-             * enabled.
+             * @param largeFileSharesState Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled.
              * @return the next definition stage.
              */
             Update withLargeFileSharesState(LargeFileSharesState largeFileSharesState);
@@ -1201,11 +1078,9 @@ public interface StorageAccount {
          */
         interface WithRoutingPreference {
             /**
-             * Specifies the routingPreference property: Maintains information about the network routing choice opted by
-             * the user for data transfer.
+             * Specifies the routingPreference property: Maintains information about the network routing choice opted by the user for data transfer.
              * 
-             * @param routingPreference Maintains information about the network routing choice opted by the user for
-             * data transfer.
+             * @param routingPreference Maintains information about the network routing choice opted by the user for data transfer.
              * @return the next definition stage.
              */
             Update withRoutingPreference(RoutingPreference routingPreference);
@@ -1216,11 +1091,9 @@ public interface StorageAccount {
          */
         interface WithAllowBlobPublicAccess {
             /**
-             * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers
-             * in the storage account. The default interpretation is false for this property..
+             * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property..
              * 
-             * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage
-             * account. The default interpretation is false for this property.
+             * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             Update withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
@@ -1231,11 +1104,9 @@ public interface StorageAccount {
          */
         interface WithMinimumTlsVersion {
             /**
-             * Specifies the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to
-             * storage. The default interpretation is TLS 1.0 for this property..
+             * Specifies the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property..
              * 
-             * @param minimumTlsVersion Set the minimum TLS version to be permitted on requests to storage. The default
-             * interpretation is TLS 1.0 for this property.
+             * @param minimumTlsVersion Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
              * @return the next definition stage.
              */
             Update withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
@@ -1246,15 +1117,9 @@ public interface StorageAccount {
          */
         interface WithAllowSharedKeyAccess {
             /**
-             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be
-             * authorized with the account access key via Shared Key. If false, then all requests, including shared
-             * access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
-             * which is equivalent to true..
+             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true..
              * 
-             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with
-             * the account access key via Shared Key. If false, then all requests, including shared access signatures,
-             * must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent
-             * to true.
+             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
              * @return the next definition stage.
              */
             Update withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
@@ -1265,15 +1130,9 @@ public interface StorageAccount {
          */
         interface WithAllowCrossTenantReplication {
             /**
-             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
-             * replication. Set this property to true for new or existing accounts only if object replication policies
-             * will involve storage accounts in different AAD tenants. The default interpretation is false for new
-             * accounts to follow best security practices by default..
+             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default..
              * 
-             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this
-             * property to true for new or existing accounts only if object replication policies will involve storage
-             * accounts in different AAD tenants. The default interpretation is false for new accounts to follow best
-             * security practices by default.
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default.
              * @return the next definition stage.
              */
             Update withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
@@ -1284,11 +1143,9 @@ public interface StorageAccount {
          */
         interface WithDefaultToOAuthAuthentication {
             /**
-             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default
-             * authentication is OAuth or not. The default interpretation is false for this property..
+             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property..
              * 
-             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is
-             * OAuth or not. The default interpretation is false for this property.
+             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             Update withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
@@ -1299,11 +1156,9 @@ public interface StorageAccount {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Allow or disallow public network access to Storage Account.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'..
+             * Specifies the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'..
              * 
-             * @param publicNetworkAccess Allow or disallow public network access to Storage Account. Value is optional
-             * but if passed in, must be 'Enabled' or 'Disabled'.
+             * @param publicNetworkAccess Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -1314,13 +1169,9 @@ public interface StorageAccount {
          */
         interface WithImmutableStorageWithVersioning {
             /**
-             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to
-             * true at the account creation time. When set to true, it enables object level immutability for all the
-             * containers in the account by default..
+             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the containers in the account by default..
              * 
-             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the
-             * account creation time. When set to true, it enables object level immutability for all the containers in
-             * the account by default.
+             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the containers in the account by default.
              * @return the next definition stage.
              */
             Update withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
@@ -1331,11 +1182,9 @@ public interface StorageAccount {
          */
         interface WithAllowedCopyScope {
             /**
-             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant
-             * or with Private Links to the same VNet..
+             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet..
              * 
-             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private
-             * Links to the same VNet.
+             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet.
              * @return the next definition stage.
              */
             Update withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
@@ -1346,13 +1195,9 @@ public interface StorageAccount {
          */
         interface WithDnsEndpointType {
             /**
-             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to
-             * AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an
-             * Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
+             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
              * 
-             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a
-             * large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the
-             * endpoint URL will have an alphanumeric DNS Zone identifier.
+             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
              * @return the next definition stage.
              */
             Update withDnsEndpointType(DnsEndpointType dnsEndpointType);
@@ -1466,15 +1311,7 @@ public interface StorageAccount {
     ListServiceSasResponse listServiceSas(ServiceSasParameters parameters);
 
     /**
-     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
-     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
-     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
-     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
-     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
-     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
-     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
-     * to 'Planned'. Learn more about the failover options here-
-     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is only available while the primary and secondary endpoints are available. The primary use case of a Planned Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter to 'Planned'. Learn more about the failover options here- https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1482,15 +1319,7 @@ public interface StorageAccount {
     void failover();
 
     /**
-     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
-     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
-     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
-     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
-     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
-     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
-     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
-     * to 'Planned'. Learn more about the failover options here-
-     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is only available while the primary and secondary endpoints are available. The primary use case of a Planned Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter to 'Planned'. Learn more about the failover options here- https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      * 
      * @param failoverType The parameter is set to 'Planned' to indicate whether a Planned failover is requested.
      * @param context The context to associate with this operation.
@@ -1501,10 +1330,7 @@ public interface StorageAccount {
     void failover(FailoverType failoverType, Context context);
 
     /**
-     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
-     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
-     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
-     * across three Azure availability zones in the primary region.
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously across three Azure availability zones in the primary region.
      * 
      * @param parameters The request parameters required to perform storage account migration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1514,10 +1340,7 @@ public interface StorageAccount {
     void customerInitiatedMigration(StorageAccountMigrationInner parameters);
 
     /**
-     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
-     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
-     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
-     * across three Azure availability zones in the primary region.
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously across three Azure availability zones in the primary region.
      * 
      * @param parameters The request parameters required to perform storage account migration.
      * @param context The context to associate with this operation.

@@ -10,12 +10,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response containing a list of Shared Private Link Resources.
+ * Response containing a list of shared private link resources.
  */
 @Fluent
 public final class SharedPrivateLinkResourceListResult {
     /*
-     * The list of Shared Private Link Resources.
+     * The list of shared private link resources.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<SharedPrivateLinkResourceInner> value;
@@ -33,7 +33,7 @@ public final class SharedPrivateLinkResourceListResult {
     }
 
     /**
-     * Get the value property: The list of Shared Private Link Resources.
+     * Get the value property: The list of shared private link resources.
      * 
      * @return the value value.
      */

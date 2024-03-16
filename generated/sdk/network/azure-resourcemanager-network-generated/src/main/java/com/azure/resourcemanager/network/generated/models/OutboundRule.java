@@ -20,8 +20,7 @@ public interface OutboundRule {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within the set of outbound rules used by the load
-     * balancer. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within the set of outbound rules used by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -56,8 +55,7 @@ public interface OutboundRule {
     List<SubResource> frontendIpConfigurations();
 
     /**
-     * Gets the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
-     * across IPs in the backend IPs.
+     * Gets the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced across IPs in the backend IPs.
      * 
      * @return the backendAddressPool value.
      */
@@ -78,8 +76,7 @@ public interface OutboundRule {
     LoadBalancerOutboundRuleProtocol protocol();
 
     /**
-     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */

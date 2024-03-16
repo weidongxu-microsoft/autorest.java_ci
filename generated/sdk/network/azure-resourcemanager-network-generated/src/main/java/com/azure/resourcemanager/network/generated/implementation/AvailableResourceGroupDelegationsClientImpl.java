@@ -56,8 +56,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientAvailableResourceGroupDelegations to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientAvailableResourceGroupDelegations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -88,8 +87,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all of the available subnet delegations for this resource group in this region along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailableDelegationInner>> listSinglePageAsync(String location,
@@ -128,8 +126,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all of the available subnet delegations for this resource group in this region along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailableDelegationInner>> listSinglePageAsync(String location, String resourceGroupName,
@@ -167,8 +164,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region as paginated response with
-     * {@link PagedFlux}.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location, String resourceGroupName) {
@@ -185,8 +181,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region as paginated response with
-     * {@link PagedFlux}.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location, String resourceGroupName, Context context) {
@@ -202,8 +197,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region as paginated response with
-     * {@link PagedIterable}.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location, String resourceGroupName) {
@@ -219,8 +213,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region as paginated response with
-     * {@link PagedIterable}.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location, String resourceGroupName, Context context) {
@@ -236,8 +229,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available delegations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return an array of available delegations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailableDelegationInner>> listNextSinglePageAsync(String nextLink) {
@@ -265,8 +257,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available delegations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return an array of available delegations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailableDelegationInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -26,8 +26,7 @@ public interface ResourceNavigationLinksListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner object.
      * 
      * @return the inner object.
      */

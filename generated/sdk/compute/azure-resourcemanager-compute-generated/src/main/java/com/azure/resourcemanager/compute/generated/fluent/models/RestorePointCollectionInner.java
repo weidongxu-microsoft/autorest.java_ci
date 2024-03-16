@@ -56,8 +56,7 @@ public final class RestorePointCollectionInner extends Resource {
     }
 
     /**
-     * Get the source property: The properties of the source resource that this restore point collection is created
-     * from.
+     * Get the source property: The properties of the source resource that this restore point collection is created from.
      * 
      * @return the source value.
      */
@@ -66,8 +65,7 @@ public final class RestorePointCollectionInner extends Resource {
     }
 
     /**
-     * Set the source property: The properties of the source resource that this restore point collection is created
-     * from.
+     * Set the source property: The properties of the source resource that this restore point collection is created from.
      * 
      * @param source the source value to set.
      * @return the RestorePointCollectionInner object itself.

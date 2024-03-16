@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Specifies a configuration for FairPlay licenses.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ContentKeyPolicyFairPlayConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration")
 @Fluent
 public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolicyConfiguration {
@@ -58,11 +62,11 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyFairPlayConfiguration class.
      */
     public ContentKeyPolicyFairPlayConfiguration() {
+        withOdataType("#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration");
     }
 
     /**
-     * Get the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
-     * encoded.
+     * Get the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
      * 
      * @return the ask value.
      */
@@ -71,8 +75,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Set the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
-     * encoded.
+     * Set the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
      * 
      * @param ask the ask value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
@@ -103,8 +106,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Get the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
-     * (including private key).
+     * Get the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format (including private key).
      * 
      * @return the fairPlayPfx value.
      */
@@ -113,8 +115,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Set the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
-     * (including private key).
+     * Set the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format (including private key).
      * 
      * @param fairPlayPfx the fairPlayPfx value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.

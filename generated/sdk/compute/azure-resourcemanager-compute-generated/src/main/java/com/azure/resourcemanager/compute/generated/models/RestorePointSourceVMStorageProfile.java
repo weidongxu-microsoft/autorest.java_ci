@@ -78,8 +78,7 @@ public final class RestorePointSourceVMStorageProfile {
     }
 
     /**
-     * Get the diskControllerType property: Gets the disk controller type of the VM captured at the time of the restore
-     * point creation.
+     * Get the diskControllerType property: Gets the disk controller type of the VM captured at the time of the restore point creation.
      * 
      * @return the diskControllerType value.
      */

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * A codec flag, which tells the encoder to copy the input audio bitstream.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = CopyAudio.class, visible = true)
 @JsonTypeName("#Microsoft.Media.CopyAudio")
 @Fluent
 public final class CopyAudio extends Codec {
@@ -19,6 +19,7 @@ public final class CopyAudio extends Codec {
      * Creates an instance of CopyAudio class.
      */
     public CopyAudio() {
+        withOdataType("#Microsoft.Media.CopyAudio");
     }
 
     /**

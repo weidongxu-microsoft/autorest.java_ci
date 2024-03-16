@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VmMemory {
     /*
-     * The total amount of RAM in the virtual machine, as seen by the guest operating system. For a virtual machine with
-     * dynamic memory enabled, this represents the initial memory available at startup.
+     * The total amount of RAM in the virtual machine, as seen by the guest  operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at startup.
      */
     @JsonProperty(value = "startupMemoryMB")
     private Long startupMemoryMB;
@@ -32,9 +31,7 @@ public final class VmMemory {
     }
 
     /**
-     * Get the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest operating
-     * system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at
-     * startup.
+     * Get the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest  operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at startup.
      * 
      * @return the startupMemoryMB value.
      */
@@ -43,9 +40,7 @@ public final class VmMemory {
     }
 
     /**
-     * Set the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest operating
-     * system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at
-     * startup.
+     * Set the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest  operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at startup.
      * 
      * @param startupMemoryMB the startupMemoryMB value to set.
      * @return the VmMemory object itself.

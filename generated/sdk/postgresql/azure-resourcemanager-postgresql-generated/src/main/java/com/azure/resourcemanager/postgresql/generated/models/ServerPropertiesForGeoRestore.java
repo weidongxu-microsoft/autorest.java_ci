@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The properties used to create a new server by restoring to a different region from a geo replicated backup.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "createMode",
+    defaultImpl = ServerPropertiesForGeoRestore.class,
+    visible = true)
 @JsonTypeName("GeoRestore")
 @Fluent
 public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCreate {
@@ -27,6 +31,7 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
      * Creates an instance of ServerPropertiesForGeoRestore class.
      */
     public ServerPropertiesForGeoRestore() {
+        withCreateMode(CreateMode.GEO_RESTORE);
     }
 
     /**

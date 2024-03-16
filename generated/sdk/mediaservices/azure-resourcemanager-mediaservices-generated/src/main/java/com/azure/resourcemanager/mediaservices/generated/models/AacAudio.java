@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Describes Advanced Audio Codec (AAC) audio encoding settings.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = AacAudio.class, visible = true)
 @JsonTypeName("#Microsoft.Media.AacAudio")
 @Fluent
 public final class AacAudio extends Audio {
@@ -26,6 +26,7 @@ public final class AacAudio extends Audio {
      * Creates an instance of AacAudio class.
      */
     public AacAudio() {
+        withOdataType("#Microsoft.Media.AacAudio");
     }
 
     /**

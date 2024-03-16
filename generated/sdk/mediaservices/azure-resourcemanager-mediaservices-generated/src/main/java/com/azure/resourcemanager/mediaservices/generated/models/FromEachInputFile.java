@@ -10,10 +10,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * An InputDefinition that looks at each input file provided to select tracks specified by the IncludedTracks property.
- * Generally used with the AudioTrackByAttribute and VideoTrackByAttribute to select tracks from each file given.
+ * An InputDefinition that looks at each input file provided to select tracks specified by the IncludedTracks property. Generally used with the AudioTrackByAttribute and VideoTrackByAttribute to select tracks from each file given.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = FromEachInputFile.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.FromEachInputFile")
 @Fluent
 public final class FromEachInputFile extends InputDefinition {
@@ -21,6 +24,7 @@ public final class FromEachInputFile extends InputDefinition {
      * Creates an instance of FromEachInputFile class.
      */
     public FromEachInputFile() {
+        withOdataType("#Microsoft.Media.FromEachInputFile");
     }
 
     /**

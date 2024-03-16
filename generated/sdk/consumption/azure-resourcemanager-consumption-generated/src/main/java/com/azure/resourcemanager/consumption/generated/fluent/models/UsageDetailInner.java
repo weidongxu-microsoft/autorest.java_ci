@@ -8,9 +8,11 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.consumption.generated.models.LegacyUsageDetail;
 import com.azure.resourcemanager.consumption.generated.models.ModernUsageDetail;
+import com.azure.resourcemanager.consumption.generated.models.UsageDetailsKind;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
@@ -18,17 +20,20 @@ import java.util.Map;
 /**
  * An usage detail resource.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = UsageDetailInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = UsageDetailInner.class, visible = true)
 @JsonTypeName("UsageDetail")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "legacy", value = LegacyUsageDetail.class),
     @JsonSubTypes.Type(name = "modern", value = ModernUsageDetail.class) })
 @Immutable
 public class UsageDetailInner extends ProxyResource {
+    /*
+     * Specifies the kind of usage details.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private UsageDetailsKind kind;
+
     /*
      * The etag for the resource.
      */
@@ -46,6 +51,27 @@ public class UsageDetailInner extends ProxyResource {
      * Creates an instance of UsageDetailInner class.
      */
     public UsageDetailInner() {
+        this.kind = UsageDetailsKind.fromString("UsageDetail");
+    }
+
+    /**
+     * Get the kind property: Specifies the kind of usage details.
+     * 
+     * @return the kind value.
+     */
+    public UsageDetailsKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Specifies the kind of usage details.
+     * 
+     * @param kind the kind value to set.
+     * @return the UsageDetailInner object itself.
+     */
+    protected UsageDetailInner withKind(UsageDetailsKind kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

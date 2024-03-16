@@ -93,8 +93,7 @@ public final class AppServiceEnvironmentPatchResourceInner extends ProxyOnlyReso
     }
 
     /**
-     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
-     * for the App Service Environment.
+     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
      * 
      * @return the internalLoadBalancingMode value.
      */
@@ -103,8 +102,7 @@ public final class AppServiceEnvironmentPatchResourceInner extends ProxyOnlyReso
     }
 
     /**
-     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
-     * for the App Service Environment.
+     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
      * 
      * @param internalLoadBalancingMode the internalLoadBalancingMode value to set.
      * @return the AppServiceEnvironmentPatchResourceInner object itself.
@@ -229,10 +227,8 @@ public final class AppServiceEnvironmentPatchResourceInner extends ProxyOnlyReso
     }
 
     /**
-     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer
-     * available
-     * (most likely because NSG blocked the incoming traffic).
+     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer available
+     *  (most likely because NSG blocked the incoming traffic).
      * 
      * @return the suspended value.
      */

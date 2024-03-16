@@ -92,14 +92,18 @@ public final class LogAnalyticsQueryPackImpl
     }
 
     public LogAnalyticsQueryPack create() {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .createOrUpdateWithResponse(resourceGroupName, queryPackName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .createOrUpdateWithResponse(resourceGroupName, queryPackName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public LogAnalyticsQueryPack create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .createOrUpdateWithResponse(resourceGroupName, queryPackName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .createOrUpdateWithResponse(resourceGroupName, queryPackName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -116,14 +120,18 @@ public final class LogAnalyticsQueryPackImpl
     }
 
     public LogAnalyticsQueryPack apply() {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .updateTagsWithResponse(resourceGroupName, queryPackName, updateQueryPackTags, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .updateTagsWithResponse(resourceGroupName, queryPackName, updateQueryPackTags, Context.NONE)
+            .getValue();
         return this;
     }
 
     public LogAnalyticsQueryPack apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .updateTagsWithResponse(resourceGroupName, queryPackName, updateQueryPackTags, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .updateTagsWithResponse(resourceGroupName, queryPackName, updateQueryPackTags, context)
+            .getValue();
         return this;
     }
 
@@ -136,14 +144,18 @@ public final class LogAnalyticsQueryPackImpl
     }
 
     public LogAnalyticsQueryPack refresh() {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .getByResourceGroupWithResponse(resourceGroupName, queryPackName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .getByResourceGroupWithResponse(resourceGroupName, queryPackName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public LogAnalyticsQueryPack refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueryPacks()
-            .getByResourceGroupWithResponse(resourceGroupName, queryPackName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueryPacks()
+            .getByResourceGroupWithResponse(resourceGroupName, queryPackName, context)
+            .getValue();
         return this;
     }
 

@@ -69,8 +69,7 @@ public class LogAnalyticsInputBase {
     }
 
     /**
-     * Get the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes
-     * output logs to.
+     * Get the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
      * 
      * @return the blobContainerSasUri value.
      */
@@ -79,8 +78,7 @@ public class LogAnalyticsInputBase {
     }
 
     /**
-     * Set the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes
-     * output logs to.
+     * Set the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
      * 
      * @param blobContainerSasUri the blobContainerSasUri value to set.
      * @return the LogAnalyticsInputBase object itself.

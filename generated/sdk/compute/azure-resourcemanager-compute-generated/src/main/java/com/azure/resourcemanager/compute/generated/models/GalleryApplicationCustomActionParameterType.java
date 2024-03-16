@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Specifies the type of the custom action parameter. Possible values are: String, ConfigurationDataBlob or
- * LogOutputBlob.
+ * Specifies the type of the custom action parameter. Possible values are: String, ConfigurationDataBlob or LogOutputBlob.
  */
 public enum GalleryApplicationCustomActionParameterType {
     /**

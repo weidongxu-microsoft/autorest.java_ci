@@ -62,8 +62,8 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String accountName,
         String objectReplicationPolicyId, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId,
-            context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
     }
 
     public void delete(String resourceGroupName, String accountName, String objectReplicationPolicyId) {

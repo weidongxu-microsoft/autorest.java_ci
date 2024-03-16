@@ -21,8 +21,7 @@ public final class ApplicationInsightsComponentBillingFeaturesInner {
     private ApplicationInsightsComponentDataVolumeCap dataVolumeCap;
 
     /*
-     * Current enabled pricing plan. When the component is in the Enterprise plan, this will list both 'Basic' and
-     * 'Application Insights Enterprise'.
+     * Current enabled pricing plan. When the component is in the Enterprise plan, this will list both 'Basic' and 'Application Insights Enterprise'.
      */
     @JsonProperty(value = "CurrentBillingFeatures")
     private List<String> currentBillingFeatures;
@@ -55,8 +54,7 @@ public final class ApplicationInsightsComponentBillingFeaturesInner {
     }
 
     /**
-     * Get the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise
-     * plan, this will list both 'Basic' and 'Application Insights Enterprise'.
+     * Get the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise plan, this will list both 'Basic' and 'Application Insights Enterprise'.
      * 
      * @return the currentBillingFeatures value.
      */
@@ -65,8 +63,7 @@ public final class ApplicationInsightsComponentBillingFeaturesInner {
     }
 
     /**
-     * Set the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise
-     * plan, this will list both 'Basic' and 'Application Insights Enterprise'.
+     * Set the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise plan, this will list both 'Basic' and 'Application Insights Enterprise'.
      * 
      * @param currentBillingFeatures the currentBillingFeatures value to set.
      * @return the ApplicationInsightsComponentBillingFeaturesInner object itself.

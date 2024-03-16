@@ -19,8 +19,7 @@ public interface IpAddressAvailabilityResult {
     Boolean available();
 
     /**
-     * Gets the availableIpAddresses property: Contains other available private IP addresses if the asked for address is
-     * taken.
+     * Gets the availableIpAddresses property: Contains other available private IP addresses if the asked for address is taken.
      * 
      * @return the availableIpAddresses value.
      */

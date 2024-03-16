@@ -111,14 +111,16 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
     }
 
     public Eventhub create() {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public Eventhub create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), context)
             .getValue();
         return this;
@@ -135,14 +137,16 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
     }
 
     public Eventhub apply() {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public Eventhub apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
             .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), context)
             .getValue();
         return this;
@@ -158,14 +162,18 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
     }
 
     public Eventhub refresh() {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
-            .getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
+            .getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Eventhub refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getEventHubs()
-            .getWithResponse(resourceGroupName, namespaceName, eventHubName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getEventHubs()
+            .getWithResponse(resourceGroupName, namespaceName, eventHubName, context)
+            .getValue();
         return this;
     }
 

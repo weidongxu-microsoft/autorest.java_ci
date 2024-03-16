@@ -58,8 +58,7 @@ public final class RulesEngineAction {
     }
 
     /**
-     * Get the responseHeaderActions property: A list of header actions to apply from the response from AFD to the
-     * client.
+     * Get the responseHeaderActions property: A list of header actions to apply from the response from AFD to the client.
      * 
      * @return the responseHeaderActions value.
      */
@@ -68,8 +67,7 @@ public final class RulesEngineAction {
     }
 
     /**
-     * Set the responseHeaderActions property: A list of header actions to apply from the response from AFD to the
-     * client.
+     * Set the responseHeaderActions property: A list of header actions to apply from the response from AFD to the client.
      * 
      * @param responseHeaderActions the responseHeaderActions value to set.
      * @return the RulesEngineAction object itself.

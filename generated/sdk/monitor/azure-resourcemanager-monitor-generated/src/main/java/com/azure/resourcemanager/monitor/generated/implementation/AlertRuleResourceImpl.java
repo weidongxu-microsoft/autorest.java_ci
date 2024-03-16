@@ -116,14 +116,18 @@ public final class AlertRuleResourceImpl
     }
 
     public AlertRuleResource create() {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public AlertRuleResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -139,14 +143,18 @@ public final class AlertRuleResourceImpl
     }
 
     public AlertRuleResource apply() {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .updateWithResponse(resourceGroupName, ruleName, updateAlertRulesResource, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .updateWithResponse(resourceGroupName, ruleName, updateAlertRulesResource, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AlertRuleResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .updateWithResponse(resourceGroupName, ruleName, updateAlertRulesResource, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .updateWithResponse(resourceGroupName, ruleName, updateAlertRulesResource, context)
+            .getValue();
         return this;
     }
 
@@ -159,14 +167,18 @@ public final class AlertRuleResourceImpl
     }
 
     public AlertRuleResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AlertRuleResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAlertRules()
-            .getByResourceGroupWithResponse(resourceGroupName, ruleName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAlertRules()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
+            .getValue();
         return this;
     }
 

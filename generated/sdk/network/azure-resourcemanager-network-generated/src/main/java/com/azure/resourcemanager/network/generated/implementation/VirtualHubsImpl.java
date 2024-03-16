@@ -95,8 +95,8 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName,
         EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
-        VirtualHubEffectiveRouteListInner inner = this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName,
-            virtualHubName, effectiveRoutesParameters, context);
+        VirtualHubEffectiveRouteListInner inner = this.serviceClient()
+            .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
         if (inner != null) {
             return new VirtualHubEffectiveRouteListImpl(inner, this.manager());
         } else {
@@ -117,8 +117,8 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     public EffectiveRouteMapRouteList getInboundRoutes(String resourceGroupName, String virtualHubName,
         GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
-        EffectiveRouteMapRouteListInner inner = this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName,
-            getInboundRoutesParameters, context);
+        EffectiveRouteMapRouteListInner inner = this.serviceClient()
+            .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {
@@ -139,8 +139,8 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     public EffectiveRouteMapRouteList getOutboundRoutes(String resourceGroupName, String virtualHubName,
         GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
-        EffectiveRouteMapRouteListInner inner = this.serviceClient().getOutboundRoutes(resourceGroupName,
-            virtualHubName, getOutboundRoutesParameters, context);
+        EffectiveRouteMapRouteListInner inner = this.serviceClient()
+            .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {

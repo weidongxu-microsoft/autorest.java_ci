@@ -131,8 +131,7 @@ public final class CommunityGalleryMetadata {
     }
 
     /**
-     * Get the privacyStatementUri property: The link for the privacy statement of this community gallery from the
-     * gallery publisher.
+     * Get the privacyStatementUri property: The link for the privacy statement of this community gallery from the gallery publisher.
      * 
      * @return the privacyStatementUri value.
      */
@@ -141,8 +140,7 @@ public final class CommunityGalleryMetadata {
     }
 
     /**
-     * Set the privacyStatementUri property: The link for the privacy statement of this community gallery from the
-     * gallery publisher.
+     * Set the privacyStatementUri property: The link for the privacy statement of this community gallery from the gallery publisher.
      * 
      * @param privacyStatementUri the privacyStatementUri value to set.
      * @return the CommunityGalleryMetadata object itself.

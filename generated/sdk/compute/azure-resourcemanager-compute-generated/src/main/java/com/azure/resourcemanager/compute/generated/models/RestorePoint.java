@@ -35,8 +35,7 @@ public interface RestorePoint {
     String type();
 
     /**
-     * Gets the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore
-     * point. If no disks are specified, all disks will be included.
+     * Gets the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore point. If no disks are specified, all disks will be included.
      * 
      * @return the excludeDisks value.
      */
@@ -57,9 +56,7 @@ public interface RestorePoint {
     String provisioningState();
 
     /**
-     * Gets the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while
-     * creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
-     * https://aka.ms/RestorePoints for more details.
+     * Gets the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
      * 
      * @return the consistencyMode value.
      */
@@ -73,8 +70,7 @@ public interface RestorePoint {
     OffsetDateTime timeCreated();
 
     /**
-     * Gets the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be
-     * created.
+     * Gets the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be created.
      * 
      * @return the sourceRestorePoint value.
      */
@@ -126,8 +122,7 @@ public interface RestorePoint {
         }
 
         /**
-         * The stage of the RestorePoint definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RestorePoint definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithExcludeDisks, DefinitionStages.WithSourceMetadata,
             DefinitionStages.WithConsistencyMode, DefinitionStages.WithTimeCreated,
@@ -153,11 +148,9 @@ public interface RestorePoint {
          */
         interface WithExcludeDisks {
             /**
-             * Specifies the excludeDisks property: List of disk resource ids that the customer wishes to exclude from
-             * the restore point. If no disks are specified, all disks will be included..
+             * Specifies the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore point. If no disks are specified, all disks will be included..
              * 
-             * @param excludeDisks List of disk resource ids that the customer wishes to exclude from the restore point.
-             * If no disks are specified, all disks will be included.
+             * @param excludeDisks List of disk resource ids that the customer wishes to exclude from the restore point. If no disks are specified, all disks will be included.
              * @return the next definition stage.
              */
             WithCreate withExcludeDisks(List<ApiEntityReference> excludeDisks);
@@ -168,8 +161,7 @@ public interface RestorePoint {
          */
         interface WithSourceMetadata {
             /**
-             * Specifies the sourceMetadata property: Gets the details of the VM captured at the time of the restore
-             * point creation..
+             * Specifies the sourceMetadata property: Gets the details of the VM captured at the time of the restore point creation..
              * 
              * @param sourceMetadata Gets the details of the VM captured at the time of the restore point creation.
              * @return the next definition stage.
@@ -182,13 +174,9 @@ public interface RestorePoint {
          */
         interface WithConsistencyMode {
             /**
-             * Specifies the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the
-             * input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please
-             * refer to https://aka.ms/RestorePoints for more details..
+             * Specifies the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details..
              * 
-             * @param consistencyMode ConsistencyMode of the RestorePoint. Can be specified in the input while creating
-             * a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
-             * https://aka.ms/RestorePoints for more details.
+             * @param consistencyMode ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
              * @return the next definition stage.
              */
             WithCreate withConsistencyMode(ConsistencyModeTypes consistencyMode);
@@ -212,8 +200,7 @@ public interface RestorePoint {
          */
         interface WithSourceRestorePoint {
             /**
-             * Specifies the sourceRestorePoint property: Resource Id of the source restore point from which a copy
-             * needs to be created..
+             * Specifies the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be created..
              * 
              * @param sourceRestorePoint Resource Id of the source restore point from which a copy needs to be created.
              * @return the next definition stage.

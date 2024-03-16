@@ -67,8 +67,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientRestorePointCollections to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientRestorePointCollections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -153,8 +152,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
-     * more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
@@ -162,8 +160,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -198,8 +195,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
-     * more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
@@ -208,8 +204,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -243,8 +238,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
-     * more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
@@ -262,8 +256,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
-     * more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
@@ -282,8 +275,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
-     * more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
@@ -309,8 +301,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(String resourceGroupName,
@@ -354,8 +345,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(String resourceGroupName,
@@ -442,8 +432,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -480,8 +469,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -518,8 +506,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -537,8 +524,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -559,8 +545,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -575,8 +560,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -593,8 +577,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -610,8 +593,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -628,8 +610,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -643,8 +624,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore
-     * points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
@@ -663,13 +643,11 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     * contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -704,14 +682,12 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     * contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return create or update Restore Point collection parameters along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -762,8 +738,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     * contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -801,8 +776,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>>
@@ -837,8 +811,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>>
@@ -903,8 +876,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName) {
@@ -919,8 +891,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -928,14 +899,11 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listSinglePageAsync() {
@@ -958,16 +926,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listSinglePageAsync(Context context) {
@@ -988,9 +953,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1002,9 +965,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1019,14 +980,11 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> list() {
@@ -1034,16 +992,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     }
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
-     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
-     * collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> list(Context context) {
@@ -1059,8 +1014,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List restore point collection operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -1088,8 +1042,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List restore point collection operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1116,8 +1069,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List restore point collection operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1146,8 +1098,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List restore point collection operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listAllNextSinglePageAsync(String nextLink,

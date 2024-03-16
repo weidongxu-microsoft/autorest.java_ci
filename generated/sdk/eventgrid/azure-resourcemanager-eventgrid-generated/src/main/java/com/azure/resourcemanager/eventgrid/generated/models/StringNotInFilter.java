@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * StringNotIn Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = StringNotInFilter.class,
+    visible = true)
 @JsonTypeName("StringNotIn")
 @Fluent
 public final class StringNotInFilter extends Filter {
@@ -27,6 +31,7 @@ public final class StringNotInFilter extends Filter {
      * Creates an instance of StringNotInFilter class.
      */
     public StringNotInFilter() {
+        withOperatorType(FilterOperatorType.STRING_NOT_IN);
     }
 
     /**

@@ -76,8 +76,8 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
 
     public ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
         String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters) {
-        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            crossConnectionName, peeringName, peeringParameters);
+        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, crossConnectionName, peeringName, peeringParameters);
         if (inner != null) {
             return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {
@@ -87,8 +87,8 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
 
     public ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
         String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters, Context context) {
-        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            crossConnectionName, peeringName, peeringParameters, context);
+        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, crossConnectionName, peeringName, peeringParameters, context);
         if (inner != null) {
             return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {

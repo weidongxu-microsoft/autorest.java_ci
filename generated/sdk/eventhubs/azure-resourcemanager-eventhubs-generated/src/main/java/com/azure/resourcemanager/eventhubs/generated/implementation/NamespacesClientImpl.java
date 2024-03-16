@@ -74,8 +74,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientNamespaces to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for EventHubManagementClientNamespaces to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -261,8 +260,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listSinglePageAsync() {
@@ -290,8 +288,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listSinglePageAsync(Context context) {
@@ -372,8 +369,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -406,8 +402,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -494,8 +489,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -503,8 +497,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -537,8 +530,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -547,8 +539,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -580,8 +571,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -601,8 +591,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -624,8 +613,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -642,8 +630,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -661,8 +648,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -680,8 +666,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -700,8 +685,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -718,8 +702,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -943,8 +926,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the description of the specified namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -980,8 +962,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the description of the specified namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -1056,8 +1037,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -1065,8 +1045,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> updateWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -1099,8 +1078,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -1109,8 +1087,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> updateWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -1142,8 +1119,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -1161,8 +1137,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -1180,8 +1155,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     }
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -1579,8 +1553,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(String resourceGroupName,
@@ -1618,8 +1591,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(String resourceGroupName,
@@ -1726,8 +1698,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -1776,8 +1747,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -2014,8 +1984,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(String resourceGroupName,
@@ -2057,8 +2026,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(String resourceGroupName,
@@ -2152,8 +2120,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -2194,8 +2161,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -2287,8 +2253,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(String resourceGroupName,
@@ -2336,8 +2301,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(String resourceGroupName,
@@ -2438,8 +2402,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>>
@@ -2472,8 +2435,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>>
@@ -2551,8 +2513,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listNextSinglePageAsync(String nextLink) {
@@ -2580,8 +2541,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -2608,8 +2568,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2639,8 +2598,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -2668,8 +2626,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -2699,8 +2656,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink,

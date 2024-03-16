@@ -68,14 +68,16 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
     }
 
     public ServerKey create() {
-        this.innerObject = serviceManager.serviceClient().getServerKeys().createOrUpdate(serverName, keyName,
-            resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServerKey create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerKeys().createOrUpdate(serverName, keyName,
-            resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -90,14 +92,16 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
     }
 
     public ServerKey apply() {
-        this.innerObject = serviceManager.serviceClient().getServerKeys().createOrUpdate(serverName, keyName,
-            resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServerKey apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerKeys().createOrUpdate(serverName, keyName,
-            resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -111,14 +115,18 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
     }
 
     public ServerKey refresh() {
-        this.innerObject = serviceManager.serviceClient().getServerKeys()
-            .getWithResponse(resourceGroupName, serverName, keyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .getWithResponse(resourceGroupName, serverName, keyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ServerKey refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServerKeys()
-            .getWithResponse(resourceGroupName, serverName, keyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServerKeys()
+            .getWithResponse(resourceGroupName, serverName, keyName, context)
+            .getValue();
         return this;
     }
 

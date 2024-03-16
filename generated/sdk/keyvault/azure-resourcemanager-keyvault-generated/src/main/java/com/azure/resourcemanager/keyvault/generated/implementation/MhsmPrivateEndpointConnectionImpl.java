@@ -109,14 +109,16 @@ public final class MhsmPrivateEndpointConnectionImpl implements MhsmPrivateEndpo
     }
 
     public MhsmPrivateEndpointConnection create() {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
             .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
             .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
             .getValue();
         return this;
@@ -134,14 +136,16 @@ public final class MhsmPrivateEndpointConnectionImpl implements MhsmPrivateEndpo
     }
 
     public MhsmPrivateEndpointConnection apply() {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
             .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
             .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
             .getValue();
         return this;
@@ -158,14 +162,18 @@ public final class MhsmPrivateEndpointConnectionImpl implements MhsmPrivateEndpo
     }
 
     public MhsmPrivateEndpointConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
-            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
-            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getMhsmPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, context)
+            .getValue();
         return this;
     }
 

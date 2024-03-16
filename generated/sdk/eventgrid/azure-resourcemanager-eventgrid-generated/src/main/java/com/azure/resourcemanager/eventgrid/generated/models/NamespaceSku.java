@@ -19,8 +19,7 @@ public final class NamespaceSku {
     private SkuName name;
 
     /*
-     * Specifies the number of Throughput Units that defines the capacity for the namespace. The property default value
-     * is
+     * Specifies the number of Throughput Units that defines the capacity for the namespace. The property default value is
      * 1 which signifies 1 Throughput Unit = 1MB/s ingress and 2MB/s egress per namespace. Min capacity is 1 and
      * max allowed capacity is 20.
      */
@@ -54,8 +53,7 @@ public final class NamespaceSku {
     }
 
     /**
-     * Get the capacity property: Specifies the number of Throughput Units that defines the capacity for the namespace.
-     * The property default value is
+     * Get the capacity property: Specifies the number of Throughput Units that defines the capacity for the namespace. The property default value is
      * 1 which signifies 1 Throughput Unit = 1MB/s ingress and 2MB/s egress per namespace. Min capacity is 1 and
      * max allowed capacity is 20.
      * 
@@ -66,8 +64,7 @@ public final class NamespaceSku {
     }
 
     /**
-     * Set the capacity property: Specifies the number of Throughput Units that defines the capacity for the namespace.
-     * The property default value is
+     * Set the capacity property: Specifies the number of Throughput Units that defines the capacity for the namespace. The property default value is
      * 1 which signifies 1 Throughput Unit = 1MB/s ingress and 2MB/s egress per namespace. Min capacity is 1 and
      * max allowed capacity is 20.
      * 

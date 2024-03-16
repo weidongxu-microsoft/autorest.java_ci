@@ -20,8 +20,7 @@ public final class TagFilter {
     private String name;
 
     /*
-     * This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is
-     * currently supported
+     * This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is currently supported
      */
     @JsonProperty(value = "op", required = true)
     private String op;
@@ -59,8 +58,7 @@ public final class TagFilter {
     }
 
     /**
-     * Get the op property: This is the comparison operator which is used for object comparison and filtering. Only ==
-     * (equality operator) is currently supported.
+     * Get the op property: This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is currently supported.
      * 
      * @return the op value.
      */
@@ -69,8 +67,7 @@ public final class TagFilter {
     }
 
     /**
-     * Set the op property: This is the comparison operator which is used for object comparison and filtering. Only ==
-     * (equality operator) is currently supported.
+     * Set the op property: This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is currently supported.
      * 
      * @param op the op value to set.
      * @return the TagFilter object itself.
@@ -81,8 +78,7 @@ public final class TagFilter {
     }
 
     /**
-     * Get the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256
-     * characters.
+     * Get the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256 characters.
      * 
      * @return the value value.
      */
@@ -91,8 +87,7 @@ public final class TagFilter {
     }
 
     /**
-     * Set the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256
-     * characters.
+     * Set the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256 characters.
      * 
      * @param value the value value to set.
      * @return the TagFilter object itself.

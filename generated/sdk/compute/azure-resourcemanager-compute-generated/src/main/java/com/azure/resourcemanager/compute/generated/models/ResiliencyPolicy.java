@@ -31,8 +31,7 @@ public final class ResiliencyPolicy {
     }
 
     /**
-     * Get the resilientVMCreationPolicy property: The configuration parameters used while performing resilient VM
-     * creation.
+     * Get the resilientVMCreationPolicy property: The configuration parameters used while performing resilient VM creation.
      * 
      * @return the resilientVMCreationPolicy value.
      */
@@ -41,8 +40,7 @@ public final class ResiliencyPolicy {
     }
 
     /**
-     * Set the resilientVMCreationPolicy property: The configuration parameters used while performing resilient VM
-     * creation.
+     * Set the resilientVMCreationPolicy property: The configuration parameters used while performing resilient VM creation.
      * 
      * @param resilientVMCreationPolicy the resilientVMCreationPolicy value to set.
      * @return the ResiliencyPolicy object itself.
@@ -53,8 +51,7 @@ public final class ResiliencyPolicy {
     }
 
     /**
-     * Get the resilientVMDeletionPolicy property: The configuration parameters used while performing resilient VM
-     * deletion.
+     * Get the resilientVMDeletionPolicy property: The configuration parameters used while performing resilient VM deletion.
      * 
      * @return the resilientVMDeletionPolicy value.
      */
@@ -63,8 +60,7 @@ public final class ResiliencyPolicy {
     }
 
     /**
-     * Set the resilientVMDeletionPolicy property: The configuration parameters used while performing resilient VM
-     * deletion.
+     * Set the resilientVMDeletionPolicy property: The configuration parameters used while performing resilient VM deletion.
      * 
      * @param resilientVMDeletionPolicy the resilientVMDeletionPolicy value to set.
      * @return the ResiliencyPolicy object itself.

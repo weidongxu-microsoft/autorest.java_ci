@@ -11,10 +11,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a single
- * input.
+ * A Sequence contains an ordered list of Clips where each clip is a JobInput.  The Sequence will be treated as a single input.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = JobInputSequence.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.JobInputSequence")
 @Fluent
 public final class JobInputSequence extends JobInput {
@@ -28,6 +31,7 @@ public final class JobInputSequence extends JobInput {
      * Creates an instance of JobInputSequence class.
      */
     public JobInputSequence() {
+        withOdataType("#Microsoft.Media.JobInputSequence");
     }
 
     /**

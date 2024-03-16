@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class IpRule {
     /*
-     * An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all
-     * addresses that start with 124.56.78).
+     * An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
      */
     @JsonProperty(value = "value", required = true)
     private String value;
@@ -27,8 +26,7 @@ public final class IpRule {
     }
 
     /**
-     * Get the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or
-     * '124.56.78.0/24' (all addresses that start with 124.56.78).
+     * Get the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
      * 
      * @return the value value.
      */
@@ -37,8 +35,7 @@ public final class IpRule {
     }
 
     /**
-     * Set the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or
-     * '124.56.78.0/24' (all addresses that start with 124.56.78).
+     * Set the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
      * 
      * @param value the value value to set.
      * @return the IpRule object itself.

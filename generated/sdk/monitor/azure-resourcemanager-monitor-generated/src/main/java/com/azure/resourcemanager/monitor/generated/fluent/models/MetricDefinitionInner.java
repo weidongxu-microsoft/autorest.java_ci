@@ -263,8 +263,7 @@ public final class MetricDefinitionInner {
     }
 
     /**
-     * Get the primaryAggregationType property: the primary aggregation type value defining how to use the values for
-     * display.
+     * Get the primaryAggregationType property: the primary aggregation type value defining how to use the values for display.
      * 
      * @return the primaryAggregationType value.
      */
@@ -273,8 +272,7 @@ public final class MetricDefinitionInner {
     }
 
     /**
-     * Set the primaryAggregationType property: the primary aggregation type value defining how to use the values for
-     * display.
+     * Set the primaryAggregationType property: the primary aggregation type value defining how to use the values for display.
      * 
      * @param primaryAggregationType the primaryAggregationType value to set.
      * @return the MetricDefinitionInner object itself.

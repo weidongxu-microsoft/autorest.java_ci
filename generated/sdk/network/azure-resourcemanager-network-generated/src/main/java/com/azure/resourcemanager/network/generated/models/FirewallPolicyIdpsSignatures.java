@@ -12,8 +12,7 @@ import com.azure.core.util.Context;
  */
 public interface FirewallPolicyIdpsSignatures {
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
-     * 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -28,8 +27,7 @@ public interface FirewallPolicyIdpsSignatures {
         IdpsQueryObject parameters, Context context);
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
-     * 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.

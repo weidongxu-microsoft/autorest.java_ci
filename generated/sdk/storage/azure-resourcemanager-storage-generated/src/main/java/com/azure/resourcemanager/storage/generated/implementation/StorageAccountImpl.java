@@ -202,7 +202,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -307,14 +308,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     }
 
     public StorageAccount create() {
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts().create(resourceGroupName, accountName,
-            createParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .create(resourceGroupName, accountName, createParameters, Context.NONE);
         return this;
     }
 
     public StorageAccount create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts().create(resourceGroupName, accountName,
-            createParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .create(resourceGroupName, accountName, createParameters, context);
         return this;
     }
 
@@ -331,14 +334,18 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     }
 
     public StorageAccount apply() {
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts()
-            .updateWithResponse(resourceGroupName, accountName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .updateWithResponse(resourceGroupName, accountName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StorageAccount apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts()
-            .updateWithResponse(resourceGroupName, accountName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .updateWithResponse(resourceGroupName, accountName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -352,15 +359,19 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public StorageAccount refresh() {
         StorageAccountExpand localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts()
-            .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StorageAccount refresh(Context context) {
         StorageAccountExpand localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getStorageAccounts()
-            .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccounts()
+            .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -374,8 +385,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Response<StorageAccountListKeysResult>
         regenerateKeyWithResponse(StorageAccountRegenerateKeyParameters regenerateKey, Context context) {
-        return serviceManager.storageAccounts().regenerateKeyWithResponse(resourceGroupName, accountName, regenerateKey,
-            context);
+        return serviceManager.storageAccounts()
+            .regenerateKeyWithResponse(resourceGroupName, accountName, regenerateKey, context);
     }
 
     public StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey) {
@@ -384,8 +395,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Response<ListAccountSasResponse> listAccountSasWithResponse(AccountSasParameters parameters,
         Context context) {
-        return serviceManager.storageAccounts().listAccountSasWithResponse(resourceGroupName, accountName, parameters,
-            context);
+        return serviceManager.storageAccounts()
+            .listAccountSasWithResponse(resourceGroupName, accountName, parameters, context);
     }
 
     public ListAccountSasResponse listAccountSas(AccountSasParameters parameters) {
@@ -394,8 +405,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Response<ListServiceSasResponse> listServiceSasWithResponse(ServiceSasParameters parameters,
         Context context) {
-        return serviceManager.storageAccounts().listServiceSasWithResponse(resourceGroupName, accountName, parameters,
-            context);
+        return serviceManager.storageAccounts()
+            .listServiceSasWithResponse(resourceGroupName, accountName, parameters, context);
     }
 
     public ListServiceSasResponse listServiceSas(ServiceSasParameters parameters) {
@@ -415,8 +426,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     }
 
     public void customerInitiatedMigration(StorageAccountMigrationInner parameters, Context context) {
-        serviceManager.storageAccounts().customerInitiatedMigration(resourceGroupName, accountName, parameters,
-            context);
+        serviceManager.storageAccounts()
+            .customerInitiatedMigration(resourceGroupName, accountName, parameters, context);
     }
 
     public BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters) {
@@ -428,8 +439,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     }
 
     public Response<Void> revokeUserDelegationKeysWithResponse(Context context) {
-        return serviceManager.storageAccounts().revokeUserDelegationKeysWithResponse(resourceGroupName, accountName,
-            context);
+        return serviceManager.storageAccounts()
+            .revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, context);
     }
 
     public void revokeUserDelegationKeys() {

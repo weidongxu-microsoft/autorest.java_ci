@@ -130,8 +130,7 @@ public final class LoadBalancerConfiguration {
     }
 
     /**
-     * Get the sqlVirtualMachineInstances property: List of the SQL virtual machine instance resource id's that are
-     * enrolled into the availability group listener.
+     * Get the sqlVirtualMachineInstances property: List of the SQL virtual machine instance resource id's that are enrolled into the availability group listener.
      * 
      * @return the sqlVirtualMachineInstances value.
      */
@@ -140,8 +139,7 @@ public final class LoadBalancerConfiguration {
     }
 
     /**
-     * Set the sqlVirtualMachineInstances property: List of the SQL virtual machine instance resource id's that are
-     * enrolled into the availability group listener.
+     * Set the sqlVirtualMachineInstances property: List of the SQL virtual machine instance resource id's that are enrolled into the availability group listener.
      * 
      * @param sqlVirtualMachineInstances the sqlVirtualMachineInstances value to set.
      * @return the LoadBalancerConfiguration object itself.

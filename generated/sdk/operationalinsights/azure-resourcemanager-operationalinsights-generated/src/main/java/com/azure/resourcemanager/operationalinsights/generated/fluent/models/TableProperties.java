@@ -19,15 +19,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class TableProperties {
     /*
-     * The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace
-     * retention.
+     * The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
      */
     @JsonProperty(value = "retentionInDays")
     private Integer retentionInDays;
 
     /*
-     * The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table
-     * retention.
+     * The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
      */
     @JsonProperty(value = "totalRetentionInDays")
     private Integer totalRetentionInDays;
@@ -75,8 +73,7 @@ public final class TableProperties {
     private Schema schema;
 
     /*
-     * Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation,
-     * forbidding any update to the table until the ongoing operation is concluded.
+     * Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is concluded.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningStateEnum provisioningState;
@@ -100,8 +97,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1
-     * will default to the workspace retention.
+     * Get the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
      * 
      * @return the retentionInDays value.
      */
@@ -110,8 +106,7 @@ public final class TableProperties {
     }
 
     /**
-     * Set the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1
-     * will default to the workspace retention.
+     * Set the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
      * 
      * @param retentionInDays the retentionInDays value to set.
      * @return the TableProperties object itself.
@@ -122,8 +117,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this
-     * property to -1 will default to table retention.
+     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
      * 
      * @return the totalRetentionInDays value.
      */
@@ -132,8 +126,7 @@ public final class TableProperties {
     }
 
     /**
-     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this
-     * property to -1 will default to table retention.
+     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
      * 
      * @param totalRetentionInDays the totalRetentionInDays value to set.
      * @return the TableProperties object itself.
@@ -144,8 +137,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the archiveRetentionInDays property: The table data archive retention in days. Calculated as
-     * (totalRetentionInDays-retentionInDays).
+     * Get the archiveRetentionInDays property: The table data archive retention in days. Calculated as (totalRetentionInDays-retentionInDays).
      * 
      * @return the archiveRetentionInDays value.
      */
@@ -252,9 +244,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a
-     * resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is
-     * concluded.
+     * Get the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is concluded.
      * 
      * @return the provisioningState value.
      */
@@ -263,8 +253,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the retentionInDaysAsDefault property: True - Value originates from workspace retention in days, False -
-     * Customer specific.
+     * Get the retentionInDaysAsDefault property: True - Value originates from workspace retention in days, False - Customer specific.
      * 
      * @return the retentionInDaysAsDefault value.
      */
@@ -273,8 +262,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer
-     * specific.
+     * Get the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer specific.
      * 
      * @return the totalRetentionInDaysAsDefault value.
      */

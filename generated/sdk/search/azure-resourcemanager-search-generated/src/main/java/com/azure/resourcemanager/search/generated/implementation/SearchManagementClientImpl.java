@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.search.generated.implementation;
 
 import com.azure.core.annotation.ServiceClient;
+import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.azure.core.http.HttpPipeline;
 import com.azure.core.http.HttpResponse;
@@ -23,6 +24,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.search.generated.fluent.AdminKeysClient;
+import com.azure.resourcemanager.search.generated.fluent.NetworkSecurityPerimeterConfigurationsClient;
 import com.azure.resourcemanager.search.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.search.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.search.generated.fluent.PrivateLinkResourcesClient;
@@ -47,14 +49,12 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = SearchManagementClientBuilder.class)
 public final class SearchManagementClientImpl implements SearchManagementClient {
     /**
-     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
-     * Manager API, command line tools, or the portal.
+     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      */
     private final String subscriptionId;
 
     /**
-     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
-     * Manager API, command line tools, or the portal.
+     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      * 
      * @return the subscriptionId value.
      */
@@ -259,14 +259,27 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
     }
 
     /**
+     * The NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     */
+    private final NetworkSecurityPerimeterConfigurationsClient networkSecurityPerimeterConfigurations;
+
+    /**
+     * Gets the NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     * 
+     * @return the NetworkSecurityPerimeterConfigurationsClient object.
+     */
+    public NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations() {
+        return this.networkSecurityPerimeterConfigurations;
+    }
+
+    /**
      * Initializes an instance of SearchManagementClient client.
      * 
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The unique identifier for a Microsoft Azure subscription. You can obtain this value from
-     * the Azure Resource Manager API, command line tools, or the portal.
+     * @param subscriptionId The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      * @param endpoint server parameter.
      */
     SearchManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
@@ -276,7 +289,7 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-11-01";
+        this.apiVersion = "2024-03-01-preview";
         this.operations = new OperationsClientImpl(this);
         this.adminKeys = new AdminKeysClientImpl(this);
         this.queryKeys = new QueryKeysClientImpl(this);
@@ -286,6 +299,7 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
         this.sharedPrivateLinkResources = new SharedPrivateLinkResourcesClientImpl(this);
         this.usages = new UsagesClientImpl(this);
         this.resourceProviders = new ResourceProvidersClientImpl(this);
+        this.networkSecurityPerimeterConfigurations = new NetworkSecurityPerimeterConfigurationsClientImpl(this);
     }
 
     /**
@@ -348,8 +362,8 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
-                            SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter()
+                            .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }
@@ -390,7 +404,7 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
         }
 
         public String getHeaderValue(String s) {
-            return httpHeaders.getValue(s);
+            return httpHeaders.getValue(HttpHeaderName.fromString(s));
         }
 
         public HttpHeaders getHeaders() {

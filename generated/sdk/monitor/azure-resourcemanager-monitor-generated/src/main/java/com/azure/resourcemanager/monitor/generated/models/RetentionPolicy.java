@@ -51,8 +51,7 @@ public final class RetentionPolicy {
     }
 
     /**
-     * Get the days property: the number of days for the retention in days. A value of 0 will retain the events
-     * indefinitely.
+     * Get the days property: the number of days for the retention in days. A value of 0 will retain the events indefinitely.
      * 
      * @return the days value.
      */
@@ -61,8 +60,7 @@ public final class RetentionPolicy {
     }
 
     /**
-     * Set the days property: the number of days for the retention in days. A value of 0 will retain the events
-     * indefinitely.
+     * Set the days property: the number of days for the retention in days. A value of 0 will retain the events indefinitely.
      * 
      * @param days the days value to set.
      * @return the RetentionPolicy object itself.

@@ -81,16 +81,18 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl implements Rem
     }
 
     public RemotePrivateEndpointConnectionArmResource create() {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceEnvironments().approveOrRejectPrivateEndpointConnection(
-                resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public RemotePrivateEndpointConnectionArmResource create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceEnvironments().approveOrRejectPrivateEndpointConnection(
-                resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -106,16 +108,18 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl implements Rem
     }
 
     public RemotePrivateEndpointConnectionArmResource apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceEnvironments().approveOrRejectPrivateEndpointConnection(
-                resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public RemotePrivateEndpointConnectionArmResource apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceEnvironments().approveOrRejectPrivateEndpointConnection(
-                resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .approveOrRejectPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -130,14 +134,17 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl implements Rem
     }
 
     public RemotePrivateEndpointConnectionArmResource refresh() {
-        this.innerObject
-            = serviceManager.serviceClient().getAppServiceEnvironments().getPrivateEndpointConnectionWithResponse(
-                resourceGroupName, name, privateEndpointConnectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public RemotePrivateEndpointConnectionArmResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+        this.innerObject = serviceManager.serviceClient()
+            .getAppServiceEnvironments()
             .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context)
             .getValue();
         return this;

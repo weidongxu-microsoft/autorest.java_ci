@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Static delivery attribute mapping details.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "type",
+    defaultImpl = StaticDeliveryAttributeMapping.class,
+    visible = true)
 @JsonTypeName("Static")
 @Fluent
 public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMapping {
@@ -27,6 +31,7 @@ public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMappi
      * Creates an instance of StaticDeliveryAttributeMapping class.
      */
     public StaticDeliveryAttributeMapping() {
+        withType(DeliveryAttributeMappingType.STATIC);
     }
 
     /**

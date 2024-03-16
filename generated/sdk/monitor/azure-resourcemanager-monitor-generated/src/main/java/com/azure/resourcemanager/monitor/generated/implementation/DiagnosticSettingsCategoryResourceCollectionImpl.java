@@ -27,9 +27,9 @@ public final class DiagnosticSettingsCategoryResourceCollectionImpl
     public List<DiagnosticSettingsCategoryResource> value() {
         List<DiagnosticSettingsCategoryResourceInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new DiagnosticSettingsCategoryResourceImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new DiagnosticSettingsCategoryResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

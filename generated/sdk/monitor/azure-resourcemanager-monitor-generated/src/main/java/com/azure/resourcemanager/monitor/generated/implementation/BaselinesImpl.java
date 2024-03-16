@@ -35,8 +35,9 @@ public final class BaselinesImpl implements Baselines {
     public PagedIterable<SingleMetricBaseline> list(String resourceUri, String metricnames, String metricnamespace,
         String timespan, Duration interval, String aggregation, String sensitivities, String filter,
         ResultType resultType, Context context) {
-        PagedIterable<SingleMetricBaselineInner> inner = this.serviceClient().list(resourceUri, metricnames,
-            metricnamespace, timespan, interval, aggregation, sensitivities, filter, resultType, context);
+        PagedIterable<SingleMetricBaselineInner> inner = this.serviceClient()
+            .list(resourceUri, metricnames, metricnamespace, timespan, interval, aggregation, sensitivities, filter,
+                resultType, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
     }
 

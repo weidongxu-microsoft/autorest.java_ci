@@ -83,8 +83,7 @@ public final class AzureBlobStorageHttpLogsConfig {
     }
 
     /**
-     * Get the enabled property: True if configuration is enabled, false if it is disabled and null if configuration is
-     * not set.
+     * Get the enabled property: True if configuration is enabled, false if it is disabled and null if configuration is not set.
      * 
      * @return the enabled value.
      */
@@ -93,8 +92,7 @@ public final class AzureBlobStorageHttpLogsConfig {
     }
 
     /**
-     * Set the enabled property: True if configuration is enabled, false if it is disabled and null if configuration is
-     * not set.
+     * Set the enabled property: True if configuration is enabled, false if it is disabled and null if configuration is not set.
      * 
      * @param enabled the enabled value to set.
      * @return the AzureBlobStorageHttpLogsConfig object itself.

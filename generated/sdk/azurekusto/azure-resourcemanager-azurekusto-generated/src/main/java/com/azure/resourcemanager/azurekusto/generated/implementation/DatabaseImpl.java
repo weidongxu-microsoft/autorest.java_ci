@@ -6,6 +6,7 @@ package com.azure.resourcemanager.azurekusto.generated.implementation;
 
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.azurekusto.generated.models.Database;
+import com.azure.resourcemanager.azurekusto.generated.models.Kind;
 
 public final class DatabaseImpl implements Database {
     private DatabaseInner innerObject;
@@ -28,6 +29,10 @@ public final class DatabaseImpl implements Database {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public Kind kind() {
+        return this.innerModel().kind();
     }
 
     public String location() {

@@ -33,8 +33,7 @@ public final class CertificateWithNonceDescriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: The description of an X509 CA Certificate including the challenge nonce issued for
-     * the Proof-Of-Possession flow.
+     * Get the properties property: The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow.
      * 
      * @return the properties value.
      */
@@ -43,8 +42,7 @@ public final class CertificateWithNonceDescriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: The description of an X509 CA Certificate including the challenge nonce issued for
-     * the Proof-Of-Possession flow.
+     * Set the properties property: The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow.
      * 
      * @param properties the properties value to set.
      * @return the CertificateWithNonceDescriptionInner object itself.

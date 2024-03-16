@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LiveEventStreamEventData {
     /*
-     * Name of the track.
+     * Name of the track. 
      */
     @JsonProperty(value = "trackName")
     private String trackName;
@@ -513,8 +513,7 @@ public final class LiveEventStreamEventData {
     }
 
     /**
-     * Get the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add
-     * this ID in the ingest URL.
+     * Get the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add this ID in the ingest URL.
      * 
      * @return the streamName value.
      */
@@ -523,8 +522,7 @@ public final class LiveEventStreamEventData {
     }
 
     /**
-     * Set the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add
-     * this ID in the ingest URL.
+     * Set the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add this ID in the ingest URL.
      * 
      * @param streamName the streamName value to set.
      * @return the LiveEventStreamEventData object itself.

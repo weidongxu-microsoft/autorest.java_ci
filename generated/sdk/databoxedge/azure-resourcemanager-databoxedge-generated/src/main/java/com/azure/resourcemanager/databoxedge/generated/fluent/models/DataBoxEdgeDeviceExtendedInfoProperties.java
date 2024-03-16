@@ -135,8 +135,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     }
 
     /**
-     * Get the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
-     * secret.
+     * Get the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any secret.
      * 
      * @return the encryptionKey value.
      */
@@ -145,8 +144,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     }
 
     /**
-     * Set the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
-     * secret.
+     * Set the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any secret.
      * 
      * @param encryptionKey the encryptionKey value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoProperties object itself.

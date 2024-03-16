@@ -19,8 +19,7 @@ public interface HubVirtualNetworkConnection {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -48,8 +47,7 @@ public interface HubVirtualNetworkConnection {
     Boolean allowHubToRemoteVnetTransit();
 
     /**
-     * Gets the allowRemoteVnetToUseHubVnetGateways property: Deprecated: Allow RemoteVnet to use Virtual Hub's
-     * gateways.
+     * Gets the allowRemoteVnetToUseHubVnetGateways property: Deprecated: Allow RemoteVnet to use Virtual Hub's gateways.
      * 
      * @return the allowRemoteVnetToUseHubVnetGateways value.
      */
@@ -63,8 +61,7 @@ public interface HubVirtualNetworkConnection {
     Boolean enableInternetSecurity();
 
     /**
-     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @return the routingConfiguration value.
      */

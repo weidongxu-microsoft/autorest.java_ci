@@ -20,8 +20,7 @@ public final class BlobInventoryPolicyRule {
     private boolean enabled;
 
     /*
-     * A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be
-     * unique within a policy.
+     * A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -65,8 +64,7 @@ public final class BlobInventoryPolicyRule {
     }
 
     /**
-     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
-     * case-sensitive. It must be unique within a policy.
+     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
      * 
      * @return the name value.
      */
@@ -75,8 +73,7 @@ public final class BlobInventoryPolicyRule {
     }
 
     /**
-     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
-     * case-sensitive. It must be unique within a policy.
+     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
      * 
      * @param name the name value to set.
      * @return the BlobInventoryPolicyRule object itself.

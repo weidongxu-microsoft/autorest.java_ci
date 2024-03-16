@@ -115,14 +115,16 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
     }
 
     public StreamingLocator create() {
-        this.innerObject = serviceManager.serviceClient().getStreamingLocators()
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingLocators()
             .createWithResponse(resourceGroupName, accountName, streamingLocatorName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public StreamingLocator create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStreamingLocators()
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingLocators()
             .createWithResponse(resourceGroupName, accountName, streamingLocatorName, this.innerModel(), context)
             .getValue();
         return this;
@@ -136,20 +138,24 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
     }
 
     public StreamingLocator refresh() {
-        this.innerObject = serviceManager.serviceClient().getStreamingLocators()
-            .getWithResponse(resourceGroupName, accountName, streamingLocatorName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingLocators()
+            .getWithResponse(resourceGroupName, accountName, streamingLocatorName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StreamingLocator refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStreamingLocators()
-            .getWithResponse(resourceGroupName, accountName, streamingLocatorName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStreamingLocators()
+            .getWithResponse(resourceGroupName, accountName, streamingLocatorName, context)
+            .getValue();
         return this;
     }
 
     public Response<ListContentKeysResponse> listContentKeysWithResponse(Context context) {
-        return serviceManager.streamingLocators().listContentKeysWithResponse(resourceGroupName, accountName,
-            streamingLocatorName, context);
+        return serviceManager.streamingLocators()
+            .listContentKeysWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
     }
 
     public ListContentKeysResponse listContentKeys() {
@@ -157,8 +163,8 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
     }
 
     public Response<ListPathsResponse> listPathsWithResponse(Context context) {
-        return serviceManager.streamingLocators().listPathsWithResponse(resourceGroupName, accountName,
-            streamingLocatorName, context);
+        return serviceManager.streamingLocators()
+            .listPathsWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
     }
 
     public ListPathsResponse listPaths() {

@@ -73,14 +73,18 @@ public final class InboundSecurityRuleImpl
     }
 
     public InboundSecurityRule create() {
-        this.innerObject = serviceManager.serviceClient().getInboundSecurityRuleOperations().createOrUpdate(
-            resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public InboundSecurityRule create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getInboundSecurityRuleOperations().createOrUpdate(
-            resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -95,14 +99,18 @@ public final class InboundSecurityRuleImpl
     }
 
     public InboundSecurityRule apply() {
-        this.innerObject = serviceManager.serviceClient().getInboundSecurityRuleOperations().createOrUpdate(
-            resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public InboundSecurityRule apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getInboundSecurityRuleOperations().createOrUpdate(
-            resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(),
+                context);
         return this;
     }
 

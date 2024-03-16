@@ -11,16 +11,14 @@ import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecP
  */
 public interface VpnClientIPsecParameters {
     /**
-     * Gets the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * lifetime in seconds for P2S client.
+     * Gets the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for P2S client.
      * 
      * @return the saLifeTimeSeconds value.
      */
     int saLifeTimeSeconds();
 
     /**
-     * Gets the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * payload size in KB for P2S client..
+     * Gets the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for P2S client..
      * 
      * @return the saDataSizeKilobytes value.
      */

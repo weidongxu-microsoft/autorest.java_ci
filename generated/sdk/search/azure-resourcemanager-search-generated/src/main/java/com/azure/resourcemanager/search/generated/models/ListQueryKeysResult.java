@@ -10,19 +10,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response containing the query API keys for a given search service.
+ * Response containing the query API keys for a given Azure AI Search service.
  */
 @Immutable
 public final class ListQueryKeysResult {
     /*
-     * The query keys for the search service.
+     * The query keys for the Azure AI Search service.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<QueryKeyInner> value;
 
     /*
-     * Request URL that can be used to query next page of query keys. Returned when the total number of requested query
-     * keys exceed maximum page size.
+     * Request URL that can be used to query next page of query keys. Returned when the total number of requested query keys exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
@@ -34,7 +33,7 @@ public final class ListQueryKeysResult {
     }
 
     /**
-     * Get the value property: The query keys for the search service.
+     * Get the value property: The query keys for the Azure AI Search service.
      * 
      * @return the value value.
      */
@@ -43,8 +42,7 @@ public final class ListQueryKeysResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of query keys. Returned when the total
-     * number of requested query keys exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of query keys. Returned when the total number of requested query keys exceed maximum page size.
      * 
      * @return the nextLink value.
      */

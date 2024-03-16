@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The PartnerEventSubscriptionDestination model.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = PartnerEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("PartnerDestination")
 @Fluent
 public final class PartnerEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -27,6 +31,7 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
      * Creates an instance of PartnerEventSubscriptionDestination class.
      */
     public PartnerEventSubscriptionDestination() {
+        withEndpointType(EndpointType.PARTNER_DESTINATION);
     }
 
     /**
@@ -39,8 +44,7 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
-     * event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -49,8 +53,7 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
-     * event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the PartnerEventSubscriptionDestination object itself.

@@ -58,8 +58,8 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
 
     public RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
         RouteFilterRuleInner routeFilterRuleParameters) {
-        RouteFilterRuleInner inner = this.serviceClient().createOrUpdate(resourceGroupName, routeFilterName, ruleName,
-            routeFilterRuleParameters);
+        RouteFilterRuleInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, routeFilterName, ruleName, routeFilterRuleParameters);
         if (inner != null) {
             return new RouteFilterRuleImpl(inner, this.manager());
         } else {
@@ -69,8 +69,8 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
 
     public RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
         RouteFilterRuleInner routeFilterRuleParameters, Context context) {
-        RouteFilterRuleInner inner = this.serviceClient().createOrUpdate(resourceGroupName, routeFilterName, ruleName,
-            routeFilterRuleParameters, context);
+        RouteFilterRuleInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, routeFilterName, ruleName, routeFilterRuleParameters, context);
         if (inner != null) {
             return new RouteFilterRuleImpl(inner, this.manager());
         } else {

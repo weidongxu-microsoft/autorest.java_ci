@@ -62,8 +62,7 @@ public final class VirtualNetworkPropertiesFormat {
     private ProvisioningState provisioningState;
 
     /*
-     * Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a
-     * DDoS protection plan associated with the resource.
+     * Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.
      */
     @JsonProperty(value = "enableDdosProtection")
     private Boolean enableDdosProtection;
@@ -111,8 +110,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by
-     * subnets.
+     * Get the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by subnets.
      * 
      * @return the addressSpace value.
      */
@@ -121,8 +119,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by
-     * subnets.
+     * Set the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by subnets.
      * 
      * @param addressSpace the addressSpace value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.
@@ -133,8 +130,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in
-     * the virtual network.
+     * Get the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network.
      * 
      * @return the dhcpOptions value.
      */
@@ -143,8 +139,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in
-     * the virtual network.
+     * Set the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network.
      * 
      * @param dhcpOptions the dhcpOptions value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.
@@ -234,8 +229,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in
-     * the virtual network. It requires a DDoS protection plan associated with the resource.
+     * Get the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.
      * 
      * @return the enableDdosProtection value.
      */
@@ -244,8 +238,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in
-     * the virtual network. It requires a DDoS protection plan associated with the resource.
+     * Set the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.
      * 
      * @param enableDdosProtection the enableDdosProtection value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.
@@ -256,8 +249,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual
-     * network.
+     * Get the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual network.
      * 
      * @return the enableVmProtection value.
      */
@@ -266,8 +258,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual
-     * network.
+     * Set the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual network.
      * 
      * @param enableVmProtection the enableVmProtection value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.
@@ -298,8 +289,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix
-     * in this VNET.
+     * Get the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
      * 
      * @return the bgpCommunities value.
      */
@@ -308,8 +298,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix
-     * in this VNET.
+     * Set the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
      * 
      * @param bgpCommunities the bgpCommunities value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.
@@ -320,8 +309,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Get the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
-     * is allowed in encrypted VNet.
+     * Get the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet.
      * 
      * @return the encryption value.
      */
@@ -330,8 +318,7 @@ public final class VirtualNetworkPropertiesFormat {
     }
 
     /**
-     * Set the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
-     * is allowed in encrypted VNet.
+     * Set the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet.
      * 
      * @param encryption the encryption value to set.
      * @return the VirtualNetworkPropertiesFormat object itself.

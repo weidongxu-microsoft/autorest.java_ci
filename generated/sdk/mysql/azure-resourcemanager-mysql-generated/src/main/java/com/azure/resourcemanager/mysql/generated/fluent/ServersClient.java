@@ -11,6 +11,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
+import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerForUpdate;
 import com.azure.resourcemanager.mysql.generated.models.ServerGtidSetParameter;
@@ -81,8 +82,7 @@ public interface ServersClient {
     ServerInner create(String resourceGroupName, String serverName, ServerInner parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -97,8 +97,7 @@ public interface ServersClient {
         ServerForUpdate parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -114,8 +113,7 @@ public interface ServersClient {
         ServerForUpdate parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -129,8 +127,7 @@ public interface ServersClient {
     ServerInner update(String resourceGroupName, String serverName, ServerForUpdate parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal
-     * server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -321,6 +318,38 @@ public interface ServersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void failover(String resourceGroupName, String serverName, Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<HighAvailabilityValidationEstimationInner> validateEstimateHighAvailabilityWithResponse(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters,
+        Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    HighAvailabilityValidationEstimationInner validateEstimateHighAvailability(String resourceGroupName,
+        String serverName, HighAvailabilityValidationEstimationInner parameters);
 
     /**
      * Restarts a server.

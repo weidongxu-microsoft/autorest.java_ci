@@ -53,8 +53,7 @@ public final class PrivateEndpointConnection {
     }
 
     /**
-     * Get the privateEndpoint property: The Private Endpoint network resource that is linked to the Private Endpoint
-     * connection.
+     * Get the privateEndpoint property: The Private Endpoint network resource that is linked to the Private Endpoint connection.
      * 
      * @return the privateEndpoint value.
      */

@@ -40,8 +40,7 @@ public final class RecoveryWalkResponseInner {
     }
 
     /**
-     * Get the nextPlatformUpdateDomain property: The next update domain that needs to be walked. Null means walk
-     * spanning all update domains has been completed.
+     * Get the nextPlatformUpdateDomain property: The next update domain that needs to be walked. Null means walk spanning all update domains has been completed.
      * 
      * @return the nextPlatformUpdateDomain value.
      */

@@ -22,8 +22,7 @@ public final class OSFamilyListResult {
     private List<OSFamilyInner> value;
 
     /*
-     * The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is
-     * null to fetch all the resources.
+     * The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is null to fetch all the resources.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class OSFamilyListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of
-     * resources. Do this till nextLink is null to fetch all the resources.
+     * Get the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is null to fetch all the resources.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class OSFamilyListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of
-     * resources. Do this till nextLink is null to fetch all the resources.
+     * Set the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is null to fetch all the resources.
      * 
      * @param nextLink the nextLink value to set.
      * @return the OSFamilyListResult object itself.

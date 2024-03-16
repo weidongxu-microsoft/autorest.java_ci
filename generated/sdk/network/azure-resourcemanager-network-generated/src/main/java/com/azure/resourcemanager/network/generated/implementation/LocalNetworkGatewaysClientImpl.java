@@ -66,8 +66,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientLocalNetworkGateways to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientLocalNetworkGateways to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -140,8 +139,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -185,8 +183,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -380,8 +377,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified local network gateway in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalNetworkGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -419,8 +415,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the specified local network gateway in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalNetworkGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -713,8 +708,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalNetworkGatewayInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -758,8 +752,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalNetworkGatewayInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -852,8 +845,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the local network gateways in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the local network gateways in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalNetworkGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -887,8 +879,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the local network gateways in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the local network gateways in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalNetworkGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -984,8 +975,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListLocalNetworkGateways API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListLocalNetworkGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalNetworkGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -1013,8 +1003,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListLocalNetworkGateways API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListLocalNetworkGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalNetworkGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -70,8 +70,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesMediaservices to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for AzureMediaServicesMediaservices to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesMe")
@@ -178,8 +177,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -215,8 +213,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -321,8 +318,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Media Services account along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the details of a Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MediaServiceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -361,8 +357,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Media Services account along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the details of a Media Services account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MediaServiceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -1372,8 +1367,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listSinglePageAsync() {
@@ -1404,8 +1398,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listSinglePageAsync(Context context) {
@@ -1496,8 +1489,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listNextSinglePageAsync(String nextLink) {
@@ -1525,8 +1517,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1553,8 +1544,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1584,8 +1574,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of MediaService items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MediaServiceInner>> listBySubscriptionNextSinglePageAsync(String nextLink,

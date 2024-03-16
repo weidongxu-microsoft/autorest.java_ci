@@ -23,8 +23,7 @@ public interface PrivateLinkScopesClient {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> list();
@@ -36,8 +35,7 @@ public interface PrivateLinkScopesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> list(Context context);
@@ -49,8 +47,7 @@ public interface PrivateLinkScopesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName);
@@ -63,8 +60,7 @@ public interface PrivateLinkScopesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
-     * {@link PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName, Context context);
@@ -150,13 +146,11 @@ public interface PrivateLinkScopesClient {
     AzureMonitorPrivateLinkScopeInner getByResourceGroup(String resourceGroupName, String scopeName);
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -168,13 +162,11 @@ public interface PrivateLinkScopesClient {
         AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload, Context context);
 
     /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     * Monitor PrivateLinkScope.
+     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

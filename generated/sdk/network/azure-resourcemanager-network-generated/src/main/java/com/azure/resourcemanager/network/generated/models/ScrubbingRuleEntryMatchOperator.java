@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule
- * applies to.
+ * When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
  */
 public final class ScrubbingRuleEntryMatchOperator extends ExpandableStringEnum<ScrubbingRuleEntryMatchOperator> {
     /**

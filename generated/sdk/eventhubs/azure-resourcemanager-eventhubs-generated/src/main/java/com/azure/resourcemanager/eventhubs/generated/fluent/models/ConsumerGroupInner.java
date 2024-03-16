@@ -85,9 +85,7 @@ public final class ConsumerGroupInner extends ProxyResource {
     }
 
     /**
-     * Get the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum
-     * length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
-     * also user-defined configuration settings can be stored.
+     * Get the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
      * 
      * @return the userMetadata value.
      */
@@ -96,9 +94,7 @@ public final class ConsumerGroupInner extends ProxyResource {
     }
 
     /**
-     * Set the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum
-     * length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
-     * also user-defined configuration settings can be stored.
+     * Set the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
      * 
      * @param userMetadata the userMetadata value to set.
      * @return the ConsumerGroupInner object itself.

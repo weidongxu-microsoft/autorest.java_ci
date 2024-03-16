@@ -13,15 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class EncryptionIdentity {
     /*
-     * Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage
-     * account.
+     * Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage account.
      */
     @JsonProperty(value = "userAssignedIdentity")
     private String encryptionUserAssignedIdentity;
 
     /*
-     * ClientId of the multi-tenant application to be used in conjunction with the user-assigned identity for
-     * cross-tenant customer-managed-keys server-side encryption on the storage account.
+     * ClientId of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account.
      */
     @JsonProperty(value = "federatedIdentityClientId")
     private String encryptionFederatedIdentityClientId;
@@ -33,8 +31,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Get the encryptionUserAssignedIdentity property: Resource identifier of the UserAssigned identity to be
-     * associated with server-side encryption on the storage account.
+     * Get the encryptionUserAssignedIdentity property: Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage account.
      * 
      * @return the encryptionUserAssignedIdentity value.
      */
@@ -43,8 +40,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Set the encryptionUserAssignedIdentity property: Resource identifier of the UserAssigned identity to be
-     * associated with server-side encryption on the storage account.
+     * Set the encryptionUserAssignedIdentity property: Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage account.
      * 
      * @param encryptionUserAssignedIdentity the encryptionUserAssignedIdentity value to set.
      * @return the EncryptionIdentity object itself.
@@ -55,9 +51,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Get the encryptionFederatedIdentityClientId property: ClientId of the multi-tenant application to be used in
-     * conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the
-     * storage account.
+     * Get the encryptionFederatedIdentityClientId property: ClientId of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account.
      * 
      * @return the encryptionFederatedIdentityClientId value.
      */
@@ -66,9 +60,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Set the encryptionFederatedIdentityClientId property: ClientId of the multi-tenant application to be used in
-     * conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the
-     * storage account.
+     * Set the encryptionFederatedIdentityClientId property: ClientId of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account.
      * 
      * @param encryptionFederatedIdentityClientId the encryptionFederatedIdentityClientId value to set.
      * @return the EncryptionIdentity object itself.

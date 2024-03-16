@@ -57,8 +57,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * The interface defining all the services for ResourceManagementClientProviders to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for ResourceManagementClientProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
@@ -460,14 +459,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all resource providers for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderInner>> listSinglePageAsync(Integer top, String expand) {
@@ -492,15 +488,12 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all resource providers for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderInner>> listSinglePageAsync(Integer top, String expand, Context context) {
@@ -525,9 +518,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -556,9 +547,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -589,9 +578,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for a subscription.
      * 
      * @param top The number of results to return. If null is passed returns all deployments.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -607,14 +594,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for the tenant along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all resource providers for the tenant along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderInner>> listAtTenantScopeSinglePageAsync(Integer top, String expand) {
@@ -635,15 +619,12 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for the tenant along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all resource providers for the tenant along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderInner>> listAtTenantScopeSinglePageAsync(Integer top, String expand,
@@ -664,9 +645,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -697,9 +676,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -730,9 +707,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets all resource providers for the tenant.
      * 
      * @param top The number of results to return. If null is passed returns all providers.
-     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query
-     * string to retrieve resource provider metadata. To include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The properties to include in the results. For example, use &amp;$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -748,8 +723,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -780,8 +754,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -828,8 +801,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -860,13 +832,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider at the tenant level.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the specified resource provider at the tenant level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProviderInner>> getAtTenantScopeWithResponseAsync(String resourceProviderNamespace,
@@ -890,14 +860,12 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider at the tenant level.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the specified resource provider at the tenant level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProviderInner>> getAtTenantScopeWithResponseAsync(String resourceProviderNamespace,
@@ -936,8 +904,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider at the tenant level.
      * 
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     * $expand=resourceTypes/aliases.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

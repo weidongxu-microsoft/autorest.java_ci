@@ -94,8 +94,8 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
 
     public ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String crossConnectionName,
         String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsArpTableListResultInner inner = this.serviceClient().listArpTable(resourceGroupName,
-            crossConnectionName, peeringName, devicePath, context);
+        ExpressRouteCircuitsArpTableListResultInner inner = this.serviceClient()
+            .listArpTable(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsArpTableListResultImpl(inner, this.manager());
         } else {
@@ -138,8 +138,8 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
 
     public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName,
         String crossConnectionName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsRoutesTableListResultInner inner = this.serviceClient().listRoutesTable(resourceGroupName,
-            crossConnectionName, peeringName, devicePath, context);
+        ExpressRouteCircuitsRoutesTableListResultInner inner = this.serviceClient()
+            .listRoutesTable(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableListResultImpl(inner, this.manager());
         } else {

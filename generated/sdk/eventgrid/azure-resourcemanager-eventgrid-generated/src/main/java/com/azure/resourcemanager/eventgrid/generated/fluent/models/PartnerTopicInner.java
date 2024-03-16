@@ -171,8 +171,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Get the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires
-     * while the partner topic is still never activated,
+     * Get the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires while the partner topic is still never activated,
      * the partner topic and corresponding event channel are deleted.
      * 
      * @return the expirationTimeIfNotActivatedUtc value.
@@ -182,8 +181,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Set the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires
-     * while the partner topic is still never activated,
+     * Set the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires while the partner topic is still never activated,
      * the partner topic and corresponding event channel are deleted.
      * 
      * @param expirationTimeIfNotActivatedUtc the expirationTimeIfNotActivatedUtc value to set.
@@ -230,8 +228,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Get the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the
-     * publisher/partner to show custom description for the customer partner topic.
+     * Get the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
      * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer.
      * 
      * @return the partnerTopicFriendlyDescription value.
@@ -241,8 +238,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Set the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the
-     * publisher/partner to show custom description for the customer partner topic.
+     * Set the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
      * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer.
      * 
      * @param partnerTopicFriendlyDescription the partnerTopicFriendlyDescription value to set.
@@ -257,8 +253,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Get the messageForActivation property: Context or helpful message that can be used during the approval process by
-     * the subscriber.
+     * Get the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
      * 
      * @return the messageForActivation value.
      */
@@ -267,8 +262,7 @@ public final class PartnerTopicInner extends Resource {
     }
 
     /**
-     * Set the messageForActivation property: Context or helpful message that can be used during the approval process by
-     * the subscriber.
+     * Set the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
      * 
      * @param messageForActivation the messageForActivation value to set.
      * @return the PartnerTopicInner object itself.

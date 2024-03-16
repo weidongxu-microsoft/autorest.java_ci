@@ -7,6 +7,7 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -15,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "createMode",
-    defaultImpl = ServerPropertiesForCreate.class)
+    defaultImpl = ServerPropertiesForCreate.class,
+    visible = true)
 @JsonTypeName("ServerPropertiesForCreate")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "Default", value = ServerPropertiesForDefaultCreate.class),
@@ -26,6 +27,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "Replica", value = ServerPropertiesForReplica.class) })
 @Fluent
 public class ServerPropertiesForCreate {
+    /*
+     * The mode to create a new server.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "createMode", required = true)
+    private CreateMode createMode;
+
     /*
      * Server version.
      */
@@ -51,8 +59,7 @@ public class ServerPropertiesForCreate {
     private InfrastructureEncryption infrastructureEncryption;
 
     /*
-     * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
-     * 'Enabled' or 'Disabled'
+     * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessEnum publicNetworkAccess;
@@ -67,6 +74,27 @@ public class ServerPropertiesForCreate {
      * Creates an instance of ServerPropertiesForCreate class.
      */
     public ServerPropertiesForCreate() {
+        this.createMode = CreateMode.fromString("ServerPropertiesForCreate");
+    }
+
+    /**
+     * Get the createMode property: The mode to create a new server.
+     * 
+     * @return the createMode value.
+     */
+    public CreateMode createMode() {
+        return this.createMode;
+    }
+
+    /**
+     * Set the createMode property: The mode to create a new server.
+     * 
+     * @param createMode the createMode value to set.
+     * @return the ServerPropertiesForCreate object itself.
+     */
+    protected ServerPropertiesForCreate withCreateMode(CreateMode createMode) {
+        this.createMode = createMode;
+        return this;
     }
 
     /**
@@ -150,8 +178,7 @@ public class ServerPropertiesForCreate {
     }
 
     /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -160,8 +187,7 @@ public class ServerPropertiesForCreate {
     }
 
     /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerPropertiesForCreate object itself.

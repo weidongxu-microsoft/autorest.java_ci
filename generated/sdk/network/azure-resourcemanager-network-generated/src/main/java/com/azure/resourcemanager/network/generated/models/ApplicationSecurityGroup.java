@@ -56,9 +56,7 @@ public interface ApplicationSecurityGroup {
     String id();
 
     /**
-     * Gets the resourceGuid property: The resource GUID property of the application security group resource. It
-     * uniquely identifies a resource, even if the user changes its name or migrate the resource across subscriptions or
-     * resource groups.
+     * Gets the resourceGuid property: The resource GUID property of the application security group resource. It uniquely identifies a resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
      * 
      * @return the resourceGuid value.
      */
@@ -151,8 +149,7 @@ public interface ApplicationSecurityGroup {
         }
 
         /**
-         * The stage of the ApplicationSecurityGroup definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ApplicationSecurityGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

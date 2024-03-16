@@ -67,8 +67,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     private ScheduledEventsProfile scheduledEventsProfile;
 
     /*
-     * UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. <br><br>Minimum
-     * api-version: 2021-03-01
+     * UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. <br><br>Minimum api-version: 2021-03-01
      */
     @JsonProperty(value = "userData")
     private String userData;
@@ -229,8 +228,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Get the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version:
-     * 2019-03-01.
+     * Get the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version: 2019-03-01.
      * 
      * @return the billingProfile value.
      */
@@ -239,8 +237,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Set the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version:
-     * 2019-03-01.
+     * Set the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version: 2019-03-01.
      * 
      * @param billingProfile the billingProfile value to set.
      * @return the VirtualMachineScaleSetUpdateVMProfile object itself.
@@ -272,8 +269,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Get the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
-     * secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+     * Get the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
      * 
      * @return the userData value.
      */
@@ -282,8 +278,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Set the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
-     * secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+     * Set the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
      * 
      * @param userData the userData value to set.
      * @return the VirtualMachineScaleSetUpdateVMProfile object itself.
@@ -294,8 +289,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Get the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum
-     * api-version: 2021-11-01.
+     * Get the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum api-version: 2021-11-01.
      * 
      * @return the hardwareProfile value.
      */
@@ -304,8 +298,7 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     }
 
     /**
-     * Set the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum
-     * api-version: 2021-11-01.
+     * Set the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum api-version: 2021-11-01.
      * 
      * @param hardwareProfile the hardwareProfile value to set.
      * @return the VirtualMachineScaleSetUpdateVMProfile object itself.

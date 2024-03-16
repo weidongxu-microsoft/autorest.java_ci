@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * StringBeginsWith Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = StringBeginsWithFilter.class,
+    visible = true)
 @JsonTypeName("StringBeginsWith")
 @Fluent
 public final class StringBeginsWithFilter extends Filter {
@@ -27,6 +31,7 @@ public final class StringBeginsWithFilter extends Filter {
      * Creates an instance of StringBeginsWithFilter class.
      */
     public StringBeginsWithFilter() {
+        withOperatorType(FilterOperatorType.STRING_BEGINS_WITH);
     }
 
     /**

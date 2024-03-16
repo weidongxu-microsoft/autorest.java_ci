@@ -55,8 +55,7 @@ public interface MediaServiceOperationStatus {
     ManagementError error();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceOperationStatusInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceOperationStatusInner object.
      * 
      * @return the inner object.
      */

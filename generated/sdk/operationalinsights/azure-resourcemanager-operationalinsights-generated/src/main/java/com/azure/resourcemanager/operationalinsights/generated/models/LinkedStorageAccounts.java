@@ -49,8 +49,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace along
-     * with {@link Response}.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along with {@link Response}.
      */
     Response<LinkedStorageAccountsResource> getWithResponse(String resourceGroupName, String workspaceName,
         DataSourceType dataSourceType, Context context);
@@ -69,22 +68,19 @@ public interface LinkedStorageAccounts {
     LinkedStorageAccountsResource get(String resourceGroupName, String workspaceName, DataSourceType dataSourceType);
 
     /**
-     * Gets all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     * their data source type.
+     * Gets all linked storage accounts associated with the specified workspace, storage accounts will be sorted by their data source type.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     * their data source type as paginated response with {@link PagedIterable}.
+     * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by their data source type as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LinkedStorageAccountsResource> listByWorkspace(String resourceGroupName, String workspaceName);
 
     /**
-     * Gets all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     * their data source type.
+     * Gets all linked storage accounts associated with the specified workspace, storage accounts will be sorted by their data source type.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -92,8 +88,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     * their data source type as paginated response with {@link PagedIterable}.
+     * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by their data source type as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LinkedStorageAccountsResource> listByWorkspace(String resourceGroupName, String workspaceName,
         Context context);
@@ -105,8 +100,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace along
-     * with {@link Response}.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along with {@link Response}.
      */
     LinkedStorageAccountsResource getById(String id);
 
@@ -118,8 +112,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace along
-     * with {@link Response}.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along with {@link Response}.
      */
     Response<LinkedStorageAccountsResource> getByIdWithResponse(String id, Context context);
 

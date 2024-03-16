@@ -51,8 +51,7 @@ public final class Secret {
     }
 
     /**
-     * Get the keyVaultId property: Id of the Key-Vault where secret is stored (ex:
-     * secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
+     * Get the keyVaultId property: Id of the Key-Vault where secret is stored (ex: secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
      * 
      * @return the keyVaultId value.
      */
@@ -61,8 +60,7 @@ public final class Secret {
     }
 
     /**
-     * Set the keyVaultId property: Id of the Key-Vault where secret is stored (ex:
-     * secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
+     * Set the keyVaultId property: Id of the Key-Vault where secret is stored (ex: secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
      * 
      * @param keyVaultId the keyVaultId value to set.
      * @return the Secret object itself.

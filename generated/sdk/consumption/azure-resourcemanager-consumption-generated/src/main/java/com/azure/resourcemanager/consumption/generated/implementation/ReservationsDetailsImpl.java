@@ -59,8 +59,8 @@ public final class ReservationsDetailsImpl implements ReservationsDetails {
 
     public PagedIterable<ReservationDetail> list(String resourceScope, String startDate, String endDate, String filter,
         String reservationId, String reservationOrderId, Context context) {
-        PagedIterable<ReservationDetailInner> inner = this.serviceClient().list(resourceScope, startDate, endDate,
-            filter, reservationId, reservationOrderId, context);
+        PagedIterable<ReservationDetailInner> inner = this.serviceClient()
+            .list(resourceScope, startDate, endDate, filter, reservationId, reservationOrderId, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 

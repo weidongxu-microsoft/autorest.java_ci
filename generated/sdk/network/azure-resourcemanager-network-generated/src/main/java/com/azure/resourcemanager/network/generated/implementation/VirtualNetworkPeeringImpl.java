@@ -123,15 +123,18 @@ public final class VirtualNetworkPeeringImpl
     }
 
     public VirtualNetworkPeering create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings().createOrUpdate(resourceGroupName,
-            virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), createSyncRemoteAddressSpace,
-            Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(),
+                createSyncRemoteAddressSpace, Context.NONE);
         return this;
     }
 
     public VirtualNetworkPeering create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings().createOrUpdate(resourceGroupName,
-            virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), createSyncRemoteAddressSpace, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(),
+                createSyncRemoteAddressSpace, context);
         return this;
     }
 
@@ -148,15 +151,18 @@ public final class VirtualNetworkPeeringImpl
     }
 
     public VirtualNetworkPeering apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings().createOrUpdate(resourceGroupName,
-            virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), updateSyncRemoteAddressSpace,
-            Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(),
+                updateSyncRemoteAddressSpace, Context.NONE);
         return this;
     }
 
     public VirtualNetworkPeering apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings().createOrUpdate(resourceGroupName,
-            virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), updateSyncRemoteAddressSpace, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .createOrUpdate(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(),
+                updateSyncRemoteAddressSpace, context);
         return this;
     }
 
@@ -171,14 +177,18 @@ public final class VirtualNetworkPeeringImpl
     }
 
     public VirtualNetworkPeering refresh() {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings()
-            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualNetworkPeering refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualNetworkPeerings()
-            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualNetworkPeerings()
+            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context)
+            .getValue();
         return this;
     }
 

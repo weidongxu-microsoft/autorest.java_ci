@@ -19,8 +19,7 @@ public interface DatabasePrincipalListResult {
     List<DatabasePrincipal> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalListResultInner object.
      * 
      * @return the inner object.
      */

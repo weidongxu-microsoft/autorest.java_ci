@@ -91,14 +91,16 @@ public final class StorageAccountCredentialImpl
     }
 
     public StorageAccountCredential create() {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials().createOrUpdate(deviceName,
-            name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StorageAccountCredential create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials().createOrUpdate(deviceName,
-            name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -114,14 +116,16 @@ public final class StorageAccountCredentialImpl
     }
 
     public StorageAccountCredential apply() {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials().createOrUpdate(deviceName,
-            name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StorageAccountCredential apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials().createOrUpdate(deviceName,
-            name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -135,14 +139,18 @@ public final class StorageAccountCredentialImpl
     }
 
     public StorageAccountCredential refresh() {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials()
-            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StorageAccountCredential refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStorageAccountCredentials()
-            .getWithResponse(deviceName, name, resourceGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStorageAccountCredentials()
+            .getWithResponse(deviceName, name, resourceGroupName, context)
+            .getValue();
         return this;
     }
 

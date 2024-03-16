@@ -71,8 +71,8 @@ public final class JobsImpl implements Jobs {
 
     public Response<Void> cancelJobWithResponse(String resourceGroupName, String accountName, String transformName,
         String jobName, Context context) {
-        return this.serviceClient().cancelJobWithResponse(resourceGroupName, accountName, transformName, jobName,
-            context);
+        return this.serviceClient()
+            .cancelJobWithResponse(resourceGroupName, accountName, transformName, jobName, context);
     }
 
     public void cancelJob(String resourceGroupName, String accountName, String transformName, String jobName) {

@@ -20,6 +20,12 @@ public final class Backup {
     private Integer backupRetentionDays;
 
     /*
+     * Backup interval hours for the server.
+     */
+    @JsonProperty(value = "backupIntervalHours")
+    private Integer backupIntervalHours;
+
+    /*
      * Whether or not geo redundant backup is enabled.
      */
     @JsonProperty(value = "geoRedundantBackup")
@@ -54,6 +60,26 @@ public final class Backup {
      */
     public Backup withBackupRetentionDays(Integer backupRetentionDays) {
         this.backupRetentionDays = backupRetentionDays;
+        return this;
+    }
+
+    /**
+     * Get the backupIntervalHours property: Backup interval hours for the server.
+     * 
+     * @return the backupIntervalHours value.
+     */
+    public Integer backupIntervalHours() {
+        return this.backupIntervalHours;
+    }
+
+    /**
+     * Set the backupIntervalHours property: Backup interval hours for the server.
+     * 
+     * @param backupIntervalHours the backupIntervalHours value to set.
+     * @return the Backup object itself.
+     */
+    public Backup withBackupIntervalHours(Integer backupIntervalHours) {
+        this.backupIntervalHours = backupIntervalHours;
         return this;
     }
 

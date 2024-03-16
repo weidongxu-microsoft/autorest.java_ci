@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Describes the properties for producing a series of JPEG images from the input video.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JpgImage.class, visible = true)
 @JsonTypeName("#Microsoft.Media.JpgImage")
 @Fluent
 public final class JpgImage extends Image {
@@ -25,10 +25,7 @@ public final class JpgImage extends Image {
     private List<JpgLayer> layers;
 
     /*
-     * Sets the number of columns used in thumbnail sprite image. The number of rows are automatically calculated and a
-     * VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a
-     * positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG
-     * maximum pixel resolution limit 65535x65535.
+     * Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
      */
     @JsonProperty(value = "spriteColumn")
     private Integer spriteColumn;
@@ -37,6 +34,7 @@ public final class JpgImage extends Image {
      * Creates an instance of JpgImage class.
      */
     public JpgImage() {
+        withOdataType("#Microsoft.Media.JpgImage");
     }
 
     /**
@@ -60,10 +58,7 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
-     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
-     * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
-     * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
+     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
      * 
      * @return the spriteColumn value.
      */
@@ -72,10 +67,7 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
-     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
-     * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
-     * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
+     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
      * 
      * @param spriteColumn the spriteColumn value to set.
      * @return the JpgImage object itself.

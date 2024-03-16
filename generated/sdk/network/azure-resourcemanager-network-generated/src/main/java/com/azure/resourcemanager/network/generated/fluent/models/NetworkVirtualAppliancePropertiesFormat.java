@@ -247,8 +247,7 @@ public final class NetworkVirtualAppliancePropertiesFormat {
     }
 
     /**
-     * Get the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are
-     * not supported.
+     * Get the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not supported.
      * 
      * @return the virtualApplianceAsn value.
      */
@@ -257,8 +256,7 @@ public final class NetworkVirtualAppliancePropertiesFormat {
     }
 
     /**
-     * Set the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are
-     * not supported.
+     * Set the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not supported.
      * 
      * @param virtualApplianceAsn the virtualApplianceAsn value to set.
      * @return the NetworkVirtualAppliancePropertiesFormat object itself.

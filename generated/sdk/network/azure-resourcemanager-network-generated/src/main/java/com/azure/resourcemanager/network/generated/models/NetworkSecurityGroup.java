@@ -58,8 +58,7 @@ public interface NetworkSecurityGroup {
     String id();
 
     /**
-     * Gets the flushConnection property: When enabled, flows created from Network Security Group connections will be
-     * re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+     * Gets the flushConnection property: When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
      * 
      * @return the flushConnection value.
      */
@@ -194,8 +193,7 @@ public interface NetworkSecurityGroup {
         }
 
         /**
-         * The stage of the NetworkSecurityGroup definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkSecurityGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithFlushConnection,
             DefinitionStages.WithSecurityRules {
@@ -233,11 +231,9 @@ public interface NetworkSecurityGroup {
          */
         interface WithFlushConnection {
             /**
-             * Specifies the flushConnection property: When enabled, flows created from Network Security Group
-             * connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation..
+             * Specifies the flushConnection property: When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation..
              * 
-             * @param flushConnection When enabled, flows created from Network Security Group connections will be
-             * re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+             * @param flushConnection When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
              * @return the next definition stage.
              */
             WithCreate withFlushConnection(Boolean flushConnection);

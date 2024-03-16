@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The instance view of a capacity reservation that provides as snapshot of the runtime properties of the capacity
- * reservation that is managed by the platform and can change outside of control plane operations.
+ * The instance view of a capacity reservation that provides as snapshot of the runtime properties of the capacity reservation that is managed by the platform and can change outside of control plane operations.
  */
 @Fluent
 public class CapacityReservationInstanceView {

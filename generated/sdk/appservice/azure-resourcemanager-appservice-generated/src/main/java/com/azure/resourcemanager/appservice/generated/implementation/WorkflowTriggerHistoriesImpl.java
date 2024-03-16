@@ -43,8 +43,8 @@ public final class WorkflowTriggerHistoriesImpl implements WorkflowTriggerHistor
 
     public Response<WorkflowTriggerHistory> getWithResponse(String resourceGroupName, String name, String workflowName,
         String triggerName, String historyName, Context context) {
-        Response<WorkflowTriggerHistoryInner> inner = this.serviceClient().getWithResponse(resourceGroupName, name,
-            workflowName, triggerName, historyName, context);
+        Response<WorkflowTriggerHistoryInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, name, workflowName, triggerName, historyName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkflowTriggerHistoryImpl(inner.getValue(), this.manager()));

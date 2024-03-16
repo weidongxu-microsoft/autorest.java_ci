@@ -25,8 +25,7 @@ public interface CheckNameResult {
     String name();
 
     /**
-     * Gets the message property: Message indicating an unavailable name due to a conflict, or a description of the
-     * naming rules that are violated.
+     * Gets the message property: Message indicating an unavailable name due to a conflict, or a description of the naming rules that are violated.
      * 
      * @return the message value.
      */

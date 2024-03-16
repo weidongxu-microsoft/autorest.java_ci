@@ -102,8 +102,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
         Response<List<CapabilityInner>> inner
             = this.serviceClient().listCapabilitiesWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new CapabilityImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new CapabilityImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -121,8 +124,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public Response<HybridConnection> getHybridConnectionWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, Context context) {
-        Response<HybridConnectionInner> inner = this.serviceClient().getHybridConnectionWithResponse(resourceGroupName,
-            name, namespaceName, relayName, context);
+        Response<HybridConnectionInner> inner = this.serviceClient()
+            .getHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HybridConnectionImpl(inner.getValue(), this.manager()));
@@ -144,8 +147,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public Response<Void> deleteHybridConnectionWithResponse(String resourceGroupName, String name,
         String namespaceName, String relayName, Context context) {
-        return this.serviceClient().deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName,
-            relayName, context);
+        return this.serviceClient()
+            .deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
     }
 
     public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
@@ -182,8 +185,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<String> listWebAppsByHybridConnection(String resourceGroupName, String name,
         String namespaceName, String relayName, Context context) {
-        return this.serviceClient().listWebAppsByHybridConnection(resourceGroupName, name, namespaceName, relayName,
-            context);
+        return this.serviceClient()
+            .listWebAppsByHybridConnection(resourceGroupName, name, namespaceName, relayName, context);
     }
 
     public Response<HybridConnectionLimits> getHybridConnectionPlanLimitWithResponse(String resourceGroupName,
@@ -266,8 +269,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
         Response<List<VnetInfoResourceInner>> inner
             = this.serviceClient().listVnetsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -277,7 +283,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
         List<VnetInfoResourceInner> inner = this.serviceClient().listVnets(resourceGroupName, name);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -327,8 +334,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public Response<VnetGateway> updateVnetGatewayWithResponse(String resourceGroupName, String name, String vnetName,
         String gatewayName, VnetGatewayInner connectionEnvelope, Context context) {
-        Response<VnetGatewayInner> inner = this.serviceClient().updateVnetGatewayWithResponse(resourceGroupName, name,
-            vnetName, gatewayName, connectionEnvelope, context);
+        Response<VnetGatewayInner> inner = this.serviceClient()
+            .updateVnetGatewayWithResponse(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetGatewayImpl(inner.getValue(), this.manager()));
@@ -339,8 +346,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public VnetGateway updateVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName,
         VnetGatewayInner connectionEnvelope) {
-        VnetGatewayInner inner = this.serviceClient().updateVnetGateway(resourceGroupName, name, vnetName, gatewayName,
-            connectionEnvelope);
+        VnetGatewayInner inner = this.serviceClient()
+            .updateVnetGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -353,8 +360,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
         Response<List<VnetRouteInner>> inner
             = this.serviceClient().listRoutesForVnetWithResponse(resourceGroupName, name, vnetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new VnetRouteImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -375,8 +385,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
         Response<List<VnetRouteInner>> inner
             = this.serviceClient().getRouteForVnetWithResponse(resourceGroupName, name, vnetName, routeName, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new VnetRouteImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }

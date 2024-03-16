@@ -7,27 +7,32 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.network.generated.models.AdminRule;
+import com.azure.resourcemanager.network.generated.models.AdminRuleKind;
 import com.azure.resourcemanager.network.generated.models.ChildResource;
 import com.azure.resourcemanager.network.generated.models.DefaultAdminRule;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Network base admin rule.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = BaseAdminRuleInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = BaseAdminRuleInner.class, visible = true)
 @JsonTypeName("BaseAdminRule")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "Custom", value = AdminRule.class),
     @JsonSubTypes.Type(name = "Default", value = DefaultAdminRule.class) })
 @Immutable
 public class BaseAdminRuleInner extends ChildResource {
+    /*
+     * Whether the rule is custom or default.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private AdminRuleKind kind;
+
     /*
      * The system metadata related to this resource.
      */
@@ -38,6 +43,27 @@ public class BaseAdminRuleInner extends ChildResource {
      * Creates an instance of BaseAdminRuleInner class.
      */
     public BaseAdminRuleInner() {
+        this.kind = AdminRuleKind.fromString("BaseAdminRule");
+    }
+
+    /**
+     * Get the kind property: Whether the rule is custom or default.
+     * 
+     * @return the kind value.
+     */
+    public AdminRuleKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Whether the rule is custom or default.
+     * 
+     * @param kind the kind value to set.
+     * @return the BaseAdminRuleInner object itself.
+     */
+    protected BaseAdminRuleInner withKind(AdminRuleKind kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

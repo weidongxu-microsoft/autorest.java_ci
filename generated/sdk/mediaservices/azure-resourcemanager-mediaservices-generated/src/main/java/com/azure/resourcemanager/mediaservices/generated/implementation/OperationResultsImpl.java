@@ -29,8 +29,8 @@ public final class OperationResultsImpl implements OperationResults {
 
     public Response<AssetTrack> getWithResponse(String resourceGroupName, String accountName, String assetName,
         String trackName, String operationId, Context context) {
-        OperationResultsGetResponse inner = this.serviceClient().getWithResponse(resourceGroupName, accountName,
-            assetName, trackName, operationId, context);
+        OperationResultsGetResponse inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, accountName, assetName, trackName, operationId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AssetTrackImpl(inner.getValue(), this.manager()));

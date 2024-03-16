@@ -38,8 +38,7 @@ public final class ArmRoleReceiver {
     }
 
     /**
-     * Get the name property: The name of the arm role receiver. Names must be unique across all receivers within an
-     * action group.
+     * Get the name property: The name of the arm role receiver. Names must be unique across all receivers within an action group.
      * 
      * @return the name value.
      */
@@ -48,8 +47,7 @@ public final class ArmRoleReceiver {
     }
 
     /**
-     * Set the name property: The name of the arm role receiver. Names must be unique across all receivers within an
-     * action group.
+     * Set the name property: The name of the arm role receiver. Names must be unique across all receivers within an action group.
      * 
      * @param name the name value to set.
      * @return the ArmRoleReceiver object itself.

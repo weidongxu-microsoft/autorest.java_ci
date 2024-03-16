@@ -53,8 +53,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientComponentCurrentBillingFeatures to
-     * be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientComponentCurrentBillingFeatures to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
@@ -87,8 +86,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component billing features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component billing features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentBillingFeaturesInner>>
@@ -125,8 +123,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component billing features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component billing features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentBillingFeaturesInner>>
@@ -206,13 +203,11 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an
-     * Application Insights component.
+     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component billing features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component billing features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentBillingFeaturesInner>> updateWithResponseAsync(
@@ -252,14 +247,12 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an
-     * Application Insights component.
+     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component billing features along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return an Application Insights component billing features along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentBillingFeaturesInner>> updateWithResponseAsync(
@@ -298,8 +291,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an
-     * Application Insights component.
+     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -317,8 +309,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an
-     * Application Insights component.
+     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -337,8 +328,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an
-     * Application Insights component.
+     * @param billingFeaturesProperties Properties that need to be specified to update billing features for an Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

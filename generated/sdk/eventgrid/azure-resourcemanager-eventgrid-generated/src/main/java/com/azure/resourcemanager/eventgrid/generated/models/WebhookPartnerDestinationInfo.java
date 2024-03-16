@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the WebHook of the partner destination.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = WebhookPartnerDestinationInfo.class,
+    visible = true)
 @JsonTypeName("WebHook")
 @Fluent
 public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo {
@@ -28,6 +32,7 @@ public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo 
      * Creates an instance of WebhookPartnerDestinationInfo class.
      */
     public WebhookPartnerDestinationInfo() {
+        withEndpointType(PartnerEndpointType.WEB_HOOK);
     }
 
     /**

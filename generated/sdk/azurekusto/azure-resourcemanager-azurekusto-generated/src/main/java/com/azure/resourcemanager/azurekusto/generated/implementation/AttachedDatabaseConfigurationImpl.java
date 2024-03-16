@@ -106,14 +106,18 @@ public final class AttachedDatabaseConfigurationImpl implements AttachedDatabase
     }
 
     public AttachedDatabaseConfiguration create() {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations().createOrUpdate(
-            resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
+            .createOrUpdate(resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public AttachedDatabaseConfiguration create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations().createOrUpdate(
-            resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
+            .createOrUpdate(resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -129,14 +133,18 @@ public final class AttachedDatabaseConfigurationImpl implements AttachedDatabase
     }
 
     public AttachedDatabaseConfiguration apply() {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations().createOrUpdate(
-            resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
+            .createOrUpdate(resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public AttachedDatabaseConfiguration apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations().createOrUpdate(
-            resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
+            .createOrUpdate(resourceGroupName, clusterName, attachedDatabaseConfigurationName, this.innerModel(),
+                context);
         return this;
     }
 
@@ -151,15 +159,18 @@ public final class AttachedDatabaseConfigurationImpl implements AttachedDatabase
     }
 
     public AttachedDatabaseConfiguration refresh() {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations()
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
             .getWithResponse(resourceGroupName, clusterName, attachedDatabaseConfigurationName, Context.NONE)
             .getValue();
         return this;
     }
 
     public AttachedDatabaseConfiguration refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAttachedDatabaseConfigurations()
-            .getWithResponse(resourceGroupName, clusterName, attachedDatabaseConfigurationName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAttachedDatabaseConfigurations()
+            .getWithResponse(resourceGroupName, clusterName, attachedDatabaseConfigurationName, context)
+            .getValue();
         return this;
     }
 

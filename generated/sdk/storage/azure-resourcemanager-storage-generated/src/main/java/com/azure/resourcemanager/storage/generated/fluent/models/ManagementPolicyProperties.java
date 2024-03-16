@@ -22,8 +22,7 @@ public final class ManagementPolicyProperties {
     private OffsetDateTime lastModifiedTime;
 
     /*
-     * The Storage Account ManagementPolicy, in JSON format. See more details in:
-     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * The Storage Account ManagementPolicy, in JSON format. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      */
     @JsonProperty(value = "policy", required = true)
     private ManagementPolicySchema policy;
@@ -44,8 +43,7 @@ public final class ManagementPolicyProperties {
     }
 
     /**
-     * Get the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in:
-     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Get the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @return the policy value.
      */
@@ -54,8 +52,7 @@ public final class ManagementPolicyProperties {
     }
 
     /**
-     * Set the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in:
-     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Set the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @param policy the policy value to set.
      * @return the ManagementPolicyProperties object itself.

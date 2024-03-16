@@ -62,14 +62,16 @@ public final class VaultCertificateResponseImpl
     }
 
     public VaultCertificateResponse create() {
-        this.innerObject = serviceManager.serviceClient().getVaultCertificates()
+        this.innerObject = serviceManager.serviceClient()
+            .getVaultCertificates()
             .createWithResponse(resourceGroupName, vaultName, certificateName, createCertificateRequest, Context.NONE)
             .getValue();
         return this;
     }
 
     public VaultCertificateResponse create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVaultCertificates()
+        this.innerObject = serviceManager.serviceClient()
+            .getVaultCertificates()
             .createWithResponse(resourceGroupName, vaultName, certificateName, createCertificateRequest, context)
             .getValue();
         return this;

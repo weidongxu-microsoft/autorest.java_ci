@@ -60,8 +60,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientSecrets to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientSecrets to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -115,19 +114,16 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * Create or update a secret in a key vault in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     * service. The value provided should not include personally identifiable or sensitive information.
+     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -163,20 +159,17 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * Create or update a secret in a key vault in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     * service. The value provided should not include personally identifiable or sensitive information.
+     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -211,13 +204,11 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * Create or update a secret in a key vault in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     * service. The value provided should not include personally identifiable or sensitive information.
+     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -232,13 +223,11 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * Create or update a secret in a key vault in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     * service. The value provided should not include personally identifiable or sensitive information.
+     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -253,13 +242,11 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * Create or update a secret in a key vault in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     * service. The value provided should not include personally identifiable or sensitive information.
+     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -274,8 +261,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
+     * Update a secret in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments.  Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
@@ -284,8 +270,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -321,8 +306,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
+     * Update a secret in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments.  Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
@@ -332,8 +316,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
@@ -368,8 +351,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
+     * Update a secret in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments.  Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
@@ -388,8 +370,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
+     * Update a secret in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments.  Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
@@ -408,8 +389,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
+     * Update a secret in the specified subscription.  NOTE: This API is intended for internal use in ARM deployments.  Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
@@ -427,8 +407,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -467,8 +446,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -507,8 +485,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -525,8 +502,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -544,8 +520,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -561,8 +536,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -600,8 +574,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -640,8 +613,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -658,8 +630,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -676,8 +647,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -695,8 +665,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -712,8 +681,7 @@ public final class SecretsClientImpl implements SecretsClient {
     }
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.

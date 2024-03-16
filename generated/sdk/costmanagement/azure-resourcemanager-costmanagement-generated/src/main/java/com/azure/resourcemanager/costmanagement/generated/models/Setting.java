@@ -40,16 +40,14 @@ public interface Setting {
     String kind();
 
     /**
-     * Gets the scope property: Sets the default scope the current user will see when they sign into Azure Cost
-     * Management in the Azure portal.
+     * Gets the scope property: Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      * 
      * @return the scope value.
      */
     String scope();
 
     /**
-     * Gets the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
-     * values: LastUsed.
+     * Gets the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      * 
      * @return the startOn value.
      */

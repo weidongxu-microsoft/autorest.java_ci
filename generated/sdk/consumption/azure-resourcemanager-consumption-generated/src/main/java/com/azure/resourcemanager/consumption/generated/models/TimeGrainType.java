@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth,
- * BillingQuarter, and BillingAnnual are only supported by WD customers.
+ * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
  */
 public final class TimeGrainType extends ExpandableStringEnum<TimeGrainType> {
     /**

@@ -20,8 +20,7 @@ public interface OperationResource {
     OffsetDateTime endTime();
 
     /**
-     * Gets the error property: Required if status == failed or status == canceled. This is the OData v4 error format,
-     * used by the RPC and will go into the v2.2 Azure REST API guidelines.
+     * Gets the error property: Required if status == failed or status == canceled. This is the OData v4 error format, used by the RPC and will go into the v2.2 Azure REST API guidelines.
      * 
      * @return the error value.
      */
@@ -35,8 +34,7 @@ public interface OperationResource {
     String id();
 
     /**
-     * Gets the name property: It must match the last segment of the "id" field, and will typically be a GUID / system
-     * generated value.
+     * Gets the name property: It must match the last segment of the "id" field, and will typically be a GUID / system generated value.
      * 
      * @return the name value.
      */

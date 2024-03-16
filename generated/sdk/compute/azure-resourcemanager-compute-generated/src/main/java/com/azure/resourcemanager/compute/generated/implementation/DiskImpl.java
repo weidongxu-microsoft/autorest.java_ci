@@ -257,14 +257,16 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
     }
 
     public Disk create() {
-        this.innerObject = serviceManager.serviceClient().getDisks().createOrUpdate(resourceGroupName, diskName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDisks()
+            .createOrUpdate(resourceGroupName, diskName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Disk create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDisks().createOrUpdate(resourceGroupName, diskName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDisks()
+            .createOrUpdate(resourceGroupName, diskName, this.innerModel(), context);
         return this;
     }
 
@@ -299,14 +301,18 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
     }
 
     public Disk refresh() {
-        this.innerObject = serviceManager.serviceClient().getDisks()
-            .getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisks()
+            .getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Disk refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDisks()
-            .getByResourceGroupWithResponse(resourceGroupName, diskName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDisks()
+            .getByResourceGroupWithResponse(resourceGroupName, diskName, context)
+            .getValue();
         return this;
     }
 

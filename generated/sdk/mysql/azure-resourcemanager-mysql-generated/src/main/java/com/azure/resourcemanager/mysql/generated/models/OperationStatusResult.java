@@ -97,8 +97,7 @@ public class OperationStatusResult {
     }
 
     /**
-     * Get the resourceId property: Fully qualified ID of the resource against which the original async operation was
-     * started.
+     * Get the resourceId property: Fully qualified ID of the resource against which the original async operation was started.
      * 
      * @return the resourceId value.
      */

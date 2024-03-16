@@ -89,14 +89,16 @@ public final class ClientImpl implements Client, Client.Definition, Client.Updat
     }
 
     public Client create() {
-        this.innerObject = serviceManager.serviceClient().getClients().createOrUpdate(resourceGroupName, namespaceName,
-            clientName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .createOrUpdate(resourceGroupName, namespaceName, clientName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Client create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClients().createOrUpdate(resourceGroupName, namespaceName,
-            clientName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .createOrUpdate(resourceGroupName, namespaceName, clientName, this.innerModel(), context);
         return this;
     }
 
@@ -111,14 +113,16 @@ public final class ClientImpl implements Client, Client.Definition, Client.Updat
     }
 
     public Client apply() {
-        this.innerObject = serviceManager.serviceClient().getClients().createOrUpdate(resourceGroupName, namespaceName,
-            clientName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .createOrUpdate(resourceGroupName, namespaceName, clientName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Client apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClients().createOrUpdate(resourceGroupName, namespaceName,
-            clientName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .createOrUpdate(resourceGroupName, namespaceName, clientName, this.innerModel(), context);
         return this;
     }
 
@@ -131,14 +135,18 @@ public final class ClientImpl implements Client, Client.Definition, Client.Updat
     }
 
     public Client refresh() {
-        this.innerObject = serviceManager.serviceClient().getClients()
-            .getWithResponse(resourceGroupName, namespaceName, clientName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .getWithResponse(resourceGroupName, namespaceName, clientName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Client refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClients()
-            .getWithResponse(resourceGroupName, namespaceName, clientName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClients()
+            .getWithResponse(resourceGroupName, namespaceName, clientName, context)
+            .getValue();
         return this;
     }
 

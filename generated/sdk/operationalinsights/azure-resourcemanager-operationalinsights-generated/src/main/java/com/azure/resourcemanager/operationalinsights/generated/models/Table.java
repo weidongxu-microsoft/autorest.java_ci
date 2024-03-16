@@ -42,24 +42,21 @@ public interface Table {
     SystemData systemData();
 
     /**
-     * Gets the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1
-     * will default to the workspace retention.
+     * Gets the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
      * 
      * @return the retentionInDays value.
      */
     Integer retentionInDays();
 
     /**
-     * Gets the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this
-     * property to -1 will default to table retention.
+     * Gets the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
      * 
      * @return the totalRetentionInDays value.
      */
     Integer totalRetentionInDays();
 
     /**
-     * Gets the archiveRetentionInDays property: The table data archive retention in days. Calculated as
-     * (totalRetentionInDays-retentionInDays).
+     * Gets the archiveRetentionInDays property: The table data archive retention in days. Calculated as (totalRetentionInDays-retentionInDays).
      * 
      * @return the archiveRetentionInDays value.
      */
@@ -108,25 +105,21 @@ public interface Table {
     Schema schema();
 
     /**
-     * Gets the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a
-     * resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is
-     * concluded.
+     * Gets the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is concluded.
      * 
      * @return the provisioningState value.
      */
     ProvisioningStateEnum provisioningState();
 
     /**
-     * Gets the retentionInDaysAsDefault property: True - Value originates from workspace retention in days, False -
-     * Customer specific.
+     * Gets the retentionInDaysAsDefault property: True - Value originates from workspace retention in days, False - Customer specific.
      * 
      * @return the retentionInDaysAsDefault value.
      */
     Boolean retentionInDaysAsDefault();
 
     /**
-     * Gets the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer
-     * specific.
+     * Gets the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer specific.
      * 
      * @return the totalRetentionInDaysAsDefault value.
      */
@@ -178,8 +171,7 @@ public interface Table {
         }
 
         /**
-         * The stage of the Table definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Table definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithRetentionInDays, DefinitionStages.WithTotalRetentionInDays,
             DefinitionStages.WithSearchResults, DefinitionStages.WithRestoredLogs, DefinitionStages.WithPlan,
@@ -205,11 +197,9 @@ public interface Table {
          */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The table retention in days, between 4 and 730. Setting this
-             * property to -1 will default to the workspace retention..
+             * Specifies the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention..
              * 
-             * @param retentionInDays The table retention in days, between 4 and 730. Setting this property to -1 will
-             * default to the workspace retention.
+             * @param retentionInDays The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
              * @return the next definition stage.
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
@@ -220,11 +210,9 @@ public interface Table {
          */
         interface WithTotalRetentionInDays {
             /**
-             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 4383.
-             * Setting this property to -1 will default to table retention..
+             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention..
              * 
-             * @param totalRetentionInDays The table total retention in days, between 4 and 4383. Setting this property
-             * to -1 will default to table retention.
+             * @param totalRetentionInDays The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
              * @return the next definition stage.
              */
             WithCreate withTotalRetentionInDays(Integer totalRetentionInDays);
@@ -261,8 +249,7 @@ public interface Table {
          */
         interface WithPlan {
             /**
-             * Specifies the plan property: Instruct the system how to handle and charge the logs ingested to this
-             * table..
+             * Specifies the plan property: Instruct the system how to handle and charge the logs ingested to this table..
              * 
              * @param plan Instruct the system how to handle and charge the logs ingested to this table.
              * @return the next definition stage.
@@ -321,11 +308,9 @@ public interface Table {
          */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The table retention in days, between 4 and 730. Setting this
-             * property to -1 will default to the workspace retention..
+             * Specifies the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention..
              * 
-             * @param retentionInDays The table retention in days, between 4 and 730. Setting this property to -1 will
-             * default to the workspace retention.
+             * @param retentionInDays The table retention in days, between 4 and 730. Setting this property to -1 will default to the workspace retention.
              * @return the next definition stage.
              */
             Update withRetentionInDays(Integer retentionInDays);
@@ -336,11 +321,9 @@ public interface Table {
          */
         interface WithTotalRetentionInDays {
             /**
-             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 4383.
-             * Setting this property to -1 will default to table retention..
+             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention..
              * 
-             * @param totalRetentionInDays The table total retention in days, between 4 and 4383. Setting this property
-             * to -1 will default to table retention.
+             * @param totalRetentionInDays The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table retention.
              * @return the next definition stage.
              */
             Update withTotalRetentionInDays(Integer totalRetentionInDays);
@@ -377,8 +360,7 @@ public interface Table {
          */
         interface WithPlan {
             /**
-             * Specifies the plan property: Instruct the system how to handle and charge the logs ingested to this
-             * table..
+             * Specifies the plan property: Instruct the system how to handle and charge the logs ingested to this table..
              * 
              * @param plan Instruct the system how to handle and charge the logs ingested to this table.
              * @return the next definition stage.
@@ -416,8 +398,7 @@ public interface Table {
     Table refresh(Context context);
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -428,8 +409,7 @@ public interface Table {
     Response<Void> migrateWithResponse(Context context);
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

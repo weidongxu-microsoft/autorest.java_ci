@@ -168,8 +168,7 @@ public final class BackendAddressPoolPropertiesFormat {
     }
 
     /**
-     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend address
-     * pool.
+     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend address pool.
      * 
      * @return the loadBalancingRules value.
      */
@@ -214,8 +213,7 @@ public final class BackendAddressPoolPropertiesFormat {
     }
 
     /**
-     * Get the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
-     * and backend address.
+     * Get the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
      * 
      * @return the drainPeriodInSeconds value.
      */
@@ -224,8 +222,7 @@ public final class BackendAddressPoolPropertiesFormat {
     }
 
     /**
-     * Set the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
-     * and backend address.
+     * Set the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
      * 
      * @param drainPeriodInSeconds the drainPeriodInSeconds value to set.
      * @return the BackendAddressPoolPropertiesFormat object itself.

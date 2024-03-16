@@ -48,8 +48,7 @@ public final class OutboundRulePropertiesFormat {
     private LoadBalancerOutboundRuleProtocol protocol;
 
     /*
-     * Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is
-     * only used when the protocol is set to TCP.
+     * Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      */
     @JsonProperty(value = "enableTcpReset")
     private Boolean enableTcpReset;
@@ -107,8 +106,7 @@ public final class OutboundRulePropertiesFormat {
     }
 
     /**
-     * Get the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
-     * across IPs in the backend IPs.
+     * Get the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced across IPs in the backend IPs.
      * 
      * @return the backendAddressPool value.
      */
@@ -117,8 +115,7 @@ public final class OutboundRulePropertiesFormat {
     }
 
     /**
-     * Set the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
-     * across IPs in the backend IPs.
+     * Set the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced across IPs in the backend IPs.
      * 
      * @param backendAddressPool the backendAddressPool value to set.
      * @return the OutboundRulePropertiesFormat object itself.
@@ -158,8 +155,7 @@ public final class OutboundRulePropertiesFormat {
     }
 
     /**
-     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
@@ -168,8 +164,7 @@ public final class OutboundRulePropertiesFormat {
     }
 
     /**
-     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @param enableTcpReset the enableTcpReset value to set.
      * @return the OutboundRulePropertiesFormat object itself.

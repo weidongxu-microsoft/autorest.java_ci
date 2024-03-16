@@ -25,16 +25,14 @@ public interface DomainControlCenterSsoRequest {
     String postParameterKey();
 
     /**
-     * Gets the postParameterValue property: Post parameter value. Client should use 'application/x-www-form-urlencoded'
-     * encoding for this value.
+     * Gets the postParameterValue property: Post parameter value. Client should use 'application/x-www-form-urlencoded' encoding for this value.
      * 
      * @return the postParameterValue value.
      */
     String postParameterValue();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainControlCenterSsoRequestInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainControlCenterSsoRequestInner object.
      * 
      * @return the inner object.
      */

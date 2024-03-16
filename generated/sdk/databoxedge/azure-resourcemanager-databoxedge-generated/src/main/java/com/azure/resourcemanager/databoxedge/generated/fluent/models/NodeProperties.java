@@ -98,8 +98,7 @@ public final class NodeProperties {
     }
 
     /**
-     * Get the nodeFriendlySoftwareVersion property: Friendly software version name that is currently installed on the
-     * node.
+     * Get the nodeFriendlySoftwareVersion property: Friendly software version name that is currently installed on the node.
      * 
      * @return the nodeFriendlySoftwareVersion value.
      */

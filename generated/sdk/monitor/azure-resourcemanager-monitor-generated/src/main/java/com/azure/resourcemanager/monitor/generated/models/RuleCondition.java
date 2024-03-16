@@ -7,17 +7,14 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * The condition that results in the alert rule being activated.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "odata.type",
-    defaultImpl = RuleCondition.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "odata.type", defaultImpl = RuleCondition.class, visible = true)
 @JsonTypeName("RuleCondition")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -32,8 +29,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleCondition {
     /*
-     * the resource from which the rule collects its data. For this type dataSource will always be of type
-     * RuleMetricDataSource.
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType;
+
+    /*
+     * the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
      */
     @JsonProperty(value = "dataSource")
     private RuleDataSource dataSource;
@@ -42,11 +45,31 @@ public class RuleCondition {
      * Creates an instance of RuleCondition class.
      */
     public RuleCondition() {
+        this.odataType = "RuleCondition";
     }
 
     /**
-     * Get the dataSource property: the resource from which the rule collects its data. For this type dataSource will
-     * always be of type RuleMetricDataSource.
+     * Get the odataType property: specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * 
+     * @param odataType the odataType value to set.
+     * @return the RuleCondition object itself.
+     */
+    protected RuleCondition withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
+    }
+
+    /**
+     * Get the dataSource property: the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
      * 
      * @return the dataSource value.
      */
@@ -55,8 +78,7 @@ public class RuleCondition {
     }
 
     /**
-     * Set the dataSource property: the resource from which the rule collects its data. For this type dataSource will
-     * always be of type RuleMetricDataSource.
+     * Set the dataSource property: the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
      * 
      * @param dataSource the dataSource value to set.
      * @return the RuleCondition object itself.

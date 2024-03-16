@@ -35,7 +35,8 @@ public final class ProactiveDetectionConfigurationsImpl implements ProactiveDete
             = this.serviceClient().listWithResponse(resourceGroupName, resourceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream()
+                inner.getValue()
+                    .stream()
                     .map(inner1 -> new ApplicationInsightsComponentProactiveDetectionConfigurationImpl(inner1,
                         this.manager()))
                     .collect(Collectors.toList()));
@@ -49,8 +50,9 @@ public final class ProactiveDetectionConfigurationsImpl implements ProactiveDete
         List<ApplicationInsightsComponentProactiveDetectionConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, resourceName);
         if (inner != null) {
-            return Collections.unmodifiableList(inner.stream().map(
-                inner1 -> new ApplicationInsightsComponentProactiveDetectionConfigurationImpl(inner1, this.manager()))
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationInsightsComponentProactiveDetectionConfigurationImpl(inner1,
+                    this.manager()))
                 .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
@@ -84,9 +86,9 @@ public final class ProactiveDetectionConfigurationsImpl implements ProactiveDete
         String resourceGroupName, String resourceName, String configurationId,
         ApplicationInsightsComponentProactiveDetectionConfigurationInner proactiveDetectionProperties,
         Context context) {
-        Response<ApplicationInsightsComponentProactiveDetectionConfigurationInner> inner
-            = this.serviceClient().updateWithResponse(resourceGroupName, resourceName, configurationId,
-                proactiveDetectionProperties, context);
+        Response<ApplicationInsightsComponentProactiveDetectionConfigurationInner> inner = this.serviceClient()
+            .updateWithResponse(resourceGroupName, resourceName, configurationId, proactiveDetectionProperties,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationInsightsComponentProactiveDetectionConfigurationImpl(inner.getValue(), this.manager()));

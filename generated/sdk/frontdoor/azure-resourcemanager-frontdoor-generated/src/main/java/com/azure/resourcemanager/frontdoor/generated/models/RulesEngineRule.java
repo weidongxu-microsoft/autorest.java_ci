@@ -10,9 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Contains a list of match conditions, and an action on how to modify the request/response. If multiple rules match,
- * the actions from one rule that conflict with a previous rule overwrite for a singular action, or append in the case
- * of headers manipulation.
+ * Contains a list of match conditions, and an action on how to modify the request/response. If multiple rules match, the actions from one rule that conflict with a previous rule overwrite for a singular action, or append in the case of headers manipulation.
  */
 @Fluent
 public final class RulesEngineRule {
@@ -23,7 +21,7 @@ public final class RulesEngineRule {
     private String name;
 
     /*
-     * A priority assigned to this rule.
+     * A priority assigned to this rule. 
      */
     @JsonProperty(value = "priority", required = true)
     private int priority;
@@ -35,15 +33,13 @@ public final class RulesEngineRule {
     private RulesEngineAction action;
 
     /*
-     * A list of match conditions that must meet in order for the actions of this rule to run. Having no match
-     * conditions means the actions will always run.
+     * A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.
      */
     @JsonProperty(value = "matchConditions")
     private List<RulesEngineMatchCondition> matchConditions;
 
     /*
-     * If this rule is a match should the rules engine continue running the remaining rules or stop. If not present,
-     * defaults to Continue.
+     * If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
      */
     @JsonProperty(value = "matchProcessingBehavior")
     private MatchProcessingBehavior matchProcessingBehavior;
@@ -115,8 +111,7 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Get the matchConditions property: A list of match conditions that must meet in order for the actions of this rule
-     * to run. Having no match conditions means the actions will always run.
+     * Get the matchConditions property: A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.
      * 
      * @return the matchConditions value.
      */
@@ -125,8 +120,7 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Set the matchConditions property: A list of match conditions that must meet in order for the actions of this rule
-     * to run. Having no match conditions means the actions will always run.
+     * Set the matchConditions property: A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.
      * 
      * @param matchConditions the matchConditions value to set.
      * @return the RulesEngineRule object itself.
@@ -137,8 +131,7 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Get the matchProcessingBehavior property: If this rule is a match should the rules engine continue running the
-     * remaining rules or stop. If not present, defaults to Continue.
+     * Get the matchProcessingBehavior property: If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
      * 
      * @return the matchProcessingBehavior value.
      */
@@ -147,8 +140,7 @@ public final class RulesEngineRule {
     }
 
     /**
-     * Set the matchProcessingBehavior property: If this rule is a match should the rules engine continue running the
-     * remaining rules or stop. If not present, defaults to Continue.
+     * Set the matchProcessingBehavior property: If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
      * 
      * @param matchProcessingBehavior the matchProcessingBehavior value to set.
      * @return the RulesEngineRule object itself.

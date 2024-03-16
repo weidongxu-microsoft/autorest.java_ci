@@ -99,13 +99,15 @@ public final class SecurityPartnerProviderImpl
     }
 
     public SecurityPartnerProvider create() {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
             .createOrUpdate(resourceGroupName, securityPartnerProviderName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SecurityPartnerProvider create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
             .createOrUpdate(resourceGroupName, securityPartnerProviderName, this.innerModel(), context);
         return this;
     }
@@ -123,14 +125,16 @@ public final class SecurityPartnerProviderImpl
     }
 
     public SecurityPartnerProvider apply() {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
             .updateTagsWithResponse(resourceGroupName, securityPartnerProviderName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public SecurityPartnerProvider apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
             .updateTagsWithResponse(resourceGroupName, securityPartnerProviderName, updateParameters, context)
             .getValue();
         return this;
@@ -146,14 +150,18 @@ public final class SecurityPartnerProviderImpl
     }
 
     public SecurityPartnerProvider refresh() {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
-            .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
+            .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SecurityPartnerProvider refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSecurityPartnerProviders()
-            .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSecurityPartnerProviders()
+            .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context)
+            .getValue();
         return this;
     }
 

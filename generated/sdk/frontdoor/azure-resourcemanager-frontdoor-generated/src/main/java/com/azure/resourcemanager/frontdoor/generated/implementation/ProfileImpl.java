@@ -88,14 +88,16 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
     }
 
     public Profile create() {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles().createOrUpdate(profileName,
-            resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .createOrUpdate(profileName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Profile create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles().createOrUpdate(profileName,
-            resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .createOrUpdate(profileName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -111,14 +113,16 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
     }
 
     public Profile apply() {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles().update(resourceGroupName,
-            profileName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .update(resourceGroupName, profileName, updateParameters, Context.NONE);
         return this;
     }
 
     public Profile apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles().update(resourceGroupName,
-            profileName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .update(resourceGroupName, profileName, updateParameters, context);
         return this;
     }
 
@@ -131,14 +135,18 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
     }
 
     public Profile refresh() {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles()
-            .getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Profile refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkExperimentProfiles()
-            .getByResourceGroupWithResponse(resourceGroupName, profileName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkExperimentProfiles()
+            .getByResourceGroupWithResponse(resourceGroupName, profileName, context)
+            .getValue();
         return this;
     }
 

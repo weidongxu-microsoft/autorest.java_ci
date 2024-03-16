@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The IP Addresses and Ports that require inbound network access to and within the subnet of the App Service
- * Environment.
+ * The IP Addresses and Ports that require inbound network access to and within the subnet of the App Service Environment.
  */
 @Fluent
 public final class InboundEnvironmentEndpointInner {

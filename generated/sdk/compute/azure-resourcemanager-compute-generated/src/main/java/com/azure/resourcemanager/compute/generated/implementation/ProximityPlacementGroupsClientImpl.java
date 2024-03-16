@@ -61,8 +61,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientProximityPlacementGroups to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientProximityPlacementGroups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -152,8 +151,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -197,8 +195,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -295,8 +292,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> updateWithResponseAsync(String resourceGroupName,
@@ -340,8 +336,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> updateWithResponseAsync(String resourceGroupName,
@@ -551,13 +546,11 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
-     * resources in the proximity placement group.
+     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the resources in the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -592,14 +585,12 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
-     * resources in the proximity placement group.
+     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the resources in the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return specifies information about the proximity placement group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -650,8 +641,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
-     * resources in the proximity placement group.
+     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the resources in the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -688,8 +678,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listSinglePageAsync() {
@@ -718,8 +707,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listSinglePageAsync(Context context) {
@@ -800,8 +788,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>>
@@ -836,8 +823,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>>
@@ -934,8 +920,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -965,8 +950,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -994,8 +978,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1025,8 +1008,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProximityPlacementGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

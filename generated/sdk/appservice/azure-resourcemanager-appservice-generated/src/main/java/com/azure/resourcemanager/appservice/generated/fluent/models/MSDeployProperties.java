@@ -28,8 +28,7 @@ public final class MSDeployProperties extends MSDeployCore {
     }
 
     /**
-     * Get the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete
-     * MSDeploy rule.
+     * Get the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete MSDeploy rule.
      * 
      * @return the addOnPackages value.
      */
@@ -38,8 +37,7 @@ public final class MSDeployProperties extends MSDeployCore {
     }
 
     /**
-     * Set the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete
-     * MSDeploy rule.
+     * Set the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete MSDeploy rule.
      * 
      * @param addOnPackages the addOnPackages value to set.
      * @return the MSDeployProperties object itself.

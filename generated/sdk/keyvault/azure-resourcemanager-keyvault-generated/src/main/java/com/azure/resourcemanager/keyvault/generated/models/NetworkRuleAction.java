@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass
- * property has been evaluated.
+ * The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
  */
 public final class NetworkRuleAction extends ExpandableStringEnum<NetworkRuleAction> {
     /**

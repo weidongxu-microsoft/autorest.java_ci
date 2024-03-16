@@ -117,14 +117,16 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
     }
 
     public RouteTable create() {
-        this.innerObject = serviceManager.serviceClient().getRouteTables().createOrUpdate(resourceGroupName,
-            routeTableName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .createOrUpdate(resourceGroupName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RouteTable create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRouteTables().createOrUpdate(resourceGroupName,
-            routeTableName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .createOrUpdate(resourceGroupName, routeTableName, this.innerModel(), context);
         return this;
     }
 
@@ -140,14 +142,18 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
     }
 
     public RouteTable apply() {
-        this.innerObject = serviceManager.serviceClient().getRouteTables()
-            .updateTagsWithResponse(resourceGroupName, routeTableName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .updateTagsWithResponse(resourceGroupName, routeTableName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RouteTable apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRouteTables()
-            .updateTagsWithResponse(resourceGroupName, routeTableName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .updateTagsWithResponse(resourceGroupName, routeTableName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -161,15 +167,19 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
 
     public RouteTable refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRouteTables()
-            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RouteTable refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRouteTables()
-            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteTables()
+            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, context)
+            .getValue();
         return this;
     }
 

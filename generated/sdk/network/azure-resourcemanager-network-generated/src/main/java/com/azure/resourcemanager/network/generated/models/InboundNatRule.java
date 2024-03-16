@@ -20,8 +20,7 @@ public interface InboundNatRule {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within the set of inbound NAT rules used by the
-     * load balancer. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within the set of inbound NAT rules used by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -49,8 +48,7 @@ public interface InboundNatRule {
     SubResource frontendIpConfiguration();
 
     /**
-     * Gets the backendIpConfiguration property: A reference to a private IP address defined on a network interface of a
-     * VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.
+     * Gets the backendIpConfiguration property: A reference to a private IP address defined on a network interface of a VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.
      * 
      * @return the backendIpConfiguration value.
      */
@@ -64,8 +62,7 @@ public interface InboundNatRule {
     TransportProtocol protocol();
 
     /**
-     * Gets the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique
-     * within the Load Balancer. Acceptable values range from 1 to 65534.
+     * Gets the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPort value.
      */
@@ -79,43 +76,35 @@ public interface InboundNatRule {
     Integer backendPort();
 
     /**
-     * Gets the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
-     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Gets the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @return the idleTimeoutInMinutes value.
      */
     Integer idleTimeoutInMinutes();
 
     /**
-     * Gets the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
-     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Gets the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @return the enableFloatingIp value.
      */
     Boolean enableFloatingIp();
 
     /**
-     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
-     * connection termination. This element is only used when the protocol is set to TCP.
+     * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
     Boolean enableTcpReset();
 
     /**
-     * Gets the frontendPortRangeStart property: The port range start for the external endpoint. This property is used
-     * together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be
-     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Gets the frontendPortRangeStart property: The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPortRangeStart value.
      */
     Integer frontendPortRangeStart();
 
     /**
-     * Gets the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used
-     * together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be
-     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Gets the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPortRangeEnd value.
      */
@@ -181,8 +170,7 @@ public interface InboundNatRule {
         }
 
         /**
-         * The stage of the InboundNatRule definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the InboundNatRule definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithFrontendIpConfiguration,
             DefinitionStages.WithProtocol, DefinitionStages.WithFrontendPort, DefinitionStages.WithBackendPort,
@@ -210,11 +198,9 @@ public interface InboundNatRule {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within the set of inbound NAT rules
-             * used by the load balancer. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within the set of inbound NAT rules used by the load balancer. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within the set of inbound NAT rules used by the load
-             * balancer. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within the set of inbound NAT rules used by the load balancer. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -238,8 +224,7 @@ public interface InboundNatRule {
          */
         interface WithProtocol {
             /**
-             * Specifies the protocol property: The reference to the transport protocol used by the load balancing
-             * rule..
+             * Specifies the protocol property: The reference to the transport protocol used by the load balancing rule..
              * 
              * @param protocol The reference to the transport protocol used by the load balancing rule.
              * @return the next definition stage.
@@ -252,11 +237,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPort {
             /**
-             * Specifies the frontendPort property: The port for the external endpoint. Port numbers for each rule must
-             * be unique within the Load Balancer. Acceptable values range from 1 to 65534..
+             * Specifies the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPort The port for the external endpoint. Port numbers for each rule must be unique within
-             * the Load Balancer. Acceptable values range from 1 to 65534.
+             * @param frontendPort The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             WithCreate withFrontendPort(Integer frontendPort);
@@ -267,8 +250,7 @@ public interface InboundNatRule {
          */
         interface WithBackendPort {
             /**
-             * Specifies the backendPort property: The port used for the internal endpoint. Acceptable values range from
-             * 1 to 65535..
+             * Specifies the backendPort property: The port used for the internal endpoint. Acceptable values range from 1 to 65535..
              * 
              * @param backendPort The port used for the internal endpoint. Acceptable values range from 1 to 65535.
              * @return the next definition stage.
@@ -281,12 +263,9 @@ public interface InboundNatRule {
          */
         interface WithIdleTimeoutInMinutes {
             /**
-             * Specifies the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be
-             * set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol
-             * is set to TCP..
+             * Specifies the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP..
              * 
-             * @param idleTimeoutInMinutes The timeout for the TCP idle connection. The value can be set between 4 and
-             * 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+             * @param idleTimeoutInMinutes The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
              * @return the next definition stage.
              */
             WithCreate withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
@@ -297,14 +276,9 @@ public interface InboundNatRule {
          */
         interface WithEnableFloatingIp {
             /**
-             * Specifies the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP
-             * capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using
-             * the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the
-             * endpoint..
+             * Specifies the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint..
              * 
-             * @param enableFloatingIp Configures a virtual machine's endpoint for the floating IP capability required
-             * to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-             * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+             * @param enableFloatingIp Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
              * @return the next definition stage.
              */
             WithCreate withEnableFloatingIp(Boolean enableFloatingIp);
@@ -315,11 +289,9 @@ public interface InboundNatRule {
          */
         interface WithEnableTcpReset {
             /**
-             * Specifies the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or
-             * unexpected connection termination. This element is only used when the protocol is set to TCP..
+             * Specifies the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP..
              * 
-             * @param enableTcpReset Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection
-             * termination. This element is only used when the protocol is set to TCP.
+             * @param enableTcpReset Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
              * @return the next definition stage.
              */
             WithCreate withEnableTcpReset(Boolean enableTcpReset);
@@ -330,14 +302,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPortRangeStart {
             /**
-             * Specifies the frontendPortRangeStart property: The port range start for the external endpoint. This
-             * property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule
-             * port mappings will be created for each backend address from BackendAddressPool. Acceptable values range
-             * from 1 to 65534..
+             * Specifies the frontendPortRangeStart property: The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPortRangeStart The port range start for the external endpoint. This property is used
-             * together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will
-             * be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+             * @param frontendPortRangeStart The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             WithCreate withFrontendPortRangeStart(Integer frontendPortRangeStart);
@@ -348,14 +315,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPortRangeEnd {
             /**
-             * Specifies the frontendPortRangeEnd property: The port range end for the external endpoint. This property
-             * is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port
-             * mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1
-             * to 65534..
+             * Specifies the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPortRangeEnd The port range end for the external endpoint. This property is used together
-             * with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be
-             * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+             * @param frontendPortRangeEnd The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             WithCreate withFrontendPortRangeEnd(Integer frontendPortRangeEnd);
@@ -414,11 +376,9 @@ public interface InboundNatRule {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within the set of inbound NAT rules
-             * used by the load balancer. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within the set of inbound NAT rules used by the load balancer. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within the set of inbound NAT rules used by the load
-             * balancer. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within the set of inbound NAT rules used by the load balancer. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -442,8 +402,7 @@ public interface InboundNatRule {
          */
         interface WithProtocol {
             /**
-             * Specifies the protocol property: The reference to the transport protocol used by the load balancing
-             * rule..
+             * Specifies the protocol property: The reference to the transport protocol used by the load balancing rule..
              * 
              * @param protocol The reference to the transport protocol used by the load balancing rule.
              * @return the next definition stage.
@@ -456,11 +415,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPort {
             /**
-             * Specifies the frontendPort property: The port for the external endpoint. Port numbers for each rule must
-             * be unique within the Load Balancer. Acceptable values range from 1 to 65534..
+             * Specifies the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPort The port for the external endpoint. Port numbers for each rule must be unique within
-             * the Load Balancer. Acceptable values range from 1 to 65534.
+             * @param frontendPort The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             Update withFrontendPort(Integer frontendPort);
@@ -471,8 +428,7 @@ public interface InboundNatRule {
          */
         interface WithBackendPort {
             /**
-             * Specifies the backendPort property: The port used for the internal endpoint. Acceptable values range from
-             * 1 to 65535..
+             * Specifies the backendPort property: The port used for the internal endpoint. Acceptable values range from 1 to 65535..
              * 
              * @param backendPort The port used for the internal endpoint. Acceptable values range from 1 to 65535.
              * @return the next definition stage.
@@ -485,12 +441,9 @@ public interface InboundNatRule {
          */
         interface WithIdleTimeoutInMinutes {
             /**
-             * Specifies the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be
-             * set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol
-             * is set to TCP..
+             * Specifies the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP..
              * 
-             * @param idleTimeoutInMinutes The timeout for the TCP idle connection. The value can be set between 4 and
-             * 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+             * @param idleTimeoutInMinutes The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
              * @return the next definition stage.
              */
             Update withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
@@ -501,14 +454,9 @@ public interface InboundNatRule {
          */
         interface WithEnableFloatingIp {
             /**
-             * Specifies the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP
-             * capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using
-             * the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the
-             * endpoint..
+             * Specifies the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint..
              * 
-             * @param enableFloatingIp Configures a virtual machine's endpoint for the floating IP capability required
-             * to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
-             * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+             * @param enableFloatingIp Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
              * @return the next definition stage.
              */
             Update withEnableFloatingIp(Boolean enableFloatingIp);
@@ -519,11 +467,9 @@ public interface InboundNatRule {
          */
         interface WithEnableTcpReset {
             /**
-             * Specifies the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or
-             * unexpected connection termination. This element is only used when the protocol is set to TCP..
+             * Specifies the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP..
              * 
-             * @param enableTcpReset Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection
-             * termination. This element is only used when the protocol is set to TCP.
+             * @param enableTcpReset Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
              * @return the next definition stage.
              */
             Update withEnableTcpReset(Boolean enableTcpReset);
@@ -534,14 +480,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPortRangeStart {
             /**
-             * Specifies the frontendPortRangeStart property: The port range start for the external endpoint. This
-             * property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule
-             * port mappings will be created for each backend address from BackendAddressPool. Acceptable values range
-             * from 1 to 65534..
+             * Specifies the frontendPortRangeStart property: The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPortRangeStart The port range start for the external endpoint. This property is used
-             * together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will
-             * be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+             * @param frontendPortRangeStart The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             Update withFrontendPortRangeStart(Integer frontendPortRangeStart);
@@ -552,14 +493,9 @@ public interface InboundNatRule {
          */
         interface WithFrontendPortRangeEnd {
             /**
-             * Specifies the frontendPortRangeEnd property: The port range end for the external endpoint. This property
-             * is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port
-             * mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1
-             * to 65534..
+             * Specifies the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534..
              * 
-             * @param frontendPortRangeEnd The port range end for the external endpoint. This property is used together
-             * with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be
-             * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+             * @param frontendPortRangeEnd The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
              * @return the next definition stage.
              */
             Update withFrontendPortRangeEnd(Integer frontendPortRangeEnd);

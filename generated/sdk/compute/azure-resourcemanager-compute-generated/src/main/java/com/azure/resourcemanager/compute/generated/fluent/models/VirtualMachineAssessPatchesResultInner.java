@@ -18,22 +18,19 @@ import java.util.List;
 @Immutable
 public final class VirtualMachineAssessPatchesResultInner {
     /*
-     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At
-     * that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private PatchOperationStatus status;
 
     /*
-     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension
-     * logs.
+     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
      */
     @JsonProperty(value = "assessmentActivityId", access = JsonProperty.Access.WRITE_ONLY)
     private String assessmentActivityId;
 
     /*
-     * The overall reboot status of the VM. It will be true when partially installed patches require a reboot to
-     * complete installation but the reboot has not yet occurred.
+     * The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
      */
     @JsonProperty(value = "rebootPending", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean rebootPending;
@@ -75,9 +72,7 @@ public final class VirtualMachineAssessPatchesResultInner {
     }
 
     /**
-     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until
-     * the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or
-     * "CompletedWithWarnings.".
+     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings.".
      * 
      * @return the status value.
      */
@@ -86,8 +81,7 @@ public final class VirtualMachineAssessPatchesResultInner {
     }
 
     /**
-     * Get the assessmentActivityId property: The activity ID of the operation that produced this result. It is used to
-     * correlate across CRP and extension logs.
+     * Get the assessmentActivityId property: The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
      * 
      * @return the assessmentActivityId value.
      */
@@ -96,8 +90,7 @@ public final class VirtualMachineAssessPatchesResultInner {
     }
 
     /**
-     * Get the rebootPending property: The overall reboot status of the VM. It will be true when partially installed
-     * patches require a reboot to complete installation but the reboot has not yet occurred.
+     * Get the rebootPending property: The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
      * 
      * @return the rebootPending value.
      */
@@ -106,8 +99,7 @@ public final class VirtualMachineAssessPatchesResultInner {
     }
 
     /**
-     * Get the criticalAndSecurityPatchCount property: The number of critical or security patches that have been
-     * detected as available and not yet installed.
+     * Get the criticalAndSecurityPatchCount property: The number of critical or security patches that have been detected as available and not yet installed.
      * 
      * @return the criticalAndSecurityPatchCount value.
      */
@@ -143,8 +135,7 @@ public final class VirtualMachineAssessPatchesResultInner {
     }
 
     /**
-     * Get the error property: The errors that were encountered during execution of the operation. The details array
-     * contains the list of them.
+     * Get the error property: The errors that were encountered during execution of the operation. The details array contains the list of them.
      * 
      * @return the error value.
      */

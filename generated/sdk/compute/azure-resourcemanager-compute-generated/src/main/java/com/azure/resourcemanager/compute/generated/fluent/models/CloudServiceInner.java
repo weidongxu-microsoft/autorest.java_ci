@@ -30,8 +30,7 @@ public final class CloudServiceInner extends Resource {
     private SystemData systemData;
 
     /*
-     * List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be
-     * provisioned. This field is optional.
+     * List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.
      */
     @JsonProperty(value = "zones")
     private List<String> zones;
@@ -83,8 +82,7 @@ public final class CloudServiceInner extends Resource {
     }
 
     /**
-     * Get the zones property: List of logical availability zone of the resource. List should contain only 1 zone where
-     * cloud service should be provisioned. This field is optional.
+     * Get the zones property: List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.
      * 
      * @return the zones value.
      */
@@ -93,8 +91,7 @@ public final class CloudServiceInner extends Resource {
     }
 
     /**
-     * Set the zones property: List of logical availability zone of the resource. List should contain only 1 zone where
-     * cloud service should be provisioned. This field is optional.
+     * Set the zones property: List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.
      * 
      * @param zones the zones value to set.
      * @return the CloudServiceInner object itself.

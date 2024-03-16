@@ -29,8 +29,8 @@ public final class StaticMembersImpl implements StaticMembers {
 
     public Response<StaticMember> getWithResponse(String resourceGroupName, String networkManagerName,
         String networkGroupName, String staticMemberName, Context context) {
-        Response<StaticMemberInner> inner = this.serviceClient().getWithResponse(resourceGroupName, networkManagerName,
-            networkGroupName, staticMemberName, context);
+        Response<StaticMemberInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticMemberImpl(inner.getValue(), this.manager()));
@@ -52,8 +52,8 @@ public final class StaticMembersImpl implements StaticMembers {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String networkManagerName,
         String networkGroupName, String staticMemberName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, networkManagerName, networkGroupName,
-            staticMemberName, context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context);
     }
 
     public void delete(String resourceGroupName, String networkManagerName, String networkGroupName,
@@ -70,8 +70,8 @@ public final class StaticMembersImpl implements StaticMembers {
 
     public PagedIterable<StaticMember> list(String resourceGroupName, String networkManagerName,
         String networkGroupName, Integer top, String skipToken, Context context) {
-        PagedIterable<StaticMemberInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
-            networkGroupName, top, skipToken, context);
+        PagedIterable<StaticMemberInner> inner = this.serviceClient()
+            .list(resourceGroupName, networkManagerName, networkGroupName, top, skipToken, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new StaticMemberImpl(inner1, this.manager()));
     }
 

@@ -31,8 +31,7 @@ public final class VirtualWanVpnProfileParameters {
     }
 
     /**
-     * Get the vpnServerConfigurationResourceId property: VpnServerConfiguration partial resource uri with which
-     * VirtualWan is associated to.
+     * Get the vpnServerConfigurationResourceId property: VpnServerConfiguration partial resource uri with which VirtualWan is associated to.
      * 
      * @return the vpnServerConfigurationResourceId value.
      */
@@ -41,8 +40,7 @@ public final class VirtualWanVpnProfileParameters {
     }
 
     /**
-     * Set the vpnServerConfigurationResourceId property: VpnServerConfiguration partial resource uri with which
-     * VirtualWan is associated to.
+     * Set the vpnServerConfigurationResourceId property: VpnServerConfiguration partial resource uri with which VirtualWan is associated to.
      * 
      * @param vpnServerConfigurationResourceId the vpnServerConfigurationResourceId value to set.
      * @return the VirtualWanVpnProfileParameters object itself.

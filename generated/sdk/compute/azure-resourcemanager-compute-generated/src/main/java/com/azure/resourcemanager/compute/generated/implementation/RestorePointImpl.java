@@ -94,14 +94,16 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
     }
 
     public RestorePoint create() {
-        this.innerObject = serviceManager.serviceClient().getRestorePoints().create(resourceGroupName,
-            restorePointCollectionName, restorePointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRestorePoints()
+            .create(resourceGroupName, restorePointCollectionName, restorePointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RestorePoint create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRestorePoints().create(resourceGroupName,
-            restorePointCollectionName, restorePointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRestorePoints()
+            .create(resourceGroupName, restorePointCollectionName, restorePointName, this.innerModel(), context);
         return this;
     }
 
@@ -113,7 +115,8 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
 
     public RestorePoint refresh() {
         RestorePointExpandOptions localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRestorePoints()
+        this.innerObject = serviceManager.serviceClient()
+            .getRestorePoints()
             .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -121,7 +124,8 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
 
     public RestorePoint refresh(Context context) {
         RestorePointExpandOptions localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRestorePoints()
+        this.innerObject = serviceManager.serviceClient()
+            .getRestorePoints()
             .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, localExpand, context)
             .getValue();
         return this;

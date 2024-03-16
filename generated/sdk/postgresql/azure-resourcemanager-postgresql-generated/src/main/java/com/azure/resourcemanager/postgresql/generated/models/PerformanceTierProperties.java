@@ -68,8 +68,7 @@ public interface PerformanceTierProperties {
     List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives();
 
     /**
-     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner object.
      * 
      * @return the inner object.
      */

@@ -90,14 +90,18 @@ public final class DiagnosticSettingsResourceImpl
     }
 
     public DiagnosticSettingsResource create() {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public DiagnosticSettingsResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -113,14 +117,18 @@ public final class DiagnosticSettingsResourceImpl
     }
 
     public DiagnosticSettingsResource apply() {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public DiagnosticSettingsResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -135,14 +143,18 @@ public final class DiagnosticSettingsResourceImpl
     }
 
     public DiagnosticSettingsResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .getWithResponse(resourceUri, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .getWithResponse(resourceUri, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DiagnosticSettingsResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
-            .getWithResponse(resourceUri, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiagnosticSettingsOperations()
+            .getWithResponse(resourceUri, name, context)
+            .getValue();
         return this;
     }
 

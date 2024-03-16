@@ -76,8 +76,7 @@ public interface ApplicationStackResource {
     List<ApplicationStack> frameworks();
 
     /**
-     * Gets the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDeprecated value.
      */

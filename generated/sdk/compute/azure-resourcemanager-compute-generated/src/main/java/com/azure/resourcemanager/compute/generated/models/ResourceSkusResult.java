@@ -22,8 +22,7 @@ public final class ResourceSkusResult {
     private List<ResourceSkuInner> value;
 
     /*
-     * The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource
-     * Skus
+     * The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource Skus
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class ResourceSkusResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to
-     * fetch the next page of Resource Skus.
+     * Get the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource Skus.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class ResourceSkusResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to
-     * fetch the next page of Resource Skus.
+     * Set the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource Skus.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ResourceSkusResult object itself.

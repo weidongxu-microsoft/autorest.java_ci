@@ -40,37 +40,28 @@ public interface ImmutabilityPolicy {
     String etag();
 
     /**
-     * Gets the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in the container
-     * since the policy creation, in days.
+     * Gets the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in the container since the policy creation, in days.
      * 
      * @return the immutabilityPeriodSinceCreationInDays value.
      */
     Integer immutabilityPeriodSinceCreationInDays();
 
     /**
-     * Gets the state property: The ImmutabilityPolicy state of a blob container, possible values include: Locked and
-     * Unlocked.
+     * Gets the state property: The ImmutabilityPolicy state of a blob container, possible values include: Locked and Unlocked.
      * 
      * @return the state value.
      */
     ImmutabilityPolicyState state();
 
     /**
-     * Gets the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention
-     * policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and
-     * compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property
-     * cannot be changed with ExtendImmutabilityPolicy API.
+     * Gets the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
      * 
      * @return the allowProtectedAppendWrites value.
      */
     Boolean allowProtectedAppendWrites();
 
     /**
-     * Gets the allowProtectedAppendWritesAll property: This property can only be changed for unlocked time-based
-     * retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
-     * immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified
-     * or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites'
-     * and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+     * Gets the allowProtectedAppendWritesAll property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
      * 
      * @return the allowProtectedAppendWritesAll value.
      */
@@ -114,21 +105,16 @@ public interface ImmutabilityPolicy {
             /**
              * Specifies resourceGroupName, accountName, containerName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account
-             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-             * @param containerName The name of the blob container within the specified storage account. Blob container
-             * names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
-             * only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param containerName The name of the blob container within the specified storage account. Blob container names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
              * @return the next definition stage.
              */
             WithCreate withExistingContainer(String resourceGroupName, String accountName, String containerName);
         }
 
         /**
-         * The stage of the ImmutabilityPolicy definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ImmutabilityPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithImmutabilityPeriodSinceCreationInDays,
             DefinitionStages.WithAllowProtectedAppendWrites, DefinitionStages.WithAllowProtectedAppendWritesAll,
@@ -154,11 +140,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithImmutabilityPeriodSinceCreationInDays {
             /**
-             * Specifies the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in
-             * the container since the policy creation, in days..
+             * Specifies the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in the container since the policy creation, in days..
              * 
-             * @param immutabilityPeriodSinceCreationInDays The immutability period for the blobs in the container since
-             * the policy creation, in days.
+             * @param immutabilityPeriodSinceCreationInDays The immutability period for the blobs in the container since the policy creation, in days.
              * @return the next definition stage.
              */
             WithCreate withImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays);
@@ -169,15 +153,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithAllowProtectedAppendWrites {
             /**
-             * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked
-             * time-based retention policies. When enabled, new blocks can be written to an append blob while
-             * maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks
-             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
+             * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
              * 
-             * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention
-             * policies. When enabled, new blocks can be written to an append blob while maintaining immutability
-             * protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or
-             * deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
              * @return the next definition stage.
              */
             WithCreate withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
@@ -188,17 +166,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithAllowProtectedAppendWritesAll {
             /**
-             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked
-             * time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs'
-             * while maintaining immutability protection and compliance. Only new blocks can be added and any existing
-             * blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
-             * The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
+             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
              * 
-             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention
-             * policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
-             * immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be
-             * modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The
-             * 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
              * @return the next definition stage.
              */
             WithCreate withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
@@ -209,13 +179,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A
-             * value of "*" can be used to apply the operation only if the immutability policy already exists. If
-             * omitted, this operation will always be applied..
+             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A value of "*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied..
              * 
-             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can
-             * be used to apply the operation only if the immutability policy already exists. If omitted, this operation
-             * will always be applied.
+             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -260,11 +226,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithImmutabilityPeriodSinceCreationInDays {
             /**
-             * Specifies the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in
-             * the container since the policy creation, in days..
+             * Specifies the immutabilityPeriodSinceCreationInDays property: The immutability period for the blobs in the container since the policy creation, in days..
              * 
-             * @param immutabilityPeriodSinceCreationInDays The immutability period for the blobs in the container since
-             * the policy creation, in days.
+             * @param immutabilityPeriodSinceCreationInDays The immutability period for the blobs in the container since the policy creation, in days.
              * @return the next definition stage.
              */
             Update withImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays);
@@ -275,15 +239,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithAllowProtectedAppendWrites {
             /**
-             * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked
-             * time-based retention policies. When enabled, new blocks can be written to an append blob while
-             * maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks
-             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
+             * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
              * 
-             * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention
-             * policies. When enabled, new blocks can be written to an append blob while maintaining immutability
-             * protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or
-             * deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
              * @return the next definition stage.
              */
             Update withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
@@ -294,17 +252,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithAllowProtectedAppendWritesAll {
             /**
-             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked
-             * time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs'
-             * while maintaining immutability protection and compliance. Only new blocks can be added and any existing
-             * blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
-             * The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
+             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
              * 
-             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention
-             * policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
-             * immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be
-             * modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The
-             * 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
              * @return the next definition stage.
              */
             Update withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
@@ -315,13 +265,9 @@ public interface ImmutabilityPolicy {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A
-             * value of "*" can be used to apply the operation only if the immutability policy already exists. If
-             * omitted, this operation will always be applied..
+             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A value of "*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied..
              * 
-             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can
-             * be used to apply the operation only if the immutability policy already exists. If omitted, this operation
-             * will always be applied.
+             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

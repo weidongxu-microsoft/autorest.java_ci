@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StorageQueueEventSubscriptionDestinationProperties {
     /*
-     * The Azure Resource ID of the storage account that contains the queue that is the destination of an event
-     * subscription.
+     * The Azure Resource ID of the storage account that contains the queue that is the destination of an event subscription.
      */
     @JsonProperty(value = "resourceId")
     private String resourceId;
@@ -26,8 +25,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     private String queueName;
 
     /*
-     * Storage queue message time to live in seconds. This value cannot be zero or negative with the exception of using
-     * -1 to indicate that the Time To Live of the message is Infinite.
+     * Storage queue message time to live in seconds. This value cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is Infinite.
      */
     @JsonProperty(value = "queueMessageTimeToLiveInSeconds")
     private Long queueMessageTimeToLiveInSeconds;
@@ -39,8 +37,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the resourceId property: The Azure Resource ID of the storage account that contains the queue that is the
-     * destination of an event subscription.
+     * Get the resourceId property: The Azure Resource ID of the storage account that contains the queue that is the destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -49,8 +46,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the resourceId property: The Azure Resource ID of the storage account that contains the queue that is the
-     * destination of an event subscription.
+     * Set the resourceId property: The Azure Resource ID of the storage account that contains the queue that is the destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the StorageQueueEventSubscriptionDestinationProperties object itself.
@@ -61,8 +57,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the queueName property: The name of the Storage queue under a storage account that is the destination of an
-     * event subscription.
+     * Get the queueName property: The name of the Storage queue under a storage account that is the destination of an event subscription.
      * 
      * @return the queueName value.
      */
@@ -71,8 +66,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the queueName property: The name of the Storage queue under a storage account that is the destination of an
-     * event subscription.
+     * Set the queueName property: The name of the Storage queue under a storage account that is the destination of an event subscription.
      * 
      * @param queueName the queueName value to set.
      * @return the StorageQueueEventSubscriptionDestinationProperties object itself.
@@ -83,9 +77,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
-     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
-     * Infinite.
+     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is Infinite.
      * 
      * @return the queueMessageTimeToLiveInSeconds value.
      */
@@ -94,9 +86,7 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
-     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
-     * Infinite.
+     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is Infinite.
      * 
      * @param queueMessageTimeToLiveInSeconds the queueMessageTimeToLiveInSeconds value to set.
      * @return the StorageQueueEventSubscriptionDestinationProperties object itself.

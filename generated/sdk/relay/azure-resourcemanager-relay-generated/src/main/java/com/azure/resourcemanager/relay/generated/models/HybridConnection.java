@@ -64,25 +64,21 @@ public interface HybridConnection {
     OffsetDateTime updatedAt();
 
     /**
-     * Gets the listenerCount property: The number of listeners for this hybrid connection. Note that min : 1 and max:25
-     * are supported.
+     * Gets the listenerCount property: The number of listeners for this hybrid connection. Note that min : 1 and max:25 are supported.
      * 
      * @return the listenerCount value.
      */
     Integer listenerCount();
 
     /**
-     * Gets the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid
-     * connection; otherwise, false.
+     * Gets the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid connection; otherwise, false.
      * 
      * @return the requiresClientAuthorization value.
      */
     Boolean requiresClientAuthorization();
 
     /**
-     * Gets the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the
-     * hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and
-     * their contact information. Also, user-defined configuration settings can be stored.
+     * Gets the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
      * 
      * @return the userMetadata value.
      */
@@ -148,8 +144,7 @@ public interface HybridConnection {
         }
 
         /**
-         * The stage of the HybridConnection definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the HybridConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithRequiresClientAuthorization, DefinitionStages.WithUserMetadata {
@@ -174,11 +169,9 @@ public interface HybridConnection {
          */
         interface WithRequiresClientAuthorization {
             /**
-             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for
-             * this hybrid connection; otherwise, false..
+             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid connection; otherwise, false..
              * 
-             * @param requiresClientAuthorization Returns true if client authorization is needed for this hybrid
-             * connection; otherwise, false.
+             * @param requiresClientAuthorization Returns true if client authorization is needed for this hybrid connection; otherwise, false.
              * @return the next definition stage.
              */
             WithCreate withRequiresClientAuthorization(Boolean requiresClientAuthorization);
@@ -189,13 +182,9 @@ public interface HybridConnection {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data
-             * for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list
-             * of teams and their contact information. Also, user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored..
              * 
-             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the hybrid
-             * connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and
-             * their contact information. Also, user-defined configuration settings can be stored.
+             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             WithCreate withUserMetadata(String userMetadata);
@@ -238,11 +227,9 @@ public interface HybridConnection {
          */
         interface WithRequiresClientAuthorization {
             /**
-             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for
-             * this hybrid connection; otherwise, false..
+             * Specifies the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid connection; otherwise, false..
              * 
-             * @param requiresClientAuthorization Returns true if client authorization is needed for this hybrid
-             * connection; otherwise, false.
+             * @param requiresClientAuthorization Returns true if client authorization is needed for this hybrid connection; otherwise, false.
              * @return the next definition stage.
              */
             Update withRequiresClientAuthorization(Boolean requiresClientAuthorization);
@@ -253,13 +240,9 @@ public interface HybridConnection {
          */
         interface WithUserMetadata {
             /**
-             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data
-             * for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list
-             * of teams and their contact information. Also, user-defined configuration settings can be stored..
+             * Specifies the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored..
              * 
-             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the hybrid
-             * connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and
-             * their contact information. Also, user-defined configuration settings can be stored.
+             * @param userMetadata The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
              * @return the next definition stage.
              */
             Update withUserMetadata(String userMetadata);

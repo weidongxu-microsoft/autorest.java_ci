@@ -139,14 +139,16 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy create() {
-        this.innerObject = serviceManager.serviceClient().getPolicies().createOrUpdate(resourceGroupName, policyName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .createOrUpdate(resourceGroupName, policyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public WebApplicationFirewallPolicy create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicies().createOrUpdate(resourceGroupName, policyName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .createOrUpdate(resourceGroupName, policyName, this.innerModel(), context);
         return this;
     }
 
@@ -163,14 +165,16 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy apply() {
-        this.innerObject = serviceManager.serviceClient().getPolicies().update(resourceGroupName, policyName,
-            updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .update(resourceGroupName, policyName, updateParameters, Context.NONE);
         return this;
     }
 
     public WebApplicationFirewallPolicy apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicies().update(resourceGroupName, policyName,
-            updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .update(resourceGroupName, policyName, updateParameters, context);
         return this;
     }
 
@@ -184,14 +188,18 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy refresh() {
-        this.innerObject = serviceManager.serviceClient().getPolicies()
-            .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPolicies()
-            .getByResourceGroupWithResponse(resourceGroupName, policyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, context)
+            .getValue();
         return this;
     }
 

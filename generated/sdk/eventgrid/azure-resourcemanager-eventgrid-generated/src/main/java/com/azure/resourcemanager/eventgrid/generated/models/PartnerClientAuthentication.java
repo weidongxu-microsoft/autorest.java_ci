@@ -5,7 +5,9 @@
 package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -14,17 +16,46 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "clientAuthenticationType",
-    defaultImpl = PartnerClientAuthentication.class)
+    defaultImpl = PartnerClientAuthentication.class,
+    visible = true)
 @JsonTypeName("PartnerClientAuthentication")
 @JsonSubTypes({ @JsonSubTypes.Type(name = "AzureAD", value = AzureADPartnerClientAuthentication.class) })
 @Immutable
 public class PartnerClientAuthentication {
+    /*
+     * Type of client authentication
+     */
+    @JsonTypeId
+    @JsonProperty(value = "clientAuthenticationType", required = true)
+    private PartnerClientAuthenticationType clientAuthenticationType;
+
     /**
      * Creates an instance of PartnerClientAuthentication class.
      */
     public PartnerClientAuthentication() {
+        this.clientAuthenticationType = PartnerClientAuthenticationType.fromString("PartnerClientAuthentication");
+    }
+
+    /**
+     * Get the clientAuthenticationType property: Type of client authentication.
+     * 
+     * @return the clientAuthenticationType value.
+     */
+    public PartnerClientAuthenticationType clientAuthenticationType() {
+        return this.clientAuthenticationType;
+    }
+
+    /**
+     * Set the clientAuthenticationType property: Type of client authentication.
+     * 
+     * @param clientAuthenticationType the clientAuthenticationType value to set.
+     * @return the PartnerClientAuthentication object itself.
+     */
+    protected PartnerClientAuthentication
+        withClientAuthenticationType(PartnerClientAuthenticationType clientAuthenticationType) {
+        this.clientAuthenticationType = clientAuthenticationType;
+        return this;
     }
 
     /**

@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class OutboundEnvironmentEndpointInner {
     /*
-     * The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure
-     * Active Directory.
+     * The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      */
     @JsonProperty(value = "category")
     private String category;
@@ -34,8 +33,7 @@ public final class OutboundEnvironmentEndpointInner {
     }
 
     /**
-     * Get the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Get the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @return the category value.
      */
@@ -44,8 +42,7 @@ public final class OutboundEnvironmentEndpointInner {
     }
 
     /**
-     * Set the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
-     * Azure SQL Database, and Azure Active Directory.
+     * Set the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
      * 
      * @param category the category value to set.
      * @return the OutboundEnvironmentEndpointInner object itself.

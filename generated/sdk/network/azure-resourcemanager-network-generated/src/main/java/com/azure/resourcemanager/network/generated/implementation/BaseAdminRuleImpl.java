@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.network.generated.fluent.models.BaseAdminRuleInner;
+import com.azure.resourcemanager.network.generated.models.AdminRuleKind;
 import com.azure.resourcemanager.network.generated.models.BaseAdminRule;
 
 public final class BaseAdminRuleImpl implements BaseAdminRule {
@@ -33,6 +34,10 @@ public final class BaseAdminRuleImpl implements BaseAdminRule {
 
     public String etag() {
         return this.innerModel().etag();
+    }
+
+    public AdminRuleKind kind() {
+        return this.innerModel().kind();
     }
 
     public SystemData systemData() {

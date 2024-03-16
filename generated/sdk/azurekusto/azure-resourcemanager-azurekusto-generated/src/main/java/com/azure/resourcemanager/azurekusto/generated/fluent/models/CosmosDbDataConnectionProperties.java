@@ -28,8 +28,7 @@ public final class CosmosDbDataConnectionProperties {
     private String mappingRuleName;
 
     /*
-     * The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos
-     * DB.
+     * The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
      */
     @JsonProperty(value = "managedIdentityResourceId", required = true)
     private String managedIdentityResourceId;
@@ -59,8 +58,7 @@ public final class CosmosDbDataConnectionProperties {
     private String cosmosDbContainer;
 
     /*
-     * Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified
-     * retrieval start date.
+     * Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
      */
     @JsonProperty(value = "retrievalStartDate")
     private OffsetDateTime retrievalStartDate;
@@ -78,8 +76,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Get the tableName property: The case-sensitive name of the existing target table in your cluster. Retrieved data
-     * is ingested into this table.
+     * Get the tableName property: The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table.
      * 
      * @return the tableName value.
      */
@@ -88,8 +85,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Set the tableName property: The case-sensitive name of the existing target table in your cluster. Retrieved data
-     * is ingested into this table.
+     * Set the tableName property: The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table.
      * 
      * @param tableName the tableName value to set.
      * @return the CosmosDbDataConnectionProperties object itself.
@@ -120,8 +116,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed system or user-assigned identity. The
-     * identity is used to authenticate with Cosmos DB.
+     * Get the managedIdentityResourceId property: The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
      * 
      * @return the managedIdentityResourceId value.
      */
@@ -130,8 +125,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed system or user-assigned identity. The
-     * identity is used to authenticate with Cosmos DB.
+     * Set the managedIdentityResourceId property: The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
      * 
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the CosmosDbDataConnectionProperties object itself.
@@ -151,8 +145,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Get the cosmosDbAccountResourceId property: The resource ID of the Cosmos DB account used to create the data
-     * connection.
+     * Get the cosmosDbAccountResourceId property: The resource ID of the Cosmos DB account used to create the data connection.
      * 
      * @return the cosmosDbAccountResourceId value.
      */
@@ -161,8 +154,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Set the cosmosDbAccountResourceId property: The resource ID of the Cosmos DB account used to create the data
-     * connection.
+     * Set the cosmosDbAccountResourceId property: The resource ID of the Cosmos DB account used to create the data connection.
      * 
      * @param cosmosDbAccountResourceId the cosmosDbAccountResourceId value to set.
      * @return the CosmosDbDataConnectionProperties object itself.
@@ -213,8 +205,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Get the retrievalStartDate property: Optional. If defined, the data connection retrieves Cosmos DB documents
-     * created or updated after the specified retrieval start date.
+     * Get the retrievalStartDate property: Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
      * 
      * @return the retrievalStartDate value.
      */
@@ -223,8 +214,7 @@ public final class CosmosDbDataConnectionProperties {
     }
 
     /**
-     * Set the retrievalStartDate property: Optional. If defined, the data connection retrieves Cosmos DB documents
-     * created or updated after the specified retrieval start date.
+     * Set the retrievalStartDate property: Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
      * 
      * @param retrievalStartDate the retrievalStartDate value to set.
      * @return the CosmosDbDataConnectionProperties object itself.

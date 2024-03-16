@@ -33,8 +33,7 @@ public final class PartnerTopicInfo {
     private String name;
 
     /*
-     * Event Type Information for the partner topic. This information is provided by the publisher and can be used by
-     * the
+     * Event Type Information for the partner topic. This information is provided by the publisher and can be used by the 
      * subscriber to view different types of events that are published.
      */
     @JsonProperty(value = "eventTypeInfo")
@@ -55,8 +54,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner topic associated with
-     * the channel will be
+     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner topic associated with the channel will be
      * created under this Azure subscription.
      * 
      * @return the azureSubscriptionId value.
@@ -66,8 +64,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner topic associated with
-     * the channel will be
+     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner topic associated with the channel will be
      * created under this Azure subscription.
      * 
      * @param azureSubscriptionId the azureSubscriptionId value to set.
@@ -79,8 +76,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner topic associated with the
-     * channel will be
+     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner topic associated with the channel will be
      * created under this resource group.
      * 
      * @return the resourceGroupName value.
@@ -90,8 +86,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner topic associated with the
-     * channel will be
+     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner topic associated with the channel will be
      * created under this resource group.
      * 
      * @param resourceGroupName the resourceGroupName value to set.
@@ -123,8 +118,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Get the eventTypeInfo property: Event Type Information for the partner topic. This information is provided by the
-     * publisher and can be used by the
+     * Get the eventTypeInfo property: Event Type Information for the partner topic. This information is provided by the publisher and can be used by the 
      * subscriber to view different types of events that are published.
      * 
      * @return the eventTypeInfo value.
@@ -134,8 +128,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Set the eventTypeInfo property: Event Type Information for the partner topic. This information is provided by the
-     * publisher and can be used by the
+     * Set the eventTypeInfo property: Event Type Information for the partner topic. This information is provided by the publisher and can be used by the 
      * subscriber to view different types of events that are published.
      * 
      * @param eventTypeInfo the eventTypeInfo value to set.
@@ -147,8 +140,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Get the source property: The source information is provided by the publisher to determine the scope or context
-     * from which the events
+     * Get the source property: The source information is provided by the publisher to determine the scope or context from which the events
      * are originating. This information can be used by the subscriber during the approval process of the
      * created partner topic.
      * 
@@ -159,8 +151,7 @@ public final class PartnerTopicInfo {
     }
 
     /**
-     * Set the source property: The source information is provided by the publisher to determine the scope or context
-     * from which the events
+     * Set the source property: The source information is provided by the publisher to determine the scope or context from which the events
      * are originating. This information can be used by the subscriber during the approval process of the
      * created partner topic.
      * 

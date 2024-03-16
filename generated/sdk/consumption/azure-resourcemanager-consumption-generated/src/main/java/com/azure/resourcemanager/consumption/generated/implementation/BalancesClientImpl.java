@@ -50,8 +50,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientBalances to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientBalances to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -75,15 +74,13 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BalanceInner>> getByBillingAccountWithResponseAsync(String billingAccountId) {
@@ -103,16 +100,14 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BalanceInner>> getByBillingAccountWithResponseAsync(String billingAccountId,
@@ -132,8 +127,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -147,8 +141,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
@@ -163,8 +156,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -178,16 +170,14 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(String billingAccountId,
@@ -212,8 +202,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
@@ -221,8 +210,7 @@ public final class BalancesClientImpl implements BalancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(String billingAccountId,
@@ -246,8 +234,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
@@ -264,8 +251,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
@@ -283,8 +269,7 @@ public final class BalancesClientImpl implements BalancesClient {
     }
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.

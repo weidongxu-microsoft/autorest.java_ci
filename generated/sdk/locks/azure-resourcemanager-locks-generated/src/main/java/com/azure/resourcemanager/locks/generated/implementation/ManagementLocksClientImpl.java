@@ -59,8 +59,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     }
 
     /**
-     * The interface defining all the services for ManagementLockClientManagementLocks to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ManagementLockClientManagementLocks to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ManagementLockClient")
@@ -259,13 +258,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource group level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group to lock.
-     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
-     * &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -306,13 +302,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource group level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group to lock.
-     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
-     * &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -352,13 +345,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource group level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group to lock.
-     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
-     * &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -375,13 +365,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource group level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group to lock.
-     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
-     * &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -399,13 +386,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource group level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group to lock.
-     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
-     * &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -422,8 +406,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -458,8 +441,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -494,8 +476,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -512,8 +493,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -531,8 +511,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -553,8 +532,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a management lock at the resource group level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -590,8 +568,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a management lock at the resource group level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -668,11 +645,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -708,11 +681,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @param context The context to associate with this operation.
@@ -748,11 +717,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -770,11 +735,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @param context The context to associate with this operation.
@@ -792,11 +753,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1018,18 +975,15 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a  management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1084,18 +1038,15 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a  management lock.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1150,18 +1101,15 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a  management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1179,18 +1127,15 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a  management lock.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1208,18 +1153,15 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a  management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1236,8 +1178,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -1293,8 +1234,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -1350,8 +1290,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -1374,8 +1313,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -1399,8 +1337,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -1431,8 +1368,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the management lock of a resource or any level below resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getAtResourceLevelWithResponseAsync(String resourceGroupName,
@@ -1488,8 +1424,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the management lock of a resource or any level below resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getAtResourceLevelWithResponseAsync(String resourceGroupName,
@@ -1600,12 +1535,9 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1641,12 +1573,9 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1682,12 +1611,9 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1704,12 +1630,9 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1726,12 +1649,9 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1747,8 +1667,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1778,8 +1697,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @param context The context to associate with this operation.
@@ -1809,8 +1727,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1826,8 +1743,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @param context The context to associate with this operation.
@@ -1844,8 +1760,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1864,8 +1779,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a management lock at the subscription level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getAtSubscriptionLevelWithResponseAsync(String lockName) {
@@ -1895,8 +1809,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a management lock at the subscription level along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementLockObjectInner>> getAtSubscriptionLevelWithResponseAsync(String lockName,
@@ -1969,8 +1882,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all the management locks for a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -2005,8 +1917,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all the management locks for a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -2117,8 +2028,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2127,8 +2037,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return all the management locks for a resource or any level below resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listAtResourceLevelSinglePageAsync(String resourceGroupName,
@@ -2173,8 +2082,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2184,8 +2092,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return all the management locks for a resource or any level below resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listAtResourceLevelSinglePageAsync(String resourceGroupName,
@@ -2230,8 +2137,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2240,8 +2146,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with
-     * {@link PagedFlux}.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(String resourceGroupName,
@@ -2255,8 +2160,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2264,8 +2168,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with
-     * {@link PagedFlux}.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(String resourceGroupName,
@@ -2279,8 +2182,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2290,8 +2192,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with
-     * {@link PagedFlux}.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(String resourceGroupName,
@@ -2306,8 +2207,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2315,8 +2215,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with
-     * {@link PagedIterable}.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listAtResourceLevel(String resourceGroupName,
@@ -2329,8 +2228,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -2340,8 +2238,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with
-     * {@link PagedIterable}.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listAtResourceLevel(String resourceGroupName,
@@ -2358,8 +2255,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the management locks for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listSinglePageAsync(String filter) {
@@ -2388,8 +2284,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the management locks for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listSinglePageAsync(String filter, Context context) {
@@ -2486,17 +2381,12 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param filter The filter to apply on the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the management locks for a scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listByScopeSinglePageAsync(String scope, String filter) {
@@ -2519,18 +2409,13 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param filter The filter to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the management locks for a scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagementLockObjectInner>> listByScopeSinglePageAsync(String scope, String filter,
@@ -2553,11 +2438,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param filter The filter to apply on the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2573,11 +2454,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2593,11 +2470,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param filter The filter to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2614,11 +2487,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2633,11 +2502,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     * '/subscriptions/{subscriptionId}' for subscriptions,
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     * for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
      * @param filter The filter to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

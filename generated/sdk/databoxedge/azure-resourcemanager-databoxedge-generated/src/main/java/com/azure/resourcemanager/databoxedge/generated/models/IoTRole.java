@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Compute role.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = IoTRole.class, visible = true)
 @JsonTypeName("IOT")
 @Fluent
 public final class IoTRole extends RoleInner {
@@ -29,6 +29,7 @@ public final class IoTRole extends RoleInner {
      * Creates an instance of IoTRole class.
      */
     public IoTRole() {
+        withKind(RoleTypes.IOT);
     }
 
     /**

@@ -20,8 +20,7 @@ public final class VmImagesInEdgeZoneListResultInner {
     private List<VirtualMachineImageResourceInner> value;
 
     /*
-     * The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI to fetch the next page of
-     * VmImages.
+     * The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI to fetch the next page of VmImages.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -53,8 +52,7 @@ public final class VmImagesInEdgeZoneListResultInner {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI
-     * to fetch the next page of VmImages.
+     * Get the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI to fetch the next page of VmImages.
      * 
      * @return the nextLink value.
      */
@@ -63,8 +61,7 @@ public final class VmImagesInEdgeZoneListResultInner {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI
-     * to fetch the next page of VmImages.
+     * Set the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI to fetch the next page of VmImages.
      * 
      * @param nextLink the nextLink value to set.
      * @return the VmImagesInEdgeZoneListResultInner object itself.

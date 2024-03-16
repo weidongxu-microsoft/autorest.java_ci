@@ -66,8 +66,7 @@ public interface ExpressRoutePort {
     String id();
 
     /**
-     * Gets the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to
-     * physically.
+     * Gets the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to physically.
      * 
      * @return the peeringLocation value.
      */
@@ -125,8 +124,7 @@ public interface ExpressRoutePort {
     List<ExpressRouteLink> links();
 
     /**
-     * Gets the circuits property: Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort
-     * resource.
+     * Gets the circuits property: Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort resource.
      * 
      * @return the circuits value.
      */
@@ -233,8 +231,7 @@ public interface ExpressRoutePort {
         }
 
         /**
-         * The stage of the ExpressRoutePort definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRoutePort definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithPeeringLocation, DefinitionStages.WithBandwidthInGbps,
@@ -286,11 +283,9 @@ public interface ExpressRoutePort {
          */
         interface WithPeeringLocation {
             /**
-             * Specifies the peeringLocation property: The name of the peering location that the ExpressRoutePort is
-             * mapped to physically..
+             * Specifies the peeringLocation property: The name of the peering location that the ExpressRoutePort is mapped to physically..
              * 
-             * @param peeringLocation The name of the peering location that the ExpressRoutePort is mapped to
-             * physically.
+             * @param peeringLocation The name of the peering location that the ExpressRoutePort is mapped to physically.
              * @return the next definition stage.
              */
             WithCreate withPeeringLocation(String peeringLocation);

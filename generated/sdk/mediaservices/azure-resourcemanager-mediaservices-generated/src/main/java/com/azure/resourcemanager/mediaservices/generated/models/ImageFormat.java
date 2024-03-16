@@ -12,11 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Describes the properties for an output image file.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = ImageFormat.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = ImageFormat.class, visible = true)
 @JsonTypeName("#Microsoft.Media.ImageFormat")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JpgFormat", value = JpgFormat.class),
@@ -27,6 +23,7 @@ public class ImageFormat extends Format {
      * Creates an instance of ImageFormat class.
      */
     public ImageFormat() {
+        withOdataType("#Microsoft.Media.ImageFormat");
     }
 
     /**

@@ -59,8 +59,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientBackupAndExports to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientBackupAndExports to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -94,8 +93,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName, String serverName,
@@ -120,7 +118,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.create(this.client.getEndpoint(), apiVersion,
@@ -138,8 +136,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName, String serverName,
@@ -164,7 +161,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.create(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
@@ -329,8 +326,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateBackupResponseInner>> validateBackupWithResponseAsync(String resourceGroupName,
@@ -350,7 +346,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.validateBackup(this.client.getEndpoint(), apiVersion,
@@ -367,8 +363,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateBackupResponseInner>> validateBackupWithResponseAsync(String resourceGroupName,
@@ -388,7 +383,7 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.validateBackup(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),

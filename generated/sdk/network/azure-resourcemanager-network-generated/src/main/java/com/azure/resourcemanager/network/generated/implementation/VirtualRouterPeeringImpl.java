@@ -68,14 +68,16 @@ public final class VirtualRouterPeeringImpl
     }
 
     public VirtualRouterPeering create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings().createOrUpdate(resourceGroupName,
-            virtualRouterName, peeringName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualRouterPeering create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings().createOrUpdate(resourceGroupName,
-            virtualRouterName, peeringName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), context);
         return this;
     }
 
@@ -90,14 +92,16 @@ public final class VirtualRouterPeeringImpl
     }
 
     public VirtualRouterPeering apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings().createOrUpdate(resourceGroupName,
-            virtualRouterName, peeringName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualRouterPeering apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings().createOrUpdate(resourceGroupName,
-            virtualRouterName, peeringName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), context);
         return this;
     }
 
@@ -111,14 +115,18 @@ public final class VirtualRouterPeeringImpl
     }
 
     public VirtualRouterPeering refresh() {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings()
-            .getWithResponse(resourceGroupName, virtualRouterName, peeringName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .getWithResponse(resourceGroupName, virtualRouterName, peeringName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualRouterPeering refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualRouterPeerings()
-            .getWithResponse(resourceGroupName, virtualRouterName, peeringName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualRouterPeerings()
+            .getWithResponse(resourceGroupName, virtualRouterName, peeringName, context)
+            .getValue();
         return this;
     }
 

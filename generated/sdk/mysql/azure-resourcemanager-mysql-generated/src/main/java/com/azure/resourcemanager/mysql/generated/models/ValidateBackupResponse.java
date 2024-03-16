@@ -11,8 +11,7 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.ValidateBackupRes
  */
 public interface ValidateBackupResponse {
     /**
-     * Gets the numberOfContainers property: Estimated no of storage containers required for resource data to be backed
-     * up.
+     * Gets the numberOfContainers property: Estimated no of storage containers required for resource data to be backed up.
      * 
      * @return the numberOfContainers value.
      */

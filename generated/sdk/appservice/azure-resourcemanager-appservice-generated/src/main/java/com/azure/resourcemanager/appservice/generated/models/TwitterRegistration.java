@@ -58,8 +58,7 @@ public final class TwitterRegistration {
     }
 
     /**
-     * Get the consumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of
-     * the Twitter
+     * Get the consumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of the Twitter
      * application used for sign-in.
      * 
      * @return the consumerSecretSettingName value.
@@ -69,8 +68,7 @@ public final class TwitterRegistration {
     }
 
     /**
-     * Set the consumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of
-     * the Twitter
+     * Set the consumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of the Twitter
      * application used for sign-in.
      * 
      * @param consumerSecretSettingName the consumerSecretSettingName value to set.

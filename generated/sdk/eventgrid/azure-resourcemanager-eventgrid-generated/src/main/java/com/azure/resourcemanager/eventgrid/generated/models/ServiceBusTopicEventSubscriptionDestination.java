@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the service bus topic destination for an event subscription.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = ServiceBusTopicEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("ServiceBusTopic")
 @Fluent
 public final class ServiceBusTopicEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -28,6 +32,7 @@ public final class ServiceBusTopicEventSubscriptionDestination extends EventSubs
      * Creates an instance of ServiceBusTopicEventSubscriptionDestination class.
      */
     public ServiceBusTopicEventSubscriptionDestination() {
+        withEndpointType(EndpointType.SERVICE_BUS_TOPIC);
     }
 
     /**
@@ -40,8 +45,7 @@ public final class ServiceBusTopicEventSubscriptionDestination extends EventSubs
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of the Service Bus Topic
-     * destination of an event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of the Service Bus Topic destination of an event subscription.
      * 
      * @return the resourceId value.
      */
@@ -50,8 +54,7 @@ public final class ServiceBusTopicEventSubscriptionDestination extends EventSubs
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of the Service Bus Topic
-     * destination of an event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of the Service Bus Topic destination of an event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the ServiceBusTopicEventSubscriptionDestination object itself.

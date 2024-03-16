@@ -32,8 +32,7 @@ public final class ApplicationGatewayOnDemandProbe {
     private String path;
 
     /*
-     * The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period.
-     * Acceptable values are from 1 second to 86400 seconds.
+     * The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are from 1 second to 86400 seconds.
      */
     @JsonProperty(value = "timeout")
     private Integer timeout;
@@ -109,8 +108,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Get the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
-     * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
+     * Get the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
      * 
      * @return the path value.
      */
@@ -119,8 +117,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Set the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
-     * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
+     * Set the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
      * 
      * @param path the path value to set.
      * @return the ApplicationGatewayOnDemandProbe object itself.
@@ -131,8 +128,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Get the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
-     * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
+     * Get the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @return the timeout value.
      */
@@ -141,8 +137,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Set the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
-     * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
+     * Set the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @param timeout the timeout value to set.
      * @return the ApplicationGatewayOnDemandProbe object itself.
@@ -153,8 +148,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Get the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
-     * http settings. Default value is false.
+     * Get the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend http settings. Default value is false.
      * 
      * @return the pickHostnameFromBackendHttpSettings value.
      */
@@ -163,8 +157,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Set the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
-     * http settings. Default value is false.
+     * Set the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend http settings. Default value is false.
      * 
      * @param pickHostnameFromBackendHttpSettings the pickHostnameFromBackendHttpSettings value to set.
      * @return the ApplicationGatewayOnDemandProbe object itself.
@@ -196,8 +189,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Get the backendAddressPool property: Reference to backend pool of application gateway to which probe request will
-     * be sent.
+     * Get the backendAddressPool property: Reference to backend pool of application gateway to which probe request will be sent.
      * 
      * @return the backendAddressPool value.
      */
@@ -206,8 +198,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Set the backendAddressPool property: Reference to backend pool of application gateway to which probe request will
-     * be sent.
+     * Set the backendAddressPool property: Reference to backend pool of application gateway to which probe request will be sent.
      * 
      * @param backendAddressPool the backendAddressPool value to set.
      * @return the ApplicationGatewayOnDemandProbe object itself.
@@ -218,8 +209,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Get the backendHttpSettings property: Reference to backend http setting of application gateway to be used for
-     * test probe.
+     * Get the backendHttpSettings property: Reference to backend http setting of application gateway to be used for test probe.
      * 
      * @return the backendHttpSettings value.
      */
@@ -228,8 +218,7 @@ public final class ApplicationGatewayOnDemandProbe {
     }
 
     /**
-     * Set the backendHttpSettings property: Reference to backend http setting of application gateway to be used for
-     * test probe.
+     * Set the backendHttpSettings property: Reference to backend http setting of application gateway to be used for test probe.
      * 
      * @param backendHttpSettings the backendHttpSettings value to set.
      * @return the ApplicationGatewayOnDemandProbe object itself.

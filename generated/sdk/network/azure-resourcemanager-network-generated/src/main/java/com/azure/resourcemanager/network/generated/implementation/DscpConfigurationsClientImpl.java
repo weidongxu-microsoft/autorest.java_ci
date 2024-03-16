@@ -64,8 +64,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientDscpConfigurations to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientDscpConfigurations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -143,8 +142,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return differentiated Services Code Point configuration for any given network interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -188,8 +186,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return differentiated Services Code Point configuration for any given network interface along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -231,8 +228,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdateAsync(
@@ -254,8 +250,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdateAsync(
@@ -276,8 +271,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner>
@@ -295,8 +289,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     * network interface.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
@@ -314,8 +307,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface on successful completion
-     * of {@link Mono}.
+     * @return differentiated Services Code Point configuration for any given network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DscpConfigurationInner> createOrUpdateAsync(String resourceGroupName, String dscpConfigurationName,
@@ -334,8 +326,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface on successful completion
-     * of {@link Mono}.
+     * @return differentiated Services Code Point configuration for any given network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DscpConfigurationInner> createOrUpdateAsync(String resourceGroupName, String dscpConfigurationName,
@@ -842,8 +833,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all dscp configurations in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listSinglePageAsync() {
@@ -872,8 +862,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all dscp configurations in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listSinglePageAsync(Context context) {
@@ -955,8 +944,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listNextSinglePageAsync(String nextLink) {
@@ -984,8 +972,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1012,8 +999,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1042,8 +1028,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the DscpConfigurationList API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DscpConfigurationInner>> listAllNextSinglePageAsync(String nextLink, Context context) {

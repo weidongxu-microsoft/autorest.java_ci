@@ -38,8 +38,8 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
 
     public Response<PrivateDnsZoneGroup> getWithResponse(String resourceGroupName, String privateEndpointName,
         String privateDnsZoneGroupName, Context context) {
-        Response<PrivateDnsZoneGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            privateEndpointName, privateDnsZoneGroupName, context);
+        Response<PrivateDnsZoneGroupInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateDnsZoneGroupImpl(inner.getValue(), this.manager()));
@@ -61,8 +61,8 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
 
     public PrivateDnsZoneGroup createOrUpdate(String resourceGroupName, String privateEndpointName,
         String privateDnsZoneGroupName, PrivateDnsZoneGroupInner parameters) {
-        PrivateDnsZoneGroupInner inner = this.serviceClient().createOrUpdate(resourceGroupName, privateEndpointName,
-            privateDnsZoneGroupName, parameters);
+        PrivateDnsZoneGroupInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters);
         if (inner != null) {
             return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {
@@ -72,8 +72,8 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
 
     public PrivateDnsZoneGroup createOrUpdate(String resourceGroupName, String privateEndpointName,
         String privateDnsZoneGroupName, PrivateDnsZoneGroupInner parameters, Context context) {
-        PrivateDnsZoneGroupInner inner = this.serviceClient().createOrUpdate(resourceGroupName, privateEndpointName,
-            privateDnsZoneGroupName, parameters, context);
+        PrivateDnsZoneGroupInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters, context);
         if (inner != null) {
             return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {

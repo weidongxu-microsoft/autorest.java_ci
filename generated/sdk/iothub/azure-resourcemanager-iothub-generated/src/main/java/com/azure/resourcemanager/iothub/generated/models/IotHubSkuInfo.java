@@ -26,8 +26,7 @@ public final class IotHubSkuInfo {
     private IotHubSkuTier tier;
 
     /*
-     * The number of provisioned IoT Hub units. See:
-     * https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+     * The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
      */
     @JsonProperty(value = "capacity")
     private Long capacity;
@@ -68,8 +67,7 @@ public final class IotHubSkuInfo {
     }
 
     /**
-     * Get the capacity property: The number of provisioned IoT Hub units. See:
-     * https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+     * Get the capacity property: The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
      * 
      * @return the capacity value.
      */
@@ -78,8 +76,7 @@ public final class IotHubSkuInfo {
     }
 
     /**
-     * Set the capacity property: The number of provisioned IoT Hub units. See:
-     * https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+     * Set the capacity property: The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
      * 
      * @param capacity the capacity value to set.
      * @return the IotHubSkuInfo object itself.

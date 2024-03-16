@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated
- * in New API Version.
+ * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated in New API Version.
  */
 public enum EncodingCaptureDescription {
     /**

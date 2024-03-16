@@ -99,8 +99,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
 
     public Response<Void> deleteAtManagementGroupWithResponse(String policyDefinitionName, String managementGroupId,
         Context context) {
-        return this.serviceClient().deleteAtManagementGroupWithResponse(policyDefinitionName, managementGroupId,
-            context);
+        return this.serviceClient()
+            .deleteAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, context);
     }
 
     public void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId) {

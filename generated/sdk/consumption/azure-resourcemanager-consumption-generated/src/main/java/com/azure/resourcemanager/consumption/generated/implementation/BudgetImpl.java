@@ -94,14 +94,18 @@ public final class BudgetImpl implements Budget, Budget.Definition, Budget.Updat
     }
 
     public Budget create() {
-        this.innerObject = serviceManager.serviceClient().getBudgets()
-            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBudgets()
+            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Budget create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBudgets()
-            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBudgets()
+            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -116,14 +120,18 @@ public final class BudgetImpl implements Budget, Budget.Definition, Budget.Updat
     }
 
     public Budget apply() {
-        this.innerObject = serviceManager.serviceClient().getBudgets()
-            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBudgets()
+            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Budget apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBudgets()
-            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBudgets()
+            .createOrUpdateWithResponse(scope, budgetName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 

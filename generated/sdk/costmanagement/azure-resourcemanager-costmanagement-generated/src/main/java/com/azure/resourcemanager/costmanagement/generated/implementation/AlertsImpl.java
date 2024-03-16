@@ -90,8 +90,8 @@ public final class AlertsImpl implements Alerts {
 
     public Response<AlertsResult> listExternalWithResponse(ExternalCloudProviderType externalCloudProviderType,
         String externalCloudProviderId, Context context) {
-        Response<AlertsResultInner> inner = this.serviceClient().listExternalWithResponse(externalCloudProviderType,
-            externalCloudProviderId, context);
+        Response<AlertsResultInner> inner = this.serviceClient()
+            .listExternalWithResponse(externalCloudProviderType, externalCloudProviderId, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AlertsResultImpl(inner.getValue(), this.manager()));

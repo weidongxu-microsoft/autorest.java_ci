@@ -9,14 +9,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is
- * set to 'Microsoft.KeyVault'.
+ * The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
  */
 @Fluent
 public final class EncryptionScopeKeyVaultProperties {
     /*
-     * The object identifier for a key vault key object. When applied, the encryption scope will use the key referenced
-     * by the identifier to enable customer-managed key support on this encryption scope.
+     * The object identifier for a key vault key object. When applied, the encryption scope will use the key referenced by the identifier to enable customer-managed key support on this encryption scope.
      */
     @JsonProperty(value = "keyUri")
     private String keyUri;
@@ -40,8 +38,7 @@ public final class EncryptionScopeKeyVaultProperties {
     }
 
     /**
-     * Get the keyUri property: The object identifier for a key vault key object. When applied, the encryption scope
-     * will use the key referenced by the identifier to enable customer-managed key support on this encryption scope.
+     * Get the keyUri property: The object identifier for a key vault key object. When applied, the encryption scope will use the key referenced by the identifier to enable customer-managed key support on this encryption scope.
      * 
      * @return the keyUri value.
      */
@@ -50,8 +47,7 @@ public final class EncryptionScopeKeyVaultProperties {
     }
 
     /**
-     * Set the keyUri property: The object identifier for a key vault key object. When applied, the encryption scope
-     * will use the key referenced by the identifier to enable customer-managed key support on this encryption scope.
+     * Set the keyUri property: The object identifier for a key vault key object. When applied, the encryption scope will use the key referenced by the identifier to enable customer-managed key support on this encryption scope.
      * 
      * @param keyUri the keyUri value to set.
      * @return the EncryptionScopeKeyVaultProperties object itself.
@@ -62,8 +58,7 @@ public final class EncryptionScopeKeyVaultProperties {
     }
 
     /**
-     * Get the currentVersionedKeyIdentifier property: The object identifier of the current versioned Key Vault Key in
-     * use.
+     * Get the currentVersionedKeyIdentifier property: The object identifier of the current versioned Key Vault Key in use.
      * 
      * @return the currentVersionedKeyIdentifier value.
      */

@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class NetworkConfigurationDiagnosticParameters {
     /*
-     * The ID of the target resource to perform network configuration diagnostic. Valid options are VM,
-     * NetworkInterface, VMSS/NetworkInterface and Application Gateway.
+     * The ID of the target resource to perform network configuration diagnostic. Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
      */
     @JsonProperty(value = "targetResourceId", required = true)
     private String targetResourceId;
@@ -40,8 +39,7 @@ public final class NetworkConfigurationDiagnosticParameters {
     }
 
     /**
-     * Get the targetResourceId property: The ID of the target resource to perform network configuration diagnostic.
-     * Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
+     * Get the targetResourceId property: The ID of the target resource to perform network configuration diagnostic. Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
      * 
      * @return the targetResourceId value.
      */
@@ -50,8 +48,7 @@ public final class NetworkConfigurationDiagnosticParameters {
     }
 
     /**
-     * Set the targetResourceId property: The ID of the target resource to perform network configuration diagnostic.
-     * Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
+     * Set the targetResourceId property: The ID of the target resource to perform network configuration diagnostic. Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the NetworkConfigurationDiagnosticParameters object itself.

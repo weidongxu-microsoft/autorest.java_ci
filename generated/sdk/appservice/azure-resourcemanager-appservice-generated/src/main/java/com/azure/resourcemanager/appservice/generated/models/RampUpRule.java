@@ -8,8 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Routing rules for ramp up testing. This rule allows to redirect static traffic % to a slot or to gradually change
- * routing % based on performance.
+ * Routing rules for ramp up testing. This rule allows to redirect static traffic % to a slot or to gradually change routing % based on performance.
  */
 @Fluent
 public final class RampUpRule {
@@ -26,12 +25,9 @@ public final class RampUpRule {
     private Double reroutePercentage;
 
     /*
-     * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches
-     * \n<code>MinReroutePercentage</code> or
-     * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in
-     * <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm
-     * can be provided in TiPCallback site extension which URL can be specified in
-     * <code>ChangeDecisionCallbackUrl</code>.
+     * In auto ramp up scenario this is the step to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or 
+     * <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specified in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm 
+     * can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.
      */
     @JsonProperty(value = "changeStep")
     private Double changeStep;
@@ -55,16 +51,14 @@ public final class RampUpRule {
     private Double maxReroutePercentage;
 
     /*
-     * Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See
-     * TiPCallback site extension for the scaffold and contracts.
+     * Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.
      * https://www.siteextensions.net/packages/TiPCallback/
      */
     @JsonProperty(value = "changeDecisionCallbackUrl")
     private String changeDecisionCallbackUrl;
 
     /*
-     * Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in
-     * the experiment.
+     * Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment.
      */
     @JsonProperty(value = "name")
     private String name;
@@ -76,8 +70,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Get the actionHostname property: Hostname of a slot to which the traffic will be redirected if decided to. E.g.
-     * myapp-stage.azurewebsites.net.
+     * Get the actionHostname property: Hostname of a slot to which the traffic will be redirected if decided to. E.g. myapp-stage.azurewebsites.net.
      * 
      * @return the actionHostname value.
      */
@@ -86,8 +79,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Set the actionHostname property: Hostname of a slot to which the traffic will be redirected if decided to. E.g.
-     * myapp-stage.azurewebsites.net.
+     * Set the actionHostname property: Hostname of a slot to which the traffic will be redirected if decided to. E.g. myapp-stage.azurewebsites.net.
      * 
      * @param actionHostname the actionHostname value to set.
      * @return the RampUpRule object itself.
@@ -98,8 +90,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Get the reroutePercentage property: Percentage of the traffic which will be redirected to
-     * &lt;code&gt;ActionHostName&lt;/code&gt;.
+     * Get the reroutePercentage property: Percentage of the traffic which will be redirected to &lt;code&gt;ActionHostName&lt;/code&gt;.
      * 
      * @return the reroutePercentage value.
      */
@@ -108,8 +99,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Set the reroutePercentage property: Percentage of the traffic which will be redirected to
-     * &lt;code&gt;ActionHostName&lt;/code&gt;.
+     * Set the reroutePercentage property: Percentage of the traffic which will be redirected to &lt;code&gt;ActionHostName&lt;/code&gt;.
      * 
      * @param reroutePercentage the reroutePercentage value to set.
      * @return the RampUpRule object itself.
@@ -120,12 +110,9 @@ public final class RampUpRule {
     }
 
     /**
-     * Get the changeStep property: In auto ramp up scenario this is the step to add/remove from
-     * &lt;code&gt;ReroutePercentage&lt;/code&gt; until it reaches \n&lt;code&gt;MinReroutePercentage&lt;/code&gt; or
-     * &lt;code&gt;MaxReroutePercentage&lt;/code&gt;. Site metrics are checked every N minutes specified in
-     * &lt;code&gt;ChangeIntervalInMinutes&lt;/code&gt;.\nCustom decision algorithm
-     * can be provided in TiPCallback site extension which URL can be specified in
-     * &lt;code&gt;ChangeDecisionCallbackUrl&lt;/code&gt;.
+     * Get the changeStep property: In auto ramp up scenario this is the step to add/remove from &lt;code&gt;ReroutePercentage&lt;/code&gt; until it reaches \n&lt;code&gt;MinReroutePercentage&lt;/code&gt; or 
+     * &lt;code&gt;MaxReroutePercentage&lt;/code&gt;. Site metrics are checked every N minutes specified in &lt;code&gt;ChangeIntervalInMinutes&lt;/code&gt;.\nCustom decision algorithm 
+     * can be provided in TiPCallback site extension which URL can be specified in &lt;code&gt;ChangeDecisionCallbackUrl&lt;/code&gt;.
      * 
      * @return the changeStep value.
      */
@@ -134,12 +121,9 @@ public final class RampUpRule {
     }
 
     /**
-     * Set the changeStep property: In auto ramp up scenario this is the step to add/remove from
-     * &lt;code&gt;ReroutePercentage&lt;/code&gt; until it reaches \n&lt;code&gt;MinReroutePercentage&lt;/code&gt; or
-     * &lt;code&gt;MaxReroutePercentage&lt;/code&gt;. Site metrics are checked every N minutes specified in
-     * &lt;code&gt;ChangeIntervalInMinutes&lt;/code&gt;.\nCustom decision algorithm
-     * can be provided in TiPCallback site extension which URL can be specified in
-     * &lt;code&gt;ChangeDecisionCallbackUrl&lt;/code&gt;.
+     * Set the changeStep property: In auto ramp up scenario this is the step to add/remove from &lt;code&gt;ReroutePercentage&lt;/code&gt; until it reaches \n&lt;code&gt;MinReroutePercentage&lt;/code&gt; or 
+     * &lt;code&gt;MaxReroutePercentage&lt;/code&gt;. Site metrics are checked every N minutes specified in &lt;code&gt;ChangeIntervalInMinutes&lt;/code&gt;.\nCustom decision algorithm 
+     * can be provided in TiPCallback site extension which URL can be specified in &lt;code&gt;ChangeDecisionCallbackUrl&lt;/code&gt;.
      * 
      * @param changeStep the changeStep value to set.
      * @return the RampUpRule object itself.
@@ -210,8 +194,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Get the changeDecisionCallbackUrl property: Custom decision algorithm can be provided in TiPCallback site
-     * extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.
+     * Get the changeDecisionCallbackUrl property: Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.
      * https://www.siteextensions.net/packages/TiPCallback/.
      * 
      * @return the changeDecisionCallbackUrl value.
@@ -221,8 +204,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Set the changeDecisionCallbackUrl property: Custom decision algorithm can be provided in TiPCallback site
-     * extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.
+     * Set the changeDecisionCallbackUrl property: Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.
      * https://www.siteextensions.net/packages/TiPCallback/.
      * 
      * @param changeDecisionCallbackUrl the changeDecisionCallbackUrl value to set.
@@ -234,8 +216,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Get the name property: Name of the routing rule. The recommended name would be to point to the slot which will
-     * receive the traffic in the experiment.
+     * Get the name property: Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment.
      * 
      * @return the name value.
      */
@@ -244,8 +225,7 @@ public final class RampUpRule {
     }
 
     /**
-     * Set the name property: Name of the routing rule. The recommended name would be to point to the slot which will
-     * receive the traffic in the experiment.
+     * Set the name property: Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment.
      * 
      * @param name the name value to set.
      * @return the RampUpRule object itself.

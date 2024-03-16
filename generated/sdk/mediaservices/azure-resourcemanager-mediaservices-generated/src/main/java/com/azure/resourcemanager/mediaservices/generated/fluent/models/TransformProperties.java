@@ -76,8 +76,7 @@ public final class TransformProperties {
     }
 
     /**
-     * Get the lastModified property: The UTC date and time when the Transform was last updated, in
-     * 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Get the lastModified property: The UTC date and time when the Transform was last updated, in 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */

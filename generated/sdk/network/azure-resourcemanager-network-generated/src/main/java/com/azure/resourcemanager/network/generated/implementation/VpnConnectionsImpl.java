@@ -52,8 +52,8 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     public VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
         VpnConnectionInner vpnConnectionParameters) {
-        VpnConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, gatewayName, connectionName,
-            vpnConnectionParameters);
+        VpnConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters);
         if (inner != null) {
             return new VpnConnectionImpl(inner, this.manager());
         } else {
@@ -63,8 +63,8 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     public VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
         VpnConnectionInner vpnConnectionParameters, Context context) {
-        VpnConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, gatewayName, connectionName,
-            vpnConnectionParameters, context);
+        VpnConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters, context);
         if (inner != null) {
             return new VpnConnectionImpl(inner, this.manager());
         } else {
@@ -86,8 +86,8 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     public String startPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
         VpnConnectionPacketCaptureStartParameters parameters, Context context) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters,
-            context);
+        return this.serviceClient()
+            .startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters, context);
     }
 
     public String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName) {
@@ -96,8 +96,8 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     public String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
         VpnConnectionPacketCaptureStopParameters parameters, Context context) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters,
-            context);
+        return this.serviceClient()
+            .stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters, context);
     }
 
     public PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName) {

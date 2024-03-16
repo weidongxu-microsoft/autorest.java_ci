@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Describes what tool created this Application Insights component. Customers using this API should set this to the
- * default 'rest'.
+ * Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
  */
 public final class RequestSource extends ExpandableStringEnum<RequestSource> {
     /**

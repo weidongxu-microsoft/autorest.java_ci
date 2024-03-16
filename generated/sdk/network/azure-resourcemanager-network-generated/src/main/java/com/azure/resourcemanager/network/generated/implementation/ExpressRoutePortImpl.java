@@ -92,7 +92,8 @@ public final class ExpressRoutePortImpl
         List<ExpressRouteLinkInner> inner = this.innerModel().links();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ExpressRouteLinkImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -151,14 +152,16 @@ public final class ExpressRoutePortImpl
     }
 
     public ExpressRoutePort create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts().createOrUpdate(resourceGroupName,
-            expressRoutePortName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRoutePort create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts().createOrUpdate(resourceGroupName,
-            expressRoutePortName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, this.innerModel(), context);
         return this;
     }
 
@@ -174,14 +177,18 @@ public final class ExpressRoutePortImpl
     }
 
     public ExpressRoutePort apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts()
-            .updateTagsWithResponse(resourceGroupName, expressRoutePortName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .updateTagsWithResponse(resourceGroupName, expressRoutePortName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRoutePort apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts()
-            .updateTagsWithResponse(resourceGroupName, expressRoutePortName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .updateTagsWithResponse(resourceGroupName, expressRoutePortName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -194,14 +201,18 @@ public final class ExpressRoutePortImpl
     }
 
     public ExpressRoutePort refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts()
-            .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRoutePort refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRoutePorts()
-            .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRoutePorts()
+            .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context)
+            .getValue();
         return this;
     }
 

@@ -65,8 +65,7 @@ public interface Locations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription along with
-     * {@link Response}.
+     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link Response}.
      */
     Response<BillingResponseListResult> listBillingSpecsWithResponse(String location, Context context);
 

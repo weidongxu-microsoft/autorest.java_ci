@@ -41,8 +41,7 @@ public final class NetworkSecurityPerimeterConfigurationInner extends ProxyResou
     }
 
     /**
-     * Get the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp
-     * profile configuration retrieval.
+     * Get the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp profile configuration retrieval.
      * 
      * @return the provisioningState value.
      */
@@ -51,8 +50,7 @@ public final class NetworkSecurityPerimeterConfigurationInner extends ProxyResou
     }
 
     /**
-     * Set the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp
-     * profile configuration retrieval.
+     * Set the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp profile configuration retrieval.
      * 
      * @param provisioningState the provisioningState value to set.
      * @return the NetworkSecurityPerimeterConfigurationInner object itself.
@@ -67,8 +65,7 @@ public final class NetworkSecurityPerimeterConfigurationInner extends ProxyResou
     }
 
     /**
-     * Get the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp
-     * profile configuration.
+     * Get the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp profile configuration.
      * 
      * @return the provisioningIssues value.
      */
@@ -77,8 +74,7 @@ public final class NetworkSecurityPerimeterConfigurationInner extends ProxyResou
     }
 
     /**
-     * Set the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp
-     * profile configuration.
+     * Set the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp profile configuration.
      * 
      * @param provisioningIssues the provisioningIssues value to set.
      * @return the NetworkSecurityPerimeterConfigurationInner object itself.

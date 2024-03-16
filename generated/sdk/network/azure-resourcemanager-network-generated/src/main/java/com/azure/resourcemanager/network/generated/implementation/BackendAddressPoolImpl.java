@@ -66,9 +66,9 @@ public final class BackendAddressPoolImpl
     public List<NetworkInterfaceIpConfiguration> backendIpConfigurations() {
         List<NetworkInterfaceIpConfigurationInner> inner = this.innerModel().backendIpConfigurations();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -154,13 +154,16 @@ public final class BackendAddressPoolImpl
     }
 
     public BackendAddressPool create() {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools().createOrUpdate(
-            resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
+            .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public BackendAddressPool create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools()
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
             .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), context);
         return this;
     }
@@ -176,13 +179,16 @@ public final class BackendAddressPoolImpl
     }
 
     public BackendAddressPool apply() {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools().createOrUpdate(
-            resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
+            .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public BackendAddressPool apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools()
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
             .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), context);
         return this;
     }
@@ -198,14 +204,18 @@ public final class BackendAddressPoolImpl
     }
 
     public BackendAddressPool refresh() {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools()
-            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
+            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public BackendAddressPool refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getLoadBalancerBackendAddressPools()
-            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getLoadBalancerBackendAddressPools()
+            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context)
+            .getValue();
         return this;
     }
 

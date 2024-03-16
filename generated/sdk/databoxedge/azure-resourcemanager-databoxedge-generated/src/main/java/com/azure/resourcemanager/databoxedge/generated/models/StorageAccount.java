@@ -76,8 +76,7 @@ public interface StorageAccount {
     String blobEndpoint();
 
     /**
-     * Gets the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to
-     * Cloud.
+     * Gets the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
      * 
      * @return the containerCount value.
      */
@@ -142,8 +141,7 @@ public interface StorageAccount {
         }
 
         /**
-         * The stage of the StorageAccount definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StorageAccount definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithStorageAccountStatus,
             DefinitionStages.WithStorageAccountCredentialId {

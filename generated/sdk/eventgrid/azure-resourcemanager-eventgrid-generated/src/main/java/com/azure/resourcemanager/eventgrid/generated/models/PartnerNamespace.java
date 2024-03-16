@@ -73,8 +73,7 @@ public interface PartnerNamespace {
     PartnerNamespaceProvisioningState provisioningState();
 
     /**
-     * Gets the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration
-     * that should be associated with this partner namespace. This takes the following format:
+     * Gets the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration that should be associated with this partner namespace. This takes the following format:
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}.
      * 
      * @return the partnerRegistrationFullyQualifiedId value.
@@ -82,8 +81,7 @@ public interface PartnerNamespace {
     String partnerRegistrationFullyQualifiedId();
 
     /**
-     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
-     * partner namespace.
+     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this partner namespace.
      * 
      * @return the minimumTlsVersionAllowed value.
      */
@@ -97,38 +95,30 @@ public interface PartnerNamespace {
     String endpoint();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
-     * You can further restrict to specific IPs by configuring &lt;seealso
-     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules"
-     * /&gt;.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules" /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
-     * Note: These are considered only if PublicNetworkAccess is enabled.
+     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
     List<InboundIpRule> inboundIpRules();
 
     /**
-     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
-     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
-     * the partner namespace.
+     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the partner namespace.
      * 
      * @return the disableLocalAuth value.
      */
     Boolean disableLocalAuth();
 
     /**
-     * Gets the partnerTopicRoutingMode property: This determines if events published to this partner namespace should
-     * use the source attribute in the event payload
-     * or use the channel name in the header when matching to the partner topic. If none is specified, source attribute
-     * routing will be used to match the partner topic.
+     * Gets the partnerTopicRoutingMode property: This determines if events published to this partner namespace should use the source attribute in the event payload
+     * or use the channel name in the header when matching to the partner topic. If none is specified, source attribute routing will be used to match the partner topic.
      * 
      * @return the partnerTopicRoutingMode value.
      */
@@ -214,8 +204,7 @@ public interface PartnerNamespace {
         }
 
         /**
-         * The stage of the PartnerNamespace definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PartnerNamespace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags,
             DefinitionStages.WithPartnerRegistrationFullyQualifiedId, DefinitionStages.WithMinimumTlsVersionAllowed,
@@ -255,12 +244,10 @@ public interface PartnerNamespace {
          */
         interface WithPartnerRegistrationFullyQualifiedId {
             /**
-             * Specifies the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner
-             * registration that should be associated with this partner namespace. This takes the following format:
+             * Specifies the partnerRegistrationFullyQualifiedId property: The fully qualified ARM Id of the partner registration that should be associated with this partner namespace. This takes the following format:
              * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}..
              * 
-             * @param partnerRegistrationFullyQualifiedId The fully qualified ARM Id of the partner registration that
-             * should be associated with this partner namespace. This takes the following format:
+             * @param partnerRegistrationFullyQualifiedId The fully qualified ARM Id of the partner registration that should be associated with this partner namespace. This takes the following format:
              * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}.
              * @return the next definition stage.
              */
@@ -272,11 +259,9 @@ public interface PartnerNamespace {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
-             * to this partner namespace.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this partner namespace.
              * 
-             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this partner
-             * namespace.
+             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this partner namespace.
              * @return the next definition stage.
              */
             WithCreate withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed);
@@ -287,17 +272,11 @@ public interface PartnerNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
-             * default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso
-             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules"
-             * /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules" /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
-             * enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso
-             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules"
-             * /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules" /&gt;.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -308,11 +287,9 @@ public interface PartnerNamespace {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
-             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
-             * These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -323,13 +300,9 @@ public interface PartnerNamespace {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
-             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
-             * allowed to publish to the partner namespace..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the partner namespace..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
-             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
-             * publish to the partner namespace.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the partner namespace.
              * @return the next definition stage.
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
@@ -340,15 +313,11 @@ public interface PartnerNamespace {
          */
         interface WithPartnerTopicRoutingMode {
             /**
-             * Specifies the partnerTopicRoutingMode property: This determines if events published to this partner
-             * namespace should use the source attribute in the event payload
-             * or use the channel name in the header when matching to the partner topic. If none is specified, source
-             * attribute routing will be used to match the partner topic..
+             * Specifies the partnerTopicRoutingMode property: This determines if events published to this partner namespace should use the source attribute in the event payload
+             * or use the channel name in the header when matching to the partner topic. If none is specified, source attribute routing will be used to match the partner topic..
              * 
-             * @param partnerTopicRoutingMode This determines if events published to this partner namespace should use
-             * the source attribute in the event payload
-             * or use the channel name in the header when matching to the partner topic. If none is specified, source
-             * attribute routing will be used to match the partner topic.
+             * @param partnerTopicRoutingMode This determines if events published to this partner namespace should use the source attribute in the event payload
+             * or use the channel name in the header when matching to the partner topic. If none is specified, source attribute routing will be used to match the partner topic.
              * @return the next definition stage.
              */
             WithCreate withPartnerTopicRoutingMode(PartnerTopicRoutingMode partnerTopicRoutingMode);
@@ -405,17 +374,11 @@ public interface PartnerNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
-             * default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso
-             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules"
-             * /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
+             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules" /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
-             * enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso
-             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules"
-             * /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled. 
+             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules" /&gt;.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -426,11 +389,9 @@ public interface PartnerNamespace {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
-             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
-             * These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -441,8 +402,7 @@ public interface PartnerNamespace {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
-             * to this domain.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this domain.
              * 
              * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this domain.
              * @return the next definition stage.
@@ -455,13 +415,9 @@ public interface PartnerNamespace {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
-             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
-             * allowed to publish to the partner namespace..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the partner namespace..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
-             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
-             * publish to the partner namespace.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the partner namespace.
              * @return the next definition stage.
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);

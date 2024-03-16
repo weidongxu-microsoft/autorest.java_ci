@@ -239,8 +239,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Get the virtualMachineResourceDiskSizeInMb property: The virtual machine resource disk size whose unit is MB of
-     * the vm size.
+     * Get the virtualMachineResourceDiskSizeInMb property: The virtual machine resource disk size whose unit is MB of the vm size.
      * 
      * @return the virtualMachineResourceDiskSizeInMb value.
      */
@@ -249,8 +248,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Set the virtualMachineResourceDiskSizeInMb property: The virtual machine resource disk size whose unit is MB of
-     * the vm size.
+     * Set the virtualMachineResourceDiskSizeInMb property: The virtual machine resource disk size whose unit is MB of the vm size.
      * 
      * @param virtualMachineResourceDiskSizeInMb the virtualMachineResourceDiskSizeInMb value to set.
      * @return the VmSizeProperty object itself.
@@ -261,8 +259,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Get the webWorkerResourceDiskSizeInMb property: The web worker resource disk size whose unit is MB of the vm
-     * size.
+     * Get the webWorkerResourceDiskSizeInMb property: The web worker resource disk size whose unit is MB of the vm size.
      * 
      * @return the webWorkerResourceDiskSizeInMb value.
      */
@@ -271,8 +268,7 @@ public final class VmSizeProperty {
     }
 
     /**
-     * Set the webWorkerResourceDiskSizeInMb property: The web worker resource disk size whose unit is MB of the vm
-     * size.
+     * Set the webWorkerResourceDiskSizeInMb property: The web worker resource disk size whose unit is MB of the vm size.
      * 
      * @param webWorkerResourceDiskSizeInMb the webWorkerResourceDiskSizeInMb value to set.
      * @return the VmSizeProperty object itself.

@@ -106,8 +106,7 @@ public interface RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with
-     * {@link PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RoleDefinitionInner> list(String scope);
@@ -116,14 +115,12 @@ public interface RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
-     * well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with
-     * {@link PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RoleDefinitionInner> list(String scope, String filter, Context context);
@@ -131,10 +128,7 @@ public interface RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format,
-     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
-     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
-     * definitions.
+     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -147,10 +141,7 @@ public interface RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format,
-     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
-     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
-     * definitions.
+     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

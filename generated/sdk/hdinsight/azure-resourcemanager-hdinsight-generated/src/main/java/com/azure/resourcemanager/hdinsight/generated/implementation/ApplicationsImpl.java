@@ -71,8 +71,9 @@ public final class ApplicationsImpl implements Applications {
 
     public Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(String resourceGroupName,
         String clusterName, String applicationName, String operationId, Context context) {
-        Response<AsyncOperationResultInner> inner = this.serviceClient().getAzureAsyncOperationStatusWithResponse(
-            resourceGroupName, clusterName, applicationName, operationId, context);
+        Response<AsyncOperationResultInner> inner = this.serviceClient()
+            .getAzureAsyncOperationStatusWithResponse(resourceGroupName, clusterName, applicationName, operationId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AsyncOperationResultImpl(inner.getValue(), this.manager()));
@@ -83,8 +84,8 @@ public final class ApplicationsImpl implements Applications {
 
     public AsyncOperationResult getAzureAsyncOperationStatus(String resourceGroupName, String clusterName,
         String applicationName, String operationId) {
-        AsyncOperationResultInner inner = this.serviceClient().getAzureAsyncOperationStatus(resourceGroupName,
-            clusterName, applicationName, operationId);
+        AsyncOperationResultInner inner = this.serviceClient()
+            .getAzureAsyncOperationStatus(resourceGroupName, clusterName, applicationName, operationId);
         if (inner != null) {
             return new AsyncOperationResultImpl(inner, this.manager());
         } else {

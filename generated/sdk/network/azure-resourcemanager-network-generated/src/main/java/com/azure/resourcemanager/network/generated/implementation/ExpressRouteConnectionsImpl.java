@@ -30,8 +30,9 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
 
     public ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
         String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters) {
-        ExpressRouteConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters);
+        ExpressRouteConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, expressRouteGatewayName, connectionName,
+                putExpressRouteConnectionParameters);
         if (inner != null) {
             return new ExpressRouteConnectionImpl(inner, this.manager());
         } else {
@@ -41,8 +42,9 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
 
     public ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
         String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters, Context context) {
-        ExpressRouteConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
-            expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters, context);
+        ExpressRouteConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, expressRouteGatewayName, connectionName,
+                putExpressRouteConnectionParameters, context);
         if (inner != null) {
             return new ExpressRouteConnectionImpl(inner, this.manager());
         } else {

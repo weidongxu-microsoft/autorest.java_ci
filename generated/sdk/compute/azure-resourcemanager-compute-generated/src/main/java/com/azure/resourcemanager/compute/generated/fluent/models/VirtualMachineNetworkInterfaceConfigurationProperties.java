@@ -99,8 +99,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1
-     * network interface.
+     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
      * 
      * @return the primary value.
      */
@@ -109,8 +108,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1
-     * network interface.
+     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
      * 
      * @param primary the primary value to set.
      * @return the VirtualMachineNetworkInterfaceConfigurationProperties object itself.
@@ -141,8 +139,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
-     * networking-enabled.
+     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -151,8 +148,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
-     * networking-enabled.
+     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
      * 
      * @param enableAcceleratedNetworking the enableAcceleratedNetworking value to set.
      * @return the VirtualMachineNetworkInterfaceConfigurationProperties object itself.
@@ -164,8 +160,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
-     * tracking.
+     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
      * 
      * @return the disableTcpStateTracking value.
      */
@@ -174,8 +169,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
-     * tracking.
+     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
      * 
      * @param disableTcpStateTracking the disableTcpStateTracking value to set.
      * @return the VirtualMachineNetworkInterfaceConfigurationProperties object itself.
@@ -310,8 +304,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
-     * resource.
+     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
      * 
      * @return the auxiliaryMode value.
      */
@@ -320,8 +313,7 @@ public final class VirtualMachineNetworkInterfaceConfigurationProperties {
     }
 
     /**
-     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
-     * resource.
+     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
      * 
      * @param auxiliaryMode the auxiliaryMode value to set.
      * @return the VirtualMachineNetworkInterfaceConfigurationProperties object itself.

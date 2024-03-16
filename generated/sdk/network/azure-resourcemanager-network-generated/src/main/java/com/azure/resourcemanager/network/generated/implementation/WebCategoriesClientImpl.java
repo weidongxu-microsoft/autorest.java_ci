@@ -56,8 +56,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientWebCategories to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientWebCategories to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -200,8 +199,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Web Categories in a subscription along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all the Azure Web Categories in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureWebCategoryInner>> listSinglePageAsync() {
@@ -230,8 +228,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Web Categories in a subscription along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return all the Azure Web Categories in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureWebCategoryInner>> listSinglePageAsync(Context context) {
@@ -314,8 +311,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureWebCategories API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureWebCategories API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureWebCategoryInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -345,8 +341,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureWebCategories API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureWebCategories API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureWebCategoryInner>> listBySubscriptionNextSinglePageAsync(String nextLink,

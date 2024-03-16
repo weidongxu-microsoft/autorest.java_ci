@@ -181,8 +181,7 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     private Boolean expressRouteGatewayBypass;
 
     /*
-     * Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass)
-     * must be enabled.
+     * Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      */
     @JsonProperty(value = "enablePrivateLinkFastPath")
     private Boolean enablePrivateLinkFastPath;
@@ -516,8 +515,7 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Get the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
-     * Connection.
+     * Get the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
      * 
      * @return the gatewayCustomBgpIpAddresses value.
      */
@@ -526,8 +524,7 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Set the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
-     * Connection.
+     * Set the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
      * 
      * @param gatewayCustomBgpIpAddresses the gatewayCustomBgpIpAddresses value to set.
      * @return the VirtualNetworkGatewayConnectionPropertiesFormatInner object itself.
@@ -661,8 +658,7 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
-     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
@@ -671,8 +667,7 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
-     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @param enablePrivateLinkFastPath the enablePrivateLinkFastPath value to set.
      * @return the VirtualNetworkGatewayConnectionPropertiesFormatInner object itself.

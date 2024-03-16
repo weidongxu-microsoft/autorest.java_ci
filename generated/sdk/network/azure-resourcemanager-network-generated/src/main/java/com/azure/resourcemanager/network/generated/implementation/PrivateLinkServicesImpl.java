@@ -86,8 +86,9 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public Response<PrivateEndpointConnection> getPrivateEndpointConnectionWithResponse(String resourceGroupName,
         String serviceName, String peConnectionName, String expand, Context context) {
-        Response<PrivateEndpointConnectionInner> inner = this.serviceClient().getPrivateEndpointConnectionWithResponse(
-            resourceGroupName, serviceName, peConnectionName, expand, context);
+        Response<PrivateEndpointConnectionInner> inner = this.serviceClient()
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, serviceName, peConnectionName, expand,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
@@ -109,9 +110,9 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public Response<PrivateEndpointConnection> updatePrivateEndpointConnectionWithResponse(String resourceGroupName,
         String serviceName, String peConnectionName, PrivateEndpointConnectionInner parameters, Context context) {
-        Response<PrivateEndpointConnectionInner> inner
-            = this.serviceClient().updatePrivateEndpointConnectionWithResponse(resourceGroupName, serviceName,
-                peConnectionName, parameters, context);
+        Response<PrivateEndpointConnectionInner> inner = this.serviceClient()
+            .updatePrivateEndpointConnectionWithResponse(resourceGroupName, serviceName, peConnectionName, parameters,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
@@ -122,8 +123,8 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public PrivateEndpointConnection updatePrivateEndpointConnection(String resourceGroupName, String serviceName,
         String peConnectionName, PrivateEndpointConnectionInner parameters) {
-        PrivateEndpointConnectionInner inner = this.serviceClient().updatePrivateEndpointConnection(resourceGroupName,
-            serviceName, peConnectionName, parameters);
+        PrivateEndpointConnectionInner inner = this.serviceClient()
+            .updatePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName, parameters);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {

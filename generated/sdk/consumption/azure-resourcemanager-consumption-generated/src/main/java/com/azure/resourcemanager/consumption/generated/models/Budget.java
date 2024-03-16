@@ -35,8 +35,7 @@ public interface Budget {
     String type();
 
     /**
-     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -57,18 +56,14 @@ public interface Budget {
     BigDecimal amount();
 
     /**
-     * Gets the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time
-     * grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
+     * Gets the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
      * 
      * @return the timeGrain value.
      */
     TimeGrainType timeGrain();
 
     /**
-     * Gets the timePeriod property: Has start and end date of the budget. The start date must be first of the month and
-     * should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should
-     * not be more than twelve months. Past start date should be selected within the timegrain period. There are no
-     * restrictions on the end date.
+     * Gets the timePeriod property: Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
      * 
      * @return the timePeriod value.
      */
@@ -89,8 +84,7 @@ public interface Budget {
     CurrentSpend currentSpend();
 
     /**
-     * Gets the notifications property: Dictionary of notifications associated with the budget. Budget can have up to
-     * five notifications.
+     * Gets the notifications property: Dictionary of notifications associated with the budget. Budget can have up to five notifications.
      * 
      * @return the notifications value.
      */
@@ -133,27 +127,14 @@ public interface Budget {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope associated with budget operations. This includes
-             * '/subscriptions/{subscriptionId}/' for subscription scope,
-             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * billingProfile scope,
-             * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * invoiceSection scope.
+             * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for invoiceSection scope.
              * @return the next definition stage.
              */
             WithCreate withExistingScope(String scope);
         }
 
         /**
-         * The stage of the Budget definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Budget definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithEtag, DefinitionStages.WithCategory,
             DefinitionStages.WithAmount, DefinitionStages.WithTimeGrain, DefinitionStages.WithTimePeriod,
@@ -179,11 +160,9 @@ public interface Budget {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
@@ -220,12 +199,9 @@ public interface Budget {
          */
         interface WithTimeGrain {
             /**
-             * Specifies the timeGrain property: The time covered by a budget. Tracking of the amount will be reset
-             * based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD
-             * customers.
+             * Specifies the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
              * 
-             * @param timeGrain The time covered by a budget. Tracking of the amount will be reset based on the time
-             * grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
+             * @param timeGrain The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
              * @return the next definition stage.
              */
             WithCreate withTimeGrain(TimeGrainType timeGrain);
@@ -236,15 +212,9 @@ public interface Budget {
          */
         interface WithTimePeriod {
             /**
-             * Specifies the timePeriod property: Has start and end date of the budget. The start date must be first of
-             * the month and should be less than the end date. Budget start date must be on or after June 1, 2017.
-             * Future start date should not be more than twelve months. Past start date should be selected within the
-             * timegrain period. There are no restrictions on the end date..
+             * Specifies the timePeriod property: Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date..
              * 
-             * @param timePeriod Has start and end date of the budget. The start date must be first of the month and
-             * should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date
-             * should not be more than twelve months. Past start date should be selected within the timegrain period.
-             * There are no restrictions on the end date.
+             * @param timePeriod Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
              * @return the next definition stage.
              */
             WithCreate withTimePeriod(BudgetTimePeriod timePeriod);
@@ -268,11 +238,9 @@ public interface Budget {
          */
         interface WithNotifications {
             /**
-             * Specifies the notifications property: Dictionary of notifications associated with the budget. Budget can
-             * have up to five notifications..
+             * Specifies the notifications property: Dictionary of notifications associated with the budget. Budget can have up to five notifications..
              * 
-             * @param notifications Dictionary of notifications associated with the budget. Budget can have up to five
-             * notifications.
+             * @param notifications Dictionary of notifications associated with the budget. Budget can have up to five notifications.
              * @return the next definition stage.
              */
             WithCreate withNotifications(Map<String, Notification> notifications);
@@ -317,11 +285,9 @@ public interface Budget {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             Update withEtag(String etag);
@@ -358,12 +324,9 @@ public interface Budget {
          */
         interface WithTimeGrain {
             /**
-             * Specifies the timeGrain property: The time covered by a budget. Tracking of the amount will be reset
-             * based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD
-             * customers.
+             * Specifies the timeGrain property: The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
              * 
-             * @param timeGrain The time covered by a budget. Tracking of the amount will be reset based on the time
-             * grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
+             * @param timeGrain The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers.
              * @return the next definition stage.
              */
             Update withTimeGrain(TimeGrainType timeGrain);
@@ -374,15 +337,9 @@ public interface Budget {
          */
         interface WithTimePeriod {
             /**
-             * Specifies the timePeriod property: Has start and end date of the budget. The start date must be first of
-             * the month and should be less than the end date. Budget start date must be on or after June 1, 2017.
-             * Future start date should not be more than twelve months. Past start date should be selected within the
-             * timegrain period. There are no restrictions on the end date..
+             * Specifies the timePeriod property: Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date..
              * 
-             * @param timePeriod Has start and end date of the budget. The start date must be first of the month and
-             * should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date
-             * should not be more than twelve months. Past start date should be selected within the timegrain period.
-             * There are no restrictions on the end date.
+             * @param timePeriod Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
              * @return the next definition stage.
              */
             Update withTimePeriod(BudgetTimePeriod timePeriod);
@@ -406,11 +363,9 @@ public interface Budget {
          */
         interface WithNotifications {
             /**
-             * Specifies the notifications property: Dictionary of notifications associated with the budget. Budget can
-             * have up to five notifications..
+             * Specifies the notifications property: Dictionary of notifications associated with the budget. Budget can have up to five notifications..
              * 
-             * @param notifications Dictionary of notifications associated with the budget. Budget can have up to five
-             * notifications.
+             * @param notifications Dictionary of notifications associated with the budget. Budget can have up to five notifications.
              * @return the next definition stage.
              */
             Update withNotifications(Map<String, Notification> notifications);

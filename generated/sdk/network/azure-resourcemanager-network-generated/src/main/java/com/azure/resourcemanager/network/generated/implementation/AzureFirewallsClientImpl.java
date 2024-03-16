@@ -69,8 +69,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientAzureFirewalls to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientAzureFirewalls to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -969,8 +968,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1004,8 +1002,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1097,8 +1094,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Firewalls in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Azure Firewalls in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listSinglePageAsync() {
@@ -1127,8 +1123,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Firewalls in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the Azure Firewalls in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listSinglePageAsync(Context context) {
@@ -1209,8 +1204,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listLearnedPrefixesWithResponseAsync(String resourceGroupName,
@@ -1248,8 +1242,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listLearnedPrefixesWithResponseAsync(String resourceGroupName,
@@ -1658,8 +1651,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listNextSinglePageAsync(String nextLink) {
@@ -1687,8 +1679,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1715,8 +1706,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1745,8 +1735,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for ListAzureFirewalls API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallInner>> listAllNextSinglePageAsync(String nextLink, Context context) {

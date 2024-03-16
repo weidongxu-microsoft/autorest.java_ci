@@ -20,16 +20,13 @@ public final class CheckNameAvailabilityOutputInner {
     private Boolean isNameAvailable;
 
     /*
-     * The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming
-     * requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already
-     * in use and is therefore unavailable.
+     * The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already in use and is therefore unavailable.
      */
     @JsonProperty(value = "reason", access = JsonProperty.Access.WRITE_ONLY)
     private UnavailableNameReason reason;
 
     /*
-     * A message that explains why the name is invalid and provides resource naming requirements. Available only if
-     * 'Invalid' is returned in the 'reason' property.
+     * A message that explains why the name is invalid and provides resource naming requirements. Available only if 'Invalid' is returned in the 'reason' property.
      */
     @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
@@ -50,9 +47,7 @@ public final class CheckNameAvailabilityOutputInner {
     }
 
     /**
-     * Get the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does not
-     * match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that
-     * the name is already in use and is therefore unavailable.
+     * Get the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already in use and is therefore unavailable.
      * 
      * @return the reason value.
      */
@@ -61,8 +56,7 @@ public final class CheckNameAvailabilityOutputInner {
     }
 
     /**
-     * Get the message property: A message that explains why the name is invalid and provides resource naming
-     * requirements. Available only if 'Invalid' is returned in the 'reason' property.
+     * Get the message property: A message that explains why the name is invalid and provides resource naming requirements. Available only if 'Invalid' is returned in the 'reason' property.
      * 
      * @return the message value.
      */

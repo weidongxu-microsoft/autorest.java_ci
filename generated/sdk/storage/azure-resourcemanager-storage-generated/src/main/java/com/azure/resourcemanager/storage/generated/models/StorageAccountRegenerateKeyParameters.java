@@ -26,8 +26,7 @@ public final class StorageAccountRegenerateKeyParameters {
     }
 
     /**
-     * Get the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2,
-     * kerb1, kerb2.
+     * Get the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2, kerb1, kerb2.
      * 
      * @return the keyName value.
      */
@@ -36,8 +35,7 @@ public final class StorageAccountRegenerateKeyParameters {
     }
 
     /**
-     * Set the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2,
-     * kerb1, kerb2.
+     * Set the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2, kerb1, kerb2.
      * 
      * @param keyName the keyName value to set.
      * @return the StorageAccountRegenerateKeyParameters object itself.

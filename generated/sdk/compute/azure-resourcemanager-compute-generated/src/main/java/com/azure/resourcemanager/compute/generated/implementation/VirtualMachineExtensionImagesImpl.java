@@ -56,7 +56,9 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
             = this.serviceClient().listTypesWithResponse(location, publisherName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -66,9 +68,9 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
     public List<VirtualMachineExtensionImage> listTypes(String location, String publisherName) {
         List<VirtualMachineExtensionImageInner> inner = this.serviceClient().listTypes(location, publisherName);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -80,7 +82,9 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
             .listVersionsWithResponse(location, publisherName, type, filter, top, orderby, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -91,9 +95,9 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
         List<VirtualMachineExtensionImageInner> inner
             = this.serviceClient().listVersions(location, publisherName, type);
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

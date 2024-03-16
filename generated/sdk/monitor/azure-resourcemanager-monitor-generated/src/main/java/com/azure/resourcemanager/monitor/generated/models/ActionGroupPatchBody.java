@@ -64,8 +64,7 @@ public final class ActionGroupPatchBody {
     }
 
     /**
-     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
-     * none of its actions will be activated.
+     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -74,8 +73,7 @@ public final class ActionGroupPatchBody {
     }
 
     /**
-     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
-     * none of its actions will be activated.
+     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActionGroupPatchBody object itself.

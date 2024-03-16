@@ -6,6 +6,7 @@ package com.azure.resourcemanager.search.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.models.OperationDisplay;
+import com.azure.resourcemanager.search.generated.models.OperationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -24,6 +25,24 @@ public final class OperationInner {
      */
     @JsonProperty(value = "display", access = JsonProperty.Access.WRITE_ONLY)
     private OperationDisplay display;
+
+    /*
+     * Describes if the specified operation is a data plane API operation. Operations where this value is not true are supported directly by the resource provider.
+     */
+    @JsonProperty(value = "isDataAction", access = JsonProperty.Access.WRITE_ONLY)
+    private Boolean isDataAction;
+
+    /*
+     * Describes which originating entities are allowed to invoke this operation.
+     */
+    @JsonProperty(value = "origin", access = JsonProperty.Access.WRITE_ONLY)
+    private String origin;
+
+    /*
+     * Describes additional properties for this operation.
+     */
+    @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
+    private OperationProperties properties;
 
     /**
      * Creates an instance of OperationInner class.
@@ -50,6 +69,33 @@ public final class OperationInner {
     }
 
     /**
+     * Get the isDataAction property: Describes if the specified operation is a data plane API operation. Operations where this value is not true are supported directly by the resource provider.
+     * 
+     * @return the isDataAction value.
+     */
+    public Boolean isDataAction() {
+        return this.isDataAction;
+    }
+
+    /**
+     * Get the origin property: Describes which originating entities are allowed to invoke this operation.
+     * 
+     * @return the origin value.
+     */
+    public String origin() {
+        return this.origin;
+    }
+
+    /**
+     * Get the properties property: Describes additional properties for this operation.
+     * 
+     * @return the properties value.
+     */
+    public OperationProperties properties() {
+        return this.properties;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -57,6 +103,9 @@ public final class OperationInner {
     public void validate() {
         if (display() != null) {
             display().validate();
+        }
+        if (properties() != null) {
+            properties().validate();
         }
     }
 }

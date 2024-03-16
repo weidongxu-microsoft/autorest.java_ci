@@ -13,7 +13,11 @@ import java.util.UUID;
 /**
  * The properties of the legacy reservation recommendation for single scope.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "scope")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "scope",
+    defaultImpl = LegacySingleScopeReservationRecommendationProperties.class,
+    visible = true)
 @JsonTypeName("Single")
 @Immutable
 public final class LegacySingleScopeReservationRecommendationProperties
@@ -28,6 +32,7 @@ public final class LegacySingleScopeReservationRecommendationProperties
      * Creates an instance of LegacySingleScopeReservationRecommendationProperties class.
      */
     public LegacySingleScopeReservationRecommendationProperties() {
+        withScope("Single");
     }
 
     /**

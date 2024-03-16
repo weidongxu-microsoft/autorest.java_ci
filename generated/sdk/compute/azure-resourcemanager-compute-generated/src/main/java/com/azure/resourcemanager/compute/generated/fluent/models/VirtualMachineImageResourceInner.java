@@ -30,9 +30,7 @@ public class VirtualMachineImageResourceInner extends SubResource {
     private String location;
 
     /*
-     * Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using
-     * tags to organize your Azure
-     * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
+     * Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using tags to organize your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
      */
     @JsonProperty(value = "tags")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -91,9 +89,7 @@ public class VirtualMachineImageResourceInner extends SubResource {
     }
 
     /**
-     * Get the tags property: Specifies the tags that are assigned to the virtual machine. For more information about
-     * using tags, see [Using tags to organize your Azure
-     * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
+     * Get the tags property: Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using tags to organize your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
      * 
      * @return the tags value.
      */
@@ -102,9 +98,7 @@ public class VirtualMachineImageResourceInner extends SubResource {
     }
 
     /**
-     * Set the tags property: Specifies the tags that are assigned to the virtual machine. For more information about
-     * using tags, see [Using tags to organize your Azure
-     * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
+     * Set the tags property: Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using tags to organize your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
      * 
      * @param tags the tags value to set.
      * @return the VirtualMachineImageResourceInner object itself.

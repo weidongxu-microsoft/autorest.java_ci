@@ -44,9 +44,7 @@ public final class RoutingStorageContainerProperties {
     private ManagedIdentity identity;
 
     /*
-     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
-     * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
-     * $default. Endpoint names must be unique across endpoint types.
+     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -70,29 +68,25 @@ public final class RoutingStorageContainerProperties {
     private String containerName;
 
     /*
-     * File name format for the blob. Default format is {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters
-     * are mandatory but can be reordered.
+     * File name format for the blob. Default format is {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters are mandatory but can be reordered.
      */
     @JsonProperty(value = "fileNameFormat")
     private String fileNameFormat;
 
     /*
-     * Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is
-     * 300 seconds.
+     * Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds.
      */
     @JsonProperty(value = "batchFrequencyInSeconds")
     private Integer batchFrequencyInSeconds;
 
     /*
-     * Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and
-     * 524288000(500MB). Default value is 314572800(300MB).
+     * Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
      */
     @JsonProperty(value = "maxChunkSizeInBytes")
     private Integer maxChunkSizeInBytes;
 
     /*
-     * Encoding that is used to serialize messages to blobs. Supported values are 'avro', 'avrodeflate', and 'JSON'.
-     * Default value is 'avro'.
+     * Encoding that is used to serialize messages to blobs. Supported values are 'avro', 'avrodeflate', and 'JSON'. Default value is 'avro'.
      */
     @JsonProperty(value = "encoding")
     private RoutingStorageContainerPropertiesEncoding encoding;
@@ -204,9 +198,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @return the name value.
      */
@@ -215,9 +207,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @param name the name value to set.
      * @return the RoutingStorageContainerProperties object itself.
@@ -288,8 +278,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the fileNameFormat property: File name format for the blob. Default format is
-     * {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters are mandatory but can be reordered.
+     * Get the fileNameFormat property: File name format for the blob. Default format is {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters are mandatory but can be reordered.
      * 
      * @return the fileNameFormat value.
      */
@@ -298,8 +287,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the fileNameFormat property: File name format for the blob. Default format is
-     * {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters are mandatory but can be reordered.
+     * Set the fileNameFormat property: File name format for the blob. Default format is {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}. All parameters are mandatory but can be reordered.
      * 
      * @param fileNameFormat the fileNameFormat value to set.
      * @return the RoutingStorageContainerProperties object itself.
@@ -310,8 +298,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the batchFrequencyInSeconds property: Time interval at which blobs are written to storage. Value should be
-     * between 60 and 720 seconds. Default value is 300 seconds.
+     * Get the batchFrequencyInSeconds property: Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds.
      * 
      * @return the batchFrequencyInSeconds value.
      */
@@ -320,8 +307,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the batchFrequencyInSeconds property: Time interval at which blobs are written to storage. Value should be
-     * between 60 and 720 seconds. Default value is 300 seconds.
+     * Set the batchFrequencyInSeconds property: Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds.
      * 
      * @param batchFrequencyInSeconds the batchFrequencyInSeconds value to set.
      * @return the RoutingStorageContainerProperties object itself.
@@ -332,8 +318,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the maxChunkSizeInBytes property: Maximum number of bytes for each blob written to storage. Value should be
-     * between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
+     * Get the maxChunkSizeInBytes property: Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
      * 
      * @return the maxChunkSizeInBytes value.
      */
@@ -342,8 +327,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the maxChunkSizeInBytes property: Maximum number of bytes for each blob written to storage. Value should be
-     * between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
+     * Set the maxChunkSizeInBytes property: Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
      * 
      * @param maxChunkSizeInBytes the maxChunkSizeInBytes value to set.
      * @return the RoutingStorageContainerProperties object itself.
@@ -354,8 +338,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Get the encoding property: Encoding that is used to serialize messages to blobs. Supported values are 'avro',
-     * 'avrodeflate', and 'JSON'. Default value is 'avro'.
+     * Get the encoding property: Encoding that is used to serialize messages to blobs. Supported values are 'avro', 'avrodeflate', and 'JSON'. Default value is 'avro'.
      * 
      * @return the encoding value.
      */
@@ -364,8 +347,7 @@ public final class RoutingStorageContainerProperties {
     }
 
     /**
-     * Set the encoding property: Encoding that is used to serialize messages to blobs. Supported values are 'avro',
-     * 'avrodeflate', and 'JSON'. Default value is 'avro'.
+     * Set the encoding property: Encoding that is used to serialize messages to blobs. Supported values are 'avro', 'avrodeflate', and 'JSON'. Default value is 'avro'.
      * 
      * @param encoding the encoding value to set.
      * @return the RoutingStorageContainerProperties object itself.

@@ -64,8 +64,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientServiceEndpointPolicyDefinitions to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientServiceEndpointPolicyDefinitions to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -283,8 +282,10 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceEndpointPolicyName,
         String serviceEndpointPolicyDefinitionName, Context context) {
-        return this.beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
-            context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -302,7 +303,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     private Mono<Void> deleteAsync(String resourceGroupName, String serviceEndpointPolicyName,
         String serviceEndpointPolicyDefinitionName) {
         return beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -366,8 +368,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ServiceEndpointPolicyDefinitionInner>> getWithResponseAsync(String resourceGroupName,
@@ -410,8 +411,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ServiceEndpointPolicyDefinitionInner>> getWithResponseAsync(String resourceGroupName,
@@ -452,8 +452,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy on successful completion
-     * of {@link Mono}.
+     * @return the specified service endpoint policy definitions from service endpoint policy on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServiceEndpointPolicyDefinitionInner> getAsync(String resourceGroupName,
@@ -472,8 +471,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with
-     * {@link Response}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ServiceEndpointPolicyDefinitionInner> getWithResponse(String resourceGroupName,
@@ -506,8 +504,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -558,8 +555,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -610,8 +606,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -635,8 +630,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -662,8 +656,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -674,8 +667,10 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
         beginCreateOrUpdate(String resourceGroupName, String serviceEndpointPolicyName,
             String serviceEndpointPolicyDefinitionName,
             ServiceEndpointPolicyDefinitionInner serviceEndpointPolicyDefinitions) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName,
-            serviceEndpointPolicyDefinitionName, serviceEndpointPolicyDefinitions).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                serviceEndpointPolicyDefinitions)
+            .getSyncPoller();
     }
 
     /**
@@ -684,8 +679,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -697,8 +691,10 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
         beginCreateOrUpdate(String resourceGroupName, String serviceEndpointPolicyName,
             String serviceEndpointPolicyDefinitionName,
             ServiceEndpointPolicyDefinitionInner serviceEndpointPolicyDefinitions, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName,
-            serviceEndpointPolicyDefinitionName, serviceEndpointPolicyDefinitions, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName,
+                serviceEndpointPolicyDefinitions, context)
+            .getSyncPoller();
     }
 
     /**
@@ -707,8 +703,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -729,8 +724,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -752,8 +746,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -773,8 +766,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
-     * operation.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -797,8 +789,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return all service endpoint policy definitions in a service end point policy along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceEndpointPolicyDefinitionInner>>
@@ -838,8 +829,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return all service endpoint policy definitions in a service end point policy along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceEndpointPolicyDefinitionInner>> listByResourceGroupSinglePageAsync(
@@ -878,8 +868,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with
-     * {@link PagedFlux}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServiceEndpointPolicyDefinitionInner> listByResourceGroupAsync(String resourceGroupName,
@@ -897,8 +886,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with
-     * {@link PagedFlux}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServiceEndpointPolicyDefinitionInner> listByResourceGroupAsync(String resourceGroupName,
@@ -916,8 +904,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with
-     * {@link PagedIterable}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceEndpointPolicyDefinitionInner> listByResourceGroup(String resourceGroupName,
@@ -934,8 +921,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with
-     * {@link PagedIterable}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceEndpointPolicyDefinitionInner> listByResourceGroup(String resourceGroupName,
@@ -952,8 +938,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListServiceEndpointPolicyDefinition API service call along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response for ListServiceEndpointPolicyDefinition API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceEndpointPolicyDefinitionInner>>
@@ -984,8 +969,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListServiceEndpointPolicyDefinition API service call along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response for ListServiceEndpointPolicyDefinition API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceEndpointPolicyDefinitionInner>>

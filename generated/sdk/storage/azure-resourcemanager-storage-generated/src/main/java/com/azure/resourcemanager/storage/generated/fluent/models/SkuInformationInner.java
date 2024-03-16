@@ -20,8 +20,7 @@ import java.util.List;
 @Fluent
 public final class SkuInformationInner {
     /*
-     * The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was
-     * called accountType.
+     * The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
      */
     @JsonProperty(value = "name", required = true)
     private SkuName name;
@@ -45,15 +44,13 @@ public final class SkuInformationInner {
     private Kind kind;
 
     /*
-     * The set of locations that the SKU is available. This will be supported and registered Azure Geo Regions (e.g.
-     * West US, East US, Southeast Asia, etc.).
+     * The set of locations that the SKU is available. This will be supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
      */
     @JsonProperty(value = "locations", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> locations;
 
     /*
-     * The capability information in the specified SKU, including file encryption, network ACLs, change notification,
-     * etc.
+     * The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc.
      */
     @JsonProperty(value = "capabilities", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCapability> capabilities;
@@ -71,8 +68,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older
-     * versions, SKU name was called accountType.
+     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
      * 
      * @return the name value.
      */
@@ -81,8 +77,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older
-     * versions, SKU name was called accountType.
+     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
      * 
      * @param name the name value to set.
      * @return the SkuInformationInner object itself.
@@ -120,8 +115,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the locations property: The set of locations that the SKU is available. This will be supported and registered
-     * Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
+     * Get the locations property: The set of locations that the SKU is available. This will be supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
      * 
      * @return the locations value.
      */
@@ -130,8 +124,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the capabilities property: The capability information in the specified SKU, including file encryption,
-     * network ACLs, change notification, etc.
+     * Get the capabilities property: The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc.
      * 
      * @return the capabilities value.
      */
@@ -140,8 +133,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
-     * no restrictions.
+     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
      * 
      * @return the restrictions value.
      */
@@ -150,8 +142,7 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Set the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
-     * no restrictions.
+     * Set the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
      * 
      * @param restrictions the restrictions value to set.
      * @return the SkuInformationInner object itself.

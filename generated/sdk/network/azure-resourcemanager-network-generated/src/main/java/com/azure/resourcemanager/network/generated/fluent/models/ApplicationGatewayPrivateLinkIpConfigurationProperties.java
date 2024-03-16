@@ -133,8 +133,7 @@ public final class ApplicationGatewayPrivateLinkIpConfigurationProperties {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the application gateway private link IP
-     * configuration.
+     * Get the provisioningState property: The provisioning state of the application gateway private link IP configuration.
      * 
      * @return the provisioningState value.
      */

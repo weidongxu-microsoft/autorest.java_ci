@@ -54,8 +54,7 @@ public interface ProviderOperationsMetadata {
     List<ProviderOperation> operations();
 
     /**
-     * Gets the inner com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner object.
      * 
      * @return the inner object.
      */

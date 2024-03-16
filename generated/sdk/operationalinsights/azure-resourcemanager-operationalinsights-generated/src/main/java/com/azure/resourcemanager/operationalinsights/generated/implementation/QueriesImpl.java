@@ -54,8 +54,8 @@ public final class QueriesImpl implements Queries {
     public PagedIterable<LogAnalyticsQueryPackQuery> search(String resourceGroupName, String queryPackName,
         LogAnalyticsQueryPackQuerySearchProperties querySearchProperties, Long top, Boolean includeBody,
         String skipToken, Context context) {
-        PagedIterable<LogAnalyticsQueryPackQueryInner> inner = this.serviceClient().search(resourceGroupName,
-            queryPackName, querySearchProperties, top, includeBody, skipToken, context);
+        PagedIterable<LogAnalyticsQueryPackQueryInner> inner = this.serviceClient()
+            .search(resourceGroupName, queryPackName, querySearchProperties, top, includeBody, skipToken, context);
         return ResourceManagerUtils.mapPage(inner,
             inner1 -> new LogAnalyticsQueryPackQueryImpl(inner1, this.manager()));
     }

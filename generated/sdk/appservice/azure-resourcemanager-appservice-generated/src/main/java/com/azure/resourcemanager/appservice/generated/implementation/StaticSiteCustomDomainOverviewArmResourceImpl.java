@@ -82,14 +82,18 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
     }
 
     public StaticSiteCustomDomainOverviewArmResource create() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
-            resourceGroupName, name, domainName, createStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSiteCustomDomain(resourceGroupName, name, domainName,
+                createStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
-            resourceGroupName, name, domainName, createStaticSiteCustomDomainRequestPropertiesEnvelope, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSiteCustomDomain(resourceGroupName, name, domainName,
+                createStaticSiteCustomDomainRequestPropertiesEnvelope, context);
         return this;
     }
 
@@ -109,14 +113,18 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
     }
 
     public StaticSiteCustomDomainOverviewArmResource apply() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
-            resourceGroupName, name, domainName, updateStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSiteCustomDomain(resourceGroupName, name, domainName,
+                updateStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
-            resourceGroupName, name, domainName, updateStaticSiteCustomDomainRequestPropertiesEnvelope, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .createOrUpdateStaticSiteCustomDomain(resourceGroupName, name, domainName,
+                updateStaticSiteCustomDomainRequestPropertiesEnvelope, context);
         return this;
     }
 
@@ -130,28 +138,34 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
     }
 
     public StaticSiteCustomDomainOverviewArmResource refresh() {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticSites()
-            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticSites()
+            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context)
+            .getValue();
         return this;
     }
 
     public void validateCustomDomainCanBeAddedToStaticSite(
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        serviceManager.staticSites().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
-            staticSiteCustomDomainRequestPropertiesEnvelope);
+        serviceManager.staticSites()
+            .validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+                staticSiteCustomDomainRequestPropertiesEnvelope);
     }
 
     public void validateCustomDomainCanBeAddedToStaticSite(
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context) {
-        serviceManager.staticSites().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
-            staticSiteCustomDomainRequestPropertiesEnvelope, context);
+        serviceManager.staticSites()
+            .validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+                staticSiteCustomDomainRequestPropertiesEnvelope, context);
     }
 
     public StaticSiteCustomDomainOverviewArmResourceImpl withKind(String kind) {

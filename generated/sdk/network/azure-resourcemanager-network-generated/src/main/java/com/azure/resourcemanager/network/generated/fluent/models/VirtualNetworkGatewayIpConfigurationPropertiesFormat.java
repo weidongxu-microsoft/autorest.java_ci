@@ -122,8 +122,7 @@ public final class VirtualNetworkGatewayIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the virtual network gateway IP configuration
-     * resource.
+     * Get the provisioningState property: The provisioning state of the virtual network gateway IP configuration resource.
      * 
      * @return the provisioningState value.
      */

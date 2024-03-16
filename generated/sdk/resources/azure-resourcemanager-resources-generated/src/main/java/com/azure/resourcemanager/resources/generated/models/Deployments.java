@@ -15,12 +15,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -33,12 +28,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -134,9 +124,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -151,9 +139,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -164,8 +150,7 @@ public interface Deployments {
     void cancelAtScope(String scope, String deploymentName);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -178,8 +163,7 @@ public interface Deployments {
     DeploymentValidateResult validateAtScope(String scope, String deploymentName, Deployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -234,8 +218,7 @@ public interface Deployments {
      * Get all the deployments at the given scope.
      * 
      * @param scope The resource scope.
-     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq
-     * '{state}'.
+     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
      * @param top The number of results to get. If null is passed, returns all deployments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -248,12 +231,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -265,12 +243,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
@@ -358,9 +331,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
@@ -374,9 +345,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -386,8 +355,7 @@ public interface Deployments {
     void cancelAtTenantScope(String deploymentName);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
@@ -399,8 +367,7 @@ public interface Deployments {
     DeploymentValidateResult validateAtTenantScope(String deploymentName, ScopedDeployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
@@ -473,8 +440,7 @@ public interface Deployments {
     /**
      * Get all the deployments at the tenant scope.
      * 
-     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq
-     * '{state}'.
+     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
      * @param top The number of results to get. If null is passed, returns all deployments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -487,12 +453,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -505,12 +466,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -609,9 +565,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -626,9 +580,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -639,8 +591,7 @@ public interface Deployments {
     void cancelAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -654,8 +605,7 @@ public interface Deployments {
         ScopedDeployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -739,8 +689,7 @@ public interface Deployments {
      * Get all the deployments for a management group.
      * 
      * @param groupId The management group ID.
-     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq
-     * '{state}'.
+     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
      * @param top The number of results to get. If null is passed, returns all deployments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -754,12 +703,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -771,12 +715,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
-     * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
-     * the status of the process. While the process is running, a call to the URI in the Location header returns a
-     * status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If
-     * the asynchronous request failed, the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
@@ -864,9 +803,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
@@ -880,9 +817,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
      * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -892,8 +827,7 @@ public interface Deployments {
     void cancelAtSubscriptionScope(String deploymentName);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
@@ -905,8 +839,7 @@ public interface Deployments {
     DeploymentValidateResult validateAtSubscriptionScope(String deploymentName, Deployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
@@ -980,8 +913,7 @@ public interface Deployments {
     /**
      * Get all the deployments for a subscription.
      * 
-     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq
-     * '{state}'.
+     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
      * @param top The number of results to get. If null is passed, returns all deployments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -994,16 +926,9 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
-     * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
-     * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
-     * the process is running, a call to the URI in the Location header returns a status of 202. When the process
-     * finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed,
-     * the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. Deleting a template deployment does not affect the state of the resource group. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
-     * @param resourceGroupName The name of the resource group with the deployment to delete. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group with the deployment to delete. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1014,16 +939,9 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
-     * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
-     * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
-     * the process is running, a call to the URI in the Location header returns a status of 202. When the process
-     * finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed,
-     * the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. Deleting a template deployment does not affect the state of the resource group. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
-     * @param resourceGroupName The name of the resource group with the deployment to delete. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group with the deployment to delete. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1035,8 +953,7 @@ public interface Deployments {
     /**
      * Checks whether the deployment exists.
      * 
-     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1049,8 +966,7 @@ public interface Deployments {
     /**
      * Checks whether the deployment exists.
      * 
-     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1088,9 +1004,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resource group partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resource group partially deployed.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
@@ -1105,9 +1019,7 @@ public interface Deployments {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resource group partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resource group partially deployed.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
@@ -1118,11 +1030,9 @@ public interface Deployments {
     void cancel(String resourceGroupName, String deploymentName);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
-     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1133,11 +1043,9 @@ public interface Deployments {
     DeploymentValidateResult validate(String resourceGroupName, String deploymentName, Deployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
-     * Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
      * 
-     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
      * @param context The context to associate with this operation.
@@ -1152,8 +1060,7 @@ public interface Deployments {
     /**
      * Returns changes that will be made by the deployment if executed at the scope of the resource group.
      * 
-     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1166,8 +1073,7 @@ public interface Deployments {
     /**
      * Returns changes that will be made by the deployment if executed at the scope of the resource group.
      * 
-     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param parameters Parameters to validate.
      * @param context The context to associate with this operation.
@@ -1208,8 +1114,7 @@ public interface Deployments {
     /**
      * Get all the deployments for a resource group.
      * 
-     * @param resourceGroupName The name of the resource group with the deployments to get. The name is case
-     * insensitive.
+     * @param resourceGroupName The name of the resource group with the deployments to get. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1220,10 +1125,8 @@ public interface Deployments {
     /**
      * Get all the deployments for a resource group.
      * 
-     * @param resourceGroupName The name of the resource group with the deployments to get. The name is case
-     * insensitive.
-     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq
-     * '{state}'.
+     * @param resourceGroupName The name of the resource group with the deployments to get. The name is case insensitive.
+     * @param filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
      * @param top The number of results to get. If null is passed, returns all deployments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1283,13 +1186,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
-     * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
-     * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
-     * the process is running, a call to the URI in the Location header returns a status of 202. When the process
-     * finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed,
-     * the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. Deleting a template deployment does not affect the state of the resource group. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1301,13 +1198,7 @@ public interface Deployments {
     /**
      * Deletes a deployment from the deployment history.
      * 
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
-     * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
-     * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
-     * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
-     * the process is running, a call to the URI in the Location header returns a status of 202. When the process
-     * finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed,
-     * the URI in the Location header returns an error-level status code.
+     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. Deleting a template deployment does not affect the state of the resource group. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.

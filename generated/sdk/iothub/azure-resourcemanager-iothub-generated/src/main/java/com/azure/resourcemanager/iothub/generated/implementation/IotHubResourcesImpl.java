@@ -174,8 +174,8 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public EventHubConsumerGroupInfo getEventHubConsumerGroup(String resourceGroupName, String resourceName,
         String eventHubEndpointName, String name) {
-        EventHubConsumerGroupInfoInner inner = this.serviceClient().getEventHubConsumerGroup(resourceGroupName,
-            resourceName, eventHubEndpointName, name);
+        EventHubConsumerGroupInfoInner inner = this.serviceClient()
+            .getEventHubConsumerGroup(resourceGroupName, resourceName, eventHubEndpointName, name);
         if (inner != null) {
             return new EventHubConsumerGroupInfoImpl(inner, this.manager());
         } else {
@@ -185,8 +185,9 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public Response<Void> deleteEventHubConsumerGroupWithResponse(String resourceGroupName, String resourceName,
         String eventHubEndpointName, String name, Context context) {
-        return this.serviceClient().deleteEventHubConsumerGroupWithResponse(resourceGroupName, resourceName,
-            eventHubEndpointName, name, context);
+        return this.serviceClient()
+            .deleteEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
+                context);
     }
 
     public void deleteEventHubConsumerGroup(String resourceGroupName, String resourceName, String eventHubEndpointName,
@@ -355,8 +356,8 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public Response<JobResponse> exportDevicesWithResponse(String resourceGroupName, String resourceName,
         ExportDevicesRequest exportDevicesParameters, Context context) {
-        Response<JobResponseInner> inner = this.serviceClient().exportDevicesWithResponse(resourceGroupName,
-            resourceName, exportDevicesParameters, context);
+        Response<JobResponseInner> inner = this.serviceClient()
+            .exportDevicesWithResponse(resourceGroupName, resourceName, exportDevicesParameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new JobResponseImpl(inner.getValue(), this.manager()));
@@ -378,8 +379,8 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public Response<JobResponse> importDevicesWithResponse(String resourceGroupName, String resourceName,
         ImportDevicesRequest importDevicesParameters, Context context) {
-        Response<JobResponseInner> inner = this.serviceClient().importDevicesWithResponse(resourceGroupName,
-            resourceName, importDevicesParameters, context);
+        Response<JobResponseInner> inner = this.serviceClient()
+            .importDevicesWithResponse(resourceGroupName, resourceName, importDevicesParameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new JobResponseImpl(inner.getValue(), this.manager()));
@@ -448,8 +449,10 @@ public final class IotHubResourcesImpl implements IotHubResources {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ConsumerGroups'.", id)));
         }
-        return this.getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
-            Context.NONE).getValue();
+        return this
+            .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context) {

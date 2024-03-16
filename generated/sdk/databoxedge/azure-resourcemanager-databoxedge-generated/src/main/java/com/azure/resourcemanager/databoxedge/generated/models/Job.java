@@ -103,8 +103,7 @@ public interface Job {
     Integer totalRefreshErrors();
 
     /**
-     * Gets the errorManifestFile property: Local share/remote container relative path to the error manifest file of the
-     * refresh.
+     * Gets the errorManifestFile property: Local share/remote container relative path to the error manifest file of the refresh.
      * 
      * @return the errorManifestFile value.
      */
@@ -118,8 +117,7 @@ public interface Job {
     String refreshedEntityId();
 
     /**
-     * Gets the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or
-     * container. (The path is empty if there are no subfolders.).
+     * Gets the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is empty if there are no subfolders.).
      * 
      * @return the folder value.
      */

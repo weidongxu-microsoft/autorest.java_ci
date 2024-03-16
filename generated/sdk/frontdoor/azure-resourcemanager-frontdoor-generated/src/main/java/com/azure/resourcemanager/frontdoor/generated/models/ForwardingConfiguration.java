@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Describes Forwarding Route.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "@odata.type",
+    defaultImpl = ForwardingConfiguration.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration")
 @Fluent
 public final class ForwardingConfiguration extends RouteConfiguration {
@@ -45,11 +49,11 @@ public final class ForwardingConfiguration extends RouteConfiguration {
      * Creates an instance of ForwardingConfiguration class.
      */
     public ForwardingConfiguration() {
+        withOdataType("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration");
     }
 
     /**
-     * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
-     * empty to use incoming path.
+     * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
      * 
      * @return the customForwardingPath value.
      */
@@ -58,8 +62,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     }
 
     /**
-     * Set the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
-     * empty to use incoming path.
+     * Set the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
      * 
      * @param customForwardingPath the customForwardingPath value to set.
      * @return the ForwardingConfiguration object itself.

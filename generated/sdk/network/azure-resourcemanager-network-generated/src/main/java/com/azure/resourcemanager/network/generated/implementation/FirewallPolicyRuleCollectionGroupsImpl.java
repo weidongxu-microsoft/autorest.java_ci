@@ -38,8 +38,8 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
 
     public Response<FirewallPolicyRuleCollectionGroup> getWithResponse(String resourceGroupName,
         String firewallPolicyName, String ruleCollectionGroupName, Context context) {
-        Response<FirewallPolicyRuleCollectionGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            firewallPolicyName, ruleCollectionGroupName, context);
+        Response<FirewallPolicyRuleCollectionGroupInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FirewallPolicyRuleCollectionGroupImpl(inner.getValue(), this.manager()));

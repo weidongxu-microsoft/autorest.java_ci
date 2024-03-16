@@ -17,6 +17,7 @@ import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.search.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.search.generated.models.ProvisioningState;
 import com.azure.resourcemanager.search.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.search.generated.models.SearchDisabledDataExfiltrationOption;
 import com.azure.resourcemanager.search.generated.models.SearchSemanticSearch;
 import com.azure.resourcemanager.search.generated.models.SearchService;
 import com.azure.resourcemanager.search.generated.models.SearchServiceStatus;
@@ -99,6 +100,15 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this.innerModel().networkRuleSet();
     }
 
+    public List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions() {
+        List<SearchDisabledDataExfiltrationOption> inner = this.innerModel().disabledDataExfiltrationOptions();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public EncryptionWithCmk encryptionWithCmk() {
         return this.innerModel().encryptionWithCmk();
     }
@@ -111,28 +121,34 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this.innerModel().authOptions();
     }
 
+    public SearchSemanticSearch semanticSearch() {
+        return this.innerModel().semanticSearch();
+    }
+
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
-    }
-
-    public SearchSemanticSearch semanticSearch() {
-        return this.innerModel().semanticSearch();
     }
 
     public List<SharedPrivateLinkResource> sharedPrivateLinkResources() {
         List<SharedPrivateLinkResourceInner> inner = this.innerModel().sharedPrivateLinkResources();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public String etag() {
+        return this.innerModel().etag();
     }
 
     public Region region() {
@@ -171,14 +187,17 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
     }
 
     public SearchService create() {
-        this.innerObject = serviceManager.serviceClient().getServices().createOrUpdate(resourceGroupName,
-            searchServiceName, this.innerModel(), createClientRequestId, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
+            .createOrUpdate(resourceGroupName, searchServiceName, this.innerModel(), createClientRequestId,
+                Context.NONE);
         return this;
     }
 
     public SearchService create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServices().createOrUpdate(resourceGroupName,
-            searchServiceName, this.innerModel(), createClientRequestId, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
+            .createOrUpdate(resourceGroupName, searchServiceName, this.innerModel(), createClientRequestId, context);
         return this;
     }
 
@@ -196,14 +215,20 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
     }
 
     public SearchService apply() {
-        this.innerObject = serviceManager.serviceClient().getServices().updateWithResponse(resourceGroupName,
-            searchServiceName, updateServiceParam, updateClientRequestId, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
+            .updateWithResponse(resourceGroupName, searchServiceName, updateServiceParam, updateClientRequestId,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public SearchService apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getServices().updateWithResponse(resourceGroupName,
-            searchServiceName, updateServiceParam, updateClientRequestId, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
+            .updateWithResponse(resourceGroupName, searchServiceName, updateServiceParam, updateClientRequestId,
+                context)
+            .getValue();
         return this;
     }
 
@@ -217,7 +242,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
 
     public SearchService refresh() {
         UUID localClientRequestId = null;
-        this.innerObject = serviceManager.serviceClient().getServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
             .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, localClientRequestId, Context.NONE)
             .getValue();
         return this;
@@ -225,7 +251,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
 
     public SearchService refresh(Context context) {
         UUID localClientRequestId = null;
-        this.innerObject = serviceManager.serviceClient().getServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getServices()
             .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, localClientRequestId, context)
             .getValue();
         return this;
@@ -317,6 +344,17 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
             return this;
         } else {
             this.updateServiceParam.withNetworkRuleSet(networkRuleSet);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withDisabledDataExfiltrationOptions(
+        List<SearchDisabledDataExfiltrationOption> disabledDataExfiltrationOptions) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisabledDataExfiltrationOptions(disabledDataExfiltrationOptions);
+            return this;
+        } else {
+            this.updateServiceParam.withDisabledDataExfiltrationOptions(disabledDataExfiltrationOptions);
             return this;
         }
     }

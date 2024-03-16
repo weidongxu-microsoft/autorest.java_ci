@@ -22,18 +22,14 @@ public final class ResponseInner {
     private Integer cost;
 
     /*
-     * The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by
-     * '/'. This may be adjusted in the future and returned back from what was originally requested.
+     * The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
      */
     @JsonProperty(value = "timespan", required = true)
     private String timespan;
 
     /*
-     * The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special case
-     * for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D,
-     * FULL*).
-     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
-     * This is not present if a metadata request was made.
+     * The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special case for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D, FULL*). 
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified. This is not present if a metadata request was made.
      */
     @JsonProperty(value = "interval")
     private String interval;
@@ -83,9 +79,7 @@ public final class ResponseInner {
     }
 
     /**
-     * Get the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
-     * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
-     * requested.
+     * Get the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
      * 
      * @return the timespan value.
      */
@@ -94,9 +88,7 @@ public final class ResponseInner {
     }
 
     /**
-     * Set the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
-     * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
-     * requested.
+     * Set the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
      * 
      * @param timespan the timespan value to set.
      * @return the ResponseInner object itself.
@@ -107,11 +99,8 @@ public final class ResponseInner {
     }
 
     /**
-     * Get the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration
-     * format with a special case for 'FULL' value that returns single datapoint for entire time span requested
-     * (*Examples: PT15M, PT1H, P1D, FULL*).
-     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
-     * This is not present if a metadata request was made.
+     * Get the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special case for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D, FULL*). 
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified. This is not present if a metadata request was made.
      * 
      * @return the interval value.
      */
@@ -120,11 +109,8 @@ public final class ResponseInner {
     }
 
     /**
-     * Set the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration
-     * format with a special case for 'FULL' value that returns single datapoint for entire time span requested
-     * (*Examples: PT15M, PT1H, P1D, FULL*).
-     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
-     * This is not present if a metadata request was made.
+     * Set the interval property: The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special case for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D, FULL*). 
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified. This is not present if a metadata request was made.
      * 
      * @param interval the interval value to set.
      * @return the ResponseInner object itself.

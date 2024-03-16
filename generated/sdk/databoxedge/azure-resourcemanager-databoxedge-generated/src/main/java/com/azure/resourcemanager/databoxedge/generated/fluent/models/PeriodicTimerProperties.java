@@ -28,9 +28,7 @@ public final class PeriodicTimerProperties {
     private RoleSinkInfo sinkInfo;
 
     /*
-     * A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer
-     * trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of
-     * the module.
+     * A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
      */
     @JsonProperty(value = "customContextTag")
     private String customContextTag;
@@ -82,9 +80,7 @@ public final class PeriodicTimerProperties {
     }
 
     /**
-     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its
-     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
-     * tag can be the name or the image URL of the module.
+     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
      * 
      * @return the customContextTag value.
      */
@@ -93,9 +89,7 @@ public final class PeriodicTimerProperties {
     }
 
     /**
-     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its
-     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
-     * tag can be the name or the image URL of the module.
+     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
      * 
      * @param customContextTag the customContextTag value to set.
      * @return the PeriodicTimerProperties object itself.

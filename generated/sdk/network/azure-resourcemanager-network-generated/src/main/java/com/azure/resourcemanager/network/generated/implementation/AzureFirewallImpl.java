@@ -182,14 +182,16 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
     }
 
     public AzureFirewall create() {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls().createOrUpdate(resourceGroupName,
-            azureFirewallName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .createOrUpdate(resourceGroupName, azureFirewallName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AzureFirewall create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls().createOrUpdate(resourceGroupName,
-            azureFirewallName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .createOrUpdate(resourceGroupName, azureFirewallName, this.innerModel(), context);
         return this;
     }
 
@@ -205,14 +207,16 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
     }
 
     public AzureFirewall apply() {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls().updateTags(resourceGroupName,
-            azureFirewallName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .updateTags(resourceGroupName, azureFirewallName, updateParameters, Context.NONE);
         return this;
     }
 
     public AzureFirewall apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls().updateTags(resourceGroupName,
-            azureFirewallName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .updateTags(resourceGroupName, azureFirewallName, updateParameters, context);
         return this;
     }
 
@@ -225,14 +229,18 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
     }
 
     public AzureFirewall refresh() {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls()
-            .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AzureFirewall refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAzureFirewalls()
-            .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAzureFirewalls()
+            .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context)
+            .getValue();
         return this;
     }
 

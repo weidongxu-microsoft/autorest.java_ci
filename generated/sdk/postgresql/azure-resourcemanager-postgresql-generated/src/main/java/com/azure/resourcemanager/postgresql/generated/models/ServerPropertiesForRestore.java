@@ -14,7 +14,11 @@ import java.time.OffsetDateTime;
 /**
  * The properties used to create a new server by restoring from a backup.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "createMode",
+    defaultImpl = ServerPropertiesForRestore.class,
+    visible = true)
 @JsonTypeName("PointInTimeRestore")
 @Fluent
 public final class ServerPropertiesForRestore extends ServerPropertiesForCreate {
@@ -34,6 +38,7 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
      * Creates an instance of ServerPropertiesForRestore class.
      */
     public ServerPropertiesForRestore() {
+        withCreateMode(CreateMode.POINT_IN_TIME_RESTORE);
     }
 
     /**
@@ -57,8 +62,7 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     }
 
     /**
-     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
-     * from.
+     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from.
      * 
      * @return the restorePointInTime value.
      */
@@ -67,8 +71,7 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     }
 
     /**
-     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
-     * from.
+     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from.
      * 
      * @param restorePointInTime the restorePointInTime value to set.
      * @return the ServerPropertiesForRestore object itself.

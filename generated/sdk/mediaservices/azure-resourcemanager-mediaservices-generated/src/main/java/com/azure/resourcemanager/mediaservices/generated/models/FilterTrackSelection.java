@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Representing a list of FilterTrackPropertyConditions to select a track. The filters are combined using a logical AND
- * operation.
+ * Representing a list of FilterTrackPropertyConditions to select a track.  The filters are combined using a logical AND operation.
  */
 @Fluent
 public final class FilterTrackSelection {

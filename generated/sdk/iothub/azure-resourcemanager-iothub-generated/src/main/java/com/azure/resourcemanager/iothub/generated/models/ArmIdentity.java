@@ -27,9 +27,7 @@ public final class ArmIdentity {
     private String tenantId;
 
     /*
-     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly
-     * created identity and a set of user assigned identities. The type 'None' will remove any identities from the
-     * service.
+     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the service.
      */
     @JsonProperty(value = "type")
     private ResourceIdentityType type;
@@ -66,9 +64,7 @@ public final class ArmIdentity {
     }
 
     /**
-     * Get the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
-     * any identities from the service.
+     * Get the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the service.
      * 
      * @return the type value.
      */
@@ -77,9 +73,7 @@ public final class ArmIdentity {
     }
 
     /**
-     * Set the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
-     * any identities from the service.
+     * Set the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the service.
      * 
      * @param type the type value to set.
      * @return the ArmIdentity object itself.

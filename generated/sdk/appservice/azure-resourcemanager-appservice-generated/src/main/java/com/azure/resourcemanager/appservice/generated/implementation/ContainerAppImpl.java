@@ -102,14 +102,16 @@ public final class ContainerAppImpl implements ContainerApp, ContainerApp.Defini
     }
 
     public ContainerApp create() {
-        this.innerObject = serviceManager.serviceClient().getContainerApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ContainerApp create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainerApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -124,14 +126,16 @@ public final class ContainerAppImpl implements ContainerApp, ContainerApp.Defini
     }
 
     public ContainerApp apply() {
-        this.innerObject = serviceManager.serviceClient().getContainerApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ContainerApp apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainerApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -144,14 +148,18 @@ public final class ContainerAppImpl implements ContainerApp, ContainerApp.Defini
     }
 
     public ContainerApp refresh() {
-        this.innerObject = serviceManager.serviceClient().getContainerApps()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ContainerApp refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getContainerApps()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getContainerApps()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 

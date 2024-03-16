@@ -44,8 +44,8 @@ public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageV
 
     public Response<SharedGalleryImageVersion> getWithResponse(String location, String galleryUniqueName,
         String galleryImageName, String galleryImageVersionName, Context context) {
-        Response<SharedGalleryImageVersionInner> inner = this.serviceClient().getWithResponse(location,
-            galleryUniqueName, galleryImageName, galleryImageVersionName, context);
+        Response<SharedGalleryImageVersionInner> inner = this.serviceClient()
+            .getWithResponse(location, galleryUniqueName, galleryImageName, galleryImageVersionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SharedGalleryImageVersionImpl(inner.getValue(), this.manager()));

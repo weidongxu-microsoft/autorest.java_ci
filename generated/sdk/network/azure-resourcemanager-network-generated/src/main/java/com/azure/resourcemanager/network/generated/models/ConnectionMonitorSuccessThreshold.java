@@ -31,8 +31,7 @@ public final class ConnectionMonitorSuccessThreshold {
     }
 
     /**
-     * Get the checksFailedPercent property: The maximum percentage of failed checks permitted for a test to evaluate as
-     * successful.
+     * Get the checksFailedPercent property: The maximum percentage of failed checks permitted for a test to evaluate as successful.
      * 
      * @return the checksFailedPercent value.
      */
@@ -41,8 +40,7 @@ public final class ConnectionMonitorSuccessThreshold {
     }
 
     /**
-     * Set the checksFailedPercent property: The maximum percentage of failed checks permitted for a test to evaluate as
-     * successful.
+     * Set the checksFailedPercent property: The maximum percentage of failed checks permitted for a test to evaluate as successful.
      * 
      * @param checksFailedPercent the checksFailedPercent value to set.
      * @return the ConnectionMonitorSuccessThreshold object itself.
@@ -53,8 +51,7 @@ public final class ConnectionMonitorSuccessThreshold {
     }
 
     /**
-     * Get the roundTripTimeMs property: The maximum round-trip time in milliseconds permitted for a test to evaluate as
-     * successful.
+     * Get the roundTripTimeMs property: The maximum round-trip time in milliseconds permitted for a test to evaluate as successful.
      * 
      * @return the roundTripTimeMs value.
      */
@@ -63,8 +60,7 @@ public final class ConnectionMonitorSuccessThreshold {
     }
 
     /**
-     * Set the roundTripTimeMs property: The maximum round-trip time in milliseconds permitted for a test to evaluate as
-     * successful.
+     * Set the roundTripTimeMs property: The maximum round-trip time in milliseconds permitted for a test to evaluate as successful.
      * 
      * @param roundTripTimeMs the roundTripTimeMs value to set.
      * @return the ConnectionMonitorSuccessThreshold object itself.

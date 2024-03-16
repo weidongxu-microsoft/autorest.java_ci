@@ -25,8 +25,7 @@ public interface SignaturesOverrides {
     String id();
 
     /**
-     * Gets the type property: Will contain the type of the resource:
-     * Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
+     * Gets the type property: Will contain the type of the resource: Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
      * 
      * @return the type value.
      */

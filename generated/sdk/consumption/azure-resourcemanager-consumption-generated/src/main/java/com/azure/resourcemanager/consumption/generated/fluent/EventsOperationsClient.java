@@ -15,8 +15,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.EventSummar
  */
 public interface EventsOperationsClient {
     /**
-     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
-     * a billing profile for a given start and end date.
+     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or a billing profile for a given start and end date.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -32,8 +31,7 @@ public interface EventsOperationsClient {
         String startDate, String endDate);
 
     /**
-     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
-     * a billing profile for a given start and end date.
+     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or a billing profile for a given start and end date.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -50,8 +48,7 @@ public interface EventsOperationsClient {
         String startDate, String endDate, Context context);
 
     /**
-     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
-     * a billing profile for a given start and end date.
+     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or a billing profile for a given start and end date.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,13 +60,10 @@ public interface EventsOperationsClient {
     PagedIterable<EventSummaryInner> listByBillingAccount(String billingAccountId);
 
     /**
-     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
-     * a billing profile for a given start and end date.
+     * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or a billing profile for a given start and end date.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
-     * where key and value is separated by a colon (:).
+     * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

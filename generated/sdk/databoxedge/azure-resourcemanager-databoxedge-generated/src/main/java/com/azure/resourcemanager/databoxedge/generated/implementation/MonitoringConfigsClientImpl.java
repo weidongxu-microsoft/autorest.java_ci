@@ -64,8 +64,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientMonitoringConfigs to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientMonitoringConfigs to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -129,8 +128,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MonitoringMetricConfigurationInner>> listSinglePageAsync(String deviceName,
@@ -172,8 +170,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MonitoringMetricConfigurationInner>> listSinglePageAsync(String deviceName,
@@ -278,7 +275,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * Gets a metric configuration of a role.
+     * Gets a  metric configuration of a role.
      * 
      * @param deviceName The device name.
      * @param roleName The role name.
@@ -286,7 +283,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role along with {@link Response} on successful completion of {@link Mono}.
+     * @return a  metric configuration of a role along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MonitoringMetricConfigurationInner>> getWithResponseAsync(String deviceName, String roleName,
@@ -317,7 +314,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * Gets a metric configuration of a role.
+     * Gets a  metric configuration of a role.
      * 
      * @param deviceName The device name.
      * @param roleName The role name.
@@ -326,7 +323,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role along with {@link Response} on successful completion of {@link Mono}.
+     * @return a  metric configuration of a role along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MonitoringMetricConfigurationInner>> getWithResponseAsync(String deviceName, String roleName,
@@ -356,7 +353,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * Gets a metric configuration of a role.
+     * Gets a  metric configuration of a role.
      * 
      * @param deviceName The device name.
      * @param roleName The role name.
@@ -364,7 +361,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role on successful completion of {@link Mono}.
+     * @return a  metric configuration of a role on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MonitoringMetricConfigurationInner> getAsync(String deviceName, String roleName,
@@ -374,7 +371,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * Gets a metric configuration of a role.
+     * Gets a  metric configuration of a role.
      * 
      * @param deviceName The device name.
      * @param roleName The role name.
@@ -383,7 +380,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role along with {@link Response}.
+     * @return a  metric configuration of a role along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MonitoringMetricConfigurationInner> getWithResponse(String deviceName, String roleName,
@@ -392,7 +389,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     }
 
     /**
-     * Gets a metric configuration of a role.
+     * Gets a  metric configuration of a role.
      * 
      * @param deviceName The device name.
      * @param roleName The role name.
@@ -400,7 +397,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role.
+     * @return a  metric configuration of a role.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public MonitoringMetricConfigurationInner get(String deviceName, String roleName, String resourceGroupName) {
@@ -417,8 +414,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the metric setting details for the role along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the metric setting details for the role along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String roleName,
@@ -466,8 +462,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the metric setting details for the role along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the metric setting details for the role along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String roleName,
@@ -628,7 +623,8 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     private Mono<MonitoringMetricConfigurationInner> createOrUpdateAsync(String deviceName, String roleName,
         String resourceGroupName, MonitoringMetricConfigurationInner monitoringMetricConfiguration, Context context) {
         return beginCreateOrUpdateAsync(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -898,8 +894,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MonitoringMetricConfigurationInner>> listNextSinglePageAsync(String nextLink) {
@@ -927,8 +922,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return collection of metric configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MonitoringMetricConfigurationInner>> listNextSinglePageAsync(String nextLink,

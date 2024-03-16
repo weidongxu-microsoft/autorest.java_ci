@@ -134,14 +134,16 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
     }
 
     public VpnSite create() {
-        this.innerObject = serviceManager.serviceClient().getVpnSites().createOrUpdate(resourceGroupName, vpnSiteName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .createOrUpdate(resourceGroupName, vpnSiteName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnSite create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVpnSites().createOrUpdate(resourceGroupName, vpnSiteName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .createOrUpdate(resourceGroupName, vpnSiteName, this.innerModel(), context);
         return this;
     }
 
@@ -157,14 +159,18 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
     }
 
     public VpnSite apply() {
-        this.innerObject = serviceManager.serviceClient().getVpnSites()
-            .updateTagsWithResponse(resourceGroupName, vpnSiteName, updateVpnSiteParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .updateTagsWithResponse(resourceGroupName, vpnSiteName, updateVpnSiteParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VpnSite apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVpnSites()
-            .updateTagsWithResponse(resourceGroupName, vpnSiteName, updateVpnSiteParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .updateTagsWithResponse(resourceGroupName, vpnSiteName, updateVpnSiteParameters, context)
+            .getValue();
         return this;
     }
 
@@ -176,14 +182,18 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
     }
 
     public VpnSite refresh() {
-        this.innerObject = serviceManager.serviceClient().getVpnSites()
-            .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VpnSite refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVpnSites()
-            .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVpnSites()
+            .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context)
+            .getValue();
         return this;
     }
 

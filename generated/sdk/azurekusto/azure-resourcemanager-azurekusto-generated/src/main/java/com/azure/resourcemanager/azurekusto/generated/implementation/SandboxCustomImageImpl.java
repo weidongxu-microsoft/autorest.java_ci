@@ -69,14 +69,16 @@ public final class SandboxCustomImageImpl
     }
 
     public SandboxCustomImage create() {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages().createOrUpdate(resourceGroupName,
-            clusterName, sandboxCustomImageName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .createOrUpdate(resourceGroupName, clusterName, sandboxCustomImageName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SandboxCustomImage create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages().createOrUpdate(resourceGroupName,
-            clusterName, sandboxCustomImageName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .createOrUpdate(resourceGroupName, clusterName, sandboxCustomImageName, this.innerModel(), context);
         return this;
     }
 
@@ -91,14 +93,16 @@ public final class SandboxCustomImageImpl
     }
 
     public SandboxCustomImage apply() {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages().update(resourceGroupName,
-            clusterName, sandboxCustomImageName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .update(resourceGroupName, clusterName, sandboxCustomImageName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SandboxCustomImage apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages().update(resourceGroupName,
-            clusterName, sandboxCustomImageName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .update(resourceGroupName, clusterName, sandboxCustomImageName, this.innerModel(), context);
         return this;
     }
 
@@ -113,14 +117,18 @@ public final class SandboxCustomImageImpl
     }
 
     public SandboxCustomImage refresh() {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages()
-            .getWithResponse(resourceGroupName, clusterName, sandboxCustomImageName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .getWithResponse(resourceGroupName, clusterName, sandboxCustomImageName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SandboxCustomImage refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSandboxCustomImages()
-            .getWithResponse(resourceGroupName, clusterName, sandboxCustomImageName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSandboxCustomImages()
+            .getWithResponse(resourceGroupName, clusterName, sandboxCustomImageName, context)
+            .getValue();
         return this;
     }
 

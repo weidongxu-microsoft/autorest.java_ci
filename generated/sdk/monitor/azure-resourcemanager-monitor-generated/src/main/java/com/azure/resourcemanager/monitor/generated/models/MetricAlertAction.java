@@ -21,8 +21,7 @@ public final class MetricAlertAction {
     private String actionGroupId;
 
     /*
-     * This field allows specifying custom properties, which would be appended to the alert payload sent as input to the
-     * webhook.
+     * This field allows specifying custom properties, which would be appended to the alert payload sent as input to the webhook.
      */
     @JsonProperty(value = "webHookProperties")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -55,8 +54,7 @@ public final class MetricAlertAction {
     }
 
     /**
-     * Get the webhookProperties property: This field allows specifying custom properties, which would be appended to
-     * the alert payload sent as input to the webhook.
+     * Get the webhookProperties property: This field allows specifying custom properties, which would be appended to the alert payload sent as input to the webhook.
      * 
      * @return the webhookProperties value.
      */
@@ -65,8 +63,7 @@ public final class MetricAlertAction {
     }
 
     /**
-     * Set the webhookProperties property: This field allows specifying custom properties, which would be appended to
-     * the alert payload sent as input to the webhook.
+     * Set the webhookProperties property: This field allows specifying custom properties, which would be appended to the alert payload sent as input to the webhook.
      * 
      * @param webhookProperties the webhookProperties value to set.
      * @return the MetricAlertAction object itself.

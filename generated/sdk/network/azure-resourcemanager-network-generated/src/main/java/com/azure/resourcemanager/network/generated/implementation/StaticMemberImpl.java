@@ -76,16 +76,20 @@ public final class StaticMemberImpl implements StaticMember, StaticMember.Defini
     }
 
     public StaticMember create() {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticMembers().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, staticMemberName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName,
+                this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticMember create(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticMembers().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, staticMemberName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName,
+                this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -100,16 +104,20 @@ public final class StaticMemberImpl implements StaticMember, StaticMember.Defini
     }
 
     public StaticMember apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticMembers().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, staticMemberName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName,
+                this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public StaticMember apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getStaticMembers().createOrUpdateWithResponse(resourceGroupName,
-                networkManagerName, networkGroupName, staticMemberName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName,
+                this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -124,14 +132,16 @@ public final class StaticMemberImpl implements StaticMember, StaticMember.Defini
     }
 
     public StaticMember refresh() {
-        this.innerObject = serviceManager.serviceClient().getStaticMembers()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
             .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, Context.NONE)
             .getValue();
         return this;
     }
 
     public StaticMember refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getStaticMembers()
+        this.innerObject = serviceManager.serviceClient()
+            .getStaticMembers()
             .getWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context)
             .getValue();
         return this;

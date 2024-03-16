@@ -25,8 +25,7 @@ public final class BackendAddressPoolInner extends SubResource {
     private BackendAddressPoolPropertiesFormat innerProperties;
 
     /*
-     * The name of the resource that is unique within the set of backend address pools used by the load balancer. This
-     * name can be used to access the resource.
+     * The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
      */
     @JsonProperty(value = "name")
     private String name;
@@ -59,8 +58,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within the set of backend address pools used by
-     * the load balancer. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -69,8 +67,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within the set of backend address pools used by
-     * the load balancer. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the BackendAddressPoolInner object itself.
@@ -187,8 +184,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend address
-     * pool.
+     * Get the loadBalancingRules property: An array of references to load balancing rules that use this backend address pool.
      * 
      * @return the loadBalancingRules value.
      */
@@ -233,8 +229,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Get the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
-     * and backend address.
+     * Get the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
      * 
      * @return the drainPeriodInSeconds value.
      */
@@ -243,8 +238,7 @@ public final class BackendAddressPoolInner extends SubResource {
     }
 
     /**
-     * Set the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
-     * and backend address.
+     * Set the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
      * 
      * @param drainPeriodInSeconds the drainPeriodInSeconds value to set.
      * @return the BackendAddressPoolInner object itself.

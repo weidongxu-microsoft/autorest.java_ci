@@ -59,8 +59,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * The interface defining all the services for SearchManagementClientQueryKeys to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for SearchManagementClientQueryKeys to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
@@ -108,17 +107,14 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given search service that has permissions for query operations only along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryKeyInner>> createWithResponseAsync(String resourceGroupName, String searchServiceName,
@@ -152,18 +148,15 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given search service that has permissions for query operations only along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryKeyInner>> createWithResponseAsync(String resourceGroupName, String searchServiceName,
@@ -196,15 +189,13 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given search service that has permissions for query operations only on
-     * successful completion of {@link Mono}.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryKeyInner> createAsync(String resourceGroupName, String searchServiceName, String name) {
@@ -216,18 +207,15 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given search service that has permissions for query operations only along with
-     * {@link Response}.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryKeyInner> createWithResponse(String resourceGroupName, String searchServiceName, String name,
@@ -238,14 +226,13 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given search service that has permissions for query operations only.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public QueryKeyInner create(String resourceGroupName, String searchServiceName, String name) {
@@ -254,18 +241,15 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response containing the query API keys for a given Azure AI Search service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceSinglePageAsync(String resourceGroupName,
@@ -297,19 +281,16 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response containing the query API keys for a given Azure AI Search service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceSinglePageAsync(String resourceGroupName,
@@ -340,18 +321,15 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service as paginated response with
-     * {@link PagedFlux}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(String resourceGroupName, String searchServiceName,
@@ -362,16 +340,14 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service as paginated response with
-     * {@link PagedFlux}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(String resourceGroupName, String searchServiceName) {
@@ -382,19 +358,16 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service as paginated response with
-     * {@link PagedFlux}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(String resourceGroupName, String searchServiceName,
@@ -405,16 +378,14 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service as paginated response with
-     * {@link PagedIterable}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<QueryKeyInner> listBySearchService(String resourceGroupName, String searchServiceName) {
@@ -423,19 +394,16 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Returns the list of query API keys for the given search service.
+     * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service as paginated response with
-     * {@link PagedIterable}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<QueryKeyInner> listBySearchService(String resourceGroupName, String searchServiceName,
@@ -445,15 +413,12 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -489,15 +454,12 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -533,12 +495,10 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -553,15 +513,12 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -575,12 +532,10 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     }
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     * value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the search service associated with the specified resource group.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -598,13 +553,11 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @param nextLink The URL to get the next list of items
      * 
      * The nextLink parameter.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response containing the query API keys for a given Azure AI Search service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceNextSinglePageAsync(String nextLink,
@@ -631,14 +584,12 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @param nextLink The URL to get the next list of items
      * 
      * The nextLink parameter.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     * included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given search service along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response containing the query API keys for a given Azure AI Search service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceNextSinglePageAsync(String nextLink,

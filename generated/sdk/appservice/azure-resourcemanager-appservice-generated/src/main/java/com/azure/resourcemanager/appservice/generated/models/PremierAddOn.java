@@ -171,8 +171,7 @@ public interface PremierAddOn {
         }
 
         /**
-         * The stage of the PremierAddOn definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PremierAddOn definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithKind, DefinitionStages.WithSku,
             DefinitionStages.WithProduct, DefinitionStages.WithVendor, DefinitionStages.WithMarketplacePublisher,

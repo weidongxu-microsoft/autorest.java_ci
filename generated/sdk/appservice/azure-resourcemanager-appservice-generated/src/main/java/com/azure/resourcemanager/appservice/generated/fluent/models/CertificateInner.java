@@ -254,8 +254,7 @@ public final class CertificateInner extends Resource {
     }
 
     /**
-     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the
-     * certificate.
+     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the certificate.
      * 
      * @return the hostingEnvironmentProfile value.
      */
@@ -319,8 +318,7 @@ public final class CertificateInner extends Resource {
     }
 
     /**
-     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
-     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @return the serverFarmId value.
      */
@@ -329,8 +327,7 @@ public final class CertificateInner extends Resource {
     }
 
     /**
-     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
-     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @param serverFarmId the serverFarmId value to set.
      * @return the CertificateInner object itself.

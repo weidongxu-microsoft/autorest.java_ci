@@ -205,13 +205,15 @@ public final class NetworkVirtualApplianceImpl
     }
 
     public NetworkVirtualAppliance create() {
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkVirtualAppliance create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), context);
         return this;
     }
@@ -229,14 +231,16 @@ public final class NetworkVirtualApplianceImpl
     }
 
     public NetworkVirtualAppliance apply() {
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public NetworkVirtualAppliance apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, context)
             .getValue();
         return this;
@@ -253,7 +257,8 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualAppliance refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -261,7 +266,8 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualAppliance refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+        this.innerObject = serviceManager.serviceClient()
+            .getNetworkVirtualAppliances()
             .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, context)
             .getValue();
         return this;

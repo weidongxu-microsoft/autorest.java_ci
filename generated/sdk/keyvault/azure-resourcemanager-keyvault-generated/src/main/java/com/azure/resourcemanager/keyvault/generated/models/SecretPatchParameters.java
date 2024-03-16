@@ -15,7 +15,7 @@ import java.util.Map;
 @Fluent
 public final class SecretPatchParameters {
     /*
-     * The tags that will be assigned to the secret.
+     * The tags that will be assigned to the secret. 
      */
     @JsonProperty(value = "tags")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

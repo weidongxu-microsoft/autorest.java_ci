@@ -48,8 +48,8 @@ public final class InboundNatRulesImpl implements InboundNatRules {
 
     public Response<InboundNatRule> getWithResponse(String resourceGroupName, String loadBalancerName,
         String inboundNatRuleName, String expand, Context context) {
-        Response<InboundNatRuleInner> inner = this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName,
-            inboundNatRuleName, expand, context);
+        Response<InboundNatRuleInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new InboundNatRuleImpl(inner.getValue(), this.manager()));

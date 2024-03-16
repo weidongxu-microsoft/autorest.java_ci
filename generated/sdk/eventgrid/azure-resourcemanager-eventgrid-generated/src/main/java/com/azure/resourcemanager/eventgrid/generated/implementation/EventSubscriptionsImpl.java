@@ -258,8 +258,8 @@ public final class EventSubscriptionsImpl implements EventSubscriptions {
 
     public PagedIterable<EventSubscription> listByResource(String resourceGroupName, String providerNamespace,
         String resourceTypeName, String resourceName, String filter, Integer top, Context context) {
-        PagedIterable<EventSubscriptionInner> inner = this.serviceClient().listByResource(resourceGroupName,
-            providerNamespace, resourceTypeName, resourceName, filter, top, context);
+        PagedIterable<EventSubscriptionInner> inner = this.serviceClient()
+            .listByResource(resourceGroupName, providerNamespace, resourceTypeName, resourceName, filter, top, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new EventSubscriptionImpl(inner1, this.manager()));
     }
 

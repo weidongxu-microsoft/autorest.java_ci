@@ -56,8 +56,7 @@ public final class ExpressRouteServiceProvidersClientImpl implements ExpressRout
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteServiceProviders to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteServiceProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -84,8 +83,7 @@ public final class ExpressRouteServiceProvidersClientImpl implements ExpressRout
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available express route service providers along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the available express route service providers along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteServiceProviderInner>> listSinglePageAsync() {
@@ -114,8 +112,7 @@ public final class ExpressRouteServiceProvidersClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available express route service providers along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the available express route service providers along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteServiceProviderInner>> listSinglePageAsync(Context context) {
@@ -197,8 +194,7 @@ public final class ExpressRouteServiceProvidersClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListExpressRouteServiceProvider API service call along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response for the ListExpressRouteServiceProvider API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteServiceProviderInner>> listNextSinglePageAsync(String nextLink) {
@@ -226,8 +222,7 @@ public final class ExpressRouteServiceProvidersClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListExpressRouteServiceProvider API service call along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return response for the ListExpressRouteServiceProvider API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteServiceProviderInner>> listNextSinglePageAsync(String nextLink,

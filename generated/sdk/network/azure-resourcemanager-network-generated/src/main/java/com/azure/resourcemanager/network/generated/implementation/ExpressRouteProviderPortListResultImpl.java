@@ -27,7 +27,8 @@ public final class ExpressRouteProviderPortListResultImpl implements ExpressRout
         List<ExpressRouteProviderPortInner> inner = this.innerModel().value();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ExpressRouteProviderPortImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ExpressRouteProviderPortImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

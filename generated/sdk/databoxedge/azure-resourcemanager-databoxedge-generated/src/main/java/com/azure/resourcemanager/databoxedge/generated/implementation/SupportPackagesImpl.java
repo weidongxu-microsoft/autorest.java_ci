@@ -30,8 +30,8 @@ public final class SupportPackagesImpl implements SupportPackages {
 
     public void triggerSupportPackage(String deviceName, String resourceGroupName,
         TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
-        this.serviceClient().triggerSupportPackage(deviceName, resourceGroupName, triggerSupportPackageRequest,
-            context);
+        this.serviceClient()
+            .triggerSupportPackage(deviceName, resourceGroupName, triggerSupportPackageRequest, context);
     }
 
     private SupportPackagesClient serviceClient() {

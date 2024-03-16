@@ -14,11 +14,7 @@ import java.util.List;
 /**
  * Represents input files for a Job.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = JobInputClip.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputClip.class, visible = true)
 @JsonTypeName("#Microsoft.Media.JobInputClip")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputAsset", value = JobInputAsset.class),
@@ -26,38 +22,31 @@ import java.util.List;
 @Fluent
 public class JobInputClip extends JobInput {
     /*
-     * List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in
-     * service responses to prevent sensitive data exposure.
+     * List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in service responses to prevent sensitive data exposure.
      */
     @JsonProperty(value = "files")
     private List<String> files;
 
     /*
-     * Defines a point on the timeline of the input media at which processing will start. Defaults to the beginning of
-     * the input media.
+     * Defines a point on the timeline of the input media at which processing will start. Defaults to the beginning of the input media.
      */
     @JsonProperty(value = "start")
     private ClipTime start;
 
     /*
-     * Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input
-     * media.
+     * Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input media.
      */
     @JsonProperty(value = "end")
     private ClipTime end;
 
     /*
-     * A label that is assigned to a JobInputClip, that is used to satisfy a reference used in the Transform. For
-     * example, a Transform can be authored so as to take an image file with the label 'xyz' and apply it as an overlay
-     * onto the input video before it is encoded. When submitting a Job, exactly one of the JobInputs should be the
-     * image file, and it should have the label 'xyz'.
+     * A label that is assigned to a JobInputClip, that is used to satisfy a reference used in the Transform. For example, a Transform can be authored so as to take an image file with the label 'xyz' and apply it as an overlay onto the input video before it is encoded. When submitting a Job, exactly one of the JobInputs should be the image file, and it should have the label 'xyz'.
      */
     @JsonProperty(value = "label")
     private String label;
 
     /*
-     * Defines a list of InputDefinitions. For each InputDefinition, it defines a list of track selections and related
-     * metadata.
+     * Defines a list of InputDefinitions. For each InputDefinition, it defines a list of track selections and related metadata.
      */
     @JsonProperty(value = "inputDefinitions")
     private List<InputDefinition> inputDefinitions;
@@ -66,11 +55,11 @@ public class JobInputClip extends JobInput {
      * Creates an instance of JobInputClip class.
      */
     public JobInputClip() {
+        withOdataType("#Microsoft.Media.JobInputClip");
     }
 
     /**
-     * Get the files property: List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings
-     * will not be returned in service responses to prevent sensitive data exposure.
+     * Get the files property: List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in service responses to prevent sensitive data exposure.
      * 
      * @return the files value.
      */
@@ -79,8 +68,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Set the files property: List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings
-     * will not be returned in service responses to prevent sensitive data exposure.
+     * Set the files property: List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in service responses to prevent sensitive data exposure.
      * 
      * @param files the files value to set.
      * @return the JobInputClip object itself.
@@ -91,8 +79,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Get the start property: Defines a point on the timeline of the input media at which processing will start.
-     * Defaults to the beginning of the input media.
+     * Get the start property: Defines a point on the timeline of the input media at which processing will start. Defaults to the beginning of the input media.
      * 
      * @return the start value.
      */
@@ -101,8 +88,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Set the start property: Defines a point on the timeline of the input media at which processing will start.
-     * Defaults to the beginning of the input media.
+     * Set the start property: Defines a point on the timeline of the input media at which processing will start. Defaults to the beginning of the input media.
      * 
      * @param start the start value to set.
      * @return the JobInputClip object itself.
@@ -113,8 +99,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Get the end property: Defines a point on the timeline of the input media at which processing will end. Defaults
-     * to the end of the input media.
+     * Get the end property: Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input media.
      * 
      * @return the end value.
      */
@@ -123,8 +108,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Set the end property: Defines a point on the timeline of the input media at which processing will end. Defaults
-     * to the end of the input media.
+     * Set the end property: Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input media.
      * 
      * @param end the end value to set.
      * @return the JobInputClip object itself.
@@ -135,10 +119,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Get the label property: A label that is assigned to a JobInputClip, that is used to satisfy a reference used in
-     * the Transform. For example, a Transform can be authored so as to take an image file with the label 'xyz' and
-     * apply it as an overlay onto the input video before it is encoded. When submitting a Job, exactly one of the
-     * JobInputs should be the image file, and it should have the label 'xyz'.
+     * Get the label property: A label that is assigned to a JobInputClip, that is used to satisfy a reference used in the Transform. For example, a Transform can be authored so as to take an image file with the label 'xyz' and apply it as an overlay onto the input video before it is encoded. When submitting a Job, exactly one of the JobInputs should be the image file, and it should have the label 'xyz'.
      * 
      * @return the label value.
      */
@@ -147,10 +128,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Set the label property: A label that is assigned to a JobInputClip, that is used to satisfy a reference used in
-     * the Transform. For example, a Transform can be authored so as to take an image file with the label 'xyz' and
-     * apply it as an overlay onto the input video before it is encoded. When submitting a Job, exactly one of the
-     * JobInputs should be the image file, and it should have the label 'xyz'.
+     * Set the label property: A label that is assigned to a JobInputClip, that is used to satisfy a reference used in the Transform. For example, a Transform can be authored so as to take an image file with the label 'xyz' and apply it as an overlay onto the input video before it is encoded. When submitting a Job, exactly one of the JobInputs should be the image file, and it should have the label 'xyz'.
      * 
      * @param label the label value to set.
      * @return the JobInputClip object itself.
@@ -161,8 +139,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Get the inputDefinitions property: Defines a list of InputDefinitions. For each InputDefinition, it defines a
-     * list of track selections and related metadata.
+     * Get the inputDefinitions property: Defines a list of InputDefinitions. For each InputDefinition, it defines a list of track selections and related metadata.
      * 
      * @return the inputDefinitions value.
      */
@@ -171,8 +148,7 @@ public class JobInputClip extends JobInput {
     }
 
     /**
-     * Set the inputDefinitions property: Defines a list of InputDefinitions. For each InputDefinition, it defines a
-     * list of track selections and related metadata.
+     * Set the inputDefinitions property: Defines a list of InputDefinitions. For each InputDefinition, it defines a list of track selections and related metadata.
      * 
      * @param inputDefinitions the inputDefinitions value to set.
      * @return the JobInputClip object itself.

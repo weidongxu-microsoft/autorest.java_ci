@@ -19,8 +19,7 @@ public interface ListContentKeysResponse {
     List<StreamingLocatorContentKey> contentKeys();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ListContentKeysResponseInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ListContentKeysResponseInner object.
      * 
      * @return the inner object.
      */

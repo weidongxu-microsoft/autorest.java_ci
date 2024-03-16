@@ -104,8 +104,8 @@ public final class DomainsImpl implements Domains {
 
     public Response<DomainSharedAccessKeys> regenerateKeyWithResponse(String resourceGroupName, String domainName,
         DomainRegenerateKeyRequest regenerateKeyRequest, Context context) {
-        Response<DomainSharedAccessKeysInner> inner = this.serviceClient().regenerateKeyWithResponse(resourceGroupName,
-            domainName, regenerateKeyRequest, context);
+        Response<DomainSharedAccessKeysInner> inner = this.serviceClient()
+            .regenerateKeyWithResponse(resourceGroupName, domainName, regenerateKeyRequest, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainSharedAccessKeysImpl(inner.getValue(), this.manager()));

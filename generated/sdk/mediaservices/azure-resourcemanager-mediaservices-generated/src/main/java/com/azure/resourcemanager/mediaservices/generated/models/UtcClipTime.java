@@ -12,10 +12,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
 
 /**
- * Specifies the clip time as a Utc time position in the media file. The Utc time can point to a different position
- * depending on whether the media file starts from a timestamp of zero or not.
+ * Specifies the clip time as a Utc time position in the media file.  The Utc time can point to a different position depending on whether the media file starts from a timestamp of zero or not.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = UtcClipTime.class, visible = true)
 @JsonTypeName("#Microsoft.Media.UtcClipTime")
 @Fluent
 public final class UtcClipTime extends ClipTime {
@@ -29,6 +28,7 @@ public final class UtcClipTime extends ClipTime {
      * Creates an instance of UtcClipTime class.
      */
     public UtcClipTime() {
+        withOdataType("#Microsoft.Media.UtcClipTime");
     }
 
     /**

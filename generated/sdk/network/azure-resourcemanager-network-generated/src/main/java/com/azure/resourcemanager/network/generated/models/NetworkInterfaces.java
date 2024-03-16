@@ -21,8 +21,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a role instance in a cloud service as paginated response with
-     * {@link PagedIterable}.
+     * @return information about all network interfaces in a role instance in a cloud service as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
         String cloudServiceName, String roleInstanceName);
@@ -37,8 +36,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a role instance in a cloud service as paginated response with
-     * {@link PagedIterable}.
+     * @return information about all network interfaces in a role instance in a cloud service as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
         String cloudServiceName, String roleInstanceName, Context context);
@@ -257,8 +255,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated
-     * response with {@link PagedIterable}.
+     * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex);
@@ -273,8 +270,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated
-     * response with {@link PagedIterable}.
+     * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, Context context);
@@ -349,8 +345,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set as paginated response
-     * with {@link PagedIterable}.
+     * @return the specified network interface ip configuration in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName);
@@ -367,8 +362,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set as paginated response
-     * with {@link PagedIterable}.
+     * @return the specified network interface ip configuration in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(String resourceGroupName,
         String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName, String expand,
@@ -387,8 +381,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set along with
-     * {@link Response}.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link Response}.
      */
     Response<NetworkInterfaceIpConfiguration> getVirtualMachineScaleSetIpConfigurationWithResponse(
         String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex,

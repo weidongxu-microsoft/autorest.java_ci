@@ -51,8 +51,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientPrivateLinkResources to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for EventHubManagementClientPrivateLinkResources to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -75,8 +74,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesListResultInner>> getWithResponseAsync(String resourceGroupName,
@@ -112,8 +110,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesListResultInner>> getWithResponseAsync(String resourceGroupName,

@@ -399,8 +399,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan
-     * P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -415,8 +414,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan
-     * P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -450,8 +448,7 @@ public interface P2SVpnGatewaysClient {
     P2SVpnGatewayInner getP2SVpnConnectionHealth(String resourceGroupName, String gatewayName, Context context);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -459,8 +456,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of
-     * the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -468,8 +464,7 @@ public interface P2SVpnGatewaysClient {
             P2SVpnConnectionHealthRequest request);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -478,8 +473,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of
-     * the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -487,8 +481,7 @@ public interface P2SVpnGatewaysClient {
             P2SVpnConnectionHealthRequest request, Context context);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -496,16 +489,14 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     P2SVpnConnectionHealthInner getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,
         P2SVpnConnectionHealthRequest request);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -514,8 +505,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     * specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     P2SVpnConnectionHealthInner getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,

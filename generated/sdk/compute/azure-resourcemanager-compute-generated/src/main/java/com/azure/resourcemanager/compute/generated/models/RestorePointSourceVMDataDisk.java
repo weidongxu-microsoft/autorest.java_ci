@@ -88,8 +88,7 @@ public final class RestorePointSourceVMDataDisk {
     }
 
     /**
-     * Get the diskSizeGB property: Gets the initial disk size in GB for blank data disks, and the new desired size for
-     * existing OS and Data disks.
+     * Get the diskSizeGB property: Gets the initial disk size in GB for blank data disks, and the new desired size for existing OS and Data disks.
      * 
      * @return the diskSizeGB value.
      */

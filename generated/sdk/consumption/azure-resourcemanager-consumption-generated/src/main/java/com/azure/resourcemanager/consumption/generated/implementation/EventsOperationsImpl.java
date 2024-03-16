@@ -34,8 +34,8 @@ public final class EventsOperationsImpl implements EventsOperations {
 
     public PagedIterable<EventSummary> listByBillingProfile(String billingAccountId, String billingProfileId,
         String startDate, String endDate, Context context) {
-        PagedIterable<EventSummaryInner> inner = this.serviceClient().listByBillingProfile(billingAccountId,
-            billingProfileId, startDate, endDate, context);
+        PagedIterable<EventSummaryInner> inner = this.serviceClient()
+            .listByBillingProfile(billingAccountId, billingProfileId, startDate, endDate, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new EventSummaryImpl(inner1, this.manager()));
     }
 

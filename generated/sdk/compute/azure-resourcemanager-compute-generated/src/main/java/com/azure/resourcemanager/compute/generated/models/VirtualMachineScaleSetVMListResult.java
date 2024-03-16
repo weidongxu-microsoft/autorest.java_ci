@@ -22,8 +22,7 @@ public final class VirtualMachineScaleSetVMListResult {
     private List<VirtualMachineScaleSetVMInner> value;
 
     /*
-     * The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with this to fetch the next page
-     * of VMSS VMs
+     * The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with this to fetch the next page of VMSS VMs
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class VirtualMachineScaleSetVMListResult {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with
-     * this to fetch the next page of VMSS VMs.
+     * Get the nextLink property: The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with this to fetch the next page of VMSS VMs.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class VirtualMachineScaleSetVMListResult {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with
-     * this to fetch the next page of VMSS VMs.
+     * Set the nextLink property: The uri to fetch the next page of Virtual Machine Scale Set VMs. Call ListNext() with this to fetch the next page of VMSS VMs.
      * 
      * @param nextLink the nextLink value to set.
      * @return the VirtualMachineScaleSetVMListResult object itself.

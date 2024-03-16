@@ -81,8 +81,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientResourceProviders to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientResourceProviders to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -280,8 +279,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkSinglePageAsync(
@@ -311,16 +309,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
             Mono<Response<Flux<ByteBuffer>>> mono
-                = service.putBastionShareableLink(this.client.getEndpoint(), resourceGroupName, bastionHostname,
-                    apiVersion, this.client.getSubscriptionId(), bslRequest, accept, context).cache();
+                = service
+                    .putBastionShareableLink(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
+                        this.client.getSubscriptionId(), bslRequest, accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<BastionShareableLinkListResult, BastionShareableLinkListResult>getLroResult(mono,
                         this.client.getHttpPipeline(), BastionShareableLinkListResult.class,
                         BastionShareableLinkListResult.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<BastionShareableLinkInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<BastionShareableLinkInner>>map(
+                res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
+                    res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -334,8 +337,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkSinglePageAsync(
@@ -365,15 +367,18 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono
-            = service.putBastionShareableLink(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
-                this.client.getSubscriptionId(), bslRequest, accept, context).cache();
+            = service
+                .putBastionShareableLink(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
+                    this.client.getSubscriptionId(), bslRequest, accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<BastionShareableLinkListResult, BastionShareableLinkListResult>getLroResult(mono,
                         this.client.getHttpPipeline(), BastionShareableLinkListResult.class,
                         BastionShareableLinkListResult.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null));
     }
@@ -892,7 +897,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<Void> deleteBastionShareableLinkByTokenAsync(String resourceGroupName, String bastionHostname,
         BastionShareableLinkTokenListRequest bslTokenRequest, Context context) {
         return beginDeleteBastionShareableLinkByTokenAsync(resourceGroupName, bastionHostname, bslTokenRequest, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -937,8 +943,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkSinglePageAsync(
@@ -984,8 +989,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkSinglePageAsync(
@@ -1129,16 +1133,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         final String accept = "application/json";
         return FluxUtil.withContext(context -> {
             Mono<Response<Flux<ByteBuffer>>> mono
-                = service.getActiveSessions(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
-                    this.client.getSubscriptionId(), accept, context).cache();
+                = service
+                    .getActiveSessions(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
+                        this.client.getSubscriptionId(), accept, context)
+                    .cache();
             return Mono.zip(mono,
                 this.client
                     .<BastionActiveSessionListResult, BastionActiveSessionListResult>getLroResult(mono,
                         this.client.getHttpPipeline(), BastionActiveSessionListResult.class,
                         BastionActiveSessionListResult.class, this.client.getContext())
-                    .last().flatMap(this.client::getLroFinalResultOrError));
-        }).<PagedResponse<BastionActiveSessionInner>>map(res -> new PagedResponseBase<>(res.getT1().getRequest(),
-            res.getT1().getStatusCode(), res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError));
+        })
+            .<PagedResponse<BastionActiveSessionInner>>map(
+                res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
+                    res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1175,15 +1184,19 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = service.getActiveSessions(this.client.getEndpoint(), resourceGroupName,
-            bastionHostname, apiVersion, this.client.getSubscriptionId(), accept, context).cache();
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = service
+                .getActiveSessions(this.client.getEndpoint(), resourceGroupName, bastionHostname, apiVersion,
+                    this.client.getSubscriptionId(), accept, context)
+                .cache();
         return Mono
             .zip(mono,
                 this.client
                     .<BastionActiveSessionListResult, BastionActiveSessionListResult>getLroResult(mono,
                         this.client.getHttpPipeline(), BastionActiveSessionListResult.class,
                         BastionActiveSessionListResult.class, context)
-                    .last().flatMap(this.client::getLroFinalResultOrError))
+                    .last()
+                    .flatMap(this.client::getLroFinalResultOrError))
             .map(res -> new PagedResponseBase<>(res.getT1().getRequest(), res.getT1().getStatusCode(),
                 res.getT1().getHeaders(), res.getT2().value(), res.getT2().nextLink(), null));
     }
@@ -1265,8 +1278,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsSinglePageAsync(
@@ -1312,8 +1324,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsSinglePageAsync(
@@ -1428,13 +1439,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsNameAvailabilityResultInner>> checkDnsNameAvailabilityWithResponseAsync(String location,
@@ -1466,14 +1475,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsNameAvailabilityResultInner>> checkDnsNameAvailabilityWithResponseAsync(String location,
@@ -1504,8 +1511,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1522,8 +1528,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1540,8 +1545,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
      * 
      * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1664,13 +1668,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active connectivity configurations along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list active connectivity configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActiveConnectivityConfigurationsListResultInner>>
@@ -1712,14 +1714,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active connectivity configurations along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list active connectivity configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActiveConnectivityConfigurationsListResultInner>>
@@ -1762,8 +1762,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active connectivity configurations on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list active connectivity configurations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ActiveConnectivityConfigurationsListResultInner> listActiveConnectivityConfigurationsAsync(
@@ -1779,8 +1778,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1820,13 +1818,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active security admin rules along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list active security admin rules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActiveSecurityAdminRulesListResultInner>> listActiveSecurityAdminRulesWithResponseAsync(
@@ -1867,14 +1863,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active security admin rules along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return result of the request to list active security admin rules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActiveSecurityAdminRulesListResultInner>> listActiveSecurityAdminRulesWithResponseAsync(
@@ -1933,8 +1927,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1974,13 +1967,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>>
@@ -2022,14 +2013,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>>
@@ -2073,8 +2062,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration on successful completion
-     * of {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkManagerEffectiveConnectivityConfigurationListResultInner>
@@ -2091,14 +2079,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with
-     * {@link Response}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>
@@ -2134,13 +2120,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner>>
@@ -2182,14 +2166,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner>>
@@ -2233,8 +2215,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveSecurityAdminRules on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list networkManagerEffectiveSecurityAdminRules on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkManagerEffectiveSecurityAdminRulesListResultInner>
@@ -2251,8 +2232,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     * server.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2409,8 +2389,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2418,8 +2397,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generatevirtualwanvpnserverconfigurationvpnprofileWithResponseAsync(
@@ -2455,8 +2433,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2465,8 +2442,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generatevirtualwanvpnserverconfigurationvpnprofileWithResponseAsync(
@@ -2502,8 +2478,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2525,8 +2500,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2549,8 +2523,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2564,13 +2537,14 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
         beginGeneratevirtualwanvpnserverconfigurationvpnprofile(String resourceGroupName, String virtualWanName,
             VirtualWanVpnProfileParameters vpnClientParams) {
-        return this.beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(resourceGroupName, virtualWanName,
-            vpnClientParams).getSyncPoller();
+        return this
+            .beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(resourceGroupName, virtualWanName,
+                vpnClientParams)
+            .getSyncPoller();
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2585,13 +2559,14 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
         beginGeneratevirtualwanvpnserverconfigurationvpnprofile(String resourceGroupName, String virtualWanName,
             VirtualWanVpnProfileParameters vpnClientParams, Context context) {
-        return this.beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(resourceGroupName, virtualWanName,
-            vpnClientParams, context).getSyncPoller();
+        return this
+            .beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(resourceGroupName, virtualWanName,
+                vpnClientParams, context)
+            .getSyncPoller();
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2609,8 +2584,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2630,8 +2604,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2649,8 +2622,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
-     * in the specified resource group.
+     * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination in the specified resource group.
      * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
@@ -2677,8 +2649,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkNextSinglePageAsync(String nextLink) {
@@ -2708,8 +2679,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkNextSinglePageAsync(String nextLink,
@@ -2737,8 +2707,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkNextSinglePageAsync(String nextLink) {
@@ -2768,8 +2737,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkNextSinglePageAsync(String nextLink,
@@ -2854,8 +2822,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsNextSinglePageAsync(String nextLink) {
@@ -2885,8 +2852,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsNextSinglePageAsync(String nextLink,

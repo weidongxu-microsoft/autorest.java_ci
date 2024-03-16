@@ -29,8 +29,8 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
 
     public Response<PeerExpressRouteCircuitConnection> getWithResponse(String resourceGroupName, String circuitName,
         String peeringName, String connectionName, Context context) {
-        Response<PeerExpressRouteCircuitConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            circuitName, peeringName, connectionName, context);
+        Response<PeerExpressRouteCircuitConnectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PeerExpressRouteCircuitConnectionImpl(inner.getValue(), this.manager()));

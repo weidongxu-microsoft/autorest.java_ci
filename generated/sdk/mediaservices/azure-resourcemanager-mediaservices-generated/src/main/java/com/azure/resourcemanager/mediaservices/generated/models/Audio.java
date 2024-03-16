@@ -13,11 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Defines the common properties for all audio codecs.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Audio.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Audio.class, visible = true)
 @JsonTypeName("#Microsoft.Media.Audio")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AacAudio", value = AacAudio.class),
@@ -46,6 +42,7 @@ public class Audio extends Codec {
      * Creates an instance of Audio class.
      */
     public Audio() {
+        withOdataType("#Microsoft.Media.Audio");
     }
 
     /**

@@ -77,8 +77,7 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
     }
 
     /**
-     * Get the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
-     * not specified.
+     * Get the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified.
      * 
      * @return the sku value.
      */
@@ -87,8 +86,7 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
     }
 
     /**
-     * Set the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
-     * not specified.
+     * Set the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified.
      * 
      * @param sku the sku value to set.
      * @return the WebApplicationFirewallPolicyInner object itself.
@@ -186,8 +184,7 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
     }
 
     /**
-     * Get the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application
-     * Firewall policy.
+     * Get the frontendEndpointLinks property: Describes Frontend Endpoints associated with this Web Application Firewall policy.
      * 
      * @return the frontendEndpointLinks value.
      */
@@ -205,8 +202,7 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
     }
 
     /**
-     * Get the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall
-     * policy.
+     * Get the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall policy.
      * 
      * @return the securityPolicyLinks value.
      */

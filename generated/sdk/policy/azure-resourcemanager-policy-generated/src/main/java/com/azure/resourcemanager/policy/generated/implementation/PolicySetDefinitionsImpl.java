@@ -97,8 +97,9 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     public Response<PolicySetDefinition> createOrUpdateAtManagementGroupWithResponse(String policySetDefinitionName,
         String managementGroupId, PolicySetDefinitionInner parameters, Context context) {
-        Response<PolicySetDefinitionInner> inner = this.serviceClient().createOrUpdateAtManagementGroupWithResponse(
-            policySetDefinitionName, managementGroupId, parameters, context);
+        Response<PolicySetDefinitionInner> inner = this.serviceClient()
+            .createOrUpdateAtManagementGroupWithResponse(policySetDefinitionName, managementGroupId, parameters,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicySetDefinitionImpl(inner.getValue(), this.manager()));
@@ -109,8 +110,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     public PolicySetDefinition createOrUpdateAtManagementGroup(String policySetDefinitionName, String managementGroupId,
         PolicySetDefinitionInner parameters) {
-        PolicySetDefinitionInner inner = this.serviceClient().createOrUpdateAtManagementGroup(policySetDefinitionName,
-            managementGroupId, parameters);
+        PolicySetDefinitionInner inner = this.serviceClient()
+            .createOrUpdateAtManagementGroup(policySetDefinitionName, managementGroupId, parameters);
         if (inner != null) {
             return new PolicySetDefinitionImpl(inner, this.manager());
         } else {
@@ -120,8 +121,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     public Response<Void> deleteAtManagementGroupWithResponse(String policySetDefinitionName, String managementGroupId,
         Context context) {
-        return this.serviceClient().deleteAtManagementGroupWithResponse(policySetDefinitionName, managementGroupId,
-            context);
+        return this.serviceClient()
+            .deleteAtManagementGroupWithResponse(policySetDefinitionName, managementGroupId, context);
     }
 
     public void deleteAtManagementGroup(String policySetDefinitionName, String managementGroupId) {

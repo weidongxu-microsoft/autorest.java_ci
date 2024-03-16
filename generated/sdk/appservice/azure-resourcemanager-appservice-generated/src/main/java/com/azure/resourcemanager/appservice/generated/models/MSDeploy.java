@@ -46,8 +46,7 @@ public final class MSDeploy extends ProxyOnlyResource {
     }
 
     /**
-     * Get the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete
-     * MSDeploy rule.
+     * Get the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete MSDeploy rule.
      * 
      * @return the addOnPackages value.
      */
@@ -56,8 +55,7 @@ public final class MSDeploy extends ProxyOnlyResource {
     }
 
     /**
-     * Set the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete
-     * MSDeploy rule.
+     * Set the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete MSDeploy rule.
      * 
      * @param addOnPackages the addOnPackages value to set.
      * @return the MSDeploy object itself.
@@ -140,8 +138,7 @@ public final class MSDeploy extends ProxyOnlyResource {
     }
 
     /**
-     * Get the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is
-     * used.
+     * Get the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is used.
      * 
      * @return the setParametersXmlFileUri value.
      */
@@ -150,8 +147,7 @@ public final class MSDeploy extends ProxyOnlyResource {
     }
 
     /**
-     * Set the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is
-     * used.
+     * Set the setParametersXmlFileUri property: URI of MSDeploy Parameters file. Must not be set if SetParameters is used.
      * 
      * @param setParametersXmlFileUri the setParametersXmlFileUri value to set.
      * @return the MSDeploy object itself.

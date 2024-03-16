@@ -59,8 +59,7 @@ public final class StorageQueueInner extends ProxyResource {
     }
 
     /**
-     * Get the approximateMessageCount property: Integer indicating an approximate number of messages in the queue. This
-     * number is not lower than the actual number of messages in the queue, but could be higher.
+     * Get the approximateMessageCount property: Integer indicating an approximate number of messages in the queue. This number is not lower than the actual number of messages in the queue, but could be higher.
      * 
      * @return the approximateMessageCount value.
      */

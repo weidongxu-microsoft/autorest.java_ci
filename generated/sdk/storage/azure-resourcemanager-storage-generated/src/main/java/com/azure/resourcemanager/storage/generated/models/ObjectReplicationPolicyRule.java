@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ObjectReplicationPolicyRule {
     /*
-     * Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source
-     * account.
+     * Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      */
     @JsonProperty(value = "ruleId")
     private String ruleId;
@@ -45,8 +44,7 @@ public final class ObjectReplicationPolicyRule {
     }
 
     /**
-     * Get the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for
-     * put policy on source account.
+     * Get the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      * 
      * @return the ruleId value.
      */
@@ -55,8 +53,7 @@ public final class ObjectReplicationPolicyRule {
     }
 
     /**
-     * Set the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for
-     * put policy on source account.
+     * Set the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
      * 
      * @param ruleId the ruleId value to set.
      * @return the ObjectReplicationPolicyRule object itself.

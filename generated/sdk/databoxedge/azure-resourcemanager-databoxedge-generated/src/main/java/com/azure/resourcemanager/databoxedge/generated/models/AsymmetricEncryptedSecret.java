@@ -58,8 +58,7 @@ public final class AsymmetricEncryptedSecret {
     }
 
     /**
-     * Get the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is
-     * unencrypted, it will be null.
+     * Get the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
      * 
      * @return the encryptionCertThumbprint value.
      */
@@ -68,8 +67,7 @@ public final class AsymmetricEncryptedSecret {
     }
 
     /**
-     * Set the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is
-     * unencrypted, it will be null.
+     * Set the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
      * 
      * @param encryptionCertThumbprint the encryptionCertThumbprint value to set.
      * @return the AsymmetricEncryptedSecret object itself.

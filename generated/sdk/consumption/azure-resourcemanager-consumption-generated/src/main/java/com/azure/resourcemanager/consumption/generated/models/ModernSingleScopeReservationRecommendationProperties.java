@@ -13,7 +13,11 @@ import java.util.UUID;
 /**
  * The properties of the modern reservation recommendation for single scope.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "scope")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "scope",
+    defaultImpl = ModernSingleScopeReservationRecommendationProperties.class,
+    visible = true)
 @JsonTypeName("Single")
 @Immutable
 public final class ModernSingleScopeReservationRecommendationProperties
@@ -28,6 +32,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
      * Creates an instance of ModernSingleScopeReservationRecommendationProperties class.
      */
     public ModernSingleScopeReservationRecommendationProperties() {
+        withScope("Single");
     }
 
     /**

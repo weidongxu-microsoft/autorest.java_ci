@@ -52,8 +52,7 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
     }
 
     /**
-     * Get the type property: The type of resource, for instance
-     * Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
+     * Get the type property: The type of resource, for instance Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
      * 
      * @return the type value.
      */
@@ -62,8 +61,7 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
     }
 
     /**
-     * Set the type property: The type of resource, for instance
-     * Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
+     * Set the type property: The type of resource, for instance Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
      * 
      * @param type the type value to set.
      * @return the AttachedDatabaseConfigurationsCheckNameRequest object itself.

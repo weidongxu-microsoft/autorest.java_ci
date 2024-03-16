@@ -14,10 +14,8 @@ public interface FileServices {
     /**
      * List all file services in storage accounts.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -29,10 +27,8 @@ public interface FileServices {
     /**
      * List all file services in storage accounts.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -43,16 +39,13 @@ public interface FileServices {
     /**
      * Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
-     * along with {@link Response}.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<FileServiceProperties> getServicePropertiesWithResponse(String resourceGroupName, String accountName,
         Context context);
@@ -60,15 +53,12 @@ public interface FileServices {
     /**
      * Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     * insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
-     * rules.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
      */
     FileServiceProperties getServiceProperties(String resourceGroupName, String accountName);
 
@@ -79,8 +69,7 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
-     * along with {@link Response}.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     FileServiceProperties getServicePropertiesById(String id);
 
@@ -92,8 +81,7 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
-     * along with {@link Response}.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
 

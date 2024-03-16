@@ -342,14 +342,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Site create() {
-        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Site create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdate(resourceGroupName, name,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -365,8 +367,9 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Site apply() {
-        this.innerObject = serviceManager.serviceClient().getWebApps().update(resourceGroupName, name,
-            updateSiteEnvelope, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .update(resourceGroupName, name, updateSiteEnvelope, Context.NONE);
         return this;
     }
 
@@ -384,20 +387,24 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Site refresh() {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Site refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApps()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 
     public Response<Void> applySlotConfigToProductionWithResponse(CsmSlotEntity slotSwapEntity, Context context) {
-        return serviceManager.webApps().applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity,
-            context);
+        return serviceManager.webApps()
+            .applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity, context);
     }
 
     public void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity) {
@@ -470,13 +477,14 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(
         CsmPublishingProfileOptions publishingProfileOptions, Context context) {
-        return serviceManager.webApps().listPublishingProfileXmlWithSecretsWithResponse(resourceGroupName, name,
-            publishingProfileOptions, context);
+        return serviceManager.webApps()
+            .listPublishingProfileXmlWithSecretsWithResponse(resourceGroupName, name, publishingProfileOptions,
+                context);
     }
 
     public BinaryData listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions) {
-        return serviceManager.webApps().listPublishingProfileXmlWithSecrets(resourceGroupName, name,
-            publishingProfileOptions);
+        return serviceManager.webApps()
+            .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
     }
 
     public Response<Void> resetProductionSlotConfigWithResponse(Context context) {
@@ -525,8 +533,8 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(CsmSlotEntity slotSwapEntity,
         Context context) {
-        return serviceManager.webApps().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity,
-            context);
+        return serviceManager.webApps()
+            .listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity, context);
     }
 
     public void swapSlotWithProduction(CsmSlotEntity slotSwapEntity) {
@@ -550,8 +558,8 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl, Context context) {
-        return serviceManager.webApps().startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength,
-            sasUrl, context);
+        return serviceManager.webApps()
+            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
     public Response<Void> stopWithResponse(Context context) {
@@ -587,8 +595,8 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Response<Void> deployWorkflowArtifactsWithResponse(WorkflowArtifacts workflowArtifacts, Context context) {
-        return serviceManager.webApps().deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts,
-            context);
+        return serviceManager.webApps()
+            .deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts, context);
     }
 
     public void deployWorkflowArtifacts() {

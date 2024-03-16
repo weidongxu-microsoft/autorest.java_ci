@@ -55,8 +55,7 @@ public final class ReportsClientImpl implements ReportsClient {
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientReports to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientReports to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -96,13 +95,11 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param experimentName The Experiment identifier associated with the Experiment.
      * @param aggregationInterval The aggregation interval of the Latency Scorecard.
      * @param endDateTimeUtc The end DateTime of the Latency Scorecard in UTC.
-     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LatencyScorecardInner>> getLatencyScorecardsWithResponseAsync(String resourceGroupName,
@@ -147,14 +144,12 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param experimentName The Experiment identifier associated with the Experiment.
      * @param aggregationInterval The aggregation interval of the Latency Scorecard.
      * @param endDateTimeUtc The end DateTime of the Latency Scorecard in UTC.
-     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LatencyScorecardInner>> getLatencyScorecardsWithResponseAsync(String resourceGroupName,
@@ -219,8 +214,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param experimentName The Experiment identifier associated with the Experiment.
      * @param aggregationInterval The aggregation interval of the Latency Scorecard.
      * @param endDateTimeUtc The end DateTime of the Latency Scorecard in UTC.
-     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -267,8 +261,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param aggregationInterval The aggregation interval of the Timeseries.
      * @param timeseriesType The type of Timeseries.
      * @param endpointParam The specific endpoint.
-     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -331,8 +324,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param aggregationInterval The aggregation interval of the Timeseries.
      * @param timeseriesType The type of Timeseries.
      * @param endpointParam The specific endpoint.
-     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -421,8 +413,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param aggregationInterval The aggregation interval of the Timeseries.
      * @param timeseriesType The type of Timeseries.
      * @param endpointParam The specific endpoint.
-     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here-
-     * https://www.iso.org/iso-3166-country-codes.html.
+     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

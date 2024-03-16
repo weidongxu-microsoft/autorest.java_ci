@@ -14,9 +14,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "@odata.type",
-    defaultImpl = VideoTrackDescriptor.class)
+    defaultImpl = VideoTrackDescriptor.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.VideoTrackDescriptor")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -29,6 +29,7 @@ public class VideoTrackDescriptor extends TrackDescriptor {
      * Creates an instance of VideoTrackDescriptor class.
      */
     public VideoTrackDescriptor() {
+        withOdataType("#Microsoft.Media.VideoTrackDescriptor");
     }
 
     /**

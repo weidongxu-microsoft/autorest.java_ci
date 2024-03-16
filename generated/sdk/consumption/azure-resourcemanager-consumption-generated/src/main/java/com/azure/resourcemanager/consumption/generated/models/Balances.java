@@ -12,8 +12,7 @@ import com.azure.core.util.Context;
  */
 public interface Balances {
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
@@ -25,8 +24,7 @@ public interface Balances {
     Response<Balance> getByBillingAccountWithResponse(String billingAccountId, Context context);
 
     /**
-     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
-     * later.
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,8 +35,7 @@ public interface Balances {
     Balance getByBillingAccount(String billingAccountId);
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
@@ -52,8 +49,7 @@ public interface Balances {
         Context context);
 
     /**
-     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
-     * for May 1, 2014 or later.
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only for May 1, 2014 or later.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.

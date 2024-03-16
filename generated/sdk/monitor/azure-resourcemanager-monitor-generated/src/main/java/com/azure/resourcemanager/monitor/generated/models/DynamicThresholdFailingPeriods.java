@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DynamicThresholdFailingPeriods {
     /*
-     * The number of aggregated lookback points. The lookback time window is calculated based on the aggregation
-     * granularity (windowSize) and the selected number of aggregated points.
+     * The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
      */
     @JsonProperty(value = "numberOfEvaluationPeriods", required = true)
     private float numberOfEvaluationPeriods;
@@ -32,8 +31,7 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Get the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is
-     * calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
+     * Get the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
      * 
      * @return the numberOfEvaluationPeriods value.
      */
@@ -42,8 +40,7 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Set the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is
-     * calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
+     * Set the numberOfEvaluationPeriods property: The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (windowSize) and the selected number of aggregated points.
      * 
      * @param numberOfEvaluationPeriods the numberOfEvaluationPeriods value to set.
      * @return the DynamicThresholdFailingPeriods object itself.
@@ -54,8 +51,7 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Get the minFailingPeriodsToAlert property: The number of violations to trigger an alert. Should be smaller or
-     * equal to numberOfEvaluationPeriods.
+     * Get the minFailingPeriodsToAlert property: The number of violations to trigger an alert. Should be smaller or equal to numberOfEvaluationPeriods.
      * 
      * @return the minFailingPeriodsToAlert value.
      */
@@ -64,8 +60,7 @@ public final class DynamicThresholdFailingPeriods {
     }
 
     /**
-     * Set the minFailingPeriodsToAlert property: The number of violations to trigger an alert. Should be smaller or
-     * equal to numberOfEvaluationPeriods.
+     * Set the minFailingPeriodsToAlert property: The number of violations to trigger an alert. Should be smaller or equal to numberOfEvaluationPeriods.
      * 
      * @param minFailingPeriodsToAlert the minFailingPeriodsToAlert value to set.
      * @return the DynamicThresholdFailingPeriods object itself.

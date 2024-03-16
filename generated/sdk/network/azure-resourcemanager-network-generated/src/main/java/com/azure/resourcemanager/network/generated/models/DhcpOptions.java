@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * DhcpOptions contains an array of DNS servers available to VMs deployed in the virtual network. Standard DHCP option
- * for a subnet overrides VNET DHCP options.
+ * DhcpOptions contains an array of DNS servers available to VMs deployed in the virtual network. Standard DHCP option for a subnet overrides VNET DHCP options.
  */
 @Fluent
 public final class DhcpOptions {

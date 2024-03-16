@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * If this rule is a match should the rules engine continue running the remaining rules or stop. If not present,
- * defaults to Continue.
+ * If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
  */
 public final class MatchProcessingBehavior extends ExpandableStringEnum<MatchProcessingBehavior> {
     /**

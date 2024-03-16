@@ -25,8 +25,7 @@ public final class BlobStorageTokenStore {
     }
 
     /**
-     * Get the sasUrlSettingName property: The name of the app setting containing the SAS URL of the blob storage
-     * containing the tokens.
+     * Get the sasUrlSettingName property: The name of the app setting containing the SAS URL of the blob storage containing the tokens.
      * 
      * @return the sasUrlSettingName value.
      */
@@ -35,8 +34,7 @@ public final class BlobStorageTokenStore {
     }
 
     /**
-     * Set the sasUrlSettingName property: The name of the app setting containing the SAS URL of the blob storage
-     * containing the tokens.
+     * Set the sasUrlSettingName property: The name of the app setting containing the SAS URL of the blob storage containing the tokens.
      * 
      * @param sasUrlSettingName the sasUrlSettingName value to set.
      * @return the BlobStorageTokenStore object itself.

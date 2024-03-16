@@ -8,17 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base class for output.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Format.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Format.class, visible = true)
 @JsonTypeName("Format")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.ImageFormat", value = ImageFormat.class),
@@ -26,15 +23,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class Format {
     /*
-     * The file naming pattern used for the creation of output files. The following macros are supported in the file
-     * name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file
-     * suffix is not included) of the input video file is less than 32 characters long, the base name of input video
-     * files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is
-     * truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format.
-     * {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to
-     * thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video
-     * bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The
-     * video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType;
+
+    /*
+     * The file naming pattern used for the creation of output files. The following macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long, the base name of input video files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
      */
     @JsonProperty(value = "filenamePattern", required = true)
     private String filenamePattern;
@@ -43,19 +39,31 @@ public class Format {
      * Creates an instance of Format class.
      */
     public Format() {
+        this.odataType = "Format";
     }
 
     /**
-     * Get the filenamePattern property: The file naming pattern used for the creation of output files. The following
-     * macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video
-     * file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long,
-     * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
-     * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
-     * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
-     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
-     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
-     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
-     * filename.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: The discriminator for derived types.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the Format object itself.
+     */
+    protected Format withOdataType(String odataType) {
+        this.odataType = odataType;
+        return this;
+    }
+
+    /**
+     * Get the filenamePattern property: The file naming pattern used for the creation of output files. The following macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long, the base name of input video files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
      * 
      * @return the filenamePattern value.
      */
@@ -64,16 +72,7 @@ public class Format {
     }
 
     /**
-     * Set the filenamePattern property: The file naming pattern used for the creation of output files. The following
-     * macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video
-     * file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long,
-     * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
-     * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
-     * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
-     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
-     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
-     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
-     * filename.
+     * Set the filenamePattern property: The file naming pattern used for the creation of output files. The following macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long, the base name of input video files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
      * 
      * @param filenamePattern the filenamePattern value to set.
      * @return the Format object itself.

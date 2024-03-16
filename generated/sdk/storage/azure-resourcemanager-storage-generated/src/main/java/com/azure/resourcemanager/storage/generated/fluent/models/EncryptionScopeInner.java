@@ -39,8 +39,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Get the source property: The provider for the encryption scope. Possible values (case-insensitive):
-     * Microsoft.Storage, Microsoft.KeyVault.
+     * Get the source property: The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault.
      * 
      * @return the source value.
      */
@@ -49,8 +48,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Set the source property: The provider for the encryption scope. Possible values (case-insensitive):
-     * Microsoft.Storage, Microsoft.KeyVault.
+     * Set the source property: The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault.
      * 
      * @param source the source value to set.
      * @return the EncryptionScopeInner object itself.
@@ -64,7 +62,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Get the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
+     * Get the state property: The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
      * 
      * @return the state value.
      */
@@ -73,7 +71,7 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Set the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
+     * Set the state property: The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
      * 
      * @param state the state value to set.
      * @return the EncryptionScopeInner object itself.
@@ -92,7 +90,8 @@ public final class EncryptionScopeInner extends ProxyResource {
      * @return the creationTime value.
      */
     public OffsetDateTime creationTime() {
-        return this.innerEncryptionScopeProperties() == null ? null
+        return this.innerEncryptionScopeProperties() == null
+            ? null
             : this.innerEncryptionScopeProperties().creationTime();
     }
 
@@ -102,24 +101,24 @@ public final class EncryptionScopeInner extends ProxyResource {
      * @return the lastModifiedTime value.
      */
     public OffsetDateTime lastModifiedTime() {
-        return this.innerEncryptionScopeProperties() == null ? null
+        return this.innerEncryptionScopeProperties() == null
+            ? null
             : this.innerEncryptionScopeProperties().lastModifiedTime();
     }
 
     /**
-     * Get the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field
-     * if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
+     * Get the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
      * 
      * @return the keyVaultProperties value.
      */
     public EncryptionScopeKeyVaultProperties keyVaultProperties() {
-        return this.innerEncryptionScopeProperties() == null ? null
+        return this.innerEncryptionScopeProperties() == null
+            ? null
             : this.innerEncryptionScopeProperties().keyVaultProperties();
     }
 
     /**
-     * Set the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field
-     * if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
+     * Set the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
      * 
      * @param keyVaultProperties the keyVaultProperties value to set.
      * @return the EncryptionScopeInner object itself.
@@ -133,19 +132,18 @@ public final class EncryptionScopeInner extends ProxyResource {
     }
 
     /**
-     * Get the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
-     * secondary layer of encryption with platform managed keys for data at rest.
+     * Get the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
      * 
      * @return the requireInfrastructureEncryption value.
      */
     public Boolean requireInfrastructureEncryption() {
-        return this.innerEncryptionScopeProperties() == null ? null
+        return this.innerEncryptionScopeProperties() == null
+            ? null
             : this.innerEncryptionScopeProperties().requireInfrastructureEncryption();
     }
 
     /**
-     * Set the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
-     * secondary layer of encryption with platform managed keys for data at rest.
+     * Set the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
      * 
      * @param requireInfrastructureEncryption the requireInfrastructureEncryption value to set.
      * @return the EncryptionScopeInner object itself.

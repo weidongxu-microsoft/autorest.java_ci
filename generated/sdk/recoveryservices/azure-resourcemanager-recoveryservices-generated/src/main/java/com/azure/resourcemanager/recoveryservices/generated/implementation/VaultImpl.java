@@ -98,14 +98,16 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault create() {
-        this.innerObject = serviceManager.serviceClient().getVaults().createOrUpdate(resourceGroupName, vaultName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Vault create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVaults().createOrUpdate(resourceGroupName, vaultName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), context);
         return this;
     }
 
@@ -122,8 +124,9 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault apply() {
-        this.innerObject = serviceManager.serviceClient().getVaults().update(resourceGroupName, vaultName, updateVault,
-            Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .update(resourceGroupName, vaultName, updateVault, Context.NONE);
         return this;
     }
 
@@ -142,14 +145,18 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault refresh() {
-        this.innerObject = serviceManager.serviceClient().getVaults()
-            .getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Vault refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVaults()
-            .getByResourceGroupWithResponse(resourceGroupName, vaultName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .getByResourceGroupWithResponse(resourceGroupName, vaultName, context)
+            .getValue();
         return this;
     }
 

@@ -30,8 +30,8 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
 
     public VirtualMachineRunCommand createOrUpdate(String resourceGroupName, String vmScaleSetName, String instanceId,
         String runCommandName, VirtualMachineRunCommandInner runCommand) {
-        VirtualMachineRunCommandInner inner = this.serviceClient().createOrUpdate(resourceGroupName, vmScaleSetName,
-            instanceId, runCommandName, runCommand);
+        VirtualMachineRunCommandInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand);
         if (inner != null) {
             return new VirtualMachineRunCommandImpl(inner, this.manager());
         } else {
@@ -41,8 +41,8 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
 
     public VirtualMachineRunCommand createOrUpdate(String resourceGroupName, String vmScaleSetName, String instanceId,
         String runCommandName, VirtualMachineRunCommandInner runCommand, Context context) {
-        VirtualMachineRunCommandInner inner = this.serviceClient().createOrUpdate(resourceGroupName, vmScaleSetName,
-            instanceId, runCommandName, runCommand, context);
+        VirtualMachineRunCommandInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand, context);
         if (inner != null) {
             return new VirtualMachineRunCommandImpl(inner, this.manager());
         } else {
@@ -63,8 +63,8 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
 
     public VirtualMachineRunCommand update(String resourceGroupName, String vmScaleSetName, String instanceId,
         String runCommandName, VirtualMachineRunCommandUpdate runCommand, Context context) {
-        VirtualMachineRunCommandInner inner = this.serviceClient().update(resourceGroupName, vmScaleSetName, instanceId,
-            runCommandName, runCommand, context);
+        VirtualMachineRunCommandInner inner = this.serviceClient()
+            .update(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand, context);
         if (inner != null) {
             return new VirtualMachineRunCommandImpl(inner, this.manager());
         } else {
@@ -83,8 +83,8 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
 
     public Response<VirtualMachineRunCommand> getWithResponse(String resourceGroupName, String vmScaleSetName,
         String instanceId, String runCommandName, String expand, Context context) {
-        Response<VirtualMachineRunCommandInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            vmScaleSetName, instanceId, runCommandName, expand, context);
+        Response<VirtualMachineRunCommandInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, runCommandName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualMachineRunCommandImpl(inner.getValue(), this.manager()));

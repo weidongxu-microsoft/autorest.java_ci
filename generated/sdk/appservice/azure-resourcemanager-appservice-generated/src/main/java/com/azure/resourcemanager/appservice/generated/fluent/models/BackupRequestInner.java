@@ -70,8 +70,7 @@ public final class BackupRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the enabled property: True if the backup schedule is enabled (must be included in that case), false if the
-     * backup schedule should be disabled.
+     * Get the enabled property: True if the backup schedule is enabled (must be included in that case), false if the backup schedule should be disabled.
      * 
      * @return the enabled value.
      */
@@ -80,8 +79,7 @@ public final class BackupRequestInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the enabled property: True if the backup schedule is enabled (must be included in that case), false if the
-     * backup schedule should be disabled.
+     * Set the enabled property: True if the backup schedule is enabled (must be included in that case), false if the backup schedule should be disabled.
      * 
      * @param enabled the enabled value to set.
      * @return the BackupRequestInner object itself.

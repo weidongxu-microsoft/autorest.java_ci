@@ -35,8 +35,7 @@ public interface View {
     String type();
 
     /**
-     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
-     * determine whether the user is updating the latest version or not.
+     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -50,21 +49,7 @@ public interface View {
     String displayName();
 
     /**
-     * Gets the scope property: Cost Management scope to save the view on. This includes
-     * 'subscriptions/{subscriptionId}' for subscription scope,
-     * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
-     * EnrollmentAccount scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     * BillingProfile scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-     * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group
-     * scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
-     * ExternalBillingAccount scope, and
-     * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
-     * scope.
+     * Gets the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope.
      * 
      * @return the scope value.
      */
@@ -134,17 +119,14 @@ public interface View {
     List<PivotProperties> pivots();
 
     /**
-     * Gets the typePropertiesType property: The type of the report. Usage represents actual usage, forecast represents
-     * forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data
-     * can be differentiated based on dates.
+     * Gets the typePropertiesType property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
      * 
      * @return the typePropertiesType value.
      */
     ReportType typePropertiesType();
 
     /**
-     * Gets the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
-     * period must be provided.
+     * Gets the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided.
      * 
      * @return the timeframe value.
      */
@@ -201,30 +183,14 @@ public interface View {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope associated with view operations. This includes 'subscriptions/{subscriptionId}'
-             * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for
-             * resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-             * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * BillingProfile scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * 'providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for External
-             * Billing Account scope and
-             * 'providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for External
-             * Subscription scope.
+             * @param scope The scope associated with view operations. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, 'providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for External Billing Account scope and 'providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for External Subscription scope.
              * @return the next definition stage.
              */
             WithCreate withExistingScope(String scope);
         }
 
         /**
-         * The stage of the View definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the View definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithEtag, DefinitionStages.WithDisplayName, DefinitionStages.WithScope,
@@ -252,11 +218,9 @@ public interface View {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
@@ -280,40 +244,9 @@ public interface View {
          */
         interface WithScope {
             /**
-             * Specifies the scope property: Cost Management scope to save the view on. This includes
-             * 'subscriptions/{subscriptionId}' for subscription scope,
-             * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * BillingProfile scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
-             * ExternalBillingAccount scope, and
-             * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for
-             * ExternalSubscription scope..
+             * Specifies the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope..
              * 
-             * @param scope Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
-             * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for
-             * resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-             * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * BillingProfile scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
-             * ExternalBillingAccount scope, and
-             * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for
-             * ExternalSubscription scope.
+             * @param scope Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope.
              * @return the next definition stage.
              */
             WithCreate withScope(String scope);
@@ -389,13 +322,9 @@ public interface View {
          */
         interface WithTypePropertiesType {
             /**
-             * Specifies the typePropertiesType property: The type of the report. Usage represents actual usage,
-             * forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data.
-             * Actual usage and forecasted data can be differentiated based on dates..
+             * Specifies the typePropertiesType property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates..
              * 
-             * @param typePropertiesType The type of the report. Usage represents actual usage, forecast represents
-             * forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and
-             * forecasted data can be differentiated based on dates.
+             * @param typePropertiesType The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
              * @return the next definition stage.
              */
             WithCreate withTypePropertiesType(ReportType typePropertiesType);
@@ -406,11 +335,9 @@ public interface View {
          */
         interface WithTimeframe {
             /**
-             * Specifies the timeframe property: The time frame for pulling data for the report. If custom, then a
-             * specific time period must be provided..
+             * Specifies the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided..
              * 
-             * @param timeframe The time frame for pulling data for the report. If custom, then a specific time period
-             * must be provided.
+             * @param timeframe The time frame for pulling data for the report. If custom, then a specific time period must be provided.
              * @return the next definition stage.
              */
             WithCreate withTimeframe(ReportTimeframeType timeframe);
@@ -482,11 +409,9 @@ public interface View {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will
-             * be used to determine whether the user is updating the latest version or not..
+             * Specifies the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not..
              * 
-             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to
-             * determine whether the user is updating the latest version or not.
+             * @param etag eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
              * @return the next definition stage.
              */
             Update withEtag(String etag);
@@ -510,40 +435,9 @@ public interface View {
          */
         interface WithScope {
             /**
-             * Specifies the scope property: Cost Management scope to save the view on. This includes
-             * 'subscriptions/{subscriptionId}' for subscription scope,
-             * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * BillingProfile scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
-             * ExternalBillingAccount scope, and
-             * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for
-             * ExternalSubscription scope..
+             * Specifies the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope..
              * 
-             * @param scope Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
-             * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for
-             * resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-             * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for
-             * Department scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-             * for EnrollmentAccount scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-             * BillingProfile scope,
-             * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-             * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-             * Management Group scope,
-             * '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
-             * ExternalBillingAccount scope, and
-             * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for
-             * ExternalSubscription scope.
+             * @param scope Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope.
              * @return the next definition stage.
              */
             Update withScope(String scope);
@@ -619,13 +513,9 @@ public interface View {
          */
         interface WithTypePropertiesType {
             /**
-             * Specifies the typePropertiesType property: The type of the report. Usage represents actual usage,
-             * forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data.
-             * Actual usage and forecasted data can be differentiated based on dates..
+             * Specifies the typePropertiesType property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates..
              * 
-             * @param typePropertiesType The type of the report. Usage represents actual usage, forecast represents
-             * forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and
-             * forecasted data can be differentiated based on dates.
+             * @param typePropertiesType The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
              * @return the next definition stage.
              */
             Update withTypePropertiesType(ReportType typePropertiesType);
@@ -636,11 +526,9 @@ public interface View {
          */
         interface WithTimeframe {
             /**
-             * Specifies the timeframe property: The time frame for pulling data for the report. If custom, then a
-             * specific time period must be provided..
+             * Specifies the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided..
              * 
-             * @param timeframe The time frame for pulling data for the report. If custom, then a specific time period
-             * must be provided.
+             * @param timeframe The time frame for pulling data for the report. If custom, then a specific time period must be provided.
              * @return the next definition stage.
              */
             Update withTimeframe(ReportTimeframeType timeframe);

@@ -86,8 +86,7 @@ public interface BlobContainer {
     Boolean denyEncryptionScopeOverride();
 
     /**
-     * Gets the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of
-     * access.
+     * Gets the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access.
      * 
      * @return the publicAccess value.
      */
@@ -115,8 +114,7 @@ public interface BlobContainer {
     LeaseState leaseState();
 
     /**
-     * Gets the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration,
-     * only when the container is leased.
+     * Gets the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration, only when the container is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -144,27 +142,21 @@ public interface BlobContainer {
     LegalHoldProperties legalHold();
 
     /**
-     * Gets the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one
-     * existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared
-     * out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * Gets the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      * 
      * @return the hasLegalHold value.
      */
     Boolean hasLegalHold();
 
     /**
-     * Gets the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if
-     * ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false
-     * by SRP if ImmutabilityPolicy has not been created for this container.
+     * Gets the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false by SRP if ImmutabilityPolicy has not been created for this container.
      * 
      * @return the hasImmutabilityPolicy value.
      */
     Boolean hasImmutabilityPolicy();
 
     /**
-     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The
-     * property is immutable and can only be set to true at the container creation time. Existing containers must
-     * undergo a migration process.
+     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
      * 
      * @return the immutableStorageWithVersioning value.
      */
@@ -222,18 +214,15 @@ public interface BlobContainer {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             * insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account
-             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the BlobContainer definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BlobContainer definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDefaultEncryptionScope,
             DefinitionStages.WithDenyEncryptionScopeOverride, DefinitionStages.WithPublicAccess,
@@ -260,8 +249,7 @@ public interface BlobContainer {
          */
         interface WithDefaultEncryptionScope {
             /**
-             * Specifies the defaultEncryptionScope property: Default the container to use specified encryption scope
-             * for all writes..
+             * Specifies the defaultEncryptionScope property: Default the container to use specified encryption scope for all writes..
              * 
              * @param defaultEncryptionScope Default the container to use specified encryption scope for all writes.
              * @return the next definition stage.
@@ -274,8 +262,7 @@ public interface BlobContainer {
          */
         interface WithDenyEncryptionScopeOverride {
             /**
-             * Specifies the denyEncryptionScopeOverride property: Block override of encryption scope from the container
-             * default..
+             * Specifies the denyEncryptionScopeOverride property: Block override of encryption scope from the container default..
              * 
              * @param denyEncryptionScopeOverride Block override of encryption scope from the container default.
              * @return the next definition stage.
@@ -288,11 +275,9 @@ public interface BlobContainer {
          */
         interface WithPublicAccess {
             /**
-             * Specifies the publicAccess property: Specifies whether data in the container may be accessed publicly and
-             * the level of access..
+             * Specifies the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access..
              * 
-             * @param publicAccess Specifies whether data in the container may be accessed publicly and the level of
-             * access.
+             * @param publicAccess Specifies whether data in the container may be accessed publicly and the level of access.
              * @return the next definition stage.
              */
             WithCreate withPublicAccess(PublicAccess publicAccess);
@@ -316,13 +301,9 @@ public interface BlobContainer {
          */
         interface WithImmutableStorageWithVersioning {
             /**
-             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the
-             * container. The property is immutable and can only be set to true at the container creation time. Existing
-             * containers must undergo a migration process..
+             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process..
              * 
-             * @param immutableStorageWithVersioning The object level immutability property of the container. The
-             * property is immutable and can only be set to true at the container creation time. Existing containers
-             * must undergo a migration process.
+             * @param immutableStorageWithVersioning The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
              * @return the next definition stage.
              */
             WithCreate
@@ -394,8 +375,7 @@ public interface BlobContainer {
          */
         interface WithDefaultEncryptionScope {
             /**
-             * Specifies the defaultEncryptionScope property: Default the container to use specified encryption scope
-             * for all writes..
+             * Specifies the defaultEncryptionScope property: Default the container to use specified encryption scope for all writes..
              * 
              * @param defaultEncryptionScope Default the container to use specified encryption scope for all writes.
              * @return the next definition stage.
@@ -408,8 +388,7 @@ public interface BlobContainer {
          */
         interface WithDenyEncryptionScopeOverride {
             /**
-             * Specifies the denyEncryptionScopeOverride property: Block override of encryption scope from the container
-             * default..
+             * Specifies the denyEncryptionScopeOverride property: Block override of encryption scope from the container default..
              * 
              * @param denyEncryptionScopeOverride Block override of encryption scope from the container default.
              * @return the next definition stage.
@@ -422,11 +401,9 @@ public interface BlobContainer {
          */
         interface WithPublicAccess {
             /**
-             * Specifies the publicAccess property: Specifies whether data in the container may be accessed publicly and
-             * the level of access..
+             * Specifies the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access..
              * 
-             * @param publicAccess Specifies whether data in the container may be accessed publicly and the level of
-             * access.
+             * @param publicAccess Specifies whether data in the container may be accessed publicly and the level of access.
              * @return the next definition stage.
              */
             Update withPublicAccess(PublicAccess publicAccess);
@@ -450,13 +427,9 @@ public interface BlobContainer {
          */
         interface WithImmutableStorageWithVersioning {
             /**
-             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the
-             * container. The property is immutable and can only be set to true at the container creation time. Existing
-             * containers must undergo a migration process..
+             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process..
              * 
-             * @param immutableStorageWithVersioning The object level immutability property of the container. The
-             * property is immutable and can only be set to true at the container creation time. Existing containers
-             * must undergo a migration process.
+             * @param immutableStorageWithVersioning The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
              * @return the next definition stage.
              */
             Update withImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning);
@@ -505,8 +478,7 @@ public interface BlobContainer {
     BlobContainer refresh(Context context);
 
     /**
-     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append
-     * pattern and does not clear out the existing tags that are not specified in the request.
+     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append pattern and does not clear out the existing tags that are not specified in the request.
      * 
      * @param legalHold The LegalHold property that will be set to a blob container.
      * @param context The context to associate with this operation.
@@ -518,8 +490,7 @@ public interface BlobContainer {
     Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
     /**
-     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append
-     * pattern and does not clear out the existing tags that are not specified in the request.
+     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append pattern and does not clear out the existing tags that are not specified in the request.
      * 
      * @param legalHold The LegalHold property that will be set to a blob container.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -530,8 +501,7 @@ public interface BlobContainer {
     LegalHold setLegalHold(LegalHoldInner legalHold);
 
     /**
-     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold
-     * clears out only the specified tags in the request.
+     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold clears out only the specified tags in the request.
      * 
      * @param legalHold The LegalHold property that will be clear from a blob container.
      * @param context The context to associate with this operation.
@@ -543,8 +513,7 @@ public interface BlobContainer {
     Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
     /**
-     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold
-     * clears out only the specified tags in the request.
+     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold clears out only the specified tags in the request.
      * 
      * @param legalHold The LegalHold property that will be clear from a blob container.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -555,8 +524,7 @@ public interface BlobContainer {
     LegalHold clearLegalHold(LegalHoldInner legalHold);
 
     /**
-     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock
-     * duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
      * 
      * @param parameters Lease Container request body.
      * @param context The context to associate with this operation.
@@ -568,8 +536,7 @@ public interface BlobContainer {
     Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context);
 
     /**
-     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock
-     * duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -578,9 +545,7 @@ public interface BlobContainer {
     LeaseContainerResponse lease();
 
     /**
-     * This operation migrates a blob container from container level WORM to object level immutability enabled
-     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
-     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     * This operation migrates a blob container from container level WORM to object level immutability enabled container. Prerequisites require a container level immutability policy either in locked or unlocked state, Account level versioning must be enabled and there should be no Legal hold on the container.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -588,9 +553,7 @@ public interface BlobContainer {
     void objectLevelWorm();
 
     /**
-     * This operation migrates a blob container from container level WORM to object level immutability enabled
-     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
-     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     * This operation migrates a blob container from container level WORM to object level immutability enabled container. Prerequisites require a container level immutability policy either in locked or unlocked state, Account level versioning must be enabled and there should be no Legal hold on the container.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

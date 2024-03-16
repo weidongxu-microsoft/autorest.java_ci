@@ -83,8 +83,7 @@ public final class BastionShareableLinkInner {
     }
 
     /**
-     * Get the message property: Optional field indicating the warning or error message related to the vm in case of
-     * partial failure.
+     * Get the message property: Optional field indicating the warning or error message related to the vm in case of partial failure.
      * 
      * @return the message value.
      */

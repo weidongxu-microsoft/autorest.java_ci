@@ -24,11 +24,9 @@ public interface AnnotationsClient {
      * @param start The start time to query from for annotations, cannot be older than 90 days from current date.
      * @param end The end time to query for annotations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of annotations for a component for given time range as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of annotations for a component for given time range as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnnotationInner> list(String resourceGroupName, String resourceName, String start, String end);
@@ -42,11 +40,9 @@ public interface AnnotationsClient {
      * @param end The end time to query for annotations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of annotations for a component for given time range as paginated response with
-     * {@link PagedIterable}.
+     * @return the list of annotations for a component for given time range as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnnotationInner> list(String resourceGroupName, String resourceName, String start, String end,
@@ -57,12 +53,10 @@ public interface AnnotationsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param annotationProperties Properties that need to be specified to create an annotation of a Application
-     * Insights component.
+     * @param annotationProperties Properties that need to be specified to create an annotation of a Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of Annotation along with {@link Response}.
      */
@@ -75,11 +69,9 @@ public interface AnnotationsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param annotationProperties Properties that need to be specified to create an annotation of a Application
-     * Insights component.
+     * @param annotationProperties Properties that need to be specified to create an annotation of a Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of Annotation.
      */
@@ -123,8 +115,7 @@ public interface AnnotationsClient {
      * @param annotationId The unique annotation ID. This is unique within a Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the annotation for given id along with {@link Response}.
      */
@@ -139,8 +130,7 @@ public interface AnnotationsClient {
      * @param resourceName The name of the Application Insights component resource.
      * @param annotationId The unique annotation ID. This is unique within a Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the annotation for given id.
      */

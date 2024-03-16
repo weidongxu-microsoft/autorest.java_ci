@@ -20,8 +20,7 @@ public final class DataDisksToAttach {
     private String diskId;
 
     /*
-     * The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore
-     * must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
+     * The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
      */
     @JsonProperty(value = "lun")
     private Integer lun;
@@ -53,9 +52,7 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the lun property: The logical unit number of the data disk. This value is used to identify data disks within
-     * the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto
-     * assigned.
+     * Get the lun property: The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
      * 
      * @return the lun value.
      */
@@ -64,9 +61,7 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the lun property: The logical unit number of the data disk. This value is used to identify data disks within
-     * the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto
-     * assigned.
+     * Set the lun property: The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
      * 
      * @param lun the lun value to set.
      * @return the DataDisksToAttach object itself.

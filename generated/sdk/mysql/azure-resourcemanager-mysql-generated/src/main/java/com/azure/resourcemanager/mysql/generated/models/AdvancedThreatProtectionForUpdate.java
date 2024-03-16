@@ -35,8 +35,7 @@ public final class AdvancedThreatProtectionForUpdate {
     }
 
     /**
-     * Get the state property: Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled
-     * or a state has not been applied yet on the specific database or server.
+     * Get the state property: Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been applied yet on the specific database or server.
      * 
      * @return the state value.
      */
@@ -45,8 +44,7 @@ public final class AdvancedThreatProtectionForUpdate {
     }
 
     /**
-     * Set the state property: Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled
-     * or a state has not been applied yet on the specific database or server.
+     * Set the state property: Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been applied yet on the specific database or server.
      * 
      * @param state the state value to set.
      * @return the AdvancedThreatProtectionForUpdate object itself.

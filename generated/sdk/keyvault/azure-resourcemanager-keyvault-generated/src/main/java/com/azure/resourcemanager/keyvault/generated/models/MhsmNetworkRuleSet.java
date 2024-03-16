@@ -14,15 +14,13 @@ import java.util.List;
 @Fluent
 public final class MhsmNetworkRuleSet {
     /*
-     * Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'. If not specified the default
-     * is 'AzureServices'.
+     * Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
      */
     @JsonProperty(value = "bypass")
     private NetworkRuleBypassOptions bypass;
 
     /*
-     * The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the
-     * bypass property has been evaluated.
+     * The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
      */
     @JsonProperty(value = "defaultAction")
     private NetworkRuleAction defaultAction;
@@ -46,8 +44,7 @@ public final class MhsmNetworkRuleSet {
     }
 
     /**
-     * Get the bypass property: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'. If
-     * not specified the default is 'AzureServices'.
+     * Get the bypass property: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
      * 
      * @return the bypass value.
      */
@@ -56,8 +53,7 @@ public final class MhsmNetworkRuleSet {
     }
 
     /**
-     * Set the bypass property: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'. If
-     * not specified the default is 'AzureServices'.
+     * Set the bypass property: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
      * 
      * @param bypass the bypass value to set.
      * @return the MhsmNetworkRuleSet object itself.
@@ -68,8 +64,7 @@ public final class MhsmNetworkRuleSet {
     }
 
     /**
-     * Get the defaultAction property: The default action when no rule from ipRules and from virtualNetworkRules match.
-     * This is only used after the bypass property has been evaluated.
+     * Get the defaultAction property: The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
      * 
      * @return the defaultAction value.
      */
@@ -78,8 +73,7 @@ public final class MhsmNetworkRuleSet {
     }
 
     /**
-     * Set the defaultAction property: The default action when no rule from ipRules and from virtualNetworkRules match.
-     * This is only used after the bypass property has been evaluated.
+     * Set the defaultAction property: The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
      * 
      * @param defaultAction the defaultAction value to set.
      * @return the MhsmNetworkRuleSet object itself.

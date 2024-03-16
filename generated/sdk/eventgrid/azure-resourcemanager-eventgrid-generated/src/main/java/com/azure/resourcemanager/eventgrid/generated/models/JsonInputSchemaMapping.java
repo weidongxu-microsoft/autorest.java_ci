@@ -11,10 +11,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * This enables publishing to Event Grid using a custom input schema. This can be used to map properties from a custom
- * input JSON schema to the Event Grid event schema.
+ * This enables publishing to Event Grid using a custom input schema. This can be used to map properties from a custom input JSON schema to the Event Grid event schema.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "inputSchemaMappingType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "inputSchemaMappingType",
+    defaultImpl = JsonInputSchemaMapping.class,
+    visible = true)
 @JsonTypeName("Json")
 @Fluent
 public final class JsonInputSchemaMapping extends InputSchemaMapping {
@@ -28,6 +31,7 @@ public final class JsonInputSchemaMapping extends InputSchemaMapping {
      * Creates an instance of JsonInputSchemaMapping class.
      */
     public JsonInputSchemaMapping() {
+        withInputSchemaMappingType(InputSchemaMappingType.JSON);
     }
 
     /**

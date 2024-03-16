@@ -51,8 +51,7 @@ public final class StaticSiteResetPropertiesArmResourceProperties {
     }
 
     /**
-     * Get the shouldUpdateRepository property: Determines whether the repository should be updated with the new
-     * properties.
+     * Get the shouldUpdateRepository property: Determines whether the repository should be updated with the new properties.
      * 
      * @return the shouldUpdateRepository value.
      */
@@ -61,8 +60,7 @@ public final class StaticSiteResetPropertiesArmResourceProperties {
     }
 
     /**
-     * Set the shouldUpdateRepository property: Determines whether the repository should be updated with the new
-     * properties.
+     * Set the shouldUpdateRepository property: Determines whether the repository should be updated with the new properties.
      * 
      * @param shouldUpdateRepository the shouldUpdateRepository value to set.
      * @return the StaticSiteResetPropertiesArmResourceProperties object itself.

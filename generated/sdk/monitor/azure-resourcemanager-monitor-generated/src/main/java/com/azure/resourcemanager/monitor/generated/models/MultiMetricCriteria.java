@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.HashMap;
@@ -22,15 +23,22 @@ import java.util.Map;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "criterionType",
-    defaultImpl = MultiMetricCriteria.class)
+    defaultImpl = MultiMetricCriteria.class,
+    visible = true)
 @JsonTypeName("MultiMetricCriteria")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "StaticThresholdCriterion", value = MetricCriteria.class),
     @JsonSubTypes.Type(name = "DynamicThresholdCriterion", value = DynamicMetricCriteria.class) })
 @Fluent
 public class MultiMetricCriteria {
+    /*
+     * Specifies the type of threshold criteria
+     */
+    @JsonTypeId
+    @JsonProperty(value = "criterionType", required = true)
+    private CriterionType criterionType;
+
     /*
      * Name of the criteria.
      */
@@ -62,8 +70,7 @@ public class MultiMetricCriteria {
     private List<MetricDimension> dimensions;
 
     /*
-     * Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be
-     * skipped.
+     * Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be skipped.
      */
     @JsonProperty(value = "skipMetricValidation")
     private Boolean skipMetricValidation;
@@ -78,6 +85,27 @@ public class MultiMetricCriteria {
      * Creates an instance of MultiMetricCriteria class.
      */
     public MultiMetricCriteria() {
+        this.criterionType = CriterionType.fromString("MultiMetricCriteria");
+    }
+
+    /**
+     * Get the criterionType property: Specifies the type of threshold criteria.
+     * 
+     * @return the criterionType value.
+     */
+    public CriterionType criterionType() {
+        return this.criterionType;
+    }
+
+    /**
+     * Set the criterionType property: Specifies the type of threshold criteria.
+     * 
+     * @param criterionType the criterionType value to set.
+     * @return the MultiMetricCriteria object itself.
+     */
+    protected MultiMetricCriteria withCriterionType(CriterionType criterionType) {
+        this.criterionType = criterionType;
+        return this;
     }
 
     /**
@@ -181,8 +209,7 @@ public class MultiMetricCriteria {
     }
 
     /**
-     * Get the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted,
-     * by causing the metric validation to be skipped.
+     * Get the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be skipped.
      * 
      * @return the skipMetricValidation value.
      */
@@ -191,8 +218,7 @@ public class MultiMetricCriteria {
     }
 
     /**
-     * Set the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted,
-     * by causing the metric validation to be skipped.
+     * Set the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be skipped.
      * 
      * @param skipMetricValidation the skipMetricValidation value to set.
      * @return the MultiMetricCriteria object itself.

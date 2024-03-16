@@ -258,8 +258,7 @@ public interface StreamingEndpoint {
         }
 
         /**
-         * The stage of the StreamingEndpoint definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StreamingEndpoint definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithDescription, DefinitionStages.WithScaleUnits, DefinitionStages.WithAvailabilitySetName,
@@ -326,8 +325,7 @@ public interface StreamingEndpoint {
          */
         interface WithScaleUnits {
             /**
-             * Specifies the scaleUnits property: The number of scale units. Use the Scale operation to adjust this
-             * value..
+             * Specifies the scaleUnits property: The number of scale units. Use the Scale operation to adjust this value..
              * 
              * @param scaleUnits The number of scale units. Use the Scale operation to adjust this value.
              * @return the next definition stage.
@@ -340,8 +338,7 @@ public interface StreamingEndpoint {
          */
         interface WithAvailabilitySetName {
             /**
-             * Specifies the availabilitySetName property: This feature is deprecated, do not set a value for this
-             * property..
+             * Specifies the availabilitySetName property: This feature is deprecated, do not set a value for this property..
              * 
              * @param availabilitySetName This feature is deprecated, do not set a value for this property.
              * @return the next definition stage.
@@ -445,8 +442,7 @@ public interface StreamingEndpoint {
          */
         interface WithAutoStart {
             /**
-             * Specifies the autoStart property: The flag indicates if the resource should be automatically started on
-             * creation..
+             * Specifies the autoStart property: The flag indicates if the resource should be automatically started on creation..
              * 
              * @param autoStart The flag indicates if the resource should be automatically started on creation.
              * @return the next definition stage.
@@ -533,8 +529,7 @@ public interface StreamingEndpoint {
          */
         interface WithScaleUnits {
             /**
-             * Specifies the scaleUnits property: The number of scale units. Use the Scale operation to adjust this
-             * value..
+             * Specifies the scaleUnits property: The number of scale units. Use the Scale operation to adjust this value..
              * 
              * @param scaleUnits The number of scale units. Use the Scale operation to adjust this value.
              * @return the next definition stage.
@@ -547,8 +542,7 @@ public interface StreamingEndpoint {
          */
         interface WithAvailabilitySetName {
             /**
-             * Specifies the availabilitySetName property: This feature is deprecated, do not set a value for this
-             * property..
+             * Specifies the availabilitySetName property: This feature is deprecated, do not set a value for this property..
              * 
              * @param availabilitySetName This feature is deprecated, do not set a value for this property.
              * @return the next definition stage.

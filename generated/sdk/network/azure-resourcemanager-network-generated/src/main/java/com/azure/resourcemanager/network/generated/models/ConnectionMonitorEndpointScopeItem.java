@@ -25,8 +25,7 @@ public final class ConnectionMonitorEndpointScopeItem {
     }
 
     /**
-     * Get the address property: The address of the endpoint item. Supported types are IPv4/IPv6 subnet mask or
-     * IPv4/IPv6 IP address.
+     * Get the address property: The address of the endpoint item. Supported types are IPv4/IPv6 subnet mask or IPv4/IPv6 IP address.
      * 
      * @return the address value.
      */
@@ -35,8 +34,7 @@ public final class ConnectionMonitorEndpointScopeItem {
     }
 
     /**
-     * Set the address property: The address of the endpoint item. Supported types are IPv4/IPv6 subnet mask or
-     * IPv4/IPv6 IP address.
+     * Set the address property: The address of the endpoint item. Supported types are IPv4/IPv6 subnet mask or IPv4/IPv6 IP address.
      * 
      * @param address the address value to set.
      * @return the ConnectionMonitorEndpointScopeItem object itself.

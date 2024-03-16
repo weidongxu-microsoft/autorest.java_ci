@@ -70,8 +70,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientDataConnections to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for KustoManagementClientDataConnections to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -159,8 +158,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connections operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto data connections operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataConnectionInner>> listByDatabaseSinglePageAsync(String resourceGroupName,
@@ -202,8 +200,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connections operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the list Kusto data connections operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataConnectionInner>> listByDatabaseSinglePageAsync(String resourceGroupName,
@@ -316,8 +313,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> dataConnectionValidationWithResponseAsync(String resourceGroupName,
@@ -364,8 +360,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> dataConnectionValidationWithResponseAsync(String resourceGroupName,
@@ -527,7 +522,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     private Mono<DataConnectionValidationListResultInner> dataConnectionValidationAsync(String resourceGroupName,
         String clusterName, String databaseName, DataConnectionValidationInner parameters, Context context) {
         return beginDataConnectionValidationAsync(resourceGroupName, clusterName, databaseName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -577,8 +573,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -626,8 +621,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -730,8 +724,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataConnectionInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -776,8 +769,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataConnectionInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -878,8 +870,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -931,8 +922,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -1060,8 +1050,10 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     public SyncPoller<PollResult<DataConnectionInner>, DataConnectionInner> beginCreateOrUpdate(
         String resourceGroupName, String clusterName, String databaseName, String dataConnectionName,
         DataConnectionInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -1081,7 +1073,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     private Mono<DataConnectionInner> createOrUpdateAsync(String resourceGroupName, String clusterName,
         String databaseName, String dataConnectionName, DataConnectionInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1157,8 +1150,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -1210,8 +1202,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -1378,7 +1369,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     private Mono<DataConnectionInner> updateAsync(String resourceGroupName, String clusterName, String databaseName,
         String dataConnectionName, DataConnectionInner parameters, Context context) {
         return beginUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

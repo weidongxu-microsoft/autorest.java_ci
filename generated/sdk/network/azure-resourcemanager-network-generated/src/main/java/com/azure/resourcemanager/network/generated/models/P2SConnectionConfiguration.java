@@ -50,8 +50,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -60,8 +59,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the P2SConnectionConfiguration object itself.
@@ -90,8 +88,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space
-     * for P2S VpnClient.
+     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
      * 
      * @return the vpnClientAddressPool value.
      */
@@ -100,8 +97,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space
-     * for P2S VpnClient.
+     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
      * 
      * @param vpnClientAddressPool the vpnClientAddressPool value to set.
      * @return the P2SConnectionConfiguration object itself.
@@ -115,8 +111,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -125,8 +120,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
-     * tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the P2SConnectionConfiguration object itself.
@@ -140,8 +134,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on
-     * for the P2S Connections or not.
+     * Get the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on for the P2S Connections or not.
      * 
      * @return the enableInternetSecurity value.
      */
@@ -150,8 +143,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on
-     * for the P2S Connections or not.
+     * Set the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on for the P2S Connections or not.
      * 
      * @param enableInternetSecurity the enableInternetSecurity value to set.
      * @return the P2SConnectionConfiguration object itself.
@@ -165,8 +157,7 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the configurationPolicyGroupAssociations property: List of Configuration Policy Groups that this
-     * P2SConnectionConfiguration is attached to.
+     * Get the configurationPolicyGroupAssociations property: List of Configuration Policy Groups that this P2SConnectionConfiguration is attached to.
      * 
      * @return the configurationPolicyGroupAssociations value.
      */
@@ -175,13 +166,13 @@ public final class P2SConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the previousConfigurationPolicyGroupAssociations property: List of previous Configuration Policy Groups that
-     * this P2SConnectionConfiguration was attached to.
+     * Get the previousConfigurationPolicyGroupAssociations property: List of previous Configuration Policy Groups that this P2SConnectionConfiguration was attached to.
      * 
      * @return the previousConfigurationPolicyGroupAssociations value.
      */
     public List<VpnServerConfigurationPolicyGroupInner> previousConfigurationPolicyGroupAssociations() {
-        return this.innerProperties() == null ? null
+        return this.innerProperties() == null
+            ? null
             : this.innerProperties().previousConfigurationPolicyGroupAssociations();
     }
 

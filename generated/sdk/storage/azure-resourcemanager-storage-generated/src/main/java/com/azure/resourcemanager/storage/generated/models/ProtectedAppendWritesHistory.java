@@ -14,8 +14,7 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class ProtectedAppendWritesHistory {
     /*
-     * When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection
-     * and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
+     * When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      */
     @JsonProperty(value = "allowProtectedAppendWritesAll")
     private Boolean allowProtectedAppendWritesAll;
@@ -33,9 +32,7 @@ public final class ProtectedAppendWritesHistory {
     }
 
     /**
-     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
-     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
-     * blocks cannot be modified or deleted.
+     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      * 
      * @return the allowProtectedAppendWritesAll value.
      */
@@ -44,9 +41,7 @@ public final class ProtectedAppendWritesHistory {
     }
 
     /**
-     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
-     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
-     * blocks cannot be modified or deleted.
+     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
      * 
      * @param allowProtectedAppendWritesAll the allowProtectedAppendWritesAll value to set.
      * @return the ProtectedAppendWritesHistory object itself.

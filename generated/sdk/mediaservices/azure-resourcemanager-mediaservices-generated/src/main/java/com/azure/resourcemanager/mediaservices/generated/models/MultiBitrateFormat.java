@@ -12,15 +12,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * Describes the properties for producing a collection of GOP aligned multi-bitrate files. The default behavior is to
- * produce one output file for each video layer which is muxed together with all the audios. The exact output files
- * produced can be controlled by specifying the outputFiles collection.
+ * Describes the properties for producing a collection of GOP aligned multi-bitrate files. The default behavior is to produce one output file for each video layer which is muxed together with all the audios. The exact output files produced can be controlled by specifying the outputFiles collection.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "@odata.type",
-    defaultImpl = MultiBitrateFormat.class)
+    defaultImpl = MultiBitrateFormat.class,
+    visible = true)
 @JsonTypeName("#Microsoft.Media.MultiBitrateFormat")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.Mp4Format", value = Mp4Format.class),
@@ -28,8 +26,7 @@ import java.util.List;
 @Fluent
 public class MultiBitrateFormat extends Format {
     /*
-     * The list of output files to produce. Each entry in the list is a set of audio and video layer labels to be muxed
-     * together .
+     * The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
      */
     @JsonProperty(value = "outputFiles")
     private List<OutputFile> outputFiles;
@@ -38,11 +35,11 @@ public class MultiBitrateFormat extends Format {
      * Creates an instance of MultiBitrateFormat class.
      */
     public MultiBitrateFormat() {
+        withOdataType("#Microsoft.Media.MultiBitrateFormat");
     }
 
     /**
-     * Get the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
-     * video layer labels to be muxed together .
+     * Get the outputFiles property: The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
      * 
      * @return the outputFiles value.
      */
@@ -51,8 +48,7 @@ public class MultiBitrateFormat extends Format {
     }
 
     /**
-     * Set the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
-     * video layer labels to be muxed together .
+     * Set the outputFiles property: The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
      * 
      * @param outputFiles the outputFiles value to set.
      * @return the MultiBitrateFormat object itself.

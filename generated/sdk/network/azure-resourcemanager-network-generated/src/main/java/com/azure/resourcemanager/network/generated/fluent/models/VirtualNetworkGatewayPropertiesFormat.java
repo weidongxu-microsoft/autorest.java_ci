@@ -81,15 +81,13 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     private Boolean disableIpSecReplayProtection;
 
     /*
-     * The reference to the LocalNetworkGateway resource which represents local network site having default routes.
-     * Assign Null value in case of removing existing default site setting.
+     * The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting.
      */
     @JsonProperty(value = "gatewayDefaultSite")
     private SubResource gatewayDefaultSite;
 
     /*
-     * The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network
-     * gateway.
+     * The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway.
      */
     @JsonProperty(value = "sku")
     private VirtualNetworkGatewaySku sku;
@@ -101,8 +99,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     private VpnClientConfiguration vpnClientConfiguration;
 
     /*
-     * The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available
-     * VirtualNetworkGatewayPolicyGroup for the gateway.
+     * The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
      */
     @JsonProperty(value = "virtualNetworkGatewayPolicyGroups")
     private List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups;
@@ -114,8 +111,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     private BgpSettings bgpSettings;
 
     /*
-     * The reference to the address space resource which represents the custom routes address space specified by the
-     * customer for virtual network gateway and VpnClient.
+     * The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient.
      */
     @JsonProperty(value = "customRoutes")
     private AddressSpace customRoutes;
@@ -169,15 +165,13 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     private Boolean allowVirtualWanTraffic;
 
     /*
-     * Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support
-     * connectivity to Azure Virtual WAN.
+     * Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN.
      */
     @JsonProperty(value = "allowRemoteVnetTraffic")
     private Boolean allowRemoteVnetTraffic;
 
     /*
-     * Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways
-     * in the vnet
+     * Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet
      */
     @JsonProperty(value = "adminState")
     private AdminState adminState;
@@ -271,8 +265,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType
-     * is not VPN.
+     * Get the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType is not VPN.
      * 
      * @return the vpnGatewayGeneration value.
      */
@@ -281,8 +274,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType
-     * is not VPN.
+     * Set the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType is not VPN.
      * 
      * @param vpnGatewayGeneration the vpnGatewayGeneration value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -313,8 +305,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections
-     * or not.
+     * Get the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections or not.
      * 
      * @return the enablePrivateIpAddress value.
      */
@@ -323,8 +314,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections
-     * or not.
+     * Set the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections or not.
      * 
      * @param enablePrivateIpAddress the enablePrivateIpAddress value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -376,8 +366,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local
-     * network site having default routes. Assign Null value in case of removing existing default site setting.
+     * Get the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting.
      * 
      * @return the gatewayDefaultSite value.
      */
@@ -386,8 +375,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local
-     * network site having default routes. Assign Null value in case of removing existing default site setting.
+     * Set the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting.
      * 
      * @param gatewayDefaultSite the gatewayDefaultSite value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -398,8 +386,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected
-     * for Virtual network gateway.
+     * Get the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway.
      * 
      * @return the sku value.
      */
@@ -408,8 +395,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected
-     * for Virtual network gateway.
+     * Set the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway.
      * 
      * @param sku the sku value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -420,8 +406,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents
-     * the P2S VpnClient configurations.
+     * Get the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
      * 
      * @return the vpnClientConfiguration value.
      */
@@ -430,8 +415,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents
-     * the P2S VpnClient configurations.
+     * Set the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
      * 
      * @param vpnClientConfiguration the vpnClientConfiguration value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -443,8 +427,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
-     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     * Get the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
      * 
      * @return the virtualNetworkGatewayPolicyGroups value.
      */
@@ -453,8 +436,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
-     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     * Set the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
      * 
      * @param virtualNetworkGatewayPolicyGroups the virtualNetworkGatewayPolicyGroups value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -486,8 +468,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the customRoutes property: The reference to the address space resource which represents the custom routes
-     * address space specified by the customer for virtual network gateway and VpnClient.
+     * Get the customRoutes property: The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient.
      * 
      * @return the customRoutes value.
      */
@@ -496,8 +477,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the customRoutes property: The reference to the address space resource which represents the custom routes
-     * address space specified by the customer for virtual network gateway and VpnClient.
+     * Set the customRoutes property: The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient.
      * 
      * @param customRoutes the customRoutes value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -546,8 +526,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the inboundDnsForwardingEndpoint property: The IP address allocated by the gateway to which dns requests can
-     * be sent.
+     * Get the inboundDnsForwardingEndpoint property: The IP address allocated by the gateway to which dns requests can be sent.
      * 
      * @return the inboundDnsForwardingEndpoint value.
      */
@@ -556,8 +535,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
-     * gateway is associated with the customer vnet.
+     * Get the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local gateway is associated with the customer vnet.
      * 
      * @return the vNetExtendedLocationResourceId value.
      */
@@ -566,8 +544,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
-     * gateway is associated with the customer vnet.
+     * Set the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local gateway is associated with the customer vnet.
      * 
      * @param vNetExtendedLocationResourceId the vNetExtendedLocationResourceId value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -620,8 +597,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
-     * networks.
+     * Get the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN networks.
      * 
      * @return the allowVirtualWanTraffic value.
      */
@@ -630,8 +606,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
-     * networks.
+     * Set the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN networks.
      * 
      * @param allowVirtualWanTraffic the allowVirtualWanTraffic value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -642,8 +617,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
-     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     * Get the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN.
      * 
      * @return the allowRemoteVnetTraffic value.
      */
@@ -652,8 +626,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
-     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     * Set the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN.
      * 
      * @param allowRemoteVnetTraffic the allowRemoteVnetTraffic value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.
@@ -664,8 +637,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Get the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
-     * multiple Express Route Gateways in the vnet.
+     * Get the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
      * 
      * @return the adminState value.
      */
@@ -674,8 +646,7 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
-     * Set the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
-     * multiple Express Route Gateways in the vnet.
+     * Set the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
      * 
      * @param adminState the adminState value to set.
      * @return the VirtualNetworkGatewayPropertiesFormat object itself.

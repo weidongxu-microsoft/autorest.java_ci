@@ -19,8 +19,7 @@ public interface DeploymentLocations {
     List<GeoRegion> locations();
 
     /**
-     * Gets the hostingEnvironments property: Available App Service Environments with full descriptions of the
-     * environments.
+     * Gets the hostingEnvironments property: Available App Service Environments with full descriptions of the environments.
      * 
      * @return the hostingEnvironments value.
      */

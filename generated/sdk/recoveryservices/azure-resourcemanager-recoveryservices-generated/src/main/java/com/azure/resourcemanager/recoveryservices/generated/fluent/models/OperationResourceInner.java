@@ -21,8 +21,7 @@ public final class OperationResourceInner {
     private OffsetDateTime endTime;
 
     /*
-     * Required if status == failed or status == canceled. This is the OData v4 error format, used by the RPC and will
-     * go into the v2.2 Azure REST API guidelines.
+     * Required if status == failed or status == canceled. This is the OData v4 error format, used by the RPC and will go into the v2.2 Azure REST API guidelines.
      */
     @JsonProperty(value = "error")
     private ManagementError error;
@@ -78,8 +77,7 @@ public final class OperationResourceInner {
     }
 
     /**
-     * Get the error property: Required if status == failed or status == canceled. This is the OData v4 error format,
-     * used by the RPC and will go into the v2.2 Azure REST API guidelines.
+     * Get the error property: Required if status == failed or status == canceled. This is the OData v4 error format, used by the RPC and will go into the v2.2 Azure REST API guidelines.
      * 
      * @return the error value.
      */
@@ -88,8 +86,7 @@ public final class OperationResourceInner {
     }
 
     /**
-     * Set the error property: Required if status == failed or status == canceled. This is the OData v4 error format,
-     * used by the RPC and will go into the v2.2 Azure REST API guidelines.
+     * Set the error property: Required if status == failed or status == canceled. This is the OData v4 error format, used by the RPC and will go into the v2.2 Azure REST API guidelines.
      * 
      * @param error the error value to set.
      * @return the OperationResourceInner object itself.
@@ -120,8 +117,7 @@ public final class OperationResourceInner {
     }
 
     /**
-     * Get the name property: It must match the last segment of the "id" field, and will typically be a GUID / system
-     * generated value.
+     * Get the name property: It must match the last segment of the "id" field, and will typically be a GUID / system generated value.
      * 
      * @return the name value.
      */
@@ -130,8 +126,7 @@ public final class OperationResourceInner {
     }
 
     /**
-     * Set the name property: It must match the last segment of the "id" field, and will typically be a GUID / system
-     * generated value.
+     * Set the name property: It must match the last segment of the "id" field, and will typically be a GUID / system generated value.
      * 
      * @param name the name value to set.
      * @return the OperationResourceInner object itself.

@@ -40,6 +40,10 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
         return this.innerModel().systemData();
     }
 
+    public Boolean trustedServiceAccessEnabled() {
+        return this.innerModel().trustedServiceAccessEnabled();
+    }
+
     public DefaultAction defaultAction() {
         return this.innerModel().defaultAction();
     }

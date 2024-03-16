@@ -31,8 +31,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * VpnServerConfigurationsAssociatedWithVirtualWansClient.
+ * An instance of this class provides access to all the operations defined in VpnServerConfigurationsAssociatedWithVirtualWansClient.
  */
 public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
     implements VpnServerConfigurationsAssociatedWithVirtualWansClient {
@@ -58,9 +57,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
     }
 
     /**
-     * The interface defining all the services for
-     * NetworkManagementClientVpnServerConfigurationsAssociatedWithVirtualWans to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnServerConfigurationsAssociatedWithVirtualWans to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -84,8 +81,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurations list associated with VirtualWan Response along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return vpnServerConfigurations list associated with VirtualWan Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listWithResponseAsync(String resourceGroupName, String virtualWanName) {
@@ -121,8 +117,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurations list associated with VirtualWan Response along with {@link Response} on
-     * successful completion of {@link Mono}.
+     * @return vpnServerConfigurations list associated with VirtualWan Response along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listWithResponseAsync(String resourceGroupName, String virtualWanName,
@@ -230,8 +225,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurations list associated with VirtualWan Response on successful completion of
-     * {@link Mono}.
+     * @return vpnServerConfigurations list associated with VirtualWan Response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnServerConfigurationsResponseInner> listAsync(String resourceGroupName, String virtualWanName) {
@@ -247,8 +241,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurations list associated with VirtualWan Response on successful completion of
-     * {@link Mono}.
+     * @return vpnServerConfigurations list associated with VirtualWan Response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnServerConfigurationsResponseInner> listAsync(String resourceGroupName, String virtualWanName,

@@ -32,8 +32,7 @@ public final class TargetRegion {
     private StorageAccountType storageAccountType;
 
     /*
-     * Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery
-     * artifact.
+     * Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
      */
     @JsonProperty(value = "encryption")
     private EncryptionImages encryption;
@@ -71,8 +70,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Get the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This
-     * property is updatable.
+     * Get the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This property is updatable.
      * 
      * @return the regionalReplicaCount value.
      */
@@ -81,8 +79,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Set the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This
-     * property is updatable.
+     * Set the regionalReplicaCount property: The number of replicas of the Image Version to be created per region. This property is updatable.
      * 
      * @param regionalReplicaCount the regionalReplicaCount value to set.
      * @return the TargetRegion object itself.
@@ -93,8 +90,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Get the storageAccountType property: Specifies the storage account type to be used to store the image. This
-     * property is not updatable.
+     * Get the storageAccountType property: Specifies the storage account type to be used to store the image. This property is not updatable.
      * 
      * @return the storageAccountType value.
      */
@@ -103,8 +99,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Set the storageAccountType property: Specifies the storage account type to be used to store the image. This
-     * property is not updatable.
+     * Set the storageAccountType property: Specifies the storage account type to be used to store the image. This property is not updatable.
      * 
      * @param storageAccountType the storageAccountType value to set.
      * @return the TargetRegion object itself.
@@ -115,8 +110,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Get the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and
-     * data disks in the gallery artifact.
+     * Get the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
      * 
      * @return the encryption value.
      */
@@ -125,8 +119,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Set the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and
-     * data disks in the gallery artifact.
+     * Set the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
      * 
      * @param encryption the encryption value to set.
      * @return the TargetRegion object itself.
@@ -137,8 +130,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Get the excludeFromLatest property: Contains the flag setting to hide an image when users specify
-     * version='latest'.
+     * Get the excludeFromLatest property: Contains the flag setting to hide an image when users specify version='latest'.
      * 
      * @return the excludeFromLatest value.
      */
@@ -147,8 +139,7 @@ public final class TargetRegion {
     }
 
     /**
-     * Set the excludeFromLatest property: Contains the flag setting to hide an image when users specify
-     * version='latest'.
+     * Set the excludeFromLatest property: Contains the flag setting to hide an image when users specify version='latest'.
      * 
      * @param excludeFromLatest the excludeFromLatest value to set.
      * @return the TargetRegion object itself.

@@ -65,8 +65,7 @@ public final class TracksClientImpl implements TracksClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesTracks to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for AzureMediaServicesTracks to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesTr")
@@ -145,8 +144,7 @@ public final class TracksClientImpl implements TracksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetTrack items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of AssetTrack items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetTrackInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -191,8 +189,7 @@ public final class TracksClientImpl implements TracksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetTrack items along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a collection of AssetTrack items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetTrackInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -695,7 +692,8 @@ public final class TracksClientImpl implements TracksClient {
     private Mono<AssetTrackInner> createOrUpdateAsync(String resourceGroupName, String accountName, String assetName,
         String trackName, AssetTrackInner parameters, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, accountName, assetName, trackName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1291,10 +1289,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1340,10 +1335,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1389,10 +1381,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1415,10 +1404,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1443,10 +1429,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1466,10 +1449,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1491,10 +1471,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1515,10 +1492,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1540,10 +1514,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -1561,10 +1532,7 @@ public final class TracksClientImpl implements TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.

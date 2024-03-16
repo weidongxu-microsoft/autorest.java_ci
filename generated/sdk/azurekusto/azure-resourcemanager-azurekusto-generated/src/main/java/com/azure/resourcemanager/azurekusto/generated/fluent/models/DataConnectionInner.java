@@ -7,22 +7,20 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.azurekusto.generated.models.CosmosDbDataConnection;
+import com.azure.resourcemanager.azurekusto.generated.models.DataConnectionKind;
 import com.azure.resourcemanager.azurekusto.generated.models.EventGridDataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.EventHubDataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.IotHubDataConnection;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Class representing an data connection.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = DataConnectionInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = DataConnectionInner.class, visible = true)
 @JsonTypeName("DataConnection")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "EventHub", value = EventHubDataConnection.class),
@@ -31,6 +29,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "CosmosDb", value = CosmosDbDataConnection.class) })
 @Fluent
 public class DataConnectionInner extends ProxyResource {
+    /*
+     * Kind of the endpoint for the data connection
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private DataConnectionKind kind;
+
     /*
      * Resource location.
      */
@@ -41,6 +46,27 @@ public class DataConnectionInner extends ProxyResource {
      * Creates an instance of DataConnectionInner class.
      */
     public DataConnectionInner() {
+        this.kind = DataConnectionKind.fromString("DataConnection");
+    }
+
+    /**
+     * Get the kind property: Kind of the endpoint for the data connection.
+     * 
+     * @return the kind value.
+     */
+    public DataConnectionKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Kind of the endpoint for the data connection.
+     * 
+     * @param kind the kind value to set.
+     * @return the DataConnectionInner object itself.
+     */
+    protected DataConnectionInner withKind(DataConnectionKind kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

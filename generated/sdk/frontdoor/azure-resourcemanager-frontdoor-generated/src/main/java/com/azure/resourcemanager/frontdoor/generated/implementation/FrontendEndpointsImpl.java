@@ -64,14 +64,14 @@ public final class FrontendEndpointsImpl implements FrontendEndpoints {
 
     public void enableHttps(String resourceGroupName, String frontDoorName, String frontendEndpointName,
         CustomHttpsConfiguration customHttpsConfiguration) {
-        this.serviceClient().enableHttps(resourceGroupName, frontDoorName, frontendEndpointName,
-            customHttpsConfiguration);
+        this.serviceClient()
+            .enableHttps(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration);
     }
 
     public void enableHttps(String resourceGroupName, String frontDoorName, String frontendEndpointName,
         CustomHttpsConfiguration customHttpsConfiguration, Context context) {
-        this.serviceClient().enableHttps(resourceGroupName, frontDoorName, frontendEndpointName,
-            customHttpsConfiguration, context);
+        this.serviceClient()
+            .enableHttps(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration, context);
     }
 
     public void disableHttps(String resourceGroupName, String frontDoorName, String frontendEndpointName) {

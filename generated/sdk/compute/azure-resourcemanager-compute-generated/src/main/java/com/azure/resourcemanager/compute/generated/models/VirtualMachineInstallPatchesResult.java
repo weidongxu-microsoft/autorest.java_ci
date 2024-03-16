@@ -13,17 +13,14 @@ import java.util.List;
  */
 public interface VirtualMachineInstallPatchesResult {
     /**
-     * Gets the status property: The overall success or failure status of the operation. It remains "InProgress" until
-     * the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or
-     * "CompletedWithWarnings.".
+     * Gets the status property: The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings.".
      * 
      * @return the status value.
      */
     PatchOperationStatus status();
 
     /**
-     * Gets the installationActivityId property: The activity ID of the operation that produced this result. It is used
-     * to correlate across CRP and extension logs.
+     * Gets the installationActivityId property: The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
      * 
      * @return the installationActivityId value.
      */
@@ -37,32 +34,28 @@ public interface VirtualMachineInstallPatchesResult {
     VMGuestPatchRebootStatus rebootStatus();
 
     /**
-     * Gets the maintenanceWindowExceeded property: Whether the operation ran out of time before it completed all its
-     * intended actions.
+     * Gets the maintenanceWindowExceeded property: Whether the operation ran out of time before it completed all its intended actions.
      * 
      * @return the maintenanceWindowExceeded value.
      */
     Boolean maintenanceWindowExceeded();
 
     /**
-     * Gets the excludedPatchCount property: The number of patches that were not installed due to the user blocking
-     * their installation.
+     * Gets the excludedPatchCount property: The number of patches that were not installed due to the user blocking their installation.
      * 
      * @return the excludedPatchCount value.
      */
     Integer excludedPatchCount();
 
     /**
-     * Gets the notSelectedPatchCount property: The number of patches that were detected as available for install, but
-     * did not meet the operation's criteria.
+     * Gets the notSelectedPatchCount property: The number of patches that were detected as available for install, but did not meet the operation's criteria.
      * 
      * @return the notSelectedPatchCount value.
      */
     Integer notSelectedPatchCount();
 
     /**
-     * Gets the pendingPatchCount property: The number of patches that were identified as meeting the installation
-     * criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+     * Gets the pendingPatchCount property: The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
      * 
      * @return the pendingPatchCount value.
      */
@@ -76,8 +69,7 @@ public interface VirtualMachineInstallPatchesResult {
     Integer installedPatchCount();
 
     /**
-     * Gets the failedPatchCount property: The number of patches that could not be installed due to some issue. See
-     * errors for details.
+     * Gets the failedPatchCount property: The number of patches that could not be installed due to some issue. See errors for details.
      * 
      * @return the failedPatchCount value.
      */
@@ -98,16 +90,14 @@ public interface VirtualMachineInstallPatchesResult {
     OffsetDateTime startDateTime();
 
     /**
-     * Gets the error property: The errors that were encountered during execution of the operation. The details array
-     * contains the list of them.
+     * Gets the error property: The errors that were encountered during execution of the operation. The details array contains the list of them.
      * 
      * @return the error value.
      */
     ApiError error();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner object.
      * 
      * @return the inner object.
      */

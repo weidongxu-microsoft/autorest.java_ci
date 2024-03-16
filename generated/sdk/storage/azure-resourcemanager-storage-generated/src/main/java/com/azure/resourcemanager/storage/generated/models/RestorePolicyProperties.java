@@ -64,8 +64,7 @@ public final class RestorePolicyProperties {
     }
 
     /**
-     * Get the days property: how long this blob can be restored. It should be great than zero and less than
-     * DeleteRetentionPolicy.days.
+     * Get the days property: how long this blob can be restored. It should be great than zero and less than DeleteRetentionPolicy.days.
      * 
      * @return the days value.
      */
@@ -74,8 +73,7 @@ public final class RestorePolicyProperties {
     }
 
     /**
-     * Set the days property: how long this blob can be restored. It should be great than zero and less than
-     * DeleteRetentionPolicy.days.
+     * Set the days property: how long this blob can be restored. It should be great than zero and less than DeleteRetentionPolicy.days.
      * 
      * @param days the days value to set.
      * @return the RestorePolicyProperties object itself.

@@ -15,7 +15,7 @@ import java.util.List;
 @Fluent
 public final class DnsResourceReference {
     /*
-     * A list of dns Records
+     * A list of dns Records 
      */
     @JsonProperty(value = "dnsResources")
     private List<SubResource> dnsResources;

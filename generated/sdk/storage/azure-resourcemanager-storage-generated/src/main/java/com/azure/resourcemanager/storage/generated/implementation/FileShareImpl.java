@@ -153,13 +153,17 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     }
 
     public FileShare create() {
-        this.innerObject = serviceManager.serviceClient().getFileShares().createWithResponse(resourceGroupName,
-            accountName, shareName, this.innerModel(), createExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
+            .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), createExpand,
+                Context.NONE)
+            .getValue();
         return this;
     }
 
     public FileShare create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFileShares()
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
             .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), createExpand, context)
             .getValue();
         return this;
@@ -177,14 +181,18 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     }
 
     public FileShare apply() {
-        this.innerObject = serviceManager.serviceClient().getFileShares()
-            .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
+            .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public FileShare apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFileShares()
-            .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
+            .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -200,7 +208,8 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     public FileShare refresh() {
         String localExpand = null;
         String localXMsSnapshot = null;
-        this.innerObject = serviceManager.serviceClient().getFileShares()
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
             .getWithResponse(resourceGroupName, accountName, shareName, localExpand, localXMsSnapshot, Context.NONE)
             .getValue();
         return this;
@@ -209,15 +218,16 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     public FileShare refresh(Context context) {
         String localExpand = null;
         String localXMsSnapshot = null;
-        this.innerObject = serviceManager.serviceClient().getFileShares()
+        this.innerObject = serviceManager.serviceClient()
+            .getFileShares()
             .getWithResponse(resourceGroupName, accountName, shareName, localExpand, localXMsSnapshot, context)
             .getValue();
         return this;
     }
 
     public Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context) {
-        return serviceManager.fileShares().restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare,
-            context);
+        return serviceManager.fileShares()
+            .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
     }
 
     public void restore(DeletedShare deletedShare) {
@@ -226,8 +236,8 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
 
     public Response<LeaseShareResponse> leaseWithResponse(String xMsSnapshot, LeaseShareRequest parameters,
         Context context) {
-        return serviceManager.fileShares().leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot,
-            parameters, context);
+        return serviceManager.fileShares()
+            .leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, parameters, context);
     }
 
     public LeaseShareResponse lease() {

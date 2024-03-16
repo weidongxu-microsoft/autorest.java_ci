@@ -195,9 +195,7 @@ public interface LiveEvents {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -211,9 +209,7 @@ public interface LiveEvents {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
-     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
-     * unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.

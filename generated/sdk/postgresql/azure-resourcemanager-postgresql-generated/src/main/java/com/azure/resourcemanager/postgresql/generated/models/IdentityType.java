@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory
- * principal for the resource.
+ * The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.
  */
 public final class IdentityType extends ExpandableStringEnum<IdentityType> {
     /**

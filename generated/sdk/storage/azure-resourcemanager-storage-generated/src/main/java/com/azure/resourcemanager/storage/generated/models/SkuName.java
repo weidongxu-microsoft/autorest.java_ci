@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called
- * accountType.
+ * The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
  */
 public final class SkuName extends ExpandableStringEnum<SkuName> {
     /**

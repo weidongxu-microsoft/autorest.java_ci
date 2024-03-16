@@ -69,8 +69,7 @@ public final class AccessKeysInner {
     }
 
     /**
-     * Get the secondaryConnectionString property: Secondary connection string of the created namespace authorization
-     * rule.
+     * Get the secondaryConnectionString property: Secondary connection string of the created namespace authorization rule.
      * 
      * @return the secondaryConnectionString value.
      */
@@ -79,8 +78,7 @@ public final class AccessKeysInner {
     }
 
     /**
-     * Set the secondaryConnectionString property: Secondary connection string of the created namespace authorization
-     * rule.
+     * Set the secondaryConnectionString property: Secondary connection string of the created namespace authorization rule.
      * 
      * @param secondaryConnectionString the secondaryConnectionString value to set.
      * @return the AccessKeysInner object itself.

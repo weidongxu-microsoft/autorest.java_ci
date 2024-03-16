@@ -56,7 +56,8 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -102,14 +103,16 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
     }
 
     public DiskAccess create() {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses().createOrUpdate(resourceGroupName,
-            diskAccessName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .createOrUpdate(resourceGroupName, diskAccessName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DiskAccess create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses().createOrUpdate(resourceGroupName,
-            diskAccessName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .createOrUpdate(resourceGroupName, diskAccessName, this.innerModel(), context);
         return this;
     }
 
@@ -125,14 +128,16 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
     }
 
     public DiskAccess apply() {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses().update(resourceGroupName, diskAccessName,
-            updateDiskAccess, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .update(resourceGroupName, diskAccessName, updateDiskAccess, Context.NONE);
         return this;
     }
 
     public DiskAccess apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses().update(resourceGroupName, diskAccessName,
-            updateDiskAccess, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .update(resourceGroupName, diskAccessName, updateDiskAccess, context);
         return this;
     }
 
@@ -145,14 +150,18 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
     }
 
     public DiskAccess refresh() {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses()
-            .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DiskAccess refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getDiskAccesses()
-            .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getDiskAccesses()
+            .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context)
+            .getValue();
         return this;
     }
 

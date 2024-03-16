@@ -47,9 +47,7 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     }
 
     /**
-     * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each
-     * reservation order ID represents a single purchase transaction. A reservation order contains reservations. The
-     * reservation order specifies the VM size and region for the reservations.
+     * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM size and region for the reservations.
      * 
      * @return the reservationOrderId value.
      */
@@ -139,8 +137,7 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     }
 
     /**
-     * Get the armSkuName property: This is the ARM Sku name. It can be used to join with the serviceType field in
-     * additional info in usage records.
+     * Get the armSkuName property: This is the ARM Sku name. It can be used to join with the serviceType field in additional info in usage records.
      * 
      * @return the armSkuName value.
      */
@@ -194,8 +191,7 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     }
 
     /**
-     * Get the costCenter property: The cost center of this department if it is a department and a cost center is
-     * provided.
+     * Get the costCenter property: The cost center of this department if it is a department and a cost center is provided.
      * 
      * @return the costCenter value.
      */

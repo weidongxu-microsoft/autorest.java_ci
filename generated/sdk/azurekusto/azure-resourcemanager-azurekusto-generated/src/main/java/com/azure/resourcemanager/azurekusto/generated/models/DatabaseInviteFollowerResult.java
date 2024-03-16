@@ -18,8 +18,7 @@ public interface DatabaseInviteFollowerResult {
     String generatedInvitation();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInviteFollowerResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInviteFollowerResultInner object.
      * 
      * @return the inner object.
      */

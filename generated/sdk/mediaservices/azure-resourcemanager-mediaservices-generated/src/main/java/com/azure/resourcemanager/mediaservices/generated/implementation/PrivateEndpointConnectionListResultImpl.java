@@ -27,7 +27,8 @@ public final class PrivateEndpointConnectionListResultImpl implements PrivateEnd
         List<PrivateEndpointConnectionInner> inner = this.innerModel().value();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

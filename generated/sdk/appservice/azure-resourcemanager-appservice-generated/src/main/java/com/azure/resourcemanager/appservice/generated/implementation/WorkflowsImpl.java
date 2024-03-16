@@ -27,8 +27,8 @@ public final class WorkflowsImpl implements Workflows {
 
     public Response<Void> regenerateAccessKeyWithResponse(String resourceGroupName, String name, String workflowName,
         RegenerateActionParameter keyType, Context context) {
-        return this.serviceClient().regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType,
-            context);
+        return this.serviceClient()
+            .regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType, context);
     }
 
     public void regenerateAccessKey(String resourceGroupName, String name, String workflowName,

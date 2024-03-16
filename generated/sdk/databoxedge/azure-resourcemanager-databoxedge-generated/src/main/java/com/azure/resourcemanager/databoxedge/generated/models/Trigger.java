@@ -33,6 +33,13 @@ public interface Trigger {
     String type();
 
     /**
+     * Gets the kind property: Trigger Kind.
+     * 
+     * @return the kind value.
+     */
+    TriggerEventType kind();
+
+    /**
      * Gets the systemData property: Metadata pertaining to creation and last modification of Trigger.
      * 
      * @return the systemData value.

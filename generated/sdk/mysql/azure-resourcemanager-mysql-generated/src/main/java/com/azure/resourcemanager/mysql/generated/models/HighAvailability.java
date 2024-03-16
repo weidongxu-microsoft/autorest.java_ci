@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Network related properties of a server.
+ * High availability properties of a server.
  */
 @Fluent
 public final class HighAvailability {

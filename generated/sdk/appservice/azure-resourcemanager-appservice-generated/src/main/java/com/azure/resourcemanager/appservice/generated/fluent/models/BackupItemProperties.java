@@ -215,8 +215,7 @@ public final class BackupItemProperties {
     }
 
     /**
-     * Get the correlationId property: Unique correlation identifier. Please use this along with the timestamp while
-     * communicating with Azure support.
+     * Get the correlationId property: Unique correlation identifier. Please use this along with the timestamp while communicating with Azure support.
      * 
      * @return the correlationId value.
      */

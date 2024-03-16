@@ -14,19 +14,13 @@ import java.time.Duration;
 @Fluent
 public final class LiveEventEncoding {
     /*
-     * Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes
-     * through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or
-     * Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See
-     * https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the
-     * live event is created.
+     * Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
      */
     @JsonProperty(value = "encodingType")
     private LiveEventEncodingType encodingType;
 
     /*
-     * The optional encoding preset name, used when encodingType is not None. This value is specified at creation time
-     * and cannot be updated. If the encodingType is set to Standard, then the default preset name is ‘Default720p’.
-     * Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
+     * The optional encoding preset name, used when encodingType is not None. This value is specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      */
     @JsonProperty(value = "presetName")
     private String presetName;
@@ -38,11 +32,7 @@ public final class LiveEventEncoding {
     private StretchMode stretchMode;
 
     /*
-     * Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output fragment length for the video and
-     * audio tracks of an encoding live event. For example, use PT2S to indicate 2 seconds. For the video track it also
-     * defines the key frame interval, or the length of a GoP (group of pictures). If this value is not set for an
-     * encoding live event, the fragment duration defaults to 2 seconds. The value cannot be set for pass-through live
-     * events.
+     * Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output fragment length for the video and audio tracks of an encoding live event. For example, use PT2S to indicate 2 seconds. For the video track it also defines the key frame interval, or the length of a GoP (group of pictures).   If this value is not set for an encoding live event, the fragment duration defaults to 2 seconds. The value cannot be set for pass-through live events.
      */
     @JsonProperty(value = "keyFrameInterval")
     private Duration keyFrameInterval;
@@ -54,11 +44,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Get the encodingType property: Live event type. When encodingType is set to PassthroughBasic or
-     * PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When
-     * encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple
-     * bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property
-     * cannot be modified after the live event is created.
+     * Get the encodingType property: Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
      * 
      * @return the encodingType value.
      */
@@ -67,11 +53,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Set the encodingType property: Live event type. When encodingType is set to PassthroughBasic or
-     * PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When
-     * encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple
-     * bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property
-     * cannot be modified after the live event is created.
+     * Set the encodingType property: Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
      * 
      * @param encodingType the encodingType value to set.
      * @return the LiveEventEncoding object itself.
@@ -82,9 +64,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Get the presetName property: The optional encoding preset name, used when encodingType is not None. This value is
-     * specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset
-     * name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
+     * Get the presetName property: The optional encoding preset name, used when encodingType is not None. This value is specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      * 
      * @return the presetName value.
      */
@@ -93,9 +73,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Set the presetName property: The optional encoding preset name, used when encodingType is not None. This value is
-     * specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset
-     * name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
+     * Set the presetName property: The optional encoding preset name, used when encodingType is not None. This value is specified at creation time and cannot be updated. If the encodingType is set to Standard, then the default preset name is ‘Default720p’. Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      * 
      * @param presetName the presetName value to set.
      * @return the LiveEventEncoding object itself.
@@ -106,8 +84,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Get the stretchMode property: Specifies how the input video will be resized to fit the desired output
-     * resolution(s). Default is None.
+     * Get the stretchMode property: Specifies how the input video will be resized to fit the desired output resolution(s). Default is None.
      * 
      * @return the stretchMode value.
      */
@@ -116,8 +93,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Set the stretchMode property: Specifies how the input video will be resized to fit the desired output
-     * resolution(s). Default is None.
+     * Set the stretchMode property: Specifies how the input video will be resized to fit the desired output resolution(s). Default is None.
      * 
      * @param stretchMode the stretchMode value to set.
      * @return the LiveEventEncoding object itself.
@@ -128,11 +104,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Get the keyFrameInterval property: Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output
-     * fragment length for the video and audio tracks of an encoding live event. For example, use PT2S to indicate 2
-     * seconds. For the video track it also defines the key frame interval, or the length of a GoP (group of pictures).
-     * If this value is not set for an encoding live event, the fragment duration defaults to 2 seconds. The value
-     * cannot be set for pass-through live events.
+     * Get the keyFrameInterval property: Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output fragment length for the video and audio tracks of an encoding live event. For example, use PT2S to indicate 2 seconds. For the video track it also defines the key frame interval, or the length of a GoP (group of pictures).   If this value is not set for an encoding live event, the fragment duration defaults to 2 seconds. The value cannot be set for pass-through live events.
      * 
      * @return the keyFrameInterval value.
      */
@@ -141,11 +113,7 @@ public final class LiveEventEncoding {
     }
 
     /**
-     * Set the keyFrameInterval property: Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output
-     * fragment length for the video and audio tracks of an encoding live event. For example, use PT2S to indicate 2
-     * seconds. For the video track it also defines the key frame interval, or the length of a GoP (group of pictures).
-     * If this value is not set for an encoding live event, the fragment duration defaults to 2 seconds. The value
-     * cannot be set for pass-through live events.
+     * Set the keyFrameInterval property: Use an ISO 8601 time value between 0.5 to 20 seconds to specify the output fragment length for the video and audio tracks of an encoding live event. For example, use PT2S to indicate 2 seconds. For the video track it also defines the key frame interval, or the length of a GoP (group of pictures).   If this value is not set for an encoding live event, the fragment duration defaults to 2 seconds. The value cannot be set for pass-through live events.
      * 
      * @param keyFrameInterval the keyFrameInterval value to set.
      * @return the LiveEventEncoding object itself.

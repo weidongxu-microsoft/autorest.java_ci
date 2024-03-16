@@ -17,8 +17,7 @@ import java.util.List;
 @Fluent
 public final class PrivateLinkConfigurationProperties {
     /*
-     * The HDInsight private linkable sub-resource name to apply the private link configuration to. For example,
-     * 'headnode', 'gateway', 'edgenode'.
+     * The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      */
     @JsonProperty(value = "groupId", required = true)
     private String groupId;
@@ -42,8 +41,7 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link
-     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @return the groupId value.
      */
@@ -52,8 +50,7 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link
-     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @param groupId the groupId value to set.
      * @return the PrivateLinkConfigurationProperties object itself.
@@ -64,8 +61,7 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
-     * response.
+     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the response.
      * 
      * @return the provisioningState value.
      */

@@ -15,8 +15,7 @@ import java.util.Map;
 @Fluent
 public final class IdentityInfo {
     /*
-     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
-     * identity and a set of user-assigned identities. The type 'None' will remove any identity.
+     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
      */
     @JsonProperty(value = "type")
     private IdentityType type;
@@ -34,10 +33,8 @@ public final class IdentityInfo {
     private String tenantId;
 
     /*
-     * The list of user identities associated with the resource. The user identity dictionary key references will be ARM
-     * resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
-     * userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * This property is currently not used and reserved for future usage.
      */
     @JsonProperty(value = "userAssignedIdentities")
@@ -51,8 +48,7 @@ public final class IdentityInfo {
     }
 
     /**
-     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
+     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
      * 
      * @return the type value.
      */
@@ -61,8 +57,7 @@ public final class IdentityInfo {
     }
 
     /**
-     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
-     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
+     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
      * 
      * @param type the type value to set.
      * @return the IdentityInfo object itself.
@@ -113,8 +108,7 @@ public final class IdentityInfo {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user identities associated with the resource. The user
-     * identity dictionary key references will be ARM resource ids in the form:
+     * Get the userAssignedIdentities property: The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form:
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * This property is currently not used and reserved for future usage.
      * 
@@ -125,8 +119,7 @@ public final class IdentityInfo {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user identities associated with the resource. The user
-     * identity dictionary key references will be ARM resource ids in the form:
+     * Set the userAssignedIdentities property: The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form:
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * This property is currently not used and reserved for future usage.
      * 

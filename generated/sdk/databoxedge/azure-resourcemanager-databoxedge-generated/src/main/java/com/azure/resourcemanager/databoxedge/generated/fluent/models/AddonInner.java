@@ -6,28 +6,33 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.databoxedge.generated.models.AddonType;
 import com.azure.resourcemanager.databoxedge.generated.models.ArcAddon;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.IoTAddon;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Role Addon.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "kind",
-    defaultImpl = AddonInner.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = AddonInner.class, visible = true)
 @JsonTypeName("Addon")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "ArcForKubernetes", value = ArcAddon.class),
     @JsonSubTypes.Type(name = "IotEdge", value = IoTAddon.class) })
 @Immutable
 public class AddonInner extends ArmBaseModel {
+    /*
+     * Addon type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private AddonType kind;
+
     /*
      * Metadata pertaining to creation and last modification of Addon
      */
@@ -38,6 +43,27 @@ public class AddonInner extends ArmBaseModel {
      * Creates an instance of AddonInner class.
      */
     public AddonInner() {
+        this.kind = AddonType.fromString("Addon");
+    }
+
+    /**
+     * Get the kind property: Addon type.
+     * 
+     * @return the kind value.
+     */
+    public AddonType kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Addon type.
+     * 
+     * @param kind the kind value to set.
+     * @return the AddonInner object itself.
+     */
+    protected AddonInner withKind(AddonType kind) {
+        this.kind = kind;
+        return this;
     }
 
     /**

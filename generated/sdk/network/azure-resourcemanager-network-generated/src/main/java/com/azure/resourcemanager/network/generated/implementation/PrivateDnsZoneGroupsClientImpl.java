@@ -65,8 +65,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientPrivateDnsZoneGroups to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientPrivateDnsZoneGroups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -363,8 +362,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private dns zone group resource by specified private dns zone group name along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return the private dns zone group resource by specified private dns zone group name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateDnsZoneGroupInner>> getWithResponseAsync(String resourceGroupName,
@@ -407,8 +405,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private dns zone group resource by specified private dns zone group name along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return the private dns zone group resource by specified private dns zone group name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateDnsZoneGroupInner>> getWithResponseAsync(String resourceGroupName,
@@ -449,8 +446,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private dns zone group resource by specified private dns zone group name on successful completion of
-     * {@link Mono}.
+     * @return the private dns zone group resource by specified private dns zone group name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateDnsZoneGroupInner> getAsync(String resourceGroupName, String privateEndpointName,
@@ -678,8 +674,10 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     public SyncPoller<PollResult<PrivateDnsZoneGroupInner>, PrivateDnsZoneGroupInner> beginCreateOrUpdate(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName,
         PrivateDnsZoneGroupInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName,
-            parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -698,7 +696,8 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     private Mono<PrivateDnsZoneGroupInner> createOrUpdateAsync(String resourceGroupName, String privateEndpointName,
         String privateDnsZoneGroupName, PrivateDnsZoneGroupInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -767,8 +766,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private dns zone groups in a private endpoint along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all private dns zone groups in a private endpoint along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateDnsZoneGroupInner>> listSinglePageAsync(String privateEndpointName,
@@ -808,8 +806,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private dns zone groups in a private endpoint along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all private dns zone groups in a private endpoint along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateDnsZoneGroupInner>> listSinglePageAsync(String privateEndpointName,
@@ -915,8 +912,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateDnsZoneGroups API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the ListPrivateDnsZoneGroups API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateDnsZoneGroupInner>> listNextSinglePageAsync(String nextLink) {
@@ -944,8 +940,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateDnsZoneGroups API service call along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return response for the ListPrivateDnsZoneGroups API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateDnsZoneGroupInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -152,8 +152,7 @@ public interface Asset {
         }
 
         /**
-         * The stage of the Asset definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Asset definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithAlternateId, DefinitionStages.WithDescription, DefinitionStages.WithContainer,
@@ -356,8 +355,7 @@ public interface Asset {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param parameters The request parameters.
      * @param context The context to associate with this operation.
@@ -371,8 +369,7 @@ public interface Asset {
     /**
      * List the Asset URLs
      * 
-     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
-     * signatures are derived from the storage account keys.
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.
      * 
      * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -391,8 +388,7 @@ public interface Asset {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     * along with {@link Response}.
+     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API along with {@link Response}.
      */
     Response<StorageEncryptedAssetDecryptionData> getEncryptionKeyWithResponse(Context context);
 

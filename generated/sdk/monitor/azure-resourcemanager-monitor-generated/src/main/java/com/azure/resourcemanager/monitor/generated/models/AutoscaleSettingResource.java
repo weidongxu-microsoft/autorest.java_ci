@@ -50,8 +50,7 @@ public interface AutoscaleSettingResource {
     Map<String, String> tags();
 
     /**
-     * Gets the profiles property: the collection of automatic scaling profiles that specify different scaling
-     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * Gets the profiles property: the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified.
      * 
      * @return the profiles value.
      */
@@ -65,8 +64,7 @@ public interface AutoscaleSettingResource {
     List<AutoscaleNotification> notifications();
 
     /**
-     * Gets the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'false'.
+     * Gets the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'.
      * 
      * @return the enabled value.
      */
@@ -80,16 +78,14 @@ public interface AutoscaleSettingResource {
     String namePropertiesName();
 
     /**
-     * Gets the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be
-     * added to.
+     * Gets the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be added to.
      * 
      * @return the targetResourceUri value.
      */
     String targetResourceUri();
 
     /**
-     * Gets the targetResourceLocation property: the location of the resource that the autoscale setting should be added
-     * to.
+     * Gets the targetResourceLocation property: the location of the resource that the autoscale setting should be added to.
      * 
      * @return the targetResourceLocation value.
      */
@@ -179,19 +175,16 @@ public interface AutoscaleSettingResource {
          */
         interface WithProfiles {
             /**
-             * Specifies the profiles property: the collection of automatic scaling profiles that specify different
-             * scaling parameters for different time periods. A maximum of 20 profiles can be specified..
+             * Specifies the profiles property: the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified..
              * 
-             * @param profiles the collection of automatic scaling profiles that specify different scaling parameters
-             * for different time periods. A maximum of 20 profiles can be specified.
+             * @param profiles the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified.
              * @return the next definition stage.
              */
             WithCreate withProfiles(List<AutoscaleProfile> profiles);
         }
 
         /**
-         * The stage of the AutoscaleSettingResource definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AutoscaleSettingResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithNotifications,
             DefinitionStages.WithEnabled, DefinitionStages.WithNamePropertiesName,
@@ -243,11 +236,9 @@ public interface AutoscaleSettingResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the
-             * resource. The default value is 'false'..
+             * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'..
              * 
-             * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-             * default value is 'false'.
+             * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'.
              * @return the next definition stage.
              */
             WithCreate withEnabled(Boolean enabled);
@@ -271,11 +262,9 @@ public interface AutoscaleSettingResource {
          */
         interface WithTargetResourceUri {
             /**
-             * Specifies the targetResourceUri property: the resource identifier of the resource that the autoscale
-             * setting should be added to..
+             * Specifies the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be added to..
              * 
-             * @param targetResourceUri the resource identifier of the resource that the autoscale setting should be
-             * added to.
+             * @param targetResourceUri the resource identifier of the resource that the autoscale setting should be added to.
              * @return the next definition stage.
              */
             WithCreate withTargetResourceUri(String targetResourceUri);
@@ -286,8 +275,7 @@ public interface AutoscaleSettingResource {
          */
         interface WithTargetResourceLocation {
             /**
-             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting
-             * should be added to..
+             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting should be added to..
              * 
              * @param targetResourceLocation the location of the resource that the autoscale setting should be added to.
              * @return the next definition stage.
@@ -347,11 +335,9 @@ public interface AutoscaleSettingResource {
          */
         interface WithProfiles {
             /**
-             * Specifies the profiles property: the collection of automatic scaling profiles that specify different
-             * scaling parameters for different time periods. A maximum of 20 profiles can be specified..
+             * Specifies the profiles property: the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified..
              * 
-             * @param profiles the collection of automatic scaling profiles that specify different scaling parameters
-             * for different time periods. A maximum of 20 profiles can be specified.
+             * @param profiles the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified.
              * @return the next definition stage.
              */
             Update withProfiles(List<AutoscaleProfile> profiles);
@@ -375,11 +361,9 @@ public interface AutoscaleSettingResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the
-             * resource. The default value is 'false'..
+             * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'..
              * 
-             * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-             * default value is 'false'.
+             * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'.
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);
@@ -403,11 +387,9 @@ public interface AutoscaleSettingResource {
          */
         interface WithTargetResourceUri {
             /**
-             * Specifies the targetResourceUri property: the resource identifier of the resource that the autoscale
-             * setting should be added to..
+             * Specifies the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be added to..
              * 
-             * @param targetResourceUri the resource identifier of the resource that the autoscale setting should be
-             * added to.
+             * @param targetResourceUri the resource identifier of the resource that the autoscale setting should be added to.
              * @return the next definition stage.
              */
             Update withTargetResourceUri(String targetResourceUri);
@@ -418,8 +400,7 @@ public interface AutoscaleSettingResource {
          */
         interface WithTargetResourceLocation {
             /**
-             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting
-             * should be added to..
+             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting should be added to..
              * 
              * @param targetResourceLocation the location of the resource that the autoscale setting should be added to.
              * @return the next definition stage.

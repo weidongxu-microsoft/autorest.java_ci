@@ -7,6 +7,7 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Addon;
+import com.azure.resourcemanager.databoxedge.generated.models.AddonType;
 
 public final class AddonImpl implements Addon {
     private AddonInner innerObject;
@@ -29,6 +30,10 @@ public final class AddonImpl implements Addon {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public AddonType kind() {
+        return this.innerModel().kind();
     }
 
     public SystemData systemData() {

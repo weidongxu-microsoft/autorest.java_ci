@@ -65,8 +65,7 @@ public final class ReservationRecommendationDetailsResourceProperties {
     }
 
     /**
-     * Get the onDemandRate property: Hourly on-demand rate of the resource. Includes only hardware rate i.e, software
-     * rate is not included.
+     * Get the onDemandRate property: Hourly on-demand rate of the resource. Includes only hardware rate i.e, software rate is not included.
      * 
      * @return the onDemandRate value.
      */

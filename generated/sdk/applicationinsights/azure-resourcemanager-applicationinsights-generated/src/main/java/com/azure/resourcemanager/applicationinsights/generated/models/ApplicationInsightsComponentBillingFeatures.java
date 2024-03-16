@@ -19,17 +19,14 @@ public interface ApplicationInsightsComponentBillingFeatures {
     ApplicationInsightsComponentDataVolumeCap dataVolumeCap();
 
     /**
-     * Gets the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise
-     * plan, this will list both 'Basic' and 'Application Insights Enterprise'.
+     * Gets the currentBillingFeatures property: Current enabled pricing plan. When the component is in the Enterprise plan, this will list both 'Basic' and 'Application Insights Enterprise'.
      * 
      * @return the currentBillingFeatures value.
      */
     List<String> currentBillingFeatures();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentBillingFeaturesInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentBillingFeaturesInner object.
      * 
      * @return the inner object.
      */

@@ -12,8 +12,7 @@ import java.time.Duration;
  */
 public interface SearchManagementClient {
     /**
-     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
-     * Manager API, command line tools, or the portal.
+     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
      * 
      * @return the subscriptionId value.
      */
@@ -109,4 +108,11 @@ public interface SearchManagementClient {
      * @return the ResourceProvidersClient object.
      */
     ResourceProvidersClient getResourceProviders();
+
+    /**
+     * Gets the NetworkSecurityPerimeterConfigurationsClient object to access its operations.
+     * 
+     * @return the NetworkSecurityPerimeterConfigurationsClient object.
+     */
+    NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations();
 }

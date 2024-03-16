@@ -69,15 +69,18 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties create() {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public FileServiceProperties create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -91,15 +94,18 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties apply() {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public FileServiceProperties apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -112,14 +118,18 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties refresh() {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public FileServiceProperties refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFileServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFileServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, context)
+            .getValue();
         return this;
     }
 

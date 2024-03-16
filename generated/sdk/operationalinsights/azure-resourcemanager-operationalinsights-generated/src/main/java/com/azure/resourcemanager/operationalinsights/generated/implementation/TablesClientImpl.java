@@ -65,8 +65,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientTables to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientTables to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
@@ -151,8 +150,7 @@ public final class TablesClientImpl implements TablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the tables for the specified Log Analytics workspace along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the tables for the specified Log Analytics workspace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TableInner>> listByWorkspaceSinglePageAsync(String resourceGroupName,
@@ -191,8 +189,7 @@ public final class TablesClientImpl implements TablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the tables for the specified Log Analytics workspace along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the tables for the specified Log Analytics workspace along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TableInner>> listByWorkspaceSinglePageAsync(String resourceGroupName,
@@ -262,8 +259,7 @@ public final class TablesClientImpl implements TablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the tables for the specified Log Analytics workspace as paginated response with
-     * {@link PagedIterable}.
+     * @return all the tables for the specified Log Analytics workspace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TableInner> listByWorkspace(String resourceGroupName, String workspaceName) {
@@ -279,8 +275,7 @@ public final class TablesClientImpl implements TablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the tables for the specified Log Analytics workspace as paginated response with
-     * {@link PagedIterable}.
+     * @return all the tables for the specified Log Analytics workspace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TableInner> listByWorkspace(String resourceGroupName, String workspaceName, Context context) {
@@ -1139,8 +1134,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -1180,8 +1174,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -1221,8 +1214,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -1238,8 +1230,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -1257,8 +1248,7 @@ public final class TablesClientImpl implements TablesClient {
     }
 
     /**
-     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of
-     * Data Collection Rule-based Custom Logs.
+     * Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.

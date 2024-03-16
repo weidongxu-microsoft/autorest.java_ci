@@ -38,8 +38,8 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
 
     public Response<UpdateDomain> getUpdateDomainWithResponse(String resourceGroupName, String cloudServiceName,
         int updateDomain, Context context) {
-        Response<UpdateDomainInner> inner = this.serviceClient().getUpdateDomainWithResponse(resourceGroupName,
-            cloudServiceName, updateDomain, context);
+        Response<UpdateDomainInner> inner = this.serviceClient()
+            .getUpdateDomainWithResponse(resourceGroupName, cloudServiceName, updateDomain, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new UpdateDomainImpl(inner.getValue(), this.manager()));

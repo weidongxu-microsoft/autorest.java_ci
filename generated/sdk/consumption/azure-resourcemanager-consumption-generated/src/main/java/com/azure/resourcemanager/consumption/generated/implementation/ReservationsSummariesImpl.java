@@ -60,8 +60,8 @@ public final class ReservationsSummariesImpl implements ReservationsSummaries {
 
     public PagedIterable<ReservationSummary> list(String resourceScope, Datagrain grain, String startDate,
         String endDate, String filter, String reservationId, String reservationOrderId, Context context) {
-        PagedIterable<ReservationSummaryInner> inner = this.serviceClient().list(resourceScope, grain, startDate,
-            endDate, filter, reservationId, reservationOrderId, context);
+        PagedIterable<ReservationSummaryInner> inner = this.serviceClient()
+            .list(resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 

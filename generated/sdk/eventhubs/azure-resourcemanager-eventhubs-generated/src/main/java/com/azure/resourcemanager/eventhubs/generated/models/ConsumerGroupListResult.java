@@ -53,8 +53,7 @@ public final class ConsumerGroupListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * Consumer Group.
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Consumer Group.
      * 
      * @return the nextLink value.
      */
@@ -63,8 +62,7 @@ public final class ConsumerGroupListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * Consumer Group.
+     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Consumer Group.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ConsumerGroupListResult object itself.

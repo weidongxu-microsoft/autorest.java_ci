@@ -25,9 +25,7 @@ public interface NetworkInterfaceTapConfigurationPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationPropertiesFormatInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationPropertiesFormatInner object.
      * 
      * @return the inner object.
      */

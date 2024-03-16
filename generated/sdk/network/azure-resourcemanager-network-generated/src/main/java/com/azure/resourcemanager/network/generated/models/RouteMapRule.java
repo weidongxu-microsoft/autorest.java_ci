@@ -104,8 +104,7 @@ public final class RouteMapRule {
     }
 
     /**
-     * Get the nextStepIfMatched property: Next step after rule is evaluated. Current supported behaviors are
-     * 'Continue'(to next rule) and 'Terminate'.
+     * Get the nextStepIfMatched property: Next step after rule is evaluated. Current supported behaviors are 'Continue'(to next rule) and 'Terminate'.
      * 
      * @return the nextStepIfMatched value.
      */
@@ -114,8 +113,7 @@ public final class RouteMapRule {
     }
 
     /**
-     * Set the nextStepIfMatched property: Next step after rule is evaluated. Current supported behaviors are
-     * 'Continue'(to next rule) and 'Terminate'.
+     * Set the nextStepIfMatched property: Next step after rule is evaluated. Current supported behaviors are 'Continue'(to next rule) and 'Terminate'.
      * 
      * @param nextStepIfMatched the nextStepIfMatched value to set.
      * @return the RouteMapRule object itself.

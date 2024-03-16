@@ -39,8 +39,7 @@ public final class RulesEngineMatchCondition {
     private Boolean negateCondition;
 
     /*
-     * Match values to match against. The operator will apply to each value in here with OR semantics. If any of them
-     * match the variable with the given operator this match condition is considered a match.
+     * Match values to match against. The operator will apply to each value in here with OR semantics. If any of them match the variable with the given operator this match condition is considered a match.
      */
     @JsonProperty(value = "rulesEngineMatchValue", required = true)
     private List<String> rulesEngineMatchValue;
@@ -138,9 +137,7 @@ public final class RulesEngineMatchCondition {
     }
 
     /**
-     * Get the rulesEngineMatchValue property: Match values to match against. The operator will apply to each value in
-     * here with OR semantics. If any of them match the variable with the given operator this match condition is
-     * considered a match.
+     * Get the rulesEngineMatchValue property: Match values to match against. The operator will apply to each value in here with OR semantics. If any of them match the variable with the given operator this match condition is considered a match.
      * 
      * @return the rulesEngineMatchValue value.
      */
@@ -149,9 +146,7 @@ public final class RulesEngineMatchCondition {
     }
 
     /**
-     * Set the rulesEngineMatchValue property: Match values to match against. The operator will apply to each value in
-     * here with OR semantics. If any of them match the variable with the given operator this match condition is
-     * considered a match.
+     * Set the rulesEngineMatchValue property: Match values to match against. The operator will apply to each value in here with OR semantics. If any of them match the variable with the given operator this match condition is considered a match.
      * 
      * @param rulesEngineMatchValue the rulesEngineMatchValue value to set.
      * @return the RulesEngineMatchCondition object itself.

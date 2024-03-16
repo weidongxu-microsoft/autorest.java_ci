@@ -54,15 +54,18 @@ public final class QueueServicePropertiesImpl
     }
 
     public QueueServiceProperties create() {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public QueueServiceProperties create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -76,15 +79,18 @@ public final class QueueServicePropertiesImpl
     }
 
     public QueueServiceProperties apply() {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
             .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public QueueServiceProperties apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
-            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -97,14 +103,18 @@ public final class QueueServicePropertiesImpl
     }
 
     public QueueServiceProperties refresh() {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public QueueServiceProperties refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getQueueServices()
-            .getServicePropertiesWithResponse(resourceGroupName, accountName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getQueueServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, context)
+            .getValue();
         return this;
     }
 

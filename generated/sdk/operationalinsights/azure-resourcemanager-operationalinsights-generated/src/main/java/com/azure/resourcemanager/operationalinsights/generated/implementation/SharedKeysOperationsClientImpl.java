@@ -51,8 +51,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientSharedKeysOperations to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientSharedKeysOperations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
@@ -197,8 +196,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -234,8 +232,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -271,8 +268,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -288,8 +284,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -306,8 +301,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     }
 
     /**
-     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational
-     * Insights agents to the workspace.
+     * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.

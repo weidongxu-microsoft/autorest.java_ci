@@ -74,8 +74,7 @@ public final class VpnClientIPsecParametersInner {
     }
 
     /**
-     * Get the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * lifetime in seconds for P2S client.
+     * Get the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for P2S client.
      * 
      * @return the saLifeTimeSeconds value.
      */
@@ -84,8 +83,7 @@ public final class VpnClientIPsecParametersInner {
     }
 
     /**
-     * Set the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * lifetime in seconds for P2S client.
+     * Set the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for P2S client.
      * 
      * @param saLifeTimeSeconds the saLifeTimeSeconds value to set.
      * @return the VpnClientIPsecParametersInner object itself.
@@ -96,8 +94,7 @@ public final class VpnClientIPsecParametersInner {
     }
 
     /**
-     * Get the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * payload size in KB for P2S client..
+     * Get the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for P2S client..
      * 
      * @return the saDataSizeKilobytes value.
      */
@@ -106,8 +103,7 @@ public final class VpnClientIPsecParametersInner {
     }
 
     /**
-     * Set the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)
-     * payload size in KB for P2S client..
+     * Set the saDataSizeKilobytes property: The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for P2S client..
      * 
      * @param saDataSizeKilobytes the saDataSizeKilobytes value to set.
      * @return the VpnClientIPsecParametersInner object itself.

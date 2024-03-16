@@ -173,8 +173,7 @@ public final class FrontendIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Get the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
-     * as IPv4.
+     * Get the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -183,8 +182,7 @@ public final class FrontendIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Set the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
-     * as IPv4.
+     * Set the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
      * 
      * @param privateIpAddressVersion the privateIpAddressVersion value to set.
      * @return the FrontendIpConfigurationPropertiesFormatInner object itself.

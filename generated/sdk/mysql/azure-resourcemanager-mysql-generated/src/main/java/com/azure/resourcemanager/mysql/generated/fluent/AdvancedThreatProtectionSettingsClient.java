@@ -120,6 +120,75 @@ public interface AdvancedThreatProtectionSettingsClient {
         Context context);
 
     /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePut(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters);
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<AdvancedThreatProtectionInner>, AdvancedThreatProtectionInner> beginUpdatePut(
+        String resourceGroupName, String serverName, AdvancedThreatProtectionName advancedThreatProtectionName,
+        AdvancedThreatProtectionInner parameters, Context context);
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AdvancedThreatProtectionInner updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters);
+
+    /**
+     * Updates a server's Advanced Threat Protection state.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advancedThreatProtectionName The name of the Advanced Threat Protection state.
+     * @param parameters The server's Advanced Threat Protection body to update.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's Advanced Threat Protection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AdvancedThreatProtectionInner updatePut(String resourceGroupName, String serverName,
+        AdvancedThreatProtectionName advancedThreatProtectionName, AdvancedThreatProtectionInner parameters,
+        Context context);
+
+    /**
      * Gets a list of server's Advanced Threat Protection states.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.

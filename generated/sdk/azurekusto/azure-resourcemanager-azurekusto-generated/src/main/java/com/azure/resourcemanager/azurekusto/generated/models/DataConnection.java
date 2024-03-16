@@ -32,6 +32,13 @@ public interface DataConnection {
     String type();
 
     /**
+     * Gets the kind property: Kind of the endpoint for the data connection.
+     * 
+     * @return the kind value.
+     */
+    DataConnectionKind kind();
+
+    /**
      * Gets the location property: Resource location.
      * 
      * @return the location value.

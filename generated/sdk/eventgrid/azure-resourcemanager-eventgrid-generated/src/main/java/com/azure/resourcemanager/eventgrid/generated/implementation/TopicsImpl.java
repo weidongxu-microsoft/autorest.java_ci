@@ -134,8 +134,8 @@ public final class TopicsImpl implements Topics {
 
     public PagedIterable<EventType> listEventTypes(String resourceGroupName, String providerNamespace,
         String resourceTypeName, String resourceName, Context context) {
-        PagedIterable<EventTypeInner> inner = this.serviceClient().listEventTypes(resourceGroupName, providerNamespace,
-            resourceTypeName, resourceName, context);
+        PagedIterable<EventTypeInner> inner = this.serviceClient()
+            .listEventTypes(resourceGroupName, providerNamespace, resourceTypeName, resourceName, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new EventTypeImpl(inner1, this.manager()));
     }
 

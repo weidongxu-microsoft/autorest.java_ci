@@ -20,8 +20,7 @@ public interface VirtualNetworkPeering {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -42,43 +41,35 @@ public interface VirtualNetworkPeering {
     String type();
 
     /**
-     * Gets the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space would be able to
-     * access the VMs in remote virtual network space.
+     * Gets the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space.
      * 
      * @return the allowVirtualNetworkAccess value.
      */
     Boolean allowVirtualNetworkAccess();
 
     /**
-     * Gets the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local virtual network
-     * will be allowed/disallowed in remote virtual network.
+     * Gets the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network.
      * 
      * @return the allowForwardedTraffic value.
      */
     Boolean allowForwardedTraffic();
 
     /**
-     * Gets the allowGatewayTransit property: If gateway links can be used in remote virtual networking to link to this
-     * virtual network.
+     * Gets the allowGatewayTransit property: If gateway links can be used in remote virtual networking to link to this virtual network.
      * 
      * @return the allowGatewayTransit value.
      */
     Boolean allowGatewayTransit();
 
     /**
-     * Gets the useRemoteGateways property: If remote gateways can be used on this virtual network. If the flag is set
-     * to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote
-     * virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual
-     * network already has a gateway.
+     * Gets the useRemoteGateways property: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
      * 
      * @return the useRemoteGateways value.
      */
     Boolean useRemoteGateways();
 
     /**
-     * Gets the remoteVirtualNetwork property: The reference to the remote virtual network. The remote virtual network
-     * can be in the same or different region (preview). See here to register for the preview and learn more
-     * (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
+     * Gets the remoteVirtualNetwork property: The reference to the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
      * 
      * @return the remoteVirtualNetwork value.
      */
@@ -92,8 +83,7 @@ public interface VirtualNetworkPeering {
     AddressSpace remoteAddressSpace();
 
     /**
-     * Gets the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote
-     * virtual network.
+     * Gets the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote virtual network.
      * 
      * @return the remoteVirtualNetworkAddressSpace value.
      */
@@ -194,8 +184,7 @@ public interface VirtualNetworkPeering {
         }
 
         /**
-         * The stage of the VirtualNetworkPeering definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetworkPeering definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithAllowVirtualNetworkAccess, DefinitionStages.WithAllowForwardedTraffic,
@@ -225,11 +214,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -253,11 +240,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowVirtualNetworkAccess {
             /**
-             * Specifies the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space
-             * would be able to access the VMs in remote virtual network space..
+             * Specifies the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space..
              * 
-             * @param allowVirtualNetworkAccess Whether the VMs in the local virtual network space would be able to
-             * access the VMs in remote virtual network space.
+             * @param allowVirtualNetworkAccess Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space.
              * @return the next definition stage.
              */
             WithCreate withAllowVirtualNetworkAccess(Boolean allowVirtualNetworkAccess);
@@ -268,11 +253,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowForwardedTraffic {
             /**
-             * Specifies the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local
-             * virtual network will be allowed/disallowed in remote virtual network..
+             * Specifies the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network..
              * 
-             * @param allowForwardedTraffic Whether the forwarded traffic from the VMs in the local virtual network will
-             * be allowed/disallowed in remote virtual network.
+             * @param allowForwardedTraffic Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network.
              * @return the next definition stage.
              */
             WithCreate withAllowForwardedTraffic(Boolean allowForwardedTraffic);
@@ -283,11 +266,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowGatewayTransit {
             /**
-             * Specifies the allowGatewayTransit property: If gateway links can be used in remote virtual networking to
-             * link to this virtual network..
+             * Specifies the allowGatewayTransit property: If gateway links can be used in remote virtual networking to link to this virtual network..
              * 
-             * @param allowGatewayTransit If gateway links can be used in remote virtual networking to link to this
-             * virtual network.
+             * @param allowGatewayTransit If gateway links can be used in remote virtual networking to link to this virtual network.
              * @return the next definition stage.
              */
             WithCreate withAllowGatewayTransit(Boolean allowGatewayTransit);
@@ -298,15 +279,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithUseRemoteGateways {
             /**
-             * Specifies the useRemoteGateways property: If remote gateways can be used on this virtual network. If the
-             * flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use
-             * gateways of remote virtual network for transit. Only one peering can have this flag set to true. This
-             * flag cannot be set if virtual network already has a gateway..
+             * Specifies the useRemoteGateways property: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway..
              * 
-             * @param useRemoteGateways If remote gateways can be used on this virtual network. If the flag is set to
-             * true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote
-             * virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if
-             * virtual network already has a gateway.
+             * @param useRemoteGateways If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
              * @return the next definition stage.
              */
             WithCreate withUseRemoteGateways(Boolean useRemoteGateways);
@@ -317,13 +292,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteVirtualNetwork {
             /**
-             * Specifies the remoteVirtualNetwork property: The reference to the remote virtual network. The remote
-             * virtual network can be in the same or different region (preview). See here to register for the preview
-             * and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)..
+             * Specifies the remoteVirtualNetwork property: The reference to the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)..
              * 
-             * @param remoteVirtualNetwork The reference to the remote virtual network. The remote virtual network can
-             * be in the same or different region (preview). See here to register for the preview and learn more
-             * (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
+             * @param remoteVirtualNetwork The reference to the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
              * @return the next definition stage.
              */
             WithCreate withRemoteVirtualNetwork(SubResource remoteVirtualNetwork);
@@ -334,8 +305,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteAddressSpace {
             /**
-             * Specifies the remoteAddressSpace property: The reference to the address space peered with the remote
-             * virtual network..
+             * Specifies the remoteAddressSpace property: The reference to the address space peered with the remote virtual network..
              * 
              * @param remoteAddressSpace The reference to the address space peered with the remote virtual network.
              * @return the next definition stage.
@@ -348,11 +318,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteVirtualNetworkAddressSpace {
             /**
-             * Specifies the remoteVirtualNetworkAddressSpace property: The reference to the current address space of
-             * the remote virtual network..
+             * Specifies the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote virtual network..
              * 
-             * @param remoteVirtualNetworkAddressSpace The reference to the current address space of the remote virtual
-             * network.
+             * @param remoteVirtualNetworkAddressSpace The reference to the current address space of the remote virtual network.
              * @return the next definition stage.
              */
             WithCreate withRemoteVirtualNetworkAddressSpace(AddressSpace remoteVirtualNetworkAddressSpace);
@@ -363,8 +331,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteBgpCommunities {
             /**
-             * Specifies the remoteBgpCommunities property: The reference to the remote virtual network's Bgp
-             * Communities..
+             * Specifies the remoteBgpCommunities property: The reference to the remote virtual network's Bgp Communities..
              * 
              * @param remoteBgpCommunities The reference to the remote virtual network's Bgp Communities.
              * @return the next definition stage.
@@ -403,8 +370,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithDoNotVerifyRemoteGateways {
             /**
-             * Specifies the doNotVerifyRemoteGateways property: If we need to verify the provisioning state of the
-             * remote gateway..
+             * Specifies the doNotVerifyRemoteGateways property: If we need to verify the provisioning state of the remote gateway..
              * 
              * @param doNotVerifyRemoteGateways If we need to verify the provisioning state of the remote gateway.
              * @return the next definition stage.
@@ -417,11 +383,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithSyncRemoteAddressSpace {
             /**
-             * Specifies the syncRemoteAddressSpace property: Parameter indicates the intention to sync the peering with
-             * the current address space on the remote vNet after it's updated..
+             * Specifies the syncRemoteAddressSpace property: Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated..
              * 
-             * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current
-             * address space on the remote vNet after it's updated.
+             * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
              * @return the next definition stage.
              */
             WithCreate withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);
@@ -469,11 +433,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -497,11 +459,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowVirtualNetworkAccess {
             /**
-             * Specifies the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space
-             * would be able to access the VMs in remote virtual network space..
+             * Specifies the allowVirtualNetworkAccess property: Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space..
              * 
-             * @param allowVirtualNetworkAccess Whether the VMs in the local virtual network space would be able to
-             * access the VMs in remote virtual network space.
+             * @param allowVirtualNetworkAccess Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space.
              * @return the next definition stage.
              */
             Update withAllowVirtualNetworkAccess(Boolean allowVirtualNetworkAccess);
@@ -512,11 +472,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowForwardedTraffic {
             /**
-             * Specifies the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local
-             * virtual network will be allowed/disallowed in remote virtual network..
+             * Specifies the allowForwardedTraffic property: Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network..
              * 
-             * @param allowForwardedTraffic Whether the forwarded traffic from the VMs in the local virtual network will
-             * be allowed/disallowed in remote virtual network.
+             * @param allowForwardedTraffic Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network.
              * @return the next definition stage.
              */
             Update withAllowForwardedTraffic(Boolean allowForwardedTraffic);
@@ -527,11 +485,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithAllowGatewayTransit {
             /**
-             * Specifies the allowGatewayTransit property: If gateway links can be used in remote virtual networking to
-             * link to this virtual network..
+             * Specifies the allowGatewayTransit property: If gateway links can be used in remote virtual networking to link to this virtual network..
              * 
-             * @param allowGatewayTransit If gateway links can be used in remote virtual networking to link to this
-             * virtual network.
+             * @param allowGatewayTransit If gateway links can be used in remote virtual networking to link to this virtual network.
              * @return the next definition stage.
              */
             Update withAllowGatewayTransit(Boolean allowGatewayTransit);
@@ -542,15 +498,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithUseRemoteGateways {
             /**
-             * Specifies the useRemoteGateways property: If remote gateways can be used on this virtual network. If the
-             * flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use
-             * gateways of remote virtual network for transit. Only one peering can have this flag set to true. This
-             * flag cannot be set if virtual network already has a gateway..
+             * Specifies the useRemoteGateways property: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway..
              * 
-             * @param useRemoteGateways If remote gateways can be used on this virtual network. If the flag is set to
-             * true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote
-             * virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if
-             * virtual network already has a gateway.
+             * @param useRemoteGateways If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
              * @return the next definition stage.
              */
             Update withUseRemoteGateways(Boolean useRemoteGateways);
@@ -561,13 +511,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteVirtualNetwork {
             /**
-             * Specifies the remoteVirtualNetwork property: The reference to the remote virtual network. The remote
-             * virtual network can be in the same or different region (preview). See here to register for the preview
-             * and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)..
+             * Specifies the remoteVirtualNetwork property: The reference to the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)..
              * 
-             * @param remoteVirtualNetwork The reference to the remote virtual network. The remote virtual network can
-             * be in the same or different region (preview). See here to register for the preview and learn more
-             * (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
+             * @param remoteVirtualNetwork The reference to the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering).
              * @return the next definition stage.
              */
             Update withRemoteVirtualNetwork(SubResource remoteVirtualNetwork);
@@ -578,8 +524,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteAddressSpace {
             /**
-             * Specifies the remoteAddressSpace property: The reference to the address space peered with the remote
-             * virtual network..
+             * Specifies the remoteAddressSpace property: The reference to the address space peered with the remote virtual network..
              * 
              * @param remoteAddressSpace The reference to the address space peered with the remote virtual network.
              * @return the next definition stage.
@@ -592,11 +537,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteVirtualNetworkAddressSpace {
             /**
-             * Specifies the remoteVirtualNetworkAddressSpace property: The reference to the current address space of
-             * the remote virtual network..
+             * Specifies the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote virtual network..
              * 
-             * @param remoteVirtualNetworkAddressSpace The reference to the current address space of the remote virtual
-             * network.
+             * @param remoteVirtualNetworkAddressSpace The reference to the current address space of the remote virtual network.
              * @return the next definition stage.
              */
             Update withRemoteVirtualNetworkAddressSpace(AddressSpace remoteVirtualNetworkAddressSpace);
@@ -607,8 +550,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithRemoteBgpCommunities {
             /**
-             * Specifies the remoteBgpCommunities property: The reference to the remote virtual network's Bgp
-             * Communities..
+             * Specifies the remoteBgpCommunities property: The reference to the remote virtual network's Bgp Communities..
              * 
              * @param remoteBgpCommunities The reference to the remote virtual network's Bgp Communities.
              * @return the next definition stage.
@@ -647,8 +589,7 @@ public interface VirtualNetworkPeering {
          */
         interface WithDoNotVerifyRemoteGateways {
             /**
-             * Specifies the doNotVerifyRemoteGateways property: If we need to verify the provisioning state of the
-             * remote gateway..
+             * Specifies the doNotVerifyRemoteGateways property: If we need to verify the provisioning state of the remote gateway..
              * 
              * @param doNotVerifyRemoteGateways If we need to verify the provisioning state of the remote gateway.
              * @return the next definition stage.
@@ -661,11 +602,9 @@ public interface VirtualNetworkPeering {
          */
         interface WithSyncRemoteAddressSpace {
             /**
-             * Specifies the syncRemoteAddressSpace property: Parameter indicates the intention to sync the peering with
-             * the current address space on the remote vNet after it's updated..
+             * Specifies the syncRemoteAddressSpace property: Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated..
              * 
-             * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current
-             * address space on the remote vNet after it's updated.
+             * @param syncRemoteAddressSpace Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.
              * @return the next definition stage.
              */
             Update withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);

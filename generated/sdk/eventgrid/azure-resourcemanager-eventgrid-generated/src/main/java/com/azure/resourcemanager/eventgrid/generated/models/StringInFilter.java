@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * StringIn Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "operatorType", defaultImpl = StringInFilter.class, visible = true)
 @JsonTypeName("StringIn")
 @Fluent
 public final class StringInFilter extends Filter {
@@ -27,6 +27,7 @@ public final class StringInFilter extends Filter {
      * Creates an instance of StringInFilter class.
      */
     public StringInFilter() {
+        withOperatorType(FilterOperatorType.STRING_IN);
     }
 
     /**

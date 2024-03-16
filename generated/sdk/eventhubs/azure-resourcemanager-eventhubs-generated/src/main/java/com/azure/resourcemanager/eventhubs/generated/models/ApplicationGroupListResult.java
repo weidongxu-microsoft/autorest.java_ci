@@ -53,8 +53,7 @@ public final class ApplicationGroupListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains an incomplete list of
-     * Authorization Rules.
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains an incomplete list of Authorization Rules.
      * 
      * @return the nextLink value.
      */

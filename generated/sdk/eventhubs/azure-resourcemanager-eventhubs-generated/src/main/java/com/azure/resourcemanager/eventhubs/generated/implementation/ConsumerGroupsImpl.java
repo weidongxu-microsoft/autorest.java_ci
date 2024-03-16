@@ -29,8 +29,8 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
         String consumerGroupName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, eventHubName,
-            consumerGroupName, context);
+        return this.serviceClient()
+            .deleteWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context);
     }
 
     public void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
@@ -39,8 +39,8 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
 
     public Response<ConsumerGroup> getWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
         String consumerGroupName, Context context) {
-        Response<ConsumerGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName, namespaceName,
-            eventHubName, consumerGroupName, context);
+        Response<ConsumerGroupInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ConsumerGroupImpl(inner.getValue(), this.manager()));

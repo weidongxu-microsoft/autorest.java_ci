@@ -52,8 +52,7 @@ public final class IpConfigurationProperties {
     }
 
     /**
-     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
-     * response.
+     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the response.
      * 
      * @return the provisioningState value.
      */

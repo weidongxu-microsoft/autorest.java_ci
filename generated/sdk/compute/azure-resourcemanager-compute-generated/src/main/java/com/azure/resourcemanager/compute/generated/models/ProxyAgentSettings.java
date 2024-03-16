@@ -19,16 +19,13 @@ public final class ProxyAgentSettings {
     private Boolean enabled;
 
     /*
-     * Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent will start to audit or
-     * monitor but not enforce access control over requests to host endpoints in Audit mode, while in Enforce mode it
-     * will enforce access control. The default value is Enforce mode.
+     * Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent will start to audit or monitor but not enforce access control over requests to host endpoints in Audit mode, while in Enforce mode it will enforce access control. The default value is Enforce mode.
      */
     @JsonProperty(value = "mode")
     private Mode mode;
 
     /*
-     * Increase the value of this property allows user to reset the key used for securing communication channel between
-     * guest and host.
+     * Increase the value of this property allows user to reset the key used for securing communication channel between guest and host.
      */
     @JsonProperty(value = "keyIncarnationId")
     private Integer keyIncarnationId;
@@ -40,8 +37,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Get the enabled property: Specifies whether ProxyAgent feature should be enabled on the virtual machine or
-     * virtual machine scale set.
+     * Get the enabled property: Specifies whether ProxyAgent feature should be enabled on the virtual machine or virtual machine scale set.
      * 
      * @return the enabled value.
      */
@@ -50,8 +46,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Set the enabled property: Specifies whether ProxyAgent feature should be enabled on the virtual machine or
-     * virtual machine scale set.
+     * Set the enabled property: Specifies whether ProxyAgent feature should be enabled on the virtual machine or virtual machine scale set.
      * 
      * @param enabled the enabled value to set.
      * @return the ProxyAgentSettings object itself.
@@ -62,9 +57,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Get the mode property: Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent
-     * will start to audit or monitor but not enforce access control over requests to host endpoints in Audit mode,
-     * while in Enforce mode it will enforce access control. The default value is Enforce mode.
+     * Get the mode property: Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent will start to audit or monitor but not enforce access control over requests to host endpoints in Audit mode, while in Enforce mode it will enforce access control. The default value is Enforce mode.
      * 
      * @return the mode value.
      */
@@ -73,9 +66,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Set the mode property: Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent
-     * will start to audit or monitor but not enforce access control over requests to host endpoints in Audit mode,
-     * while in Enforce mode it will enforce access control. The default value is Enforce mode.
+     * Set the mode property: Specifies the mode that ProxyAgent will execute on if the feature is enabled. ProxyAgent will start to audit or monitor but not enforce access control over requests to host endpoints in Audit mode, while in Enforce mode it will enforce access control. The default value is Enforce mode.
      * 
      * @param mode the mode value to set.
      * @return the ProxyAgentSettings object itself.
@@ -86,8 +77,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Get the keyIncarnationId property: Increase the value of this property allows user to reset the key used for
-     * securing communication channel between guest and host.
+     * Get the keyIncarnationId property: Increase the value of this property allows user to reset the key used for securing communication channel between guest and host.
      * 
      * @return the keyIncarnationId value.
      */
@@ -96,8 +86,7 @@ public final class ProxyAgentSettings {
     }
 
     /**
-     * Set the keyIncarnationId property: Increase the value of this property allows user to reset the key used for
-     * securing communication channel between guest and host.
+     * Set the keyIncarnationId property: Increase the value of this property allows user to reset the key used for securing communication channel between guest and host.
      * 
      * @param keyIncarnationId the keyIncarnationId value to set.
      * @return the ProxyAgentSettings object itself.

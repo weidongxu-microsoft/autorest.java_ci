@@ -39,8 +39,7 @@ public interface PrivateEndpointConnection {
     PrivateEndpoint privateEndpoint();
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
-     * connection between DiskAccess and Virtual Network.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the connection between DiskAccess and Virtual Network.
      * 
      * @return the privateLinkServiceConnectionState value.
      */

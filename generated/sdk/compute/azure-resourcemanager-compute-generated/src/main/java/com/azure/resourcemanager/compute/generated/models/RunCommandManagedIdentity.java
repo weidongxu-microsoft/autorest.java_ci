@@ -8,13 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Contains clientId or objectId (use only one, not both) of a user-assigned managed identity that has access to storage
- * blob used in Run Command. Use an empty RunCommandManagedIdentity object in case of system-assigned identity. Make
- * sure the Azure storage blob exists in case of scriptUri, and managed identity has been given access to blob's
- * container with 'Storage Blob Data Reader' role assignment with scriptUri blob and 'Storage Blob Data Contributor' for
- * Append blobs(outputBlobUri, errorBlobUri). In case of user assigned identity, make sure you add it under VM's
- * identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and
- * https://aka.ms/RunCommandManaged.
+ * Contains clientId or objectId (use only one, not both) of a user-assigned managed identity that has access to storage blob used in Run Command. Use an empty RunCommandManagedIdentity object in case of system-assigned identity. Make sure the Azure storage blob exists in case of scriptUri, and managed identity has been given access to blob's container with 'Storage Blob Data Reader' role assignment with scriptUri blob and 'Storage Blob Data Contributor' for Append blobs(outputBlobUri, errorBlobUri). In case of user assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
  */
 @Fluent
 public final class RunCommandManagedIdentity {
@@ -37,8 +31,7 @@ public final class RunCommandManagedIdentity {
     }
 
     /**
-     * Get the clientId property: Client Id (GUID value) of the user-assigned managed identity. ObjectId should not be
-     * used if this is provided.
+     * Get the clientId property: Client Id (GUID value) of the user-assigned managed identity. ObjectId should not be used if this is provided.
      * 
      * @return the clientId value.
      */
@@ -47,8 +40,7 @@ public final class RunCommandManagedIdentity {
     }
 
     /**
-     * Set the clientId property: Client Id (GUID value) of the user-assigned managed identity. ObjectId should not be
-     * used if this is provided.
+     * Set the clientId property: Client Id (GUID value) of the user-assigned managed identity. ObjectId should not be used if this is provided.
      * 
      * @param clientId the clientId value to set.
      * @return the RunCommandManagedIdentity object itself.
@@ -59,8 +51,7 @@ public final class RunCommandManagedIdentity {
     }
 
     /**
-     * Get the objectId property: Object Id (GUID value) of the user-assigned managed identity. ClientId should not be
-     * used if this is provided.
+     * Get the objectId property: Object Id (GUID value) of the user-assigned managed identity. ClientId should not be used if this is provided.
      * 
      * @return the objectId value.
      */
@@ -69,8 +60,7 @@ public final class RunCommandManagedIdentity {
     }
 
     /**
-     * Set the objectId property: Object Id (GUID value) of the user-assigned managed identity. ClientId should not be
-     * used if this is provided.
+     * Set the objectId property: Object Id (GUID value) of the user-assigned managed identity. ClientId should not be used if this is provided.
      * 
      * @param objectId the objectId value to set.
      * @return the RunCommandManagedIdentity object itself.

@@ -25,8 +25,7 @@ public interface ExportConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Continuous Export configuration of an Application Insights component along with
-     * {@link Response}.
+     * @return a list of Continuous Export configuration of an Application Insights component along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<ApplicationInsightsComponentExportConfigurationInner>> listWithResponse(String resourceGroupName,
@@ -50,8 +49,7 @@ public interface ExportConfigurationsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param exportProperties Properties that need to be specified to create a Continuous Export configuration of a
-     * Application Insights component.
+     * @param exportProperties Properties that need to be specified to create a Continuous Export configuration of a Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -67,8 +65,7 @@ public interface ExportConfigurationsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param exportProperties Properties that need to be specified to create a Continuous Export configuration of a
-     * Application Insights component.
+     * @param exportProperties Properties that need to be specified to create a Continuous Export configuration of a Application Insights component.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

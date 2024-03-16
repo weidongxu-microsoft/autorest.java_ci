@@ -31,9 +31,9 @@ public final class VirtualNetworkTapPropertiesFormatImpl implements VirtualNetwo
     public List<NetworkInterfaceTapConfiguration> networkInterfaceTapConfigurations() {
         List<NetworkInterfaceTapConfigurationInner> inner = this.innerModel().networkInterfaceTapConfigurations();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

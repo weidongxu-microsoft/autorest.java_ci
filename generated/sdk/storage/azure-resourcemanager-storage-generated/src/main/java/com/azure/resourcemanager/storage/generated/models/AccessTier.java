@@ -8,9 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access
- * tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block
- * blobs storage account type.
+ * Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
  */
 public enum AccessTier {
     /**

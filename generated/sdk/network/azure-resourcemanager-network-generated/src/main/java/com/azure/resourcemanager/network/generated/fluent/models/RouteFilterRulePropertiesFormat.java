@@ -88,8 +88,7 @@ public final class RouteFilterRulePropertiesFormat {
     }
 
     /**
-     * Get the communities property: The collection for bgp community values to filter on. e.g.
-     * ['12076:5010','12076:5020'].
+     * Get the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
      * 
      * @return the communities value.
      */
@@ -98,8 +97,7 @@ public final class RouteFilterRulePropertiesFormat {
     }
 
     /**
-     * Set the communities property: The collection for bgp community values to filter on. e.g.
-     * ['12076:5010','12076:5020'].
+     * Set the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
      * 
      * @param communities the communities value to set.
      * @return the RouteFilterRulePropertiesFormat object itself.

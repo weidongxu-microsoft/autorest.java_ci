@@ -15,13 +15,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.UsageInner;
  */
 public interface UsagesClient {
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for
-     * compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Usages operation response as paginated response with {@link PagedIterable}.
      */
@@ -29,14 +27,12 @@ public interface UsagesClient {
     PagedIterable<UsageInner> list(String location);
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for
-     * compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     * server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Usages operation response as paginated response with {@link PagedIterable}.
      */

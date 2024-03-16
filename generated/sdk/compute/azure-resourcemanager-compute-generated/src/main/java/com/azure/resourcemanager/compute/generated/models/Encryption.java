@@ -31,8 +31,7 @@ public final class Encryption {
     }
 
     /**
-     * Get the diskEncryptionSetId property: ResourceId of the disk encryption set to use for enabling encryption at
-     * rest.
+     * Get the diskEncryptionSetId property: ResourceId of the disk encryption set to use for enabling encryption at rest.
      * 
      * @return the diskEncryptionSetId value.
      */
@@ -41,8 +40,7 @@ public final class Encryption {
     }
 
     /**
-     * Set the diskEncryptionSetId property: ResourceId of the disk encryption set to use for enabling encryption at
-     * rest.
+     * Set the diskEncryptionSetId property: ResourceId of the disk encryption set to use for enabling encryption at rest.
      * 
      * @param diskEncryptionSetId the diskEncryptionSetId value to set.
      * @return the Encryption object itself.

@@ -10,28 +10,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * Description of a backup schedule. Describes how often should be the backup performed and what should be the retention
- * policy.
+ * Description of a backup schedule. Describes how often should be the backup performed and what should be the retention policy.
  */
 @Fluent
 public final class BackupSchedule {
     /*
-     * How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should
-     * be set to Day)
+     * How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should be set to Day)
      */
     @JsonProperty(value = "frequencyInterval", required = true)
     private int frequencyInterval;
 
     /*
-     * The unit of time for how often the backup should be executed (e.g. for weekly backup, this should be set to Day
-     * and FrequencyInterval should be set to 7)
+     * The unit of time for how often the backup should be executed (e.g. for weekly backup, this should be set to Day and FrequencyInterval should be set to 7)
      */
     @JsonProperty(value = "frequencyUnit", required = true)
     private FrequencyUnit frequencyUnit;
 
     /*
-     * True if the retention policy should always keep at least one backup in the storage account, regardless how old it
-     * is; false otherwise.
+     * True if the retention policy should always keep at least one backup in the storage account, regardless how old it is; false otherwise.
      */
     @JsonProperty(value = "keepAtLeastOneBackup", required = true)
     private boolean keepAtLeastOneBackup;
@@ -61,8 +57,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Get the frequencyInterval property: How often the backup should be executed (e.g. for weekly backup, this should
-     * be set to 7 and FrequencyUnit should be set to Day).
+     * Get the frequencyInterval property: How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should be set to Day).
      * 
      * @return the frequencyInterval value.
      */
@@ -71,8 +66,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Set the frequencyInterval property: How often the backup should be executed (e.g. for weekly backup, this should
-     * be set to 7 and FrequencyUnit should be set to Day).
+     * Set the frequencyInterval property: How often the backup should be executed (e.g. for weekly backup, this should be set to 7 and FrequencyUnit should be set to Day).
      * 
      * @param frequencyInterval the frequencyInterval value to set.
      * @return the BackupSchedule object itself.
@@ -83,8 +77,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Get the frequencyUnit property: The unit of time for how often the backup should be executed (e.g. for weekly
-     * backup, this should be set to Day and FrequencyInterval should be set to 7).
+     * Get the frequencyUnit property: The unit of time for how often the backup should be executed (e.g. for weekly backup, this should be set to Day and FrequencyInterval should be set to 7).
      * 
      * @return the frequencyUnit value.
      */
@@ -93,8 +86,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Set the frequencyUnit property: The unit of time for how often the backup should be executed (e.g. for weekly
-     * backup, this should be set to Day and FrequencyInterval should be set to 7).
+     * Set the frequencyUnit property: The unit of time for how often the backup should be executed (e.g. for weekly backup, this should be set to Day and FrequencyInterval should be set to 7).
      * 
      * @param frequencyUnit the frequencyUnit value to set.
      * @return the BackupSchedule object itself.
@@ -105,8 +97,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Get the keepAtLeastOneBackup property: True if the retention policy should always keep at least one backup in the
-     * storage account, regardless how old it is; false otherwise.
+     * Get the keepAtLeastOneBackup property: True if the retention policy should always keep at least one backup in the storage account, regardless how old it is; false otherwise.
      * 
      * @return the keepAtLeastOneBackup value.
      */
@@ -115,8 +106,7 @@ public final class BackupSchedule {
     }
 
     /**
-     * Set the keepAtLeastOneBackup property: True if the retention policy should always keep at least one backup in the
-     * storage account, regardless how old it is; false otherwise.
+     * Set the keepAtLeastOneBackup property: True if the retention policy should always keep at least one backup in the storage account, regardless how old it is; false otherwise.
      * 
      * @param keepAtLeastOneBackup the keepAtLeastOneBackup value to set.
      * @return the BackupSchedule object itself.

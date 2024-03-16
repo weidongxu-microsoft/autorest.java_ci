@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * StringNotContains Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = StringNotContainsFilter.class,
+    visible = true)
 @JsonTypeName("StringNotContains")
 @Fluent
 public final class StringNotContainsFilter extends Filter {
@@ -27,6 +31,7 @@ public final class StringNotContainsFilter extends Filter {
      * Creates an instance of StringNotContainsFilter class.
      */
     public StringNotContainsFilter() {
+        withOperatorType(FilterOperatorType.STRING_NOT_CONTAINS);
     }
 
     /**

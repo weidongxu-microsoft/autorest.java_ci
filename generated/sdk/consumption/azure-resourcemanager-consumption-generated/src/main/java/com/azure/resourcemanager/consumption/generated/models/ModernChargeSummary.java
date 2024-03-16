@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Modern charge summary.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = ModernChargeSummary.class, visible = true)
 @JsonTypeName("modern")
 @Fluent
 public final class ModernChargeSummary extends ChargeSummary {
@@ -28,6 +28,7 @@ public final class ModernChargeSummary extends ChargeSummary {
      * Creates an instance of ModernChargeSummary class.
      */
     public ModernChargeSummary() {
+        withKind(ChargeSummaryKind.MODERN);
     }
 
     /**

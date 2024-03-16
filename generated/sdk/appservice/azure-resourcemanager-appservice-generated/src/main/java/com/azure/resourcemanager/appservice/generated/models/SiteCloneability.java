@@ -26,8 +26,7 @@ public interface SiteCloneability {
     List<SiteCloneabilityCriterion> blockingFeatures();
 
     /**
-     * Gets the unsupportedFeatures property: List of features enabled on app that are non-blocking but cannot be
-     * cloned. The app can still be cloned
+     * Gets the unsupportedFeatures property: List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
      * but the features in this list will not be set up on cloned app.
      * 
      * @return the unsupportedFeatures value.

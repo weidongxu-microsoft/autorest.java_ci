@@ -53,8 +53,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
     }
 
     /**
-     * The interface defining all the services for DnsManagementClientDnsResourceReferences to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DnsManagementClientDnsResourceReferences to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientD")
@@ -76,8 +75,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsResourceReferenceResultInner>>
@@ -110,8 +108,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsResourceReferenceResultInner>>

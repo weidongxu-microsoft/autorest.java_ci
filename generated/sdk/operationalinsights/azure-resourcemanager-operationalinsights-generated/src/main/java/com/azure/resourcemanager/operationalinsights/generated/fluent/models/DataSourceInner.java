@@ -49,8 +49,7 @@ public final class DataSourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: The data source properties in raw json format, each kind of data source have it's
-     * own schema.
+     * Get the properties property: The data source properties in raw json format, each kind of data source have it's own schema.
      * 
      * @return the properties value.
      */
@@ -59,8 +58,7 @@ public final class DataSourceInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: The data source properties in raw json format, each kind of data source have it's
-     * own schema.
+     * Set the properties property: The data source properties in raw json format, each kind of data source have it's own schema.
      * 
      * @param properties the properties value to set.
      * @return the DataSourceInner object itself.

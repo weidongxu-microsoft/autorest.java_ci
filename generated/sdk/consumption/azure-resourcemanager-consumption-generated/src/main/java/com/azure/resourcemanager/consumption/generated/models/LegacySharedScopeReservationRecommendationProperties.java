@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * The properties of the legacy reservation recommendation for shared scope.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "scope")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "scope",
+    defaultImpl = LegacySharedScopeReservationRecommendationProperties.class,
+    visible = true)
 @JsonTypeName("Shared")
 @Immutable
 public final class LegacySharedScopeReservationRecommendationProperties
@@ -20,6 +24,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
      * Creates an instance of LegacySharedScopeReservationRecommendationProperties class.
      */
     public LegacySharedScopeReservationRecommendationProperties() {
+        withScope("Shared");
     }
 
     /**

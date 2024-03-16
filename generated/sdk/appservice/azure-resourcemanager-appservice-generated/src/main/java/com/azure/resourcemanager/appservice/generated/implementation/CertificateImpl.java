@@ -171,14 +171,18 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
     }
 
     public Certificate create() {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public Certificate create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -194,14 +198,18 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
     }
 
     public Certificate apply() {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .updateWithResponse(resourceGroupName, name, updateCertificateEnvelope, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .updateWithResponse(resourceGroupName, name, updateCertificateEnvelope, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Certificate apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .updateWithResponse(resourceGroupName, name, updateCertificateEnvelope, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .updateWithResponse(resourceGroupName, name, updateCertificateEnvelope, context)
+            .getValue();
         return this;
     }
 
@@ -214,14 +222,18 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
     }
 
     public Certificate refresh() {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Certificate refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getCertificates()
-            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getCertificates()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context)
+            .getValue();
         return this;
     }
 

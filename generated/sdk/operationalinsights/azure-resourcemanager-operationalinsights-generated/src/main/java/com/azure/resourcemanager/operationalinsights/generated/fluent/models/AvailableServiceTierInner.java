@@ -107,8 +107,7 @@ public final class AvailableServiceTierInner {
     }
 
     /**
-     * Get the capacityReservationLevel property: The capacity reservation level in GB per day. Returned for the
-     * Capacity Reservation Service Tier.
+     * Get the capacityReservationLevel property: The capacity reservation level in GB per day. Returned for the Capacity Reservation Service Tier.
      * 
      * @return the capacityReservationLevel value.
      */
@@ -117,8 +116,7 @@ public final class AvailableServiceTierInner {
     }
 
     /**
-     * Get the lastSkuUpdate property: Time when the sku was last updated for the workspace. Returned for the Capacity
-     * Reservation Service Tier.
+     * Get the lastSkuUpdate property: Time when the sku was last updated for the workspace. Returned for the Capacity Reservation Service Tier.
      * 
      * @return the lastSkuUpdate value.
      */

@@ -13,15 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class BackendPoolsSettings {
     /*
-     * Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS
-     * requests.
+     * Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS requests.
      */
     @JsonProperty(value = "enforceCertificateNameCheck")
     private EnforceCertificateNameCheckEnabledState enforceCertificateNameCheck;
 
     /*
-     * Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and
-     * returns.
+     * Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and returns.
      */
     @JsonProperty(value = "sendRecvTimeoutSeconds")
     private Integer sendRecvTimeoutSeconds;
@@ -33,8 +31,7 @@ public final class BackendPoolsSettings {
     }
 
     /**
-     * Get the enforceCertificateNameCheck property: Whether to enforce certificate name check on HTTPS requests to all
-     * backend pools. No effect on non-HTTPS requests.
+     * Get the enforceCertificateNameCheck property: Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS requests.
      * 
      * @return the enforceCertificateNameCheck value.
      */
@@ -43,8 +40,7 @@ public final class BackendPoolsSettings {
     }
 
     /**
-     * Set the enforceCertificateNameCheck property: Whether to enforce certificate name check on HTTPS requests to all
-     * backend pools. No effect on non-HTTPS requests.
+     * Set the enforceCertificateNameCheck property: Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS requests.
      * 
      * @param enforceCertificateNameCheck the enforceCertificateNameCheck value to set.
      * @return the BackendPoolsSettings object itself.
@@ -56,8 +52,7 @@ public final class BackendPoolsSettings {
     }
 
     /**
-     * Get the sendRecvTimeoutSeconds property: Send and receive timeout on forwarding request to the backend. When
-     * timeout is reached, the request fails and returns.
+     * Get the sendRecvTimeoutSeconds property: Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and returns.
      * 
      * @return the sendRecvTimeoutSeconds value.
      */
@@ -66,8 +61,7 @@ public final class BackendPoolsSettings {
     }
 
     /**
-     * Set the sendRecvTimeoutSeconds property: Send and receive timeout on forwarding request to the backend. When
-     * timeout is reached, the request fails and returns.
+     * Set the sendRecvTimeoutSeconds property: Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and returns.
      * 
      * @param sendRecvTimeoutSeconds the sendRecvTimeoutSeconds value to set.
      * @return the BackendPoolsSettings object itself.

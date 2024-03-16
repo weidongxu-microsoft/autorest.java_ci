@@ -22,8 +22,7 @@ public final class GalleryImageVersionList {
     private List<GalleryImageVersionInner> value;
 
     /*
-     * The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of
-     * gallery image versions.
+     * The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of gallery image versions.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class GalleryImageVersionList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to
-     * fetch the next page of gallery image versions.
+     * Get the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of gallery image versions.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class GalleryImageVersionList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to
-     * fetch the next page of gallery image versions.
+     * Set the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of gallery image versions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryImageVersionList object itself.

@@ -25,8 +25,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Get the userAssignedIdentityResourceId property: Specifies ARM Resource ID of one of the user identities
-     * associated with the VM.
+     * Get the userAssignedIdentityResourceId property: Specifies ARM Resource ID of one of the user identities associated with the VM.
      * 
      * @return the userAssignedIdentityResourceId value.
      */
@@ -35,8 +34,7 @@ public final class EncryptionIdentity {
     }
 
     /**
-     * Set the userAssignedIdentityResourceId property: Specifies ARM Resource ID of one of the user identities
-     * associated with the VM.
+     * Set the userAssignedIdentityResourceId property: Specifies ARM Resource ID of one of the user identities associated with the VM.
      * 
      * @param userAssignedIdentityResourceId the userAssignedIdentityResourceId value to set.
      * @return the EncryptionIdentity object itself.

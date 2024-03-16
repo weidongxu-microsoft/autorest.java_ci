@@ -423,8 +423,7 @@ public interface NamespacesClient {
     RelayNamespaceInner getByResourceGroup(String resourceGroupName, String namespaceName);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
@@ -440,8 +439,7 @@ public interface NamespacesClient {
         RelayUpdateParameters parameters, Context context);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.

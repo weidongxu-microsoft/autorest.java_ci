@@ -22,23 +22,19 @@ public final class LogProfileProperties {
     private String storageAccountId;
 
     /*
-     * The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for
-     * streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key
-     * name}'.
+     * The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
      */
     @JsonProperty(value = "serviceBusRuleId")
     private String serviceBusRuleId;
 
     /*
-     * List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid
-     * ARM locations including the 'global' location.
+     * List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
      */
     @JsonProperty(value = "locations", required = true)
     private List<String> locations;
 
     /*
-     * the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write',
-     * 'Delete', and/or 'Action.'
+     * the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'
      */
     @JsonProperty(value = "categories", required = true)
     private List<String> categories;
@@ -56,8 +52,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Get the storageAccountId property: the resource id of the storage account to which you would like to send the
-     * Activity Log.
+     * Get the storageAccountId property: the resource id of the storage account to which you would like to send the Activity Log.
      * 
      * @return the storageAccountId value.
      */
@@ -66,8 +61,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Set the storageAccountId property: the resource id of the storage account to which you would like to send the
-     * Activity Log.
+     * Set the storageAccountId property: the resource id of the storage account to which you would like to send the Activity Log.
      * 
      * @param storageAccountId the storageAccountId value to set.
      * @return the LogProfileProperties object itself.
@@ -78,9 +72,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Get the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like
-     * to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource
-     * ID}/authorizationrules/{key name}'.
+     * Get the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
      * 
      * @return the serviceBusRuleId value.
      */
@@ -89,9 +81,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Set the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like
-     * to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource
-     * ID}/authorizationrules/{key name}'.
+     * Set the serviceBusRuleId property: The service bus rule ID of the service bus namespace in which you would like to have Event Hubs created for streaming the Activity Log. The rule ID is of the format: '{service bus resource ID}/authorizationrules/{key name}'.
      * 
      * @param serviceBusRuleId the serviceBusRuleId value to set.
      * @return the LogProfileProperties object itself.
@@ -102,8 +92,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Get the locations property: List of regions for which Activity Log events should be stored or streamed. It is a
-     * comma separated list of valid ARM locations including the 'global' location.
+     * Get the locations property: List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
      * 
      * @return the locations value.
      */
@@ -112,8 +101,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Set the locations property: List of regions for which Activity Log events should be stored or streamed. It is a
-     * comma separated list of valid ARM locations including the 'global' location.
+     * Set the locations property: List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location.
      * 
      * @param locations the locations value to set.
      * @return the LogProfileProperties object itself.
@@ -124,8 +112,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Get the categories property: the categories of the logs. These categories are created as is convenient to the
-     * user. Some values are: 'Write', 'Delete', and/or 'Action.'.
+     * Get the categories property: the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
      * 
      * @return the categories value.
      */
@@ -134,8 +121,7 @@ public final class LogProfileProperties {
     }
 
     /**
-     * Set the categories property: the categories of the logs. These categories are created as is convenient to the
-     * user. Some values are: 'Write', 'Delete', and/or 'Action.'.
+     * Set the categories property: the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'.
      * 
      * @param categories the categories value to set.
      * @return the LogProfileProperties object itself.

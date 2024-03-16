@@ -119,8 +119,7 @@ public final class DetectorResponseInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
-     * UI.
+     * Get the dataProvidersMetadata property: Additional configuration for different data providers to be used by the UI.
      * 
      * @return the dataProvidersMetadata value.
      */
@@ -129,8 +128,7 @@ public final class DetectorResponseInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
-     * UI.
+     * Set the dataProvidersMetadata property: Additional configuration for different data providers to be used by the UI.
      * 
      * @param dataProvidersMetadata the dataProvidersMetadata value to set.
      * @return the DetectorResponseInner object itself.

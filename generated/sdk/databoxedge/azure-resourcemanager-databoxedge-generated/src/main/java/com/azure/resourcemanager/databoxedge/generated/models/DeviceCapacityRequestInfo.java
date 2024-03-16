@@ -37,8 +37,7 @@ public final class DeviceCapacityRequestInfo {
     }
 
     /**
-     * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
-     * them on the appliance.
+     * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
      * 
      * @return the vmPlacementQuery value.
      */
@@ -47,8 +46,7 @@ public final class DeviceCapacityRequestInfo {
     }
 
     /**
-     * Set the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
-     * them on the appliance.
+     * Set the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
      * 
      * @param vmPlacementQuery the vmPlacementQuery value to set.
      * @return the DeviceCapacityRequestInfo object itself.
@@ -62,8 +60,7 @@ public final class DeviceCapacityRequestInfo {
     }
 
     /**
-     * Get the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
-     * appliance.
+     * Get the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
      * 
      * @return the vmPlacementResults value.
      */
@@ -72,8 +69,7 @@ public final class DeviceCapacityRequestInfo {
     }
 
     /**
-     * Set the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
-     * appliance.
+     * Set the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
      * 
      * @param vmPlacementResults the vmPlacementResults value to set.
      * @return the DeviceCapacityRequestInfo object itself.

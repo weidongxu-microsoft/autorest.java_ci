@@ -20,8 +20,7 @@ public final class NetworkProfile {
     private List<NetworkInterfaceReference> networkInterfaces;
 
     /*
-     * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface
-     * Configurations
+     * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations
      */
     @JsonProperty(value = "networkApiVersion")
     private NetworkApiVersion networkApiVersion;
@@ -39,8 +38,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Get the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with
-     * the virtual machine.
+     * Get the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with the virtual machine.
      * 
      * @return the networkInterfaces value.
      */
@@ -49,8 +47,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Set the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with
-     * the virtual machine.
+     * Set the networkInterfaces property: Specifies the list of resource Ids for the network interfaces associated with the virtual machine.
      * 
      * @param networkInterfaces the networkInterfaces value to set.
      * @return the NetworkProfile object itself.
@@ -61,8 +58,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Get the networkApiVersion property: specifies the Microsoft.Network API version used when creating networking
-     * resources in the Network Interface Configurations.
+     * Get the networkApiVersion property: specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations.
      * 
      * @return the networkApiVersion value.
      */
@@ -71,8 +67,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Set the networkApiVersion property: specifies the Microsoft.Network API version used when creating networking
-     * resources in the Network Interface Configurations.
+     * Set the networkApiVersion property: specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations.
      * 
      * @param networkApiVersion the networkApiVersion value to set.
      * @return the NetworkProfile object itself.
@@ -83,8 +78,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Get the networkInterfaceConfigurations property: Specifies the networking configurations that will be used to
-     * create the virtual machine networking resources.
+     * Get the networkInterfaceConfigurations property: Specifies the networking configurations that will be used to create the virtual machine networking resources.
      * 
      * @return the networkInterfaceConfigurations value.
      */
@@ -93,8 +87,7 @@ public final class NetworkProfile {
     }
 
     /**
-     * Set the networkInterfaceConfigurations property: Specifies the networking configurations that will be used to
-     * create the virtual machine networking resources.
+     * Set the networkInterfaceConfigurations property: Specifies the networking configurations that will be used to create the virtual machine networking resources.
      * 
      * @param networkInterfaceConfigurations the networkInterfaceConfigurations value to set.
      * @return the NetworkProfile object itself.

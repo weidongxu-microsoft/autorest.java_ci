@@ -32,8 +32,7 @@ public interface ValidateCustomDomainOutput {
     String message();
 
     /**
-     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner object.
      * 
      * @return the inner object.
      */

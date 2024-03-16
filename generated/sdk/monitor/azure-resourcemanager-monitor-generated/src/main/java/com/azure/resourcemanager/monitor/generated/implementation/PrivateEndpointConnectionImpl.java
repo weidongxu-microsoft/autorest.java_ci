@@ -65,13 +65,16 @@ public final class PrivateEndpointConnectionImpl
     }
 
     public PrivateEndpointConnection create() {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections().createOrUpdate(
-            resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
+            .createOrUpdate(resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public PrivateEndpointConnection create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
             .createOrUpdate(resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(), context);
         return this;
     }
@@ -88,13 +91,16 @@ public final class PrivateEndpointConnectionImpl
     }
 
     public PrivateEndpointConnection apply() {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections().createOrUpdate(
-            resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
+            .createOrUpdate(resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public PrivateEndpointConnection apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections()
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
             .createOrUpdate(resourceGroupName, scopeName, privateEndpointConnectionName, this.innerModel(), context);
         return this;
     }
@@ -110,14 +116,18 @@ public final class PrivateEndpointConnectionImpl
     }
 
     public PrivateEndpointConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections()
-            .getWithResponse(resourceGroupName, scopeName, privateEndpointConnectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, scopeName, privateEndpointConnectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PrivateEndpointConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getPrivateEndpointConnections()
-            .getWithResponse(resourceGroupName, scopeName, privateEndpointConnectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, scopeName, privateEndpointConnectionName, context)
+            .getValue();
         return this;
     }
 

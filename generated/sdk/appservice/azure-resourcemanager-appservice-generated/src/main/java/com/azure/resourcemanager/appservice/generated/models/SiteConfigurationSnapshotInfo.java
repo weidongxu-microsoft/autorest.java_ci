@@ -54,8 +54,7 @@ public interface SiteConfigurationSnapshotInfo {
     Integer snapshotId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner object.
      * 
      * @return the inner object.
      */

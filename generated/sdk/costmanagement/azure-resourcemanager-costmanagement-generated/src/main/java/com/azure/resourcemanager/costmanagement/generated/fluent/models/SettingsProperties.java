@@ -41,8 +41,7 @@ public final class SettingsProperties {
     }
 
     /**
-     * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost
-     * Management in the Azure portal.
+     * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      * 
      * @return the scope value.
      */
@@ -51,8 +50,7 @@ public final class SettingsProperties {
     }
 
     /**
-     * Set the scope property: Sets the default scope the current user will see when they sign into Azure Cost
-     * Management in the Azure portal.
+     * Set the scope property: Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      * 
      * @param scope the scope value to set.
      * @return the SettingsProperties object itself.
@@ -63,8 +61,7 @@ public final class SettingsProperties {
     }
 
     /**
-     * Get the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
-     * values: LastUsed.
+     * Get the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      * 
      * @return the startOn value.
      */
@@ -73,8 +70,7 @@ public final class SettingsProperties {
     }
 
     /**
-     * Set the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
-     * values: LastUsed.
+     * Set the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      * 
      * @param startOn the startOn value to set.
      * @return the SettingsProperties object itself.

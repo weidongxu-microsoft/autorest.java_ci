@@ -39,8 +39,8 @@ public final class CapacityReservationsImpl implements CapacityReservations {
 
     public Response<CapacityReservation> getWithResponse(String resourceGroupName, String capacityReservationGroupName,
         String capacityReservationName, CapacityReservationInstanceViewTypes expand, Context context) {
-        Response<CapacityReservationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
-            capacityReservationGroupName, capacityReservationName, expand, context);
+        Response<CapacityReservationInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, capacityReservationGroupName, capacityReservationName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CapacityReservationImpl(inner.getValue(), this.manager()));
@@ -92,8 +92,10 @@ public final class CapacityReservationsImpl implements CapacityReservations {
                 String.format("The resource ID '%s' is not valid. Missing path segment 'capacityReservations'.", id)));
         }
         CapacityReservationInstanceViewTypes localExpand = null;
-        return this.getWithResponse(resourceGroupName, capacityReservationGroupName, capacityReservationName,
-            localExpand, Context.NONE).getValue();
+        return this
+            .getWithResponse(resourceGroupName, capacityReservationGroupName, capacityReservationName, localExpand,
+                Context.NONE)
+            .getValue();
     }
 
     public Response<CapacityReservation> getByIdWithResponse(String id, CapacityReservationInstanceViewTypes expand,

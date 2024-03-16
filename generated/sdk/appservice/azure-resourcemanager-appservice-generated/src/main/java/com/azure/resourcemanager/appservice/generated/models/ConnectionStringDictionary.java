@@ -47,8 +47,7 @@ public interface ConnectionStringDictionary {
     Map<String, ConnStringValueTypePair> properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner object.
      * 
      * @return the inner object.
      */

@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * Firewall Policy NAT Rule Collection.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "ruleCollectionType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "ruleCollectionType",
+    defaultImpl = FirewallPolicyNatRuleCollection.class,
+    visible = true)
 @JsonTypeName("FirewallPolicyNatRuleCollection")
 @Fluent
 public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCollection {
@@ -33,6 +37,7 @@ public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCol
      * Creates an instance of FirewallPolicyNatRuleCollection class.
      */
     public FirewallPolicyNatRuleCollection() {
+        withRuleCollectionType(FirewallPolicyRuleCollectionType.FIREWALL_POLICY_NAT_RULE_COLLECTION);
     }
 
     /**

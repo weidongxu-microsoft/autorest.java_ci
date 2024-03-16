@@ -102,8 +102,7 @@ public final class ContainerNetworkInterface extends SubResource {
     }
 
     /**
-     * Get the containerNetworkInterfaceConfiguration property: Container network interface configuration from which
-     * this container network interface is created.
+     * Get the containerNetworkInterfaceConfiguration property: Container network interface configuration from which this container network interface is created.
      * 
      * @return the containerNetworkInterfaceConfiguration value.
      */

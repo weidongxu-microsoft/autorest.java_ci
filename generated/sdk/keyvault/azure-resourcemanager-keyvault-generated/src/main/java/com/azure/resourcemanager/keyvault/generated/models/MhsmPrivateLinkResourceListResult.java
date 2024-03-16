@@ -19,8 +19,7 @@ public interface MhsmPrivateLinkResourceListResult {
     List<MhsmPrivateLinkResource> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceListResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceListResultInner object.
      * 
      * @return the inner object.
      */

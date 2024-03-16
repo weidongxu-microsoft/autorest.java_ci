@@ -62,8 +62,7 @@ public interface StorageAccountCredential {
     AsymmetricEncryptedSecret accountKey();
 
     /**
-     * Gets the connectionString property: Connection string for the storage account. Use this string if username and
-     * account key are not specified.
+     * Gets the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
      * 
      * @return the connectionString value.
      */
@@ -105,8 +104,7 @@ public interface StorageAccountCredential {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountCredentialInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountCredentialInner object.
      * 
      * @return the inner object.
      */
@@ -184,8 +182,7 @@ public interface StorageAccountCredential {
         }
 
         /**
-         * The stage of the StorageAccountCredential definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StorageAccountCredential definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithUsername, DefinitionStages.WithAccountKey,
             DefinitionStages.WithConnectionString, DefinitionStages.WithBlobDomainName,
@@ -237,11 +234,9 @@ public interface StorageAccountCredential {
          */
         interface WithConnectionString {
             /**
-             * Specifies the connectionString property: Connection string for the storage account. Use this string if
-             * username and account key are not specified..
+             * Specifies the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified..
              * 
-             * @param connectionString Connection string for the storage account. Use this string if username and
-             * account key are not specified.
+             * @param connectionString Connection string for the storage account. Use this string if username and account key are not specified.
              * @return the next definition stage.
              */
             WithCreate withConnectionString(String connectionString);
@@ -351,11 +346,9 @@ public interface StorageAccountCredential {
          */
         interface WithConnectionString {
             /**
-             * Specifies the connectionString property: Connection string for the storage account. Use this string if
-             * username and account key are not specified..
+             * Specifies the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified..
              * 
-             * @param connectionString Connection string for the storage account. Use this string if username and
-             * account key are not specified.
+             * @param connectionString Connection string for the storage account. Use this string if username and account key are not specified.
              * @return the next definition stage.
              */
             Update withConnectionString(String connectionString);

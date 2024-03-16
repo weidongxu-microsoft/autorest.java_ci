@@ -4,9 +4,11 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -73,16 +75,14 @@ public interface Server {
     SystemData systemData();
 
     /**
-     * Gets the administratorLogin property: The administrator's login name of a server. Can only be specified when the
-     * server is being created (and is required for creation).
+     * Gets the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
      * 
      * @return the administratorLogin value.
      */
     String administratorLogin();
 
     /**
-     * Gets the administratorLoginPassword property: The password of the administrator login (required for server
-     * creation).
+     * Gets the administratorLoginPassword property: The password of the administrator login (required for server creation).
      * 
      * @return the administratorLoginPassword value.
      */
@@ -117,8 +117,7 @@ public interface Server {
     String sourceServerResourceId();
 
     /**
-     * Gets the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Gets the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from.
      * 
      * @return the restorePointInTime value.
      */
@@ -288,8 +287,7 @@ public interface Server {
         }
 
         /**
-         * The stage of the Server definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Server definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithSku,
             DefinitionStages.WithAdministratorLogin, DefinitionStages.WithAdministratorLoginPassword,
@@ -358,11 +356,9 @@ public interface Server {
          */
         interface WithAdministratorLogin {
             /**
-             * Specifies the administratorLogin property: The administrator's login name of a server. Can only be
-             * specified when the server is being created (and is required for creation)..
+             * Specifies the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)..
              * 
-             * @param administratorLogin The administrator's login name of a server. Can only be specified when the
-             * server is being created (and is required for creation).
+             * @param administratorLogin The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
              * @return the next definition stage.
              */
             WithCreate withAdministratorLogin(String administratorLogin);
@@ -373,8 +369,7 @@ public interface Server {
          */
         interface WithAdministratorLoginPassword {
             /**
-             * Specifies the administratorLoginPassword property: The password of the administrator login (required for
-             * server creation)..
+             * Specifies the administratorLoginPassword property: The password of the administrator login (required for server creation)..
              * 
              * @param administratorLoginPassword The password of the administrator login (required for server creation).
              * @return the next definition stage.
@@ -439,11 +434,9 @@ public interface Server {
          */
         interface WithRestorePointInTime {
             /**
-             * Specifies the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the
-             * time to restore from..
+             * Specifies the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore from..
              * 
-             * @param restorePointInTime Restore point creation time (ISO8601 format), specifying the time to restore
-             * from.
+             * @param restorePointInTime Restore point creation time (ISO8601 format), specifying the time to restore from.
              * @return the next definition stage.
              */
             WithCreate withRestorePointInTime(OffsetDateTime restorePointInTime);
@@ -764,6 +757,31 @@ public interface Server {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void failover(Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response}.
+     */
+    Response<HighAvailabilityValidationEstimation> validateEstimateHighAvailabilityWithResponse(
+        HighAvailabilityValidationEstimationInner parameters, Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server.
+     */
+    HighAvailabilityValidationEstimation
+        validateEstimateHighAvailability(HighAvailabilityValidationEstimationInner parameters);
 
     /**
      * Restarts a server.

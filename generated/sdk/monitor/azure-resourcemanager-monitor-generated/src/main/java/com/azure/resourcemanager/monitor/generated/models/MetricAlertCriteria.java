@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.HashMap;
@@ -19,9 +21,9 @@ import java.util.Map;
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
     property = "odata.type",
-    defaultImpl = MetricAlertCriteria.class)
+    defaultImpl = MetricAlertCriteria.class,
+    visible = true)
 @JsonTypeName("MetricAlertCriteria")
 @JsonSubTypes({
     @JsonSubTypes.Type(
@@ -36,6 +38,13 @@ import java.util.Map;
 @Fluent
 public class MetricAlertCriteria {
     /*
+     * specifies the type of the alert criteria.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private Odatatype odataType;
+
+    /*
      * The rule criteria that defines the conditions of the alert rule.
      */
     @JsonIgnore
@@ -45,6 +54,27 @@ public class MetricAlertCriteria {
      * Creates an instance of MetricAlertCriteria class.
      */
     public MetricAlertCriteria() {
+        this.odataType = Odatatype.fromString("MetricAlertCriteria");
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the alert criteria.
+     * 
+     * @return the odataType value.
+     */
+    public Odatatype odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Set the odataType property: specifies the type of the alert criteria.
+     * 
+     * @param odataType the odataType value to set.
+     * @return the MetricAlertCriteria object itself.
+     */
+    protected MetricAlertCriteria withOdataType(Odatatype odataType) {
+        this.odataType = odataType;
+        return this;
     }
 
     /**

@@ -54,8 +54,7 @@ public final class GalleryList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the
-     * next page of galleries.
+     * Get the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the next page of galleries.
      * 
      * @return the nextLink value.
      */
@@ -64,8 +63,7 @@ public final class GalleryList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the
-     * next page of galleries.
+     * Set the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the next page of galleries.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryList object itself.

@@ -126,9 +126,9 @@ public final class ExpressRouteCircuitPeeringImpl
     public List<ExpressRouteCircuitConnection> connections() {
         List<ExpressRouteCircuitConnectionInner> inner = this.innerModel().connections();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -137,9 +137,9 @@ public final class ExpressRouteCircuitPeeringImpl
     public List<PeerExpressRouteCircuitConnection> peeredConnections() {
         List<PeerExpressRouteCircuitConnectionInner> inner = this.innerModel().peeredConnections();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -171,13 +171,15 @@ public final class ExpressRouteCircuitPeeringImpl
     }
 
     public ExpressRouteCircuitPeering create() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitPeering create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), context);
         return this;
     }
@@ -194,13 +196,15 @@ public final class ExpressRouteCircuitPeeringImpl
     }
 
     public ExpressRouteCircuitPeering apply() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitPeering apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
             .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), context);
         return this;
     }
@@ -215,14 +219,18 @@ public final class ExpressRouteCircuitPeeringImpl
     }
 
     public ExpressRouteCircuitPeering refresh() {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
-            .getWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ExpressRouteCircuitPeering refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitPeerings()
-            .getWithResponse(resourceGroupName, circuitName, peeringName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getExpressRouteCircuitPeerings()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, context)
+            .getValue();
         return this;
     }
 

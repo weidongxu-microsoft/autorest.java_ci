@@ -39,8 +39,7 @@ public final class PolicySetDefinitionProperties {
     private String description;
 
     /*
-     * The policy set definition metadata. Metadata is an open ended object and is typically a collection of key value
-     * pairs.
+     * The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;
@@ -71,8 +70,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
-     * and Static.
+     * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
      * 
      * @return the policyType value.
      */
@@ -81,8 +79,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
-     * and Static.
+     * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
      * 
      * @param policyType the policyType value to set.
      * @return the PolicySetDefinitionProperties object itself.
@@ -133,8 +130,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
-     * a collection of key value pairs.
+     * Get the metadata property: The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -143,8 +139,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
-     * a collection of key value pairs.
+     * Set the metadata property: The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
      * 
      * @param metadata the metadata value to set.
      * @return the PolicySetDefinitionProperties object itself.
@@ -155,8 +150,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the parameters property: The policy set definition parameters that can be used in policy definition
-     * references.
+     * Get the parameters property: The policy set definition parameters that can be used in policy definition references.
      * 
      * @return the parameters value.
      */
@@ -165,8 +159,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the parameters property: The policy set definition parameters that can be used in policy definition
-     * references.
+     * Set the parameters property: The policy set definition parameters that can be used in policy definition references.
      * 
      * @param parameters the parameters value to set.
      * @return the PolicySetDefinitionProperties object itself.
@@ -197,8 +190,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the policyDefinitionGroups property: The metadata describing groups of policy definition references within
-     * the policy set definition.
+     * Get the policyDefinitionGroups property: The metadata describing groups of policy definition references within the policy set definition.
      * 
      * @return the policyDefinitionGroups value.
      */
@@ -207,8 +199,7 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the policyDefinitionGroups property: The metadata describing groups of policy definition references within
-     * the policy set definition.
+     * Set the policyDefinitionGroups property: The metadata describing groups of policy definition references within the policy set definition.
      * 
      * @param policyDefinitionGroups the policyDefinitionGroups value to set.
      * @return the PolicySetDefinitionProperties object itself.

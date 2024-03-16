@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of listing marketplaces. It contains a list of available marketplaces in reverse chronological order by
- * billing period.
+ * Result of listing marketplaces. It contains a list of available marketplaces in reverse chronological order by billing period.
  */
 @Immutable
 public final class MarketplacesListResult {

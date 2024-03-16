@@ -51,8 +51,8 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
 
     public ApplicationGatewayPrivateEndpointConnection update(String resourceGroupName, String applicationGatewayName,
         String connectionName, ApplicationGatewayPrivateEndpointConnectionInner parameters, Context context) {
-        ApplicationGatewayPrivateEndpointConnectionInner inner = this.serviceClient().update(resourceGroupName,
-            applicationGatewayName, connectionName, parameters, context);
+        ApplicationGatewayPrivateEndpointConnectionInner inner = this.serviceClient()
+            .update(resourceGroupName, applicationGatewayName, connectionName, parameters, context);
         if (inner != null) {
             return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
         } else {

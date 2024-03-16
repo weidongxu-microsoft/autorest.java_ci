@@ -41,16 +41,14 @@ public interface ManagedPrivateEndpoint {
     SystemData systemData();
 
     /**
-     * Gets the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private
-     * endpoint is created.
+     * Gets the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created.
      * 
      * @return the privateLinkResourceId value.
      */
     String privateLinkResourceId();
 
     /**
-     * Gets the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is
-     * created.
+     * Gets the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created.
      * 
      * @return the privateLinkResourceRegion value.
      */
@@ -123,8 +121,7 @@ public interface ManagedPrivateEndpoint {
         }
 
         /**
-         * The stage of the ManagedPrivateEndpoint definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ManagedPrivateEndpoint definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithPrivateLinkResourceId, DefinitionStages.WithPrivateLinkResourceRegion,
@@ -150,11 +147,9 @@ public interface ManagedPrivateEndpoint {
          */
         interface WithPrivateLinkResourceId {
             /**
-             * Specifies the privateLinkResourceId property: The ARM resource ID of the resource for which the managed
-             * private endpoint is created..
+             * Specifies the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created..
              * 
-             * @param privateLinkResourceId The ARM resource ID of the resource for which the managed private endpoint
-             * is created.
+             * @param privateLinkResourceId The ARM resource ID of the resource for which the managed private endpoint is created.
              * @return the next definition stage.
              */
             WithCreate withPrivateLinkResourceId(String privateLinkResourceId);
@@ -165,11 +160,9 @@ public interface ManagedPrivateEndpoint {
          */
         interface WithPrivateLinkResourceRegion {
             /**
-             * Specifies the privateLinkResourceRegion property: The region of the resource to which the managed private
-             * endpoint is created..
+             * Specifies the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created..
              * 
-             * @param privateLinkResourceRegion The region of the resource to which the managed private endpoint is
-             * created.
+             * @param privateLinkResourceRegion The region of the resource to which the managed private endpoint is created.
              * @return the next definition stage.
              */
             WithCreate withPrivateLinkResourceRegion(String privateLinkResourceRegion);
@@ -239,11 +232,9 @@ public interface ManagedPrivateEndpoint {
          */
         interface WithPrivateLinkResourceId {
             /**
-             * Specifies the privateLinkResourceId property: The ARM resource ID of the resource for which the managed
-             * private endpoint is created..
+             * Specifies the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created..
              * 
-             * @param privateLinkResourceId The ARM resource ID of the resource for which the managed private endpoint
-             * is created.
+             * @param privateLinkResourceId The ARM resource ID of the resource for which the managed private endpoint is created.
              * @return the next definition stage.
              */
             Update withPrivateLinkResourceId(String privateLinkResourceId);
@@ -254,11 +245,9 @@ public interface ManagedPrivateEndpoint {
          */
         interface WithPrivateLinkResourceRegion {
             /**
-             * Specifies the privateLinkResourceRegion property: The region of the resource to which the managed private
-             * endpoint is created..
+             * Specifies the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created..
              * 
-             * @param privateLinkResourceRegion The region of the resource to which the managed private endpoint is
-             * created.
+             * @param privateLinkResourceRegion The region of the resource to which the managed private endpoint is created.
              * @return the next definition stage.
              */
             Update withPrivateLinkResourceRegion(String privateLinkResourceRegion);

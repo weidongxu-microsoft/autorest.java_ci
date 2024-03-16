@@ -183,8 +183,7 @@ public class RoutingRuleUpdateParameters {
     }
 
     /**
-     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing
-     * rule (if applicable).
+     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing rule (if applicable).
      * 
      * @return the webApplicationFirewallPolicyLink value.
      */
@@ -193,8 +192,7 @@ public class RoutingRuleUpdateParameters {
     }
 
     /**
-     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing
-     * rule (if applicable).
+     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing rule (if applicable).
      * 
      * @param webApplicationFirewallPolicyLink the webApplicationFirewallPolicyLink value to set.
      * @return the RoutingRuleUpdateParameters object itself.

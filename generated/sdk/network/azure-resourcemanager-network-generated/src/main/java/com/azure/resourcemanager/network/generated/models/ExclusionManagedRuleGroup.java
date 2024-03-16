@@ -53,8 +53,7 @@ public final class ExclusionManagedRuleGroup {
     }
 
     /**
-     * Get the rules property: List of rules that will be excluded. If none specified, all rules in the group will be
-     * excluded.
+     * Get the rules property: List of rules that will be excluded. If none specified, all rules in the group will be excluded.
      * 
      * @return the rules value.
      */
@@ -63,8 +62,7 @@ public final class ExclusionManagedRuleGroup {
     }
 
     /**
-     * Set the rules property: List of rules that will be excluded. If none specified, all rules in the group will be
-     * excluded.
+     * Set the rules property: List of rules that will be excluded. If none specified, all rules in the group will be excluded.
      * 
      * @param rules the rules value to set.
      * @return the ExclusionManagedRuleGroup object itself.

@@ -19,8 +19,7 @@ public interface NetworkRuleSetListResult {
     List<NetworkRuleSet> value();
 
     /**
-     * Gets the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
-     * NetworkRuleSet.
+     * Gets the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet.
      * 
      * @return the nextLink value.
      */

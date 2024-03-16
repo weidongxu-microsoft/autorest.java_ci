@@ -313,8 +313,7 @@ public final class ExpressRouteCircuitInner extends Resource {
     }
 
     /**
-     * Get the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned
-     * on an ExpressRoutePort resource.
+     * Get the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource.
      * 
      * @return the expressRoutePort value.
      */
@@ -323,8 +322,7 @@ public final class ExpressRouteCircuitInner extends Resource {
     }
 
     /**
-     * Set the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned
-     * on an ExpressRoutePort resource.
+     * Set the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource.
      * 
      * @param expressRoutePort the expressRoutePort value to set.
      * @return the ExpressRouteCircuitInner object itself.
@@ -338,8 +336,7 @@ public final class ExpressRouteCircuitInner extends Resource {
     }
 
     /**
-     * Get the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an
-     * ExpressRoutePort resource.
+     * Get the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
      * 
      * @return the bandwidthInGbps value.
      */
@@ -348,8 +345,7 @@ public final class ExpressRouteCircuitInner extends Resource {
     }
 
     /**
-     * Set the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an
-     * ExpressRoutePort resource.
+     * Set the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
      * 
      * @param bandwidthInGbps the bandwidthInGbps value to set.
      * @return the ExpressRouteCircuitInner object itself.

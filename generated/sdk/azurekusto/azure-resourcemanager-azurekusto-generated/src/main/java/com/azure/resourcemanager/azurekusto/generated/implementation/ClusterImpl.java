@@ -209,7 +209,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -257,14 +258,18 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public Cluster create() {
-        this.innerObject = serviceManager.serviceClient().getClusters().createOrUpdate(resourceGroupName, clusterName,
-            this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), createIfMatch, createIfNoneMatch,
+                Context.NONE);
         return this;
     }
 
     public Cluster create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusters().createOrUpdate(resourceGroupName, clusterName,
-            this.innerModel(), createIfMatch, createIfNoneMatch, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), createIfMatch, createIfNoneMatch,
+                context);
         return this;
     }
 
@@ -283,14 +288,16 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public Cluster apply() {
-        this.innerObject = serviceManager.serviceClient().getClusters().update(resourceGroupName, clusterName,
-            updateParameters, updateIfMatch, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .update(resourceGroupName, clusterName, updateParameters, updateIfMatch, Context.NONE);
         return this;
     }
 
     public Cluster apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusters().update(resourceGroupName, clusterName,
-            updateParameters, updateIfMatch, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .update(resourceGroupName, clusterName, updateParameters, updateIfMatch, context);
         return this;
     }
 
@@ -302,14 +309,18 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public Cluster refresh() {
-        this.innerObject = serviceManager.serviceClient().getClusters()
-            .getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Cluster refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getClusters()
-            .getByResourceGroupWithResponse(resourceGroupName, clusterName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getClusters()
+            .getByResourceGroupWithResponse(resourceGroupName, clusterName, context)
+            .getValue();
         return this;
     }
 
@@ -350,8 +361,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public void detachFollowerDatabases(FollowerDatabaseDefinitionInner followerDatabaseToRemove, Context context) {
-        serviceManager.clusters().detachFollowerDatabases(resourceGroupName, clusterName, followerDatabaseToRemove,
-            context);
+        serviceManager.clusters()
+            .detachFollowerDatabases(resourceGroupName, clusterName, followerDatabaseToRemove, context);
     }
 
     public DiagnoseVirtualNetworkResult diagnoseVirtualNetwork() {
@@ -375,8 +386,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public void addLanguageExtensions(LanguageExtensionsList languageExtensionsToAdd, Context context) {
-        serviceManager.clusters().addLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToAdd,
-            context);
+        serviceManager.clusters()
+            .addLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToAdd, context);
     }
 
     public void removeLanguageExtensions(LanguageExtensionsList languageExtensionsToRemove) {
@@ -384,8 +395,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public void removeLanguageExtensions(LanguageExtensionsList languageExtensionsToRemove, Context context) {
-        serviceManager.clusters().removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove,
-            context);
+        serviceManager.clusters()
+            .removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove, context);
     }
 
     public ClusterImpl withRegion(Region location) {

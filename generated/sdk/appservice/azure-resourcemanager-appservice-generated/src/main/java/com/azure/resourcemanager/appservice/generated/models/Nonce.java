@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Nonce {
     /*
-     * <code>false</code> if the nonce should not be validated while completing the login flow; otherwise,
-     * <code>true</code>.
+     * <code>false</code> if the nonce should not be validated while completing the login flow; otherwise, <code>true</code>.
      */
     @JsonProperty(value = "validateNonce")
     private Boolean validateNonce;
@@ -32,8 +31,7 @@ public final class Nonce {
     }
 
     /**
-     * Get the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while
-     * completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the validateNonce value.
      */
@@ -42,8 +40,7 @@ public final class Nonce {
     }
 
     /**
-     * Set the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while
-     * completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param validateNonce the validateNonce value to set.
      * @return the Nonce object itself.

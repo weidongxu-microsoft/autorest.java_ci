@@ -20,14 +20,12 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = { ComputeManagementClientImpl.class })
 public final class ComputeManagementClientBuilder {
     /*
-     * Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of
-     * the URI for every service call.
+     * Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      */
     private String subscriptionId;
 
     /**
-     * Sets Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms
-     * part of the URI for every service call.
+     * Sets Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the ComputeManagementClientBuilder.
@@ -125,11 +123,13 @@ public final class ComputeManagementClientBuilder {
     public ComputeManagementClientImpl buildClient() {
         String localEndpoint = (endpoint != null) ? endpoint : "https://management.azure.com";
         AzureEnvironment localEnvironment = (environment != null) ? environment : AzureEnvironment.AZURE;
-        HttpPipeline localPipeline = (pipeline != null) ? pipeline
+        HttpPipeline localPipeline = (pipeline != null)
+            ? pipeline
             : new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
         Duration localDefaultPollInterval
             = (defaultPollInterval != null) ? defaultPollInterval : Duration.ofSeconds(30);
-        SerializerAdapter localSerializerAdapter = (serializerAdapter != null) ? serializerAdapter
+        SerializerAdapter localSerializerAdapter = (serializerAdapter != null)
+            ? serializerAdapter
             : SerializerFactory.createDefaultManagementSerializerAdapter();
         ComputeManagementClientImpl client = new ComputeManagementClientImpl(localPipeline, localSerializerAdapter,
             localDefaultPollInterval, localEnvironment, this.subscriptionId, localEndpoint);

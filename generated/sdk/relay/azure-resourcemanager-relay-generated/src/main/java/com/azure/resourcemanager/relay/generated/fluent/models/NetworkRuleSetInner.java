@@ -55,6 +55,29 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
+     * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or not.
+     * 
+     * @return the trustedServiceAccessEnabled value.
+     */
+    public Boolean trustedServiceAccessEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().trustedServiceAccessEnabled();
+    }
+
+    /**
+     * Set the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or not.
+     * 
+     * @param trustedServiceAccessEnabled the trustedServiceAccessEnabled value to set.
+     * @return the NetworkRuleSetInner object itself.
+     */
+    public NetworkRuleSetInner withTrustedServiceAccessEnabled(Boolean trustedServiceAccessEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new NetworkRuleSetProperties();
+        }
+        this.innerProperties().withTrustedServiceAccessEnabled(trustedServiceAccessEnabled);
+        return this;
+    }
+
+    /**
      * Get the defaultAction property: Default Action for Network Rule Set.
      * 
      * @return the defaultAction value.
@@ -78,8 +101,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -88,8 +110,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NetworkRuleSetInner object itself.

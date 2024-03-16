@@ -25,8 +25,7 @@ public final class CsmPublishingCredentialsPoliciesEntityProperties {
     }
 
     /**
-     * Get the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the allow value.
      */
@@ -35,8 +34,7 @@ public final class CsmPublishingCredentialsPoliciesEntityProperties {
     }
 
     /**
-     * Set the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Set the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param allow the allow value to set.
      * @return the CsmPublishingCredentialsPoliciesEntityProperties object itself.

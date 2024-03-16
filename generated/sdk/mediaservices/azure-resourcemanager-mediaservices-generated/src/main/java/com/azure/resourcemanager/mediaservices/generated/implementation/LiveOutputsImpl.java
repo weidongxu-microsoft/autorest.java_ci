@@ -43,8 +43,8 @@ public final class LiveOutputsImpl implements LiveOutputs {
 
     public Response<LiveOutput> getWithResponse(String resourceGroupName, String accountName, String liveEventName,
         String liveOutputName, Context context) {
-        Response<LiveOutputInner> inner = this.serviceClient().getWithResponse(resourceGroupName, accountName,
-            liveEventName, liveOutputName, context);
+        Response<LiveOutputInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, accountName, liveEventName, liveOutputName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LiveOutputImpl(inner.getValue(), this.manager()));
@@ -95,8 +95,9 @@ public final class LiveOutputsImpl implements LiveOutputs {
 
     public Response<LiveOutput> operationLocationWithResponse(String resourceGroupName, String accountName,
         String liveEventName, String liveOutputName, String operationId, Context context) {
-        Response<LiveOutputInner> inner = this.serviceClient().operationLocationWithResponse(resourceGroupName,
-            accountName, liveEventName, liveOutputName, operationId, context);
+        Response<LiveOutputInner> inner = this.serviceClient()
+            .operationLocationWithResponse(resourceGroupName, accountName, liveEventName, liveOutputName, operationId,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LiveOutputImpl(inner.getValue(), this.manager()));
@@ -107,8 +108,8 @@ public final class LiveOutputsImpl implements LiveOutputs {
 
     public LiveOutput operationLocation(String resourceGroupName, String accountName, String liveEventName,
         String liveOutputName, String operationId) {
-        LiveOutputInner inner = this.serviceClient().operationLocation(resourceGroupName, accountName, liveEventName,
-            liveOutputName, operationId);
+        LiveOutputInner inner = this.serviceClient()
+            .operationLocation(resourceGroupName, accountName, liveEventName, liveOutputName, operationId);
         if (inner != null) {
             return new LiveOutputImpl(inner, this.manager());
         } else {

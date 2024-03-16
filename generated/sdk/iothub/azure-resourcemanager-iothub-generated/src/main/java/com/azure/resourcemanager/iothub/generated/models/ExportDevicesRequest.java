@@ -26,8 +26,7 @@ public final class ExportDevicesRequest {
     private boolean excludeKeys;
 
     /*
-     * The name of the blob that will be created in the provided output blob container. This blob will contain the
-     * exported device registry information for the IoT Hub.
+     * The name of the blob that will be created in the provided output blob container. This blob will contain the exported device registry information for the IoT Hub.
      */
     @JsonProperty(value = "exportBlobName")
     private String exportBlobName;
@@ -51,8 +50,7 @@ public final class ExportDevicesRequest {
     private Boolean includeConfigurations;
 
     /*
-     * The name of the blob that will be created in the provided output blob container. This blob will contain the
-     * exported configurations for the Iot Hub.
+     * The name of the blob that will be created in the provided output blob container. This blob will contain the exported configurations for the Iot Hub.
      */
     @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;
@@ -104,8 +102,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob container.
-     * This blob will contain the exported device registry information for the IoT Hub.
+     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob container. This blob will contain the exported device registry information for the IoT Hub.
      * 
      * @return the exportBlobName value.
      */
@@ -114,8 +111,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob container.
-     * This blob will contain the exported device registry information for the IoT Hub.
+     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob container. This blob will contain the exported device registry information for the IoT Hub.
      * 
      * @param exportBlobName the exportBlobName value to set.
      * @return the ExportDevicesRequest object itself.
@@ -126,8 +122,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Get the authenticationType property: Specifies authentication type being used for connecting to the storage
-     * account.
+     * Get the authenticationType property: Specifies authentication type being used for connecting to the storage account.
      * 
      * @return the authenticationType value.
      */
@@ -136,8 +131,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Set the authenticationType property: Specifies authentication type being used for connecting to the storage
-     * account.
+     * Set the authenticationType property: Specifies authentication type being used for connecting to the storage account.
      * 
      * @param authenticationType the authenticationType value to set.
      * @return the ExportDevicesRequest object itself.
@@ -188,8 +182,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Get the configurationsBlobName property: The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported configurations for the Iot Hub.
+     * Get the configurationsBlobName property: The name of the blob that will be created in the provided output blob container. This blob will contain the exported configurations for the Iot Hub.
      * 
      * @return the configurationsBlobName value.
      */
@@ -198,8 +191,7 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Set the configurationsBlobName property: The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported configurations for the Iot Hub.
+     * Set the configurationsBlobName property: The name of the blob that will be created in the provided output blob container. This blob will contain the exported configurations for the Iot Hub.
      * 
      * @param configurationsBlobName the configurationsBlobName value to set.
      * @return the ExportDevicesRequest object itself.

@@ -50,19 +50,14 @@ public interface LogSearchRuleResource {
     Map<String, String> tags();
 
     /**
-     * Gets the kind property: Metadata used by portal/tooling/etc to render different UX experiences for resources of
-     * the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type. If supported, the resource provider must
-     * validate and persist this value.
+     * Gets the kind property: Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
      * 
      * @return the kind value.
      */
     String kind();
 
     /**
-     * Gets the etag property: The etag field is *not* required. If it is provided in the response body, it must also be
-     * provided as a header per the normal etag convention. Entity tags are used for comparing two or more entities from
-     * the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24),
-     * If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+     * Gets the etag property: The etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
      * 
      * @return the etag value.
      */
@@ -97,16 +92,14 @@ public interface LogSearchRuleResource {
     String displayName();
 
     /**
-     * Gets the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
-     * not. The default is false.
+     * Gets the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false.
      * 
      * @return the autoMitigate value.
      */
     Boolean autoMitigate();
 
     /**
-     * Gets the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
-     * or false.
+     * Gets the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
      * 
      * @return the enabled value.
      */
@@ -134,8 +127,7 @@ public interface LogSearchRuleResource {
     Source source();
 
     /**
-     * Gets the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
-     * AlertingAction.
+     * Gets the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
      * 
      * @return the schedule value.
      */
@@ -255,8 +247,7 @@ public interface LogSearchRuleResource {
         }
 
         /**
-         * The stage of the LogSearchRuleResource definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LogSearchRuleResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithDisplayName,
@@ -321,11 +312,9 @@ public interface LogSearchRuleResource {
          */
         interface WithAutoMitigate {
             /**
-             * Specifies the autoMitigate property: The flag that indicates whether the alert should be automatically
-             * resolved or not. The default is false..
+             * Specifies the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false..
              * 
-             * @param autoMitigate The flag that indicates whether the alert should be automatically resolved or not.
-             * The default is false.
+             * @param autoMitigate The flag that indicates whether the alert should be automatically resolved or not. The default is false.
              * @return the next definition stage.
              */
             WithCreate withAutoMitigate(Boolean autoMitigate);
@@ -336,11 +325,9 @@ public interface LogSearchRuleResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: The flag which indicates whether the Log Search rule is enabled. Value
-             * should be true or false.
+             * Specifies the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
              * 
-             * @param enabled The flag which indicates whether the Log Search rule is enabled. Value should be true or
-             * false.
+             * @param enabled The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
              * @return the next definition stage.
              */
             WithCreate withEnabled(Enabled enabled);
@@ -351,8 +338,7 @@ public interface LogSearchRuleResource {
          */
         interface WithSchedule {
             /**
-             * Specifies the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
-             * AlertingAction.
+             * Specifies the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
              * 
              * @param schedule Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
              * @return the next definition stage.
@@ -410,11 +396,9 @@ public interface LogSearchRuleResource {
          */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: The flag which indicates whether the Log Search rule is enabled. Value
-             * should be true or false.
+             * Specifies the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
              * 
-             * @param enabled The flag which indicates whether the Log Search rule is enabled. Value should be true or
-             * false.
+             * @param enabled The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
              * @return the next definition stage.
              */
             Update withEnabled(Enabled enabled);

@@ -59,8 +59,7 @@ public final class VirtualNetworkRuleProperties {
     }
 
     /**
-     * Get the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet
-     * service endpoint enabled.
+     * Get the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled.
      * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
@@ -69,8 +68,7 @@ public final class VirtualNetworkRuleProperties {
     }
 
     /**
-     * Set the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet
-     * service endpoint enabled.
+     * Set the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled.
      * 
      * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
      * @return the VirtualNetworkRuleProperties object itself.

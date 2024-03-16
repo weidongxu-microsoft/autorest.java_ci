@@ -61,8 +61,7 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     private CertificateProductType productType;
 
     /*
-     * <code>true</code> if the certificate should be automatically renewed when it expires; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "autoRenew")
     private Boolean autoRenew;
@@ -262,8 +261,7 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     }
 
     /**
-     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when
-     * it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
@@ -272,8 +270,7 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     }
 
     /**
-     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when
-     * it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param autoRenew the autoRenew value to set.
      * @return the AppServiceCertificateOrderPatchResourceProperties object itself.
@@ -376,8 +373,7 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     }
 
     /**
-     * Get the isPrivateKeyExternal property: &lt;code&gt;true&lt;/code&gt; if private key is external; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Get the isPrivateKeyExternal property: &lt;code&gt;true&lt;/code&gt; if private key is external; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isPrivateKeyExternal value.
      */
@@ -386,8 +382,7 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     }
 
     /**
-     * Get the appServiceCertificateNotRenewableReasons property: Reasons why App Service Certificate is not renewable
-     * at the current moment.
+     * Get the appServiceCertificateNotRenewableReasons property: Reasons why App Service Certificate is not renewable at the current moment.
      * 
      * @return the appServiceCertificateNotRenewableReasons value.
      */

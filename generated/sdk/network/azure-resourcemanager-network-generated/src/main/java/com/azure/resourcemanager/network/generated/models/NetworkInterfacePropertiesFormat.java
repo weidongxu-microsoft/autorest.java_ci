@@ -69,16 +69,14 @@ public interface NetworkInterfacePropertiesFormat {
     Boolean primary();
 
     /**
-     * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
-     * encryption.
+     * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports encryption.
      * 
      * @return the vnetEncryptionSupported value.
      */
     Boolean vnetEncryptionSupported();
 
     /**
-     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
-     * Not applicable to VM sizes which require accelerated networking.
+     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -106,8 +104,7 @@ public interface NetworkInterfacePropertiesFormat {
     List<String> hostedWorkloads();
 
     /**
-     * Gets the dscpConfiguration property: A reference to the dscp configuration to which the network interface is
-     * linked.
+     * Gets the dscpConfiguration property: A reference to the dscp configuration to which the network interface is linked.
      * 
      * @return the dscpConfiguration value.
      */
@@ -170,8 +167,7 @@ public interface NetworkInterfacePropertiesFormat {
     NetworkInterfaceAuxiliarySku auxiliarySku();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfacePropertiesFormatInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfacePropertiesFormatInner object.
      * 
      * @return the inner object.
      */

@@ -22,8 +22,7 @@ public interface OperationStatusExtendedResult {
     String id();
 
     /**
-     * Gets the resourceId property: Fully qualified ID of the resource against which the original async operation was
-     * started.
+     * Gets the resourceId property: Fully qualified ID of the resource against which the original async operation was started.
      * 
      * @return the resourceId value.
      */

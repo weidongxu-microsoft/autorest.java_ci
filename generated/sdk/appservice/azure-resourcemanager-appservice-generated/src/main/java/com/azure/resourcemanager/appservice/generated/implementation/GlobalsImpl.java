@@ -54,8 +54,11 @@ public final class GlobalsImpl implements Globals {
         Response<List<SnapshotInner>> inner
             = this.serviceClient().getDeletedWebAppSnapshotsWithResponse(deletedSiteId, context);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
-                .stream().map(inner1 -> new SnapshotImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new SnapshotImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -73,8 +76,8 @@ public final class GlobalsImpl implements Globals {
 
     public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(String location, String operationId,
         Context context) {
-        return this.serviceClient().getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId,
-            context);
+        return this.serviceClient()
+            .getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId, context);
     }
 
     public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {

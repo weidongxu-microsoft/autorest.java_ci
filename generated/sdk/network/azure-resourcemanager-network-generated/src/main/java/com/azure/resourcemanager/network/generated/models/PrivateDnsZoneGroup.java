@@ -19,8 +19,7 @@ public interface PrivateDnsZoneGroup {
     String id();
 
     /**
-     * Gets the name property: Name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -41,8 +40,7 @@ public interface PrivateDnsZoneGroup {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone
-     * group.
+     * Gets the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone group.
      * 
      * @return the privateDnsZoneConfigs value.
      */

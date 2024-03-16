@@ -66,8 +66,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientDdosProtectionPlans to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientDdosProtectionPlans to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -362,8 +361,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return information about the specified DDoS protection plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DdosProtectionPlanInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -401,8 +399,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return information about the specified DDoS protection plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DdosProtectionPlanInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -488,8 +485,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -533,8 +529,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -727,8 +722,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DdosProtectionPlanInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -772,8 +766,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a DDoS protection plan in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DdosProtectionPlanInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -864,8 +857,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all DDoS protection plans in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all DDoS protection plans in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listSinglePageAsync() {
@@ -894,8 +886,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all DDoS protection plans in a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all DDoS protection plans in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listSinglePageAsync(Context context) {
@@ -975,8 +966,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the DDoS protection plans in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the DDoS protection plans in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1010,8 +1000,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the DDoS protection plans in a resource group along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all the DDoS protection plans in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1107,8 +1096,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listNextSinglePageAsync(String nextLink) {
@@ -1136,8 +1124,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1164,8 +1151,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1195,8 +1181,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of DDoS protection plans along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DdosProtectionPlanInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

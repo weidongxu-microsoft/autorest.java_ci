@@ -20,8 +20,7 @@ public final class CapacityReservationGroupInstanceView {
     private List<CapacityReservationInstanceViewWithName> capacityReservations;
 
     /*
-     * List of the subscriptions that the capacity reservation group is shared with. **Note:** Minimum api-version:
-     * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
+     * List of the subscriptions that the capacity reservation group is shared with. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      */
     @JsonProperty(value = "sharedSubscriptionIds", access = JsonProperty.Access.WRITE_ONLY)
     private List<SubResourceReadOnly> sharedSubscriptionIds;
@@ -33,8 +32,7 @@ public final class CapacityReservationGroupInstanceView {
     }
 
     /**
-     * Get the capacityReservations property: List of instance view of the capacity reservations under the capacity
-     * reservation group.
+     * Get the capacityReservations property: List of instance view of the capacity reservations under the capacity reservation group.
      * 
      * @return the capacityReservations value.
      */
@@ -43,9 +41,7 @@ public final class CapacityReservationGroupInstanceView {
     }
 
     /**
-     * Get the sharedSubscriptionIds property: List of the subscriptions that the capacity reservation group is shared
-     * with. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for
-     * more details.
+     * Get the sharedSubscriptionIds property: List of the subscriptions that the capacity reservation group is shared with. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
      * 
      * @return the sharedSubscriptionIds value.
      */

@@ -78,8 +78,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     }
 
     /**
-     * Get the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
-     * secret.
+     * Get the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any secret.
      * 
      * @return the encryptionKey value.
      */
@@ -88,8 +87,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     }
 
     /**
-     * Set the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
-     * secret.
+     * Set the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any secret.
      * 
      * @param encryptionKey the encryptionKey value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.

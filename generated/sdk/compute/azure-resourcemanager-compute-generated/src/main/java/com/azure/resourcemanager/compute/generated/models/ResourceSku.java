@@ -26,8 +26,7 @@ public interface ResourceSku {
     String name();
 
     /**
-     * Gets the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible
-     * Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Gets the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @return the tier value.
      */
@@ -69,8 +68,7 @@ public interface ResourceSku {
     List<String> locations();
 
     /**
-     * Gets the locationInfo property: A list of locations and availability zones in those locations where the SKU is
-     * available.
+     * Gets the locationInfo property: A list of locations and availability zones in those locations where the SKU is available.
      * 
      * @return the locationInfo value.
      */
@@ -98,8 +96,7 @@ public interface ResourceSku {
     List<ResourceSkuCapabilities> capabilities();
 
     /**
-     * Gets the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
-     * no restrictions.
+     * Gets the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
      * 
      * @return the restrictions value.
      */

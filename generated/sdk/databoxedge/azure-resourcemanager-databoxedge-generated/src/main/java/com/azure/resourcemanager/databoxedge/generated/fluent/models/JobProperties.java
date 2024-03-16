@@ -59,8 +59,7 @@ public final class JobProperties {
     private String refreshedEntityId;
 
     /*
-     * If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is
-     * empty if there are no subfolders.)
+     * If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is empty if there are no subfolders.)
      */
     @JsonProperty(value = "folder")
     private String folder;
@@ -117,8 +116,7 @@ public final class JobProperties {
     }
 
     /**
-     * Get the errorManifestFile property: Local share/remote container relative path to the error manifest file of the
-     * refresh.
+     * Get the errorManifestFile property: Local share/remote container relative path to the error manifest file of the refresh.
      * 
      * @return the errorManifestFile value.
      */
@@ -136,8 +134,7 @@ public final class JobProperties {
     }
 
     /**
-     * Get the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or
-     * container. (The path is empty if there are no subfolders.).
+     * Get the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is empty if there are no subfolders.).
      * 
      * @return the folder value.
      */
@@ -146,8 +143,7 @@ public final class JobProperties {
     }
 
     /**
-     * Set the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or
-     * container. (The path is empty if there are no subfolders.).
+     * Set the folder property: If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is empty if there are no subfolders.).
      * 
      * @param folder the folder value to set.
      * @return the JobProperties object itself.

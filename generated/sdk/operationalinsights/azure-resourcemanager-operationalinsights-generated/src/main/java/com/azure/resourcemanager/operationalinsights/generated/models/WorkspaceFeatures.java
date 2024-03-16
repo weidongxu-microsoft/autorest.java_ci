@@ -106,8 +106,7 @@ public final class WorkspaceFeatures {
     }
 
     /**
-     * Get the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission to use -
-     * resource or workspace or both.
+     * Get the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission to use - resource or workspace or both.
      * 
      * @return the enableLogAccessUsingOnlyResourcePermissions value.
      */
@@ -116,8 +115,7 @@ public final class WorkspaceFeatures {
     }
 
     /**
-     * Set the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission to use -
-     * resource or workspace or both.
+     * Set the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission to use - resource or workspace or both.
      * 
      * @param enableLogAccessUsingOnlyResourcePermissions the enableLogAccessUsingOnlyResourcePermissions value to set.
      * @return the WorkspaceFeatures object itself.
@@ -169,8 +167,7 @@ public final class WorkspaceFeatures {
     }
 
     /**
-     * Get the unifiedSentinelBillingOnly property: An indication if the specify workspace is limited to sentinel's
-     * unified billing model only.
+     * Get the unifiedSentinelBillingOnly property: An indication if the specify workspace is limited to sentinel's unified billing model only.
      * 
      * @return the unifiedSentinelBillingOnly value.
      */

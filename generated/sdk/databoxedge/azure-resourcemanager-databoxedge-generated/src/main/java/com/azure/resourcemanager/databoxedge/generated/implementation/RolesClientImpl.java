@@ -63,8 +63,7 @@ public final class RolesClientImpl implements RolesClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientRoles to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientRoles to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -124,8 +123,7 @@ public final class RolesClientImpl implements RolesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -163,8 +161,7 @@ public final class RolesClientImpl implements RolesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -860,8 +857,7 @@ public final class RolesClientImpl implements RolesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -891,8 +887,7 @@ public final class RolesClientImpl implements RolesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return collection of all the roles on the Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink,

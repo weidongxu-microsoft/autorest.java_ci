@@ -54,8 +54,7 @@ public interface NetworkSecurityPerimeterConfigurations {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
-     * with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -74,8 +73,7 @@ public interface NetworkSecurityPerimeterConfigurations {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
-     * with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -103,8 +101,7 @@ public interface NetworkSecurityPerimeterConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response
-     * with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityPerimeterConfiguration> list(String resourceGroupName,
         NetworkSecurityPerimeterResourceType resourceType, String resourceName);
@@ -121,8 +118,7 @@ public interface NetworkSecurityPerimeterConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response
-     * with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityPerimeterConfiguration> list(String resourceGroupName,
         NetworkSecurityPerimeterResourceType resourceType, String resourceName, Context context);

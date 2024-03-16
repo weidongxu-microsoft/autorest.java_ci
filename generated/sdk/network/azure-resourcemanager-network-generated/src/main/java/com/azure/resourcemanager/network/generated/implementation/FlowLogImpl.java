@@ -117,14 +117,16 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
     }
 
     public FlowLog create() {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs().createOrUpdate(resourceGroupName,
-            networkWatcherName, flowLogName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
+            .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public FlowLog create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs().createOrUpdate(resourceGroupName,
-            networkWatcherName, flowLogName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
+            .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, this.innerModel(), context);
         return this;
     }
 
@@ -140,14 +142,16 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
     }
 
     public FlowLog apply() {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs()
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
             .updateTagsWithResponse(resourceGroupName, networkWatcherName, flowLogName, updateParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public FlowLog apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs()
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
             .updateTagsWithResponse(resourceGroupName, networkWatcherName, flowLogName, updateParameters, context)
             .getValue();
         return this;
@@ -162,14 +166,18 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
     }
 
     public FlowLog refresh() {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs()
-            .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
+            .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public FlowLog refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getFlowLogs()
-            .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getFlowLogs()
+            .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, context)
+            .getValue();
         return this;
     }
 

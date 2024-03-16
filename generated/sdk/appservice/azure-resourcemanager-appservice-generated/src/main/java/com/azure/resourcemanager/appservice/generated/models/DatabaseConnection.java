@@ -49,10 +49,7 @@ public interface DatabaseConnection {
     String resourceId();
 
     /**
-     * Gets the connectionIdentity property: If present, the identity is used in conjunction with connection string to
-     * connect to the database. Use of the system-assigned managed identity is indicated with the string
-     * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed
-     * identity resource.
+     * Gets the connectionIdentity property: If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource.
      * 
      * @return the connectionIdentity value.
      */
@@ -126,8 +123,7 @@ public interface DatabaseConnection {
         }
 
         /**
-         * The stage of the DatabaseConnection definition which contains all the minimum required properties for the
-         * resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DatabaseConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithKind, DefinitionStages.WithResourceId, DefinitionStages.WithConnectionIdentity,
@@ -179,15 +175,9 @@ public interface DatabaseConnection {
          */
         interface WithConnectionIdentity {
             /**
-             * Specifies the connectionIdentity property: If present, the identity is used in conjunction with
-             * connection string to connect to the database. Use of the system-assigned managed identity is indicated
-             * with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the
-             * resource id of the managed identity resource..
+             * Specifies the connectionIdentity property: If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource..
              * 
-             * @param connectionIdentity If present, the identity is used in conjunction with connection string to
-             * connect to the database. Use of the system-assigned managed identity is indicated with the string
-             * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the
-             * managed identity resource.
+             * @param connectionIdentity If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource.
              * @return the next definition stage.
              */
             WithCreate withConnectionIdentity(String connectionIdentity);
@@ -270,15 +260,9 @@ public interface DatabaseConnection {
          */
         interface WithConnectionIdentity {
             /**
-             * Specifies the connectionIdentity property: If present, the identity is used in conjunction with
-             * connection string to connect to the database. Use of the system-assigned managed identity is indicated
-             * with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the
-             * resource id of the managed identity resource..
+             * Specifies the connectionIdentity property: If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource..
              * 
-             * @param connectionIdentity If present, the identity is used in conjunction with connection string to
-             * connect to the database. Use of the system-assigned managed identity is indicated with the string
-             * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the
-             * managed identity resource.
+             * @param connectionIdentity If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource.
              * @return the next definition stage.
              */
             Update withConnectionIdentity(String connectionIdentity);
@@ -331,8 +315,7 @@ public interface DatabaseConnection {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static Site Database Connection resource along with {@link Response}.
      */
@@ -341,8 +324,7 @@ public interface DatabaseConnection {
     /**
      * Returns details of a database connection for a static site build by name.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static Site Database Connection resource.
      */

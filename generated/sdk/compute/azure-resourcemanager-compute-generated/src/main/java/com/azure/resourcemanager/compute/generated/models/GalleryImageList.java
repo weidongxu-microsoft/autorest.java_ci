@@ -22,8 +22,7 @@ public final class GalleryImageList {
     private List<GalleryImageInner> value;
 
     /*
-     * The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call ListNext() with this to
-     * fetch the next page of gallery image definitions.
+     * The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call ListNext() with this to fetch the next page of gallery image definitions.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class GalleryImageList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call
-     * ListNext() with this to fetch the next page of gallery image definitions.
+     * Get the nextLink property: The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call ListNext() with this to fetch the next page of gallery image definitions.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class GalleryImageList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call
-     * ListNext() with this to fetch the next page of gallery image definitions.
+     * Set the nextLink property: The uri to fetch the next page of Image Definitions in the Shared Image Gallery. Call ListNext() with this to fetch the next page of gallery image definitions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryImageList object itself.

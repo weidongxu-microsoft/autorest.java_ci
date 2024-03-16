@@ -84,8 +84,7 @@ public final class StorageMigrationOptionsProperties {
     }
 
     /**
-     * Get the switchSiteAfterMigration property: &lt;code&gt;true&lt;/code&gt;if the app should be switched over;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the switchSiteAfterMigration property: &lt;code&gt;true&lt;/code&gt;if the app should be switched over; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the switchSiteAfterMigration value.
      */
@@ -94,8 +93,7 @@ public final class StorageMigrationOptionsProperties {
     }
 
     /**
-     * Set the switchSiteAfterMigration property: &lt;code&gt;true&lt;/code&gt;if the app should be switched over;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the switchSiteAfterMigration property: &lt;code&gt;true&lt;/code&gt;if the app should be switched over; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param switchSiteAfterMigration the switchSiteAfterMigration value to set.
      * @return the StorageMigrationOptionsProperties object itself.
@@ -106,8 +104,7 @@ public final class StorageMigrationOptionsProperties {
     }
 
     /**
-     * Get the blockWriteAccessToSite property: &lt;code&gt;true&lt;/code&gt; if the app should be read only during copy
-     * operation; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the blockWriteAccessToSite property: &lt;code&gt;true&lt;/code&gt; if the app should be read only during copy operation; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the blockWriteAccessToSite value.
      */
@@ -116,8 +113,7 @@ public final class StorageMigrationOptionsProperties {
     }
 
     /**
-     * Set the blockWriteAccessToSite property: &lt;code&gt;true&lt;/code&gt; if the app should be read only during copy
-     * operation; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the blockWriteAccessToSite property: &lt;code&gt;true&lt;/code&gt; if the app should be read only during copy operation; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param blockWriteAccessToSite the blockWriteAccessToSite value to set.
      * @return the StorageMigrationOptionsProperties object itself.

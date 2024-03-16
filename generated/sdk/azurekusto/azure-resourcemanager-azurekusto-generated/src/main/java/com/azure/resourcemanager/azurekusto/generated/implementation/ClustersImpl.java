@@ -255,8 +255,8 @@ public final class ClustersImpl implements Clusters {
 
     public void removeLanguageExtensions(String resourceGroupName, String clusterName,
         LanguageExtensionsList languageExtensionsToRemove, Context context) {
-        this.serviceClient().removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove,
-            context);
+        this.serviceClient()
+            .removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove, context);
     }
 
     public Cluster getById(String id) {

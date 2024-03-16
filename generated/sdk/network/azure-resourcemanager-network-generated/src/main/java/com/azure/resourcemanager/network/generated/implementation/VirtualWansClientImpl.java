@@ -66,8 +66,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualWans to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualWans to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -844,8 +843,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -879,8 +877,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -972,8 +969,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listSinglePageAsync() {
@@ -1002,8 +998,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listSinglePageAsync(Context context) {
@@ -1085,8 +1080,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1116,8 +1110,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1145,8 +1138,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listNextSinglePageAsync(String nextLink) {
@@ -1174,8 +1166,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return result of the request to list VirtualWANs along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualWanInner>> listNextSinglePageAsync(String nextLink, Context context) {

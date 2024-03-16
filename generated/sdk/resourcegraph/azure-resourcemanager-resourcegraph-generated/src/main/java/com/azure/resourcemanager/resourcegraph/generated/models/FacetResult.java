@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Successfully executed facet containing additional statistics on the response of a query.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "resultType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "resultType", defaultImpl = FacetResult.class, visible = true)
 @JsonTypeName("FacetResult")
 @Fluent
 public final class FacetResult extends Facet {
@@ -39,6 +39,7 @@ public final class FacetResult extends Facet {
      * Creates an instance of FacetResult class.
      */
     public FacetResult() {
+        withResultType("FacetResult");
     }
 
     /**
@@ -82,8 +83,7 @@ public final class FacetResult extends Facet {
     }
 
     /**
-     * Get the data property: A JObject array or Table containing the desired facets. Only present if the facet is
-     * valid.
+     * Get the data property: A JObject array or Table containing the desired facets. Only present if the facet is valid.
      * 
      * @return the data value.
      */
@@ -92,8 +92,7 @@ public final class FacetResult extends Facet {
     }
 
     /**
-     * Set the data property: A JObject array or Table containing the desired facets. Only present if the facet is
-     * valid.
+     * Set the data property: A JObject array or Table containing the desired facets. Only present if the facet is valid.
      * 
      * @param data the data value to set.
      * @return the FacetResult object itself.

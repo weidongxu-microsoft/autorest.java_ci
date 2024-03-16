@@ -18,8 +18,7 @@ public interface NetworkTrace {
     String path();
 
     /**
-     * Gets the status property: Current status of the network trace operation, same as Operation.Status
-     * (InProgress/Succeeded/Failed).
+     * Gets the status property: Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed).
      * 
      * @return the status value.
      */

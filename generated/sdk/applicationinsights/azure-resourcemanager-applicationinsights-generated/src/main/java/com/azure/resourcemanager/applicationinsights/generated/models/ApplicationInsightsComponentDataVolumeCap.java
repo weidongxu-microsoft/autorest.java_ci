@@ -125,8 +125,7 @@ public final class ApplicationInsightsComponentDataVolumeCap {
     }
 
     /**
-     * Get the stopSendNotificationWhenHitCap property: Do not send a notification email when the daily data volume cap
-     * is met.
+     * Get the stopSendNotificationWhenHitCap property: Do not send a notification email when the daily data volume cap is met.
      * 
      * @return the stopSendNotificationWhenHitCap value.
      */
@@ -135,8 +134,7 @@ public final class ApplicationInsightsComponentDataVolumeCap {
     }
 
     /**
-     * Set the stopSendNotificationWhenHitCap property: Do not send a notification email when the daily data volume cap
-     * is met.
+     * Set the stopSendNotificationWhenHitCap property: Do not send a notification email when the daily data volume cap is met.
      * 
      * @param stopSendNotificationWhenHitCap the stopSendNotificationWhenHitCap value to set.
      * @return the ApplicationInsightsComponentDataVolumeCap object itself.

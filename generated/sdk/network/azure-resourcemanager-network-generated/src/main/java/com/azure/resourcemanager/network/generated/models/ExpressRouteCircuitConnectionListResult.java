@@ -10,8 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListConnections API service call retrieves all global reach connections that belongs to a Private
- * Peering for an ExpressRouteCircuit.
+ * Response for ListConnections API service call retrieves all global reach connections that belongs to a Private Peering for an ExpressRouteCircuit.
  */
 @Fluent
 public final class ExpressRouteCircuitConnectionListResult {

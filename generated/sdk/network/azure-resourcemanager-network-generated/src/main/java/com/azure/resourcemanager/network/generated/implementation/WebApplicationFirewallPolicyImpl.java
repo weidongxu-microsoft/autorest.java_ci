@@ -73,7 +73,8 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
         List<ApplicationGatewayInner> inner = this.innerModel().applicationGateways();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new ApplicationGatewayImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -139,14 +140,18 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy create() {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -162,14 +167,18 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy apply() {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -183,14 +192,18 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
     }
 
     public WebApplicationFirewallPolicy refresh() {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
-            .getByResourceGroupWithResponse(resourceGroupName, policyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getWebApplicationFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, context)
+            .getValue();
         return this;
     }
 

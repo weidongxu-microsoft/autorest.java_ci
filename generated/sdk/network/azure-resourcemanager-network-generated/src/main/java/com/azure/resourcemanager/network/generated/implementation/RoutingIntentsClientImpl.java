@@ -64,8 +64,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientRoutingIntents to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientRoutingIntents to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -132,8 +131,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -183,8 +181,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -303,8 +300,10 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RoutingIntentInner>, RoutingIntentInner> beginCreateOrUpdate(String resourceGroupName,
         String virtualHubName, String routingIntentName, RoutingIntentInner routingIntentParameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routingIntentName,
-            routingIntentParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routingIntentName, routingIntentParameters,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -323,7 +322,8 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     private Mono<RoutingIntentInner> createOrUpdateAsync(String resourceGroupName, String virtualHubName,
         String routingIntentName, RoutingIntentInner routingIntentParameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routingIntentName, routingIntentParameters)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -394,8 +394,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoutingIntentInner>> getWithResponseAsync(String resourceGroupName, String virtualHubName,
@@ -437,8 +436,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion
-     * of {@link Mono}.
+     * @return the routing intent child resource of a Virtual hub along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoutingIntentInner>> getWithResponseAsync(String resourceGroupName, String virtualHubName,
@@ -755,8 +753,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoutingIntentInner>> listSinglePageAsync(String resourceGroupName,
@@ -795,8 +792,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoutingIntentInner>> listSinglePageAsync(String resourceGroupName, String virtualHubName,
@@ -834,8 +830,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     * with {@link PagedFlux}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RoutingIntentInner> listAsync(String resourceGroupName, String virtualHubName) {
@@ -852,8 +847,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     * with {@link PagedFlux}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RoutingIntentInner> listAsync(String resourceGroupName, String virtualHubName, Context context) {
@@ -869,8 +863,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     * with {@link PagedIterable}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoutingIntentInner> list(String resourceGroupName, String virtualHubName) {
@@ -886,8 +879,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     * with {@link PagedIterable}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoutingIntentInner> list(String resourceGroupName, String virtualHubName, Context context) {
@@ -903,8 +895,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoutingIntentInner>> listNextSinglePageAsync(String nextLink) {
@@ -932,8 +923,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of the routing intent result and a URL nextLink to get the next set of results along with
-     * {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of the routing intent result and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoutingIntentInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -40,6 +40,13 @@ public interface BaseAdminRule {
     String etag();
 
     /**
+     * Gets the kind property: Whether the rule is custom or default.
+     * 
+     * @return the kind value.
+     */
+    AdminRuleKind kind();
+
+    /**
      * Gets the systemData property: The system metadata related to this resource.
      * 
      * @return the systemData value.

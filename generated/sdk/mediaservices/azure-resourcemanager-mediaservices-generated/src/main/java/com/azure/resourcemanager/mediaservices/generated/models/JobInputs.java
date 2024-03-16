@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Describes a list of inputs to a Job.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputs.class, visible = true)
 @JsonTypeName("#Microsoft.Media.JobInputs")
 @Fluent
 public final class JobInputs extends JobInput {
@@ -27,6 +27,7 @@ public final class JobInputs extends JobInput {
      * Creates an instance of JobInputs class.
      */
     public JobInputs() {
+        withOdataType("#Microsoft.Media.JobInputs");
     }
 
     /**

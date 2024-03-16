@@ -57,8 +57,7 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientDeviceCapacityChecks to be used by the
-     * proxy service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientDeviceCapacityChecks to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -243,8 +242,10 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
     public SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(String resourceGroupName,
         String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
         final String capacityName = null;
-        return this.beginCheckResourceCreationFeasibilityAsync(resourceGroupName, deviceName, deviceCapacityRequestInfo,
-            capacityName).getSyncPoller();
+        return this
+            .beginCheckResourceCreationFeasibilityAsync(resourceGroupName, deviceName, deviceCapacityRequestInfo,
+                capacityName)
+            .getSyncPoller();
     }
 
     /**
@@ -263,8 +264,10 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(String resourceGroupName,
         String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo, String capacityName, Context context) {
-        return this.beginCheckResourceCreationFeasibilityAsync(resourceGroupName, deviceName, deviceCapacityRequestInfo,
-            capacityName, context).getSyncPoller();
+        return this
+            .beginCheckResourceCreationFeasibilityAsync(resourceGroupName, deviceName, deviceCapacityRequestInfo,
+                capacityName, context)
+            .getSyncPoller();
     }
 
     /**

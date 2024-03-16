@@ -67,8 +67,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientContainerApps to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientContainerApps to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -149,8 +148,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Container Apps in a given subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the Container Apps in a given subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listSinglePageAsync() {
@@ -178,8 +176,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Container Apps in a given subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the Container Apps in a given subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listSinglePageAsync(Context context) {
@@ -261,8 +258,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Container Apps in a given resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the Container Apps in a given resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -295,8 +291,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Container Apps in a given resource group along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the Container Apps in a given resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -982,8 +977,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App Secrets Collection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return container App Secrets Collection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretsCollectionInner>> listSecretsWithResponseAsync(String name) {
@@ -1013,8 +1007,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App Secrets Collection ARM resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return container App Secrets Collection ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretsCollectionInner>> listSecretsWithResponseAsync(String name, Context context) {
@@ -1087,8 +1080,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1118,8 +1110,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -1147,8 +1138,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1178,8 +1168,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return container App collection ARM resource along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerAppInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

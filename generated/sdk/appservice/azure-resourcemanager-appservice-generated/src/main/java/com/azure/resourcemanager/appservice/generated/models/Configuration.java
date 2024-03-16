@@ -21,9 +21,7 @@ public final class Configuration {
 
     /*
      * ActiveRevisionsMode controls how active revisions are handled for the Container app:
-     * <list><item>Multiple: multiple revisions can be active. If no value if provided, this is the
-     * default</item><item>Single: Only one revision can be active at a time. Revision weights can not be used in this
-     * mode</item></list>
+     * <list><item>Multiple: multiple revisions can be active. If no value if provided, this is the default</item><item>Single: Only one revision can be active at a time. Revision weights can not be used in this mode</item></list>
      */
     @JsonProperty(value = "activeRevisionsMode")
     private ActiveRevisionsMode activeRevisionsMode;
@@ -67,11 +65,8 @@ public final class Configuration {
     }
 
     /**
-     * Get the activeRevisionsMode property: ActiveRevisionsMode controls how active revisions are handled for the
-     * Container app:
-     * &lt;list&gt;&lt;item&gt;Multiple: multiple revisions can be active. If no value if provided, this is the
-     * default&lt;/item&gt;&lt;item&gt;Single: Only one revision can be active at a time. Revision weights can not be
-     * used in this mode&lt;/item&gt;&lt;/list&gt;.
+     * Get the activeRevisionsMode property: ActiveRevisionsMode controls how active revisions are handled for the Container app:
+     * &lt;list&gt;&lt;item&gt;Multiple: multiple revisions can be active. If no value if provided, this is the default&lt;/item&gt;&lt;item&gt;Single: Only one revision can be active at a time. Revision weights can not be used in this mode&lt;/item&gt;&lt;/list&gt;.
      * 
      * @return the activeRevisionsMode value.
      */
@@ -80,11 +75,8 @@ public final class Configuration {
     }
 
     /**
-     * Set the activeRevisionsMode property: ActiveRevisionsMode controls how active revisions are handled for the
-     * Container app:
-     * &lt;list&gt;&lt;item&gt;Multiple: multiple revisions can be active. If no value if provided, this is the
-     * default&lt;/item&gt;&lt;item&gt;Single: Only one revision can be active at a time. Revision weights can not be
-     * used in this mode&lt;/item&gt;&lt;/list&gt;.
+     * Set the activeRevisionsMode property: ActiveRevisionsMode controls how active revisions are handled for the Container app:
+     * &lt;list&gt;&lt;item&gt;Multiple: multiple revisions can be active. If no value if provided, this is the default&lt;/item&gt;&lt;item&gt;Single: Only one revision can be active at a time. Revision weights can not be used in this mode&lt;/item&gt;&lt;/list&gt;.
      * 
      * @param activeRevisionsMode the activeRevisionsMode value to set.
      * @return the Configuration object itself.
@@ -115,8 +107,7 @@ public final class Configuration {
     }
 
     /**
-     * Get the registries property: Collection of private container registry credentials for containers used by the
-     * Container app.
+     * Get the registries property: Collection of private container registry credentials for containers used by the Container app.
      * 
      * @return the registries value.
      */
@@ -125,8 +116,7 @@ public final class Configuration {
     }
 
     /**
-     * Set the registries property: Collection of private container registry credentials for containers used by the
-     * Container app.
+     * Set the registries property: Collection of private container registry credentials for containers used by the Container app.
      * 
      * @param registries the registries value to set.
      * @return the Configuration object itself.

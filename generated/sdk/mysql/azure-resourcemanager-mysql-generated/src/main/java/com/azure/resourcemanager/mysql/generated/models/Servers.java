@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 
 /**
  * Resource collection API of Servers.
@@ -125,6 +126,36 @@ public interface Servers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void failover(String resourceGroupName, String serverName, Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server along with {@link Response}.
+     */
+    Response<HighAvailabilityValidationEstimation> validateEstimateHighAvailabilityWithResponse(
+        String resourceGroupName, String serverName, HighAvailabilityValidationEstimationInner parameters,
+        Context context);
+
+    /**
+     * Validate a deployment of high availability.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The required parameters for validation of high availability deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return high availability validation properties of a server.
+     */
+    HighAvailabilityValidationEstimation validateEstimateHighAvailability(String resourceGroupName, String serverName,
+        HighAvailabilityValidationEstimationInner parameters);
 
     /**
      * Restarts a server.

@@ -65,8 +65,7 @@ public final class ContainersClientImpl implements ContainersClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientContainers to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientContainers to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -140,8 +139,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerInner>> listByStorageAccountSinglePageAsync(String deviceName,
@@ -185,8 +183,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerInner>> listByStorageAccountSinglePageAsync(String deviceName,
@@ -228,8 +225,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ContainerInner> listByStorageAccountAsync(String deviceName, String storageAccountName,
@@ -249,8 +245,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedFlux}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ContainerInner> listByStorageAccountAsync(String deviceName, String storageAccountName,
@@ -269,8 +264,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ContainerInner> listByStorageAccount(String deviceName, String storageAccountName,
@@ -288,8 +282,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with
-     * {@link PagedIterable}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ContainerInner> listByStorageAccount(String deviceName, String storageAccountName,
@@ -455,8 +448,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents a container on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName,
@@ -508,8 +500,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return represents a container on the  Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName,
@@ -560,7 +551,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a container on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ContainerInner>, ContainerInner> beginCreateOrUpdateAsync(String deviceName,
@@ -583,7 +574,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a container on the Data Box Edge/Gateway device.
+     * @return the {@link PollerFlux} for polling of represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ContainerInner>, ContainerInner> beginCreateOrUpdateAsync(String deviceName,
@@ -607,7 +598,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a container on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ContainerInner>, ContainerInner> beginCreateOrUpdate(String deviceName,
@@ -629,14 +620,16 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a container on the Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ContainerInner>, ContainerInner> beginCreateOrUpdate(String deviceName,
         String storageAccountName, String containerName, String resourceGroupName, ContainerInner container,
         Context context) {
-        return this.beginCreateOrUpdateAsync(deviceName, storageAccountName, containerName, resourceGroupName,
-            container, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(deviceName, storageAccountName, containerName, resourceGroupName, container,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -650,13 +643,14 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device on successful completion of {@link Mono}.
+     * @return represents a container on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ContainerInner> createOrUpdateAsync(String deviceName, String storageAccountName, String containerName,
         String resourceGroupName, ContainerInner container) {
         return beginCreateOrUpdateAsync(deviceName, storageAccountName, containerName, resourceGroupName, container)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -671,7 +665,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device on successful completion of {@link Mono}.
+     * @return represents a container on the  Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ContainerInner> createOrUpdateAsync(String deviceName, String storageAccountName, String containerName,
@@ -691,7 +685,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device.
+     * @return represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ContainerInner createOrUpdate(String deviceName, String storageAccountName, String containerName,
@@ -711,7 +705,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a container on the Data Box Edge/Gateway device.
+     * @return represents a container on the  Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ContainerInner createOrUpdate(String deviceName, String storageAccountName, String containerName,
@@ -1217,8 +1211,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerInner>> listByStorageAccountNextSinglePageAsync(String nextLink) {
@@ -1248,8 +1241,7 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on
-     * successful completion of {@link Mono}.
+     * @return collection of all the containers on the Data Box Edge/Gateway device along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ContainerInner>> listByStorageAccountNextSinglePageAsync(String nextLink,

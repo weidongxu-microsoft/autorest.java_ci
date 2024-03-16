@@ -13,9 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VMScaleSetConvertToSinglePlacementGroupInput {
     /*
-     * Id of the placement group in which you want future virtual machine instances to be placed. To query placement
-     * group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with
-     * maximum number of virtual machine instances.
+     * Id of the placement group in which you want future virtual machine instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with maximum number of virtual machine instances.
      */
     @JsonProperty(value = "activePlacementGroupId")
     private String activePlacementGroupId;
@@ -27,9 +25,7 @@ public final class VMScaleSetConvertToSinglePlacementGroupInput {
     }
 
     /**
-     * Get the activePlacementGroupId property: Id of the placement group in which you want future virtual machine
-     * instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not
-     * provided, the platform will choose one with maximum number of virtual machine instances.
+     * Get the activePlacementGroupId property: Id of the placement group in which you want future virtual machine instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with maximum number of virtual machine instances.
      * 
      * @return the activePlacementGroupId value.
      */
@@ -38,9 +34,7 @@ public final class VMScaleSetConvertToSinglePlacementGroupInput {
     }
 
     /**
-     * Set the activePlacementGroupId property: Id of the placement group in which you want future virtual machine
-     * instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not
-     * provided, the platform will choose one with maximum number of virtual machine instances.
+     * Set the activePlacementGroupId property: Id of the placement group in which you want future virtual machine instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with maximum number of virtual machine instances.
      * 
      * @param activePlacementGroupId the activePlacementGroupId value to set.
      * @return the VMScaleSetConvertToSinglePlacementGroupInput object itself.

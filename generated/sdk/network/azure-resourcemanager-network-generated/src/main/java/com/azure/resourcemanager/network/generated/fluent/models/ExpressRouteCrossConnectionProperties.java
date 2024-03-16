@@ -149,8 +149,7 @@ public final class ExpressRouteCrossConnectionProperties {
     }
 
     /**
-     * Get the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity
-     * provider system.
+     * Get the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity provider system.
      * 
      * @return the serviceProviderProvisioningState value.
      */
@@ -159,8 +158,7 @@ public final class ExpressRouteCrossConnectionProperties {
     }
 
     /**
-     * Set the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity
-     * provider system.
+     * Set the serviceProviderProvisioningState property: The provisioning state of the circuit in the connectivity provider system.
      * 
      * @param serviceProviderProvisioningState the serviceProviderProvisioningState value to set.
      * @return the ExpressRouteCrossConnectionProperties object itself.

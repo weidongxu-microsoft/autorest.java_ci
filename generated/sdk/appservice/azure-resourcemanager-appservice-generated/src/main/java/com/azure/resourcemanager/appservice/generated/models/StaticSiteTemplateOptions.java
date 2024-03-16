@@ -49,8 +49,7 @@ public final class StaticSiteTemplateOptions {
     }
 
     /**
-     * Get the templateRepositoryUrl property: URL of the template repository. The newly generated repository will be
-     * based on this one.
+     * Get the templateRepositoryUrl property: URL of the template repository. The newly generated repository will be based on this one.
      * 
      * @return the templateRepositoryUrl value.
      */
@@ -59,8 +58,7 @@ public final class StaticSiteTemplateOptions {
     }
 
     /**
-     * Set the templateRepositoryUrl property: URL of the template repository. The newly generated repository will be
-     * based on this one.
+     * Set the templateRepositoryUrl property: URL of the template repository. The newly generated repository will be based on this one.
      * 
      * @param templateRepositoryUrl the templateRepositoryUrl value to set.
      * @return the StaticSiteTemplateOptions object itself.
@@ -131,8 +129,7 @@ public final class StaticSiteTemplateOptions {
     }
 
     /**
-     * Get the isPrivate property: Whether or not the newly generated repository is a private repository. Defaults to
-     * false (i.e. public).
+     * Get the isPrivate property: Whether or not the newly generated repository is a private repository. Defaults to false (i.e. public).
      * 
      * @return the isPrivate value.
      */
@@ -141,8 +138,7 @@ public final class StaticSiteTemplateOptions {
     }
 
     /**
-     * Set the isPrivate property: Whether or not the newly generated repository is a private repository. Defaults to
-     * false (i.e. public).
+     * Set the isPrivate property: Whether or not the newly generated repository is a private repository. Defaults to false (i.e. public).
      * 
      * @param isPrivate the isPrivate value to set.
      * @return the StaticSiteTemplateOptions object itself.

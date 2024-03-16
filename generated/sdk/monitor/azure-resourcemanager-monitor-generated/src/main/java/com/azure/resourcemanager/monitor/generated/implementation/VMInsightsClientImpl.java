@@ -51,8 +51,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     }
 
     /**
-     * The interface defining all the services for MonitorClientVMInsights to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for MonitorClientVMInsights to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientVMInsig")
@@ -70,13 +69,11 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
      * 
-     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     * to retrieve.
+     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status to retrieve.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VMInsightsOnboardingStatusInner>> getOnboardingStatusWithResponseAsync(String resourceUri) {
@@ -97,14 +94,12 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
      * 
-     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     * to retrieve.
+     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status to retrieve.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VMInsightsOnboardingStatusInner>> getOnboardingStatusWithResponseAsync(String resourceUri,
@@ -125,8 +120,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
      * 
-     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     * to retrieve.
+     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status to retrieve.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -140,8 +134,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
      * 
-     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     * to retrieve.
+     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status to retrieve.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -157,8 +150,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
      * 
-     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     * to retrieve.
+     * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status to retrieve.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

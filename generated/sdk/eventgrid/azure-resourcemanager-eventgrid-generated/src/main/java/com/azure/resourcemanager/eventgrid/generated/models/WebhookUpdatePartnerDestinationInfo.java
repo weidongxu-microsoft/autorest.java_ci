@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Information about the update of the WebHook of the partner destination.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = WebhookUpdatePartnerDestinationInfo.class,
+    visible = true)
 @JsonTypeName("WebHook")
 @Fluent
 public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDestinationInfo {
@@ -27,6 +31,7 @@ public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDest
      * Creates an instance of WebhookUpdatePartnerDestinationInfo class.
      */
     public WebhookUpdatePartnerDestinationInfo() {
+        withEndpointType(PartnerEndpointType.WEB_HOOK);
     }
 
     /**

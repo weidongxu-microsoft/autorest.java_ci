@@ -75,8 +75,7 @@ public interface ConfigurationPolicyGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
         String vpnServerConfigurationName);
@@ -90,8 +89,7 @@ public interface ConfigurationPolicyGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
-     * {@link PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
         String vpnServerConfigurationName, Context context);

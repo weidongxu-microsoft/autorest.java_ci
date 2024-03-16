@@ -147,8 +147,7 @@ public final class StorageAccountProperties {
     }
 
     /**
-     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to
-     * Cloud.
+     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
      * 
      * @return the containerCount value.
      */

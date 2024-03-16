@@ -91,8 +91,7 @@ public interface BackupAndExportResponse {
     Long dataTransferredInBytes();
 
     /**
-     * Gets the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value
-     * pairs.
+     * Gets the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value pairs.
      * 
      * @return the backupMetadata value.
      */

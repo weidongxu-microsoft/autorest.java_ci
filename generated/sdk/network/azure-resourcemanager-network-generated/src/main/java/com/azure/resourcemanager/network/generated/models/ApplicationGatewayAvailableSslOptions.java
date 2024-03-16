@@ -77,8 +77,7 @@ public interface ApplicationGatewayAvailableSslOptions {
     List<ApplicationGatewaySslProtocol> availableProtocols();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableSslOptionsInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableSslOptionsInner object.
      * 
      * @return the inner object.
      */

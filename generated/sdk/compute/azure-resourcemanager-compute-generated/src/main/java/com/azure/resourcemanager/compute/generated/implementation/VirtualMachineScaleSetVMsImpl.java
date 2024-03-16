@@ -86,8 +86,8 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     public VirtualMachineScaleSetVM update(String resourceGroupName, String vmScaleSetName, String instanceId,
         VirtualMachineScaleSetVMInner parameters, String ifMatch, String ifNoneMatch, Context context) {
-        VirtualMachineScaleSetVMInner inner = this.serviceClient().update(resourceGroupName, vmScaleSetName, instanceId,
-            parameters, ifMatch, ifNoneMatch, context);
+        VirtualMachineScaleSetVMInner inner = this.serviceClient()
+            .update(resourceGroupName, vmScaleSetName, instanceId, parameters, ifMatch, ifNoneMatch, context);
         if (inner != null) {
             return new VirtualMachineScaleSetVMImpl(inner, this.manager());
         } else {
@@ -196,9 +196,9 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(String resourceGroupName,
         String vmScaleSetName, String instanceId, Integer sasUriExpirationTimeInMinutes, Context context) {
-        Response<RetrieveBootDiagnosticsDataResultInner> inner
-            = this.serviceClient().retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmScaleSetName,
-                instanceId, sasUriExpirationTimeInMinutes, context);
+        Response<RetrieveBootDiagnosticsDataResultInner> inner = this.serviceClient()
+            .retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmScaleSetName, instanceId,
+                sasUriExpirationTimeInMinutes, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RetrieveBootDiagnosticsDataResultImpl(inner.getValue(), this.manager()));
@@ -229,8 +229,8 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     public Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmScaleSetName,
         String instanceId, Context context) {
-        return this.serviceClient().simulateEvictionWithResponse(resourceGroupName, vmScaleSetName, instanceId,
-            context);
+        return this.serviceClient()
+            .simulateEvictionWithResponse(resourceGroupName, vmScaleSetName, instanceId, context);
     }
 
     public void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId) {
@@ -250,8 +250,8 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     public StorageProfile attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
         AttachDetachDataDisksRequest parameters, Context context) {
-        StorageProfileInner inner = this.serviceClient().attachDetachDataDisks(resourceGroupName, vmScaleSetName,
-            instanceId, parameters, context);
+        StorageProfileInner inner = this.serviceClient()
+            .attachDetachDataDisks(resourceGroupName, vmScaleSetName, instanceId, parameters, context);
         if (inner != null) {
             return new StorageProfileImpl(inner, this.manager());
         } else {

@@ -13,7 +13,11 @@ import java.util.List;
 /**
  * Firewall Policy Filter Rule Collection.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "ruleCollectionType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "ruleCollectionType",
+    defaultImpl = FirewallPolicyFilterRuleCollection.class,
+    visible = true)
 @JsonTypeName("FirewallPolicyFilterRuleCollection")
 @Fluent
 public final class FirewallPolicyFilterRuleCollection extends FirewallPolicyRuleCollection {
@@ -33,6 +37,7 @@ public final class FirewallPolicyFilterRuleCollection extends FirewallPolicyRule
      * Creates an instance of FirewallPolicyFilterRuleCollection class.
      */
     public FirewallPolicyFilterRuleCollection() {
+        withRuleCollectionType(FirewallPolicyRuleCollectionType.FIREWALL_POLICY_FILTER_RULE_COLLECTION);
     }
 
     /**

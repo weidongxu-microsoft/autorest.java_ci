@@ -51,8 +51,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
     }
 
     /**
-     * The interface defining all the services for MonitorClientPrivateLinkScopeOperationStatus to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for MonitorClientPrivateLinkScopeOperationStatus to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
@@ -75,8 +74,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the status of an azure asynchronous operation associated with a private link scope operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -114,8 +112,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return the status of an azure asynchronous operation associated with a private link scope operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -151,8 +148,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation on
-     * successful completion of {@link Mono}.
+     * @return the status of an azure asynchronous operation associated with a private link scope operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> getByResourceGroupAsync(String resourceGroupName, String asyncOperationId) {
@@ -169,8 +165,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation along with
-     * {@link Response}.
+     * @return the status of an azure asynchronous operation associated with a private link scope operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OperationStatusInner> getByResourceGroupWithResponse(String resourceGroupName,

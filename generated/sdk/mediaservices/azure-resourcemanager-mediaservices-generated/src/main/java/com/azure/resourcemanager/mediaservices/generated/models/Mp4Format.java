@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Describes the properties for an output ISO MP4 file.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Mp4Format.class, visible = true)
 @JsonTypeName("#Microsoft.Media.Mp4Format")
 @Fluent
 public final class Mp4Format extends MultiBitrateFormat {
@@ -20,6 +20,7 @@ public final class Mp4Format extends MultiBitrateFormat {
      * Creates an instance of Mp4Format class.
      */
     public Mp4Format() {
+        withOdataType("#Microsoft.Media.Mp4Format");
     }
 
     /**

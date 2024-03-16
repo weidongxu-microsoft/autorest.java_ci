@@ -122,8 +122,7 @@ public interface SecurityAdminConfiguration {
         }
 
         /**
-         * The stage of the SecurityAdminConfiguration definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SecurityAdminConfiguration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithDescription, DefinitionStages.WithApplyOnNetworkIntentPolicyBasedServices {
@@ -157,13 +156,11 @@ public interface SecurityAdminConfiguration {
         }
 
         /**
-         * The stage of the SecurityAdminConfiguration definition allowing to specify
-         * applyOnNetworkIntentPolicyBasedServices.
+         * The stage of the SecurityAdminConfiguration definition allowing to specify applyOnNetworkIntentPolicyBasedServices.
          */
         interface WithApplyOnNetworkIntentPolicyBasedServices {
             /**
-             * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based
-             * services..
+             * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based services..
              * 
              * @param applyOnNetworkIntentPolicyBasedServices Enum list of network intent policy based services.
              * @return the next definition stage.
@@ -218,13 +215,11 @@ public interface SecurityAdminConfiguration {
         }
 
         /**
-         * The stage of the SecurityAdminConfiguration update allowing to specify
-         * applyOnNetworkIntentPolicyBasedServices.
+         * The stage of the SecurityAdminConfiguration update allowing to specify applyOnNetworkIntentPolicyBasedServices.
          */
         interface WithApplyOnNetworkIntentPolicyBasedServices {
             /**
-             * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based
-             * services..
+             * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based services..
              * 
              * @param applyOnNetworkIntentPolicyBasedServices Enum list of network intent policy based services.
              * @return the next definition stage.

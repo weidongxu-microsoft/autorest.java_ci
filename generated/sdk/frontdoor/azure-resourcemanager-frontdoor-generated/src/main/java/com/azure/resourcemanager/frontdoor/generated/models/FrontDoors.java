@@ -64,8 +64,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
-     * with {@link Response}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response}.
      */
     Response<FrontDoor> getByResourceGroupWithResponse(String resourceGroupName, String frontDoorName, Context context);
 
@@ -140,8 +139,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
-     * with {@link Response}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response}.
      */
     FrontDoor getById(String id);
 
@@ -153,8 +151,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
-     * with {@link Response}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response}.
      */
     Response<FrontDoor> getByIdWithResponse(String id, Context context);
 

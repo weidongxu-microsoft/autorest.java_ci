@@ -37,8 +37,8 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     public Response<FirewallPolicy> getByResourceGroupWithResponse(String resourceGroupName, String firewallPolicyName,
         String expand, Context context) {
-        Response<FirewallPolicyInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            firewallPolicyName, expand, context);
+        Response<FirewallPolicyInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FirewallPolicyImpl(inner.getValue(), this.manager()));

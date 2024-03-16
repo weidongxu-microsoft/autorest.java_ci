@@ -20,9 +20,9 @@ public final class DiagnosticMetricSample {
     private OffsetDateTime timestamp;
 
     /*
-     * Role Instance. Null if this counter is not per instance
+     * Role Instance. Null if this counter is not per instance 
      * This is returned and should be whichever instance name we desire to be returned
-     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0)
+     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0) 
      * where RDWORKERNAME is Machine name below and RoleInstance name in parenthesis
      */
     @JsonProperty(value = "roleInstance")
@@ -79,9 +79,9 @@ public final class DiagnosticMetricSample {
     }
 
     /**
-     * Get the roleInstance property: Role Instance. Null if this counter is not per instance
+     * Get the roleInstance property: Role Instance. Null if this counter is not per instance 
      * This is returned and should be whichever instance name we desire to be returned
-     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0)
+     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0) 
      * where RDWORKERNAME is Machine name below and RoleInstance name in parenthesis.
      * 
      * @return the roleInstance value.
@@ -91,9 +91,9 @@ public final class DiagnosticMetricSample {
     }
 
     /**
-     * Set the roleInstance property: Role Instance. Null if this counter is not per instance
+     * Set the roleInstance property: Role Instance. Null if this counter is not per instance 
      * This is returned and should be whichever instance name we desire to be returned
-     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0)
+     * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0) 
      * where RDWORKERNAME is Machine name below and RoleInstance name in parenthesis.
      * 
      * @param roleInstance the roleInstance value to set.

@@ -48,8 +48,7 @@ public interface VirtualHubIpConfigurationsClient {
     HubIpConfigurationInner get(String resourceGroupName, String virtualHubName, String ipConfigName);
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -65,8 +64,7 @@ public interface VirtualHubIpConfigurationsClient {
         String resourceGroupName, String virtualHubName, String ipConfigName, HubIpConfigurationInner parameters);
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -84,8 +82,7 @@ public interface VirtualHubIpConfigurationsClient {
         Context context);
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
@@ -101,8 +98,7 @@ public interface VirtualHubIpConfigurationsClient {
         HubIpConfigurationInner parameters);
 
     /**
-     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
-     * VirtualHubIpConfiguration.
+     * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.
      * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.

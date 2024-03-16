@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Specifies the name of the setting to which the content applies. Possible values are: FirstLogonCommands and
- * AutoLogon.
+ * Specifies the name of the setting to which the content applies. Possible values are: FirstLogonCommands and AutoLogon.
  */
 public enum SettingNames {
     /**

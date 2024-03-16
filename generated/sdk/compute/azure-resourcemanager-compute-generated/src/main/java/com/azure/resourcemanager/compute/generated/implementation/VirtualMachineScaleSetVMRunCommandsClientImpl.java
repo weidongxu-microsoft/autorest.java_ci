@@ -66,8 +66,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMRunCommands to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMRunCommands to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -147,8 +146,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -199,8 +197,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -328,8 +325,10 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
     public SyncPoller<PollResult<VirtualMachineRunCommandInner>, VirtualMachineRunCommandInner> beginCreateOrUpdate(
         String resourceGroupName, String vmScaleSetName, String instanceId, String runCommandName,
         VirtualMachineRunCommandInner runCommand, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand,
-            context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand,
+                context)
+            .getSyncPoller();
     }
 
     /**
@@ -349,7 +348,8 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
     private Mono<VirtualMachineRunCommandInner> createOrUpdateAsync(String resourceGroupName, String vmScaleSetName,
         String instanceId, String runCommandName, VirtualMachineRunCommandInner runCommand) {
         return beginCreateOrUpdateAsync(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -424,8 +424,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -476,8 +475,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -646,7 +644,8 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
     private Mono<VirtualMachineRunCommandInner> updateAsync(String resourceGroupName, String vmScaleSetName,
         String instanceId, String runCommandName, VirtualMachineRunCommandUpdate runCommand, Context context) {
         return beginUpdateAsync(resourceGroupName, vmScaleSetName, instanceId, runCommandName, runCommand, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -942,8 +941,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineRunCommandInner>> getWithResponseAsync(String resourceGroupName,
@@ -989,8 +987,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineRunCommandInner>> getWithResponseAsync(String resourceGroupName,
@@ -1094,8 +1091,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>> listSinglePageAsync(String resourceGroupName,
@@ -1139,8 +1135,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>> listSinglePageAsync(String resourceGroupName,
@@ -1278,8 +1273,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>> listNextSinglePageAsync(String nextLink) {
@@ -1307,8 +1301,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>> listNextSinglePageAsync(String nextLink,

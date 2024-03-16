@@ -64,8 +64,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
     }
 
     /**
-     * The interface defining all the services for MonitorClientPrivateLinkScopedResources to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for MonitorClientPrivateLinkScopedResources to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
@@ -127,8 +126,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ScopedResourceInner>> getWithResponseAsync(String resourceGroupName, String scopeName,
@@ -169,8 +167,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ScopedResourceInner>> getWithResponseAsync(String resourceGroupName, String scopeName,
@@ -726,8 +723,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeSinglePageAsync(String resourceGroupName,
@@ -766,8 +762,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeSinglePageAsync(String resourceGroupName,
@@ -839,8 +834,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope as paginated response with
-     * {@link PagedIterable}.
+     * @return all private endpoint connections on a private link scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ScopedResourceInner> listByPrivateLinkScope(String resourceGroupName, String scopeName) {
@@ -856,8 +850,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope as paginated response with
-     * {@link PagedIterable}.
+     * @return all private endpoint connections on a private link scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ScopedResourceInner> listByPrivateLinkScope(String resourceGroupName, String scopeName,
@@ -874,8 +867,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(String nextLink) {
@@ -905,8 +897,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(String nextLink,

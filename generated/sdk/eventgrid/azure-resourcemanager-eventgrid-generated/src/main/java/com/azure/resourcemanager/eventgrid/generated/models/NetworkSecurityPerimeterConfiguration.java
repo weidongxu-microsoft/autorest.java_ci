@@ -33,16 +33,14 @@ public interface NetworkSecurityPerimeterConfiguration {
     String type();
 
     /**
-     * Gets the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp
-     * profile configuration retrieval.
+     * Gets the provisioningState property: Provisioning state to reflect configuration state and indicate status of nsp profile configuration retrieval.
      * 
      * @return the provisioningState value.
      */
     NetworkSecurityPerimeterConfigProvisioningState provisioningState();
 
     /**
-     * Gets the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp
-     * profile configuration.
+     * Gets the provisioningIssues property: Provisioning issues to reflect status when attempting to retrieve nsp profile configuration.
      * 
      * @return the provisioningIssues value.
      */
@@ -70,8 +68,7 @@ public interface NetworkSecurityPerimeterConfiguration {
     NetworkSecurityPerimeterConfigurationProfile profile();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.eventgrid.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
      * 
      * @return the inner object.
      */

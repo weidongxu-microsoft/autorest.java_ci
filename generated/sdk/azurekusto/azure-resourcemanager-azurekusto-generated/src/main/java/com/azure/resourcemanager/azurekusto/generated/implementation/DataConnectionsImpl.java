@@ -60,8 +60,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public DataConnectionValidationListResult dataConnectionValidation(String resourceGroupName, String clusterName,
         String databaseName, DataConnectionValidationInner parameters, Context context) {
-        DataConnectionValidationListResultInner inner = this.serviceClient().dataConnectionValidation(resourceGroupName,
-            clusterName, databaseName, parameters, context);
+        DataConnectionValidationListResultInner inner = this.serviceClient()
+            .dataConnectionValidation(resourceGroupName, clusterName, databaseName, parameters, context);
         if (inner != null) {
             return new DataConnectionValidationListResultImpl(inner, this.manager());
         } else {
@@ -71,8 +71,9 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
         String databaseName, DataConnectionCheckNameRequest dataConnectionName, Context context) {
-        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
-            clusterName, databaseName, dataConnectionName, context);
+        Response<CheckNameResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, databaseName, dataConnectionName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
@@ -83,8 +84,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public CheckNameResult checkNameAvailability(String resourceGroupName, String clusterName, String databaseName,
         DataConnectionCheckNameRequest dataConnectionName) {
-        CheckNameResultInner inner = this.serviceClient().checkNameAvailability(resourceGroupName, clusterName,
-            databaseName, dataConnectionName);
+        CheckNameResultInner inner = this.serviceClient()
+            .checkNameAvailability(resourceGroupName, clusterName, databaseName, dataConnectionName);
         if (inner != null) {
             return new CheckNameResultImpl(inner, this.manager());
         } else {
@@ -94,8 +95,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public Response<DataConnection> getWithResponse(String resourceGroupName, String clusterName, String databaseName,
         String dataConnectionName, Context context) {
-        Response<DataConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName, clusterName,
-            databaseName, dataConnectionName, context);
+        Response<DataConnectionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, clusterName, databaseName, dataConnectionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DataConnectionImpl(inner.getValue(), this.manager()));
@@ -117,8 +118,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public DataConnection createOrUpdate(String resourceGroupName, String clusterName, String databaseName,
         String dataConnectionName, DataConnectionInner parameters) {
-        DataConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, clusterName, databaseName,
-            dataConnectionName, parameters);
+        DataConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters);
         if (inner != null) {
             return new DataConnectionImpl(inner, this.manager());
         } else {
@@ -128,8 +129,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public DataConnection createOrUpdate(String resourceGroupName, String clusterName, String databaseName,
         String dataConnectionName, DataConnectionInner parameters, Context context) {
-        DataConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, clusterName, databaseName,
-            dataConnectionName, parameters, context);
+        DataConnectionInner inner = this.serviceClient()
+            .createOrUpdate(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context);
         if (inner != null) {
             return new DataConnectionImpl(inner, this.manager());
         } else {
@@ -150,8 +151,8 @@ public final class DataConnectionsImpl implements DataConnections {
 
     public DataConnection update(String resourceGroupName, String clusterName, String databaseName,
         String dataConnectionName, DataConnectionInner parameters, Context context) {
-        DataConnectionInner inner = this.serviceClient().update(resourceGroupName, clusterName, databaseName,
-            dataConnectionName, parameters, context);
+        DataConnectionInner inner = this.serviceClient()
+            .update(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context);
         if (inner != null) {
             return new DataConnectionImpl(inner, this.manager());
         } else {

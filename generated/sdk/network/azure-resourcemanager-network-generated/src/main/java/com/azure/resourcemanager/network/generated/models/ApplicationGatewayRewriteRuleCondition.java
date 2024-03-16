@@ -63,8 +63,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Get the pattern property: The pattern, either fixed string or regular expression, that evaluates the truthfulness
-     * of the condition.
+     * Get the pattern property: The pattern, either fixed string or regular expression, that evaluates the truthfulness of the condition.
      * 
      * @return the pattern value.
      */
@@ -73,8 +72,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Set the pattern property: The pattern, either fixed string or regular expression, that evaluates the truthfulness
-     * of the condition.
+     * Set the pattern property: The pattern, either fixed string or regular expression, that evaluates the truthfulness of the condition.
      * 
      * @param pattern the pattern value to set.
      * @return the ApplicationGatewayRewriteRuleCondition object itself.
@@ -85,8 +83,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Get the ignoreCase property: Setting this parameter to truth value with force the pattern to do a case
-     * in-sensitive comparison.
+     * Get the ignoreCase property: Setting this parameter to truth value with force the pattern to do a case in-sensitive comparison.
      * 
      * @return the ignoreCase value.
      */
@@ -95,8 +92,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Set the ignoreCase property: Setting this parameter to truth value with force the pattern to do a case
-     * in-sensitive comparison.
+     * Set the ignoreCase property: Setting this parameter to truth value with force the pattern to do a case in-sensitive comparison.
      * 
      * @param ignoreCase the ignoreCase value to set.
      * @return the ApplicationGatewayRewriteRuleCondition object itself.
@@ -107,8 +103,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Get the negate property: Setting this value as truth will force to check the negation of the condition given by
-     * the user.
+     * Get the negate property: Setting this value as truth will force to check the negation of the condition given by the user.
      * 
      * @return the negate value.
      */
@@ -117,8 +112,7 @@ public final class ApplicationGatewayRewriteRuleCondition {
     }
 
     /**
-     * Set the negate property: Setting this value as truth will force to check the negation of the condition given by
-     * the user.
+     * Set the negate property: Setting this value as truth will force to check the negation of the condition given by the user.
      * 
      * @param negate the negate value to set.
      * @return the ApplicationGatewayRewriteRuleCondition object itself.

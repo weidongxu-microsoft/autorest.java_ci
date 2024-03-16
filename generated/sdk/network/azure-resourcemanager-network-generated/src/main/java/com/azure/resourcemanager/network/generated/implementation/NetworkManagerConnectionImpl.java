@@ -59,14 +59,18 @@ public final class NetworkManagerConnectionImpl
     private String networkManagerConnectionName;
 
     public NetworkManagerConnection create() {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkManagerConnection create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -82,14 +86,18 @@ public final class NetworkManagerConnectionImpl
     }
 
     public NetworkManagerConnection apply() {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkManagerConnection apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .createOrUpdateWithResponse(networkManagerConnectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -102,14 +110,18 @@ public final class NetworkManagerConnectionImpl
     }
 
     public NetworkManagerConnection refresh() {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .getWithResponse(networkManagerConnectionName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .getWithResponse(networkManagerConnectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkManagerConnection refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getSubscriptionNetworkManagerConnections()
-            .getWithResponse(networkManagerConnectionName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getSubscriptionNetworkManagerConnections()
+            .getWithResponse(networkManagerConnectionName, context)
+            .getValue();
         return this;
     }
 

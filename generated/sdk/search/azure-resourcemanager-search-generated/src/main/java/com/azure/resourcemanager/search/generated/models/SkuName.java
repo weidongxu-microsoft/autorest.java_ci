@@ -4,88 +4,75 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
+import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Collection;
 
 /**
- * The SKU of the search service. Valid values include: 'free': Shared service. 'basic': Dedicated service with up to 3
- * replicas. 'standard': Dedicated service with up to 12 partitions and 12 replicas. 'standard2': Similar to standard,
- * but with more capacity per search unit. 'standard3': The largest Standard offering with up to 12 partitions and 12
- * replicas (or up to 3 partitions with more indexes if you also set the hostingMode property to 'highDensity').
- * 'storage_optimized_l1': Supports 1TB per partition, up to 12 partitions. 'storage_optimized_l2': Supports 2TB per
- * partition, up to 12 partitions.'.
+ * The SKU of the search service. Valid values include: 'free': Shared service. 'basic': Dedicated service with up to 3 replicas. 'standard': Dedicated service with up to 12 partitions and 12 replicas. 'standard2': Similar to standard, but with more capacity per search unit. 'standard3': The largest Standard offering with up to 12 partitions and 12 replicas (or up to 3 partitions with more indexes if you also set the hostingMode property to 'highDensity'). 'storage_optimized_l1': Supports 1TB per partition, up to 12 partitions. 'storage_optimized_l2': Supports 2TB per partition, up to 12 partitions.'.
  */
-public enum SkuName {
+public final class SkuName extends ExpandableStringEnum<SkuName> {
     /**
-     * Enum value free.
+     * Static value free for SkuName.
      */
-    FREE("free"),
+    public static final SkuName FREE = fromString("free");
 
     /**
-     * Enum value basic.
+     * Static value basic for SkuName.
      */
-    BASIC("basic"),
+    public static final SkuName BASIC = fromString("basic");
 
     /**
-     * Enum value standard.
+     * Static value standard for SkuName.
      */
-    STANDARD("standard"),
+    public static final SkuName STANDARD = fromString("standard");
 
     /**
-     * Enum value standard2.
+     * Static value standard2 for SkuName.
      */
-    STANDARD2("standard2"),
+    public static final SkuName STANDARD2 = fromString("standard2");
 
     /**
-     * Enum value standard3.
+     * Static value standard3 for SkuName.
      */
-    STANDARD3("standard3"),
+    public static final SkuName STANDARD3 = fromString("standard3");
 
     /**
-     * Enum value storage_optimized_l1.
+     * Static value storage_optimized_l1 for SkuName.
      */
-    STORAGE_OPTIMIZED_L1("storage_optimized_l1"),
+    public static final SkuName STORAGE_OPTIMIZED_L1 = fromString("storage_optimized_l1");
 
     /**
-     * Enum value storage_optimized_l2.
+     * Static value storage_optimized_l2 for SkuName.
      */
-    STORAGE_OPTIMIZED_L2("storage_optimized_l2");
+    public static final SkuName STORAGE_OPTIMIZED_L2 = fromString("storage_optimized_l2");
 
     /**
-     * The actual serialized value for a SkuName instance.
+     * Creates a new instance of SkuName value.
+     * 
+     * @deprecated Use the {@link #fromString(String)} factory method.
      */
-    private final String value;
-
-    SkuName(String value) {
-        this.value = value;
+    @Deprecated
+    public SkuName() {
     }
 
     /**
-     * Parses a serialized value to a SkuName instance.
+     * Creates or finds a SkuName from its string representation.
      * 
-     * @param value the serialized value to parse.
-     * @return the parsed SkuName object, or null if unable to parse.
+     * @param name a name to look for.
+     * @return the corresponding SkuName.
      */
     @JsonCreator
-    public static SkuName fromString(String value) {
-        if (value == null) {
-            return null;
-        }
-        SkuName[] items = SkuName.values();
-        for (SkuName item : items) {
-            if (item.toString().equalsIgnoreCase(value)) {
-                return item;
-            }
-        }
-        return null;
+    public static SkuName fromString(String name) {
+        return fromString(name, SkuName.class);
     }
 
     /**
-     * {@inheritDoc}
+     * Gets known SkuName values.
+     * 
+     * @return known SkuName values.
      */
-    @JsonValue
-    @Override
-    public String toString() {
-        return this.value;
+    public static Collection<SkuName> values() {
+        return values(SkuName.class);
     }
 }

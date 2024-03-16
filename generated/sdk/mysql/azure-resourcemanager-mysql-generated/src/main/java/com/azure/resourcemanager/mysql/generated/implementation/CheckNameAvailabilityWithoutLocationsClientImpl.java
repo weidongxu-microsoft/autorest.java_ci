@@ -28,8 +28,7 @@ import com.azure.resourcemanager.mysql.generated.models.NameAvailabilityRequest;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * CheckNameAvailabilityWithoutLocationsClient.
+ * An instance of this class provides access to all the operations defined in CheckNameAvailabilityWithoutLocationsClient.
  */
 public final class CheckNameAvailabilityWithoutLocationsClientImpl
     implements CheckNameAvailabilityWithoutLocationsClient {
@@ -55,8 +54,7 @@ public final class CheckNameAvailabilityWithoutLocationsClientImpl
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientCheckNameAvailabilityWithoutLocations to be used
-     * by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientCheckNameAvailabilityWithoutLocations to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -78,8 +76,7 @@ public final class CheckNameAvailabilityWithoutLocationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a resource name availability along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents a resource name availability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NameAvailabilityInner>>
@@ -98,7 +95,7 @@ public final class CheckNameAvailabilityWithoutLocationsClientImpl
         } else {
             nameAvailabilityRequest.validate();
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-12-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.execute(this.client.getEndpoint(), apiVersion,
@@ -114,8 +111,7 @@ public final class CheckNameAvailabilityWithoutLocationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a resource name availability along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return represents a resource name availability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NameAvailabilityInner>>
@@ -134,7 +130,7 @@ public final class CheckNameAvailabilityWithoutLocationsClientImpl
         } else {
             nameAvailabilityRequest.validate();
         }
-        final String apiVersion = "2023-06-01-preview";
+        final String apiVersion = "2023-12-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.execute(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),

@@ -45,8 +45,7 @@ public final class MetricValue {
     private Double total;
 
     /*
-     * The number of samples in the time range. Can be used to determine the number of values that contributed to the
-     * average value.
+     * The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
      */
     @JsonProperty(value = "count")
     private Double count;
@@ -158,8 +157,7 @@ public final class MetricValue {
     }
 
     /**
-     * Get the count property: The number of samples in the time range. Can be used to determine the number of values
-     * that contributed to the average value.
+     * Get the count property: The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
      * 
      * @return the count value.
      */
@@ -168,8 +166,7 @@ public final class MetricValue {
     }
 
     /**
-     * Set the count property: The number of samples in the time range. Can be used to determine the number of values
-     * that contributed to the average value.
+     * Set the count property: The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
      * 
      * @param count the count value to set.
      * @return the MetricValue object itself.

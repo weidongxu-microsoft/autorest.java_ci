@@ -62,8 +62,7 @@ public final class AdminPropertiesFormat {
     private SecurityConfigurationRuleAccess access;
 
     /*
-     * The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule
-     * in the collection. The lower the priority number, the higher the priority of the rule.
+     * The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      */
     @JsonProperty(value = "priority", required = true)
     private int priority;
@@ -233,9 +232,7 @@ public final class AdminPropertiesFormat {
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @return the priority value.
      */
@@ -244,9 +241,7 @@ public final class AdminPropertiesFormat {
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
-     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
-     * rule.
+     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
      * 
      * @param priority the priority value to set.
      * @return the AdminPropertiesFormat object itself.

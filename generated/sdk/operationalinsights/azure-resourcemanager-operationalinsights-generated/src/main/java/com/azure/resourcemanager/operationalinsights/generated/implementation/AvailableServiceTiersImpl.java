@@ -35,7 +35,9 @@ public final class AvailableServiceTiersImpl implements AvailableServiceTiers {
             = this.serviceClient().listByWorkspaceWithResponse(resourceGroupName, workspaceName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                inner.getValue().stream().map(inner1 -> new AvailableServiceTierImpl(inner1, this.manager()))
+                inner.getValue()
+                    .stream()
+                    .map(inner1 -> new AvailableServiceTierImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -46,7 +48,8 @@ public final class AvailableServiceTiersImpl implements AvailableServiceTiers {
         List<AvailableServiceTierInner> inner = this.serviceClient().listByWorkspace(resourceGroupName, workspaceName);
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new AvailableServiceTierImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new AvailableServiceTierImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

@@ -37,8 +37,7 @@ public final class GatewaySettingsInner {
     }
 
     /**
-     * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
-     * enabled.
+     * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is enabled.
      * 
      * @return the isCredentialEnabled value.
      */

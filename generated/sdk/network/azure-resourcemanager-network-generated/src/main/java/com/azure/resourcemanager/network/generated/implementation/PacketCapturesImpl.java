@@ -43,8 +43,8 @@ public final class PacketCapturesImpl implements PacketCaptures {
 
     public PacketCaptureResult create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
         PacketCapture parameters, Context context) {
-        PacketCaptureResultInner inner = this.serviceClient().create(resourceGroupName, networkWatcherName,
-            packetCaptureName, parameters, context);
+        PacketCaptureResultInner inner = this.serviceClient()
+            .create(resourceGroupName, networkWatcherName, packetCaptureName, parameters, context);
         if (inner != null) {
             return new PacketCaptureResultImpl(inner, this.manager());
         } else {

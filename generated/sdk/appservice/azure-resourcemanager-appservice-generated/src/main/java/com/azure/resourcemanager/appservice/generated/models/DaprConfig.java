@@ -37,8 +37,7 @@ public final class DaprConfig {
     private Integer httpReadBufferSize;
 
     /*
-     * Increasing max size of request body http servers parameter in MB to handle uploading of big files. Default is 4
-     * MB.
+     * Increasing max size of request body http servers parameter in MB to handle uploading of big files. Default is 4 MB.
      */
     @JsonProperty(value = "httpMaxRequestSize")
     private Integer httpMaxRequestSize;
@@ -122,8 +121,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Get the httpReadBufferSize property: Dapr max size of http header read buffer in KB to handle when sending
-     * multi-KB headers. Default is 65KB.
+     * Get the httpReadBufferSize property: Dapr max size of http header read buffer in KB to handle when sending multi-KB headers. Default is 65KB.
      * 
      * @return the httpReadBufferSize value.
      */
@@ -132,8 +130,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Set the httpReadBufferSize property: Dapr max size of http header read buffer in KB to handle when sending
-     * multi-KB headers. Default is 65KB.
+     * Set the httpReadBufferSize property: Dapr max size of http header read buffer in KB to handle when sending multi-KB headers. Default is 65KB.
      * 
      * @param httpReadBufferSize the httpReadBufferSize value to set.
      * @return the DaprConfig object itself.
@@ -144,8 +141,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Get the httpMaxRequestSize property: Increasing max size of request body http servers parameter in MB to handle
-     * uploading of big files. Default is 4 MB.
+     * Get the httpMaxRequestSize property: Increasing max size of request body http servers parameter in MB to handle uploading of big files. Default is 4 MB.
      * 
      * @return the httpMaxRequestSize value.
      */
@@ -154,8 +150,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Set the httpMaxRequestSize property: Increasing max size of request body http servers parameter in MB to handle
-     * uploading of big files. Default is 4 MB.
+     * Set the httpMaxRequestSize property: Increasing max size of request body http servers parameter in MB to handle uploading of big files. Default is 4 MB.
      * 
      * @param httpMaxRequestSize the httpMaxRequestSize value to set.
      * @return the DaprConfig object itself.
@@ -166,8 +161,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Get the logLevel property: Sets the log level for the Dapr sidecar. Allowed values are debug, info, warn, error.
-     * Default is info.
+     * Get the logLevel property: Sets the log level for the Dapr sidecar. Allowed values are debug, info, warn, error. Default is info.
      * 
      * @return the logLevel value.
      */
@@ -176,8 +170,7 @@ public final class DaprConfig {
     }
 
     /**
-     * Set the logLevel property: Sets the log level for the Dapr sidecar. Allowed values are debug, info, warn, error.
-     * Default is info.
+     * Set the logLevel property: Sets the log level for the Dapr sidecar. Allowed values are debug, info, warn, error. Default is info.
      * 
      * @param logLevel the logLevel value to set.
      * @return the DaprConfig object itself.

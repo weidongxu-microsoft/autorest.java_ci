@@ -18,8 +18,7 @@ public interface CheckNameAvailabilityResult {
     String message();
 
     /**
-     * Gets the nameAvailable property: Value indicating Namespace is availability, true if the Namespace is available;
-     * otherwise, false.
+     * Gets the nameAvailable property: Value indicating Namespace is availability, true if the Namespace is available; otherwise, false.
      * 
      * @return the nameAvailable value.
      */
@@ -33,8 +32,7 @@ public interface CheckNameAvailabilityResult {
     UnavailableReason reason();
 
     /**
-     * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner
-     * object.
+     * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner object.
      * 
      * @return the inner object.
      */

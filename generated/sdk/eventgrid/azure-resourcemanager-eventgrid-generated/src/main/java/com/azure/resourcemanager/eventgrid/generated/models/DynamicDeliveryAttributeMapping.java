@@ -13,7 +13,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Dynamic delivery attribute mapping details.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "type",
+    defaultImpl = DynamicDeliveryAttributeMapping.class,
+    visible = true)
 @JsonTypeName("Dynamic")
 @Fluent
 public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapping {
@@ -27,6 +31,7 @@ public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapp
      * Creates an instance of DynamicDeliveryAttributeMapping class.
      */
     public DynamicDeliveryAttributeMapping() {
+        withType(DeliveryAttributeMappingType.DYNAMIC);
     }
 
     /**

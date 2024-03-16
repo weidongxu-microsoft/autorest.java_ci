@@ -29,8 +29,8 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
 
     public Response<CommunityGalleryImageVersion> getWithResponse(String location, String publicGalleryName,
         String galleryImageName, String galleryImageVersionName, Context context) {
-        Response<CommunityGalleryImageVersionInner> inner = this.serviceClient().getWithResponse(location,
-            publicGalleryName, galleryImageName, galleryImageVersionName, context);
+        Response<CommunityGalleryImageVersionInner> inner = this.serviceClient()
+            .getWithResponse(location, publicGalleryName, galleryImageName, galleryImageVersionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CommunityGalleryImageVersionImpl(inner.getValue(), this.manager()));

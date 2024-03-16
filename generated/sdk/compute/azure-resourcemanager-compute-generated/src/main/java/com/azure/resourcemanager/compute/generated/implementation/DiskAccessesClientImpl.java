@@ -70,8 +70,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientDiskAccesses to be used by the proxy service
-     * to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientDiskAccesses to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -218,9 +217,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -262,9 +259,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -306,9 +301,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -328,9 +321,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -352,9 +343,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -371,9 +360,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -391,9 +378,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -411,9 +396,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -432,9 +415,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -450,9 +431,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Creates or updates a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -470,9 +449,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -514,9 +491,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -558,9 +533,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -579,9 +552,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -603,9 +574,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -622,9 +591,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -642,9 +609,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -662,9 +627,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -683,9 +646,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -701,9 +662,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Updates (patches) a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -721,14 +680,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information about a disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiskAccessInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -760,15 +716,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return information about a disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiskAccessInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -799,9 +752,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -817,9 +768,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -836,9 +785,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -853,9 +800,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -890,9 +835,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -928,9 +871,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -947,9 +888,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -969,9 +908,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -986,9 +923,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1005,9 +940,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1023,9 +956,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1042,9 +973,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1058,9 +987,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1078,8 +1005,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1113,8 +1039,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1206,8 +1131,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listSinglePageAsync() {
@@ -1236,8 +1160,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listSinglePageAsync(Context context) {
@@ -1314,14 +1237,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets the private link resources possible under disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the private link resources possible under disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>>
@@ -1353,15 +1273,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets the private link resources possible under disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return the private link resources possible under disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>>
@@ -1392,9 +1309,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets the private link resources possible under disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1411,9 +1326,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets the private link resources possible under disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1430,9 +1343,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets the private link resources possible under disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1444,21 +1355,16 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateAPrivateEndpointConnectionWithResponseAsync(String resourceGroupName,
@@ -1499,22 +1405,17 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateAPrivateEndpointConnectionWithResponseAsync(String resourceGroupName,
@@ -1554,16 +1455,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1581,16 +1478,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1611,16 +1504,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1630,21 +1519,19 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
         beginUpdateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
             String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection) {
-        return this.beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName, privateEndpointConnection).getSyncPoller();
+        return this
+            .beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
+                privateEndpointConnectionName, privateEndpointConnection)
+            .getSyncPoller();
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1656,21 +1543,19 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         beginUpdateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
             String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection,
             Context context) {
-        return this.beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName, privateEndpointConnection, context).getSyncPoller();
+        return this
+            .beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
+                privateEndpointConnectionName, privateEndpointConnection, context)
+            .getSyncPoller();
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1686,16 +1571,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1712,16 +1593,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1736,16 +1613,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     }
 
     /**
-     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
-     * private endpoint connection.
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new private endpoint connection.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
-     * endpoint connection operation.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private endpoint connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1764,15 +1637,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return information about a private endpoint connection under a disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getAPrivateEndpointConnectionWithResponseAsync(
@@ -1809,16 +1679,13 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource along with {@link Response}
-     * on successful completion of {@link Mono}.
+     * @return information about a private endpoint connection under a disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getAPrivateEndpointConnectionWithResponseAsync(
@@ -1853,15 +1720,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource on successful completion of
-     * {@link Mono}.
+     * @return information about a private endpoint connection under a disk access resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> getAPrivateEndpointConnectionAsync(String resourceGroupName,
@@ -1874,9 +1738,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1895,9 +1757,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Gets information about a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1915,9 +1775,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1959,9 +1817,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2002,9 +1858,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2024,9 +1878,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2048,9 +1900,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2060,17 +1910,17 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAPrivateEndpointConnection(String resourceGroupName,
         String diskAccessName, String privateEndpointConnectionName) {
-        return this.beginDeleteAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName).getSyncPoller();
+        return this
+            .beginDeleteAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
+                privateEndpointConnectionName)
+            .getSyncPoller();
     }
 
     /**
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2081,17 +1931,17 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAPrivateEndpointConnection(String resourceGroupName,
         String diskAccessName, String privateEndpointConnectionName, Context context) {
-        return this.beginDeleteAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
-            privateEndpointConnectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
+                privateEndpointConnectionName, context)
+            .getSyncPoller();
     }
 
     /**
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2109,9 +1959,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2130,9 +1978,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2148,9 +1994,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * Deletes a private endpoint connection under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2168,14 +2012,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>>
@@ -2209,15 +2050,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listPrivateEndpointConnectionsSinglePageAsync(
@@ -2251,9 +2089,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2270,9 +2106,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2291,9 +2125,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2309,9 +2141,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * List information about private endpoint connections under a disk access resource.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     * the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     * name length is 80 characters.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2333,8 +2163,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2364,8 +2193,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -2393,8 +2221,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listNextSinglePageAsync(String nextLink) {
@@ -2422,8 +2249,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the List disk access operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiskAccessInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -2450,8 +2276,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>>
@@ -2481,8 +2306,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>>

@@ -11,8 +11,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 
 /**
- * An instance of this class provides access to all the operations defined in
- * NetworkSecurityPerimeterConfigurationsOperationsClient.
+ * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsOperationsClient.
  */
 public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
     /**

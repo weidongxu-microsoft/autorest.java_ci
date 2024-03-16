@@ -132,13 +132,16 @@ public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachi
     }
 
     public VirtualMachineScaleSetVMExtension create() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions().createOrUpdate(
-            resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
+            .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(),
+                Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
             .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), context);
         return this;
     }
@@ -156,13 +159,16 @@ public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachi
     }
 
     public VirtualMachineScaleSetVMExtension apply() {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions().update(
-            resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
+            .update(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters,
+                Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
             .update(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters, context);
         return this;
     }
@@ -179,7 +185,8 @@ public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachi
 
     public VirtualMachineScaleSetVMExtension refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
             .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, Context.NONE)
             .getValue();
         return this;
@@ -187,7 +194,8 @@ public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachi
 
     public VirtualMachineScaleSetVMExtension refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+        this.innerObject = serviceManager.serviceClient()
+            .getVirtualMachineScaleSetVMExtensions()
             .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, context)
             .getValue();
         return this;

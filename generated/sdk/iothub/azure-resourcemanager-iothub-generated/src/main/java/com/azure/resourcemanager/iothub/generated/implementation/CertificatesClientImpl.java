@@ -58,8 +58,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * The interface defining all the services for IotHubClientCertificates to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for IotHubClientCertificates to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientCertific")
@@ -137,8 +136,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of Certificate objects along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the JSON-serialized array of Certificate objects along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CertificateListDescriptionInner>> listByIotHubWithResponseAsync(String resourceGroupName,
@@ -176,8 +174,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of Certificate objects along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return the JSON-serialized array of Certificate objects along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CertificateListDescriptionInner>> listByIotHubWithResponseAsync(String resourceGroupName,
@@ -408,8 +405,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param certificateDescription The certificate body.
-     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
-     * an existing certificate.
+     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -461,8 +457,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param certificateDescription The certificate body.
-     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
-     * an existing certificate.
+     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -536,8 +531,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param certificateDescription The certificate body.
-     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
-     * an existing certificate.
+     * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update an existing certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -730,8 +724,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -778,8 +771,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -826,8 +818,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -848,8 +839,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -871,8 +861,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -893,8 +882,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -949,8 +937,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1004,8 +991,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1027,8 +1013,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1052,8 +1037,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.

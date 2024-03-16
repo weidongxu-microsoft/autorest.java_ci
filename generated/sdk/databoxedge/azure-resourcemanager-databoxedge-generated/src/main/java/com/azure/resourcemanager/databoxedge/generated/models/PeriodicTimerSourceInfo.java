@@ -15,9 +15,7 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class PeriodicTimerSourceInfo {
     /*
-     * The time of the day that results in a valid trigger. Schedule is computed with reference to the time specified
-     * upto seconds. If timezone is not specified the time will considered to be in device timezone. The value will
-     * always be returned as UTC time.
+     * The time of the day that results in a valid trigger. Schedule is computed with reference to the time specified upto seconds. If timezone is not specified the time will considered to be in device timezone. The value will always be returned as UTC time.
      */
     @JsonProperty(value = "startTime", required = true)
     private OffsetDateTime startTime;
@@ -41,9 +39,7 @@ public final class PeriodicTimerSourceInfo {
     }
 
     /**
-     * Get the startTime property: The time of the day that results in a valid trigger. Schedule is computed with
-     * reference to the time specified upto seconds. If timezone is not specified the time will considered to be in
-     * device timezone. The value will always be returned as UTC time.
+     * Get the startTime property: The time of the day that results in a valid trigger. Schedule is computed with reference to the time specified upto seconds. If timezone is not specified the time will considered to be in device timezone. The value will always be returned as UTC time.
      * 
      * @return the startTime value.
      */
@@ -52,9 +48,7 @@ public final class PeriodicTimerSourceInfo {
     }
 
     /**
-     * Set the startTime property: The time of the day that results in a valid trigger. Schedule is computed with
-     * reference to the time specified upto seconds. If timezone is not specified the time will considered to be in
-     * device timezone. The value will always be returned as UTC time.
+     * Set the startTime property: The time of the day that results in a valid trigger. Schedule is computed with reference to the time specified upto seconds. If timezone is not specified the time will considered to be in device timezone. The value will always be returned as UTC time.
      * 
      * @param startTime the startTime value to set.
      * @return the PeriodicTimerSourceInfo object itself.
@@ -65,8 +59,7 @@ public final class PeriodicTimerSourceInfo {
     }
 
     /**
-     * Get the schedule property: Periodic frequency at which timer event needs to be raised. Supports daily, hourly,
-     * minutes, and seconds.
+     * Get the schedule property: Periodic frequency at which timer event needs to be raised. Supports daily, hourly, minutes, and seconds.
      * 
      * @return the schedule value.
      */
@@ -75,8 +68,7 @@ public final class PeriodicTimerSourceInfo {
     }
 
     /**
-     * Set the schedule property: Periodic frequency at which timer event needs to be raised. Supports daily, hourly,
-     * minutes, and seconds.
+     * Set the schedule property: Periodic frequency at which timer event needs to be raised. Supports daily, hourly, minutes, and seconds.
      * 
      * @param schedule the schedule value to set.
      * @return the PeriodicTimerSourceInfo object itself.

@@ -96,9 +96,7 @@ public final class DdosCustomPolicyInner extends Resource {
     }
 
     /**
-     * Get the resourceGuid property: The resource GUID property of the DDoS custom policy resource. It uniquely
-     * identifies the resource, even if the user changes its name or migrate the resource across subscriptions or
-     * resource groups.
+     * Get the resourceGuid property: The resource GUID property of the DDoS custom policy resource. It uniquely identifies the resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
      * 
      * @return the resourceGuid value.
      */

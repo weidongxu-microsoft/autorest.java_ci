@@ -53,8 +53,7 @@ public final class LoadBalancerBackendAddressPropertiesFormat {
     private List<NatRulePortMapping> inboundNatRulesPortMapping;
 
     /*
-     * A list of administrative states which once set can override health probe so that Load Balancer will always
-     * forward new connections to backend, or deny new connections and reset existing connections.
+     * A list of administrative states which once set can override health probe so that Load Balancer will always forward new connections to backend, or deny new connections and reset existing connections.
      */
     @JsonProperty(value = "adminState")
     private LoadBalancerBackendAddressAdminState adminState;
@@ -135,8 +134,7 @@ public final class LoadBalancerBackendAddressPropertiesFormat {
     }
 
     /**
-     * Get the loadBalancerFrontendIpConfiguration property: Reference to the frontend ip address configuration defined
-     * in regional loadbalancer.
+     * Get the loadBalancerFrontendIpConfiguration property: Reference to the frontend ip address configuration defined in regional loadbalancer.
      * 
      * @return the loadBalancerFrontendIpConfiguration value.
      */
@@ -145,8 +143,7 @@ public final class LoadBalancerBackendAddressPropertiesFormat {
     }
 
     /**
-     * Set the loadBalancerFrontendIpConfiguration property: Reference to the frontend ip address configuration defined
-     * in regional loadbalancer.
+     * Set the loadBalancerFrontendIpConfiguration property: Reference to the frontend ip address configuration defined in regional loadbalancer.
      * 
      * @param loadBalancerFrontendIpConfiguration the loadBalancerFrontendIpConfiguration value to set.
      * @return the LoadBalancerBackendAddressPropertiesFormat object itself.
@@ -167,9 +164,7 @@ public final class LoadBalancerBackendAddressPropertiesFormat {
     }
 
     /**
-     * Get the adminState property: A list of administrative states which once set can override health probe so that
-     * Load Balancer will always forward new connections to backend, or deny new connections and reset existing
-     * connections.
+     * Get the adminState property: A list of administrative states which once set can override health probe so that Load Balancer will always forward new connections to backend, or deny new connections and reset existing connections.
      * 
      * @return the adminState value.
      */
@@ -178,9 +173,7 @@ public final class LoadBalancerBackendAddressPropertiesFormat {
     }
 
     /**
-     * Set the adminState property: A list of administrative states which once set can override health probe so that
-     * Load Balancer will always forward new connections to backend, or deny new connections and reset existing
-     * connections.
+     * Set the adminState property: A list of administrative states which once set can override health probe so that Load Balancer will always forward new connections to backend, or deny new connections and reset existing connections.
      * 
      * @param adminState the adminState value to set.
      * @return the LoadBalancerBackendAddressPropertiesFormat object itself.

@@ -127,15 +127,18 @@ public final class KeyImpl implements Key, Key.Definition {
     }
 
     public Key create() {
-        this.innerObject = serviceManager.serviceClient().getKeys()
+        this.innerObject = serviceManager.serviceClient()
+            .getKeys()
             .createIfNotExistWithResponse(resourceGroupName, vaultName, keyName, createParameters, Context.NONE)
             .getValue();
         return this;
     }
 
     public Key create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getKeys()
-            .createIfNotExistWithResponse(resourceGroupName, vaultName, keyName, createParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getKeys()
+            .createIfNotExistWithResponse(resourceGroupName, vaultName, keyName, createParameters, context)
+            .getValue();
         return this;
     }
 
@@ -147,14 +150,18 @@ public final class KeyImpl implements Key, Key.Definition {
     }
 
     public Key refresh() {
-        this.innerObject = serviceManager.serviceClient().getKeys()
-            .getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getKeys()
+            .getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Key refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getKeys()
-            .getWithResponse(resourceGroupName, vaultName, keyName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getKeys()
+            .getWithResponse(resourceGroupName, vaultName, keyName, context)
+            .getValue();
         return this;
     }
 

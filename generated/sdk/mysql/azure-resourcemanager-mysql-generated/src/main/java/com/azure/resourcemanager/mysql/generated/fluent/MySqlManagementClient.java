@@ -61,6 +61,20 @@ public interface MySqlManagementClient {
     BackupAndExportsClient getBackupAndExports();
 
     /**
+     * Gets the LongRunningBackupsClient object to access its operations.
+     * 
+     * @return the LongRunningBackupsClient object.
+     */
+    LongRunningBackupsClient getLongRunningBackups();
+
+    /**
+     * Gets the LongRunningBackupsOperationsClient object to access its operations.
+     * 
+     * @return the LongRunningBackupsOperationsClient object.
+     */
+    LongRunningBackupsOperationsClient getLongRunningBackupsOperations();
+
+    /**
      * Gets the ConfigurationsClient object to access its operations.
      * 
      * @return the ConfigurationsClient object.
@@ -101,6 +115,13 @@ public interface MySqlManagementClient {
      * @return the ServersMigrationsClient object.
      */
     ServersMigrationsClient getServersMigrations();
+
+    /**
+     * Gets the AdvancedThreatProtectionSettingsClient object to access its operations.
+     * 
+     * @return the AdvancedThreatProtectionSettingsClient object.
+     */
+    AdvancedThreatProtectionSettingsClient getAdvancedThreatProtectionSettings();
 
     /**
      * Gets the LogFilesClient object to access its operations.
@@ -152,6 +173,13 @@ public interface MySqlManagementClient {
     OperationResultsClient getOperationResults();
 
     /**
+     * Gets the OperationProgressClient object to access its operations.
+     * 
+     * @return the OperationProgressClient object.
+     */
+    OperationProgressClient getOperationProgress();
+
+    /**
      * Gets the GetPrivateDnsZoneSuffixesClient object to access its operations.
      * 
      * @return the GetPrivateDnsZoneSuffixesClient object.
@@ -166,9 +194,9 @@ public interface MySqlManagementClient {
     OperationsClient getOperations();
 
     /**
-     * Gets the AdvancedThreatProtectionSettingsClient object to access its operations.
+     * Gets the MaintenancesClient object to access its operations.
      * 
-     * @return the AdvancedThreatProtectionSettingsClient object.
+     * @return the MaintenancesClient object.
      */
-    AdvancedThreatProtectionSettingsClient getAdvancedThreatProtectionSettings();
+    MaintenancesClient getMaintenances();
 }

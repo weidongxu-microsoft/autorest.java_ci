@@ -57,8 +57,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientSharedGalleryImages to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientSharedGalleryImages to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -99,8 +98,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageInner>> listSinglePageAsync(String location, String galleryUniqueName,
@@ -140,8 +138,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageInner>> listSinglePageAsync(String location, String galleryUniqueName,
@@ -264,13 +261,11 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
-     * listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image by subscription id or tenant id along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return a shared gallery image by subscription id or tenant id along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedGalleryImageInner>> getWithResponseAsync(String location, String galleryUniqueName,
@@ -307,14 +302,12 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
-     * listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image by subscription id or tenant id along with {@link Response} on successful
-     * completion of {@link Mono}.
+     * @return a shared gallery image by subscription id or tenant id along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedGalleryImageInner>> getWithResponseAsync(String location, String galleryUniqueName,
@@ -350,8 +343,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
-     * listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -368,8 +360,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
-     * listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -387,8 +378,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
-     * listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -408,8 +398,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageInner>> listNextSinglePageAsync(String nextLink) {
@@ -437,8 +426,7 @@ public final class SharedGalleryImagesClientImpl implements SharedGalleryImagesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful
-     * completion of {@link Mono}.
+     * @return the List Shared Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageInner>> listNextSinglePageAsync(String nextLink, Context context) {

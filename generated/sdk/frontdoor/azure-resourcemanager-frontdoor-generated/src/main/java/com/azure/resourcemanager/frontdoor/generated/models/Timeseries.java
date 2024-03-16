@@ -83,8 +83,7 @@ public interface Timeseries {
     TimeseriesType timeseriesType();
 
     /**
-     * Gets the country property: The country associated with the Timeseries. Values are country ISO codes as specified
-     * here- https://www.iso.org/iso-3166-country-codes.html.
+     * Gets the country property: The country associated with the Timeseries. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
      * 
      * @return the country value.
      */

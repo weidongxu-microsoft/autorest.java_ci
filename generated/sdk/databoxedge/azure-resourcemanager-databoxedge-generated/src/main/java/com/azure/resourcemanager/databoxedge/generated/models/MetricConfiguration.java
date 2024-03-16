@@ -85,8 +85,7 @@ public final class MetricConfiguration {
     }
 
     /**
-     * Get the metricNameSpace property: The MDM namespace to which the counters should be pushed. This is required if
-     * MDMAccount is specified.
+     * Get the metricNameSpace property: The MDM namespace to which the counters should be pushed. This is required if MDMAccount is specified.
      * 
      * @return the metricNameSpace value.
      */
@@ -95,8 +94,7 @@ public final class MetricConfiguration {
     }
 
     /**
-     * Set the metricNameSpace property: The MDM namespace to which the counters should be pushed. This is required if
-     * MDMAccount is specified.
+     * Set the metricNameSpace property: The MDM namespace to which the counters should be pushed. This is required if MDMAccount is specified.
      * 
      * @param metricNameSpace the metricNameSpace value to set.
      * @return the MetricConfiguration object itself.

@@ -4,68 +4,60 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
+import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Collection;
 
 /**
  * Status of the shared private link resource. Valid values are Pending, Approved, Rejected or Disconnected.
  */
-public enum SharedPrivateLinkResourceStatus {
+public final class SharedPrivateLinkResourceStatus extends ExpandableStringEnum<SharedPrivateLinkResourceStatus> {
     /**
-     * Enum value Pending.
+     * Static value Pending for SharedPrivateLinkResourceStatus.
      */
-    PENDING("Pending"),
+    public static final SharedPrivateLinkResourceStatus PENDING = fromString("Pending");
 
     /**
-     * Enum value Approved.
+     * Static value Approved for SharedPrivateLinkResourceStatus.
      */
-    APPROVED("Approved"),
+    public static final SharedPrivateLinkResourceStatus APPROVED = fromString("Approved");
 
     /**
-     * Enum value Rejected.
+     * Static value Rejected for SharedPrivateLinkResourceStatus.
      */
-    REJECTED("Rejected"),
+    public static final SharedPrivateLinkResourceStatus REJECTED = fromString("Rejected");
 
     /**
-     * Enum value Disconnected.
+     * Static value Disconnected for SharedPrivateLinkResourceStatus.
      */
-    DISCONNECTED("Disconnected");
+    public static final SharedPrivateLinkResourceStatus DISCONNECTED = fromString("Disconnected");
 
     /**
-     * The actual serialized value for a SharedPrivateLinkResourceStatus instance.
+     * Creates a new instance of SharedPrivateLinkResourceStatus value.
+     * 
+     * @deprecated Use the {@link #fromString(String)} factory method.
      */
-    private final String value;
-
-    SharedPrivateLinkResourceStatus(String value) {
-        this.value = value;
+    @Deprecated
+    public SharedPrivateLinkResourceStatus() {
     }
 
     /**
-     * Parses a serialized value to a SharedPrivateLinkResourceStatus instance.
+     * Creates or finds a SharedPrivateLinkResourceStatus from its string representation.
      * 
-     * @param value the serialized value to parse.
-     * @return the parsed SharedPrivateLinkResourceStatus object, or null if unable to parse.
+     * @param name a name to look for.
+     * @return the corresponding SharedPrivateLinkResourceStatus.
      */
     @JsonCreator
-    public static SharedPrivateLinkResourceStatus fromString(String value) {
-        if (value == null) {
-            return null;
-        }
-        SharedPrivateLinkResourceStatus[] items = SharedPrivateLinkResourceStatus.values();
-        for (SharedPrivateLinkResourceStatus item : items) {
-            if (item.toString().equalsIgnoreCase(value)) {
-                return item;
-            }
-        }
-        return null;
+    public static SharedPrivateLinkResourceStatus fromString(String name) {
+        return fromString(name, SharedPrivateLinkResourceStatus.class);
     }
 
     /**
-     * {@inheritDoc}
+     * Gets known SharedPrivateLinkResourceStatus values.
+     * 
+     * @return known SharedPrivateLinkResourceStatus values.
      */
-    @JsonValue
-    @Override
-    public String toString() {
-        return this.value;
+    public static Collection<SharedPrivateLinkResourceStatus> values() {
+        return values(SharedPrivateLinkResourceStatus.class);
     }
 }

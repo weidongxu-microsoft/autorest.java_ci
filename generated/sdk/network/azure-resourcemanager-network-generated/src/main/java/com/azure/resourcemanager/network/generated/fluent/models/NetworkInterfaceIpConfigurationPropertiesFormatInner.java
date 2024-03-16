@@ -152,8 +152,7 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Get the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
-     * resource.
+     * Get the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
      * 
      * @return the applicationGatewayBackendAddressPools value.
      */
@@ -162,8 +161,7 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Set the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
-     * resource.
+     * Set the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
      * 
      * @param applicationGatewayBackendAddressPools the applicationGatewayBackendAddressPools value to set.
      * @return the NetworkInterfaceIpConfigurationPropertiesFormatInner object itself.
@@ -340,8 +338,7 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Get the applicationSecurityGroups property: Application security groups in which the IP configuration is
-     * included.
+     * Get the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
      * 
      * @return the applicationSecurityGroups value.
      */
@@ -350,8 +347,7 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatInner {
     }
 
     /**
-     * Set the applicationSecurityGroups property: Application security groups in which the IP configuration is
-     * included.
+     * Set the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
      * 
      * @param applicationSecurityGroups the applicationSecurityGroups value to set.
      * @return the NetworkInterfaceIpConfigurationPropertiesFormatInner object itself.

@@ -66,8 +66,8 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
 
     public MonitoringMetricConfiguration createOrUpdate(String deviceName, String roleName, String resourceGroupName,
         MonitoringMetricConfigurationInner monitoringMetricConfiguration) {
-        MonitoringMetricConfigurationInner inner = this.serviceClient().createOrUpdate(deviceName, roleName,
-            resourceGroupName, monitoringMetricConfiguration);
+        MonitoringMetricConfigurationInner inner = this.serviceClient()
+            .createOrUpdate(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration);
         if (inner != null) {
             return new MonitoringMetricConfigurationImpl(inner, this.manager());
         } else {
@@ -77,8 +77,8 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
 
     public MonitoringMetricConfiguration createOrUpdate(String deviceName, String roleName, String resourceGroupName,
         MonitoringMetricConfigurationInner monitoringMetricConfiguration, Context context) {
-        MonitoringMetricConfigurationInner inner = this.serviceClient().createOrUpdate(deviceName, roleName,
-            resourceGroupName, monitoringMetricConfiguration, context);
+        MonitoringMetricConfigurationInner inner = this.serviceClient()
+            .createOrUpdate(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration, context);
         if (inner != null) {
             return new MonitoringMetricConfigurationImpl(inner, this.manager());
         } else {

@@ -69,8 +69,8 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
 
     public Response<SqlVirtualMachine> getByResourceGroupWithResponse(String resourceGroupName,
         String sqlVirtualMachineName, String expand, Context context) {
-        Response<SqlVirtualMachineInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            sqlVirtualMachineName, expand, context);
+        Response<SqlVirtualMachineInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SqlVirtualMachineImpl(inner.getValue(), this.manager()));

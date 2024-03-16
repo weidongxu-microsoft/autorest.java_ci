@@ -98,14 +98,16 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
     }
 
     public Image create() {
-        this.innerObject = serviceManager.serviceClient().getImages().createOrUpdate(resourceGroupName, imageName,
-            this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .createOrUpdate(resourceGroupName, imageName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Image create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getImages().createOrUpdate(resourceGroupName, imageName,
-            this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .createOrUpdate(resourceGroupName, imageName, this.innerModel(), context);
         return this;
     }
 
@@ -121,14 +123,16 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
     }
 
     public Image apply() {
-        this.innerObject = serviceManager.serviceClient().getImages().update(resourceGroupName, imageName,
-            updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .update(resourceGroupName, imageName, updateParameters, Context.NONE);
         return this;
     }
 
     public Image apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getImages().update(resourceGroupName, imageName,
-            updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .update(resourceGroupName, imageName, updateParameters, context);
         return this;
     }
 
@@ -141,15 +145,19 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
 
     public Image refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getImages()
-            .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Image refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getImages()
-            .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getImages()
+            .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, context)
+            .getValue();
         return this;
     }
 

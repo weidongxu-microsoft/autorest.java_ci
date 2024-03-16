@@ -64,8 +64,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientServerSecurityAlertPolicies to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientServerSecurityAlertPolicies to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -466,7 +465,8 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
     private Mono<ServerSecurityAlertPolicyInner> createOrUpdateAsync(String resourceGroupName, String serverName,
         SecurityAlertPolicyName securityAlertPolicyName, ServerSecurityAlertPolicyInner parameters, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, serverName, securityAlertPolicyName, parameters, context)
-            .last().flatMap(this.client::getLroFinalResultOrError);
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -514,8 +514,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the server's threat detection policies along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the server's threat detection policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerSecurityAlertPolicyInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -554,8 +553,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the server's threat detection policies along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return the server's threat detection policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerSecurityAlertPolicyInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -660,8 +658,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's security alert policies along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of the server's security alert policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerSecurityAlertPolicyInner>> listByServerNextSinglePageAsync(String nextLink) {
@@ -690,8 +687,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's security alert policies along with {@link PagedResponse} on successful completion
-     * of {@link Mono}.
+     * @return a list of the server's security alert policies along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerSecurityAlertPolicyInner>> listByServerNextSinglePageAsync(String nextLink,

@@ -52,8 +52,7 @@ public final class MultiSubnetIpConfiguration {
     }
 
     /**
-     * Get the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the
-     * availability group listener.
+     * Get the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the availability group listener.
      * 
      * @return the sqlVirtualMachineInstance value.
      */
@@ -62,8 +61,7 @@ public final class MultiSubnetIpConfiguration {
     }
 
     /**
-     * Set the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the
-     * availability group listener.
+     * Set the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the availability group listener.
      * 
      * @param sqlVirtualMachineInstance the sqlVirtualMachineInstance value to set.
      * @return the MultiSubnetIpConfiguration object itself.

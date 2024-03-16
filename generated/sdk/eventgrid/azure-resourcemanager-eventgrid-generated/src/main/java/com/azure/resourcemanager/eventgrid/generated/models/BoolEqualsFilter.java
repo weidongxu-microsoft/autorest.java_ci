@@ -12,7 +12,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * BoolEquals Filter.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "operatorType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "operatorType",
+    defaultImpl = BoolEqualsFilter.class,
+    visible = true)
 @JsonTypeName("BoolEquals")
 @Fluent
 public final class BoolEqualsFilter extends Filter {
@@ -26,6 +30,7 @@ public final class BoolEqualsFilter extends Filter {
      * Creates an instance of BoolEqualsFilter class.
      */
     public BoolEqualsFilter() {
+        withOperatorType(FilterOperatorType.BOOL_EQUALS);
     }
 
     /**

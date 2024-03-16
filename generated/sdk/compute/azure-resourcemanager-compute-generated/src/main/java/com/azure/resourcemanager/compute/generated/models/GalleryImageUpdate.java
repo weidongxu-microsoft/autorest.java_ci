@@ -47,8 +47,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the description property: The description of this gallery image definition resource. This property is
-     * updatable.
+     * Get the description property: The description of this gallery image definition resource. This property is updatable.
      * 
      * @return the description value.
      */
@@ -57,8 +56,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the description property: The description of this gallery image definition resource. This property is
-     * updatable.
+     * Set the description property: The description of this gallery image definition resource. This property is updatable.
      * 
      * @param description the description value to set.
      * @return the GalleryImageUpdate object itself.
@@ -141,8 +139,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the osType property: This property allows you to specify the type of the OS that is included in the disk when
-     * creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+     * Get the osType property: This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -151,8 +148,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the osType property: This property allows you to specify the type of the OS that is included in the disk when
-     * creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+     * Set the osType property: This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @param osType the osType value to set.
      * @return the GalleryImageUpdate object itself.
@@ -166,8 +162,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the osState property: This property allows the user to specify whether the virtual machines created under
-     * this image are 'Generalized' or 'Specialized'.
+     * Get the osState property: This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
      * 
      * @return the osState value.
      */
@@ -176,8 +171,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the osState property: This property allows the user to specify whether the virtual machines created under
-     * this image are 'Generalized' or 'Specialized'.
+     * Set the osState property: This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
      * 
      * @param osState the osState value to set.
      * @return the GalleryImageUpdate object itself.
@@ -214,8 +208,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used
-     * for decommissioning purposes. This property is updatable.
+     * Get the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
@@ -224,8 +217,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used
-     * for decommissioning purposes. This property is updatable.
+     * Set the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
      * 
      * @param endOfLifeDate the endOfLifeDate value to set.
      * @return the GalleryImageUpdate object itself.
@@ -262,8 +254,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the recommended property: The properties describe the recommended machine configuration for this Image
-     * Definition. These properties are updatable.
+     * Get the recommended property: The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
      * 
      * @return the recommended value.
      */
@@ -272,8 +263,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the recommended property: The properties describe the recommended machine configuration for this Image
-     * Definition. These properties are updatable.
+     * Set the recommended property: The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
      * 
      * @param recommended the recommended value to set.
      * @return the GalleryImageUpdate object itself.
@@ -310,8 +300,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace
-     * images.
+     * Get the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace images.
      * 
      * @return the purchasePlan value.
      */
@@ -320,8 +309,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace
-     * images.
+     * Set the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace images.
      * 
      * @param purchasePlan the purchasePlan value to set.
      * @return the GalleryImageUpdate object itself.

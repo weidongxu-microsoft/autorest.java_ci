@@ -80,14 +80,16 @@ public final class BandwidthScheduleImpl
     }
 
     public BandwidthSchedule create() {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules().createOrUpdate(deviceName, name,
-            resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public BandwidthSchedule create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules().createOrUpdate(deviceName, name,
-            resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -103,14 +105,16 @@ public final class BandwidthScheduleImpl
     }
 
     public BandwidthSchedule apply() {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules().createOrUpdate(deviceName, name,
-            resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public BandwidthSchedule apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules().createOrUpdate(deviceName, name,
-            resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -124,14 +128,18 @@ public final class BandwidthScheduleImpl
     }
 
     public BandwidthSchedule refresh() {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules()
-            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public BandwidthSchedule refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getBandwidthSchedules()
-            .getWithResponse(deviceName, name, resourceGroupName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getBandwidthSchedules()
+            .getWithResponse(deviceName, name, resourceGroupName, context)
+            .getValue();
         return this;
     }
 

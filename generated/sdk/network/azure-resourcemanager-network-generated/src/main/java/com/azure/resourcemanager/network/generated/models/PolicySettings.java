@@ -67,8 +67,7 @@ public final class PolicySettings {
     private Integer customBlockResponseStatusCode;
 
     /*
-     * If the action type is block, customer can override the response body. The body must be specified in base64
-     * encoding.
+     * If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
      */
     @JsonProperty(value = "customBlockResponseBody")
     private String customBlockResponseBody;
@@ -246,8 +245,7 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the customBlockResponseStatusCode property: If the action type is block, customer can override the response
-     * status code.
+     * Get the customBlockResponseStatusCode property: If the action type is block, customer can override the response status code.
      * 
      * @return the customBlockResponseStatusCode value.
      */
@@ -256,8 +254,7 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the customBlockResponseStatusCode property: If the action type is block, customer can override the response
-     * status code.
+     * Set the customBlockResponseStatusCode property: If the action type is block, customer can override the response status code.
      * 
      * @param customBlockResponseStatusCode the customBlockResponseStatusCode value to set.
      * @return the PolicySettings object itself.
@@ -268,8 +265,7 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the customBlockResponseBody property: If the action type is block, customer can override the response body.
-     * The body must be specified in base64 encoding.
+     * Get the customBlockResponseBody property: If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
      * 
      * @return the customBlockResponseBody value.
      */
@@ -278,8 +274,7 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the customBlockResponseBody property: If the action type is block, customer can override the response body.
-     * The body must be specified in base64 encoding.
+     * Set the customBlockResponseBody property: If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
      * 
      * @param customBlockResponseBody the customBlockResponseBody value to set.
      * @return the PolicySettings object itself.

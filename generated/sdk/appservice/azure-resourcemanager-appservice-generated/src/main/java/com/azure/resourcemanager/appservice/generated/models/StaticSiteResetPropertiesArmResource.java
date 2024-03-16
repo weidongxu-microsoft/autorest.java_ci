@@ -67,8 +67,7 @@ public final class StaticSiteResetPropertiesArmResource extends ProxyOnlyResourc
     }
 
     /**
-     * Get the shouldUpdateRepository property: Determines whether the repository should be updated with the new
-     * properties.
+     * Get the shouldUpdateRepository property: Determines whether the repository should be updated with the new properties.
      * 
      * @return the shouldUpdateRepository value.
      */
@@ -77,8 +76,7 @@ public final class StaticSiteResetPropertiesArmResource extends ProxyOnlyResourc
     }
 
     /**
-     * Set the shouldUpdateRepository property: Determines whether the repository should be updated with the new
-     * properties.
+     * Set the shouldUpdateRepository property: Determines whether the repository should be updated with the new properties.
      * 
      * @param shouldUpdateRepository the shouldUpdateRepository value to set.
      * @return the StaticSiteResetPropertiesArmResource object itself.

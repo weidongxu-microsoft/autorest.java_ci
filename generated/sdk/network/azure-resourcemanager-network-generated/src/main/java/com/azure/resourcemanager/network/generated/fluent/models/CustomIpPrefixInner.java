@@ -96,8 +96,7 @@ public final class CustomIpPrefixInner extends Resource {
     }
 
     /**
-     * Get the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
-     * from.
+     * Get the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
      * 
      * @return the zones value.
      */
@@ -106,8 +105,7 @@ public final class CustomIpPrefixInner extends Resource {
     }
 
     /**
-     * Set the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
-     * from.
+     * Set the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
      * 
      * @param zones the zones value to set.
      * @return the CustomIpPrefixInner object itself.

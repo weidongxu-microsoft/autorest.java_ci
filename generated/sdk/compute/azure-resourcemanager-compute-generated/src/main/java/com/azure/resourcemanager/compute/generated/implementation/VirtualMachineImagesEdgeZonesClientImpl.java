@@ -53,8 +53,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineImagesEdgeZones to be used by
-     * the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineImagesEdgeZones to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -122,8 +121,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine image in an edge zone along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a virtual machine image in an edge zone along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineImageInner>> getWithResponseAsync(String location, String edgeZone,
@@ -175,8 +173,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine image in an edge zone along with {@link Response} on successful completion of
-     * {@link Mono}.
+     * @return a virtual machine image in an edge zone along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineImageInner>> getWithResponseAsync(String location, String edgeZone,
@@ -277,8 +274,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
@@ -291,8 +287,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listWithResponseAsync(String location,
@@ -329,8 +324,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
@@ -344,8 +338,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listWithResponseAsync(String location,
@@ -382,8 +375,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
@@ -393,8 +385,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listAsync(String location, String edgeZone,
@@ -407,8 +398,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
@@ -422,8 +412,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU along with {@link Response}.
+     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listWithResponse(String location, String edgeZone,
@@ -433,8 +422,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
     }
 
     /**
-     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * Gets a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
@@ -444,8 +432,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     * SKU.
+     * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and SKU.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public List<VirtualMachineImageResourceInner> list(String location, String edgeZone, String publisherName,
@@ -466,8 +453,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listOffersWithResponseAsync(String location,
@@ -507,8 +493,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listOffersWithResponseAsync(String location,
@@ -546,8 +531,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location, edge zone and publisher on successful
-     * completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location, edge zone and publisher on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listOffersAsync(String location, String edgeZone,
@@ -566,8 +550,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with
-     * {@link Response}.
+     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listOffersWithResponse(String location, String edgeZone,
@@ -599,8 +582,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listPublishersWithResponseAsync(String location,
@@ -636,8 +618,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with
-     * {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listPublishersWithResponseAsync(String location,
@@ -671,8 +652,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location and edge zone on successful
-     * completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location and edge zone on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listPublishersAsync(String location, String edgeZone) {
@@ -688,8 +668,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with
-     * {@link Response}.
+     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listPublishersWithResponse(String location, String edgeZone,
@@ -722,8 +701,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listSkusWithResponseAsync(String location,
@@ -767,8 +745,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along
-     * with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listSkusWithResponseAsync(String location,
@@ -810,8 +787,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer on
-     * successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listSkusAsync(String location, String edgeZone,
@@ -831,8 +807,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along
-     * with {@link Response}.
+     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listSkusWithResponse(String location, String edgeZone,

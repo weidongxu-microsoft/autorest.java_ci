@@ -27,17 +27,13 @@ public final class ClusterIdentity {
     private String tenantId;
 
     /*
-     * The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly
-     * created identity and a set of user assigned identities.
+     * The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
      */
     @JsonProperty(value = "type")
     private ResourceIdentityType type;
 
     /*
-     * The list of user identities associated with the cluster. The user identity dictionary key references will be ARM
-     * resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
-     * userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with the cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -50,8 +46,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Get the principalId property: The principal id of cluster identity. This property will only be provided for a
-     * system assigned identity.
+     * Get the principalId property: The principal id of cluster identity. This property will only be provided for a system assigned identity.
      * 
      * @return the principalId value.
      */
@@ -60,8 +55,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Get the tenantId property: The tenant id associated with the cluster. This property will only be provided for a
-     * system assigned identity.
+     * Get the tenantId property: The tenant id associated with the cluster. This property will only be provided for a system assigned identity.
      * 
      * @return the tenantId value.
      */
@@ -70,8 +64,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Get the type property: The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities.
+     * Get the type property: The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
      * 
      * @return the type value.
      */
@@ -80,8 +73,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Set the type property: The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned'
-     * includes both an implicitly created identity and a set of user assigned identities.
+     * Set the type property: The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
      * 
      * @param type the type value to set.
      * @return the ClusterIdentity object itself.
@@ -92,9 +84,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user identities associated with the cluster. The user
-     * identity dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user identities associated with the cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -103,9 +93,7 @@ public final class ClusterIdentity {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user identities associated with the cluster. The user
-     * identity dictionary key references will be ARM resource ids in the form:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user identities associated with the cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the ClusterIdentity object itself.

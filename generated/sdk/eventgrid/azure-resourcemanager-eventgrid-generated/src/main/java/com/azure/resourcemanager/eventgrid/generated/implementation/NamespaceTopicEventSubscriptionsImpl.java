@@ -31,8 +31,8 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
 
     public Response<Subscription> getWithResponse(String resourceGroupName, String namespaceName, String topicName,
         String eventSubscriptionName, Context context) {
-        Response<SubscriptionInner> inner = this.serviceClient().getWithResponse(resourceGroupName, namespaceName,
-            topicName, eventSubscriptionName, context);
+        Response<SubscriptionInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SubscriptionImpl(inner.getValue(), this.manager()));
@@ -70,15 +70,16 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
 
     public PagedIterable<Subscription> listByNamespaceTopic(String resourceGroupName, String namespaceName,
         String topicName, String filter, Integer top, Context context) {
-        PagedIterable<SubscriptionInner> inner = this.serviceClient().listByNamespaceTopic(resourceGroupName,
-            namespaceName, topicName, filter, top, context);
+        PagedIterable<SubscriptionInner> inner = this.serviceClient()
+            .listByNamespaceTopic(resourceGroupName, namespaceName, topicName, filter, top, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new SubscriptionImpl(inner1, this.manager()));
     }
 
     public Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(String resourceGroupName,
         String namespaceName, String topicName, String eventSubscriptionName, Context context) {
-        Response<DeliveryAttributeListResultInner> inner = this.serviceClient().getDeliveryAttributesWithResponse(
-            resourceGroupName, namespaceName, topicName, eventSubscriptionName, context);
+        Response<DeliveryAttributeListResultInner> inner = this.serviceClient()
+            .getDeliveryAttributesWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeliveryAttributeListResultImpl(inner.getValue(), this.manager()));
@@ -89,8 +90,8 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
 
     public DeliveryAttributeListResult getDeliveryAttributes(String resourceGroupName, String namespaceName,
         String topicName, String eventSubscriptionName) {
-        DeliveryAttributeListResultInner inner = this.serviceClient().getDeliveryAttributes(resourceGroupName,
-            namespaceName, topicName, eventSubscriptionName);
+        DeliveryAttributeListResultInner inner = this.serviceClient()
+            .getDeliveryAttributes(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
         if (inner != null) {
             return new DeliveryAttributeListResultImpl(inner, this.manager());
         } else {

@@ -112,15 +112,18 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
     }
 
     public AvailabilitySet create() {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
             .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, this.innerModel(), Context.NONE)
             .getValue();
         return this;
     }
 
     public AvailabilitySet create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
-            .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, this.innerModel(), context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
+            .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -136,14 +139,18 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
     }
 
     public AvailabilitySet apply() {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
-            .updateWithResponse(resourceGroupName, availabilitySetName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
+            .updateWithResponse(resourceGroupName, availabilitySetName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AvailabilitySet apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
-            .updateWithResponse(resourceGroupName, availabilitySetName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
+            .updateWithResponse(resourceGroupName, availabilitySetName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -156,14 +163,18 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
     }
 
     public AvailabilitySet refresh() {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
-            .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
+            .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AvailabilitySet refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getAvailabilitySets()
-            .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getAvailabilitySets()
+            .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context)
+            .getValue();
         return this;
     }
 

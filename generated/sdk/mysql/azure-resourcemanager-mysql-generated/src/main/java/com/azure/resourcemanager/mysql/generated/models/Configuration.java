@@ -163,8 +163,7 @@ public interface Configuration {
         }
 
         /**
-         * The stage of the Configuration definition which contains all the minimum required properties for the resource
-         * to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Configuration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithValue, DefinitionStages.WithCurrentValue, DefinitionStages.WithSource {

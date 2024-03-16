@@ -105,7 +105,8 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -147,14 +148,16 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
     }
 
     public MediaService create() {
-        this.innerObject = serviceManager.serviceClient().getMediaservices().createOrUpdate(resourceGroupName,
-            accountName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .createOrUpdate(resourceGroupName, accountName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public MediaService create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMediaservices().createOrUpdate(resourceGroupName,
-            accountName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .createOrUpdate(resourceGroupName, accountName, this.innerModel(), context);
         return this;
     }
 
@@ -171,14 +174,16 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
     }
 
     public MediaService apply() {
-        this.innerObject = serviceManager.serviceClient().getMediaservices().update(resourceGroupName, accountName,
-            updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .update(resourceGroupName, accountName, updateParameters, Context.NONE);
         return this;
     }
 
     public MediaService apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMediaservices().update(resourceGroupName, accountName,
-            updateParameters, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .update(resourceGroupName, accountName, updateParameters, context);
         return this;
     }
 
@@ -191,20 +196,24 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
     }
 
     public MediaService refresh() {
-        this.innerObject = serviceManager.serviceClient().getMediaservices()
-            .getByResourceGroupWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .getByResourceGroupWithResponse(resourceGroupName, accountName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public MediaService refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getMediaservices()
-            .getByResourceGroupWithResponse(resourceGroupName, accountName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getMediaservices()
+            .getByResourceGroupWithResponse(resourceGroupName, accountName, context)
+            .getValue();
         return this;
     }
 
     public Response<Void> syncStorageKeysWithResponse(SyncStorageKeysInput parameters, Context context) {
-        return serviceManager.mediaservices().syncStorageKeysWithResponse(resourceGroupName, accountName, parameters,
-            context);
+        return serviceManager.mediaservices()
+            .syncStorageKeysWithResponse(resourceGroupName, accountName, parameters, context);
     }
 
     public void syncStorageKeys(SyncStorageKeysInput parameters) {
@@ -212,8 +221,8 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
     }
 
     public Response<EdgePolicies> listEdgePoliciesWithResponse(ListEdgePoliciesInput parameters, Context context) {
-        return serviceManager.mediaservices().listEdgePoliciesWithResponse(resourceGroupName, accountName, parameters,
-            context);
+        return serviceManager.mediaservices()
+            .listEdgePoliciesWithResponse(resourceGroupName, accountName, parameters, context);
     }
 
     public EdgePolicies listEdgePolicies(ListEdgePoliciesInput parameters) {

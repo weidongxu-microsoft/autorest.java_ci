@@ -37,8 +37,8 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     public Response<PrivateEndpoint> getByResourceGroupWithResponse(String resourceGroupName,
         String privateEndpointName, String expand, Context context) {
-        Response<PrivateEndpointInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
-            privateEndpointName, expand, context);
+        Response<PrivateEndpointInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointImpl(inner.getValue(), this.manager()));

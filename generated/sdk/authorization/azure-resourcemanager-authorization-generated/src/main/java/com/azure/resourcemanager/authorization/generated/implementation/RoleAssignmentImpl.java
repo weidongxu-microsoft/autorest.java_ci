@@ -73,14 +73,18 @@ public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.
     }
 
     public RoleAssignment create() {
-        this.innerObject = serviceManager.serviceClient().getRoleAssignments()
-            .createWithResponse(scope, roleAssignmentName, createParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleAssignments()
+            .createWithResponse(scope, roleAssignmentName, createParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoleAssignment create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoleAssignments()
-            .createWithResponse(scope, roleAssignmentName, createParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleAssignments()
+            .createWithResponse(scope, roleAssignmentName, createParameters, context)
+            .getValue();
         return this;
     }
 
@@ -93,14 +97,18 @@ public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.
     }
 
     public RoleAssignment refresh() {
-        this.innerObject = serviceManager.serviceClient().getRoleAssignments()
-            .getWithResponse(scope, roleAssignmentName, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleAssignments()
+            .getWithResponse(scope, roleAssignmentName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RoleAssignment refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRoleAssignments()
-            .getWithResponse(scope, roleAssignmentName, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRoleAssignments()
+            .getWithResponse(scope, roleAssignmentName, context)
+            .getValue();
         return this;
     }
 

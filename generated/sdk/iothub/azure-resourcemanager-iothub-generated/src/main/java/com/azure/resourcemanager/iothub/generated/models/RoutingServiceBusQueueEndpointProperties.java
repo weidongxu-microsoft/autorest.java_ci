@@ -50,10 +50,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
     private ManagedIdentity identity;
 
     /*
-     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
-     * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
-     * $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue
-     * name.
+     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue name.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -197,10 +194,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be
-     * the same as the actual queue name.
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue name.
      * 
      * @return the name value.
      */
@@ -209,10 +203,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be
-     * the same as the actual queue name.
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue name.
      * 
      * @param name the name value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.

@@ -32,8 +32,7 @@ public final class GalleryImageVersionSafetyProfile extends GalleryArtifactSafet
     }
 
     /**
-     * Get the reportedForPolicyViolation property: Indicates whether this image has been reported as violating
-     * Microsoft's policies.
+     * Get the reportedForPolicyViolation property: Indicates whether this image has been reported as violating Microsoft's policies.
      * 
      * @return the reportedForPolicyViolation value.
      */
@@ -42,8 +41,7 @@ public final class GalleryImageVersionSafetyProfile extends GalleryArtifactSafet
     }
 
     /**
-     * Get the policyViolations property: A list of Policy Violations that have been reported for this Gallery Image
-     * Version.
+     * Get the policyViolations property: A list of Policy Violations that have been reported for this Gallery Image Version.
      * 
      * @return the policyViolations value.
      */

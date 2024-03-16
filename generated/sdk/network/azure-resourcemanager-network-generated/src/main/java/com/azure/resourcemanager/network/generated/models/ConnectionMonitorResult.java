@@ -208,8 +208,7 @@ public interface ConnectionMonitorResult {
         }
 
         /**
-         * The stage of the ConnectionMonitorResult definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ConnectionMonitorResult definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithTags,
             DefinitionStages.WithSource, DefinitionStages.WithDestination, DefinitionStages.WithAutoStart,
@@ -297,8 +296,7 @@ public interface ConnectionMonitorResult {
          */
         interface WithAutoStart {
             /**
-             * Specifies the autoStart property: Determines if the connection monitor will start automatically once
-             * created..
+             * Specifies the autoStart property: Determines if the connection monitor will start automatically once created..
              * 
              * @param autoStart Determines if the connection monitor will start automatically once created.
              * @return the next definition stage.
@@ -389,8 +387,7 @@ public interface ConnectionMonitorResult {
          */
         interface WithMigrate {
             /**
-             * Specifies the migrate property: Value indicating whether connection monitor V1 should be migrated to V2
-             * format..
+             * Specifies the migrate property: Value indicating whether connection monitor V1 should be migrated to V2 format..
              * 
              * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
              * @return the next definition stage.

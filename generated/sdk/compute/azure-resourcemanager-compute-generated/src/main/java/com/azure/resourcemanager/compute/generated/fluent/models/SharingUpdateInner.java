@@ -17,8 +17,7 @@ import java.util.List;
 @Fluent
 public final class SharingUpdateInner {
     /*
-     * This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,**
-     * **Remove,** **Reset.**
+     * This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**
      */
     @JsonProperty(value = "operationType", required = true)
     private SharingUpdateOperationTypes operationType;
@@ -36,8 +35,7 @@ public final class SharingUpdateInner {
     }
 
     /**
-     * Get the operationType property: This property allows you to specify the operation type of gallery sharing update.
-     * Possible values are: **Add,** **Remove,** **Reset.**.
+     * Get the operationType property: This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**.
      * 
      * @return the operationType value.
      */
@@ -46,8 +44,7 @@ public final class SharingUpdateInner {
     }
 
     /**
-     * Set the operationType property: This property allows you to specify the operation type of gallery sharing update.
-     * Possible values are: **Add,** **Remove,** **Reset.**.
+     * Set the operationType property: This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**.
      * 
      * @param operationType the operationType value to set.
      * @return the SharingUpdateInner object itself.

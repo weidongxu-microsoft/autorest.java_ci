@@ -316,10 +316,7 @@ public interface TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -337,10 +334,7 @@ public interface TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -359,10 +353,7 @@ public interface TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -378,10 +369,7 @@ public interface TracksClient {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
-     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
-     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
-     * reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.

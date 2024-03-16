@@ -14,7 +14,11 @@ import java.util.List;
 /**
  * Information about the webhook destination for an event subscription.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "endpointType")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    property = "endpointType",
+    defaultImpl = WebhookEventSubscriptionDestination.class,
+    visible = true)
 @JsonTypeName("WebHook")
 @Fluent
 public final class WebhookEventSubscriptionDestination extends EventSubscriptionDestination {
@@ -28,6 +32,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
      * Creates an instance of WebhookEventSubscriptionDestination class.
      */
     public WebhookEventSubscriptionDestination() {
+        withEndpointType(EndpointType.WEB_HOOK);
     }
 
     /**
@@ -63,8 +68,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Get the endpointBaseUrl property: The base URL that represents the endpoint of the destination of an event
-     * subscription.
+     * Get the endpointBaseUrl property: The base URL that represents the endpoint of the destination of an event subscription.
      * 
      * @return the endpointBaseUrl value.
      */
@@ -120,8 +124,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Get the azureActiveDirectoryTenantId property: The Azure Active Directory Tenant ID to get the access token that
-     * will be included as the bearer token in delivery requests.
+     * Get the azureActiveDirectoryTenantId property: The Azure Active Directory Tenant ID to get the access token that will be included as the bearer token in delivery requests.
      * 
      * @return the azureActiveDirectoryTenantId value.
      */
@@ -130,8 +133,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Set the azureActiveDirectoryTenantId property: The Azure Active Directory Tenant ID to get the access token that
-     * will be included as the bearer token in delivery requests.
+     * Set the azureActiveDirectoryTenantId property: The Azure Active Directory Tenant ID to get the access token that will be included as the bearer token in delivery requests.
      * 
      * @param azureActiveDirectoryTenantId the azureActiveDirectoryTenantId value to set.
      * @return the WebhookEventSubscriptionDestination object itself.
@@ -145,8 +147,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Get the azureActiveDirectoryApplicationIdOrUri property: The Azure Active Directory Application ID or URI to get
-     * the access token that will be included as the bearer token in delivery requests.
+     * Get the azureActiveDirectoryApplicationIdOrUri property: The Azure Active Directory Application ID or URI to get the access token that will be included as the bearer token in delivery requests.
      * 
      * @return the azureActiveDirectoryApplicationIdOrUri value.
      */
@@ -155,8 +156,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Set the azureActiveDirectoryApplicationIdOrUri property: The Azure Active Directory Application ID or URI to get
-     * the access token that will be included as the bearer token in delivery requests.
+     * Set the azureActiveDirectoryApplicationIdOrUri property: The Azure Active Directory Application ID or URI to get the access token that will be included as the bearer token in delivery requests.
      * 
      * @param azureActiveDirectoryApplicationIdOrUri the azureActiveDirectoryApplicationIdOrUri value to set.
      * @return the WebhookEventSubscriptionDestination object itself.

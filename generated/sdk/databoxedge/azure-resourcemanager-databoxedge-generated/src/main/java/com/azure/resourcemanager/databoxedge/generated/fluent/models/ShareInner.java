@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Represents a share on the Data Box Edge/Gateway device.
+ * Represents a share on the  Data Box Edge/Gateway device.
  */
 @Fluent
 public final class ShareInner extends ArmBaseModel {
@@ -177,8 +177,7 @@ public final class ShareInner extends ArmBaseModel {
     }
 
     /**
-     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
-     * SMB protocol).
+     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
      * 
      * @return the userAccessRights value.
      */
@@ -187,8 +186,7 @@ public final class ShareInner extends ArmBaseModel {
     }
 
     /**
-     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
-     * SMB protocol).
+     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
      * 
      * @param userAccessRights the userAccessRights value to set.
      * @return the ShareInner object itself.
@@ -202,8 +200,7 @@ public final class ShareInner extends ArmBaseModel {
     }
 
     /**
-     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
-     * for NFS protocol).
+     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      * 
      * @return the clientAccessRights value.
      */
@@ -212,8 +209,7 @@ public final class ShareInner extends ArmBaseModel {
     }
 
     /**
-     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
-     * for NFS protocol).
+     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      * 
      * @param clientAccessRights the clientAccessRights value to set.
      * @return the ShareInner object itself.

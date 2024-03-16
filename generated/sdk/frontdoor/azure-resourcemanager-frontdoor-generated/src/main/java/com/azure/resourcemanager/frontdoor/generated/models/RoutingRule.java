@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * A routing rule represents a specification for traffic to treat and where to send it, along with health probe
- * information.
+ * A routing rule represents a specification for traffic to treat and where to send it, along with health probe information.
  */
 @Fluent
 public final class RoutingRule extends SubResource {
@@ -237,8 +236,7 @@ public final class RoutingRule extends SubResource {
     }
 
     /**
-     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing
-     * rule (if applicable).
+     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing rule (if applicable).
      * 
      * @return the webApplicationFirewallPolicyLink value.
      */
@@ -247,8 +245,7 @@ public final class RoutingRule extends SubResource {
     }
 
     /**
-     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing
-     * rule (if applicable).
+     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each routing rule (if applicable).
      * 
      * @param webApplicationFirewallPolicyLink the webApplicationFirewallPolicyLink value to set.
      * @return the RoutingRule object itself.

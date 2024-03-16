@@ -22,8 +22,7 @@ public final class ListUsagesResult {
     private List<UsageInner> value;
 
     /*
-     * The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next
-     * page of compute resource usage information.
+     * The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next page of compute resource usage information.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;
@@ -55,8 +54,7 @@ public final class ListUsagesResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext()
-     * with this to fetch the next page of compute resource usage information.
+     * Get the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next page of compute resource usage information.
      * 
      * @return the nextLink value.
      */
@@ -65,8 +63,7 @@ public final class ListUsagesResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext()
-     * with this to fetch the next page of compute resource usage information.
+     * Set the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next page of compute resource usage information.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ListUsagesResult object itself.

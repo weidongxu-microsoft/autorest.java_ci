@@ -91,15 +91,18 @@ public final class VpnServerConfigurationPolicyGroupImpl implements VpnServerCon
     }
 
     public VpnServerConfigurationPolicyGroup create() {
-        this.innerObject
-            = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(resourceGroupName,
-                vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(
-            resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -115,15 +118,18 @@ public final class VpnServerConfigurationPolicyGroupImpl implements VpnServerCon
     }
 
     public VpnServerConfigurationPolicyGroup apply() {
-        this.innerObject
-            = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(resourceGroupName,
-                vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+                this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(
-            resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
+            .createOrUpdate(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+                this.innerModel(), context);
         return this;
     }
 
@@ -139,14 +145,16 @@ public final class VpnServerConfigurationPolicyGroupImpl implements VpnServerCon
     }
 
     public VpnServerConfigurationPolicyGroup refresh() {
-        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
             .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, Context.NONE)
             .getValue();
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup refresh(Context context) {
-        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups()
+        this.innerObject = serviceManager.serviceClient()
+            .getConfigurationPolicyGroups()
             .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context)
             .getValue();
         return this;

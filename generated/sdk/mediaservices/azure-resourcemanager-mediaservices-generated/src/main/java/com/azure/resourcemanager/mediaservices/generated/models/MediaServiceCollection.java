@@ -21,8 +21,7 @@ public final class MediaServiceCollection {
     private List<MediaServiceInner> value;
 
     /*
-     * A link to the next page of the collection (when the collection contains too many results to return in one
-     * response).
+     * A link to the next page of the collection (when the collection contains too many results to return in one response).
      */
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
@@ -54,8 +53,7 @@ public final class MediaServiceCollection {
     }
 
     /**
-     * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
-     * results to return in one response).
+     * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many results to return in one response).
      * 
      * @return the odataNextLink value.
      */
@@ -64,8 +62,7 @@ public final class MediaServiceCollection {
     }
 
     /**
-     * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
-     * results to return in one response).
+     * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many results to return in one response).
      * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the MediaServiceCollection object itself.

@@ -55,8 +55,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,8 +64,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the PeerExpressRouteCircuitConnectionInner object itself.
@@ -104,8 +102,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
-     * circuit.
+     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit.
      * 
      * @return the expressRouteCircuitPeering value.
      */
@@ -114,8 +111,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
-     * circuit.
+     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit.
      * 
      * @param expressRouteCircuitPeering the expressRouteCircuitPeering value to set.
      * @return the PeerExpressRouteCircuitConnectionInner object itself.
@@ -130,8 +126,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
-     * the peered circuit.
+     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
      * 
      * @return the peerExpressRouteCircuitPeering value.
      */
@@ -140,8 +135,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
-     * the peered circuit.
+     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
      * 
      * @param peerExpressRouteCircuitPeering the peerExpressRouteCircuitPeering value to set.
      * @return the PeerExpressRouteCircuitConnectionInner object itself.
@@ -211,8 +205,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the authResourceGuid property: The resource guid of the authorization used for the express route circuit
-     * connection.
+     * Get the authResourceGuid property: The resource guid of the authorization used for the express route circuit connection.
      * 
      * @return the authResourceGuid value.
      */
@@ -221,8 +214,7 @@ public final class PeerExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the authResourceGuid property: The resource guid of the authorization used for the express route circuit
-     * connection.
+     * Set the authResourceGuid property: The resource guid of the authorization used for the express route circuit connection.
      * 
      * @param authResourceGuid the authResourceGuid value to set.
      * @return the PeerExpressRouteCircuitConnectionInner object itself.

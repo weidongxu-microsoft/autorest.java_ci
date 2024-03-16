@@ -38,6 +38,11 @@ public final class ActionType extends ExpandableStringEnum<ActionType> {
     public static final ActionType ANOMALY_SCORING = fromString("AnomalyScoring");
 
     /**
+     * Static value JSChallenge for ActionType.
+     */
+    public static final ActionType JSCHALLENGE = fromString("JSChallenge");
+
+    /**
      * Creates a new instance of ActionType value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.

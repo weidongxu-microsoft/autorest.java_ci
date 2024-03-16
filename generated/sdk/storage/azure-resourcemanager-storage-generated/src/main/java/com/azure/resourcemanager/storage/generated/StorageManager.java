@@ -33,6 +33,7 @@ import com.azure.resourcemanager.storage.generated.implementation.FileServicesIm
 import com.azure.resourcemanager.storage.generated.implementation.FileSharesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.LocalUsersOperationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.ManagementPoliciesImpl;
+import com.azure.resourcemanager.storage.generated.implementation.NetworkSecurityPerimeterConfigurationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.ObjectReplicationPoliciesOperationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.PrivateEndpointConnectionsImpl;
@@ -54,6 +55,7 @@ import com.azure.resourcemanager.storage.generated.models.FileServices;
 import com.azure.resourcemanager.storage.generated.models.FileShares;
 import com.azure.resourcemanager.storage.generated.models.LocalUsersOperations;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicies;
+import com.azure.resourcemanager.storage.generated.models.NetworkSecurityPerimeterConfigurations;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPoliciesOperations;
 import com.azure.resourcemanager.storage.generated.models.Operations;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnections;
@@ -77,6 +79,18 @@ import java.util.stream.Collectors;
  * The Azure Storage Management API.
  */
 public final class StorageManager {
+    private BlobServices blobServices;
+
+    private BlobContainers blobContainers;
+
+    private FileServices fileServices;
+
+    private FileShares fileShares;
+
+    private QueueServices queueServices;
+
+    private Queues queues;
+
     private Operations operations;
 
     private Skus skus;
@@ -101,21 +115,11 @@ public final class StorageManager {
 
     private EncryptionScopes encryptionScopes;
 
-    private BlobServices blobServices;
-
-    private BlobContainers blobContainers;
-
-    private FileServices fileServices;
-
-    private FileShares fileShares;
-
-    private QueueServices queueServices;
-
-    private Queues queues;
-
     private TableServices tableServices;
 
     private Tables tables;
+
+    private NetworkSecurityPerimeterConfigurations networkSecurityPerimeterConfigurations;
 
     private final StorageManagementClient clientObject;
 
@@ -123,8 +127,10 @@ public final class StorageManager {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject = new StorageManagementClientBuilder().pipeline(httpPipeline)
-            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
-            .defaultPollInterval(defaultPollInterval).buildClient();
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
+            .subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval)
+            .buildClient();
     }
 
     /**
@@ -275,12 +281,19 @@ public final class StorageManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.storage.generated")
-                .append("/").append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java")
+                .append("-")
+                .append("com.azure.resourcemanager.storage.generated")
+                .append("/")
+                .append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
+                userAgentBuilder.append(" (")
+                    .append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.name"))
+                    .append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version"))
+                    .append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -299,20 +312,95 @@ public final class StorageManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
                 .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
             policies.addAll(this.policies.stream()
-                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
             HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
-                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
+                .policies(policies.toArray(new HttpPipelinePolicy[0]))
+                .build();
             return new StorageManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /**
+     * Gets the resource collection API of BlobServices. It manages BlobServiceProperties.
+     * 
+     * @return Resource collection API of BlobServices.
+     */
+    public BlobServices blobServices() {
+        if (this.blobServices == null) {
+            this.blobServices = new BlobServicesImpl(clientObject.getBlobServices(), this);
+        }
+        return blobServices;
+    }
+
+    /**
+     * Gets the resource collection API of BlobContainers. It manages BlobContainer, ImmutabilityPolicy.
+     * 
+     * @return Resource collection API of BlobContainers.
+     */
+    public BlobContainers blobContainers() {
+        if (this.blobContainers == null) {
+            this.blobContainers = new BlobContainersImpl(clientObject.getBlobContainers(), this);
+        }
+        return blobContainers;
+    }
+
+    /**
+     * Gets the resource collection API of FileServices. It manages FileServiceProperties.
+     * 
+     * @return Resource collection API of FileServices.
+     */
+    public FileServices fileServices() {
+        if (this.fileServices == null) {
+            this.fileServices = new FileServicesImpl(clientObject.getFileServices(), this);
+        }
+        return fileServices;
+    }
+
+    /**
+     * Gets the resource collection API of FileShares. It manages FileShare.
+     * 
+     * @return Resource collection API of FileShares.
+     */
+    public FileShares fileShares() {
+        if (this.fileShares == null) {
+            this.fileShares = new FileSharesImpl(clientObject.getFileShares(), this);
+        }
+        return fileShares;
+    }
+
+    /**
+     * Gets the resource collection API of QueueServices. It manages QueueServiceProperties.
+     * 
+     * @return Resource collection API of QueueServices.
+     */
+    public QueueServices queueServices() {
+        if (this.queueServices == null) {
+            this.queueServices = new QueueServicesImpl(clientObject.getQueueServices(), this);
+        }
+        return queueServices;
+    }
+
+    /**
+     * Gets the resource collection API of Queues. It manages StorageQueue.
+     * 
+     * @return Resource collection API of Queues.
+     */
+    public Queues queues() {
+        if (this.queues == null) {
+            this.queues = new QueuesImpl(clientObject.getQueues(), this);
+        }
+        return queues;
     }
 
     /**
@@ -462,78 +550,6 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of BlobServices. It manages BlobServiceProperties.
-     * 
-     * @return Resource collection API of BlobServices.
-     */
-    public BlobServices blobServices() {
-        if (this.blobServices == null) {
-            this.blobServices = new BlobServicesImpl(clientObject.getBlobServices(), this);
-        }
-        return blobServices;
-    }
-
-    /**
-     * Gets the resource collection API of BlobContainers. It manages BlobContainer, ImmutabilityPolicy.
-     * 
-     * @return Resource collection API of BlobContainers.
-     */
-    public BlobContainers blobContainers() {
-        if (this.blobContainers == null) {
-            this.blobContainers = new BlobContainersImpl(clientObject.getBlobContainers(), this);
-        }
-        return blobContainers;
-    }
-
-    /**
-     * Gets the resource collection API of FileServices. It manages FileServiceProperties.
-     * 
-     * @return Resource collection API of FileServices.
-     */
-    public FileServices fileServices() {
-        if (this.fileServices == null) {
-            this.fileServices = new FileServicesImpl(clientObject.getFileServices(), this);
-        }
-        return fileServices;
-    }
-
-    /**
-     * Gets the resource collection API of FileShares. It manages FileShare.
-     * 
-     * @return Resource collection API of FileShares.
-     */
-    public FileShares fileShares() {
-        if (this.fileShares == null) {
-            this.fileShares = new FileSharesImpl(clientObject.getFileShares(), this);
-        }
-        return fileShares;
-    }
-
-    /**
-     * Gets the resource collection API of QueueServices. It manages QueueServiceProperties.
-     * 
-     * @return Resource collection API of QueueServices.
-     */
-    public QueueServices queueServices() {
-        if (this.queueServices == null) {
-            this.queueServices = new QueueServicesImpl(clientObject.getQueueServices(), this);
-        }
-        return queueServices;
-    }
-
-    /**
-     * Gets the resource collection API of Queues. It manages StorageQueue.
-     * 
-     * @return Resource collection API of Queues.
-     */
-    public Queues queues() {
-        if (this.queues == null) {
-            this.queues = new QueuesImpl(clientObject.getQueues(), this);
-        }
-        return queues;
-    }
-
-    /**
      * Gets the resource collection API of TableServices. It manages TableServiceProperties.
      * 
      * @return Resource collection API of TableServices.
@@ -558,8 +574,20 @@ public final class StorageManager {
     }
 
     /**
-     * Gets wrapped service client StorageManagementClient providing direct access to the underlying auto-generated API
-     * implementation, based on Azure REST API.
+     * Gets the resource collection API of NetworkSecurityPerimeterConfigurations.
+     * 
+     * @return Resource collection API of NetworkSecurityPerimeterConfigurations.
+     */
+    public NetworkSecurityPerimeterConfigurations networkSecurityPerimeterConfigurations() {
+        if (this.networkSecurityPerimeterConfigurations == null) {
+            this.networkSecurityPerimeterConfigurations = new NetworkSecurityPerimeterConfigurationsImpl(
+                clientObject.getNetworkSecurityPerimeterConfigurations(), this);
+        }
+        return networkSecurityPerimeterConfigurations;
+    }
+
+    /**
+     * Gets wrapped service client StorageManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client StorageManagementClient.
      */

@@ -15,7 +15,7 @@ import java.time.Duration;
 /**
  * Class representing a read write database.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = ReadWriteDatabase.class, visible = true)
 @JsonTypeName("ReadWrite")
 @Fluent
 public final class ReadWriteDatabase extends DatabaseInner {
@@ -29,6 +29,7 @@ public final class ReadWriteDatabase extends DatabaseInner {
      * Creates an instance of ReadWriteDatabase class.
      */
     public ReadWriteDatabase() {
+        withKind(Kind.READ_WRITE);
     }
 
     /**
@@ -59,8 +60,7 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
-     * in TimeSpan.
+     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
      * 
      * @return the softDeletePeriod value.
      */
@@ -69,8 +69,7 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
-     * in TimeSpan.
+     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
      * 
      * @param softDeletePeriod the softDeletePeriod value to set.
      * @return the ReadWriteDatabase object itself.
@@ -148,8 +147,7 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object
-     * contains information related to the database's suspension state.
+     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
      * 
      * @return the suspensionDetails value.
      */

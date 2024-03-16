@@ -78,8 +78,7 @@ public final class ClientInner extends ProxyResource {
     }
 
     /**
-     * Get the authenticationName property: The name presented by the client for authentication. The default value is
-     * the name of the resource.
+     * Get the authenticationName property: The name presented by the client for authentication. The default value is the name of the resource.
      * 
      * @return the authenticationName value.
      */
@@ -88,8 +87,7 @@ public final class ClientInner extends ProxyResource {
     }
 
     /**
-     * Set the authenticationName property: The name presented by the client for authentication. The default value is
-     * the name of the resource.
+     * Set the authenticationName property: The name presented by the client for authentication. The default value is the name of the resource.
      * 
      * @param authenticationName the authenticationName value to set.
      * @return the ClientInner object itself.

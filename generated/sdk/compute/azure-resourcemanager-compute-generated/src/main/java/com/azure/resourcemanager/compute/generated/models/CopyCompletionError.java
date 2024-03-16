@@ -32,8 +32,7 @@ public final class CopyCompletionError {
     }
 
     /**
-     * Get the errorCode property: Indicates the error code if the background copy of a resource created via the
-     * CopyStart operation fails.
+     * Get the errorCode property: Indicates the error code if the background copy of a resource created via the CopyStart operation fails.
      * 
      * @return the errorCode value.
      */
@@ -42,8 +41,7 @@ public final class CopyCompletionError {
     }
 
     /**
-     * Set the errorCode property: Indicates the error code if the background copy of a resource created via the
-     * CopyStart operation fails.
+     * Set the errorCode property: Indicates the error code if the background copy of a resource created via the CopyStart operation fails.
      * 
      * @param errorCode the errorCode value to set.
      * @return the CopyCompletionError object itself.
@@ -54,8 +52,7 @@ public final class CopyCompletionError {
     }
 
     /**
-     * Get the errorMessage property: Indicates the error message if the background copy of a resource created via the
-     * CopyStart operation fails.
+     * Get the errorMessage property: Indicates the error message if the background copy of a resource created via the CopyStart operation fails.
      * 
      * @return the errorMessage value.
      */
@@ -64,8 +61,7 @@ public final class CopyCompletionError {
     }
 
     /**
-     * Set the errorMessage property: Indicates the error message if the background copy of a resource created via the
-     * CopyStart operation fails.
+     * Set the errorMessage property: Indicates the error message if the background copy of a resource created via the CopyStart operation fails.
      * 
      * @param errorMessage the errorMessage value to set.
      * @return the CopyCompletionError object itself.

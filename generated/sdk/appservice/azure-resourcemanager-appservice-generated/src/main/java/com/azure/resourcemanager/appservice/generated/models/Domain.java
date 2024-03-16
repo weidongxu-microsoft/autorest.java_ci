@@ -108,8 +108,7 @@ public interface Domain {
     List<String> nameServers();
 
     /**
-     * Gets the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;.
+     * Gets the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the privacy value.
      */
@@ -137,18 +136,15 @@ public interface Domain {
     OffsetDateTime lastRenewedTime();
 
     /**
-     * Gets the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
     Boolean autoRenew();
 
     /**
-     * Gets the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to
-     * App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if
-     * domain registration status is active and
-     * it is hosted on name servers Azure has programmatic access to.
+     * Gets the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if domain registration status is active and 
+     *  it is hosted on name servers Azure has programmatic access to.
      * 
      * @return the readyForDnsRecordManagement value.
      */
@@ -283,8 +279,7 @@ public interface Domain {
         }
 
         /**
-         * The stage of the Domain definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Domain definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithKind,
             DefinitionStages.WithContactAdmin, DefinitionStages.WithContactBilling,
@@ -390,11 +385,9 @@ public interface Domain {
          */
         interface WithPrivacy {
             /**
-             * Specifies the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this
-             * domain; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param privacy &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
-             * &lt;code&gt;false&lt;/code&gt;.
+             * @param privacy &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withPrivacy(Boolean privacy);
@@ -405,11 +398,9 @@ public interface Domain {
          */
         interface WithAutoRenew {
             /**
-             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically
-             * renewed; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise,
-             * &lt;code&gt;false&lt;/code&gt;.
+             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withAutoRenew(Boolean autoRenew);
@@ -531,11 +522,9 @@ public interface Domain {
          */
         interface WithPrivacy {
             /**
-             * Specifies the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this
-             * domain; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param privacy &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
-             * &lt;code&gt;false&lt;/code&gt;.
+             * @param privacy &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withPrivacy(Boolean privacy);
@@ -546,11 +535,9 @@ public interface Domain {
          */
         interface WithAutoRenew {
             /**
-             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically
-             * renewed; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise,
-             * &lt;code&gt;false&lt;/code&gt;.
+             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withAutoRenew(Boolean autoRenew);
@@ -618,8 +605,7 @@ public interface Domain {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -630,8 +616,7 @@ public interface Domain {
      * 
      * Description for Renew a domain.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     * request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void renew();

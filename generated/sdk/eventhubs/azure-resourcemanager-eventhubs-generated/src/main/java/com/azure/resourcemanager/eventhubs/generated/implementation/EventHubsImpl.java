@@ -49,8 +49,9 @@ public final class EventHubsImpl implements EventHubs {
     public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
         String namespaceName, String eventHubName, String authorizationRuleName, AuthorizationRuleInner parameters,
         Context context) {
-        Response<AuthorizationRuleInner> inner = this.serviceClient().createOrUpdateAuthorizationRuleWithResponse(
-            resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters, context);
+        Response<AuthorizationRuleInner> inner = this.serviceClient()
+            .createOrUpdateAuthorizationRuleWithResponse(resourceGroupName, namespaceName, eventHubName,
+                authorizationRuleName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
@@ -61,8 +62,9 @@ public final class EventHubsImpl implements EventHubs {
 
     public AuthorizationRule createOrUpdateAuthorizationRule(String resourceGroupName, String namespaceName,
         String eventHubName, String authorizationRuleName, AuthorizationRuleInner parameters) {
-        AuthorizationRuleInner inner = this.serviceClient().createOrUpdateAuthorizationRule(resourceGroupName,
-            namespaceName, eventHubName, authorizationRuleName, parameters);
+        AuthorizationRuleInner inner = this.serviceClient()
+            .createOrUpdateAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName,
+                parameters);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -72,8 +74,9 @@ public final class EventHubsImpl implements EventHubs {
 
     public Response<AuthorizationRule> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
         String eventHubName, String authorizationRuleName, Context context) {
-        Response<AuthorizationRuleInner> inner = this.serviceClient().getAuthorizationRuleWithResponse(
-            resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
+        Response<AuthorizationRuleInner> inner = this.serviceClient()
+            .getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, eventHubName, authorizationRuleName,
+                context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
@@ -84,8 +87,8 @@ public final class EventHubsImpl implements EventHubs {
 
     public AuthorizationRule getAuthorizationRule(String resourceGroupName, String namespaceName, String eventHubName,
         String authorizationRuleName) {
-        AuthorizationRuleInner inner = this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName,
-            eventHubName, authorizationRuleName);
+        AuthorizationRuleInner inner = this.serviceClient()
+            .getAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -95,20 +98,21 @@ public final class EventHubsImpl implements EventHubs {
 
     public Response<Void> deleteAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
         String eventHubName, String authorizationRuleName, Context context) {
-        return this.serviceClient().deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, eventHubName,
-            authorizationRuleName, context);
+        return this.serviceClient()
+            .deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, eventHubName, authorizationRuleName,
+                context);
     }
 
     public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String eventHubName,
         String authorizationRuleName) {
-        this.serviceClient().deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName,
-            authorizationRuleName);
+        this.serviceClient()
+            .deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
     }
 
     public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName,
         String eventHubName, String authorizationRuleName, Context context) {
-        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
-            eventHubName, authorizationRuleName, context);
+        Response<AccessKeysInner> inner = this.serviceClient()
+            .listKeysWithResponse(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
@@ -130,8 +134,9 @@ public final class EventHubsImpl implements EventHubs {
 
     public Response<AccessKeys> regenerateKeysWithResponse(String resourceGroupName, String namespaceName,
         String eventHubName, String authorizationRuleName, RegenerateAccessKeyParameters parameters, Context context) {
-        Response<AccessKeysInner> inner = this.serviceClient().regenerateKeysWithResponse(resourceGroupName,
-            namespaceName, eventHubName, authorizationRuleName, parameters, context);
+        Response<AccessKeysInner> inner = this.serviceClient()
+            .regenerateKeysWithResponse(resourceGroupName, namespaceName, eventHubName, authorizationRuleName,
+                parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
@@ -142,8 +147,8 @@ public final class EventHubsImpl implements EventHubs {
 
     public AccessKeys regenerateKeys(String resourceGroupName, String namespaceName, String eventHubName,
         String authorizationRuleName, RegenerateAccessKeyParameters parameters) {
-        AccessKeysInner inner = this.serviceClient().regenerateKeys(resourceGroupName, namespaceName, eventHubName,
-            authorizationRuleName, parameters);
+        AccessKeysInner inner = this.serviceClient()
+            .regenerateKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {

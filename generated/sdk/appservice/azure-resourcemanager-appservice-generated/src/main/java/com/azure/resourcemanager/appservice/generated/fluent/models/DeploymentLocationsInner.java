@@ -60,8 +60,7 @@ public final class DeploymentLocationsInner {
     }
 
     /**
-     * Get the hostingEnvironments property: Available App Service Environments with full descriptions of the
-     * environments.
+     * Get the hostingEnvironments property: Available App Service Environments with full descriptions of the environments.
      * 
      * @return the hostingEnvironments value.
      */
@@ -70,8 +69,7 @@ public final class DeploymentLocationsInner {
     }
 
     /**
-     * Set the hostingEnvironments property: Available App Service Environments with full descriptions of the
-     * environments.
+     * Set the hostingEnvironments property: Available App Service Environments with full descriptions of the environments.
      * 
      * @param hostingEnvironments the hostingEnvironments value to set.
      * @return the DeploymentLocationsInner object itself.

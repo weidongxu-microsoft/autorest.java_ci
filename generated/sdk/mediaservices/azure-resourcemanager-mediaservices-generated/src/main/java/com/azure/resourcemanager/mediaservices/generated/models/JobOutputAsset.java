@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /**
  * Represents an Asset used as a JobOutput.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobOutputAsset.class, visible = true)
 @JsonTypeName("#Microsoft.Media.JobOutputAsset")
 @Fluent
 public final class JobOutputAsset extends JobOutput {
@@ -27,6 +27,7 @@ public final class JobOutputAsset extends JobOutput {
      * Creates an instance of JobOutputAsset class.
      */
     public JobOutputAsset() {
+        withOdataType("#Microsoft.Media.JobOutputAsset");
     }
 
     /**

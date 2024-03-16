@@ -78,8 +78,8 @@ public final class AssetsImpl implements Assets {
 
     public Response<AssetContainerSas> listContainerSasWithResponse(String resourceGroupName, String accountName,
         String assetName, ListContainerSasInput parameters, Context context) {
-        Response<AssetContainerSasInner> inner = this.serviceClient().listContainerSasWithResponse(resourceGroupName,
-            accountName, assetName, parameters, context);
+        Response<AssetContainerSasInner> inner = this.serviceClient()
+            .listContainerSasWithResponse(resourceGroupName, accountName, assetName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AssetContainerSasImpl(inner.getValue(), this.manager()));

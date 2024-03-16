@@ -26,8 +26,7 @@ public interface StorageEncryptedAssetDecryptionData {
     List<AssetFileEncryptionMetadata> assetFileEncryptionMetadata();
 
     /**
-     * Gets the inner
-     * com.azure.resourcemanager.mediaservices.generated.fluent.models.StorageEncryptedAssetDecryptionDataInner object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.StorageEncryptedAssetDecryptionDataInner object.
      * 
      * @return the inner object.
      */

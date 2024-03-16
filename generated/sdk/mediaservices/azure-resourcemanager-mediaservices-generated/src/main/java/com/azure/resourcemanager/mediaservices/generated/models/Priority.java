@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Sets the relative priority of the TransformOutputs within a Transform. This sets the priority that the service uses
- * for processing TransformOutputs. The default priority is Normal.
+ * Sets the relative priority of the TransformOutputs within a Transform. This sets the priority that the service uses for processing TransformOutputs. The default priority is Normal.
  */
 public final class Priority extends ExpandableStringEnum<Priority> {
     /**

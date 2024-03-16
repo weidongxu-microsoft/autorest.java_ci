@@ -29,8 +29,7 @@ public final class BillingResponseListResultInner {
     private List<String> vmSizesWithEncryptionAtHost;
 
     /*
-     * The virtual machine filtering mode. Effectively this can enabling or disabling the virtual machine sizes in a
-     * particular set.
+     * The virtual machine filtering mode. Effectively this can enabling or disabling the virtual machine sizes in a particular set.
      */
     @JsonProperty(value = "vmSizeFilters")
     private List<VmSizeCompatibilityFilterV2> vmSizeFilters;
@@ -94,8 +93,7 @@ public final class BillingResponseListResultInner {
     }
 
     /**
-     * Get the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling
-     * the virtual machine sizes in a particular set.
+     * Get the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling the virtual machine sizes in a particular set.
      * 
      * @return the vmSizeFilters value.
      */
@@ -104,8 +102,7 @@ public final class BillingResponseListResultInner {
     }
 
     /**
-     * Set the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling
-     * the virtual machine sizes in a particular set.
+     * Set the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling the virtual machine sizes in a particular set.
      * 
      * @param vmSizeFilters the vmSizeFilters value to set.
      * @return the BillingResponseListResultInner object itself.

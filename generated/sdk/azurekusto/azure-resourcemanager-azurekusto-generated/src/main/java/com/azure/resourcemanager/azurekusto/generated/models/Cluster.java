@@ -186,8 +186,7 @@ public interface Cluster {
     Boolean enableDoubleEncryption();
 
     /**
-     * Gets the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled,
-     * only private endpoint connection to the cluster is allowed.
+     * Gets the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -215,16 +214,14 @@ public interface Cluster {
     List<AcceptedAudiences> acceptedAudiences();
 
     /**
-     * Gets the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped
-     * (due to lack of data or no activity for many days).
+     * Gets the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days).
      * 
      * @return the enableAutoStop value.
      */
     Boolean enableAutoStop();
 
     /**
-     * Gets the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Gets the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the restrictOutboundNetworkAccess value.
      */
@@ -238,8 +235,7 @@ public interface Cluster {
     List<String> allowedFqdnList();
 
     /**
-     * Gets the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4
-     * and IPv6).
+     * Gets the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
      * 
      * @return the publicIpType value.
      */
@@ -359,8 +355,7 @@ public interface Cluster {
         }
 
         /**
-         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithZones, DefinitionStages.WithIdentity,
@@ -460,8 +455,7 @@ public interface Cluster {
          */
         interface WithEnableDiskEncryption {
             /**
-             * Specifies the enableDiskEncryption property: A boolean value that indicates if the cluster's disks are
-             * encrypted..
+             * Specifies the enableDiskEncryption property: A boolean value that indicates if the cluster's disks are encrypted..
              * 
              * @param enableDiskEncryption A boolean value that indicates if the cluster's disks are encrypted.
              * @return the next definition stage.
@@ -474,8 +468,7 @@ public interface Cluster {
          */
         interface WithEnableStreamingIngest {
             /**
-             * Specifies the enableStreamingIngest property: A boolean value that indicates if the streaming ingest is
-             * enabled..
+             * Specifies the enableStreamingIngest property: A boolean value that indicates if the streaming ingest is enabled..
              * 
              * @param enableStreamingIngest A boolean value that indicates if the streaming ingest is enabled.
              * @return the next definition stage.
@@ -540,8 +533,7 @@ public interface Cluster {
          */
         interface WithEnableDoubleEncryption {
             /**
-             * Specifies the enableDoubleEncryption property: A boolean value that indicates if double encryption is
-             * enabled..
+             * Specifies the enableDoubleEncryption property: A boolean value that indicates if double encryption is enabled..
              * 
              * @param enableDoubleEncryption A boolean value that indicates if double encryption is enabled.
              * @return the next definition stage.
@@ -554,11 +546,9 @@ public interface Cluster {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Public network access to the cluster is enabled by default.
-             * When disabled, only private endpoint connection to the cluster is allowed.
+             * Specifies the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
              * 
-             * @param publicNetworkAccess Public network access to the cluster is enabled by default. When disabled,
-             * only private endpoint connection to the cluster is allowed.
+             * @param publicNetworkAccess Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -569,8 +559,7 @@ public interface Cluster {
          */
         interface WithAllowedIpRangeList {
             /**
-             * Specifies the allowedIpRangeList property: The list of ips in the format of CIDR allowed to connect to
-             * the cluster..
+             * Specifies the allowedIpRangeList property: The list of ips in the format of CIDR allowed to connect to the cluster..
              * 
              * @param allowedIpRangeList The list of ips in the format of CIDR allowed to connect to the cluster.
              * @return the next definition stage.
@@ -609,11 +598,9 @@ public interface Cluster {
          */
         interface WithEnableAutoStop {
             /**
-             * Specifies the enableAutoStop property: A boolean value that indicates if the cluster could be
-             * automatically stopped (due to lack of data or no activity for many days)..
+             * Specifies the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days)..
              * 
-             * @param enableAutoStop A boolean value that indicates if the cluster could be automatically stopped (due
-             * to lack of data or no activity for many days).
+             * @param enableAutoStop A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days).
              * @return the next definition stage.
              */
             WithCreate withEnableAutoStop(Boolean enableAutoStop);
@@ -624,11 +611,9 @@ public interface Cluster {
          */
         interface WithRestrictOutboundNetworkAccess {
             /**
-             * Specifies the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * Specifies the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * 
-             * @param restrictOutboundNetworkAccess Whether or not to restrict outbound network access. Value is
-             * optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * @param restrictOutboundNetworkAccess Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * @return the next definition stage.
              */
             WithCreate withRestrictOutboundNetworkAccess(ClusterNetworkAccessFlag restrictOutboundNetworkAccess);
@@ -639,8 +624,7 @@ public interface Cluster {
          */
         interface WithAllowedFqdnList {
             /**
-             * Specifies the allowedFqdnList property: List of allowed FQDNs(Fully Qualified Domain Name) for egress
-             * from Cluster..
+             * Specifies the allowedFqdnList property: List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster..
              * 
              * @param allowedFqdnList List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster.
              * @return the next definition stage.
@@ -653,11 +637,9 @@ public interface Cluster {
          */
         interface WithPublicIpType {
             /**
-             * Specifies the publicIpType property: Indicates what public IP type to create - IPv4 (default), or
-             * DualStack (both IPv4 and IPv6).
+             * Specifies the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
              * 
-             * @param publicIpType Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and
-             * IPv6).
+             * @param publicIpType Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
              * @return the next definition stage.
              */
             WithCreate withPublicIpType(PublicIpType publicIpType);
@@ -681,11 +663,9 @@ public interface Cluster {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current
-             * cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
              * 
-             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify
-             * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -696,11 +676,9 @@ public interface Cluster {
          */
         interface WithIfNoneMatch {
             /**
-             * Specifies the ifNoneMatch property: Set to '*' to allow a new cluster to be created, but to prevent
-             * updating an existing cluster. Other values will result in a 412 Pre-condition Failed response..
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new cluster to be created, but to prevent updating an existing cluster. Other values will result in a 412 Pre-condition Failed response..
              * 
-             * @param ifNoneMatch Set to '*' to allow a new cluster to be created, but to prevent updating an existing
-             * cluster. Other values will result in a 412 Pre-condition Failed response.
+             * @param ifNoneMatch Set to '*' to allow a new cluster to be created, but to prevent updating an existing cluster. Other values will result in a 412 Pre-condition Failed response.
              * @return the next definition stage.
              */
             WithCreate withIfNoneMatch(String ifNoneMatch);
@@ -829,8 +807,7 @@ public interface Cluster {
          */
         interface WithEnableDiskEncryption {
             /**
-             * Specifies the enableDiskEncryption property: A boolean value that indicates if the cluster's disks are
-             * encrypted..
+             * Specifies the enableDiskEncryption property: A boolean value that indicates if the cluster's disks are encrypted..
              * 
              * @param enableDiskEncryption A boolean value that indicates if the cluster's disks are encrypted.
              * @return the next definition stage.
@@ -843,8 +820,7 @@ public interface Cluster {
          */
         interface WithEnableStreamingIngest {
             /**
-             * Specifies the enableStreamingIngest property: A boolean value that indicates if the streaming ingest is
-             * enabled..
+             * Specifies the enableStreamingIngest property: A boolean value that indicates if the streaming ingest is enabled..
              * 
              * @param enableStreamingIngest A boolean value that indicates if the streaming ingest is enabled.
              * @return the next definition stage.
@@ -909,8 +885,7 @@ public interface Cluster {
          */
         interface WithEnableDoubleEncryption {
             /**
-             * Specifies the enableDoubleEncryption property: A boolean value that indicates if double encryption is
-             * enabled..
+             * Specifies the enableDoubleEncryption property: A boolean value that indicates if double encryption is enabled..
              * 
              * @param enableDoubleEncryption A boolean value that indicates if double encryption is enabled.
              * @return the next definition stage.
@@ -923,11 +898,9 @@ public interface Cluster {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Public network access to the cluster is enabled by default.
-             * When disabled, only private endpoint connection to the cluster is allowed.
+             * Specifies the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
              * 
-             * @param publicNetworkAccess Public network access to the cluster is enabled by default. When disabled,
-             * only private endpoint connection to the cluster is allowed.
+             * @param publicNetworkAccess Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -938,8 +911,7 @@ public interface Cluster {
          */
         interface WithAllowedIpRangeList {
             /**
-             * Specifies the allowedIpRangeList property: The list of ips in the format of CIDR allowed to connect to
-             * the cluster..
+             * Specifies the allowedIpRangeList property: The list of ips in the format of CIDR allowed to connect to the cluster..
              * 
              * @param allowedIpRangeList The list of ips in the format of CIDR allowed to connect to the cluster.
              * @return the next definition stage.
@@ -978,11 +950,9 @@ public interface Cluster {
          */
         interface WithEnableAutoStop {
             /**
-             * Specifies the enableAutoStop property: A boolean value that indicates if the cluster could be
-             * automatically stopped (due to lack of data or no activity for many days)..
+             * Specifies the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days)..
              * 
-             * @param enableAutoStop A boolean value that indicates if the cluster could be automatically stopped (due
-             * to lack of data or no activity for many days).
+             * @param enableAutoStop A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days).
              * @return the next definition stage.
              */
             Update withEnableAutoStop(Boolean enableAutoStop);
@@ -993,11 +963,9 @@ public interface Cluster {
          */
         interface WithRestrictOutboundNetworkAccess {
             /**
-             * Specifies the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * Specifies the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * 
-             * @param restrictOutboundNetworkAccess Whether or not to restrict outbound network access. Value is
-             * optional but if passed in, must be 'Enabled' or 'Disabled'.
+             * @param restrictOutboundNetworkAccess Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
              * @return the next definition stage.
              */
             Update withRestrictOutboundNetworkAccess(ClusterNetworkAccessFlag restrictOutboundNetworkAccess);
@@ -1008,8 +976,7 @@ public interface Cluster {
          */
         interface WithAllowedFqdnList {
             /**
-             * Specifies the allowedFqdnList property: List of allowed FQDNs(Fully Qualified Domain Name) for egress
-             * from Cluster..
+             * Specifies the allowedFqdnList property: List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster..
              * 
              * @param allowedFqdnList List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster.
              * @return the next definition stage.
@@ -1022,11 +989,9 @@ public interface Cluster {
          */
         interface WithPublicIpType {
             /**
-             * Specifies the publicIpType property: Indicates what public IP type to create - IPv4 (default), or
-             * DualStack (both IPv4 and IPv6).
+             * Specifies the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
              * 
-             * @param publicIpType Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and
-             * IPv6).
+             * @param publicIpType Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
              * @return the next definition stage.
              */
             Update withPublicIpType(PublicIpType publicIpType);
@@ -1037,11 +1002,9 @@ public interface Cluster {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current
-             * cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
              * 
-             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify
-             * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

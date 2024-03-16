@@ -57,7 +57,8 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         List<RouteFilterRuleInner> inner = this.innerModel().rules();
         if (inner != null) {
             return Collections.unmodifiableList(inner.stream()
-                .map(inner1 -> new RouteFilterRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
+                .map(inner1 -> new RouteFilterRuleImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -66,9 +67,9 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
     public List<ExpressRouteCircuitPeering> peerings() {
         List<ExpressRouteCircuitPeeringInner> inner = this.innerModel().peerings();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -77,9 +78,9 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
     public List<ExpressRouteCircuitPeering> ipv6Peerings() {
         List<ExpressRouteCircuitPeeringInner> inner = this.innerModel().ipv6Peerings();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -121,14 +122,16 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
     }
 
     public RouteFilter create() {
-        this.innerObject = serviceManager.serviceClient().getRouteFilters().createOrUpdate(resourceGroupName,
-            routeFilterName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .createOrUpdate(resourceGroupName, routeFilterName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RouteFilter create(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRouteFilters().createOrUpdate(resourceGroupName,
-            routeFilterName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .createOrUpdate(resourceGroupName, routeFilterName, this.innerModel(), context);
         return this;
     }
 
@@ -144,14 +147,18 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
     }
 
     public RouteFilter apply() {
-        this.innerObject = serviceManager.serviceClient().getRouteFilters()
-            .updateTagsWithResponse(resourceGroupName, routeFilterName, updateParameters, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .updateTagsWithResponse(resourceGroupName, routeFilterName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RouteFilter apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getRouteFilters()
-            .updateTagsWithResponse(resourceGroupName, routeFilterName, updateParameters, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .updateTagsWithResponse(resourceGroupName, routeFilterName, updateParameters, context)
+            .getValue();
         return this;
     }
 
@@ -165,15 +172,19 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
 
     public RouteFilter refresh() {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRouteFilters()
-            .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RouteFilter refresh(Context context) {
         String localExpand = null;
-        this.innerObject = serviceManager.serviceClient().getRouteFilters()
-            .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, context).getValue();
+        this.innerObject = serviceManager.serviceClient()
+            .getRouteFilters()
+            .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, context)
+            .getValue();
         return this;
     }
 

@@ -130,8 +130,7 @@ public final class PolicyDefinitionGroup {
     }
 
     /**
-     * Get the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the
-     * group.
+     * Get the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the group.
      * 
      * @return the additionalMetadataId value.
      */
@@ -140,8 +139,7 @@ public final class PolicyDefinitionGroup {
     }
 
     /**
-     * Set the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the
-     * group.
+     * Set the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the group.
      * 
      * @param additionalMetadataId the additionalMetadataId value to set.
      * @return the PolicyDefinitionGroup object itself.

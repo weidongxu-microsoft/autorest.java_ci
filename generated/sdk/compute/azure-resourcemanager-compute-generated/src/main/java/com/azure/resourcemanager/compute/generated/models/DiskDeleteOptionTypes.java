@@ -9,10 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies the behavior of the managed disk when the VM gets deleted, for example whether the managed disk is deleted
- * or detached. Supported values are: **Delete.** If this value is used, the managed disk is deleted when VM gets
- * deleted. **Detach.** If this value is used, the managed disk is retained after VM gets deleted. Minimum api-version:
- * 2021-03-01.
+ * Specifies the behavior of the managed disk when the VM gets deleted, for example whether the managed disk is deleted or detached. Supported values are: **Delete.** If this value is used, the managed disk is deleted when VM gets deleted. **Detach.** If this value is used, the managed disk is retained after VM gets deleted. Minimum api-version: 2021-03-01.
  */
 public final class DiskDeleteOptionTypes extends ExpandableStringEnum<DiskDeleteOptionTypes> {
     /**

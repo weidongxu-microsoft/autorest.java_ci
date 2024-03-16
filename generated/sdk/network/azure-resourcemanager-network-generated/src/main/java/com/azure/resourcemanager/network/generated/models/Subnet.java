@@ -24,8 +24,7 @@ public interface Subnet {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
-     * access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -102,8 +101,7 @@ public interface Subnet {
     List<PrivateEndpoint> privateEndpoints();
 
     /**
-     * Gets the ipConfigurations property: An array of references to the network interface IP configurations using
-     * subnet.
+     * Gets the ipConfigurations property: An array of references to the network interface IP configurations using subnet.
      * 
      * @return the ipConfigurations value.
      */
@@ -145,8 +143,7 @@ public interface Subnet {
     List<Delegation> delegations();
 
     /**
-     * Gets the purpose property: A read-only string identifying the intention of use for this subnet based on
-     * delegations and other user-defined properties.
+     * Gets the purpose property: A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.
      * 
      * @return the purpose value.
      */
@@ -160,33 +157,28 @@ public interface Subnet {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point
-     * in the subnet.
+     * Gets the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet.
      * 
      * @return the privateEndpointNetworkPolicies value.
      */
     VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies();
 
     /**
-     * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
-     * service in the subnet.
+     * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet.
      * 
      * @return the privateLinkServiceNetworkPolicies value.
      */
     VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies();
 
     /**
-     * Gets the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
-     * resource.
+     * Gets the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource.
      * 
      * @return the applicationGatewayIpConfigurations value.
      */
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
-     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
-     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
-     * existing subnet.
+     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
      * 
      * @return the defaultOutboundAccess value.
      */
@@ -238,8 +230,7 @@ public interface Subnet {
         }
 
         /**
-         * The stage of the Subnet definition which contains all the minimum required properties for the resource to be
-         * created, but also allows for any other optional properties to be specified.
+         * The stage of the Subnet definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithAddressPrefix, DefinitionStages.WithAddressPrefixes,
@@ -269,11 +260,9 @@ public interface Subnet {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -414,11 +403,9 @@ public interface Subnet {
          */
         interface WithPrivateEndpointNetworkPolicies {
             /**
-             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on
-             * private end point in the subnet..
+             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet..
              * 
-             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in
-             * the subnet.
+             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in the subnet.
              * @return the next definition stage.
              */
             WithCreate withPrivateEndpointNetworkPolicies(
@@ -430,11 +417,9 @@ public interface Subnet {
          */
         interface WithPrivateLinkServiceNetworkPolicies {
             /**
-             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on
-             * private link service in the subnet..
+             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet..
              * 
-             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service
-             * in the subnet.
+             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service in the subnet.
              * @return the next definition stage.
              */
             WithCreate withPrivateLinkServiceNetworkPolicies(
@@ -446,11 +431,9 @@ public interface Subnet {
          */
         interface WithApplicationGatewayIpConfigurations {
             /**
-             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of
-             * virtual network resource..
+             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource..
              * 
-             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network
-             * resource.
+             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network resource.
              * @return the next definition stage.
              */
             WithCreate withApplicationGatewayIpConfigurations(
@@ -462,13 +445,9 @@ public interface Subnet {
          */
         interface WithDefaultOutboundAccess {
             /**
-             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound
-             * connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and
-             * cannot be updated for an existing subnet..
+             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet..
              * 
-             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all
-             * VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for
-             * an existing subnet.
+             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
              * @return the next definition stage.
              */
             WithCreate withDefaultOutboundAccess(Boolean defaultOutboundAccess);
@@ -516,11 +495,9 @@ public interface Subnet {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name
-             * can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to
-             * access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -661,11 +638,9 @@ public interface Subnet {
          */
         interface WithPrivateEndpointNetworkPolicies {
             /**
-             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on
-             * private end point in the subnet..
+             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet..
              * 
-             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in
-             * the subnet.
+             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in the subnet.
              * @return the next definition stage.
              */
             Update withPrivateEndpointNetworkPolicies(
@@ -677,11 +652,9 @@ public interface Subnet {
          */
         interface WithPrivateLinkServiceNetworkPolicies {
             /**
-             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on
-             * private link service in the subnet..
+             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet..
              * 
-             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service
-             * in the subnet.
+             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service in the subnet.
              * @return the next definition stage.
              */
             Update withPrivateLinkServiceNetworkPolicies(
@@ -693,11 +666,9 @@ public interface Subnet {
          */
         interface WithApplicationGatewayIpConfigurations {
             /**
-             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of
-             * virtual network resource..
+             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource..
              * 
-             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network
-             * resource.
+             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network resource.
              * @return the next definition stage.
              */
             Update withApplicationGatewayIpConfigurations(
@@ -709,13 +680,9 @@ public interface Subnet {
          */
         interface WithDefaultOutboundAccess {
             /**
-             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound
-             * connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and
-             * cannot be updated for an existing subnet..
+             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet..
              * 
-             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all
-             * VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for
-             * an existing subnet.
+             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
              * @return the next definition stage.
              */
             Update withDefaultOutboundAccess(Boolean defaultOutboundAccess);
@@ -740,8 +707,7 @@ public interface Subnet {
     /**
      * Prepares a subnet by applying network intent policies.
      * 
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
-     * policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -751,8 +717,7 @@ public interface Subnet {
     /**
      * Prepares a subnet by applying network intent policies.
      * 
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
-     * policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -763,8 +728,7 @@ public interface Subnet {
     /**
      * Unprepares a subnet by removing network intent policies.
      * 
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
-     * policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -774,8 +738,7 @@ public interface Subnet {
     /**
      * Unprepares a subnet by removing network intent policies.
      * 
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
-     * policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

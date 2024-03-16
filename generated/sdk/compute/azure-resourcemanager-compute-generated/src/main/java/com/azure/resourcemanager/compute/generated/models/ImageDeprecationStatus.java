@@ -20,8 +20,7 @@ public final class ImageDeprecationStatus {
     private ImageState imageState;
 
     /*
-     * The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the
-     * Publisher.
+     * The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the Publisher.
      */
     @JsonProperty(value = "scheduledDeprecationTime")
     private OffsetDateTime scheduledDeprecationTime;
@@ -59,8 +58,7 @@ public final class ImageDeprecationStatus {
     }
 
     /**
-     * Get the scheduledDeprecationTime property: The time, in future, at which this image will be marked as deprecated.
-     * This scheduled time is chosen by the Publisher.
+     * Get the scheduledDeprecationTime property: The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the Publisher.
      * 
      * @return the scheduledDeprecationTime value.
      */
@@ -69,8 +67,7 @@ public final class ImageDeprecationStatus {
     }
 
     /**
-     * Set the scheduledDeprecationTime property: The time, in future, at which this image will be marked as deprecated.
-     * This scheduled time is chosen by the Publisher.
+     * Set the scheduledDeprecationTime property: The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the Publisher.
      * 
      * @param scheduledDeprecationTime the scheduledDeprecationTime value to set.
      * @return the ImageDeprecationStatus object itself.
@@ -81,8 +78,7 @@ public final class ImageDeprecationStatus {
     }
 
     /**
-     * Get the alternativeOption property: Describes the alternative option specified by the Publisher for this image
-     * when this image is deprecated.
+     * Get the alternativeOption property: Describes the alternative option specified by the Publisher for this image when this image is deprecated.
      * 
      * @return the alternativeOption value.
      */
@@ -91,8 +87,7 @@ public final class ImageDeprecationStatus {
     }
 
     /**
-     * Set the alternativeOption property: Describes the alternative option specified by the Publisher for this image
-     * when this image is deprecated.
+     * Set the alternativeOption property: Describes the alternative option specified by the Publisher for this image when this image is deprecated.
      * 
      * @param alternativeOption the alternativeOption value to set.
      * @return the ImageDeprecationStatus object itself.

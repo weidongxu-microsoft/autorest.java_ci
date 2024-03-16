@@ -80,9 +80,9 @@ public final class ManagementGroupAggregatedCostResultImpl implements Management
     public List<ManagementGroupAggregatedCostResult> children() {
         List<ManagementGroupAggregatedCostResultInner> inner = this.innerModel().children();
         if (inner != null) {
-            return Collections.unmodifiableList(
-                inner.stream().map(inner1 -> new ManagementGroupAggregatedCostResultImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ManagementGroupAggregatedCostResultImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

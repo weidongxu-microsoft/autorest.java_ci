@@ -70,8 +70,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * The interface defining all the services for ResourceManagementClientResourceGroups to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for ResourceManagementClientResourceGroups to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
@@ -254,9 +253,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Creates or updates a resource group.
      * 
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     * underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     * characters.
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
      * @param parameters Parameters supplied to the create or update a resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -293,9 +290,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Creates or updates a resource group.
      * 
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     * underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     * characters.
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
      * @param parameters Parameters supplied to the create or update a resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -332,9 +327,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Creates or updates a resource group.
      * 
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     * underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     * characters.
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
      * @param parameters Parameters supplied to the create or update a resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -350,9 +343,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Creates or updates a resource group.
      * 
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     * underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     * characters.
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
      * @param parameters Parameters supplied to the create or update a resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -369,9 +360,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Creates or updates a resource group.
      * 
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     * underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     * characters.
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
      * @param parameters Parameters supplied to the create or update a resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -386,12 +375,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -422,12 +409,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -458,12 +443,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -479,8 +462,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -499,12 +481,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -523,8 +503,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -541,12 +520,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -562,12 +539,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -582,8 +557,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -601,12 +575,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -622,8 +594,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -639,12 +610,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -761,8 +730,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Updates a resource group.
      * 
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      * 
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -801,8 +769,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Updates a resource group.
      * 
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      * 
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -841,8 +808,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Updates a resource group.
      * 
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      * 
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -859,8 +825,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Updates a resource group.
      * 
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      * 
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -879,8 +844,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Updates a resource group.
      * 
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      * 
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -1111,14 +1075,12 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resource groups for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the resource groups for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceGroupInner>> listSinglePageAsync(String filter, Integer top) {
@@ -1142,15 +1104,13 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resource groups for a subscription along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return all the resource groups for a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceGroupInner>> listSinglePageAsync(String filter, Integer top, Context context) {
@@ -1174,8 +1134,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1204,8 +1163,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1236,8 +1194,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

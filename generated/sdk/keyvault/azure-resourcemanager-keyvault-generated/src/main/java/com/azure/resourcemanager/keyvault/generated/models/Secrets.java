@@ -13,8 +13,7 @@ import com.azure.core.util.Context;
  */
 public interface Secrets {
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -28,8 +27,7 @@ public interface Secrets {
     Response<Secret> getWithResponse(String resourceGroupName, String vaultName, String secretName, Context context);
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -42,8 +40,7 @@ public interface Secrets {
     Secret get(String resourceGroupName, String vaultName, String secretName);
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -55,8 +52,7 @@ public interface Secrets {
     PagedIterable<Secret> list(String resourceGroupName, String vaultName);
 
     /**
-     * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
-     * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The List operation gets information about the secrets in a vault.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
@@ -70,8 +66,7 @@ public interface Secrets {
     PagedIterable<Secret> list(String resourceGroupName, String vaultName, Integer top, Context context);
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -82,8 +77,7 @@ public interface Secrets {
     Secret getById(String id);
 
     /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
+     * Gets the specified secret.  NOTE: This API is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
