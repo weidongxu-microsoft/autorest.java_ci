@@ -12,6 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
 import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProfile;
@@ -28,6 +29,12 @@ public final class VirtualMachineScaleSetProperties {
      */
     @JsonProperty(value = "upgradePolicy")
     private UpgradePolicy upgradePolicy;
+
+    /*
+     * The ScheduledEventsPolicy.
+     */
+    @JsonProperty(value = "scheduledEventsPolicy")
+    private ScheduledEventsPolicy scheduledEventsPolicy;
 
     /*
      * Policy for automatic repairs.
@@ -166,6 +173,26 @@ public final class VirtualMachineScaleSetProperties {
      */
     public VirtualMachineScaleSetProperties withUpgradePolicy(UpgradePolicy upgradePolicy) {
         this.upgradePolicy = upgradePolicy;
+        return this;
+    }
+
+    /**
+     * Get the scheduledEventsPolicy property: The ScheduledEventsPolicy.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.scheduledEventsPolicy;
+    }
+
+    /**
+     * Set the scheduledEventsPolicy property: The ScheduledEventsPolicy.
+     * 
+     * @param scheduledEventsPolicy the scheduledEventsPolicy value to set.
+     * @return the VirtualMachineScaleSetProperties object itself.
+     */
+    public VirtualMachineScaleSetProperties withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        this.scheduledEventsPolicy = scheduledEventsPolicy;
         return this;
     }
 
@@ -526,6 +553,9 @@ public final class VirtualMachineScaleSetProperties {
     public void validate() {
         if (upgradePolicy() != null) {
             upgradePolicy().validate();
+        }
+        if (scheduledEventsPolicy() != null) {
+            scheduledEventsPolicy().validate();
         }
         if (automaticRepairsPolicy() != null) {
             automaticRepairsPolicy().validate();

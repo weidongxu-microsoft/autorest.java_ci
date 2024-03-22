@@ -28,6 +28,7 @@ import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
@@ -121,6 +122,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public HardwareProfile hardwareProfile() {
         return this.innerModel().hardwareProfile();
+    }
+
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.innerModel().scheduledEventsPolicy();
     }
 
     public StorageProfile storageProfile() {
@@ -543,6 +548,16 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             return this;
         } else {
             this.updateParameters.withHardwareProfile(hardwareProfile);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withScheduledEventsPolicy(scheduledEventsPolicy);
+            return this;
+        } else {
+            this.updateParameters.withScheduledEventsPolicy(scheduledEventsPolicy);
             return this;
         }
     }

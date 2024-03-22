@@ -404,6 +404,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.recoveryservices.generated.models.BcdrSecurityLevel",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.recoveryservices.generated.models.SkuName",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,

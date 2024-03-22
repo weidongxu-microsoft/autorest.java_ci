@@ -102,6 +102,13 @@ public interface VirtualMachineScaleSet {
     UpgradePolicy upgradePolicy();
 
     /**
+     * Gets the scheduledEventsPolicy property: The ScheduledEventsPolicy.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    ScheduledEventsPolicy scheduledEventsPolicy();
+
+    /**
      * Gets the automaticRepairsPolicy property: Policy for automatic repairs.
      * 
      * @return the automaticRepairsPolicy value.
@@ -318,15 +325,16 @@ public interface VirtualMachineScaleSet {
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithPlan,
             DefinitionStages.WithIdentity, DefinitionStages.WithZones, DefinitionStages.WithExtendedLocation,
-            DefinitionStages.WithUpgradePolicy, DefinitionStages.WithAutomaticRepairsPolicy,
-            DefinitionStages.WithVirtualMachineProfile, DefinitionStages.WithOverprovision,
-            DefinitionStages.WithDoNotRunExtensionsOnOverprovisionedVMs, DefinitionStages.WithSinglePlacementGroup,
-            DefinitionStages.WithZoneBalance, DefinitionStages.WithPlatformFaultDomainCount,
-            DefinitionStages.WithProximityPlacementGroup, DefinitionStages.WithHostGroup,
-            DefinitionStages.WithAdditionalCapabilities, DefinitionStages.WithScaleInPolicy,
-            DefinitionStages.WithOrchestrationMode, DefinitionStages.WithSpotRestorePolicy,
-            DefinitionStages.WithPriorityMixPolicy, DefinitionStages.WithConstrainedMaximumCapacity,
-            DefinitionStages.WithResiliencyPolicy, DefinitionStages.WithIfMatch, DefinitionStages.WithIfNoneMatch {
+            DefinitionStages.WithUpgradePolicy, DefinitionStages.WithScheduledEventsPolicy,
+            DefinitionStages.WithAutomaticRepairsPolicy, DefinitionStages.WithVirtualMachineProfile,
+            DefinitionStages.WithOverprovision, DefinitionStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
+            DefinitionStages.WithSinglePlacementGroup, DefinitionStages.WithZoneBalance,
+            DefinitionStages.WithPlatformFaultDomainCount, DefinitionStages.WithProximityPlacementGroup,
+            DefinitionStages.WithHostGroup, DefinitionStages.WithAdditionalCapabilities,
+            DefinitionStages.WithScaleInPolicy, DefinitionStages.WithOrchestrationMode,
+            DefinitionStages.WithSpotRestorePolicy, DefinitionStages.WithPriorityMixPolicy,
+            DefinitionStages.WithConstrainedMaximumCapacity, DefinitionStages.WithResiliencyPolicy,
+            DefinitionStages.WithIfMatch, DefinitionStages.WithIfNoneMatch {
             /**
              * Executes the create request.
              * 
@@ -432,6 +440,19 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             WithCreate withUpgradePolicy(UpgradePolicy upgradePolicy);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify scheduledEventsPolicy.
+         */
+        interface WithScheduledEventsPolicy {
+            /**
+             * Specifies the scheduledEventsPolicy property: The ScheduledEventsPolicy..
+             * 
+             * @param scheduledEventsPolicy The ScheduledEventsPolicy.
+             * @return the next definition stage.
+             */
+            WithCreate withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
         }
 
         /**

@@ -233,7 +233,7 @@ public final class StorageAccountPropertiesInner {
     private Boolean defaultToOAuthAuthentication;
 
     /*
-     * Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
@@ -722,7 +722,7 @@ public final class StorageAccountPropertiesInner {
     }
 
     /**
-     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -731,7 +731,7 @@ public final class StorageAccountPropertiesInner {
     }
 
     /**
-     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StorageAccountPropertiesInner object itself.

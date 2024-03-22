@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.UpdateResource;
@@ -159,6 +160,29 @@ public final class VirtualMachineUpdateInner extends UpdateResource {
             this.innerProperties = new VirtualMachinePropertiesInner();
         }
         this.innerProperties().withHardwareProfile(hardwareProfile);
+        return this;
+    }
+
+    /**
+     * Get the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.innerProperties() == null ? null : this.innerProperties().scheduledEventsPolicy();
+    }
+
+    /**
+     * Set the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @param scheduledEventsPolicy the scheduledEventsPolicy value to set.
+     * @return the VirtualMachineUpdateInner object itself.
+     */
+    public VirtualMachineUpdateInner withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualMachinePropertiesInner();
+        }
+        this.innerProperties().withScheduledEventsPolicy(scheduledEventsPolicy);
         return this;
     }
 

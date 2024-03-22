@@ -129,7 +129,7 @@ public final class StorageAccountPropertiesUpdateParameters {
     private Boolean defaultToOAuthAuthentication;
 
     /*
-     * Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
@@ -503,7 +503,7 @@ public final class StorageAccountPropertiesUpdateParameters {
     }
 
     /**
-     * Get the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -512,7 +512,7 @@ public final class StorageAccountPropertiesUpdateParameters {
     }
 
     /**
-     * Set the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StorageAccountPropertiesUpdateParameters object itself.

@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.models.CapacityReservationGro
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupInstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroups;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetCapacityReservationGroups;
+import com.azure.resourcemanager.compute.generated.models.ResourceIdOptionsForGetCapacityReservationGroups;
 
 public final class CapacityReservationGroupsImpl implements CapacityReservationGroups {
     private static final ClientLogger LOGGER = new ClientLogger(CapacityReservationGroupsImpl.class);
@@ -79,8 +80,9 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     }
 
     public PagedIterable<CapacityReservationGroup> list(ExpandTypesForGetCapacityReservationGroups expand,
-        Context context) {
-        PagedIterable<CapacityReservationGroupInner> inner = this.serviceClient().list(expand, context);
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly, Context context) {
+        PagedIterable<CapacityReservationGroupInner> inner
+            = this.serviceClient().list(expand, resourceIdsOnly, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new CapacityReservationGroupImpl(inner1, this.manager()));
     }
 

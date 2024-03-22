@@ -170,7 +170,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -199,7 +199,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
@@ -285,7 +285,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -320,7 +320,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -425,7 +425,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.create(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName,
@@ -469,7 +469,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.create(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName, apiVersion,
@@ -564,7 +564,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName,
@@ -608,7 +608,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName, apiVersion,
@@ -696,7 +696,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName,
@@ -734,7 +734,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName, apiVersion,
@@ -815,7 +815,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -853,7 +853,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName, apiVersion,
@@ -941,7 +941,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.generateKeyPair(this.client.getEndpoint(), resourceGroupName,
@@ -984,7 +984,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.generateKeyPair(this.client.getEndpoint(), resourceGroupName, sshPublicKeyName, apiVersion,

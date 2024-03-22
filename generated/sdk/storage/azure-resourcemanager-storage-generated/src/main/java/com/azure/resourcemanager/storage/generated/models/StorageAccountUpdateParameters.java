@@ -534,7 +534,7 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Get the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -543,7 +543,7 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Set the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StorageAccountUpdateParameters object itself.

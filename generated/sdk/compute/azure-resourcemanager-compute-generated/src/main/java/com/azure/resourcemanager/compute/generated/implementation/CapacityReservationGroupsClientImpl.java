@@ -35,6 +35,7 @@ import com.azure.resourcemanager.compute.generated.models.CapacityReservationGro
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupListResult;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetCapacityReservationGroups;
+import com.azure.resourcemanager.compute.generated.models.ResourceIdOptionsForGetCapacityReservationGroups;
 import reactor.core.publisher.Mono;
 
 /**
@@ -128,6 +129,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
         Mono<Response<CapacityReservationGroupListResult>> list(@HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("$expand") ExpandTypesForGetCapacityReservationGroups expand,
+            @QueryParam("resourceIdsOnly") ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly,
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -182,7 +184,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName,
@@ -226,7 +228,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, capacityReservationGroupName,
@@ -323,7 +325,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName,
@@ -367,7 +369,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, capacityReservationGroupName, apiVersion,
@@ -456,7 +458,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName,
@@ -494,7 +496,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, capacityReservationGroupName, apiVersion,
@@ -578,7 +580,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -617,7 +619,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, capacityReservationGroupName,
@@ -704,7 +706,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -740,7 +742,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -837,14 +839,16 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List capacity reservation group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<CapacityReservationGroupInner>>
-        listSinglePageAsync(ExpandTypesForGetCapacityReservationGroups expand) {
+    private Mono<PagedResponse<CapacityReservationGroupInner>> listSinglePageAsync(
+        ExpandTypesForGetCapacityReservationGroups expand,
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -853,11 +857,11 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                expand, accept, context))
+                expand, resourceIdsOnly, accept, context))
             .<PagedResponse<CapacityReservationGroupInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
                 res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -867,6 +871,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -874,8 +879,9 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      * @return the List capacity reservation group with resource group response along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<CapacityReservationGroupInner>>
-        listSinglePageAsync(ExpandTypesForGetCapacityReservationGroups expand, Context context) {
+    private Mono<PagedResponse<CapacityReservationGroupInner>> listSinglePageAsync(
+        ExpandTypesForGetCapacityReservationGroups expand,
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -884,11 +890,12 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), expand, accept, context)
+            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), expand, resourceIdsOnly,
+                accept, context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), res.getValue().nextLink(), null));
     }
@@ -897,14 +904,16 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List capacity reservation group with resource group response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<CapacityReservationGroupInner> listAsync(ExpandTypesForGetCapacityReservationGroups expand) {
-        return new PagedFlux<>(() -> listSinglePageAsync(expand),
+    private PagedFlux<CapacityReservationGroupInner> listAsync(ExpandTypesForGetCapacityReservationGroups expand,
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly) {
+        return new PagedFlux<>(() -> listSinglePageAsync(expand, resourceIdsOnly),
             nextLink -> listBySubscriptionNextSinglePageAsync(nextLink));
     }
 
@@ -918,7 +927,8 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CapacityReservationGroupInner> listAsync() {
         final ExpandTypesForGetCapacityReservationGroups expand = null;
-        return new PagedFlux<>(() -> listSinglePageAsync(expand),
+        final ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly = null;
+        return new PagedFlux<>(() -> listSinglePageAsync(expand, resourceIdsOnly),
             nextLink -> listBySubscriptionNextSinglePageAsync(nextLink));
     }
 
@@ -926,6 +936,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -934,8 +945,8 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CapacityReservationGroupInner> listAsync(ExpandTypesForGetCapacityReservationGroups expand,
-        Context context) {
-        return new PagedFlux<>(() -> listSinglePageAsync(expand, context),
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly, Context context) {
+        return new PagedFlux<>(() -> listSinglePageAsync(expand, resourceIdsOnly, context),
             nextLink -> listBySubscriptionNextSinglePageAsync(nextLink, context));
     }
 
@@ -949,13 +960,15 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CapacityReservationGroupInner> list() {
         final ExpandTypesForGetCapacityReservationGroups expand = null;
-        return new PagedIterable<>(listAsync(expand));
+        final ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly = null;
+        return new PagedIterable<>(listAsync(expand, resourceIdsOnly));
     }
 
     /**
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -964,8 +977,8 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CapacityReservationGroupInner> list(ExpandTypesForGetCapacityReservationGroups expand,
-        Context context) {
-        return new PagedIterable<>(listAsync(expand, context));
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly, Context context) {
+        return new PagedIterable<>(listAsync(expand, resourceIdsOnly, context));
     }
 
     /**

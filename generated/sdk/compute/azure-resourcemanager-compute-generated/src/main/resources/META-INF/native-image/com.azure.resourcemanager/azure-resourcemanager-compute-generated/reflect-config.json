@@ -94,6 +94,31 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UserInitiatedRedeploy",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UserInitiatedReboot",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ScheduledEventsAdditionalPublishingTargets",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.EventGridAndResourceGraph",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -2790,6 +2815,11 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetCapacityReservationGroups",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ResourceIdOptionsForGetCapacityReservationGroups",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

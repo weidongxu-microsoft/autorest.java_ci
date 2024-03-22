@@ -37,7 +37,7 @@ public final class SecurityProfile {
     private EncryptionIdentity encryptionIdentity;
 
     /*
-     * Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2023-09-01.
+     * Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2024-03-01.
      */
     @JsonProperty(value = "proxyAgentSettings")
     private ProxyAgentSettings proxyAgentSettings;
@@ -129,7 +129,7 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2023-09-01.
+     * Get the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2024-03-01.
      * 
      * @return the proxyAgentSettings value.
      */
@@ -138,7 +138,7 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2023-09-01.
+     * Set the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2024-03-01.
      * 
      * @param proxyAgentSettings the proxyAgentSettings value to set.
      * @return the SecurityProfile object itself.

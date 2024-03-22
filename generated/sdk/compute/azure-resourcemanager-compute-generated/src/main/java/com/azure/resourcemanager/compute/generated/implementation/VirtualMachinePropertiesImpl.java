@@ -16,6 +16,7 @@ import com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile;
 import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
@@ -38,6 +39,10 @@ public final class VirtualMachinePropertiesImpl implements VirtualMachinePropert
 
     public HardwareProfile hardwareProfile() {
         return this.innerModel().hardwareProfile();
+    }
+
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.innerModel().scheduledEventsPolicy();
     }
 
     public StorageProfile storageProfile() {

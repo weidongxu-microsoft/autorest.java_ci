@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CapacityReserva
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupInstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetCapacityReservationGroups;
+import com.azure.resourcemanager.compute.generated.models.ResourceIdOptionsForGetCapacityReservationGroups;
 
 /**
  * An instance of this class provides access to all the operations defined in CapacityReservationGroupsClient.
@@ -176,6 +177,7 @@ public interface CapacityReservationGroupsClient {
      * Lists all of the capacity reservation groups in the subscription. Use the nextLink property in the response to get the next page of capacity reservation groups.
      * 
      * @param expand The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.
+     * @param resourceIdsOnly The query option to fetch Capacity Reservation Group Resource Ids. &lt;br&gt; 'CreatedInSubscription' enables fetching Resource Ids for all capacity reservation group resources created in the subscription. &lt;br&gt; 'SharedWithSubscription' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription. &lt;br&gt; 'All' enables fetching Resource Ids for all capacity reservation group resources shared with the subscription and created in the subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
@@ -184,5 +186,5 @@ public interface CapacityReservationGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CapacityReservationGroupInner> list(ExpandTypesForGetCapacityReservationGroups expand,
-        Context context);
+        ResourceIdOptionsForGetCapacityReservationGroups resourceIdsOnly, Context context);
 }

@@ -20,6 +20,13 @@ public interface VirtualMachineProperties {
     HardwareProfile hardwareProfile();
 
     /**
+     * Gets the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    ScheduledEventsPolicy scheduledEventsPolicy();
+
+    /**
      * Gets the storageProfile property: Specifies the storage settings for the virtual machine disks.
      * 
      * @return the storageProfile value.

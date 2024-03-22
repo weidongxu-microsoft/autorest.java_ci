@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile;
 import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
@@ -31,6 +32,12 @@ public final class VirtualMachinePropertiesInner {
      */
     @JsonProperty(value = "hardwareProfile")
     private HardwareProfile hardwareProfile;
+
+    /*
+     * Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     */
+    @JsonProperty(value = "scheduledEventsPolicy")
+    private ScheduledEventsPolicy scheduledEventsPolicy;
 
     /*
      * Specifies the storage settings for the virtual machine disks.
@@ -205,6 +212,26 @@ public final class VirtualMachinePropertiesInner {
      */
     public VirtualMachinePropertiesInner withHardwareProfile(HardwareProfile hardwareProfile) {
         this.hardwareProfile = hardwareProfile;
+        return this;
+    }
+
+    /**
+     * Get the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.scheduledEventsPolicy;
+    }
+
+    /**
+     * Set the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @param scheduledEventsPolicy the scheduledEventsPolicy value to set.
+     * @return the VirtualMachinePropertiesInner object itself.
+     */
+    public VirtualMachinePropertiesInner withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        this.scheduledEventsPolicy = scheduledEventsPolicy;
         return this;
     }
 
@@ -672,6 +699,9 @@ public final class VirtualMachinePropertiesInner {
     public void validate() {
         if (hardwareProfile() != null) {
             hardwareProfile().validate();
+        }
+        if (scheduledEventsPolicy() != null) {
+            scheduledEventsPolicy().validate();
         }
         if (storageProfile() != null) {
             storageProfile().validate();

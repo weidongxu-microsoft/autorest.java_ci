@@ -67,13 +67,12 @@ public final class VaultsImpl implements Vaults {
         }
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String vaultName,
-        Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, vaultName, context);
-    }
-
     public void deleteByResourceGroup(String resourceGroupName, String vaultName) {
         this.serviceClient().delete(resourceGroupName, vaultName);
+    }
+
+    public void delete(String resourceGroupName, String vaultName, Context context) {
+        this.serviceClient().delete(resourceGroupName, vaultName, context);
     }
 
     public Vault getById(String id) {
@@ -115,10 +114,10 @@ public final class VaultsImpl implements Vaults {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        this.deleteByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE);
+        this.delete(resourceGroupName, vaultName, Context.NONE);
     }
 
-    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+    public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
@@ -129,7 +128,7 @@ public final class VaultsImpl implements Vaults {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        return this.deleteByResourceGroupWithResponse(resourceGroupName, vaultName, context);
+        this.delete(resourceGroupName, vaultName, context);
     }
 
     private VaultsClient serviceClient() {

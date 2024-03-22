@@ -122,7 +122,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.get(this.client.getEndpoint(), location, publisherName, type, version,
@@ -166,7 +166,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.get(this.client.getEndpoint(), location, publisherName, type, version, apiVersion,
@@ -255,7 +255,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listTypes(this.client.getEndpoint(), location, publisherName, apiVersion,
@@ -291,7 +291,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listTypes(this.client.getEndpoint(), location, publisherName, apiVersion,
@@ -379,7 +379,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listVersions(this.client.getEndpoint(), location, publisherName, type,
@@ -422,7 +422,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listVersions(this.client.getEndpoint(), location, publisherName, type, filter, top, orderby,

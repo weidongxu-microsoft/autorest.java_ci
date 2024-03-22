@@ -18,6 +18,18 @@ public final class AzureMonitorAlertSettings {
     @JsonProperty(value = "alertsForAllJobFailures")
     private AlertsState alertsForAllJobFailures;
 
+    /*
+     * The alertsForAllReplicationIssues property.
+     */
+    @JsonProperty(value = "alertsForAllReplicationIssues")
+    private AlertsState alertsForAllReplicationIssues;
+
+    /*
+     * The alertsForAllFailoverIssues property.
+     */
+    @JsonProperty(value = "alertsForAllFailoverIssues")
+    private AlertsState alertsForAllFailoverIssues;
+
     /**
      * Creates an instance of AzureMonitorAlertSettings class.
      */
@@ -41,6 +53,46 @@ public final class AzureMonitorAlertSettings {
      */
     public AzureMonitorAlertSettings withAlertsForAllJobFailures(AlertsState alertsForAllJobFailures) {
         this.alertsForAllJobFailures = alertsForAllJobFailures;
+        return this;
+    }
+
+    /**
+     * Get the alertsForAllReplicationIssues property: The alertsForAllReplicationIssues property.
+     * 
+     * @return the alertsForAllReplicationIssues value.
+     */
+    public AlertsState alertsForAllReplicationIssues() {
+        return this.alertsForAllReplicationIssues;
+    }
+
+    /**
+     * Set the alertsForAllReplicationIssues property: The alertsForAllReplicationIssues property.
+     * 
+     * @param alertsForAllReplicationIssues the alertsForAllReplicationIssues value to set.
+     * @return the AzureMonitorAlertSettings object itself.
+     */
+    public AzureMonitorAlertSettings withAlertsForAllReplicationIssues(AlertsState alertsForAllReplicationIssues) {
+        this.alertsForAllReplicationIssues = alertsForAllReplicationIssues;
+        return this;
+    }
+
+    /**
+     * Get the alertsForAllFailoverIssues property: The alertsForAllFailoverIssues property.
+     * 
+     * @return the alertsForAllFailoverIssues value.
+     */
+    public AlertsState alertsForAllFailoverIssues() {
+        return this.alertsForAllFailoverIssues;
+    }
+
+    /**
+     * Set the alertsForAllFailoverIssues property: The alertsForAllFailoverIssues property.
+     * 
+     * @param alertsForAllFailoverIssues the alertsForAllFailoverIssues value to set.
+     * @return the AzureMonitorAlertSettings object itself.
+     */
+    public AzureMonitorAlertSettings withAlertsForAllFailoverIssues(AlertsState alertsForAllFailoverIssues) {
+        this.alertsForAllFailoverIssues = alertsForAllFailoverIssues;
         return this;
     }
 

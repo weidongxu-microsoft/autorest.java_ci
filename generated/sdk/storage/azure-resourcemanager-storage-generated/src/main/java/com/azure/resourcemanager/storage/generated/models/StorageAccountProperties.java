@@ -244,7 +244,7 @@ public interface StorageAccountProperties {
     Boolean defaultToOAuthAuthentication();
 
     /**
-     * Gets the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Gets the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      * 
      * @return the publicNetworkAccess value.
      */

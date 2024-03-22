@@ -110,6 +110,13 @@ public interface VirtualMachine {
     HardwareProfile hardwareProfile();
 
     /**
+     * Gets the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    ScheduledEventsPolicy scheduledEventsPolicy();
+
+    /**
      * Gets the storageProfile property: Specifies the storage settings for the virtual machine disks.
      * 
      * @return the storageProfile value.
@@ -366,9 +373,9 @@ public interface VirtualMachine {
         /**
          * The stage of the VirtualMachine definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithPlan, DefinitionStages.WithIdentity,
-            DefinitionStages.WithZones, DefinitionStages.WithExtendedLocation, DefinitionStages.WithHardwareProfile,
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPlan,
+            DefinitionStages.WithIdentity, DefinitionStages.WithZones, DefinitionStages.WithExtendedLocation,
+            DefinitionStages.WithHardwareProfile, DefinitionStages.WithScheduledEventsPolicy,
             DefinitionStages.WithStorageProfile, DefinitionStages.WithAdditionalCapabilities,
             DefinitionStages.WithOsProfile, DefinitionStages.WithNetworkProfile, DefinitionStages.WithSecurityProfile,
             DefinitionStages.WithDiagnosticsProfile, DefinitionStages.WithAvailabilitySet,
@@ -471,6 +478,19 @@ public interface VirtualMachine {
              * @return the next definition stage.
              */
             WithCreate withHardwareProfile(HardwareProfile hardwareProfile);
+        }
+
+        /**
+         * The stage of the VirtualMachine definition allowing to specify scheduledEventsPolicy.
+         */
+        interface WithScheduledEventsPolicy {
+            /**
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine..
+             * 
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+             * @return the next definition stage.
+             */
+            WithCreate withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
         }
 
         /**
@@ -783,11 +803,11 @@ public interface VirtualMachine {
     /**
      * The template for VirtualMachine update.
      */
-    interface Update
-        extends UpdateStages.WithTags, UpdateStages.WithPlan, UpdateStages.WithIdentity, UpdateStages.WithZones,
-        UpdateStages.WithHardwareProfile, UpdateStages.WithStorageProfile, UpdateStages.WithAdditionalCapabilities,
-        UpdateStages.WithOsProfile, UpdateStages.WithNetworkProfile, UpdateStages.WithSecurityProfile,
-        UpdateStages.WithDiagnosticsProfile, UpdateStages.WithAvailabilitySet, UpdateStages.WithVirtualMachineScaleSet,
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithPlan, UpdateStages.WithIdentity,
+        UpdateStages.WithZones, UpdateStages.WithHardwareProfile, UpdateStages.WithScheduledEventsPolicy,
+        UpdateStages.WithStorageProfile, UpdateStages.WithAdditionalCapabilities, UpdateStages.WithOsProfile,
+        UpdateStages.WithNetworkProfile, UpdateStages.WithSecurityProfile, UpdateStages.WithDiagnosticsProfile,
+        UpdateStages.WithAvailabilitySet, UpdateStages.WithVirtualMachineScaleSet,
         UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriority, UpdateStages.WithEvictionPolicy,
         UpdateStages.WithBillingProfile, UpdateStages.WithHost, UpdateStages.WithHostGroup,
         UpdateStages.WithLicenseType, UpdateStages.WithExtensionsTimeBudget, UpdateStages.WithPlatformFaultDomain,
@@ -876,6 +896,19 @@ public interface VirtualMachine {
              * @return the next definition stage.
              */
             Update withHardwareProfile(HardwareProfile hardwareProfile);
+        }
+
+        /**
+         * The stage of the VirtualMachine update allowing to specify scheduledEventsPolicy.
+         */
+        interface WithScheduledEventsPolicy {
+            /**
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine..
+             * 
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+             * @return the next definition stage.
+             */
+            Update withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
         }
 
         /**

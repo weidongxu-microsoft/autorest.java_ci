@@ -127,7 +127,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.cancel(this.client.getEndpoint(), resourceGroupName, vmScaleSetName,
@@ -164,7 +164,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.cancel(this.client.getEndpoint(), resourceGroupName, vmScaleSetName, apiVersion,
@@ -330,7 +330,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.startOSUpgrade(this.client.getEndpoint(), resourceGroupName, vmScaleSetName,
@@ -367,7 +367,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.startOSUpgrade(this.client.getEndpoint(), resourceGroupName, vmScaleSetName, apiVersion,
@@ -535,7 +535,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.startExtensionUpgrade(this.client.getEndpoint(), resourceGroupName,
@@ -572,7 +572,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.startExtensionUpgrade(this.client.getEndpoint(), resourceGroupName, vmScaleSetName, apiVersion,
@@ -742,7 +742,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getLatest(this.client.getEndpoint(), resourceGroupName, vmScaleSetName,
@@ -779,7 +779,7 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2024-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getLatest(this.client.getEndpoint(), resourceGroupName, vmScaleSetName, apiVersion,

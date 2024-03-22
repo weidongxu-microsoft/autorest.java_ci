@@ -642,7 +642,7 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -651,7 +651,7 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StorageAccountInner object itself.

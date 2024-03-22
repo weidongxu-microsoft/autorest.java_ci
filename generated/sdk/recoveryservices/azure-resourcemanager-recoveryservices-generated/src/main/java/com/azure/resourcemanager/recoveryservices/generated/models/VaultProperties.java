@@ -103,6 +103,12 @@ public final class VaultProperties {
     @JsonProperty(value = "secureScore", access = JsonProperty.Access.WRITE_ONLY)
     private SecureScoreLevel secureScore;
 
+    /*
+     * Security levels of Recovery Services Vault for business continuity and disaster recovery
+     */
+    @JsonProperty(value = "bcdrSecurityLevel", access = JsonProperty.Access.WRITE_ONLY)
+    private BcdrSecurityLevel bcdrSecurityLevel;
+
     /**
      * Creates an instance of VaultProperties class.
      */
@@ -330,6 +336,15 @@ public final class VaultProperties {
      */
     public SecureScoreLevel secureScore() {
         return this.secureScore;
+    }
+
+    /**
+     * Get the bcdrSecurityLevel property: Security levels of Recovery Services Vault for business continuity and disaster recovery.
+     * 
+     * @return the bcdrSecurityLevel value.
+     */
+    public BcdrSecurityLevel bcdrSecurityLevel() {
+        return this.bcdrSecurityLevel;
     }
 
     /**

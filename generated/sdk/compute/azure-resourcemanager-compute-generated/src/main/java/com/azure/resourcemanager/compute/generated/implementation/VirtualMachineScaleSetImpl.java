@@ -19,6 +19,7 @@ import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
 import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
@@ -98,6 +99,10 @@ public final class VirtualMachineScaleSetImpl
 
     public UpgradePolicy upgradePolicy() {
         return this.innerModel().upgradePolicy();
+    }
+
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.innerModel().scheduledEventsPolicy();
     }
 
     public AutomaticRepairsPolicy automaticRepairsPolicy() {
@@ -480,6 +485,11 @@ public final class VirtualMachineScaleSetImpl
             this.updateParameters.withUpgradePolicy(upgradePolicy);
             return this;
         }
+    }
+
+    public VirtualMachineScaleSetImpl withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        this.innerModel().withScheduledEventsPolicy(scheduledEventsPolicy);
+        return this;
     }
 
     public VirtualMachineScaleSetImpl withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy) {

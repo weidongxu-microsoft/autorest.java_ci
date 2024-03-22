@@ -18,6 +18,12 @@ public final class ClassicAlertSettings {
     @JsonProperty(value = "alertsForCriticalOperations")
     private AlertsState alertsForCriticalOperations;
 
+    /*
+     * The emailNotificationsForSiteRecovery property.
+     */
+    @JsonProperty(value = "emailNotificationsForSiteRecovery")
+    private AlertsState emailNotificationsForSiteRecovery;
+
     /**
      * Creates an instance of ClassicAlertSettings class.
      */
@@ -41,6 +47,26 @@ public final class ClassicAlertSettings {
      */
     public ClassicAlertSettings withAlertsForCriticalOperations(AlertsState alertsForCriticalOperations) {
         this.alertsForCriticalOperations = alertsForCriticalOperations;
+        return this;
+    }
+
+    /**
+     * Get the emailNotificationsForSiteRecovery property: The emailNotificationsForSiteRecovery property.
+     * 
+     * @return the emailNotificationsForSiteRecovery value.
+     */
+    public AlertsState emailNotificationsForSiteRecovery() {
+        return this.emailNotificationsForSiteRecovery;
+    }
+
+    /**
+     * Set the emailNotificationsForSiteRecovery property: The emailNotificationsForSiteRecovery property.
+     * 
+     * @param emailNotificationsForSiteRecovery the emailNotificationsForSiteRecovery value to set.
+     * @return the ClassicAlertSettings object itself.
+     */
+    public ClassicAlertSettings withEmailNotificationsForSiteRecovery(AlertsState emailNotificationsForSiteRecovery) {
+        this.emailNotificationsForSiteRecovery = emailNotificationsForSiteRecovery;
         return this;
     }
 
