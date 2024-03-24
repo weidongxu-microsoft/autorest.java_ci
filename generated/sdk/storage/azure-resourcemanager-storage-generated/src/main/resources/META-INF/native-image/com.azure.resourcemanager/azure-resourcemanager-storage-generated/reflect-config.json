@@ -1284,12 +1284,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.storage.generated.models.Action",
+  "name" : "com.azure.resourcemanager.storage.generated.models.FailoverType",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.storage.generated.models.FailoverType",
+  "name" : "com.azure.resourcemanager.storage.generated.models.Action",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
